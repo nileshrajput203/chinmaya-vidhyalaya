@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from '../components/layout/Header';
+import { Footer } from '../components/layout/Footer';
+import { Preloader } from '../components/common/Preloader';
+import { CustomCursor } from '../components/common/CustomCursor';
+import { SmoothScrollProvider } from '../components/common/SmoothScrollProvider';
+import { ScrollToTop } from '../components/common/ScrollToTop';
+
+export const MainLayout: React.FC = () => {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
+  return (
+    <SmoothScrollProvider>
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col bg-[#FCFBF7] text-[#181C20] selection:bg-[#D97745] selection:text-white">
+        <Preloader onComplete={() => setPreloaderDone(true)} />
+        <CustomCursor />
+        <Header />
+        <main className="flex-1">
+          <Outlet context={{ preloaderDone }} />
+        </main>
+        <Footer />
+      </div>
+    </SmoothScrollProvider>
+  );
+};
