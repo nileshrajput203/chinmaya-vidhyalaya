@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 import { HomePage } from '../pages/Home';
 import { NotFoundPage } from '../pages/NotFound';
+import { FaqPage } from '../pages/Faq';
 import { ContentPage } from '../templates/ContentPage';
 import { DocumentListingPage } from '../templates/DocumentListingPage';
 import { NewsListingPage } from '../templates/NewsListingPage';
@@ -29,7 +30,11 @@ export const router = createBrowserRouter([
       { path: 'about/enrollment', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="About Us" /> },
       { 
         path: 'about/mandatory-information', 
-        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Mandatory Public Disclosures" pageSubtitle="Official CBSE affiliation, land, building safety, and sanitation certificates" /> 
+        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Mandatory Public Disclosures & Transfer Certificates" pageSubtitle="Official CBSE affiliation, land, building safety, sanitation certificates, and Transfer Certificates (TC)" /> 
+      },
+      { 
+        path: 'about/transfer-certificates', 
+        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Transfer Certificates (TC) & Disclosures" pageSubtitle="Official Transfer Certificate archives and specimen format per CBSE guidelines" /> 
       },
       { path: 'about/management', element: <ContentPage {...ABOUT_SECTIONS['management']} categoryLabel="About Us" /> },
 
@@ -48,6 +53,9 @@ export const router = createBrowserRouter([
       /* UNIQUE FEATURES ROUTES */
       { path: 'features', element: <ContentPage {...FEATURE_SECTIONS['spiritual-activities']} categoryLabel="Unique Features" /> },
       { path: 'features/spiritual-activities', element: <ContentPage {...FEATURE_SECTIONS['spiritual-activities']} categoryLabel="Unique Features" /> },
+      { path: 'features/4-pillars', element: <ContentPage {...FEATURE_SECTIONS['four-pillars']} categoryLabel="Unique Features" /> },
+      { path: 'features/four-pillars', element: <ContentPage {...FEATURE_SECTIONS['four-pillars']} categoryLabel="Unique Features" /> },
+      { path: 'features/holistic-development', element: <ContentPage {...FEATURE_SECTIONS['holistic-development']} categoryLabel="Unique Features" /> },
       { path: 'features/career-counselling', element: <ContentPage {...FEATURE_SECTIONS['career-counselling']} categoryLabel="Unique Features" /> },
       { path: 'features/education-tours', element: <ContentPage {...FEATURE_SECTIONS['education-tours']} categoryLabel="Unique Features" /> },
       { path: 'features/library', element: <ContentPage {...FEATURE_SECTIONS['library']} categoryLabel="Unique Features" /> },
@@ -64,6 +72,9 @@ export const router = createBrowserRouter([
       /* GALLERY ROUTE */
       { path: 'gallery', element: <GalleryPage /> },
 
+      /* FAQ ROUTE */
+      { path: 'faq', element: <FaqPage /> },
+
       /* DOWNLOADS ROUTES */
       { 
         path: 'downloads', 
@@ -71,7 +82,7 @@ export const router = createBrowserRouter([
       },
       { 
         path: 'downloads/sample-papers', 
-        element: <DocumentListingPage initialCategory="sample-papers" pageTitle="Sample Question Papers" pageSubtitle="CBSE Class 1 to 10 question papers and evaluation sets" /> 
+        element: <DocumentListingPage initialCategory="sample-papers" pageTitle="Sample Question Papers" pageSubtitle="CBSE Class 1 to 10 question papers term-wise" /> 
       },
       { 
         path: 'downloads/evaluation-papers', 
@@ -83,7 +94,7 @@ export const router = createBrowserRouter([
       },
       { 
         path: 'downloads/transfer-certificates', 
-        element: <DocumentListingPage initialCategory="admissions" pageTitle="Transfer Certificates (TC)" pageSubtitle="Download official Transfer Certificate records (TC 2020, 2021, 2023)" /> 
+        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Transfer Certificates (TC)" pageSubtitle="View official Transfer Certificate records (TC 2020, 2021, 2023)" /> 
       },
       { 
         path: 'downloads/recruitment', 

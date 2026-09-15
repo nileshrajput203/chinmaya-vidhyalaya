@@ -7,6 +7,40 @@ export interface FeatureSectionData {
 }
 
 export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
+  "four-pillars": {
+    slug: "four-pillars",
+    title: "The 4 Pillars of Chinmaya Vision Program",
+    subtitle: "A comprehensive educational blueprint formulated by Pujya Gurudev Swami Chinmayananda",
+    content: [
+      "The Chinmaya Vision Program (CVP) is a holistic educational philosophy that transforms traditional classroom instruction into a profound life-building journey. It is anchored firmly on four foundational pillars: Integrated Development, Indian Culture, Patriotism, and Universal Outlook.",
+      "Pujya Gurudev Swami Chinmayananda envisioned an education system that synthesizes modern scientific exploration with timeless Vedantic values, molding students who are intellectually sharp, emotionally balanced, culturally rooted, and globally responsible.",
+      "Every curriculum subject, co-curricular endeavor, and daily ritual at Chinmaya Vidyalaya Tarapur is woven with these 4 pillars, ensuring our students flourish into compassionate leaders capable of navigating a rapidly changing world."
+    ],
+    highlights: [
+      "Pillar 1 - Integrated Development: Cultivating the physical, mental, intellectual, and spiritual dimensions of each student simultaneously",
+      "Pillar 2 - Indian Culture & Heritage: Inculcating reverence for ancient wisdom, Vedic ethos, moral values, and respectful family traditions",
+      "Pillar 3 - Patriotism & Civic Responsibility: Nurturing pride in India's glorious heritage, active citizenship, and selfless commitment to national progress",
+      "Pillar 4 - Universal Outlook (Vasudhaiva Kutumbakam): Inspiring a cosmic perspective of global brotherhood, ecological harmony, and empathy across borders"
+    ]
+  },
+  "holistic-development": {
+    slug: "holistic-development",
+    title: "Holistic Development in 4 Parts",
+    subtitle: "Comprehensive 4-fold student transformation with optimal classroom capacity and personalized care",
+    content: [
+      "Holistic development at Chinmaya Vidyalaya Tarapur is structured into 4 distinct, synergistic components designed to nurture the complete persona of the child.",
+      "Part 1 - Integrated Development & Optimal Capacity: Our curriculum combines academic rigour with physical fitness, emotional stability, and intellectual acumen. While our spacious campus facilities and state-of-the-art classrooms are architected to comfortably accommodate a capacity of more than 40 students, we maintain disciplined classroom environments where each child receives personalized attention, continuous formative assessment, and mentoring from experienced teachers.",
+      "Part 2 - Cultural Grounding: Daily Guru Paduka Pooja, Balvihar moral values, Sanskrit shlokas, and Gita chanting instill profound respect for elders, teachers, and cultural roots.",
+      "Part 3 - Patriotic Leadership: Civic responsibility, national celebrations, environmental conservation drives like Jal Pakhwada, and leadership programs prepare youth for nation building.",
+      "Part 4 - Universal Outlook: Scientific temper, international mindedness, and compassion for all living beings embody the ancient Vedic ideal 'Vasudhaiva Kutumbakam' (The world is one family)."
+    ],
+    highlights: [
+      "Part 1 - Integrated Growth: Harmonious training of body, mind, and intellect; spacious classrooms with capacity exceeding 40 students managed with personalized student care",
+      "Part 2 - Cultural Rootedness: Daily prayers, devotional bhajans, festive celebrations, and ethical discernment rooted in Indian ethos",
+      "Part 3 - Patriotic Spirit: Active social initiatives, tree plantation, civic awareness, and dedicated nation building",
+      "Part 4 - Universal Fraternity: Environmental stewardship, empathy, and cosmic compassion for all creation"
+    ]
+  },
   "spiritual-activities": {
     slug: "spiritual-activities",
     title: "Spiritual Activities & Values",
@@ -59,7 +93,7 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
       "Team building, leadership, and social development opportunities during study excursions"
     ]
   },
-  library: {
+  "library": {
     slug: "library",
     title: "Smart Library & Reading Room",
     subtitle: "Extensive collection of academic books, reference volumes, and periodicals",

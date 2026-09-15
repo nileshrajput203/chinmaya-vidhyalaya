@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Sparkles, BookOpen } from 'lucide-react';
+import { ChevronDown, Sparkles, Bell } from 'lucide-react';
 import { OFFICIAL_NAVIGATION_DATA } from '../../../data/navigation';
 
 interface MainNavigationProps {
@@ -118,13 +118,13 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({ onOpenAdmissionD
         </ul>
 
         {/* Right Action Quick Triggers */}
-        <div className="flex items-center gap-2 py-1.5">
+        <div className="flex items-center gap-2.5 py-1.5">
           <Link
-            to="/downloads/sample-papers"
-            className="px-3.5 py-1.5 text-[11px] font-mono text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors"
+            to="/news/circulars"
+            className="px-3 py-1.5 text-[11px] font-mono text-slate-200 hover:text-white bg-white/10 hover:bg-white/15 border border-white/10 rounded-xl flex items-center gap-1.5 transition-colors"
           >
-            <BookOpen className="w-3.5 h-3.5 text-[#D97745]" />
-            <span>Sample Papers</span>
+            <Bell className="w-3.5 h-3.5 text-[#D97745]" />
+            <span>School Circulars</span>
           </Link>
 
           <button

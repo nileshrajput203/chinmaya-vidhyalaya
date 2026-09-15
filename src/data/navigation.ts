@@ -13,7 +13,8 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
       { label: "Mission & Vision", href: "/about/mission-vision", description: "Guiding principles for holistic education" },
       { label: "Philosophy (CVP)", href: "/about/philosophy", description: "Chinmaya Vision Program four pillars" },
       { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees and leadership" },
-      { label: "Mandatory Information", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates & affiliation" }
+      { label: "Mandatory Information", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates & affiliation" },
+      { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates", description: "Official Transfer Certificate specimen and annual registers (2020-2023)" }
     ]
   },
   {
@@ -31,7 +32,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     label: "Admissions",
     href: "/admissions",
     children: [
-      { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility, class strength limit (40) and process" },
+      { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility, class capacity (>40) and process" },
       { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG & Std I-IX application forms" },
       { label: "Transfer Certificates (TC)", href: "/downloads/transfer-certificates", description: "TC 2023, TC 2021, TC 2020 official records" },
       { label: "Teacher Application", href: "/downloads/recruitment", description: "Application form for the post of teacher" }
@@ -41,6 +42,8 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     label: "Unique Features",
     href: "/features",
     children: [
+      { label: "4 Pillars of CVP", href: "/features/4-pillars", description: "Integrated Development, Indian Culture, Patriotism, Universal Outlook" },
+      { label: "Holistic Development", href: "/features/holistic-development", description: "Physical, emotional, intellectual & spiritual faculties (>40 class capacity)" },
       { label: "Spiritual Activities", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar & Gita chanting" },
       { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz & ASSET diagnostic testing" },
       { label: "Education Tours", href: "/features/education-tours", description: "Annual study tours & industrial field trips" },
@@ -65,6 +68,10 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
       { label: "Evaluation III Papers (Std 1 - 5)", href: "/downloads/evaluation-papers", description: "Question papers for Standard 1 to 5" },
       { label: "All Documents & Forms", href: "/downloads/documents", description: "All official downloadable certificates and files" }
     ]
+  },
+  {
+    label: "FAQ",
+    href: "/faq"
   },
   {
     label: "Contact Us",

@@ -28,12 +28,12 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, badge }) =>
           </span>
         </div>
 
-        <h1 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight uppercase">
+        <h1 className="font-cinzel font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight uppercase">
           {title}
         </h1>
 
         {subtitle && (
-          <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed font-light font-sans">
+          <p className="text-sm sm:text-base text-slate-300/85 max-w-3xl leading-relaxed font-normal font-sans">
             {subtitle}
           </p>
         )}

@@ -12,6 +12,8 @@ import { SCHOOL_IMAGES } from '../../data/images';
 import { contentService } from '../../services/contentService';
 import { Notice } from '../../types/news';
 import { QuickAdmissionDrawer } from '../../components/common/QuickAdmissionDrawer';
+import { FaqSection } from '../../components/common/FaqSection';
+import { Quote } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -283,24 +285,29 @@ export const HomePage: React.FC = () => {
                 <button
                   onClick={() => setIsAdmissionDrawerOpen(true)}
                   data-cursor="APPLY"
-                  className="px-8 py-4 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-widest transition-all rounded-xl flex items-center gap-2.5 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
+                  className="group px-8 py-4 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-widest transition-all rounded-full flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Admissions 2026-27</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                    <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  </div>
                 </button>
 
                 <Link
                   to="/about/history"
                   data-cursor="EXPLORE"
-                  className="px-7 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white font-semibold text-xs uppercase tracking-wider transition-all rounded-xl flex items-center gap-2"
+                  className="group px-7 py-4 bg-white hover:bg-slate-100 text-[#0B1D30] font-bold text-xs uppercase tracking-widest transition-all rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
                 >
                   <span>Our Heritage</span>
+                  <div className="w-7 h-7 rounded-full bg-[#0B1D30]/10 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                    <ArrowRight className="w-3.5 h-3.5 text-[#0B1D30]" />
+                  </div>
                 </Link>
 
                 <Link
                   to="/about/mandatory-information"
-                  className="px-5 py-4 text-slate-300 hover:text-white font-mono text-xs transition-colors flex items-center gap-2"
+                  className="px-6 py-4 bg-[#122B48] hover:bg-[#183960] text-slate-200 hover:text-white font-mono text-xs rounded-full transition-all border border-[#1E436E] flex items-center gap-2 shadow-sm"
                 >
                   <FileText className="w-4 h-4 text-[#D97745]" />
                   <span>CBSE SARAS Disclosures</span>
@@ -387,13 +394,13 @@ export const HomePage: React.FC = () => {
                 <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
                   INSTITUTIONAL HERITAGE
                 </span>
-                <h2 className="font-cinzel text-3xl sm:text-5xl font-bold text-[#0B1D30] leading-tight">
+                <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] leading-[1.15] tracking-tight">
                   Started with 72 students <br />
                   <span className="italic font-serif font-normal text-[#D97745]">and four teachers.</span>
                 </h2>
               </div>
 
-              <div className="space-y-4 text-[#363C44] text-base leading-relaxed font-light">
+              <div className="space-y-4 text-slate-600/90 text-base sm:text-lg leading-relaxed font-normal">
                 <p>
                   Chinmaya Vidyalaya is affiliated to the CBSE Delhi Board. A school with a difference, it began its noble journey in Boisar/Tarapur with humble beginnings and has blossomed into a premier full-fledged educational institution.
                 </p>
@@ -405,16 +412,16 @@ export const HomePage: React.FC = () => {
               {/* Key Metric Indicators */}
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-[#E7E2D8]">
                 <div>
-                  <span className="font-cinzel text-3xl sm:text-4xl font-bold text-[#0B1D30] block">100%</span>
-                  <span className="text-xs text-[#4A5568] font-mono mt-1 block">AISSE Pass Rate</span>
+                  <span className="font-cinzel text-3xl sm:text-5xl font-extrabold text-[#0B1D30] block">100%</span>
+                  <span className="text-xs text-slate-500 font-mono mt-1 block uppercase tracking-wider">AISSE Pass Rate</span>
                 </div>
                 <div>
-                  <span className="font-cinzel text-3xl sm:text-4xl font-bold text-[#D97745] block">≤40</span>
-                  <span className="text-xs text-[#4A5568] font-mono mt-1 block">Students / Class</span>
+                  <span className="font-cinzel text-3xl sm:text-5xl font-extrabold text-[#D97745] block">≤40</span>
+                  <span className="text-xs text-slate-500 font-mono mt-1 block uppercase tracking-wider">Students / Class</span>
                 </div>
                 <div>
-                  <span className="font-cinzel text-3xl sm:text-4xl font-bold text-[#0B1D30] block">25+</span>
-                  <span className="text-xs text-[#4A5568] font-mono mt-1 block">Years Legacy</span>
+                  <span className="font-cinzel text-3xl sm:text-5xl font-extrabold text-[#0B1D30] block">25+</span>
+                  <span className="text-xs text-slate-500 font-mono mt-1 block uppercase tracking-wider">Years Legacy</span>
                 </div>
               </div>
 
@@ -422,10 +429,10 @@ export const HomePage: React.FC = () => {
                 <Link
                   to="/about/history"
                   data-cursor="READ"
-                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0B1D30] hover:text-[#D97745] transition-colors border-b-2 border-[#0B1D30] hover:border-[#D97745] pb-1"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
                 >
                   <span>Explore Institutional History</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-[#D97745] group-hover:text-white" />
                 </Link>
               </div>
             </div>
@@ -480,11 +487,11 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.3em] block">
                 FOUNDATIONAL PHILOSOPHY
               </span>
-              <h2 className="font-cinzel text-3xl sm:text-5xl font-bold text-white">
-                Chinmaya Vision Program (CVP)
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+                Chinmaya Vision Program
               </h2>
             </div>
-            <p className="text-xs text-slate-300 max-w-md font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-300/80 max-w-md font-normal leading-relaxed">
               Formulated under the guidance of Pujya Gurudev Swami Chinmayananda to foster integrated growth and noble life values.
             </p>
           </div>
@@ -511,10 +518,10 @@ export const HomePage: React.FC = () => {
                         {pillar.num}
                       </span>
                       <div>
-                        <h3 className="font-cinzel text-base sm:text-lg font-bold text-white">
+                        <h3 className="font-cinzel text-lg sm:text-xl font-bold text-white">
                           {pillar.title}
                         </h3>
-                        <span className="text-[11px] font-mono text-slate-300 block mt-0.5">
+                        <span className="text-xs font-mono text-slate-300/80 block mt-0.5">
                           {pillar.subtitle}
                         </span>
                       </div>
@@ -533,7 +540,7 @@ export const HomePage: React.FC = () => {
                     <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider block">
                       Pillar {cvpPillars[activePillar].num} • {cvpPillars[activePillar].tag}
                     </span>
-                    <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#0B1D30] mt-1">
+                    <h3 className="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#0B1D30] mt-1">
                       {cvpPillars[activePillar].title}
                     </h3>
                   </div>
@@ -542,7 +549,7 @@ export const HomePage: React.FC = () => {
                   </span>
                 </div>
 
-                <p className="text-sm text-[#363C44] leading-relaxed font-light">
+                <p className="text-base text-slate-600/90 leading-relaxed font-normal">
                   {cvpPillars[activePillar].desc}
                 </p>
 
@@ -565,7 +572,7 @@ export const HomePage: React.FC = () => {
               <div className="pt-4 border-t border-[#E7E2D8] flex items-center justify-between">
                 <Link
                   to="/about/philosophy"
-                  className="text-xs font-bold uppercase tracking-wider text-[#0B1D30] hover:text-[#D97745] flex items-center gap-1.5"
+                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2 hover:scale-105 active:scale-95"
                 >
                   <span>Read Full CVP Philosophy</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -594,7 +601,7 @@ export const HomePage: React.FC = () => {
                   className="w-full h-96 sm:h-[420px] object-cover object-top rounded-2xl"
                 />
                 <div className="p-4 bg-[#0B1D30] text-white text-center rounded-xl mt-3 space-y-1">
-                  <h3 className="font-cinzel font-bold text-lg text-white leading-tight">
+                  <h3 className="font-cinzel font-bold text-xl text-white leading-tight">
                     Sri. B. Anilkumar
                   </h3>
                   <p className="text-xs text-[#D97745] font-mono">
@@ -610,12 +617,12 @@ export const HomePage: React.FC = () => {
                 <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
                   LEADERSHIP & DISTINCTION
                 </span>
-                <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-[#0B1D30]">
+                <h2 className="font-cinzel text-4xl sm:text-5xl font-extrabold text-[#0B1D30] tracking-tight">
                   Guided by Visionary Leadership
                 </h2>
               </div>
 
-              <blockquote className="font-serif italic text-base sm:text-lg text-[#363C44] leading-relaxed border-l-4 border-[#D97745] pl-6 py-2 bg-white/70 rounded-r-2xl">
+              <blockquote className="font-serif italic text-base sm:text-xl text-slate-700/90 leading-relaxed border-l-4 border-[#D97745] pl-6 py-3 bg-white/80 rounded-r-2xl">
                 "{OFFICIAL_PRINCIPAL_INFO.message}"
               </blockquote>
 
@@ -687,13 +694,13 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
                 CAMPUS ARCHITECTURE
               </span>
-              <h2 className="font-cinzel text-3xl sm:text-5xl font-bold text-[#0B1D30]">
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] tracking-tight">
                 State-of-the-Art Infrastructure
               </h2>
             </div>
             <Link
               to="/academics/infrastructure"
-              className="text-xs font-bold uppercase tracking-wider text-[#0B1D30] hover:text-[#D97745] flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2 hover:scale-105 active:scale-95"
             >
               <span>Explore All Labs & Facilities</span>
               <ArrowRight className="w-4 h-4" />
@@ -734,29 +741,29 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-widest block">
                 {facilities[activeFacility].specs}
               </span>
-              <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#0B1D30]">
+              <h3 className="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#0B1D30]">
                 {facilities[activeFacility].title}
               </h3>
-              <h4 className="font-serif italic text-sm text-[#D97745]">
+              <h4 className="font-serif italic text-base text-[#D97745]">
                 "{facilities[activeFacility].subtitle}"
               </h4>
-              <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-slate-600/90 leading-relaxed font-normal">
                 {facilities[activeFacility].description}
               </p>
 
-              <div className="pt-4 border-t border-[#E7E2D8] flex items-center justify-between">
+              <div className="pt-4 border-t border-[#E7E2D8] flex flex-wrap items-center gap-3">
                 <Link
                   to="/academics/curriculum"
-                  className="text-xs font-bold uppercase tracking-wider text-[#0B1D30] hover:text-[#D97745] flex items-center gap-1.5"
+                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-1.5 hover:scale-105 active:scale-95"
                 >
-                  <span>Academic Curriculum Details</span>
+                  <span>Curriculum Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <button
                   onClick={() => setIsAdmissionDrawerOpen(true)}
-                  className="text-xs font-bold text-[#D97745] hover:underline"
+                  className="px-5 py-2.5 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-1.5 hover:scale-105 active:scale-95"
                 >
-                  Visit Campus
+                  <span>Visit Campus</span>
                 </button>
               </div>
             </div>
@@ -776,13 +783,13 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
                 RESOURCES & FORMS
               </span>
-              <h2 className="font-cinzel text-3xl sm:text-5xl font-bold text-white">
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
                 Downloads & Academic Center
               </h2>
             </div>
             <Link
               to="/downloads"
-              className="text-xs font-bold uppercase tracking-wider text-[#D97745] hover:text-white flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
             >
               <span>View All Official PDFs</span>
               <ArrowRight className="w-4 h-4" />
@@ -824,7 +831,7 @@ export const HomePage: React.FC = () => {
               </div>
               <Link
                 to="/downloads/sample-papers"
-                className="w-full py-2.5 bg-white/15 hover:bg-white/25 text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>Browse Papers</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -844,7 +851,7 @@ export const HomePage: React.FC = () => {
               </div>
               <Link
                 to="/downloads/evaluation-papers"
-                className="w-full py-2.5 bg-white/15 hover:bg-white/25 text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>View Std 1-5 Papers</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -864,7 +871,7 @@ export const HomePage: React.FC = () => {
               </div>
               <Link
                 to="/about/mandatory-information"
-                className="w-full py-2.5 bg-white/15 hover:bg-white/25 text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>View Disclosures</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -928,13 +935,13 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
                 CAMPUS GALLERY
               </span>
-              <h2 className="font-cinzel text-3xl sm:text-5xl font-bold text-[#0B1D30]">
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] tracking-tight">
                 Moments of Life at Chinmaya
               </h2>
             </div>
             <Link
               to="/gallery"
-              className="text-xs font-bold uppercase tracking-wider text-[#0B1D30] hover:text-[#D97745] flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2 hover:scale-105 active:scale-95"
             >
               <span>View Full Photo Archive</span>
               <ArrowRight className="w-4 h-4" />
@@ -996,9 +1003,43 @@ export const HomePage: React.FC = () => {
       </AnimatePresence>
 
       {/* ----------------------------------------------------
+          SECTION 07.5 — PUJYA GURUDEV TRIBUTE & FAQ
+         ---------------------------------------------------- */}
+      <section className="py-16 bg-[#F7F3EB] border-y border-[#E7E2D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#0B1D30] to-[#122A44] text-white p-8 md:p-12 rounded-3xl border border-[#D97745]/30 shadow-2xl flex flex-col md:flex-row items-center gap-8">
+            <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-[#D97745] shadow-xl shrink-0">
+              <img
+                src="/images/swami.jpeg"
+                alt="Pujya Gurudev Swami Chinmayananda"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="space-y-3 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-[#D97745]">
+                <Quote className="w-5 h-5 opacity-75" />
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D97745]">
+                  Vision of Pujya Gurudev Swami Chinmayananda
+                </span>
+              </div>
+              <blockquote className="font-cinzel text-xl sm:text-3xl italic text-white/95 leading-relaxed">
+                "Children are not vessels to be filled, but lamps to be lit. When you ignite the noble flame within a child, you illuminate generations."
+              </blockquote>
+              <p className="text-xs sm:text-sm text-slate-300/80 font-normal">
+                Founder of Chinmaya Mission & Guide of Chinmaya Vidyalaya Tarapur
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Section on Home */}
+      <FaqSection previewCount={6} id="home-faq" />
+
+      {/* ----------------------------------------------------
           SECTION 08 — MASTER FINAL CONVERSION BANNER (ADMISSIONS)
          ---------------------------------------------------- */}
-      <section className="py-24 bg-[#0B1D30] text-white relative overflow-hidden border-t-4 border-[#D97745]">
+      <section className="py-24 sm:py-32 bg-[#0B1D30] text-white relative overflow-hidden border-t-4 border-[#D97745]">
         <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
         
         <div className="max-w-5xl mx-auto px-4 text-center space-y-8 relative z-10">
@@ -1007,12 +1048,12 @@ export const HomePage: React.FC = () => {
             <span>SESSION 2026-27 ADMISSIONS OPEN</span>
           </div>
 
-          <h2 className="font-cinzel text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+          <h2 className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight">
             Shape a Future of <br />
             <span className="italic font-serif font-normal text-[#D97745]">Wisdom and Distinction.</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300/85 max-w-2xl mx-auto font-normal leading-relaxed">
             Join the Chinmaya family in Tarapur/Boisar. Download the application forms, schedule a campus visit, or connect with our admissions counselors today.
           </p>
 
@@ -1020,19 +1061,24 @@ export const HomePage: React.FC = () => {
             <button
               onClick={() => setIsAdmissionDrawerOpen(true)}
               data-cursor="APPLY"
-              className="px-8 py-4 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl hover:scale-105 flex items-center gap-2"
+              className="group px-8 py-4 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-3"
             >
               <Sparkles className="w-4 h-4" />
               <span>Apply Online & Download Forms</span>
-              <ArrowRight className="w-4 h-4" />
+              <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
+              </div>
             </button>
 
             <Link
               to="/contact"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider rounded-xl transition-all border border-white/25 flex items-center gap-2"
+              className="group px-8 py-4 bg-white hover:bg-slate-100 text-[#0B1D30] font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-3"
             >
               <Phone className="w-4 h-4 text-[#D97745]" />
               <span>Contact Campus Office</span>
+              <div className="w-7 h-7 rounded-full bg-[#0B1D30]/10 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                <ArrowRight className="w-3.5 h-3.5 text-[#0B1D30]" />
+              </div>
             </Link>
           </div>
 

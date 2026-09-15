@@ -158,7 +158,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2">
               <Link
                 to="/about/mandatory-information"
-                className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl text-[11px] font-mono transition-colors border border-white/20"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-[#D97745] hover:text-white text-[#0B1D30] rounded-xl text-xs font-bold transition-all shadow-md"
               >
                 <ShieldCheck className="w-3.5 h-3.5 text-[#D97745]" />
                 <span>Mandatory Disclosures</span>

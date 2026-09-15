@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "tsc --noEmit",
-    "preview": "vite preview",
-    "server:dev": "tsx server/src/server.ts",
-    "dev:all": "concurrently \"npm run dev\" \"npm run server:dev\""
+    "preview": "vite preview"
   },
   "dependencies": {
     "clsx": "^2.1.1",
