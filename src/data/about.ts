@@ -16,19 +16,24 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     swamijiQuote: "Children are not vessels to be filled, but lamps to be lit. — Pujya Gurudev Swami Chinmayananda",
     image: "/images/swami.jpeg",
     content: [
-      "Chinmaya Vidyalaya is affiliated to the CBSE Delhi Board. A school with a difference, it started off with a batch of 72 students and four teachers, and has now blossomed into a full-fledged educational institution.",
-      "Emulating the holistic vision of the illustrious founder, the Great Vedantic Master Swami Chinmayananda, the Vidyalaya has been imparting value-based education to students across Tarapur and Boisar.",
-      "It provides a practical and judicious combination of academic excellence, extra-curricular pursuits, character building, and personality development to empower students for lifelong growth and noble citizenship.",
-      "In addition to academic milestones, the Vidyalaya maintains strict statutory compliance and institutional transparency. All official Transfer Certificates (TC) and mandatory disclosures are maintained in our certified public records."
+      "Chinmaya Vidyalaya is affiliated to the CBSE Delhi Board. A school with a difference, it was envisaged in 1993 by dedicated devotees of the Tarapur Chinmaya Mission Centre, inspired by Param Pujya Swami Chinmayanandaji.",
+      "The construction of the first phase commenced in 1994 in the sacred presence of Param Pujya Swami Tejomayanandaji. The Vidyalaya was formally inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji.",
+      "Starting with a modest batch of 72 students and four teachers, the institution holds the distinction of being the first school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone. Today, the school has blossomed into a premier institution with approximately 1600 students on roll.",
+      "The Vidyalaya was granted CBSE Affiliation in 2003 (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004). The very first batch of Standard X appeared for the All India Secondary School Examination (AISSE) in 2004–2005, maintaining a tradition of distinguished academic excellence.",
+      "Located in Boisar, about 100 km north of Mumbai on the Western Railway, the school is an undertaking of Central Chinmaya Vidyalaya Mission Trust, Mumbai, with the Local Managing Committee guiding its day-to-day administration."
     ],
     bulletPoints: [
       "Affiliated to Central Board of Secondary Education (CBSE), New Delhi",
-      "CBSE Affiliation No: 1130058 | School Code: 30064 | U-DISE: 27361116004",
-      "Established under the Chinmaya Mission Educational Cell (CCMT Education Cell)",
-      "Co-educational institution covering Jr. KG up to Standard XII (Science & Commerce)",
-      "Classroom facilities spacious enough to comfortably seat more than 40 students with dedicated personal care",
-      "Consistent 100% AISSE Board Examination Results with high first-class rankings",
-      "Mandatory Disclosures & Transfer Certificates (TC) available for transparent online verification"
+      "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
+      "Managed by: Central Chinmaya Vidyalaya Mission Trust, Mumbai (Local Managing Committee handles day-to-day management)",
+      "Envisaged in 1993; Construction in 1994 with Param Pujya Swami Tejomayanandaji",
+      "Inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji",
+      "Starting Enrollment (1995): 72 students and 4 teachers",
+      "Current Enrollment: Approximately 1600 students on roll",
+      "First school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone",
+      "CBSE Affiliation granted in 2003; First Batch of Std X (AISSE) in 2004–2005",
+      "Location: P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501, Dist: Palghar, Maharashtra",
+      "Mandatory Disclosures & Transfer Certificates (TC) certified for transparent verification"
     ]
   },
   "mission-vision": {
@@ -40,13 +45,14 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     content: [
       "Vision: To empower a community of learners who dare to dream, take risks and develop new realities.",
       "Mission: To offer value-based holistic education that integrates ancient Indian cultural ethos with modern scientific inquiry, nurturing physical vitality, mental agility, intellectual depth, and spiritual awakening.",
-      "Rooted in the Chinmaya Vision Program (CVP), we seek to produce competent, patriotic, compassionate, and spiritually anchored citizens equipped to meet contemporary global challenges."
+      "Educational Approach: The Chinmaya Vision Programme (CVP) seamlessly integrates Value Education with academics for comprehensive personality development, inspiring noble citizenship."
     ],
     bulletPoints: [
       "Integrated Development: Physical, Mental, Intellectual, and Spiritual faculties",
       "Indian Culture: Inculcating reverence for heritage, moral values, and traditions",
       "Patriotism: Developing civic responsibility and dedicated national commitment",
-      "Universal Outlook: Fostering empathy, environmental harmony, and global brotherhood"
+      "Universal Outlook: Fostering empathy, environmental harmony, and global brotherhood",
+      "Founder: Param Pujya Swami Chinmayanandaji"
     ]
   },
   philosophy: {
@@ -74,8 +80,8 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     title: "Enrollment & Admission Guidelines",
     subtitle: "Admission guidelines, class capacity (>40), and registration details",
     content: [
-      "Chinmaya Vidyalaya Tarapur provides academic coverage from Nursery, Jr. KG, Sr. KG up to Std XII. The medium of instruction in all classes is English.",
-      "Our well-ventilated, technologically enabled classrooms have a capacity capable of accommodating more than 40 students, though we cap sections according to CBSE pedagogical guidelines to guarantee individualized student attention and safety.",
+      "Chinmaya Vidyalaya provides academic coverage from Nursery, Jr. KG, Sr. KG up to Std XII. The medium of instruction in all classes is English.",
+      "Our well-ventilated, technologically enabled classrooms are capable of accommodating more than 40 students, though we cap sections according to CBSE pedagogical guidelines to guarantee individualized student attention and safety.",
       "Admissions are open to all students on a merit and availability basis without discrimination. Official registration forms for Nursery, KG, and Std I to IX are available for direct download.",
       "Transfer Certificates (TC) issued from recognized CBSE or state board schools must be submitted at the time of admission confirmation."
     ],
@@ -84,7 +90,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
       "Pedagogical Care: Individualized mentoring and low student-to-teacher ratio",
       "Registration Forms for Nursery, KG & Std I-IX available online",
       "Documents Required: Birth Certificate, Previous School Progress Report, Transfer Certificate (TC)",
-      "CBSE Affiliation No: 1130058 | School Code: 30064",
+      "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
       "Stream allocations for Senior Secondary (XI & XII): Science & Commerce"
     ]
   },
@@ -93,12 +99,12 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     title: "Mandatory Public Disclosures & Transfer Certificates (TC)",
     subtitle: "Official CBSE disclosure certificates, affiliation documents, and Transfer Certificate records",
     content: [
-      "In strict compliance with CBSE directives, SARAS portal guidelines, and transparency mandates, Chinmaya Vidyalaya Tarapur publishes all statutory documents, safety certificates, and Transfer Certificates (TC) for public inspection.",
+      "In strict compliance with CBSE directives, SARAS portal guidelines, and transparency mandates, Chinmaya Vidyalaya publishes all statutory documents, safety certificates, and Transfer Certificates (TC) for public inspection.",
       "All statutory certificates—including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, fee structure, SMC, PTA, and official Transfer Certificates (TC sample & annual registers for 2020, 2021, and 2023)—are available in verified view-only format."
     ],
     bulletPoints: [
       "Official Transfer Certificates (TC): View sample TC and archive registers (2020, 2021, 2023)",
-      "CBSE Affiliation No: 1130058 | School Code: 30064 | U-DISE: 27361116004",
+      "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
       "State Government NOC & RTE Recognition Certificate",
       "Building Stability and Fire Safety Clearance Certificates",
       "Safe Drinking Water Quality & Sanitary Inspection Compliance",
@@ -109,19 +115,24 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
   management: {
     slug: "management",
     title: "Board of Management",
-    subtitle: "Institutional leadership, trustees, and advisory council",
+    subtitle: "Institutional leadership, governance, and managing committee",
     content: [
-      "The Vidyalaya is guided by a distinguished Board of Management comprising eminent industrialists, doctors, chartered accountants, legal experts, and educationists under the Chinmaya Mission umbrella.",
-      "Under the leadership of Chairman Sri T.B. Thakur, Secretary Dr. K.S. Shivashankar, and Principal Sri B. Anilkumar, the management ensures highest standards of institutional governance and student welfare."
+      "Chinmaya Vidyalaya is an undertaking of Central Chinmaya Vidyalaya Mission Trust, Mumbai, with the Local Managing Committee handling day-to-day operations and strategic school governance.",
+      "The Board of Management comprises eminent industrialists, doctors, educationists, and CCMT trustees dedicated to the highest standards of student development and institutional excellence.",
+      "Led by Chairman Sri. T.B. Thakur, Vice-Chairman Dr. Parag Kulkarni, Secretary Dr. Shivshankar, and Principal Smt. Dimple Mistry, the governance structure ensures rigorous academic standards rooted in Vedantic values."
     ],
     bulletPoints: [
-      "Chairman: Sri. T.B. Thakur (Industrialist)",
-      "Secretary: Dr. K.S. Shivashankar (Doctor)",
-      "Chartered Accountant: Sri. Shriram Bhaleraoji",
-      "Legal Advisor: Sri. Parag Kulkarni (Advocate)",
-      "Medical Advisors: Dr. Shobha Sankhe, Dr. Ratnakar Mane, Dr. Manjusha Mane, Dr. Dathatreya Nayak",
-      "Executive Head: Sri. B. Anilkumar (Principal & Ex-Officio Member)",
-      "Vice Principal: Smt. Vasanthy Nair (Member)"
+      "Managing Trust: Central Chinmaya Vidyalaya Mission Trust, Mumbai (Local Managing Committee)",
+      "1. Sri. T.B. Thakur — Chairman (Industrialist | Tel: 9823147178 | thakur@tpr.grengg.com)",
+      "2. Shri Shriram Bhalerao — Trustee, CCMT (Industrialist | bhaleraosg@labindia.com)",
+      "3. Atul Karanjkar — Zonal Director (atul.karanjkar@chinmayaeducationcell.org)",
+      "4. Dr. Parag Kulkarni — Vice-Chairman (Doctor | Tel: 9823045534 | paragkulkarni1960@gmail.com)",
+      "5. Dr. Shivshankar — Secretary (Doctor | Tel: 9975527700 | drshankar.shiv@gmail.com)",
+      "6. Dr. (Smt.) Shobha Sankhe — Member (Doctor | Tel: 9823147089 | 2005shobha@gmail.com)",
+      "7. Dr. Ratnakar Mane — Member (Doctor | Tel: 9822634820 | drratnakarmane@gmail.com)",
+      "8. Sri. B.K. Poddar — Member (Industrialist | Tel: 9987636090 | cvtarapur@rediffmail.com)",
+      "9. Dr. Dathatreya Nayak — Member (Doctor | Tel: 9673776711 | ddnayak30@gmail.com)",
+      "10. Smt. Dimple Mistry — Member (Principal) (Educationist | Tel: 7775872266 | cv.principal@chinmayamission.com)"
     ]
   }
 };

@@ -12,7 +12,7 @@ export const MainLayout: React.FC = () => {
   return (
     <SmoothScrollProvider>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-[#FCFBF7] text-[#181C20] selection:bg-[#D97745] selection:text-white">
+      <div className="min-h-screen flex flex-col bg-[#FCFBF7] text-[#181C20] selection:bg-[#DF711B] selection:text-white">
         <Preloader onComplete={() => setPreloaderDone(true)} />
         <Header />
         <main className="flex-1">

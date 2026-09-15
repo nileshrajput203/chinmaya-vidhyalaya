@@ -93,17 +93,17 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
   const getCategoryIcon = (category: FaqItem['category']) => {
     switch (category) {
       case 'admissions':
-        return <GraduationCap className="w-3.5 h-3.5 text-[#D97745]" />;
+        return <GraduationCap className="w-3.5 h-3.5 text-[#DF711B]" />;
       case 'academics':
-        return <BookOpen className="w-3.5 h-3.5 text-[#D97745]" />;
+        return <BookOpen className="w-3.5 h-3.5 text-[#DF711B]" />;
       case 'cvp':
-        return <Sparkles className="w-3.5 h-3.5 text-[#D97745]" />;
+        return <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />;
       case 'facilities':
-        return <Building2 className="w-3.5 h-3.5 text-[#D97745]" />;
+        return <Building2 className="w-3.5 h-3.5 text-[#DF711B]" />;
       case 'disclosures':
-        return <ShieldCheck className="w-3.5 h-3.5 text-[#D97745]" />;
+        return <ShieldCheck className="w-3.5 h-3.5 text-[#DF711B]" />;
       default:
-        return <HelpCircle className="w-3.5 h-3.5 text-[#D97745]" />;
+        return <HelpCircle className="w-3.5 h-3.5 text-[#DF711B]" />;
     }
   };
 
@@ -118,8 +118,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
             HEADER BLOCK (Double-bezel badge + Typography)
            ==================================================== */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 bg-[#FAF3E8] border border-[#E7E2D8] px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.2em] shadow-sm">
-            <HelpCircle className="w-4 h-4 text-[#D97745]" />
+          <div className="inline-flex items-center gap-2 bg-[#FAF3E8] border border-[#E7E2D8] px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] shadow-sm">
+            <HelpCircle className="w-4 h-4 text-[#DF711B]" />
             <span>Institutional Knowledge & Policies</span>
           </div>
 
@@ -172,8 +172,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                   onClick={() => setSearchQuery(tag)}
                   className={`text-xs px-3 py-1 rounded-full border transition-all ${
                     searchQuery === tag
-                      ? 'bg-[#D97745] text-white border-[#D97745]'
-                      : 'bg-[#F7F3EB] text-[#4A5568] border-[#E7E2D8] hover:border-[#D97745] hover:text-[#0B1D30]'
+                      ? 'bg-[#DF711B] text-white border-[#DF711B]'
+                      : 'bg-[#F7F3EB] text-[#4A5568] border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#0B1D30]'
                   }`}
                 >
                   {tag}
@@ -201,8 +201,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                       <span
                         className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold transition-colors ${
                           isActive
-                            ? 'bg-[#D97745] text-white'
-                            : 'bg-slate-100 text-slate-600 group-hover:bg-[#FAF3E8] group-hover:text-[#D97745]'
+                            ? 'bg-[#DF711B] text-white'
+                            : 'bg-slate-100 text-slate-600 group-hover:bg-[#FAF3E8] group-hover:text-[#DF711B]'
                         }`}
                       >
                         {count}
@@ -221,7 +221,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="text-[#D97745] hover:underline font-semibold"
+                  className="text-[#DF711B] hover:underline font-semibold"
                 >
                   Reset filters
                 </button>
@@ -237,7 +237,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
         <div className="space-y-4 max-w-4xl mx-auto">
           {displayedFaqs.length === 0 ? (
             <div className="text-center py-16 bg-white border border-[#E7E2D8] rounded-3xl p-8 space-y-4 shadow-sm">
-              <div className="w-14 h-14 rounded-2xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center mx-auto">
+              <div className="w-14 h-14 rounded-2xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center mx-auto">
                 <MessageCircleQuestion className="w-7 h-7" />
               </div>
               <h4 className="font-cinzel font-bold text-lg text-[#0B1D30]">No matching inquiries found</h4>
@@ -250,7 +250,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                     setSearchQuery('');
                     setActiveCategory('all');
                   }}
-                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm"
+                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm"
                 >
                   Clear All Filters
                 </button>
@@ -266,7 +266,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                   key={faq.id}
                   className={`p-1 sm:p-1.5 rounded-2xl sm:rounded-3xl border transition-all duration-300 ${
                     isOpen
-                      ? 'bg-[#FAF3E8]/60 border-[#D97745]/50 shadow-[0_12px_35px_-8px_rgba(217,119,69,0.18)]'
+                      ? 'bg-[#FAF3E8]/60 border-[#DF711B]/50 shadow-[0_12px_35px_-8px_rgba(217,119,69,0.18)]'
                       : 'bg-black/[0.02] border-[#E7E2D8] hover:border-slate-300 hover:bg-black/[0.04]'
                   }`}
                 >
@@ -284,7 +284,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                           className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                             isOpen
                               ? 'bg-[#0B1D30] text-white shadow-md'
-                              : 'bg-[#FAF8F5] text-[#D97745] border border-[#E7E2D8] group-hover:border-[#D97745]'
+                              : 'bg-[#FAF8F5] text-[#DF711B] border border-[#E7E2D8] group-hover:border-[#DF711B]'
                           }`}
                         >
                           {getCategoryIcon(faq.category)}
@@ -292,7 +292,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
 
                         <div className="space-y-1.5">
                           <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#D97745] bg-[#FAF3E8] px-2 py-0.5 rounded-md">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#DF711B] bg-[#FAF3E8] px-2 py-0.5 rounded-md">
                               {faq.category}
                             </span>
                             <span className="text-[11px] font-mono text-slate-400">
@@ -302,7 +302,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
 
                           <h3
                             className={`font-cinzel text-base sm:text-xl font-bold transition-colors leading-snug ${
-                              isOpen ? 'text-[#D97745]' : 'text-[#0B1D30] group-hover:text-[#D97745]'
+                              isOpen ? 'text-[#DF711B]' : 'text-[#0B1D30] group-hover:text-[#DF711B]'
                             }`}
                           >
                             {faq.question}
@@ -314,7 +314,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1 transition-all duration-300 ${
                           isOpen
-                            ? 'bg-[#D97745] text-white rotate-180 shadow-sm'
+                            ? 'bg-[#DF711B] text-white rotate-180 shadow-sm'
                             : 'bg-[#FAF8F5] text-slate-500 border border-[#E7E2D8] group-hover:bg-white group-hover:text-[#0B1D30]'
                         }`}
                       >
@@ -345,7 +345,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                               <div className="flex items-center gap-2 text-slate-500">
                                 <span className="font-mono text-[11px]">Was this answer helpful?</span>
                                 {feedback ? (
-                                  <span className="inline-flex items-center gap-1 text-[#D97745] font-bold font-mono">
+                                  <span className="inline-flex items-center gap-1 text-[#DF711B] font-bold font-mono">
                                     <Check className="w-3.5 h-3.5" />
                                     <span>Thank you for your feedback!</span>
                                   </span>
@@ -374,7 +374,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                                 {faq.category === 'admissions' && (
                                   <Link
                                     to="/downloads/admissions"
-                                    className="inline-flex items-center gap-1 text-[#D97745] hover:underline font-bold text-xs"
+                                    className="inline-flex items-center gap-1 text-[#DF711B] hover:underline font-bold text-xs"
                                   >
                                     <FileDown className="w-3.5 h-3.5" />
                                     <span>Download Registration Form</span>
@@ -383,7 +383,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                                 {faq.category === 'disclosures' && (
                                   <Link
                                     to="/about/mandatory-information"
-                                    className="inline-flex items-center gap-1 text-[#D97745] hover:underline font-bold text-xs"
+                                    className="inline-flex items-center gap-1 text-[#DF711B] hover:underline font-bold text-xs"
                                   >
                                     <ShieldCheck className="w-3.5 h-3.5" />
                                     <span>Inspect CBSE Disclosures</span>
@@ -392,7 +392,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                                 {faq.category === 'cvp' && (
                                   <Link
                                     to="/about/philosophy"
-                                    className="inline-flex items-center gap-1 text-[#D97745] hover:underline font-bold text-xs"
+                                    className="inline-flex items-center gap-1 text-[#DF711B] hover:underline font-bold text-xs"
                                   >
                                     <Sparkles className="w-3.5 h-3.5" />
                                     <span>Explore Chinmaya Vision Program</span>
@@ -401,7 +401,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                                 {faq.category === 'facilities' && (
                                   <Link
                                     to="/academics/infrastructure"
-                                    className="inline-flex items-center gap-1 text-[#D97745] hover:underline font-bold text-xs"
+                                    className="inline-flex items-center gap-1 text-[#DF711B] hover:underline font-bold text-xs"
                                   >
                                     <Building2 className="w-3.5 h-3.5" />
                                     <span>View Campus Infrastructure</span>
@@ -410,7 +410,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                                 {faq.category === 'academics' && (
                                   <Link
                                     to="/academics/curriculum"
-                                    className="inline-flex items-center gap-1 text-[#D97745] hover:underline font-bold text-xs"
+                                    className="inline-flex items-center gap-1 text-[#DF711B] hover:underline font-bold text-xs"
                                   >
                                     <BookOpen className="w-3.5 h-3.5" />
                                     <span>View CBSE Curriculum</span>
@@ -439,7 +439,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           <div className="text-center pt-4">
             <Link
               to="/faq"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 shadow-xl hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#0B1D30] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 shadow-xl hover:scale-105 active:scale-95"
             >
               <span>Explore All Verified FAQs & Policies</span>
               <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
@@ -452,11 +452,11 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
         {/* ====================================================
             ESCALATION SUPPORT CARD (High-End Island & Button-in-Button)
            ==================================================== */}
-        <div className="max-w-4xl mx-auto p-1 sm:p-1.5 rounded-3xl bg-[#0B1D30]/10 border border-[#D97745]/30 shadow-2xl">
+        <div className="max-w-4xl mx-auto p-1 sm:p-1.5 rounded-3xl bg-[#0B1D30]/10 border border-[#DF711B]/30 shadow-2xl">
           <div className="bg-gradient-to-br from-[#0B1D30] to-[#162E4A] text-white p-8 sm:p-10 rounded-[calc(1.5rem-0.375rem)] flex flex-col md:flex-row items-center justify-between gap-6">
             
             <div className="space-y-3 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D97745]/20 text-[#D97745] text-xs font-mono font-bold uppercase tracking-widest border border-[#D97745]/40">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-widest border border-[#DF711B]/40">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Dedicated Administrative Helpdesk</span>
               </div>
@@ -467,8 +467,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                 Our admissions counselors, student coordinators, and principal desk at Vidyanagar, Boisar are ready to assist you.
               </p>
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs font-mono text-slate-300 pt-1">
-                <a href="tel:9322054713" className="flex items-center gap-1.5 hover:text-[#D97745] transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-[#D97745]" />
+                <a href="tel:9322054713" className="flex items-center gap-1.5 hover:text-[#DF711B] transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
                   <span>+91 9322054713 / 9823517700</span>
                 </a>
                 <span>•</span>
@@ -480,7 +480,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
             <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
+                className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
               >
                 <span>Contact Admissions Desk</span>
                 <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">

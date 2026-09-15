@@ -16,7 +16,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ item }) => {
         />
       </div>
       <div className="p-5 space-y-1.5">
-        <span className="text-[11px] font-bold text-[#D97745] uppercase tracking-wider block">
+        <span className="text-[11px] font-bold text-[#DF711B] uppercase tracking-wider block">
           {item.category}
         </span>
         <h4 className="font-serif font-bold text-[#102A43] text-base leading-snug">

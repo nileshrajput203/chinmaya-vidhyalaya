@@ -72,6 +72,14 @@
     box-shadow: 0 0 60px -15px rgba(217, 119, 69, 0.3);
   }
 
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   /* Noise background overlay */
   .bg-noise {
     background-image: radial-gradient(rgba(18, 48, 74, 0.04) 1px, transparent 0);
@@ -113,7 +121,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #D97745;
+    background: #DF711B;
   }
 }
 

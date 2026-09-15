@@ -9,7 +9,7 @@ export const SchoolInfoBand: React.FC = () => {
         {/* Item 1: Affiliation */}
         <div className="flex items-center justify-center md:justify-start gap-4 pt-4 md:pt-0 md:pl-0">
           <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center shrink-0">
-            <Award className="w-6 h-6 text-[#D97745]" />
+            <Award className="w-6 h-6 text-[#DF711B]" />
           </div>
           <div>
             <span className="text-xs text-slate-300 font-medium uppercase tracking-wider block">CBSE Affiliation</span>
@@ -20,7 +20,7 @@ export const SchoolInfoBand: React.FC = () => {
         {/* Item 2: U-DISE Code */}
         <div className="flex items-center justify-center md:justify-start gap-4 pt-4 md:pt-0 md:pl-8">
           <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center shrink-0">
-            <ShieldCheck className="w-6 h-6 text-[#D97745]" />
+            <ShieldCheck className="w-6 h-6 text-[#DF711B]" />
           </div>
           <div>
             <span className="text-xs text-slate-300 font-medium uppercase tracking-wider block">U-DISE Code</span>
@@ -31,7 +31,7 @@ export const SchoolInfoBand: React.FC = () => {
         {/* Item 3: Location */}
         <div className="flex items-center justify-center md:justify-start gap-4 pt-4 md:pt-0 md:pl-8">
           <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center shrink-0">
-            <MapPin className="w-6 h-6 text-[#D97745]" />
+            <MapPin className="w-6 h-6 text-[#DF711B]" />
           </div>
           <div>
             <span className="text-xs text-slate-300 font-medium uppercase tracking-wider block">Location</span>

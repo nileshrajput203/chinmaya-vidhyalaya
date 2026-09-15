@@ -25,10 +25,10 @@ export const FaqPage: React.FC = () => {
           <div className="p-1 rounded-3xl bg-black/[0.03] border border-[#E7E2D8] shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-white p-6 rounded-[calc(1.5rem-0.25rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3 h-full flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
                   <Users className="w-5 h-5" />
                 </div>
-                <span className="text-[11px] font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Batch Norms
                 </span>
                 <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
@@ -45,10 +45,10 @@ export const FaqPage: React.FC = () => {
           <div className="p-1 rounded-3xl bg-black/[0.03] border border-[#E7E2D8] shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-white p-6 rounded-[calc(1.5rem-0.25rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3 h-full flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
                   <Award className="w-5 h-5" />
                 </div>
-                <span className="text-[11px] font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Board Rigor
                 </span>
                 <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
@@ -65,10 +65,10 @@ export const FaqPage: React.FC = () => {
           <div className="p-1 rounded-3xl bg-black/[0.03] border border-[#E7E2D8] shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-white p-6 rounded-[calc(1.5rem-0.25rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3 h-full flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
                   <HeartHandshake className="w-5 h-5" />
                 </div>
-                <span className="text-[11px] font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Vedic Legacy
                 </span>
                 <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
@@ -85,10 +85,10 @@ export const FaqPage: React.FC = () => {
           <div className="p-1 rounded-3xl bg-black/[0.03] border border-[#E7E2D8] shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-white p-6 rounded-[calc(1.5rem-0.25rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3 h-full flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <span className="text-[11px] font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Statutory Trust
                 </span>
                 <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
@@ -118,7 +118,7 @@ export const FaqPage: React.FC = () => {
           <div className="p-1 rounded-3xl bg-black/[0.03] border border-[#E7E2D8]">
             <div className="bg-white p-8 rounded-[calc(1.5rem-0.25rem)] space-y-4 flex flex-col justify-between h-full">
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-widest block">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-widest block">
                   Admissions Documentation
                 </span>
                 <h3 className="font-cinzel text-2xl font-bold text-[#0B1D30]">
@@ -132,7 +132,7 @@ export const FaqPage: React.FC = () => {
               <div className="pt-2">
                 <Link
                   to="/downloads/admissions"
-                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
+                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#0B1D30] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
                 >
                   <span>Access Admission Downloads</span>
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -147,7 +147,7 @@ export const FaqPage: React.FC = () => {
           <div className="p-1 rounded-3xl bg-black/[0.03] border border-[#E7E2D8]">
             <div className="bg-white p-8 rounded-[calc(1.5rem-0.25rem)] space-y-4 flex flex-col justify-between h-full">
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-widest block">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-widest block">
                   Campus Administration
                 </span>
                 <h3 className="font-cinzel text-2xl font-bold text-[#0B1D30]">
@@ -161,7 +161,7 @@ export const FaqPage: React.FC = () => {
               <div className="pt-2">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
+                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>Connect With Campus Office</span>

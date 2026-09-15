@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, ArrowRight, CheckCircle2, Phone, Mail, FileText, Download, Eye, Sparkles, Quote, ShieldCheck } from 'lucide-react';
+import { ChevronRight, ArrowRight, CheckCircle2, Phone, Mail, FileText, Download, Eye, Sparkles, Quote, ShieldCheck, Calendar, Building2, Users, Award } from 'lucide-react';
 import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { OFFICIAL_NAVIGATION_DATA } from '../data/navigation';
@@ -8,6 +8,7 @@ import { OFFICIAL_BOARD_OF_MANAGEMENT } from '../data/school';
 import { SCHOOL_IMAGES } from '../data/images';
 import { DocumentViewerModal } from '../components/documents/DocumentViewerModal';
 import { SchoolDocument } from '../types/documents';
+import { GoogleMapSection } from '../components/maps/GoogleMapSection';
 
 interface ContentPageProps {
   slug?: string;
@@ -48,6 +49,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const isAcademics = categoryLabel.toLowerCase().includes('academic') || title.toLowerCase().includes('curriculum');
   const isFeatures = categoryLabel.toLowerCase().includes('feature') || title.toLowerCase().includes('spiritual') || title.toLowerCase().includes('pillar') || title.toLowerCase().includes('holistic');
   const isManagement = title.toLowerCase().includes('management') || (slug && slug.includes('management'));
+  const isHistory = (slug && slug.includes('history')) || title.toLowerCase().includes('history');
   const isCurriculum = title.toLowerCase().includes('curriculum') || (slug && slug.includes('curriculum'));
   const isEnrollment = title.toLowerCase().includes('enrollment') || (slug && slug.includes('enrollment'));
   const isSpiritual = title.toLowerCase().includes('spiritual') || (slug && slug.includes('spiritual'));
@@ -78,7 +80,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
         {relatedLinks.length > 0 && (
           <aside className="lg:col-span-3 order-2 lg:order-1">
             <div className="bg-[#F7F3EB] border border-[#E7E2D8] p-6 rounded-2xl sticky top-24 shadow-card space-y-4">
-              <h3 className="font-cinzel font-bold text-[#0B1D30] text-base border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
+              <h3 className="font-cinzel font-bold text-[#181C20] text-base border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
                 {categoryLabel} Directory
               </h3>
               <ul className="space-y-1 text-xs">
@@ -90,12 +92,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                         to={link.href}
                         className={`flex items-center justify-between p-3 rounded-xl transition-all ${
                           isActive
-                            ? 'bg-[#0B1D30] text-white font-bold shadow-sm translate-x-1'
-                            : 'text-[#4A5568] hover:bg-white hover:text-[#0B1D30]'
+                            ? 'bg-[#DF711B] text-white font-bold shadow-sm translate-x-1'
+                            : 'text-[#4A5568] hover:bg-white hover:text-[#DF711B]'
                         }`}
                       >
                         <span className="truncate">{link.label}</span>
-                        <ChevronRight className={`w-4 h-4 ${isActive ? 'text-[#D97745]' : 'text-slate-400'}`} />
+                        <ChevronRight className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`} />
                       </Link>
                     </li>
                   );
@@ -106,16 +108,16 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               <div className="pt-3 border-t border-[#E7E2D8] space-y-2">
                 <Link
                   to="/about/mandatory-information"
-                  className="w-full py-2.5 bg-white hover:bg-[#0B1D30] hover:text-white text-[#0B1D30] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                  className="w-full py-2.5 bg-white hover:bg-[#DF711B] hover:text-white text-[#181C20] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                 >
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#D97745]" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#DF711B]" />
                   <span>Mandatory Disclosures & TC</span>
                 </Link>
                 <Link
                   to="/faq"
-                  className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#0B1D30] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                  className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#D97745]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
                   <span>Frequently Asked Questions</span>
                 </Link>
               </div>
@@ -129,10 +131,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           {/* Chapter 1: Introduction & Primary Image */}
           <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.2em] block">
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
                 Overview & Institutional Purpose
               </span>
-              <h2 className="font-cinzel text-3xl sm:text-5xl text-[#0B1D30] font-extrabold leading-tight tracking-tight">
+              <h2 className="font-cinzel text-3xl sm:text-5xl text-[#181C20] font-extrabold leading-tight tracking-tight">
                 {title}
               </h2>
             </div>
@@ -160,9 +162,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
           {/* Pujya Gurudev Swami Chinmayananda Quote / Tribute Block */}
           {(isAbout || isFourPillars || isSpiritual || swamijiQuote) && (
-            <section className="bg-gradient-to-br from-[#0B1D30] to-[#122A44] text-white p-8 md:p-10 rounded-3xl border border-[#D97745]/30 shadow-xl relative overflow-hidden">
+            <section className="bg-gradient-to-br from-[#FFF8EE] to-[#FAF3E8] text-[#181C20] p-8 md:p-10 rounded-3xl border border-[#FDE49C] shadow-md relative overflow-hidden">
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-[#D97745] shadow-lg shrink-0">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-[#DF711B] shadow-lg shrink-0">
                   <img
                     src="/images/swami.jpeg"
                     alt="Pujya Gurudev Swami Chinmayananda"
@@ -170,16 +172,16 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   />
                 </div>
                 <div className="space-y-2 text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start gap-2 text-[#D97745]">
+                  <div className="flex items-center justify-center md:justify-start gap-2 text-[#DF711B]">
                     <Quote className="w-5 h-5 opacity-70" />
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D97745]">
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#DF711B]">
                       Guidance of Pujya Gurudev Swami Chinmayananda
                     </span>
                   </div>
-                  <blockquote className="font-cinzel text-base sm:text-xl italic text-white/95 leading-relaxed">
+                  <blockquote className="font-cinzel text-base sm:text-xl italic text-[#181C20] leading-relaxed">
                     "{swamijiQuote || "Children are not vessels to be filled, but lamps to be lit. To empower a child is to illuminate the entire world."}"
                   </blockquote>
-                  <p className="text-xs text-slate-300 font-light">
+                  <p className="text-xs text-slate-600 font-light">
                     Founder of Chinmaya Mission & Architect of the Chinmaya Vision Program (CVP)
                   </p>
                 </div>
@@ -191,10 +193,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           {(isFourPillars || isHolistic) && (
             <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-6">
               <div className="space-y-1">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   The Four Pillars of CVP
                 </span>
-                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#0B1D30]">
+                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
                   Holistic Architecture for Lifelong Character Building
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600/85 font-normal">
@@ -204,10 +206,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center font-cinzel font-bold text-base">
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-cinzel font-bold text-base">
                     01
                   </div>
-                  <h4 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                  <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
                     Pillar 1: Integrated Development
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600/90 leading-relaxed font-normal">
@@ -216,10 +218,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
 
                 <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center font-cinzel font-bold text-base">
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-cinzel font-bold text-base">
                     02
                   </div>
-                  <h4 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                  <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
                     Pillar 2: Indian Culture & Heritage
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600/90 leading-relaxed font-normal">
@@ -228,10 +230,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
 
                 <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center font-cinzel font-bold text-base">
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-cinzel font-bold text-base">
                     03
                   </div>
-                  <h4 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                  <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
                     Pillar 3: Patriotism & Civic Duty
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600/90 leading-relaxed font-normal">
@@ -240,10 +242,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
 
                 <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center font-cinzel font-bold text-base">
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-cinzel font-bold text-base">
                     04
                   </div>
-                  <h4 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                  <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
                     Pillar 4: Universal Outlook
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600/90 leading-relaxed font-normal">
@@ -260,12 +262,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E7E2D8] pb-4">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-[#D97745]" />
-                    <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider">
+                    <ShieldCheck className="w-5 h-5 text-[#DF711B]" />
+                    <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
                       Statutory Disclosures
                     </span>
                   </div>
-                  <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#0B1D30]">
+                  <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
                     Transfer Certificates (TC) & CBSE Compliance
                   </h3>
                   <p className="text-sm text-slate-600/85 font-normal">
@@ -274,9 +276,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
                 <Link
                   to="/about/mandatory-information"
-                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md shrink-0 flex items-center gap-1.5 hover:scale-105 active:scale-95"
+                  className="px-5 py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md shrink-0 flex items-center gap-1.5 hover:scale-105 active:scale-95"
                 >
-                  <Eye className="w-4 h-4 text-[#D97745]" />
+                  <Eye className="w-4 h-4 text-white" />
                   <span>View All Disclosures</span>
                 </Link>
               </div>
@@ -293,7 +295,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                       />
                       <div className="absolute inset-0 bg-black/10" />
                     </div>
-                    <h4 className="font-cinzel font-bold text-xs text-[#0B1D30] line-clamp-1">Sample TC Format</h4>
+                    <h4 className="font-cinzel font-bold text-xs text-[#181C20] line-clamp-1">Sample TC Format</h4>
                     <p className="text-[11px] text-[#4A5568]">Standard CBSE Transfer Certificate specimen</p>
                   </div>
                   <button
@@ -308,9 +310,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                       description: 'Official specimen format of Transfer Certificate issued by Chinmaya Vidyalaya Tarapur.',
                       downloadable: false,
                     })}
-                    className="w-full py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95"
+                    className="w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95"
                   >
-                    <Eye className="w-3.5 h-3.5 text-[#D97745]" />
+                    <Eye className="w-3.5 h-3.5 text-white" />
                     <span>View Sample TC</span>
                   </button>
                 </div>
@@ -322,10 +324,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 ].map((tc) => (
                   <div key={tc.year} className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl space-y-3 flex flex-col justify-between">
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
                         <FileText className="w-5 h-5" />
                       </div>
-                      <h4 className="font-cinzel font-bold text-xs text-[#0B1D30]">TC Register {tc.year}</h4>
+                      <h4 className="font-cinzel font-bold text-xs text-[#181C20]">TC Register {tc.year}</h4>
                       <p className="text-[11px] text-[#4A5568] font-mono">{tc.size} • Certified Records</p>
                     </div>
                     <button
@@ -341,9 +343,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                         description: `Official archive register of student Transfer Certificates issued during academic session ${tc.year}.`,
                         downloadable: false,
                       })}
-                      className="w-full py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95"
+                      className="w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95"
                     >
-                      <Eye className="w-3.5 h-3.5 text-[#D97745]" />
+                      <Eye className="w-3.5 h-3.5 text-white" />
                       <span>View TC {tc.year}</span>
                     </button>
                   </div>
@@ -352,21 +354,155 @@ export const ContentPage: React.FC<ContentPageProps> = ({
             </section>
           )}
 
-          {/* Special Section: Board of Management Directory */}
-          {isManagement && (
-            <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
+          {/* Special Section: History Milestones & School Profile Chronicle */}
+          {isHistory && (
+            <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-10">
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.2em] block">
-                  Institutional Governance
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
+                  Institutional Chronicle
                 </span>
-                <h3 className="font-cinzel text-3xl sm:text-4xl text-[#0B1D30] font-extrabold">
-                  Members of the Board of Management
+                <h3 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold">
+                  Historical Milestones & Academic Legacy
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600/85 font-normal">
-                  Distinguished trustees, educationists, doctors, chartered accountants, and legal advisors guiding Chinmaya Vidyalaya Tarapur.
+                <p className="text-sm sm:text-base text-slate-600 font-normal">
+                  From a humble inception with 72 students to a premier institution of 1,600+ learners rooted in the Chinmaya Vision Programme.
                 </p>
               </div>
 
+              {/* Key Institutional Metrics Banner */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl text-center space-y-1">
+                  <div className="text-xs font-mono text-[#DF711B] uppercase tracking-wider font-bold">Envisaged</div>
+                  <div className="font-cinzel text-2xl font-bold text-[#181C20]">1993</div>
+                  <p className="text-[11px] text-slate-500">Tarapur Mission Centre</p>
+                </div>
+
+                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl text-center space-y-1">
+                  <div className="text-xs font-mono text-[#DF711B] uppercase tracking-wider font-bold">Inauguration</div>
+                  <div className="font-cinzel text-2xl font-bold text-[#181C20]">18 June 1995</div>
+                  <p className="text-[11px] text-slate-500">H.H. Swami Purushottamananda</p>
+                </div>
+
+                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl text-center space-y-1">
+                  <div className="text-xs font-mono text-[#DF711B] uppercase tracking-wider font-bold">CBSE Affiliation</div>
+                  <div className="font-cinzel text-2xl font-bold text-[#181C20]">2003</div>
+                  <p className="text-[11px] text-slate-500">Affiliation No. 1130058</p>
+                </div>
+
+                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl text-center space-y-1">
+                  <div className="text-xs font-mono text-[#DF711B] uppercase tracking-wider font-bold">Current Strength</div>
+                  <div className="font-cinzel text-2xl font-bold text-[#181C20]">~1,600</div>
+                  <p className="text-[11px] text-slate-500">Students On Roll</p>
+                </div>
+              </div>
+
+              {/* Step-by-Step Chronology */}
+              <div className="relative border-l-2 border-[#DF711B]/30 ml-4 pl-6 space-y-8">
+                {[
+                  {
+                    year: "1993",
+                    title: "Vision & Conception",
+                    desc: "Envisaged by devoted members of the Tarapur Chinmaya Mission Centre, inspired by the divine guidance of Param Pujya Swami Chinmayanandaji to provide value-integrated education.",
+                    icon: Sparkles
+                  },
+                  {
+                    year: "1994",
+                    title: "Groundbreaking & Construction",
+                    desc: "Construction of the first phase commenced in the auspicious presence of Param Pujya Swami Tejomayanandaji, establishing an enduring center for character building.",
+                    icon: Building2
+                  },
+                  {
+                    year: "18 June 1995",
+                    title: "Formal School Inauguration",
+                    desc: "Solemnly inaugurated by H.H. Swami Purushottamanandaji. The school started with an inaugural batch of 72 students and 4 teachers as the FIRST Chinmaya Vidyalaya in the Maharashtra–Gujarat–Goa zone.",
+                    icon: Calendar
+                  },
+                  {
+                    year: "2003",
+                    title: "CBSE Affiliation & Growth",
+                    desc: "Granted official composite affiliation by the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004).",
+                    icon: ShieldCheck
+                  },
+                  {
+                    year: "2004–2005",
+                    title: "First AISSE Class X Examination Batch",
+                    desc: "The maiden batch of Standard X appeared for the All India Secondary School Examination (AISSE), initiating an unbroken tradition of 100% board examination distinctions.",
+                    icon: Award
+                  },
+                  {
+                    year: "Present Day",
+                    title: "Flourishing Academic Sanctuary",
+                    desc: "Now educating approximately 1600 students from Nursery to Senior Secondary, guided by Central Chinmaya Vidyalaya Mission Trust, Mumbai and the Local Managing Committee.",
+                    icon: Users
+                  }
+                ].map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={idx} className="relative group">
+                      <div className="absolute -left-[33px] top-1 w-5 h-5 rounded-full bg-[#DF711B] border-2 border-[#FFB740] flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                      </div>
+                      <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-5 rounded-2xl group-hover:border-[#DF711B] transition-colors">
+                        <div className="flex items-center gap-3 mb-1">
+                          <Icon className="w-4 h-4 text-[#DF711B] shrink-0" />
+                          <span className="text-xs font-mono font-bold text-[#DF711B] bg-[#FAF3E8] px-2.5 py-0.5 rounded-full">
+                            {item.year}
+                          </span>
+                          <h4 className="font-cinzel font-bold text-[#181C20] text-base">
+                            {item.title}
+                          </h4>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Campus Location Map on History Page */}
+              <div className="pt-6 border-t border-[#E7E2D8]">
+                <GoogleMapSection />
+              </div>
+            </section>
+          )}
+
+          {/* Special Section: Board of Management Directory */}
+          {isManagement && (
+            <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-10">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
+                  Institutional Governance
+                </span>
+                <h3 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold">
+                  Board of Management & Managing Committee
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600 font-normal">
+                  An Undertaking of Central Chinmaya Vidyalaya Mission Trust, Mumbai. The Local Managing Committee oversees institutional governance and academic leadership.
+                </p>
+              </div>
+
+              {/* Managing Trust Banner */}
+              <div className="p-6 rounded-2xl bg-[#FAF3E8] text-[#181C20] border border-[#FDE49C] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
+                    Supervising Trust Authority
+                  </span>
+                  <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
+                    Central Chinmaya Vidyalaya Mission Trust, Mumbai
+                  </h4>
+                  <p className="text-xs text-slate-600">
+                    Day-to-day administration & academic stewardship handled by the Local Managing Committee.
+                  </p>
+                </div>
+                <div className="shrink-0 flex items-center gap-2 bg-white px-4 py-2 rounded-xl text-xs font-mono border border-[#E7E2D8]">
+                  <Building2 className="w-4 h-4 text-[#DF711B]" />
+                  <span>Affiliation No. 1130058 • Code: 30040</span>
+                </div>
+              </div>
+
+              {/* Grid of Board Members */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {OFFICIAL_BOARD_OF_MANAGEMENT.map((member) => (
                   <div 
@@ -378,18 +514,23 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                         <img 
                           src={member.image} 
                           alt={member.name} 
-                          className="w-16 h-16 rounded-2xl object-cover border-2 border-[#D97745] shadow-sm shrink-0"
+                          className="w-16 h-16 rounded-2xl object-cover border-2 border-[#DF711B] shadow-sm shrink-0"
                         />
                       ) : (
-                        <div className="w-16 h-16 rounded-2xl bg-[#0B1D30] text-white flex items-center justify-center font-cinzel font-bold text-lg shrink-0">
+                        <div className="w-16 h-16 rounded-2xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-cinzel font-bold text-lg shrink-0 border-2 border-[#DF711B]">
                           {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                         </div>
                       )}
                       <div>
-                        <h4 className="font-cinzel font-bold text-[#0B1D30] text-sm leading-tight">
-                          {member.name}
-                        </h4>
-                        <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#FAF3E8] text-[#D97745]">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-mono font-bold text-slate-400">
+                            #{member.srNo || member.id.replace('bm-', '')}
+                          </span>
+                          <h4 className="font-cinzel font-bold text-[#181C20] text-sm leading-tight">
+                            {member.name}
+                          </h4>
+                        </div>
+                        <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#FAF3E8] text-[#DF711B]">
                           {member.designation}
                         </span>
                         {member.occupation && (
@@ -403,14 +544,14 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     {(member.phone || member.email) && (
                       <div className="border-t border-[#E7E2D8] pt-3 space-y-1 text-xs text-[#4A5568] font-mono">
                         {member.phone && (
-                          <a href={`tel:${member.phone}`} className="flex items-center gap-2 hover:text-[#D97745] transition-colors">
-                            <Phone className="w-3.5 h-3.5 text-[#D97745]" />
+                          <a href={`tel:${member.phone}`} className="flex items-center gap-2 hover:text-[#DF711B] transition-colors">
+                            <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
                             <span>{member.phone}</span>
                           </a>
                         )}
                         {member.email && (
-                          <a href={`mailto:${member.email}`} className="flex items-center gap-2 hover:text-[#D97745] transition-colors truncate">
-                            <Mail className="w-3.5 h-3.5 text-[#D97745] shrink-0" />
+                          <a href={`mailto:${member.email}`} className="flex items-center gap-2 hover:text-[#DF711B] transition-colors truncate">
+                            <Mail className="w-3.5 h-3.5 text-[#DF711B] shrink-0" />
                             <span className="truncate">{member.email}</span>
                           </a>
                         )}
@@ -419,6 +560,60 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   </div>
                 ))}
               </div>
+
+              {/* Official Board Register Table */}
+              <div className="space-y-4 pt-6 border-t border-[#E7E2D8]">
+                <h4 className="font-cinzel font-bold text-xl text-[#181C20]">
+                  Official Register: Board of Management Details
+                </h4>
+                
+                <div className="overflow-x-auto rounded-2xl border border-[#E7E2D8] shadow-sm">
+                  <table className="w-full text-left border-collapse text-xs">
+                    <thead>
+                      <tr className="bg-[#FAF8F5] border-b border-[#E7E2D8] font-cinzel font-bold text-[#181C20]">
+                        <th className="py-3 px-4">Sr. No.</th>
+                        <th className="py-3 px-4">Name</th>
+                        <th className="py-3 px-4">Designation</th>
+                        <th className="py-3 px-4">Occupation</th>
+                        <th className="py-3 px-4">Mobile</th>
+                        <th className="py-3 px-4">Email</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-[#E7E2D8] bg-white font-sans text-slate-700">
+                      {OFFICIAL_BOARD_OF_MANAGEMENT.map((m) => (
+                        <tr key={m.id} className="hover:bg-[#FAF8F5]/60 transition-colors">
+                          <td className="py-3 px-4 font-mono font-bold text-[#DF711B]">{m.srNo}</td>
+                          <td className="py-3 px-4 font-semibold text-[#181C20]">{m.name}</td>
+                          <td className="py-3 px-4">
+                            <span className="px-2 py-0.5 rounded-full bg-[#FAF3E8] text-[#DF711B] font-mono font-semibold text-[11px]">
+                              {m.designation}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 text-slate-600">{m.occupation || "—"}</td>
+                          <td className="py-3 px-4 font-mono">
+                            {m.phone ? (
+                              <a href={`tel:${m.phone}`} className="hover:text-[#DF711B] transition-colors underline">
+                                {m.phone}
+                              </a>
+                            ) : (
+                              <span className="text-slate-400">—</span>
+                            )}
+                          </td>
+                          <td className="py-3 px-4 font-mono">
+                            {m.email ? (
+                              <a href={`mailto:${m.email}`} className="hover:text-[#DF711B] transition-colors underline">
+                                {m.email}
+                              </a>
+                            ) : (
+                              <span className="text-slate-400">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </section>
           )}
 
@@ -426,10 +621,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           {isEnrollment && (
             <section className="bg-[#F7F3EB] border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Official Registration Forms (2026-27)
                 </span>
-                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#0B1D30]">
+                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
                   Download Admission Registration Forms
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600/85 font-normal">
@@ -439,17 +634,17 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
                 <div className="bg-white p-6 rounded-2xl border border-[#E7E2D8] text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center mx-auto">
                     <FileText className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-cinzel font-bold text-base text-[#0B1D30]">Nursery</h4>
+                    <h4 className="font-cinzel font-bold text-base text-[#181C20]">Nursery</h4>
                     <p className="text-xs text-[#4A5568] mt-1 font-mono">113 KB • PDF</p>
                   </div>
                   <a
                     href="/images/nursery.pdf"
                     download
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-105 active:scale-95"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download PDF</span>
@@ -457,17 +652,17 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl border border-[#E7E2D8] text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center mx-auto">
                     <FileText className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-cinzel font-bold text-base text-[#0B1D30]">Junior / Senior KG</h4>
+                    <h4 className="font-cinzel font-bold text-base text-[#181C20]">Junior / Senior KG</h4>
                     <p className="text-xs text-[#4A5568] mt-1 font-mono">185 KB • PDF</p>
                   </div>
                   <a
                     href="/images/kg.pdf"
                     download
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-105 active:scale-95"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download PDF</span>
@@ -475,17 +670,17 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl border border-[#E7E2D8] text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF3E8] text-[#D97745] flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center mx-auto">
                     <FileText className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-cinzel font-bold text-base text-[#0B1D30]">Standard I to IX</h4>
+                    <h4 className="font-cinzel font-bold text-base text-[#181C20]">Standard I to IX</h4>
                     <p className="text-xs text-[#4A5568] mt-1 font-mono">79 KB • PDF</p>
                   </div>
                   <a
                     href="/images/1to9.pdf"
                     download
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-105 active:scale-95"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download PDF</span>
@@ -499,10 +694,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           {isCurriculum && (
             <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   CBSE Structured Curriculum
                 </span>
-                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#0B1D30]">
+                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
                   Subject Allocations by Grade Band
                 </h3>
               </div>
@@ -510,19 +705,19 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Std I to V */}
                 <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4">
-                  <h4 className="font-cinzel font-bold text-base text-[#0B1D30] border-b border-[#E7E2D8] pb-2">
+                  <h4 className="font-cinzel font-bold text-base text-[#181C20] border-b border-[#E7E2D8] pb-2">
                     Primary Wing: Std I to Std V
                   </h4>
                   <div className="space-y-3">
                     <div>
-                      <h5 className="text-[11px] font-mono font-bold text-[#D97745] uppercase">Scholastic Subjects</h5>
+                      <h5 className="text-[11px] font-mono font-bold text-[#DF711B] uppercase">Scholastic Subjects</h5>
                       <p className="text-xs text-[#181C20] mt-1 font-medium leading-relaxed">
                         Languages: English, Hindi<br />
                         Core: Mathematics, Environmental Studies (EVS), General Knowledge
                       </p>
                     </div>
                     <div>
-                      <h5 className="text-[11px] font-mono font-bold text-[#D97745] uppercase">Co-Curricular & Skills</h5>
+                      <h5 className="text-[11px] font-mono font-bold text-[#DF711B] uppercase">Co-Curricular & Skills</h5>
                       <ul className="text-xs text-[#4A5568] space-y-1 mt-1 font-light">
                         <li>• Work Education & Practical Crafts</li>
                         <li>• Art, Drawing and Creative Expression</li>
@@ -534,12 +729,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
                 {/* Std VI to X */}
                 <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4">
-                  <h4 className="font-cinzel font-bold text-base text-[#0B1D30] border-b border-[#E7E2D8] pb-2">
+                  <h4 className="font-cinzel font-bold text-base text-[#181C20] border-b border-[#E7E2D8] pb-2">
                     Secondary Wing: Std VI to Std X
                   </h4>
                   <div className="space-y-3">
                     <div>
-                      <h5 className="text-[11px] font-mono font-bold text-[#D97745] uppercase">Scholastic Subjects</h5>
+                      <h5 className="text-[11px] font-mono font-bold text-[#DF711B] uppercase">Scholastic Subjects</h5>
                       <p className="text-xs text-[#181C20] mt-1 font-medium leading-relaxed">
                         Languages: English, Hindi, Sanskrit / Marathi<br />
                         Social Science: History, Civics, Geography, Economics, Disaster Management<br />
@@ -548,7 +743,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                       </p>
                     </div>
                     <div>
-                      <h5 className="text-[11px] font-mono font-bold text-[#D97745] uppercase">Co-Curricular & Skills</h5>
+                      <h5 className="text-[11px] font-mono font-bold text-[#DF711B] uppercase">Co-Curricular & Skills</h5>
                       <ul className="text-xs text-[#4A5568] space-y-1 mt-1 font-light">
                         <li>• Work Experience & STEM Laboratories</li>
                         <li>• Visual Arts, Music & Cultural Events</li>
@@ -569,11 +764,11 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 alt={`${title} photographic showcase`}
                 className="w-full h-80 md:h-[400px] object-cover rounded-2xl"
               />
-              <div className="p-4 bg-[#0B1D30] text-white flex flex-col md:flex-row justify-between items-center gap-2 text-xs rounded-b-2xl">
-                <span className="font-cinzel text-sm font-bold text-white uppercase tracking-wider">
+              <div className="p-4 bg-[#FAF8F5] text-[#181C20] border-t border-[#E7E2D8] flex flex-col md:flex-row justify-between items-center gap-2 text-xs rounded-b-2xl">
+                <span className="font-cinzel text-sm font-bold text-[#181C20] uppercase tracking-wider">
                   Chinmaya Vidyalaya Tarapur Excellence
                 </span>
-                <span className="text-[#D97745] font-mono font-bold">Affiliated to CBSE, New Delhi</span>
+                <span className="text-[#DF711B] font-mono font-bold">Affiliated to CBSE, New Delhi</span>
               </div>
             </section>
           )}
@@ -589,12 +784,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
             )}
 
             {bulletPoints && bulletPoints.length > 0 && (
-              <div className="bg-[#F7F3EB] border-l-4 border-[#D97745] p-6 sm:p-8 rounded-r-2xl space-y-4">
-                <h3 className="font-cinzel text-xl sm:text-2xl font-extrabold text-[#0B1D30]">Key Particulars & Highlights</h3>
+              <div className="bg-[#F7F3EB] border-l-4 border-[#DF711B] p-6 sm:p-8 rounded-r-2xl space-y-4">
+                <h3 className="font-cinzel text-xl sm:text-2xl font-extrabold text-[#181C20]">Key Particulars & Highlights</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-[#181C20]">
                   {bulletPoints.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 bg-white p-3.5 rounded-xl border border-[#E7E2D8]">
-                      <span className="text-[#D97745] font-bold">•</span>
+                      <span className="text-[#DF711B] font-bold">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -608,14 +803,14 @@ export const ContentPage: React.FC<ContentPageProps> = ({
             <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               <div className="lg:col-span-6 bg-white border border-[#E7E2D8] p-8 rounded-3xl shadow-card space-y-6 flex flex-col justify-between">
                 <div className="space-y-4">
-                  <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                  <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                     Core Methodologies & Highlights
                   </span>
-                  <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#0B1D30]">Key Educational Pillars</h3>
+                  <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">Key Educational Pillars</h3>
                   <ul className="space-y-3 text-xs sm:text-sm text-[#181C20]">
                     {(features || highlights || []).map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 border-b border-[#E7E2D8] pb-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#D97745] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -639,21 +834,21 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           )}
 
           {/* Action Footer Callout */}
-          <section className="bg-[#0B1D30] text-white p-8 sm:p-10 rounded-3xl border-l-4 border-[#D97745] shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <section className="bg-[#FAF3E8] text-[#181C20] p-8 sm:p-10 rounded-3xl border-l-4 border-[#DF711B] border border-[#E7E2D8] shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center sm:text-left">
-              <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-white">Have questions regarding {title}?</h3>
-              <p className="text-sm text-slate-300/85 font-normal">Contact our administrative office or explore our admissions guidelines.</p>
+              <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20]">Have questions regarding {title}?</h3>
+              <p className="text-sm text-slate-600 font-normal">Contact our administrative office or explore our admissions guidelines.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/faq"
-                className="px-5 py-3 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md hover:scale-105 active:scale-95"
+                className="px-5 py-3 bg-white hover:bg-[#DF711B] text-[#181C20] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md border border-[#E7E2D8] hover:scale-105 active:scale-95"
               >
                 Explore FAQs
               </Link>
               <Link
                 to="/contact"
-                className="px-6 py-3 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
+                className="px-6 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
               >
                 <span>Contact Admissions</span>
                 <ArrowRight className="w-3.5 h-3.5" />

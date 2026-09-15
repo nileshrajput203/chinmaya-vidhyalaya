@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { InstitutionTopBar } from './InstitutionTopBar';
 import { MainBrandHeader } from './MainBrandHeader';
 import { MainNavigation } from './MainNavigation';
 import { MobileMenu } from '../MobileMenu';
@@ -11,7 +10,6 @@ export const Header: React.FC = () => {
 
   return (
     <header className="w-full z-40 relative">
-      <InstitutionTopBar />
       <MainBrandHeader
         isMobileMenuOpen={isMobileMenuOpen}
         onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

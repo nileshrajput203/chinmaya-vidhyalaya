@@ -6,6 +6,7 @@ import { CONTACT_DETAILS } from '../data/contact';
 import { SCHOOL_IMAGES } from '../data/images';
 import { formService } from '../services/formService';
 import { ContactEnquiry } from '../types/forms';
+import { GoogleMapSection } from '../components/maps/GoogleMapSection';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<ContactEnquiry>({
@@ -75,7 +76,7 @@ export const ContactPage: React.FC = () => {
 
             <div className="space-y-5 text-xs text-[#181C20]">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#D97745] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block font-bold text-[#0B1D30]">Postal Address</strong>
                   <span className="text-[#4A5568] leading-relaxed">{CONTACT_DETAILS.address}</span>
@@ -83,24 +84,24 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#D97745] shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block font-bold text-[#0B1D30]">Telephone Desk</strong>
                   {CONTACT_DETAILS.phones.map((p, i) => (
                     <div key={i} className="text-[#4A5568]">
-                      {p.label}: <a href={`tel:${p.number}`} className="font-semibold text-[#0B1D30] hover:text-[#D97745] font-mono">{p.number}</a>
+                      {p.label}: <a href={`tel:${p.number}`} className="font-semibold text-[#0B1D30] hover:text-[#DF711B] font-mono">{p.number}</a>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#D97745] shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block font-bold text-[#0B1D30]">Official Email Desk</strong>
                   {CONTACT_DETAILS.emails.map((e, i) => (
                     <div key={i} className="text-[#4A5568]">
-                      {e.label}: <a href={`mailto:${e.email}`} className="font-semibold text-[#0B1D30] hover:text-[#D97745] font-mono">{e.email}</a>
+                      {e.label}: <a href={`mailto:${e.email}`} className="font-semibold text-[#0B1D30] hover:text-[#DF711B] font-mono">{e.email}</a>
                     </div>
                   ))}
                 </div>
@@ -137,8 +138,8 @@ export const ContactPage: React.FC = () => {
         <div className="lg:col-span-6 bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl shadow-card space-y-6">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <Sparkles className="w-4 h-4 text-[#D97745]" />
-              <span className="text-[11px] font-mono font-bold text-[#D97745] uppercase tracking-wider">
+              <Sparkles className="w-4 h-4 text-[#DF711B]" />
+              <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider">
                 Direct Email Redirection
               </span>
             </div>
@@ -146,14 +147,14 @@ export const ContactPage: React.FC = () => {
               Send an Enquiry
             </h2>
             <p className="text-xs text-[#4A5568] font-light">
-              Submit your enquiry below to automatically redirect to your email client addressed directly to the administrative desk (<code className="text-[#D97745] font-mono">cvtarapur@chinmayamission.com</code>).
+              Submit your enquiry below to automatically redirect to your email client addressed directly to the administrative desk (<code className="text-[#DF711B] font-mono">cvtarapur@chinmayamission.com</code>).
             </p>
           </div>
 
           {submitStatus && (
             <div className="p-5 rounded-2xl bg-[#FAF3E8] border border-[#E7E2D8] text-xs space-y-3">
               <div className="flex items-start gap-2.5 text-[#0B1D30]">
-                <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-[#D97745]" />
+                <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-[#DF711B]" />
                 <div>
                   <span className="font-bold block text-sm">Enquiry Ready to Send</span>
                   <p className="text-[#4A5568] font-light mt-0.5">{submitStatus.message}</p>
@@ -164,9 +165,9 @@ export const ContactPage: React.FC = () => {
                 <div className="pt-2 border-t border-[#E7E2D8]">
                   <a
                     href={submitStatus.mailtoUrl}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#0B1D30] hover:bg-[#DF711B] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
                   >
-                    <Mail className="w-4 h-4 text-[#D97745]" />
+                    <Mail className="w-4 h-4 text-[#DF711B]" />
                     <span>Open Email Client Directly</span>
                     <ExternalLink className="w-3.5 h-3.5 opacity-70" />
                   </a>
@@ -184,7 +185,7 @@ export const ContactPage: React.FC = () => {
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 placeholder="Enter your full name"
-                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#D97745]"
+                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
               />
             </div>
 
@@ -197,7 +198,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="your.email@example.com"
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#D97745]"
+                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
                 />
               </div>
 
@@ -209,7 +210,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="9322054713"
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#D97745]"
+                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
                 />
               </div>
             </div>
@@ -222,7 +223,7 @@ export const ContactPage: React.FC = () => {
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 placeholder="General enquiry, admissions, certificates, TC..."
-                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#D97745]"
+                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
               />
             </div>
 
@@ -234,26 +235,31 @@ export const ContactPage: React.FC = () => {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Type your enquiry message here..."
-                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#D97745]"
+                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 bg-[#0B1D30] hover:bg-[#D97745] text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[#0B1D30] hover:bg-[#DF711B] text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <span>Redirecting to Email...</span>
               ) : (
                 <>
-                  <Send className="w-4 h-4 text-[#D97745]" />
+                  <Send className="w-4 h-4 text-[#DF711B]" />
                   <span>Submit & Redirect to Email</span>
                 </>
               )}
             </button>
           </form>
         </div>
+      </div>
+
+      {/* Campus Google Map & Navigation Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+        <GoogleMapSection />
       </div>
     </div>
   );

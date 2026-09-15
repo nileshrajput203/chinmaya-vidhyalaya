@@ -1,15 +1,24 @@
 export const CONTACT_DETAILS = {
-  schoolName: "Chinmaya Vidyalaya, Tarapur",
-  address: "P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501, Dist. Palghar, Maharashtra",
+  schoolName: "Chinmaya Vidyalaya",
+  address: "P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501, Dist: Palghar, Maharashtra",
   affiliationNo: "1130058",
+  schoolCode: "30040",
   udiseNo: "27361116004",
+  website: "https://cvtarapur.com",
   phones: [
-    { label: "School Contact", number: "9322054713" }
+    { label: "School Office & Admissions", number: "9322054713" }
   ],
   emails: [
-    { label: "General Office", email: "cv.info@chinmayamission.com" },
-    { label: "Administration", email: "cvtarapur@chinmayamission.com" }
+    { label: "General Inquiries", email: "cv.info@chinmayamission.com" },
+    { label: "Administration", email: "cvtarapur@chinmayamission.com" },
+    { label: "Principal Office", email: "cv.principal@chinmayamission.com" }
   ],
+  principal: {
+    name: "Smt. Dimple Mistry",
+    designation: "Principal & Member of the Board of Management",
+    phone: "7775872266",
+    email: "cv.principal@chinmayamission.com"
+  },
   locationMap: {
     lat: 19.8021,
     lng: 72.7533,

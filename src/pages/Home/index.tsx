@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
-  ArrowRight, FileText, Award, ShieldCheck, ChevronRight, X, 
-  Sparkles, Download, BookOpen, Phone, CheckCircle2, GraduationCap
+  ArrowRight, ArrowUpRight, Award, ShieldCheck, ChevronRight, X, 
+  Download, BookOpen, Phone, CheckCircle2, GraduationCap, Quote,
+  Compass, Landmark, Layers, MapPin, FileText
 } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO, OFFICIAL_PRINCIPAL_INFO } from '../../data/school';
 import { SCHOOL_IMAGES } from '../../data/images';
@@ -13,7 +14,8 @@ import { contentService } from '../../services/contentService';
 import { Notice } from '../../types/news';
 import { QuickAdmissionDrawer } from '../../components/common/QuickAdmissionDrawer';
 import { FaqSection } from '../../components/common/FaqSection';
-import { Quote } from 'lucide-react';
+import { MagneticButton } from '../../components/common/MagneticButton';
+import { soundFx } from '../../utils/audio';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,13 +26,17 @@ export const HomePage: React.FC = () => {
   const [selectedGalleryImg, setSelectedGalleryImg] = useState<string | null>(null);
   const [isAdmissionDrawerOpen, setIsAdmissionDrawerOpen] = useState<boolean>(false);
 
+  // GSAP Animation References
   const heroRef = useRef<HTMLDivElement>(null);
+  const heroBgRef = useRef<HTMLImageElement>(null);
   const heroEyebrowRef = useRef<HTMLDivElement>(null);
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const heroDescRef = useRef<HTMLParagraphElement>(null);
   const heroCtaRef = useRef<HTMLDivElement>(null);
-  const heroCardRef = useRef<HTMLDivElement>(null);
+  const heroTelemetryRef = useRef<HTMLDivElement>(null);
+  const pillarPreviewRef = useRef<HTMLDivElement>(null);
 
+  // Load active notices from content service
   useEffect(() => {
     async function loadData() {
       const noticeList = await contentService.getNotices(3);
@@ -38,43 +44,59 @@ export const HomePage: React.FC = () => {
     }
     loadData();
 
-    // Choreographed GSAP Hero Intro Animation
+    // GSAP Master Timeline & ScrollTrigger choreographies
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
+      // Parallax scroll scrub on hero backdrop
+      if (heroBgRef.current && heroRef.current) {
+        gsap.to(heroBgRef.current, {
+          yPercent: 20,
+          scale: 1.15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1.2
+          }
+        });
+      }
+
+      // Kinetic masked headline reveal
       tl.from(heroEyebrowRef.current, {
-        y: 30,
+        y: 24,
         opacity: 0,
         duration: 0.8,
-        delay: 0.2
+        delay: 0.15
       })
-      .from(heroTitleRef.current?.querySelectorAll('.hero-line') || [], {
-        yPercent: 100,
+      .from(heroTitleRef.current?.querySelectorAll('.split-word') || [], {
+        yPercent: 120,
         opacity: 0,
-        stagger: 0.1,
-        duration: 1.1
+        stagger: 0.06,
+        duration: 1.1,
+        ease: 'power4.out'
       }, '-=0.5')
       .from(heroDescRef.current, {
-        y: 25,
+        y: 20,
         opacity: 0,
         duration: 0.8
       }, '-=0.6')
       .from(heroCtaRef.current, {
         y: 20,
         opacity: 0,
-        duration: 0.7
+        duration: 0.8
       }, '-=0.5')
-      .from(heroCardRef.current, {
-        scale: 0.94,
+      .from(heroTelemetryRef.current, {
         y: 30,
         opacity: 0,
-        duration: 1.2
-      }, '-=0.8');
+        duration: 0.9
+      }, '-=0.6');
 
-      // Scroll reveals for editorial cards
+      // Scroll reveals for architectural sections
       gsap.utils.toArray<HTMLElement>('.editorial-reveal').forEach((el) => {
         gsap.from(el, {
-          y: 50,
+          y: 40,
           opacity: 0,
           duration: 0.9,
           ease: 'power3.out',
@@ -90,62 +112,77 @@ export const HomePage: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
+  // Handle interactive pillar selection with GSAP transition & haptic chime
+  const handleSelectPillar = (idx: number) => {
+    if (idx === activePillar) return;
+    setActivePillar(idx);
+    soundFx.playChime(560 + idx * 40, 0.08);
+
+    if (pillarPreviewRef.current) {
+      gsap.fromTo(
+        pillarPreviewRef.current,
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }
+      );
+    }
+  };
+
   // The Chinmaya Vision Program 4 Pillars
   const cvpPillars = [
     {
       num: "01",
       title: "Integrated Development",
-      subtitle: "Physical, Mental, Intellectual & Spiritual",
-      desc: "Nurturing the fourfold personality of the child—instilling physical vitality through yoga, emotional balance, sharp analytical reasoning, and spiritual awakening.",
+      sanskrit: "Sharirik, Bauddhik & Manasik Vikas",
+      desc: "Nurturing the complete fourfold personality of the child. Instilling physical vitality through yoga, mental stability through mindfulness, and sharp intellectual discernment through scientific inquiry.",
       tag: "Holistic Core",
       image: SCHOOL_IMAGES.CLASSROOM_LEARNING,
       points: [
-        "Daily Yoga, Pranayama & Surya Namaskar",
-        "Activity-oriented scientific inquiry",
-        "Value-based education framework",
-        "Personalized mentoring (max 40 per class)"
+        "Daily Yoga, Pranayama & Surya Namaskar routine",
+        "Experiential STEM laboratories & analytical inquiry",
+        "Personalized mentoring with 1:25 teacher-student focus",
+        "Sportsmanship, athletics & inter-house tournaments"
       ]
     },
     {
       num: "02",
-      title: "Indian Culture",
-      subtitle: "Ancient Heritage & Timeless Ethos",
-      desc: "Immersing students in India's glorious philosophical heritage, Vedic wisdom, festival celebrations, and daily Guru Paduka Pooja.",
+      title: "Indian Culture & Ethos",
+      sanskrit: "Bhartiya Sanskriti & Parampara",
+      desc: "Immersing students in India's timeless philosophical heritage, Vedic principles, classical arts, festival celebrations, and daily Guru Paduka Pooja for moral rectitude.",
       tag: "Cultural Root",
       image: "/images/guru-paduka-pooja.webp",
       points: [
-        "Daily Guru Paduka Pooja for peace & clarity",
-        "Annual Gita Chanting Championship",
-        "Matru-Pitru Pujan & Chinmaya Jayanti",
-        "Sanskrit, Hindi & Marathi language studies"
+        "Daily Guru Paduka Pooja for mental tranquility",
+        "Annual Gita Chanting & Shloka recitation forum",
+        "Matru-Pitru Pujan & Chinmaya Jayanti observances",
+        "Linguistic depth in Sanskrit, Hindi, and Marathi"
       ]
     },
     {
       num: "03",
-      title: "Patriotism",
-      subtitle: "Devotion to Motherland & Civic Leadership",
-      desc: "Fostering disciplined citizenship, national pride, environmental stewardship (Jal Pakhwada), and selfless service toward societal upliftment.",
+      title: "Patriotism & Civic Duty",
+      sanskrit: "Rashtra Prem & Nagarik Kartavya",
+      desc: "Fostering disciplined citizenship, national pride, environmental stewardship, and dedicated service toward societal progress without regional or communal bias.",
       tag: "National Duty",
       image: SCHOOL_IMAGES.STUDENTS_ACTIVITY,
       points: [
-        "Jal Pakhwada & Environmental campaigns",
-        "Active student council & house governance",
-        "Celebration of National Days & Constitution",
-        "Community awareness & social initiatives"
+        "Jal Pakhwada, tree plantation & green initiatives",
+        "Elected Student Council & democratic house governance",
+        "Celebration of Republic, Independence & Constitution Days",
+        "Community outreach & civic responsibility drives"
       ]
     },
     {
       num: "04",
       title: "Universal Outlook",
-      subtitle: "Vasudhaiva Kutumbakam & Global Mindset",
-      desc: "Instilling broad-minded global empathy, respect for all faiths and cultures, ecological consciousness, and harmonious coexistence.",
+      sanskrit: "Vasudhaiva Kutumbakam",
+      desc: "Instilling broad-minded global empathy, respect for all faiths and cultures, ecological consciousness, and harmonious coexistence with the global community.",
       tag: "Global Vision",
       image: SCHOOL_IMAGES.SPORTS_DAY,
       points: [
-        "Universal prayer & inter-faith harmony",
-        "Global scientific & technological curriculum",
-        "Ecological sustainability and green campus",
-        "Empathy, compassion, and world brotherhood"
+        "Universal prayer & inter-faith respect framework",
+        "Global curriculum aligned with CBSE AISSE standards",
+        "Ecological sustainability and green campus stewardship",
+        "Compassion, world brotherhood, and ethical leadership"
       ]
     }
   ];
@@ -154,345 +191,317 @@ export const HomePage: React.FC = () => {
   const facilities = [
     {
       id: "fac-chem",
-      title: "Chemistry & Sciences Lab",
+      title: "Chemistry & STEM Laboratory",
       subtitle: "Hands-on Analytical Experimentation",
-      description: "Dedicated, CBSE-compliant laboratory with safety fixtures, precision apparatus, and faculty-supervised experiment workstations.",
+      description: "CBSE-compliant research laboratory equipped with safety-tested gas manifolds, digital precision balances, reagent stations, and individual student workstations supervised by certified faculty.",
       image: "/images/CHEM1.jpeg",
-      tag: "Science & Discovery",
-      specs: "Fully Equipped • Individual Workstations • Safety Certified"
+      tag: "Physical Sciences",
+      specs: "Fully Outfitted • Fire-Safety Certified • Individual Workstations"
     },
     {
       id: "fac-phys",
-      title: "Physics & Optics Lab",
-      subtitle: "Conceptual Mechanics & Modern Physics",
-      description: "Equipped with advanced optical benches, electrical circuit trainers, mechanics kits, and digital measurement tools.",
+      title: "Physics & Optics Research Lab",
+      subtitle: "Conceptual Mechanics & Applied Physics",
+      description: "High-spec laboratory featuring precision optical benches, electrical resistance apparatus, spectrometer sets, and modern mechanics equipment for Class IX to XII practical training.",
       image: "/images/phys.jpeg",
       tag: "STEM Innovation",
-      specs: "Advanced Apparatus • Practical Demonstration • Project Hub"
+      specs: "Optical Benches • Circuit Trainers • CBSE Board Practical Hub"
     },
     {
       id: "fac-lib",
       title: "Central Smart Library",
-      subtitle: "Sanctuary of Knowledge & Literature",
-      description: "Vast repository of encyclopedias, reference textbooks, periodicals, fiction, and designated reading hours for students and parents.",
+      subtitle: "Repository of Wisdom & Literature",
+      description: "An expansive collection of encyclopedias, national research journals, classical literature, and curriculum reference volumes, complete with a silent reading lounge and designated parent hours.",
       image: "/images/lib.jpg",
-      tag: "Research & Reading",
-      specs: "Thousands of Titles • Quiet Study Lounge • Parent Timings"
+      tag: "Knowledge Sanctuary",
+      specs: "10,000+ Reference Titles • Silent Study Lounge • Reading Club"
     },
     {
       id: "fac-spiritual",
-      title: "Spiritual Life & Assembly Hall",
-      subtitle: "Daily Meditation & Guru Paduka Pooja",
-      description: "Serene sanctum for daily morning prayers, monthly bhajan sessions on the 3rd Saturday, and satsangs with visiting Swamis.",
+      title: "Spiritual Sanctum & Assembly Hall",
+      subtitle: "Daily Meditation & Moral Assembly",
+      description: "A consecrated campus hall dedicated to morning prayers, meditation, monthly bhajan gatherings on the 3rd Saturday, and interactive satsangs with visiting Swamis from Chinmaya Mission.",
       image: "/images/guru-paduka-pooja.webp",
       tag: "Inner Awakening",
-      specs: "Daily Pooja • Monthly Bhajans • Visiting Acharyas"
+      specs: "Daily Paduka Pooja • Monthly Bhajans • Visiting Swamis"
     },
     {
       id: "fac-sports",
       title: "Athletics & Sports Grounds",
-      subtitle: "Endurance, Teamwork & Sportsmanship",
-      description: "Spacious fields for football, cricket, volleyball, track events, and annual inter-house athletic championships.",
+      subtitle: "Physical Vitality & Team Spirit",
+      description: "Expansive green playing fields accommodating football, cricket, volleyball, running tracks, and annual inter-house athletic meets fostering endurance and true sportsmanship.",
       image: SCHOOL_IMAGES.SPORTS_DAY,
-      tag: "Physical Fitness",
-      specs: "Full Athletic Track • Multi-Sport Field • Inter-House Leagues"
+      tag: "Athletic Excellence",
+      specs: "Multi-Sport Grounds • Annual Athletic Meet • Track & Field"
     },
     {
       id: "fac-tours",
-      title: "Educational Tours & Industry Visits",
-      subtitle: "Learning Beyond the Classroom Walls",
-      description: "Regular study trips to Tarapur MIDC industrial plants, nuclear power stations, botanical gardens, and historical heritage sites.",
+      title: "Educational Field Studies",
+      subtitle: "Experiential Learning Beyond Classrooms",
+      description: "Curated academic expeditions to Tarapur MIDC scientific and nuclear facilities, botanical reserves, and historic sites to bridge classroom theory with real-world industry application.",
       image: "/images/tour.jpg",
       tag: "Experiential Learning",
-      specs: "Annual Field Trips • Industrial Exposure • Nature Trails"
+      specs: "Annual Field Expeditions • Industrial Exposure • Nature Trails"
     }
   ];
 
   // Gallery Visual Archive Preview
   const galleryItems = [
-    { id: 1, src: SCHOOL_IMAGES.CAMPUS_HERO, title: "Main Academic Complex", cat: "Campus Infrastructure", span: "md:col-span-8" },
-    { id: 2, src: "/images/guru-paduka-pooja.webp", title: "Guru Paduka Pooja & Spiritual Assembly", cat: "Spiritual Values", span: "md:col-span-4" },
-    { id: 3, src: "/images/CHEM1.jpeg", title: "Chemistry & STEM Laboratory", cat: "Academics", span: "md:col-span-4" },
-    { id: 4, src: SCHOOL_IMAGES.SPORTS_DAY, title: "Annual Athletic & Sports Meet", cat: "Sports & Fitness", span: "md:col-span-4" },
-    { id: 5, src: "/images/lib.jpg", title: "Central Library & Research Sanctuary", cat: "Knowledge Hub", span: "md:col-span-4" },
+    { id: 1, src: SCHOOL_IMAGES.CAMPUS_HERO, title: "Main Academic Complex & Courtyard", cat: "Campus Architecture", span: "md:col-span-8" },
+    { id: 2, src: "/images/guru-paduka-pooja.webp", title: "Guru Paduka Pooja & Spiritual Assembly", cat: "Value Foundation", span: "md:col-span-4" },
+    { id: 3, src: "/images/CHEM1.jpeg", title: "Chemistry & STEM Laboratory", cat: "Science & Discovery", span: "md:col-span-4" },
+    { id: 4, src: SCHOOL_IMAGES.SPORTS_DAY, title: "Annual Athletic & Track Meet", cat: "Sports & Vitality", span: "md:col-span-4" },
+    { id: 5, src: "/images/lib.jpg", title: "Central Library & Research Repository", cat: "Scholastic Sanctuary", span: "md:col-span-4" },
   ];
 
   return (
-    <div className="bg-[#FCFBF7] text-[#181C20] overflow-hidden selection:bg-[#D97745] selection:text-white">
+    <div className="bg-[#FAF8F5] text-[#181C20] overflow-hidden selection:bg-[#DF711B] selection:text-white font-sans">
       
       {/* ----------------------------------------------------
           SECTION 01 — MASTER EDITORIAL HERO (LUXURY ARCHITECTURAL)
          ---------------------------------------------------- */}
       <section 
         ref={heroRef}
-        className="relative min-h-[86vh] lg:min-h-[92vh] flex items-center justify-center bg-[#0B1D30] text-white overflow-hidden"
+        className="relative min-h-[88vh] lg:min-h-[94vh] flex items-center justify-center bg-[#181C20] text-white overflow-hidden"
       >
-        {/* Background Visual Canvas with Subtle Parallax Depth */}
-        <div className="absolute inset-0 z-0">
+        {/* Parallax Background Canvas with Double Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            ref={heroBgRef}
             src={SCHOOL_IMAGES.CAMPUS_HERO}
-            alt="Chinmaya Vidyalaya Tarapur Main Campus"
-            className="w-full h-full object-cover opacity-30 scale-105 transition-transform duration-1000"
+            alt="Chinmaya Vidyalaya Tarapur Campus"
+            className="w-full h-full object-cover opacity-25 scale-105 will-change-transform"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1D30]/95 via-[#0B1D30]/80 to-[#0B1D30]/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1D30] via-transparent to-[#0B1D30]/60" />
-          {/* Noise texture */}
-          <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#181C20] via-[#181C20]/85 to-[#181C20]/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#181C20] via-transparent to-[#181C20]/75" />
+          
+          {/* Swiss Grid Hairline Overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full flex flex-col justify-between min-h-[80vh]">
+          
+          {/* Top Architectural Metadata Strip */}
+          <div 
+            ref={heroEyebrowRef} 
+            className="flex flex-wrap items-center justify-between gap-4 border-b border-white/15 pb-6 text-[11px] font-mono tracking-widest text-[#CBD5E1]"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#DF711B] ring-4 ring-[#DF711B]/20" />
+              <span className="text-white font-bold uppercase tracking-[0.25em]">CHINMAYA MISSION EDUCATIONAL CELL</span>
+            </div>
+            
+            <div className="flex items-center gap-6 text-[#CBD5E1]">
+              <span className="hidden sm:inline">ESTD. 1993 • BOISAR, MAHARASHTRA</span>
+              <span className="text-white/20 hidden sm:inline">/</span>
+              <span className="text-white font-semibold">CBSE AFFILIATION NO. {OFFICIAL_SCHOOL_INFO.affiliationNo}</span>
+            </div>
+          </div>
+
+          {/* Core Master Kinetic Headline */}
+          <div className="my-auto py-12 space-y-8 max-w-5xl">
+            
+            <h1 
+              ref={heroTitleRef}
+              className="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05]"
+            >
+              <div className="overflow-hidden">
+                <span className="inline-block split-word">Nurturing</span>{' '}
+                <span className="inline-block split-word">Noble</span>{' '}
+                <span className="inline-block split-word">Minds.</span>
+              </div>
+              <div className="overflow-hidden mt-1 sm:mt-2">
+                <span className="inline-block split-word italic font-serif text-[#DF711B] font-normal">Illuminating</span>{' '}
+                <span className="inline-block split-word">Generations.</span>
+              </div>
+            </h1>
+
+            <p 
+              ref={heroDescRef}
+              className="text-base sm:text-lg lg:text-xl text-[#CBD5E1] max-w-2xl font-light leading-relaxed"
+            >
+              Imparting value-integrated CBSE education under the sublime guidance of Pujya Gurudev Swami Chinmayananda. Where academic rigor converges with timeless Vedic character.
+            </p>
+
+            {/* Kinetic Magnetic Actions */}
+            <div 
+              ref={heroCtaRef}
+              className="flex flex-wrap items-center gap-4 pt-2"
+            >
+              <MagneticButton
+                onClick={() => setIsAdmissionDrawerOpen(true)}
+                className="group px-8 py-4 bg-[#DF711B] hover:bg-[#C45B0E] text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-2xl flex items-center gap-3 transition-colors border border-[#DF711B]"
+              >
+                <GraduationCap className="w-4 h-4 text-white" />
+                <span>Admissions 2026-27</span>
+                <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+                </div>
+              </MagneticButton>
+
+              <Link
+                to="/about/philosophy"
+                className="group px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-widest rounded-full backdrop-blur-md transition-all border border-white/20 flex items-center gap-2"
+              >
+                <span>CVP Philosophy</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+          </div>
+
+          {/* Bottom Telemetry & Institutional Pillars Ribbon */}
+          <div 
+            ref={heroTelemetryRef}
+            className="pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs font-mono"
+          >
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#94A3B8] uppercase tracking-wider block">BOARD AFFILIATION</span>
+              <strong className="text-white text-sm block font-sans">CBSE Senior Secondary</strong>
+              <span className="text-[11px] text-[#FFB740]">School Code: 45041</span>
+            </div>
+
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#94A3B8] uppercase tracking-wider block">ACADEMIC RECORD</span>
+              <strong className="text-white text-sm block font-sans">100% AISSE Pass</strong>
+              <span className="text-[11px] text-[#22C55E]">Centum Distinctions</span>
+            </div>
+
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#94A3B8] uppercase tracking-wider block">PEDAGOGIC RATIO</span>
+              <strong className="text-white text-sm block font-sans">1:25 Focused Mentoring</strong>
+              <span className="text-[11px] text-slate-300">Max 40 Per Classroom</span>
+            </div>
+
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#94A3B8] uppercase tracking-wider block">CAMPUS SCALE</span>
+              <strong className="text-white text-sm block font-sans">5-Acre Sanctuary</strong>
+              <span className="text-[11px] text-[#DF711B]">Boisar MIDC Palghar</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ----------------------------------------------------
+          SECTION 02 — ACCREDITED INSTITUTIONAL BENCHMARKS (SWISS GRID)
+         ---------------------------------------------------- */}
+      <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#E7E2D8] relative">
+        {/* Subtle corner crosshairs for Swiss precision */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Hero Left: Large Architectural Typography */}
-            <div className="lg:col-span-8 space-y-6">
-              
-              {/* Eyebrow Stamp */}
-              <div ref={heroEyebrowRef} className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 border border-white/20 rounded-full text-[11px] font-mono tracking-widest text-[#D97745] uppercase font-bold">
-                  <Award className="w-3.5 h-3.5" />
-                  <span>CBSE AFFILIATED NO. {OFFICIAL_SCHOOL_INFO.affiliationNo}</span>
-                </div>
-                <span className="text-[11px] font-mono text-slate-300 uppercase tracking-widest hidden sm:inline">
-                  ESTD. 1999 • BOISAR / TARAPUR
-                </span>
+            {/* Left Context Statement */}
+            <div className="lg:col-span-5 space-y-5 editorial-reveal">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#D5CEC2] text-[10px] font-mono uppercase tracking-widest text-[#DF711B] font-bold">
+                <Landmark className="w-3.5 h-3.5" />
+                <span>CENTRAL BOARD RECOGNITION</span>
               </div>
 
-              {/* Main Headline with Split Mask Rise */}
-              <h1 
-                ref={heroTitleRef}
-                className="font-cinzel text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight text-white"
-              >
-                <div className="text-mask">
-                  <span className="hero-line block">WHERE WISDOM</span>
-                </div>
-                <div className="text-mask">
-                  <span className="hero-line block text-transparent bg-clip-text bg-gradient-to-r from-[#D97745] via-[#F39C12] to-[#FADBD8]">
-                    MEETS EXCELLENCE.
-                  </span>
-                </div>
-              </h1>
+              <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-[#181C20] tracking-tight leading-tight">
+                Three Decades of Pedagogic Eminence
+              </h2>
 
-              {/* Supporting Editorial Copy */}
-              <p 
-                ref={heroDescRef}
-                className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl font-light font-sans"
-              >
-                Founded on the timeless philosophy of <strong className="text-white font-semibold">Swami Chinmayananda</strong>, Chinmaya Vidyalaya Tarapur blends modern CBSE academic rigor with character building, daily spiritual grounding, and personalized mentoring in Boisar.
+              <p className="text-base text-[#334155] leading-relaxed font-normal">
+                Established in 1993, Chinmaya Vidyalaya Tarapur offers an uninterrupted continuum of learning from Nursery to Senior Secondary. Our graduates embody academic supremacy alongside the profound cultural convictions of the Chinmaya Vision Program.
               </p>
 
-              {/* Action Buttons */}
-              <div ref={heroCtaRef} className="flex flex-wrap items-center gap-4 pt-2">
-                <button
-                  onClick={() => setIsAdmissionDrawerOpen(true)}
-                  data-cursor="APPLY"
-                  className="group px-8 py-4 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-widest transition-all rounded-full flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
-                >
-                  <Sparkles className="w-4 h-4" />
-                  <span>Admissions 2026-27</span>
-                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
-                    <ArrowRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </button>
-
+              <div className="pt-2 flex items-center gap-4">
                 <Link
                   to="/about/history"
-                  data-cursor="EXPLORE"
-                  className="group px-7 py-4 bg-white hover:bg-slate-100 text-[#0B1D30] font-bold text-xs uppercase tracking-widest transition-all rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#DF711B] hover:text-[#181C20] transition-colors"
                 >
-                  <span>Our Heritage</span>
-                  <div className="w-7 h-7 rounded-full bg-[#0B1D30]/10 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
-                    <ArrowRight className="w-3.5 h-3.5 text-[#0B1D30]" />
-                  </div>
-                </Link>
-
-                <Link
-                  to="/about/mandatory-information"
-                  className="px-6 py-4 bg-[#122B48] hover:bg-[#183960] text-slate-200 hover:text-white font-mono text-xs rounded-full transition-all border border-[#1E436E] flex items-center gap-2 shadow-sm"
-                >
-                  <FileText className="w-4 h-4 text-[#D97745]" />
-                  <span>CBSE SARAS Disclosures</span>
+                  <span>Our Institutional Chronicle</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
 
-            {/* Hero Right: Floating Architectural Institutional Badge Card */}
-            <div ref={heroCardRef} className="lg:col-span-4">
-              <div className="bg-[#FCFBF7]/95 backdrop-blur-lg text-[#181C20] p-7 rounded-3xl border border-white/40 shadow-float space-y-5">
-                <div className="flex items-center justify-between border-b border-[#E7E2D8] pb-3">
-                  <div className="flex items-center gap-2">
-                    <img src="/images/Chinmaya_Logo.webp" alt="Logo" className="w-7 h-7 object-contain" />
-                    <span className="font-cinzel text-xs font-bold text-[#0B1D30] uppercase tracking-wider">
-                      Vidyalaya At A Glance
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-mono text-[#D97745] font-bold bg-[#FAF3E8] px-2 py-0.5 rounded-full">
-                    Co-Ed
-                  </span>
+            {/* Right Architectural Metric Quadrants */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 editorial-reveal">
+              
+              {/* Metric 1 */}
+              <div className="bg-white p-7 rounded-2xl border border-[#D5CEC2] shadow-sm space-y-2 relative group hover:border-[#DF711B] transition-all">
+                <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-between">
+                  <span>CBSE AISSE (CLASS X)</span>
+                  <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
                 </div>
-
-                <div className="space-y-3.5 text-xs font-sans">
-                  <div className="flex justify-between items-center py-1 border-b border-[#E7E2D8]/60">
-                    <span className="text-[#4A5568]">Affiliation No:</span>
-                    <strong className="font-mono text-[#0B1D30] font-bold">{OFFICIAL_SCHOOL_INFO.affiliationNo}</strong>
-                  </div>
-                  <div className="flex justify-between items-center py-1 border-b border-[#E7E2D8]/60">
-                    <span className="text-[#4A5568]">School Code:</span>
-                    <strong className="font-mono text-[#0B1D30] font-bold">{OFFICIAL_SCHOOL_INFO.schoolCode}</strong>
-                  </div>
-                  <div className="flex justify-between items-center py-1 border-b border-[#E7E2D8]/60">
-                    <span className="text-[#4A5568]">U-DISE Code:</span>
-                    <strong className="font-mono text-[#0B1D30] font-bold">{OFFICIAL_SCHOOL_INFO.udiseNo}</strong>
-                  </div>
-                  <div className="flex justify-between items-center py-1 border-b border-[#E7E2D8]/60">
-                    <span className="text-[#4A5568]">Class Capacity:</span>
-                    <strong className="text-[#D97745] font-bold">Capped ≤ 40 Students</strong>
-                  </div>
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-[#4A5568]">Governing Body:</span>
-                    <strong className="text-[#0B1D30] font-semibold text-right">Chinmaya Mission</strong>
-                  </div>
+                <div className="font-cinzel text-4xl sm:text-5xl font-extrabold text-[#181C20]">
+                  100%
                 </div>
-
-                <div className="pt-2">
-                  <button
-                    onClick={() => setIsAdmissionDrawerOpen(true)}
-                    className="w-full py-3 bg-[#0B1D30] hover:bg-[#D97745] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-md"
-                  >
-                    <span>Download Registration Forms</span>
-                    <Download className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+                <p className="text-xs text-[#334155] leading-relaxed">
+                  Consecutive cent-percent passing result with students securing top CBSE merit rankings across the district.
+                </p>
               </div>
+
+              {/* Metric 2 */}
+              <div className="bg-white p-7 rounded-2xl border border-[#D5CEC2] shadow-sm space-y-2 relative group hover:border-[#DF711B] transition-all">
+                <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-between">
+                  <span>PEDAGOGIC LEGACY</span>
+                  <Award className="w-4 h-4 text-[#FFB740]" />
+                </div>
+                <div className="font-cinzel text-4xl sm:text-5xl font-extrabold text-[#181C20]">
+                  30+ Yrs
+                </div>
+                <p className="text-xs text-[#334155] leading-relaxed">
+                  Nurturing leaders since 1993 under the Central Chinmaya Mission Trust (CCMT) Educational Cell.
+                </p>
+              </div>
+
+              {/* Metric 3 */}
+              <div className="bg-white p-7 rounded-2xl border border-[#D5CEC2] shadow-sm space-y-2 relative group hover:border-[#DF711B] transition-all">
+                <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-between">
+                  <span>MENTORING PROPORTION</span>
+                  <Layers className="w-4 h-4 text-[#DF711B]" />
+                </div>
+                <div className="font-cinzel text-4xl sm:text-5xl font-extrabold text-[#181C20]">
+                  1:25
+                </div>
+                <p className="text-xs text-[#334155] leading-relaxed">
+                  Carefully proportioned educator-to-student balance ensuring no child is left unguided during critical formative years.
+                </p>
+              </div>
+
+              {/* Metric 4 */}
+              <div className="bg-white p-7 rounded-2xl border border-[#D5CEC2] shadow-sm space-y-2 relative group hover:border-[#DF711B] transition-all">
+                <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-between">
+                  <span>INFRASTRUCTURE SCALE</span>
+                  <Compass className="w-4 h-4 text-[#181C20]" />
+                </div>
+                <div className="font-cinzel text-4xl sm:text-5xl font-extrabold text-[#181C20]">
+                  5 Acres
+                </div>
+                <p className="text-xs text-[#334155] leading-relaxed">
+                  Lush verdant grounds, specialized chemistry & physics laboratories, open-air assembly court, and athletic tracks.
+                </p>
+              </div>
+
             </div>
 
           </div>
-        </div>
 
-        {/* Live Announcement Marquee Ribbon */}
-        <div className="absolute bottom-0 inset-x-0 bg-[#071320] border-t border-white/10 py-3 px-4 overflow-hidden z-20">
-          <div className="max-w-7xl mx-auto flex items-center gap-4 text-xs font-mono">
-            <span className="bg-[#D97745] text-white px-2.5 py-0.5 rounded font-bold text-[10px] uppercase tracking-wider shrink-0 animate-pulse">
-              LATEST HIGHLIGHTS
-            </span>
-            <div className="truncate text-slate-300">
-              ✦ Respected Principal Sri. B. Anilkumar appointed to Academic Assessment & Guidance Team (Chinmaya Education Cell) • 100% AISSE Class X Board Results • Evaluation III Papers Available (Classes 1 to 5) • Registration Open for Nursery to Std IX
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 02 — EDITORIAL HERITAGE & INSTITUTIONAL NARRATIVE
+          SECTION 03 — FOUNDATIONAL MATRIX: CHINMAYA VISION PROGRAM (CVP)
          ---------------------------------------------------- */}
-      <section className="py-24 lg:py-32 bg-[#FCFBF7] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            {/* Left Narrative */}
-            <div className="lg:col-span-6 space-y-8 editorial-reveal">
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
-                  INSTITUTIONAL HERITAGE
-                </span>
-                <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] leading-[1.15] tracking-tight">
-                  Started with 72 students <br />
-                  <span className="italic font-serif font-normal text-[#D97745]">and four teachers.</span>
-                </h2>
-              </div>
-
-              <div className="space-y-4 text-slate-600/90 text-base sm:text-lg leading-relaxed font-normal">
-                <p>
-                  Chinmaya Vidyalaya is affiliated to the CBSE Delhi Board. A school with a difference, it began its noble journey in Boisar/Tarapur with humble beginnings and has blossomed into a premier full-fledged educational institution.
-                </p>
-                <p>
-                  Emulating the holistic vision of the illustrious founder, the Great Vedantic Master <strong className="text-[#0B1D30] font-semibold">Swami Chinmayananda</strong>, the Vidyalaya imparts a practical and judicious combination of academic excellence, extra-curricular pursuits, character building, and personality development.
-                </p>
-              </div>
-
-              {/* Key Metric Indicators */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-[#E7E2D8]">
-                <div>
-                  <span className="font-cinzel text-3xl sm:text-5xl font-extrabold text-[#0B1D30] block">100%</span>
-                  <span className="text-xs text-slate-500 font-mono mt-1 block uppercase tracking-wider">AISSE Pass Rate</span>
-                </div>
-                <div>
-                  <span className="font-cinzel text-3xl sm:text-5xl font-extrabold text-[#D97745] block">≤40</span>
-                  <span className="text-xs text-slate-500 font-mono mt-1 block uppercase tracking-wider">Students / Class</span>
-                </div>
-                <div>
-                  <span className="font-cinzel text-3xl sm:text-5xl font-extrabold text-[#0B1D30] block">25+</span>
-                  <span className="text-xs text-slate-500 font-mono mt-1 block uppercase tracking-wider">Years Legacy</span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <Link
-                  to="/about/history"
-                  data-cursor="READ"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
-                >
-                  <span>Explore Institutional History</span>
-                  <ArrowRight className="w-4 h-4 text-[#D97745] group-hover:text-white" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Overlapping Layered Composition */}
-            <div className="lg:col-span-6 relative editorial-reveal">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <img
-                  src={SCHOOL_IMAGES.CAMPUS_BUILDING}
-                  alt="Chinmaya Vidyalaya Academic Block"
-                  className="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#0B1D30]/90 to-transparent text-white">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#D97745] block font-bold">
-                    CAMPUS SANCTUARY
-                  </span>
-                  <p className="font-serif italic text-sm text-slate-200 mt-0.5">
-                    Lush green, modern learning environment in Vidyanagar, Boisar
-                  </p>
-                </div>
-              </div>
-
-              {/* Overlapping Floating Emblem Badge */}
-              <div className="absolute -bottom-8 -left-8 bg-white p-5 rounded-2xl shadow-xl border border-[#E7E2D8] hidden sm:flex items-center gap-4 z-20">
-                <img src="/images/Chinmaya_Logo.webp" alt="Emblem" className="w-12 h-12 object-contain" />
-                <div>
-                  <span className="font-cinzel font-bold text-xs text-[#0B1D30] block">Chinmaya Vision Program</span>
-                  <span className="text-[11px] text-[#4A5568] font-mono">4 Holistic Dimensions</span>
-                </div>
-              </div>
-
-              {/* Decorative Background Frame */}
-              <div className="absolute -top-6 -right-6 w-full h-full bg-[#F7F3EB] rounded-3xl -z-0 border border-[#E7E2D8] hidden sm:block" />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ----------------------------------------------------
-          SECTION 03 — CHINMAYA VISION PROGRAM (4 CORE PILLARS)
-         ---------------------------------------------------- */}
-      <section className="py-24 bg-[#0B1D30] text-white relative overflow-hidden">
-        {/* Background Mandala Watermark */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#D97745]/10 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="py-24 lg:py-32 bg-[#F3EFE6] text-[#181C20] relative border-b border-[#D5CEC2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/15 pb-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#D5CEC2] pb-8">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.3em] block">
-                FOUNDATIONAL PHILOSOPHY
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.3em] block">
+                THE PEDAGOGIC ARCHITECTURE
               </span>
-              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-[#181C20] tracking-tight">
                 Chinmaya Vision Program
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-slate-300/80 max-w-md font-normal leading-relaxed">
-              Formulated under the guidance of Pujya Gurudev Swami Chinmayananda to foster integrated growth and noble life values.
+            <p className="text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
+              Formulated under the vision of Pujya Gurudev Swami Chinmayananda. A quadruple matrix engineered to awaken the fullest human potential.
             </p>
           </div>
 
@@ -501,68 +510,74 @@ export const HomePage: React.FC = () => {
             
             {/* Left Pillar Selectors */}
             <div className="lg:col-span-5 space-y-3">
-              {cvpPillars.map((pillar, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setActivePillar(idx)}
-                  onMouseEnter={() => setActivePillar(idx)}
-                  className={`p-6 rounded-2xl border transition-all cursor-pointer ${
-                    activePillar === idx
-                      ? 'bg-white/15 border-[#D97745] shadow-xl translate-x-2'
-                      : 'bg-white/5 border-white/10 hover:bg-white/10'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <span className="font-cinzel text-2xl sm:text-3xl font-bold text-[#D97745]">
-                        {pillar.num}
-                      </span>
-                      <div>
-                        <h3 className="font-cinzel text-lg sm:text-xl font-bold text-white">
-                          {pillar.title}
-                        </h3>
-                        <span className="text-xs font-mono text-slate-300/80 block mt-0.5">
-                          {pillar.subtitle}
+              {cvpPillars.map((pillar, idx) => {
+                const isSelected = activePillar === idx;
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => handleSelectPillar(idx)}
+                    onMouseEnter={() => handleSelectPillar(idx)}
+                    className={`p-6 rounded-2xl border transition-all cursor-pointer ${
+                      isSelected
+                        ? 'bg-[#FFF7DF] border-[#DF711B] shadow-md translate-x-2'
+                        : 'bg-white border-[#D5CEC2] hover:bg-[#FAF8F5]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <span className={`font-cinzel text-2xl sm:text-3xl font-bold ${isSelected ? 'text-[#DF711B]' : 'text-slate-400'}`}>
+                          {pillar.num}
                         </span>
+                        <div>
+                          <h3 className="font-cinzel text-lg sm:text-xl font-bold text-[#181C20]">
+                            {pillar.title}
+                          </h3>
+                          <span className="text-xs font-mono text-slate-500 block mt-0.5">
+                            {pillar.sanskrit}
+                          </span>
+                        </div>
                       </div>
+                      <ChevronRight className={`w-5 h-5 transition-transform ${isSelected ? 'text-[#DF711B] translate-x-1' : 'text-slate-400'}`} />
                     </div>
-                    <ChevronRight className={`w-5 h-5 transition-transform ${activePillar === idx ? 'text-[#D97745] translate-x-1' : 'text-white/30'}`} />
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Right Active Pillar Preview Card */}
-            <div className="lg:col-span-7 bg-[#FCFBF7] text-[#181C20] rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/20 flex flex-col justify-between space-y-8">
+            <div 
+              ref={pillarPreviewRef}
+              className="lg:col-span-7 bg-white text-[#181C20] rounded-3xl p-8 sm:p-10 shadow-xl border-2 border-[#D5CEC2] flex flex-col justify-between space-y-8"
+            >
               <div className="space-y-6">
                 <div className="flex flex-wrap justify-between items-center gap-4 border-b border-[#E7E2D8] pb-4">
                   <div>
-                    <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-wider block">
+                    <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Pillar {cvpPillars[activePillar].num} • {cvpPillars[activePillar].tag}
                     </span>
-                    <h3 className="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#0B1D30] mt-1">
+                    <h3 className="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#181C20] mt-1">
                       {cvpPillars[activePillar].title}
                     </h3>
                   </div>
-                  <span className="font-serif italic text-xs text-[#4A5568] bg-[#F7F3EB] px-3 py-1.5 rounded-full border border-[#E7E2D8]">
-                    {cvpPillars[activePillar].subtitle}
+                  <span className="font-serif italic text-xs text-[#334155] bg-[#F3EFE6] px-3.5 py-1.5 rounded-full border border-[#D5CEC2]">
+                    {cvpPillars[activePillar].sanskrit}
                   </span>
                 </div>
 
-                <p className="text-base text-slate-600/90 leading-relaxed font-normal">
+                <p className="text-base text-[#334155] leading-relaxed font-normal">
                   {cvpPillars[activePillar].desc}
                 </p>
 
                 {/* Key Points */}
-                <div className="space-y-2.5 pt-2">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#0B1D30] font-bold block">
-                    Key Institutional Implementations:
+                <div className="space-y-3 pt-2">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#181C20] font-bold block">
+                    Institutional Implementations at Tarapur:
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {cvpPillars[activePillar].points.map((pt, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-[#181C20] bg-[#F7F3EB] p-2.5 rounded-xl border border-[#E7E2D8]">
-                        <CheckCircle2 className="w-4 h-4 text-[#D97745] shrink-0" />
-                        <span className="font-medium">{pt}</span>
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-[#181C20] bg-[#FAF8F5] p-3 rounded-xl border border-[#E7E2D8]">
+                        <CheckCircle2 className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
+                        <span className="font-medium leading-normal">{pt}</span>
                       </div>
                     ))}
                   </div>
@@ -572,12 +587,12 @@ export const HomePage: React.FC = () => {
               <div className="pt-4 border-t border-[#E7E2D8] flex items-center justify-between">
                 <Link
                   to="/about/philosophy"
-                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2 hover:scale-105 active:scale-95"
+                  className="px-6 py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-sm flex items-center gap-2"
                 >
-                  <span>Read Full CVP Philosophy</span>
+                  <span>Comprehensive CVP Treatise</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-                <span className="text-[11px] font-mono text-slate-400">Chinmaya Mission Tarapur</span>
+                <span className="text-[11px] font-mono text-slate-500">Chinmaya Mission Tarapur</span>
               </div>
             </div>
 
@@ -586,26 +601,43 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 04 — PRINCIPAL LEADERSHIP & HONORS SPOTLIGHT
+          SECTION 04 — PRINCIPAL LEADERSHIP & DISTINCTION SPOTLIGHT
          ---------------------------------------------------- */}
-      <section className="py-24 bg-[#F7F3EB] border-y border-[#E7E2D8]">
+      <section className="py-24 lg:py-32 bg-[#FAF8F5] border-b border-[#E7E2D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Principal Photo & Badges */}
+            {/* Principal Photo in Double-Bezel Frame */}
             <div className="lg:col-span-5 relative editorial-reveal">
-              <div className="bg-white p-3 rounded-3xl border border-[#E7E2D8] shadow-xl overflow-hidden">
-                <img
-                  src="/images/board-of-management/principal-b-anilkumar.webp"
-                  alt="Principal Sri. B. Anilkumar"
-                  className="w-full h-96 sm:h-[420px] object-cover object-top rounded-2xl"
-                />
-                <div className="p-4 bg-[#0B1D30] text-white text-center rounded-xl mt-3 space-y-1">
-                  <h3 className="font-cinzel font-bold text-xl text-white leading-tight">
-                    Sri. B. Anilkumar
+              <div className="bg-white p-3 rounded-3xl border-2 border-[#D5CEC2] shadow-xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-[#FAF8F5] flex items-center justify-center min-h-[380px]">
+                  <div className="p-8 text-center space-y-4">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-[#DF711B] text-white flex items-center justify-center font-cinzel font-bold text-2xl border-4 border-[#FFB740] shadow-md">
+                      DM
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="font-cinzel font-bold text-2xl text-[#181C20]">
+                        {OFFICIAL_PRINCIPAL_INFO.name}
+                      </h4>
+                      <p className="text-xs font-mono font-bold text-[#DF711B]">
+                        {OFFICIAL_PRINCIPAL_INFO.designation} & Member of the Board of Management
+                      </p>
+                      <p className="text-xs text-slate-500 font-sans">
+                        Chinmaya Vidyalaya • Affiliation No: 1130058 (Code: 30040)
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-[#E7E2D8] space-y-1 text-xs font-mono text-slate-600">
+                      <div>Tel: <a href="tel:7775872266" className="text-[#DF711B] hover:underline">7775872266</a></div>
+                      <div>Email: <a href="mailto:cv.principal@chinmayamission.com" className="text-[#DF711B] hover:underline">cv.principal@chinmayamission.com</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 bg-gradient-to-r from-[#DF711B] to-[#C45B0E] text-white text-center rounded-2xl mt-3 space-y-1 shadow-sm">
+                  <h3 className="font-cinzel font-bold text-lg text-white leading-tight">
+                    {OFFICIAL_PRINCIPAL_INFO.name}
                   </h3>
-                  <p className="text-xs text-[#D97745] font-mono">
-                    Principal & Academic Guide (Chinmaya Education Cell)
+                  <p className="text-xs text-[#FFF7DF] font-mono">
+                    Educationist & Institutional Leader
                   </p>
                 </div>
               </div>
@@ -614,54 +646,54 @@ export const HomePage: React.FC = () => {
             {/* Principal Message & Honors */}
             <div className="lg:col-span-7 space-y-6 editorial-reveal">
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.25em] block">
                   LEADERSHIP & DISTINCTION
                 </span>
-                <h2 className="font-cinzel text-4xl sm:text-5xl font-extrabold text-[#0B1D30] tracking-tight">
+                <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-[#181C20] tracking-tight">
                   Guided by Visionary Leadership
                 </h2>
               </div>
 
-              <blockquote className="font-serif italic text-base sm:text-xl text-slate-700/90 leading-relaxed border-l-4 border-[#D97745] pl-6 py-3 bg-white/80 rounded-r-2xl">
+              <blockquote className="font-serif italic text-base sm:text-lg text-[#1E293B] leading-relaxed border-l-4 border-[#DF711B] pl-6 py-4 bg-white rounded-r-2xl border-y border-r border-[#D5CEC2]">
                 "{OFFICIAL_PRINCIPAL_INFO.message}"
               </blockquote>
 
-              {/* Recognitions Grid */}
+              {/* Core Institutional Commitments */}
               <div className="space-y-3 pt-2">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-[#0B1D30] font-bold block">
-                  National Honors & Institutional Appointments:
+                <span className="text-[11px] font-mono uppercase tracking-widest text-[#181C20] font-bold block">
+                  Core Institutional Commitments:
                 </span>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] shadow-sm flex items-start gap-2.5">
-                    <Award className="w-4 h-4 text-[#D97745] shrink-0 mt-0.5" />
+                  <div className="bg-white p-4 rounded-xl border border-[#D5CEC2] shadow-sm flex items-start gap-3">
+                    <Award className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-[#0B1D30] block">Chinmaya Education Cell</strong>
-                      <span className="text-[#4A5568]">Member of Academic Assessment & Guidance Team, Coimbatore</span>
+                      <strong className="text-[#181C20] block">Chinmaya Vision Programme</strong>
+                      <span className="text-[#475569]">Integrated 4 pillars: Development, Culture, Patriotism & Universal Outlook</span>
                     </div>
                   </div>
 
-                  <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] shadow-sm flex items-start gap-2.5">
-                    <Award className="w-4 h-4 text-[#D97745] shrink-0 mt-0.5" />
+                  <div className="bg-white p-4 rounded-xl border border-[#D5CEC2] shadow-sm flex items-start gap-3">
+                    <Award className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-[#0B1D30] block">CBSE Inspection Committee</strong>
-                      <span className="text-[#4A5568]">Member of Composite Provisional Affiliation Committee</span>
+                      <strong className="text-[#181C20] block">100% AISSE Board Distinction</strong>
+                      <span className="text-[#475569]">Unbroken standard of Class X academic excellence since 2004–05</span>
                     </div>
                   </div>
 
-                  <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] shadow-sm flex items-start gap-2.5">
-                    <Award className="w-4 h-4 text-[#D97745] shrink-0 mt-0.5" />
+                  <div className="bg-white p-4 rounded-xl border border-[#D5CEC2] shadow-sm flex items-start gap-3">
+                    <Award className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-[#0B1D30] block">Rajiv Gandhi Siromani Award</strong>
-                      <span className="text-[#4A5568]">Conferred in New Delhi for Outstanding Education Contributions</span>
+                      <strong className="text-[#181C20] block">Disciplined Mentoring Ratio</strong>
+                      <span className="text-[#475569]">Strictly 40-student classroom capacity for individualized attention</span>
                     </div>
                   </div>
 
-                  <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] shadow-sm flex items-start gap-2.5">
-                    <Award className="w-4 h-4 text-[#D97745] shrink-0 mt-0.5" />
+                  <div className="bg-white p-4 rounded-xl border border-[#D5CEC2] shadow-sm flex items-start gap-3">
+                    <Award className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-[#0B1D30] block">Shiksha Ratna & Gold Medal</strong>
-                      <span className="text-[#4A5568]">Rashtriya Samatha Swatantra Manch, Delhi (National Level)</span>
+                      <strong className="text-[#181C20] block">Vedic Cultural Grounding</strong>
+                      <span className="text-[#475569]">Daily Guru Paduka Pooja, Gita chanting, and regional cultural celebrations</span>
                     </div>
                   </div>
                 </div>
@@ -670,9 +702,9 @@ export const HomePage: React.FC = () => {
               <div className="pt-2 flex items-center gap-4">
                 <Link
                   to="/about/management"
-                  className="px-6 py-3 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all inline-flex items-center gap-2 shadow-md"
+                  className="px-6 py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all inline-flex items-center gap-2 shadow-md"
                 >
-                  <span>View Board of Management</span>
+                  <span>Board of Management</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -683,40 +715,43 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 05 — CAMPUS FACILITIES & LEARNING SANCTUARIES
+          SECTION 05 — CAMPUS LEARNING SANCTUARIES & FACILITIES
          ---------------------------------------------------- */}
-      <section className="py-24 bg-[#FCFBF7] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section className="py-24 lg:py-32 bg-[#FAF8F5] relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           {/* Section Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E7E2D8] pb-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
-                CAMPUS ARCHITECTURE
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.25em] block">
+                CAMPUS INFRASTRUCTURE
               </span>
-              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] tracking-tight">
-                State-of-the-Art Infrastructure
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-[#181C20] tracking-tight">
+                State-of-the-Art Sanctuaries
               </h2>
             </div>
             <Link
               to="/academics/infrastructure"
-              className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2 hover:scale-105 active:scale-95"
+              className="px-6 py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-sm flex items-center gap-2"
             >
-              <span>Explore All Labs & Facilities</span>
+              <span>Explore All Labs & Grounds</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           {/* Facility Tabs Switcher */}
-          <div className="flex flex-wrap gap-2 justify-start pb-2 overflow-x-auto scrollbar-none">
+          <div className="flex flex-wrap gap-2.5 justify-start pb-2 overflow-x-auto scrollbar-none">
             {facilities.map((fac, idx) => (
               <button
                 key={fac.id}
-                onClick={() => setActiveFacility(idx)}
-                className={`px-4 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
+                onClick={() => {
+                  setActiveFacility(idx);
+                  soundFx.playChime(620, 0.08);
+                }}
+                className={`px-5 py-3 rounded-full text-xs font-semibold whitespace-nowrap transition-all border font-sans ${
                   activeFacility === idx
-                    ? 'bg-[#0B1D30] text-white border-[#0B1D30] shadow-md font-bold'
-                    : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-[#F7F3EB] hover:text-[#0B1D30]'
+                    ? 'bg-[#DF711B] text-white border-[#DF711B] shadow-md font-bold'
+                    : 'bg-white border-[#D5CEC2] text-[#334155] hover:bg-[#F3EFE6] hover:text-[#DF711B]'
                 }`}
               >
                 {fac.title}
@@ -724,72 +759,74 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
 
-          {/* Active Facility Card */}
-          <div className="bg-white p-6 sm:p-10 rounded-3xl border border-[#E7E2D8] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-[#E7E2D8] h-72 sm:h-96 relative group">
+          {/* Active Facility Card with Double-Bezel Frame */}
+          <div className="bg-white p-6 sm:p-10 rounded-3xl border-2 border-[#D5CEC2] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-[#D5CEC2] h-72 sm:h-96 relative group">
               <img
                 src={facilities[activeFacility].image}
                 alt={facilities[activeFacility].title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute top-4 left-4 bg-[#0B1D30]/90 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+              <div className="absolute top-4 left-4 bg-[#181C20]/90 text-white text-[10px] font-mono px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-white/20">
                 {facilities[activeFacility].tag}
               </div>
             </div>
 
             <div className="lg:col-span-5 space-y-5">
-              <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-widest block">
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-widest block">
                 {facilities[activeFacility].specs}
               </span>
-              <h3 className="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#0B1D30]">
+              <h3 className="font-cinzel text-3xl sm:text-4xl font-bold text-[#181C20]">
                 {facilities[activeFacility].title}
               </h3>
-              <h4 className="font-serif italic text-base text-[#D97745]">
+              <h4 className="font-serif italic text-base text-[#DF711B]">
                 "{facilities[activeFacility].subtitle}"
               </h4>
-              <p className="text-sm sm:text-base text-slate-600/90 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-[#334155] leading-relaxed font-normal">
                 {facilities[activeFacility].description}
               </p>
 
               <div className="pt-4 border-t border-[#E7E2D8] flex flex-wrap items-center gap-3">
                 <Link
                   to="/academics/curriculum"
-                  className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-1.5 hover:scale-105 active:scale-95"
+                  className="px-6 py-3 bg-white hover:bg-[#DF711B] text-[#181C20] hover:text-white border border-[#D5CEC2] text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-sm flex items-center gap-2"
                 >
                   <span>Curriculum Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-                <button
+                <MagneticButton
                   onClick={() => setIsAdmissionDrawerOpen(true)}
-                  className="px-5 py-2.5 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-1.5 hover:scale-105 active:scale-95"
+                  className="px-6 py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-sm flex items-center gap-2"
                 >
                   <span>Visit Campus</span>
-                </button>
+                </MagneticButton>
               </div>
             </div>
+
           </div>
 
         </div>
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 06 — ADMISSIONS, SAMPLE PAPERS & DOWNLOADS SHELF
+          SECTION 06 — ACADEMIC REPOSITORY & VERIFIED PDF DOWNLOADS
          ---------------------------------------------------- */}
-      <section className="py-24 bg-[#0B1D30] text-white relative">
+      <section className="py-24 lg:py-32 bg-[#FAF8F5] text-[#181C20] relative border-y border-[#E7E2D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/15 pb-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E7E2D8] pb-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
-                RESOURCES & FORMS
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.25em] block">
+                AUTHENTIC RESOURCES & ADMISSION SHELF
               </span>
-              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-[#181C20] tracking-tight">
                 Downloads & Academic Center
               </h2>
             </div>
             <Link
               to="/downloads"
-              className="px-5 py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
+              className="px-6 py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md flex items-center gap-2"
             >
               <span>View All Official PDFs</span>
               <ArrowRight className="w-4 h-4" />
@@ -799,19 +836,19 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Box 1: Registration Forms */}
-            <div className="bg-white/5 border border-white/10 hover:border-[#D97745] p-6 rounded-2xl space-y-4 hover:bg-white/10 transition-all flex flex-col justify-between">
+            <div className="bg-white border border-[#E7E2D8] hover:border-[#DF711B] p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-[#D97745]/20 text-[#D97745] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-[#DF711B]/15 text-[#DF711B] flex items-center justify-center">
                   <FileText className="w-6 h-6" />
                 </div>
-                <h3 className="font-cinzel font-bold text-lg text-white">Admissions 2026</h3>
-                <p className="text-xs text-slate-300 font-light leading-relaxed">
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Admissions 2026-27</h3>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
                   Download official admission forms for Nursery, Kindergarten (KG), and Classes I to IX.
                 </p>
               </div>
               <button
                 onClick={() => setIsAdmissionDrawerOpen(true)}
-                className="w-full py-2.5 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Get Forms</span>
@@ -819,19 +856,19 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Box 2: Sample Papers Std 1 - 10 */}
-            <div className="bg-white/5 border border-white/10 hover:border-[#D97745] p-6 rounded-2xl space-y-4 hover:bg-white/10 transition-all flex flex-col justify-between">
+            <div className="bg-white border border-[#E7E2D8] hover:border-[#DF711B] p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-[#D97745]/20 text-[#D97745] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-[#FFB740]/20 text-[#FFB740] flex items-center justify-center">
                   <BookOpen className="w-6 h-6" />
                 </div>
-                <h3 className="font-cinzel font-bold text-lg text-white">Sample Papers</h3>
-                <p className="text-xs text-slate-300 font-light leading-relaxed">
-                  Official CBSE pattern question papers for Standard 1 to Standard 10 board prep.
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Sample Papers</h3>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Official CBSE pattern question papers for Standard 1 to Standard 10 board preparation.
                 </p>
               </div>
               <Link
                 to="/downloads/sample-papers"
-                className="w-full py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                className="w-full py-3 bg-[#FFF7DF] hover:bg-[#DF711B] text-[#181C20] hover:text-white border border-[#FDE49C] text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>Browse Papers</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -839,19 +876,19 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Box 3: Evaluation III Papers */}
-            <div className="bg-white/5 border border-white/10 hover:border-[#D97745] p-6 rounded-2xl space-y-4 hover:bg-white/10 transition-all flex flex-col justify-between">
+            <div className="bg-white border border-[#E7E2D8] hover:border-[#64C9CF] p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-[#D97745]/20 text-[#D97745] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-[#64C9CF]/20 text-[#0B6B72] flex items-center justify-center">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <h3 className="font-cinzel font-bold text-lg text-white">Evaluation III</h3>
-                <p className="text-xs text-slate-300 font-light leading-relaxed">
-                  Evaluation III question papers for Standard 1, 2, 3, 4, and 5 student assessment.
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Evaluation III</h3>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Evaluation III question papers for Standard 1, 2, 3, 4, and 5 formative assessment.
                 </p>
               </div>
               <Link
                 to="/downloads/evaluation-papers"
-                className="w-full py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                className="w-full py-3 bg-[#EAF9FA] hover:bg-[#64C9CF] text-[#0B6B72] hover:text-white border border-[#64C9CF]/30 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>View Std 1-5 Papers</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -859,19 +896,19 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Box 4: CBSE SARAS Disclosures */}
-            <div className="bg-white/5 border border-white/10 hover:border-[#D97745] p-6 rounded-2xl space-y-4 hover:bg-white/10 transition-all flex flex-col justify-between">
+            <div className="bg-white border border-[#E7E2D8] hover:border-[#FDE49C] p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-[#D97745]/20 text-[#D97745] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-[#FDE49C]/35 text-[#DF711B] flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h3 className="font-cinzel font-bold text-lg text-white">Public Disclosures</h3>
-                <p className="text-xs text-slate-300 font-light leading-relaxed">
-                  Fire safety, structural stability, potable water clearance, affiliation and NOC certificates.
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Public Disclosures</h3>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Fire safety, structural stability, potable water test clearance, affiliation and NOC certificates.
                 </p>
               </div>
               <Link
                 to="/about/mandatory-information"
-                className="w-full py-2.5 bg-white hover:bg-[#D97745] text-[#0B1D30] hover:text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                className="w-full py-3 bg-[#FFF7DF] hover:bg-[#FDE49C] text-[#181C20] border border-[#FDE49C] text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>View Disclosures</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -882,12 +919,12 @@ export const HomePage: React.FC = () => {
 
           {/* Active Notices & Circulars Row */}
           {notices.length > 0 && (
-            <div className="pt-6 border-t border-white/10 space-y-4">
+            <div className="pt-8 border-t border-[#E7E2D8] space-y-4">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-mono uppercase tracking-widest text-[#D97745] font-bold">
-                  ★ Active Notice Board & Circulars
+                <span className="font-mono uppercase tracking-widest text-[#DF711B] font-bold">
+                  Official Bulletin & Campus Circulars
                 </span>
-                <Link to="/news/circulars" className="text-slate-300 hover:text-[#D97745] flex items-center gap-1">
+                <Link to="/news/circulars" className="text-slate-600 hover:text-[#DF711B] flex items-center gap-1 font-mono font-semibold">
                   <span>View All Circulars</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
@@ -897,20 +934,20 @@ export const HomePage: React.FC = () => {
                 {notices.map((notice) => (
                   <div
                     key={notice.id}
-                    className="p-4 bg-white/5 border border-white/10 rounded-xl space-y-2 hover:bg-white/10 transition-colors"
+                    className="p-5 bg-white border border-[#E7E2D8] rounded-xl space-y-2 hover:border-[#DF711B] shadow-sm transition-colors"
                   >
-                    <div className="flex justify-between items-center text-[10px] font-mono text-slate-400">
-                      <span className="uppercase text-[#D97745] font-bold">{notice.category}</span>
+                    <div className="flex justify-between items-center text-[10px] font-mono text-slate-500">
+                      <span className="uppercase text-[#DF711B] font-bold">{notice.category}</span>
                       <span>{notice.date}</span>
                     </div>
-                    <h4 className="font-serif font-bold text-sm text-white line-clamp-1">{notice.title}</h4>
-                    <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed font-light">{notice.summary}</p>
+                    <h4 className="font-serif font-bold text-sm text-[#181C20] line-clamp-1">{notice.title}</h4>
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">{notice.summary}</p>
                     {notice.fileUrl && (
                       <a
                         href={notice.fileUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-xs text-[#D97745] hover:underline font-semibold pt-1"
+                        className="inline-flex items-center gap-1 text-xs text-[#DF711B] hover:underline font-semibold pt-1"
                       >
                         <Download className="w-3 h-3" />
                         <span>Download Document</span>
@@ -921,49 +958,49 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
           )}
+
         </div>
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 07 — VISUAL ARCHIVE & LIGHTBOX MASONRY
+          SECTION 07 — VISUAL ARCHIVE & MASONRY EXHIBITION
          ---------------------------------------------------- */}
-      <section className="py-24 bg-[#FCFBF7] relative">
+      <section className="py-24 lg:py-32 bg-[#FAF8F5] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E7E2D8] pb-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-[#D97745] uppercase tracking-[0.25em] block">
-                CAMPUS GALLERY
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.25em] block">
+                CAMPUS GALLERY & ARCHIVES
               </span>
-              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] tracking-tight">
+              <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-[#181C20] tracking-tight">
                 Moments of Life at Chinmaya
               </h2>
             </div>
             <Link
               to="/gallery"
-              className="px-5 py-2.5 bg-[#0B1D30] hover:bg-[#D97745] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2 hover:scale-105 active:scale-95"
+              className="px-6 py-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-sm flex items-center gap-2"
             >
-              <span>View Full Photo Archive</span>
+              <span>Full Photographic Archive</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          {/* Masonry Layout */}
+          {/* Masonry Layout with Doppelrand Frames */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {galleryItems.map((item) => (
               <div
                 key={item.id}
                 onClick={() => setSelectedGalleryImg(item.src)}
-                data-cursor="EXPAND"
-                className={`${item.span} group relative rounded-3xl overflow-hidden shadow-card border border-[#E7E2D8] cursor-pointer h-72 sm:h-80`}
+                className={`${item.span} group relative rounded-3xl overflow-hidden shadow-sm border-2 border-[#D5CEC2] cursor-pointer h-72 sm:h-80`}
               >
                 <img
                   src={item.src}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1D30]/90 via-[#0B1D30]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
-                  <span className="text-[11px] font-mono text-[#D97745] uppercase tracking-widest font-bold">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#181C20]/90 via-[#181C20]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                  <span className="text-[10px] font-mono text-[#DF711B] uppercase tracking-widest font-bold">
                     {item.cat}
                   </span>
                   <h4 className="font-cinzel font-bold text-lg text-white mt-1">
@@ -984,7 +1021,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#0B1D30]/95 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-[#181C20]/95 backdrop-blur-md flex items-center justify-center p-4"
             onClick={() => setSelectedGalleryImg(null)}
           >
             <button 
@@ -1003,12 +1040,12 @@ export const HomePage: React.FC = () => {
       </AnimatePresence>
 
       {/* ----------------------------------------------------
-          SECTION 07.5 — PUJYA GURUDEV TRIBUTE & FAQ
+          SECTION 07.5 — PUJYA GURUDEV TRIBUTE & MOTTO
          ---------------------------------------------------- */}
-      <section className="py-16 bg-[#F7F3EB] border-y border-[#E7E2D8]">
+      <section className="py-20 bg-[#F3EFE6] border-y border-[#D5CEC2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#0B1D30] to-[#122A44] text-white p-8 md:p-12 rounded-3xl border border-[#D97745]/30 shadow-2xl flex flex-col md:flex-row items-center gap-8">
-            <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-[#D97745] shadow-xl shrink-0">
+          <div className="bg-white text-[#181C20] p-8 md:p-14 rounded-3xl border-2 border-[#DF711B]/30 shadow-xl flex flex-col md:flex-row items-center gap-8">
+            <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-[#DF711B] shadow-xl shrink-0">
               <img
                 src="/images/swami.jpeg"
                 alt="Pujya Gurudev Swami Chinmayananda"
@@ -1016,17 +1053,17 @@ export const HomePage: React.FC = () => {
               />
             </div>
             <div className="space-y-3 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 text-[#D97745]">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-[#DF711B]">
                 <Quote className="w-5 h-5 opacity-75" />
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D97745]">
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#DF711B]">
                   Vision of Pujya Gurudev Swami Chinmayananda
                 </span>
               </div>
-              <blockquote className="font-cinzel text-xl sm:text-3xl italic text-white/95 leading-relaxed">
+              <blockquote className="font-cinzel text-xl sm:text-3xl italic text-[#181C20] leading-relaxed">
                 "Children are not vessels to be filled, but lamps to be lit. When you ignite the noble flame within a child, you illuminate generations."
               </blockquote>
-              <p className="text-xs sm:text-sm text-slate-300/80 font-normal">
-                Founder of Chinmaya Mission & Guide of Chinmaya Vidyalaya Tarapur
+              <p className="text-xs sm:text-sm text-slate-600 font-normal">
+                Founder of Chinmaya Mission & Eternal Guide of Chinmaya Vidyalaya Tarapur
               </p>
             </div>
           </div>
@@ -1039,51 +1076,52 @@ export const HomePage: React.FC = () => {
       {/* ----------------------------------------------------
           SECTION 08 — MASTER FINAL CONVERSION BANNER (ADMISSIONS)
          ---------------------------------------------------- */}
-      <section className="py-24 sm:py-32 bg-[#0B1D30] text-white relative overflow-hidden border-t-4 border-[#D97745]">
-        <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
-        
+      <section className="py-24 sm:py-32 bg-gradient-to-br from-[#DF711B] via-[#C45B0E] to-[#9C3E08] text-white relative overflow-hidden shadow-2xl">
         <div className="max-w-5xl mx-auto px-4 text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#D97745] uppercase font-bold border border-white/20">
-            <Sparkles className="w-4 h-4" />
+          
+          <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#FFF7DF] uppercase font-bold border border-white/30 backdrop-blur-xs">
+            <GraduationCap className="w-4 h-4" />
             <span>SESSION 2026-27 ADMISSIONS OPEN</span>
           </div>
 
-          <h2 className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight">
+          <h2 className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight">
             Shape a Future of <br />
-            <span className="italic font-serif font-normal text-[#D97745]">Wisdom and Distinction.</span>
+            <span className="italic font-serif font-normal text-[#FDE49C]">Wisdom and Distinction.</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300/85 max-w-2xl mx-auto font-normal leading-relaxed">
-            Join the Chinmaya family in Tarapur/Boisar. Download the application forms, schedule a campus visit, or connect with our admissions counselors today.
+          <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto font-normal leading-relaxed">
+            Join the Chinmaya family in Boisar / Tarapur. Download application forms, schedule a campus visit, or connect with our academic admissions office today.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
+            <MagneticButton
               onClick={() => setIsAdmissionDrawerOpen(true)}
-              data-cursor="APPLY"
-              className="group px-8 py-4 bg-[#D97745] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-3"
+              className="group px-8 py-4 bg-white hover:bg-[#FFF7DF] text-[#DF711B] font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-xl flex items-center gap-3"
             >
-              <Sparkles className="w-4 h-4" />
+              <GraduationCap className="w-4 h-4 text-[#DF711B]" />
               <span>Apply Online & Download Forms</span>
-              <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <div className="w-7 h-7 rounded-full bg-[#DF711B]/15 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#DF711B]" />
               </div>
-            </button>
+            </MagneticButton>
 
             <Link
               to="/contact"
-              className="group px-8 py-4 bg-white hover:bg-slate-100 text-[#0B1D30] font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-3"
+              className="group px-8 py-4 bg-white/15 hover:bg-white/25 text-white border border-white/30 font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-xl flex items-center gap-3"
             >
-              <Phone className="w-4 h-4 text-[#D97745]" />
+              <Phone className="w-4 h-4 text-[#FFF7DF]" />
               <span>Contact Campus Office</span>
-              <div className="w-7 h-7 rounded-full bg-[#0B1D30]/10 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
-                <ArrowRight className="w-3.5 h-3.5 text-[#0B1D30]" />
+              <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
               </div>
             </Link>
           </div>
 
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-slate-400">
-            <span>P-201 MIDC Area, Boisar 401501</span>
+          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/80">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#FFF7DF]" />
+              P-201 MIDC Area, Boisar 401501
+            </span>
             <span>•</span>
             <span>Tel: 9322054713 / 9823517700</span>
             <span>•</span>

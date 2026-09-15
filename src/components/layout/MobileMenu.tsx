@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Phone, Mail, Award, X, Sparkles, FileText } from 'lucide-react';
+import { ChevronDown, Phone, Mail, Award, X, GraduationCap, FileText } from 'lucide-react';
 import { OFFICIAL_NAVIGATION_DATA } from '../../data/navigation';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
 
@@ -40,7 +40,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-[#0B1D30]/80 backdrop-blur-md transition-opacity"
+          className="fixed inset-0 bg-[#181C20]/70 backdrop-blur-md transition-opacity"
           onClick={onClose}
         />
 
@@ -53,21 +53,23 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
           className="relative ml-auto w-full max-w-sm bg-[#FCFBF7] text-[#181C20] h-full shadow-2xl flex flex-col z-10 overflow-y-auto border-l border-[#E7E2D8]"
         >
           {/* Mobile Header with Logo Restart */}
-          <div className="p-5 bg-[#0B1D30] text-white flex items-center justify-between border-b border-white/10">
+          <div className="p-5 bg-[#FAF8F5] text-[#181C20] flex items-center justify-between border-b border-[#E7E2D8]">
             <a 
               href="/" 
               onClick={handleRestart}
               className="flex items-center gap-3 cursor-pointer"
             >
-              <img src="/images/Chinmaya_Logo.webp" alt="Logo" className="w-10 h-10 object-contain" />
+              <div className="w-10 h-10 rounded-xl bg-white border border-[#D5CEC2] p-1 flex items-center justify-center shrink-0">
+                <img src="/images/Chinmaya_Logo.webp" alt="Logo" className="w-full h-full object-contain" />
+              </div>
               <div>
-                <span className="font-cinzel font-bold text-base block">CHINMAYA</span>
-                <p className="text-[10px] text-[#D97745] font-mono uppercase tracking-widest">Tarapur • Boisar</p>
+                <span className="font-cinzel font-bold text-base block text-[#181C20]">CHINMAYA</span>
+                <p className="text-[10px] text-[#DF711B] font-mono uppercase tracking-widest font-bold">Tarapur • Boisar</p>
               </div>
             </a>
             <button
               onClick={onClose}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white"
+              className="p-2 rounded-full bg-[#FAF3E8] hover:bg-[#EFEAE1] text-[#181C20] border border-[#E7E2D8] transition-colors"
               aria-label="Close menu"
             >
               <X className="w-5 h-5" />
@@ -81,18 +83,18 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
                 onClose();
                 if (onOpenAdmissionDrawer) onOpenAdmissionDrawer();
               }}
-              className="flex-1 py-2.5 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm"
+              className="flex-1 py-2.5 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Admissions 2026</span>
+              <GraduationCap className="w-4 h-4" />
+              <span>Admissions 2026-27</span>
             </button>
 
             <Link
               to="/about/mandatory-information"
               onClick={onClose}
-              className="px-3 py-2.5 bg-white border border-[#E7E2D8] text-[#0B1D30] text-xs font-semibold rounded-xl flex items-center justify-center gap-1"
+              className="px-3 py-2.5 bg-white border border-[#E7E2D8] text-[#181C20] text-xs font-semibold rounded-xl flex items-center justify-center gap-1"
             >
-              <FileText className="w-3.5 h-3.5 text-[#D97745]" />
+              <FileText className="w-3.5 h-3.5 text-[#DF711B]" />
               <span>Disclosures</span>
             </Link>
           </div>
@@ -109,14 +111,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
                     <div>
                       <button
                         onClick={() => toggleSection(item.label)}
-                        className="w-full flex items-center justify-between py-3 px-3 text-[#0B1D30] font-semibold text-sm hover:bg-[#F7F3EB] rounded-xl text-left transition-colors"
+                        className="w-full flex items-center justify-between py-3 px-3 text-[#181C20] font-semibold text-sm hover:bg-[#F7F3EB] rounded-xl text-left transition-colors"
                       >
                         <span>{item.label}</span>
-                        <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#D97745]' : ''}`} />
+                        <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#DF711B]' : ''}`} />
                       </button>
 
                       {isExpanded && (
-                        <div className="bg-[#F7F3EB]/70 rounded-xl py-2 px-2 my-1 space-y-1 border-l-2 border-[#D97745] ml-2">
+                        <div className="bg-[#F7F3EB]/70 rounded-xl py-2 px-2 my-1 space-y-1 border-l-2 border-[#DF711B] ml-2">
                           {item.children?.map((subItem) => (
                             <Link
                               key={subItem.href}
@@ -124,13 +126,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
                               onClick={onClose}
                               className={`block py-2 px-3 text-xs rounded-lg transition-colors ${
                                 location.pathname === subItem.href
-                                  ? 'bg-[#0B1D30] text-white font-bold'
-                                  : 'text-[#363C44] hover:text-[#D97745] hover:bg-white'
+                                  ? 'bg-[#DF711B] text-white font-bold'
+                                  : 'text-[#363C44] hover:text-[#DF711B] hover:bg-white'
                               }`}
                             >
                               <div className="font-medium">{subItem.label}</div>
                               {subItem.description && (
-                                <div className="text-[10px] text-slate-400 font-normal mt-0.5 line-clamp-1">
+                                <div className="text-[10px] text-slate-500 font-normal mt-0.5 line-clamp-1">
                                   {subItem.description}
                                 </div>
                               )}
@@ -145,8 +147,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
                       onClick={onClose}
                       className={`block py-3 px-3 text-sm font-semibold rounded-xl transition-colors ${
                         location.pathname === item.href
-                          ? 'bg-[#0B1D30] text-white'
-                          : 'text-[#0B1D30] hover:bg-[#F7F3EB]'
+                          ? 'bg-[#DF711B] text-white'
+                          : 'text-[#181C20] hover:bg-[#F7F3EB]'
                       }`}
                     >
                       {item.label}
@@ -160,15 +162,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
           {/* Mobile Footer Info */}
           <div className="p-4 bg-[#F7F3EB] border-t border-[#E7E2D8] text-xs space-y-2 text-[#4A5568]">
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-[#D97745] shrink-0" />
-              <span>CBSE Affiliation: <strong className="text-[#0B1D30]">{OFFICIAL_SCHOOL_INFO.affiliationNo}</strong></span>
+              <Award className="w-4 h-4 text-[#DF711B] shrink-0" />
+              <span>CBSE Affiliation: <strong className="text-[#181C20]">{OFFICIAL_SCHOOL_INFO.affiliationNo}</strong></span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#D97745] shrink-0" />
+              <Phone className="w-4 h-4 text-[#DF711B] shrink-0" />
               <span>{OFFICIAL_SCHOOL_INFO.contact.phone[0]}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#D97745] shrink-0" />
+              <Mail className="w-4 h-4 text-[#DF711B] shrink-0" />
               <span>{OFFICIAL_SCHOOL_INFO.contact.email[0]}</span>
             </div>
           </div>

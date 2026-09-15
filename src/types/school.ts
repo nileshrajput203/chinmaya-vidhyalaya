@@ -2,7 +2,7 @@ export interface SchoolInfo {
   name: string;
   tagline: string;
   affiliationNo: string; // "1130058"
-  schoolCode: string;    // "30064"
+  schoolCode: string;    // "30040"
   udiseNo: string;       // "27361116004"
   trustName: string;
   undertaking: string;
@@ -17,14 +17,34 @@ export interface SchoolInfo {
     phone: string[];
     email: string[];
     officeHours: string;
+    website?: string;
   };
+  managingTrust?: string;
+  localCommittee?: string;
+  envisagedYear?: string;
+  constructionBeganYear?: string;
+  inauguratedDate?: string;
+  inauguratedBy?: string;
+  foundingEnrollment?: string;
+  currentEnrollment?: string;
+  cbseAffiliationYear?: string;
+  firstAisseBatch?: string;
+  regionalStanding?: string;
+  locationDetails?: string;
+  visionStatement?: string;
+  educationApproach?: string;
+  founder?: string;
 }
 
 export interface PrincipalInfo {
   name: string;
+  designation?: string;
+  boardRole?: string;
   qualification: string;
   message: string;
   image: string;
+  phone?: string;
+  email?: string;
 }
 
 export interface ManagementMember {

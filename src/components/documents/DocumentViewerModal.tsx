@@ -36,7 +36,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
           {/* Header Bar */}
           <div className="px-6 py-4 bg-[#0B1D30] text-white flex items-center justify-between border-b border-white/10 shrink-0">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-[#D97745]/20 text-[#D97745] flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-[#DF711B]/20 text-[#DF711B] flex items-center justify-center shrink-0">
                 <FileText className="w-4 h-4" />
               </div>
               <div className="truncate">
@@ -47,7 +47,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
                   {document.fileSize && <span>{document.fileSize}</span>}
                   {document.academicYear && <span>• Session: {document.academicYear}</span>}
                   {!allowDownload && (
-                    <span className="text-[#D97745] font-bold">• View-Only Mode</span>
+                    <span className="text-[#DF711B] font-bold">• View-Only Mode</span>
                   )}
                 </div>
               </div>
@@ -58,7 +58,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
                 <a
                   href={document.fileUrl}
                   download
-                  className="px-3 py-1.5 bg-[#D97745] hover:bg-[#C8652D] text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-sm"
+                  className="px-3 py-1.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-sm"
                   title="Download File"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -89,7 +89,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
           {/* View-Only Advisory Banner for Public Disclosures */}
           {!allowDownload && (
             <div className="bg-[#FAF3E8] px-6 py-2 border-b border-[#E7E2D8] flex items-center gap-2 text-xs text-[#0B1D30] shrink-0 font-medium">
-              <ShieldAlert className="w-4 h-4 text-[#D97745] shrink-0" />
+              <ShieldAlert className="w-4 h-4 text-[#DF711B] shrink-0" />
               <span>
                 Official Verification Display: This public disclosure document is provided in authenticated view-only mode per CBSE SARAS statutory requirements.
               </span>

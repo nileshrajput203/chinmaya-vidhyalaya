@@ -56,16 +56,16 @@ export const NewsListingPage: React.FC = () => {
 
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 text-xs">
-                      <span className="bg-[#0B1D30] text-white px-3 py-1 rounded-full font-mono font-bold uppercase tracking-wider text-[10px]">
+                      <span className="bg-[#DF711B] text-white px-3 py-1 rounded-full font-mono font-bold uppercase tracking-wider text-[10px]">
                         Featured Bulletin
                       </span>
                       <span className="text-[#4A5568] flex items-center gap-1.5 font-mono text-xs">
-                        <Calendar className="w-3.5 h-3.5 text-[#D97745]" />
+                        <Calendar className="w-3.5 h-3.5 text-[#DF711B]" />
                         {featuredStory.date}
                       </span>
                     </div>
 
-                    <h2 className="font-cinzel text-2xl md:text-3xl text-[#0B1D30] font-bold leading-tight hover:text-[#D97745] transition-colors">
+                    <h2 className="font-cinzel text-2xl md:text-3xl text-[#181C20] font-bold leading-tight hover:text-[#DF711B] transition-colors">
                       {featuredStory.title}
                     </h2>
 
@@ -78,20 +78,20 @@ export const NewsListingPage: React.FC = () => {
 
               {/* SECONDARY STORIES GRID */}
               <div className="space-y-6">
-                <h3 className="font-cinzel font-bold text-[#0B1D30] text-xl border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
+                <h3 className="font-cinzel font-bold text-[#181C20] text-xl border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
                   Recent Campus Updates
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {secondaryStories.map((item) => (
-                    <article key={item.id} className="bg-white border border-[#E7E2D8] p-6 rounded-3xl space-y-3 flex flex-col justify-between hover:border-[#0B1D30] transition-colors shadow-card">
+                    <article key={item.id} className="bg-white border border-[#E7E2D8] p-6 rounded-3xl space-y-3 flex flex-col justify-between hover:border-[#DF711B] transition-colors shadow-card">
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-[11px] font-mono text-[#4A5568]">
-                          <span className="font-bold text-[#D97745] uppercase">{item.category}</span>
+                          <span className="font-bold text-[#DF711B] uppercase">{item.category}</span>
                           <span>{item.date}</span>
                         </div>
 
-                        <h4 className="font-cinzel font-bold text-[#0B1D30] text-base leading-snug line-clamp-2">
+                        <h4 className="font-cinzel font-bold text-[#181C20] text-base leading-snug line-clamp-2">
                           {item.title}
                         </h4>
 
@@ -109,22 +109,22 @@ export const NewsListingPage: React.FC = () => {
             <aside className="lg:col-span-4 space-y-8">
               <div className="bg-[#F7F3EB] border border-[#E7E2D8] p-6 rounded-3xl space-y-6 shadow-card sticky top-24">
                 <div className="flex items-center gap-2 border-b border-[#E7E2D8] pb-3">
-                  <Bell className="w-5 h-5 text-[#D97745]" />
-                  <h3 className="font-cinzel font-bold text-[#0B1D30] text-lg uppercase tracking-wider">Official Bulletin</h3>
+                  <Bell className="w-5 h-5 text-[#DF711B]" />
+                  <h3 className="font-cinzel font-bold text-[#181C20] text-lg uppercase tracking-wider">Official Bulletin</h3>
                 </div>
 
                 <div className="space-y-4">
                   {notices.map((notice) => (
-                    <div key={notice.id} className="p-4 bg-white border-l-4 border-[#D97745] rounded-r-2xl space-y-2 shadow-sm">
+                    <div key={notice.id} className="p-4 bg-white border-l-4 border-[#DF711B] rounded-r-2xl space-y-2 shadow-sm">
                       <div className="flex items-center justify-between text-[10px] font-mono text-[#4A5568]">
-                        <span className="font-bold text-[#D97745] uppercase">{notice.category}</span>
+                        <span className="font-bold text-[#DF711B] uppercase">{notice.category}</span>
                         <span>{notice.date}</span>
                       </div>
-                      <h4 className="font-serif font-bold text-[#0B1D30] text-sm leading-snug">{notice.title}</h4>
+                      <h4 className="font-serif font-bold text-[#181C20] text-sm leading-snug">{notice.title}</h4>
                       <p className="text-xs text-[#4A5568] leading-relaxed font-light">{notice.summary}</p>
                       {notice.fileUrl && (
-                        <a href={notice.fileUrl} download className="inline-flex items-center gap-1.5 text-xs text-[#0B1D30] font-bold hover:text-[#D97745] pt-1">
-                          <Download className="w-3 h-3 text-[#D97745]" />
+                        <a href={notice.fileUrl} download className="inline-flex items-center gap-1.5 text-xs text-[#181C20] font-bold hover:text-[#DF711B] pt-1">
+                          <Download className="w-3 h-3 text-[#DF711B]" />
                           <span>Download Circular</span>
                         </a>
                       )}

@@ -43,7 +43,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-5',
     category: 'academics',
     question: 'What board is Chinmaya Vidyalaya affiliated with, and what is its board exam performance?',
-    answer: 'Chinmaya Vidyalaya Tarapur is affiliated with the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058, School Code: 30064). The Vidyalaya holds an unbroken record of 100% pass results in the Class X AISSE Board Examinations, with a high proportion of students securing First Class and Distinctions.'
+    answer: 'Chinmaya Vidyalaya is affiliated with the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004). The Vidyalaya holds an unbroken record of 100% pass results in the Class X AISSE Board Examinations, with a high proportion of students securing First Class and Distinctions since its first batch appeared in 2004–2005.'
   },
   {
     id: 'faq-6',
@@ -85,6 +85,6 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-12',
     category: 'facilities',
     question: 'How do I contact the administration or schedule a school visit?',
-    answer: 'You can visit the campus at Chinmaya Vidyalaya, Behind Mohan Suburb, Vidyanagar, Boisar / Tarapur 401501, or call our office at 9322054713 / 9823517700. Inquiries can also be submitted online through our Contact page, which sends an instant notification to our administrative desk.'
+    answer: 'You can visit the campus at P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501, Dist: Palghar, Maharashtra, or call our school office at 9322054713. You may also email cv.info@chinmayamission.com or cvtarapur@chinmayamission.com. Inquiries can also be submitted online through our Contact page.'
   }
 ];
