@@ -88,7 +88,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
 
           {/* View-Only Advisory Banner for Public Disclosures */}
           {!allowDownload && (
-            <div className="bg-[#FAF3E8] px-6 py-2 border-b border-[#E7E2D8] flex items-center gap-2 text-xs text-[#0B1D30] shrink-0 font-medium">
+            <div className="bg-[#FAF3E8] px-6 py-2 border-b border-[#E7E2D8] flex items-center gap-2 text-xs text-[#181C20] shrink-0 font-medium">
               <ShieldAlert className="w-4 h-4 text-[#DF711B] shrink-0" />
               <span>
                 Official Verification Display: This public disclosure document is provided in authenticated view-only mode per CBSE SARAS statutory requirements.
