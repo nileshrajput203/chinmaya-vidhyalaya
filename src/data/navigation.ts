@@ -13,68 +13,61 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
       { label: "Mission & Vision", href: "/about/mission-vision", description: "Guiding principles for holistic education" },
       { label: "Philosophy (CVP)", href: "/about/philosophy", description: "Chinmaya Vision Program four pillars" },
       { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees and leadership" },
-      { label: "Mandatory Information", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates & affiliation" },
-      { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates", description: "Official Transfer Certificate specimen and annual registers (2020-2023)" }
+      { label: "Mandatory Disclosures", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates & affiliation" },
+      { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates", description: "Official Transfer Certificate specimen and annual registers" }
     ]
   },
   {
     label: "Academics",
     href: "/academics",
     children: [
-      { label: "Curriculum & Subjects", href: "/academics/curriculum", description: "Std I to V and Std VI to X scholastic & non-scholastic subjects" },
-      { label: "Teaching Strategy", href: "/academics/teaching-strategy", description: "Play way, activity oriented, and digital methodologies" },
-      { label: "Our Faculty & Staff", href: "/academics/faculty", description: "Qualified educators and dedicated non-teaching staff" },
-      { label: "Co-Curricular Activities", href: "/academics/co-curricular", description: "Arts, sports, music, and personality development" },
-      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry labs, library and smart classrooms" }
+      { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Std I to V and Std VI to X scholastic & non-scholastic subjects" },
+      { label: "Teaching Strategy", href: "/academics/teaching-strategy", description: "Activity-oriented, digital and experiential methodologies" },
+      { label: "Faculty Directory", href: "/academics/faculty", description: "Qualified educators and dedicated non-teaching staff" },
+      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry labs, library and smart classrooms" },
+      { label: "Co-Curricular Programs", href: "/academics/co-curricular", description: "Arts, sports, music, and personality development" }
     ]
   },
   {
     label: "Admissions",
     href: "/admissions",
     children: [
-      { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility, class capacity (>40) and process" },
+      { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility criteria, age norms and process" },
       { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG & Std I-IX application forms" },
-      { label: "Transfer Certificates (TC)", href: "/downloads/transfer-certificates", description: "TC 2023, TC 2021, TC 2020 official records" },
-      { label: "Teacher Application", href: "/downloads/recruitment", description: "Application form for the post of teacher" }
+      { label: "Transfer Certificates (TC)", href: "/downloads/transfer-certificates", description: "TC 2023, TC 2021, TC 2020 official records" }
     ]
   },
   {
-    label: "Unique Features",
+    label: "Student Life & CVP",
     href: "/features",
     children: [
       { label: "4 Pillars of CVP", href: "/features/4-pillars", description: "Integrated Development, Indian Culture, Patriotism, Universal Outlook" },
-      { label: "Holistic Development", href: "/features/holistic-development", description: "Physical, emotional, intellectual & spiritual faculties (>40 class capacity)" },
-      { label: "Spiritual Activities", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar & Gita chanting" },
+      { label: "Holistic Development", href: "/features/holistic-development", description: "Physical, emotional, intellectual & spiritual faculties" },
+      { label: "Spiritual Assemblies", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar & Gita chanting" },
       { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz & ASSET diagnostic testing" },
-      { label: "Education Tours", href: "/features/education-tours", description: "Annual study tours & industrial field trips" },
-      { label: "Smart Library", href: "/features/library", description: "Thousands of titles, journals & reading room" }
+      { label: "Educational Study Tours", href: "/features/education-tours", description: "Annual study tours & industrial field trips" },
+      { label: "Central Library", href: "/features/library", description: "Thousands of titles, journals & reading room" }
     ]
   },
   {
-    label: "News & Notices",
+    label: "Notice Board",
     href: "/news",
     children: [
-      { label: "Latest Updates & Honors", href: "/news/latest-updates", description: "Principal honors and school announcements" },
-      { label: "Festival Celebrations", href: "/news/festivals", description: "Cultural events and Jal Pakhwada awareness" },
-      { label: "Circulars & Notices", href: "/news/circulars", description: "Bus service, book distribution, and parent notices" }
+      { label: "Active Circulars", href: "/news", description: "Official parent notices, book lists, and administrative orders" },
+      { label: "Upcoming Events", href: "/news", description: "School celebrations, exhibitions, and athletic meets" },
+      { label: "Academic Dispatches", href: "/downloads/evaluation-papers", description: "Evaluation revision papers and CBSE sample questions" }
     ]
   },
   {
-    label: "Downloads",
-    href: "/downloads",
-    children: [
-      { label: "Mandatory Public Disclosures", href: "/downloads/mandatory-information", description: "CBSE SARAS, safety certificates, affiliation letters" },
-      { label: "Sample Papers (Std 1 - 10)", href: "/downloads/sample-papers", description: "Class 1 to 10 sample papers and model solutions" },
-      { label: "Evaluation III Papers (Std 1 - 5)", href: "/downloads/evaluation-papers", description: "Question papers for Standard 1 to 5" },
-      { label: "All Documents & Forms", href: "/downloads/documents", description: "All official downloadable certificates and files" }
-    ]
+    label: "Gallery",
+    href: "/gallery"
   },
   {
-    label: "FAQ",
-    href: "/faq"
+    label: "Careers",
+    href: "/careers"
   },
   {
-    label: "Contact Us",
+    label: "Contact",
     href: "/contact"
   }
 ];

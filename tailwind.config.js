@@ -7,6 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        border: "hsl(var(--border, 38 18% 88%))",
+        background: "hsl(var(--background, 43 40% 98%))",
+        foreground: "hsl(var(--foreground, 210 14% 11%))",
+        muted: {
+          DEFAULT: "hsl(var(--muted, 40 20% 95%))",
+          foreground: "hsl(var(--muted-foreground, 0 0% 45%))",
+        },
         palette: {
           teal: "#64C9CF",
           tealLight: "#8EE0E4",
@@ -39,6 +46,20 @@ export default {
           borderDark: "#303A44"
         }
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         serif: ['Playfair Display', 'Georgia', 'serif'],
@@ -57,3 +78,4 @@ export default {
   },
   plugins: [],
 }
+

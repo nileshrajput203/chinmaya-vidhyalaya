@@ -5,6 +5,7 @@ import { Footer } from '../components/layout/Footer';
 import { Preloader } from '../components/common/Preloader';
 import { SmoothScrollProvider } from '../components/common/SmoothScrollProvider';
 import { ScrollToTop } from '../components/common/ScrollToTop';
+import { ChatbotFAB } from '../components/common/ChatbotFAB';
 
 export const MainLayout: React.FC = () => {
   const [preloaderDone, setPreloaderDone] = useState(false);
@@ -19,6 +20,7 @@ export const MainLayout: React.FC = () => {
           <Outlet context={{ preloaderDone }} />
         </main>
         <Footer />
+        <ChatbotFAB />
       </div>
     </SmoothScrollProvider>
   );

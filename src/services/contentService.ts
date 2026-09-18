@@ -48,11 +48,25 @@ export const contentService = {
     return Promise.resolve(OFFICIAL_NOTICES);
   },
 
-  async getGallery(category?: string): Promise<GalleryItem[]> {
-    if (category) {
-      return Promise.resolve(OFFICIAL_GALLERY.filter(item => item.category === category));
+  async getGallery(filters?: { category?: string; academicYear?: string; event?: string } | string): Promise<GalleryItem[]> {
+    if (!filters) return Promise.resolve(OFFICIAL_GALLERY);
+    
+    if (typeof filters === 'string') {
+      if (filters === 'all') return Promise.resolve(OFFICIAL_GALLERY);
+      return Promise.resolve(OFFICIAL_GALLERY.filter(item => item.category === filters));
     }
-    return Promise.resolve(OFFICIAL_GALLERY);
+
+    let result = OFFICIAL_GALLERY;
+    if (filters.category && filters.category !== 'all') {
+      result = result.filter(item => item.category === filters.category);
+    }
+    if (filters.academicYear && filters.academicYear !== 'All Years') {
+      result = result.filter(item => item.academicYear === filters.academicYear);
+    }
+    if (filters.event && filters.event !== 'All Events') {
+      result = result.filter(item => item.event === filters.event);
+    }
+    return Promise.resolve(result);
   },
 
   async getAchievements(): Promise<Achievement[]> {

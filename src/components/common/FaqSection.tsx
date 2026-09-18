@@ -108,7 +108,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
   };
 
   return (
-    <section id={id} className="py-16 sm:py-24 bg-[#FCFBF7] text-[#181C20] relative">
+    <section id={id} className="py-16 sm:py-24 pb-8 sm:pb-12 bg-[#FCFBF7] text-[#181C20] relative overflow-visible">
       {/* Background ambient texture */}
       <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
 
@@ -450,46 +450,64 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
         )}
 
         {/* ====================================================
-            ESCALATION SUPPORT CARD (High-End Island & Button-in-Button)
+            ESCALATION SUPPORT CARD & STUDENT CUTOUT (Shifted Left with Cutout on Right)
            ==================================================== */}
-        <div className="max-w-4xl mx-auto p-1 sm:p-1.5 rounded-3xl bg-[#0B1D30]/10 border border-[#DF711B]/30 shadow-2xl">
-          <div className="bg-gradient-to-br from-[#0B1D30] to-[#162E4A] text-white p-8 sm:p-10 rounded-[calc(1.5rem-0.375rem)] flex flex-col md:flex-row items-center justify-between gap-6">
-            
-            <div className="space-y-3 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-widest border border-[#DF711B]/40">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Dedicated Administrative Helpdesk</span>
-              </div>
-              <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-white">
-                Have a unique query not covered here?
-              </h3>
-              <p className="text-sm sm:text-base text-slate-300/85 max-w-lg font-normal leading-relaxed">
-                Our admissions counselors, student coordinators, and principal desk at Vidyanagar, Boisar are ready to assist you.
-              </p>
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs font-mono text-slate-300 pt-1">
-                <a href="tel:9322054713" className="flex items-center gap-1.5 hover:text-[#DF711B] transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
-                  <span>+91 9322054713 / 9823517700</span>
-                </a>
-                <span>•</span>
-                <span>Mon – Sat: 8:30 AM – 3:30 PM</span>
-              </div>
-            </div>
-
-            {/* Button-in-Button Trailing Icon CTA */}
-            <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <Link
-                to="/contact"
-                className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
-              >
-                <span>Contact Admissions Desk</span>
-                <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
-                  <ArrowRight className="w-3.5 h-3.5 text-white" />
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 lg:gap-8 pt-6 relative">
+          
+          {/* Shifted Left Helpdesk Container */}
+          <div className="flex-1 w-full p-1 sm:p-1.5 rounded-3xl bg-[#0B1D30]/10 border border-[#DF711B]/30 shadow-2xl">
+            <div className="bg-gradient-to-br from-[#0B1D30] to-[#162E4A] text-white p-6 sm:p-8 md:p-9 rounded-[calc(1.5rem-0.375rem)] flex flex-col xl:flex-row items-center justify-between gap-6">
+              
+              <div className="space-y-3 text-center xl:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-widest border border-[#DF711B]/40">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Dedicated Administrative Helpdesk</span>
                 </div>
-              </Link>
-            </div>
+                <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-white">
+                  Have a unique query not covered here?
+                </h3>
+                <p className="text-sm sm:text-base text-slate-300/85 max-w-lg font-normal leading-relaxed">
+                  Our admissions counselors, student coordinators, and principal desk at Vidyanagar, Boisar are ready to assist you.
+                </p>
+                <div className="flex flex-wrap items-center justify-center xl:justify-start gap-4 text-xs font-mono text-slate-300 pt-1">
+                  <a href="tel:9322054713" className="flex items-center gap-1.5 hover:text-[#DF711B] transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
+                    <span>+91 9322054713 / 9823517700</span>
+                  </a>
+                  <span>•</span>
+                  <span>Mon – Sat: 8:30 AM – 3:30 PM</span>
+                </div>
+              </div>
 
+              {/* Button-in-Button Trailing Icon CTA */}
+              <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full xl:w-auto">
+                <Link
+                  to="/contact"
+                  className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
+                >
+                  <span>Contact Admissions Desk</span>
+                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                    <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  </div>
+                </Link>
+              </div>
+
+            </div>
           </div>
+
+          {/* Student Cutout on the Right with Question Mark on Head */}
+          <div className="shrink-0 flex justify-center lg:justify-end items-end relative self-center lg:self-end">
+            <div className="relative">
+              {/* Subtle ambient light behind student */}
+              <div className="absolute -inset-4 bg-gradient-to-t from-[#DF711B]/15 via-[#DF711B]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
+              <img
+                src="/images/student_question_cutout.png"
+                alt="Chinmaya Vidyalaya Student with Inquiry"
+                className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out"
+              />
+            </div>
+          </div>
+
         </div>
 
       </div>

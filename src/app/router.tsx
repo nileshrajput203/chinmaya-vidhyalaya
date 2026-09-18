@@ -9,6 +9,7 @@ import { DocumentListingPage } from '../templates/DocumentListingPage';
 import { NewsListingPage } from '../templates/NewsListingPage';
 import { GalleryPage } from '../templates/GalleryPage';
 import { ContactPage } from '../templates/ContactPage';
+import { CareersPage } from '../templates/CareersPage';
 
 import { ABOUT_SECTIONS } from '../data/about';
 import { ACADEMIC_SECTIONS } from '../data/academics';
@@ -109,7 +110,9 @@ export const router = createBrowserRouter([
         element: <DocumentListingPage pageTitle="Official Documents & Forms" pageSubtitle="Download official certificates, disclosures, and administrative forms" /> 
       },
 
-      /* CONTACT ROUTE */
+      /* CAREERS ROUTE */
+      { path: 'careers', element: <CareersPage /> },
+
       { path: 'contact', element: <ContactPage /> },
 
       /* 404 CATCH-ALL ROUTE */
