@@ -14,8 +14,8 @@ interface CarouselSlide {
 const CAROUSEL_SLIDES: CarouselSlide[] = [
   {
     id: 'arts-commerce',
-    src: '/images/chinmaya%20web%20arts%20and%20commerce%20copy.jpg%20(1)',
-    fallback: '/images/chinmaya-web-arts-and-commerce.jpg',
+    src: '/images/chinmaya-web-arts-and-commerce.jpg',
+    fallback: '/images/banner-3.jpeg',
     alt: 'Chinmaya Vidyalaya Tarapur - Arts & Commerce Stream Banner',
     title: 'Senior Secondary • Arts & Commerce Stream',
     subtitle: 'Fostering analytical acumen, economic literacy, humanities, and visionary leadership.',
@@ -23,8 +23,8 @@ const CAROUSEL_SLIDES: CarouselSlide[] = [
   },
   {
     id: 'science',
-    src: '/images/chinmaya%20web%20science%20copy.jpg%20(1)',
-    fallback: '/images/chinmaya-web-science.jpg',
+    src: '/images/chinmaya-web-science.jpg',
+    fallback: '/images/banner-4.jpeg',
     alt: 'Chinmaya Vidyalaya Tarapur - Science & STEM Stream Banner',
     title: 'Senior Secondary • Science & STEM Stream',
     subtitle: 'Advanced laboratories, experiential physics, chemistry, biology, and competitive entrance mentoring.',
@@ -178,7 +178,7 @@ export const AcademicStreamCarouselBanner: React.FC = () => {
 };
 
 export const SecondaryAcademicBanner: React.FC = () => {
-  const bannerSrc = '/images/file_00000000129882308ffa3f6b1a6bab51';
+  const bannerSrc = '/images/file_00000000129882308ffa3f6b1a6bab51.png';
   const fallbackSrc = '/images/file_00000000129882308ffa3f6b1a6bab51.jpg';
 
   return (
