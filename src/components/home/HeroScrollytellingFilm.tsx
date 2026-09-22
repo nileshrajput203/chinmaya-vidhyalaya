@@ -250,14 +250,16 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // Helper to compute admission form opacity and vertical offset
+  // Helper to compute admission form opacity and vertical offset at 57% scroll
   const getAdmissionFormVisibility = () => {
     const p = scrollProgress;
-    // Enters smoothly as the user scrolls into the video and stays visible till the end without fading out
-    const start = 0.30;
-    const peakIn = 0.45;
+    // Visible at 57% scroll (active range 0.42 to 0.72, peak 0.52 to 0.62)
+    const start = 0.42;
+    const peakIn = 0.52;
+    const peakOut = 0.62;
+    const end = 0.72;
 
-    if (p < start) {
+    if (p < start || p > end) {
       return { 
         opacity: 0, 
         transform: 'translateY(24px)', 
@@ -273,10 +275,10 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       const t = (p - start) / (peakIn - start);
       opacity = t;
       translateY = (1 - t) * 20;
-    } else {
-      // Stays permanently visible and interactive until the hero section completes
-      opacity = 1;
-      translateY = 0;
+    } else if (p > peakOut) {
+      const t = (p - peakOut) / (end - peakOut);
+      opacity = 1 - t;
+      translateY = -t * 20;
     }
 
     return {
@@ -319,7 +321,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
             <div 
               style={getAdmissionFormVisibility()}
-              className="w-full max-w-md bg-white text-[#181818] p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-[#E7E2D8] pointer-events-auto"
+              className="w-full max-w-md max-h-[85vh] sm:max-h-none overflow-y-auto bg-white text-[#181818] p-4 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-[#E7E2D8] pointer-events-auto rounded-lg sm:rounded-none"
             >
               {/* Card Header with Chinmaya Logo */}
               <div className="border-b border-[#E7E2D8] pb-3 mb-3.5">

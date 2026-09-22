@@ -198,19 +198,25 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
           </div>
 
           {/* Mobile Footer Info */}
-          <div className="p-4 bg-[#F7F3EB] border-t border-[#E7E2D8] text-xs space-y-2 text-[#4A5568] shrink-0">
+          <div className="p-4 bg-[#F7F3EB] border-t border-[#E7E2D8] text-xs space-y-2.5 text-[#4A5568] shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-[#DF711B] shrink-0" />
               <span>CBSE Affiliation: <strong className="text-[#181C20]">{OFFICIAL_SCHOOL_INFO.affiliationNo}</strong></span>
             </div>
-            <div className="flex items-center gap-2">
+            <a 
+              href={`tel:${OFFICIAL_SCHOOL_INFO.contact.phone[0]}`}
+              className="flex items-center gap-2 text-[#181C20] hover:text-[#DF711B] transition-colors py-0.5"
+            >
               <Phone className="w-4 h-4 text-[#DF711B] shrink-0" />
               <span>{OFFICIAL_SCHOOL_INFO.contact.phone[0]}</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </a>
+            <a 
+              href={`mailto:${OFFICIAL_SCHOOL_INFO.contact.email[0]}`}
+              className="flex items-center gap-2 text-[#181C20] hover:text-[#DF711B] transition-colors py-0.5"
+            >
               <Mail className="w-4 h-4 text-[#DF711B] shrink-0" />
-              <span>{OFFICIAL_SCHOOL_INFO.contact.email[0]}</span>
-            </div>
+              <span className="truncate">{OFFICIAL_SCHOOL_INFO.contact.email[0]}</span>
+            </a>
           </div>
         </motion.div>
       </div>

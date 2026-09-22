@@ -201,7 +201,7 @@ export const ChatbotFAB: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
+    <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3 font-sans">
       
       {/* Chat Panel */}
       <AnimatePresence>
@@ -211,8 +211,8 @@ export const ChatbotFAB: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.93 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="w-[92vw] sm:w-[380px] max-w-[420px] bg-[#FCFBF7] rounded-2xl shadow-2xl border border-[#D5CEC2] overflow-hidden flex flex-col"
-            style={{ maxHeight: 'min(580px, 85vh)' }}
+            className="w-[calc(100vw-32px)] sm:w-[380px] max-w-[420px] bg-[#FCFBF7] rounded-2xl shadow-2xl border border-[#D5CEC2] overflow-hidden flex flex-col"
+            style={{ maxHeight: 'min(580px, calc(100vh - 170px))' }}
           >
             {/* Chat Header */}
             <div className="bg-[#0B1D30] text-white px-4 sm:px-5 py-3.5 flex items-center justify-between border-b border-[#182C44] shrink-0">

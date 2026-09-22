@@ -7,6 +7,7 @@ import { MobileMenu } from '../MobileMenu';
 import { MegaOverlayMenu } from './MegaOverlayMenu';
 import { StickyHamburgerButton } from './StickyHamburgerButton';
 import { QuickAdmissionDrawer } from '../../common/QuickAdmissionDrawer';
+import { MobileBottomBar } from '../../common/MobileBottomBar';
 
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,8 +37,16 @@ export const Header: React.FC = () => {
         />
       </header>
 
-      {/* Floating Sticky Hamburger Button on Scroll */}
-      <StickyHamburgerButton onOpenMenu={() => setIsMegaMenuOpen(true)} />
+      {/* Floating Sticky Hamburger Button on Scroll (Desktop only) */}
+      <div className="hidden lg:block">
+        <StickyHamburgerButton onOpenMenu={() => setIsMegaMenuOpen(true)} />
+      </div>
+
+      {/* Professional Mobile Bottom Navigation Bar */}
+      <MobileBottomBar
+        onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
+        onOpenAdmissions={() => setIsAdmissionDrawerOpen(true)}
+      />
 
       {/* ----------------------------------------------------
           FULL-SCREEN MEGA OVERLAY & DRAWERS

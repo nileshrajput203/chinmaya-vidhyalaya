@@ -33,19 +33,19 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           href="/" 
           onClick={handleRestart}
           title="Chinmaya Vidyalaya Tarapur Home"
-          className="flex items-center gap-3.5 sm:gap-4.5 group cursor-pointer min-w-0"
+          className="flex items-center gap-2.5 sm:gap-4.5 group cursor-pointer min-w-0"
         >
-          {/* Official Emblem - Big and clean without enclosing container */}
+          {/* Official Emblem - Scaled proportionally on mobile */}
           <img
             src="/images/Chinmaya_Logo.webp"
             alt="Chinmaya Vidyalaya Emblem"
-            className="h-16 sm:h-20 lg:h-22 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
+            className="h-12 xs:h-14 sm:h-20 lg:h-22 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
           />
 
           <div className="space-y-0.5 min-w-0">
             {/* Governing Trust Eyebrow */}
             <div className="flex items-center gap-2">
-              <span className="text-[9px] sm:text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block truncate">
+              <span className="text-[8.5px] sm:text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block truncate">
                 Central Chinmaya Mission Trust, Mumbai
               </span>
               <span className="hidden md:inline-block w-1 h-1 rounded-full bg-[#DF711B]/40" />
@@ -55,17 +55,17 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
             </div>
 
             {/* School Name in Regal Typography */}
-            <h1 className="font-cinzel font-black text-xl sm:text-2xl lg:text-[28px] text-[#0C1E34] tracking-tight leading-none uppercase group-hover:text-[#DF711B] transition-colors truncate">
+            <h1 className="font-cinzel font-black text-base xs:text-lg sm:text-2xl lg:text-[28px] text-[#0C1E34] tracking-tight leading-none uppercase group-hover:text-[#DF711B] transition-colors truncate">
               {OFFICIAL_SCHOOL_INFO.name}
             </h1>
 
             {/* Sub-identity & Authentic Motto */}
-            <div className="flex items-center flex-wrap gap-x-2 text-xs sm:text-[13px] text-slate-600">
+            <div className="flex items-center flex-wrap gap-x-1.5 sm:gap-x-2 text-[11px] sm:text-[13px] text-slate-600">
               <span className="font-sans font-bold text-slate-800 tracking-wide">
                 TARAPUR • BOISAR
               </span>
               <span className="text-slate-300">•</span>
-              <span className="font-sans italic font-semibold text-[#DF711B]">
+              <span className="font-sans italic font-semibold text-[#DF711B] truncate max-w-[140px] sm:max-w-none">
                 "{OFFICIAL_SCHOOL_INFO.tagline}"
               </span>
               <span className="hidden xl:inline text-slate-300">•</span>

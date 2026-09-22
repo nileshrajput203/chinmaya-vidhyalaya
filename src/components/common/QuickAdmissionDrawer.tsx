@@ -418,11 +418,14 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
               </div>
 
               {/* Quick Contact Footnote */}
-              <div className="p-4 bg-[#F7F3EB] border-t border-[#E7E2D8] text-xs flex items-center justify-between text-[#4A5568]">
-                <div className="flex items-center gap-1.5 font-medium">
+              <div className="p-4 bg-[#F7F3EB] border-t border-[#E7E2D8] text-xs flex items-center justify-between text-[#4A5568] pb-[max(1rem,env(safe-area-inset-bottom))]">
+                <a
+                  href={`tel:${OFFICIAL_SCHOOL_INFO.contact.phone[0]}`}
+                  className="flex items-center gap-1.5 font-medium text-[#181C20] hover:text-[#DF711B] transition-colors"
+                >
                   <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
                   <span>Office: <strong>{OFFICIAL_SCHOOL_INFO.contact.phone[0]}</strong></span>
-                </div>
+                </a>
                 <span className="text-[11px] font-mono text-slate-500">Mon - Sat: 8 AM - 4 PM</span>
               </div>
             </motion.div>
