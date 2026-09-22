@@ -218,7 +218,7 @@ export const HomePage: React.FC = () => {
          ---------------------------------------------------- */}
       <section 
         ref={heroRef}
-        className="relative min-h-[92vh] lg:min-h-[98vh] flex items-center justify-center bg-[#FAF8F5] overflow-hidden pt-36 lg:pt-44 pb-20"
+        className="relative w-full h-[65vh] sm:h-[75vh] lg:h-[84vh] min-h-[480px] max-h-[820px] flex items-end justify-start bg-[#071320] overflow-hidden"
       >
         {/* Running Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -232,6 +232,51 @@ export const HomePage: React.FC = () => {
           >
             <source src="/videos/school-hero.mp4" type="video/mp4" />
           </video>
+          {/* Architectural Cinematic Gradients for Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071320] via-[#071320]/40 to-black/30" />
+        </div>
+
+        {/* Hero Bottom Institutional Banner */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14">
+          <div className="max-w-2xl text-white space-y-3 sm:space-y-4">
+            
+            {/* Accreditation Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-mono">
+              <span className="w-2 h-2 rounded-full bg-[#DF711B] animate-pulse" />
+              <span className="tracking-wider uppercase font-semibold text-amber-300">
+                Estd. 1995 • 30 Years of Value-Based Excellence
+              </span>
+            </div>
+
+            {/* Main Punchy Motto */}
+            <h1 className="font-cinzel font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight text-white drop-shadow-md">
+              School with a <span className="text-[#FFB740] italic font-serif">Difference</span>.
+            </h1>
+
+            <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans max-w-xl drop-shadow-sm">
+              Rooted in the Chinmaya Vision Programme, blending ancient Indian values with rigorous CBSE academic innovation to shape noble global leaders.
+            </p>
+
+            {/* Action Bar */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => setIsAdmissionDrawerOpen(true)}
+                className="px-5 py-2.5 rounded-xl bg-[#DF711B] hover:bg-[#c45b0e] text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                <GraduationCap className="w-4 h-4 text-amber-200" />
+                <span>Admissions 2025–26</span>
+              </button>
+
+              <Link
+                to="/about/school-profile"
+                className="px-5 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25 text-white font-semibold text-xs uppercase tracking-wider transition-colors flex items-center gap-2"
+              >
+                <span>Discover Campus</span>
+                <ChevronRight className="w-3.5 h-3.5 text-amber-300" />
+              </Link>
+            </div>
+
+          </div>
         </div>
 
       </section>
@@ -394,8 +439,13 @@ export const HomePage: React.FC = () => {
               <div className="bg-white p-2.5 border border-[#D5CEC2] shadow-sm">
                 <div className="border border-[#E7E2D8] bg-[#FAF8F5] flex items-center justify-center min-h-[280px]">
                   <div className="p-5 text-center space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-full bg-[#DF711B] text-white flex items-center justify-center font-display font-black text-xl shadow-sm">
-                      DM
+                    {/* Official Photograph of Principal Mam */}
+                    <div className="relative w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#DF711B] via-amber-300 to-[#DF711B] shadow-md shrink-0">
+                      <img
+                        src="/images/principal2.jpeg"
+                        alt={OFFICIAL_PRINCIPAL_INFO.name}
+                        className="w-full h-full object-cover object-center rounded-full border-2 border-white shadow-xs"
+                      />
                     </div>
                     <div className="space-y-0.5">
                       <h4 className="font-display font-black text-[19px] text-[#181818] uppercase tracking-tight m-0">

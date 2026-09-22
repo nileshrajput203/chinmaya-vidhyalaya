@@ -25,10 +25,10 @@ export const StickyHamburgerButton: React.FC<StickyHamburgerButtonProps> = ({ on
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-5 left-5 z-40 animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed top-5 left-5 z-50 animate-in fade-in zoom-in-95 duration-200">
       <button
         onClick={onOpenMenu}
-        className="w-12 h-12 bg-[#8B1E2B] hover:bg-[#6e1520] text-white rounded-xl shadow-2xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 border border-white/20 group cursor-pointer"
+        className="w-12 h-12 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-xl shadow-2xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 border border-white/25 ring-2 ring-black/10 group cursor-pointer"
         aria-label="Open full menu"
         title="Open Navigation Menu"
       >

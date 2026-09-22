@@ -44,7 +44,7 @@ export const OFFICIAL_PRINCIPAL_INFO: PrincipalInfo = {
   boardRole: "Member of the Board of Management",
   qualification: "Educationist & Member of the Board of Management",
   message: "Emulating the holistic vision of our revered founder, Param Pujya Swami Chinmayanandaji, Chinmaya Vidyalaya empowers a community of learners who dare to dream, take risks and develop new realities. Rooted in the Chinmaya Vision Programme, we integrate value education with academic distinction to prepare noble global citizens.",
-  image: "/images/Chinmaya_Logo.webp",
+  image: "/images/principal2.jpeg",
   phone: "7775872266",
   email: "cv.principal@chinmayamission.com"
 };
@@ -160,7 +160,8 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     role: "Member (Principal)",
     occupation: "Educationist",
     phone: "7775872266",
-    email: "cv.principal@chinmayamission.com"
+    email: "cv.principal@chinmayamission.com",
+    image: "/images/principal2.jpeg"
   }
 ];
 

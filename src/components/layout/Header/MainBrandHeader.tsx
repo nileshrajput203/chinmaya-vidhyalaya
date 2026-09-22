@@ -1,18 +1,18 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X, PhoneCall, GraduationCap, ShieldCheck, Clock } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
 
 interface MainBrandHeaderProps {
   isMobileMenuOpen: boolean;
   onToggleMobileMenu: () => void;
   onOpenAdmissionDrawer?: () => void;
-  isTransparent?: boolean;
 }
 
 export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
   isMobileMenuOpen,
   onToggleMobileMenu,
-  isTransparent = false,
+  onOpenAdmissionDrawer,
 }) => {
   const handleRestart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -25,88 +25,137 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
   };
 
   return (
-    <div 
-      className={`py-3 px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
-        isTransparent 
-          ? 'bg-gradient-to-b from-black/60 via-black/30 to-transparent text-white' 
-          : 'bg-[#FAF8F5] text-[#181C20] border-b border-[#E7E2D8]'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-6 relative">
+    <div className="bg-white text-[#181C20] border-b border-[#E7E2D8] py-3.5 sm:py-4 px-4 sm:px-6 lg:px-8 w-full shadow-2xs relative z-20">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         
-        {/* Left: Emblem & Institutional Typography */}
+        {/* Left: Emblem & Institutional Title Hierarchy */}
         <a 
           href="/" 
           onClick={handleRestart}
-          title="Click to return to overview"
-          className="flex items-center gap-3 sm:gap-4 group cursor-pointer"
+          title="Chinmaya Vidyalaya Tarapur Home"
+          className="flex items-center gap-3.5 sm:gap-4 group cursor-pointer min-w-0"
         >
-          {/* Logo with subtle glass frame */}
-          <div className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl p-1.5 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300 ${
-            isTransparent 
-              ? 'bg-white/15 backdrop-blur-md border border-white/20 shadow-lg' 
-              : 'bg-white border border-[#D5CEC2] shadow-md'
-          }`}>
-            <img
-              src="/images/Chinmaya_Logo.webp"
-              alt="Chinmaya Vidyalaya Emblem"
-              className="w-full h-full object-contain"
-            />
+          {/* Official Emblem Frame with Double-Bezel Architecture */}
+          <div className="relative w-13 h-13 sm:w-16 sm:h-16 rounded-2xl p-1 shrink-0 bg-gradient-to-b from-amber-100/60 to-white ring-1 ring-[#DF711B]/25 shadow-xs group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+            <div className="w-full h-full rounded-[calc(1rem-2px)] bg-white flex items-center justify-center p-1">
+              <img
+                src="/images/Chinmaya_Logo.webp"
+                alt="Chinmaya Vidyalaya Emblem"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
 
-          <div className="space-y-0.5">
-            {/* CBSE Badge & School Code */}
+          <div className="space-y-0.5 min-w-0">
+            {/* Governing Trust Eyebrow */}
             <div className="flex items-center gap-2">
-              <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider border ${
-                isTransparent 
-                  ? 'bg-white/10 text-white/90 border-white/20 backdrop-blur-sm' 
-                  : 'bg-[#64C9CF]/15 text-[#0B6B72] border-[#64C9CF]/30'
-              }`}>
-                <span className={`w-1.5 h-1.5 rounded-full ${isTransparent ? 'bg-emerald-400' : 'bg-[#64C9CF]'}`} />
-                CBSE Affil. No. {OFFICIAL_SCHOOL_INFO.affiliationNo}
+              <span className="text-[9px] sm:text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block truncate">
+                Central Chinmaya Mission Trust, Mumbai
               </span>
-              <span className={`hidden sm:inline ${isTransparent ? 'text-white/40' : 'text-slate-300'}`}>•</span>
-              <span className={`hidden sm:inline text-[10px] sm:text-[11px] font-mono font-semibold ${
-                isTransparent ? 'text-white/80' : 'text-[#181C20]'
-              }`}>
-                School Code: {OFFICIAL_SCHOOL_INFO.schoolCode}
+              <span className="hidden md:inline-block w-1 h-1 rounded-full bg-[#DF711B]/40" />
+              <span className="hidden md:inline-block text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                Estd. 1995
               </span>
             </div>
 
-            {/* School Name */}
-            <h1 className={`font-cinzel font-bold text-lg sm:text-2xl md:text-[26px] tracking-tight leading-none uppercase ${
-              isTransparent ? 'text-white drop-shadow-md' : 'text-[#181C20]'
-            }`}>
+            {/* School Name in Regal Typography */}
+            <h1 className="font-cinzel font-black text-xl sm:text-2xl lg:text-[28px] text-[#0C1E34] tracking-tight leading-none uppercase group-hover:text-[#DF711B] transition-colors truncate">
               {OFFICIAL_SCHOOL_INFO.name}
             </h1>
 
-            {/* Motto & Location */}
-            <p className={`text-xs sm:text-sm font-serif italic ${
-              isTransparent ? 'text-amber-300/90 drop-shadow-sm' : 'text-[#334155]'
-            }`}>
-              "School with a difference" <span className={`not-italic text-[11px] font-sans hidden md:inline ${
-                isTransparent ? 'text-white/60' : 'text-slate-500'
-              }`}>— Vidyanagar, Boisar, Dist. Palghar</span>
-            </p>
+            {/* Sub-identity & Authentic Motto */}
+            <div className="flex items-center flex-wrap gap-x-2 text-xs sm:text-[13px] text-slate-600">
+              <span className="font-sans font-bold text-slate-800 tracking-wide">
+                TARAPUR • BOISAR
+              </span>
+              <span className="text-slate-300">•</span>
+              <span className="font-serif italic text-[#DF711B] font-medium">
+                "{OFFICIAL_SCHOOL_INFO.tagline}"
+              </span>
+              <span className="hidden xl:inline text-slate-300">•</span>
+              <span className="hidden xl:inline text-[11px] font-sans text-slate-500">
+                Dist. Palghar, Maharashtra
+              </span>
+            </div>
           </div>
         </a>
 
-        {/* Right: Quick Action CTAs (Removed) */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
+        {/* Right: Executive Contact Hotline, SARAS Quick Link & Button-in-Button CTA */}
+        <div className="hidden lg:flex items-center gap-5 shrink-0">
+          
+          {/* Admissions & Campus Office Card */}
+          <div className="flex items-center gap-3 pl-3 border-l border-slate-200">
+            <div className="w-10 h-10 rounded-xl bg-[#FFF7DF] text-[#DF711B] flex items-center justify-center shrink-0 border border-[#FDE49C]">
+              <PhoneCall className="w-4 h-4 text-[#DF711B]" />
+            </div>
+            <div className="space-y-0.5">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                Admissions Helpline
+              </span>
+              <a 
+                href={`tel:${OFFICIAL_SCHOOL_INFO.contact.phone[0]}`}
+                className="text-xs font-bold text-[#0C1E34] hover:text-[#DF711B] transition-colors block font-mono"
+              >
+                +91 {OFFICIAL_SCHOOL_INFO.contact.phone[0]}
+              </a>
+              <div className="flex items-center gap-1 text-[10px] text-slate-500">
+                <Clock className="w-2.5 h-2.5 text-slate-400" />
+                <span>Mon–Sat: 8 AM–4 PM</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mandatory Public Disclosure Link */}
+          <Link
+            to="/about/mandatory-information"
+            className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EFE6] border border-[#E7E2D8] text-xs font-semibold text-slate-700 transition-colors"
+            title="View Official CBSE Mandatory Disclosures"
+          >
+            <ShieldCheck className="w-4 h-4 text-[#DF711B]" />
+            <span>Public Disclosure</span>
+          </Link>
+
+          {/* Primary CTA: Button-in-Button Architecture */}
+          <button
+            onClick={onOpenAdmissionDrawer}
+            className="group relative inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-gradient-to-r from-[#DF711B] to-[#C45B0E] hover:from-[#C45B0E] hover:to-[#9E3E07] text-white shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] cursor-pointer"
+            title="Open Admissions Enquiry Form"
+          >
+            <div className="flex flex-col items-start text-left">
+              <span className="text-[11px] font-bold uppercase tracking-wider leading-none">
+                Admissions 2025–26
+              </span>
+              <span className="text-[9px] text-amber-200/90 font-mono tracking-wide leading-none mt-0.5">
+                Nursery to Class XI
+              </span>
+            </div>
+
+            {/* Nested Circular Button Icon Container */}
+            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white text-white group-hover:text-[#DF711B] transition-colors duration-200">
+              <GraduationCap className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
+            </div>
+          </button>
+
         </div>
 
-        {/* Mobile Toggle Button (Absolute right) */}
-        <button
-          onClick={onToggleMobileMenu}
-          className={`lg:hidden absolute right-4 p-2.5 rounded-xl border transition-colors focus:outline-none ${
-            isTransparent 
-              ? 'bg-white/15 backdrop-blur-md border-white/20 text-white hover:bg-white/25' 
-              : 'bg-white border-[#D5CEC2] text-[#181C20] hover:bg-[#F3EFE6]'
-          }`}
-          aria-label="Toggle navigation menu"
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Actions: Mini Apply CTA & Hamburger */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={onOpenAdmissionDrawer}
+            className="px-3 py-1.5 rounded-full bg-[#DF711B] text-white text-[11px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1"
+          >
+            <GraduationCap className="w-3.5 h-3.5 text-amber-200" />
+            <span>Apply</span>
+          </button>
+
+          <button
+            onClick={onToggleMobileMenu}
+            className="p-2 rounded-xl border border-[#D5CEC2] bg-white text-[#181C20] hover:bg-[#FAF8F5] transition-colors focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6 text-[#DF711B]" /> : <Menu className="w-6 h-6 text-[#181C20]" />}
+          </button>
+        </div>
 
       </div>
     </div>

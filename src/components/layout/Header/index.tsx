@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { InstitutionTopBar } from './InstitutionTopBar';
 import { MainBrandHeader } from './MainBrandHeader';
 import { MainNavigation } from './MainNavigation';
 import { MobileMenu } from '../MobileMenu';
@@ -12,43 +13,51 @@ export const Header: React.FC = () => {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isAdmissionDrawerOpen, setIsAdmissionDrawerOpen] = useState(false);
 
-  const isTransparent = true;
-
   return (
-    <header className="absolute top-0 left-0 right-0 z-40 w-full">
-      <MainBrandHeader
-        isMobileMenuOpen={isMegaMenuOpen || isMobileMenuOpen}
-        onToggleMobileMenu={() => setIsMegaMenuOpen(true)}
-        onOpenAdmissionDrawer={() => setIsAdmissionDrawerOpen(true)}
-        isTransparent={isTransparent}
-      />
-      <MainNavigation 
-        onOpenAdmissionDrawer={() => setIsAdmissionDrawerOpen(true)}
-        isTransparent={isTransparent}
-      />
-      
+    <>
+      {/* ----------------------------------------------------
+          MASTER STATIC INSTITUTIONAL HEADER (3-TIER ARCHITECTURE)
+         ---------------------------------------------------- */}
+      <header className="w-full relative z-40 bg-white">
+        {/* Tier 1: Micro-Utility & Accreditation Strip */}
+        <InstitutionTopBar />
+
+        {/* Tier 2: Primary Institutional Brand Identity & Helpline */}
+        <MainBrandHeader
+          isMobileMenuOpen={isMobileMenuOpen || isMegaMenuOpen}
+          onToggleMobileMenu={() => setIsMobileMenuOpen(true)}
+          onOpenAdmissionDrawer={() => setIsAdmissionDrawerOpen(true)}
+        />
+
+        {/* Tier 3: Main Executive Navigation Ribbon */}
+        <MainNavigation 
+          onOpenAdmissionDrawer={() => setIsAdmissionDrawerOpen(true)}
+          onOpenMegaMenu={() => setIsMegaMenuOpen(true)}
+        />
+      </header>
+
       {/* Floating Sticky Hamburger Button on Scroll */}
       <StickyHamburgerButton onOpenMenu={() => setIsMegaMenuOpen(true)} />
 
-      {/* Full-Screen Aesthetic Overlay Navigation Menu */}
+      {/* ----------------------------------------------------
+          FULL-SCREEN MEGA OVERLAY & DRAWERS
+         ---------------------------------------------------- */}
       <MegaOverlayMenu
         isOpen={isMegaMenuOpen}
         onClose={() => setIsMegaMenuOpen(false)}
         onOpenAdmissionDrawer={() => setIsAdmissionDrawerOpen(true)}
       />
 
-      {/* Mobile Drawer Menu */}
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         onOpenAdmissionDrawer={() => setIsAdmissionDrawerOpen(true)}
       />
 
-      {/* Quick Admission Drawer */}
       <QuickAdmissionDrawer
         isOpen={isAdmissionDrawerOpen}
         onClose={() => setIsAdmissionDrawerOpen(false)}
       />
-    </header>
+    </>
   );
 };
