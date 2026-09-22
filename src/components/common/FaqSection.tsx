@@ -114,9 +114,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
-        {/* ====================================================
+        {/* ----------------------------------------------------
             HEADER BLOCK (Double-bezel badge + Typography)
-           ==================================================== */}
+           ---------------------------------------------------- */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-[#FAF3E8] border border-[#E7E2D8] px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] shadow-sm">
             <HelpCircle className="w-4 h-4 text-[#DF711B]" />
@@ -132,9 +132,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           </p>
         </div>
 
-        {/* ====================================================
+        {/* ----------------------------------------------------
             SEARCH BAR & CATEGORY PILLS (Double-Bezel Architecture)
-           ==================================================== */}
+           ---------------------------------------------------- */}
         {!previewCount && (
           <div className="space-y-6 max-w-4xl mx-auto">
             
@@ -231,9 +231,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           </div>
         )}
 
-        {/* ====================================================
+        {/* ----------------------------------------------------
             FAQ ACCORDION LIST (Doppelrand Double-Bezel Hardware Architecture)
-           ==================================================== */}
+           ---------------------------------------------------- */}
         <div className="space-y-4 max-w-4xl mx-auto">
           {displayedFaqs.length === 0 ? (
             <div className="text-center py-16 bg-white border border-[#E7E2D8] rounded-3xl p-8 space-y-4 shadow-sm">
@@ -432,9 +432,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           )}
         </div>
 
-        {/* ====================================================
+        {/* ----------------------------------------------------
             VIEW ALL BUTTON (If previewCount is active)
-           ==================================================== */}
+           ---------------------------------------------------- */}
         {previewCount && (
           <div className="text-center pt-4">
             <Link
@@ -449,9 +449,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           </div>
         )}
 
-        {/* ====================================================
+        {/* ----------------------------------------------------
             ESCALATION SUPPORT CARD & STUDENT CUTOUT (Shifted Left with Cutout on Right)
-           ==================================================== */}
+           ---------------------------------------------------- */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 lg:gap-8 pt-6 relative">
           
           {/* Shifted Left Helpdesk Container */}

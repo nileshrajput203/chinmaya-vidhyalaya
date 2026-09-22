@@ -9,6 +9,12 @@ interface MainNavigationProps {
   onOpenMegaMenu?: () => void;
 }
 
+const getNavDisplayLabel = (label: string) => {
+  if (label === 'Student Life & CVP') return 'Student Life';
+  if (label === 'Notice Board') return 'Notices';
+  return label;
+};
+
 export const MainNavigation: React.FC<MainNavigationProps> = ({ 
   onOpenAdmissionDrawer,
   onOpenMegaMenu,
@@ -18,14 +24,15 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
 
   return (
     <nav className="hidden lg:block bg-[#0B1E34] text-white shadow-md border-t-2 border-[#DF711B] relative z-30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
         
         {/* Main Nav Items Ribbon */}
         <ul className="flex items-center space-x-0.5 xl:space-x-1 min-w-0 flex-1 justify-start">
-          {OFFICIAL_NAVIGATION_DATA.map((item) => {
+          {OFFICIAL_NAVIGATION_DATA.map((item, index) => {
             const hasChildren = item.children && item.children.length > 0;
             const isActive = location.pathname === item.href || 
               item.children?.some(child => location.pathname === child.href);
+            const isNearRightEdge = index >= OFFICIAL_NAVIGATION_DATA.length - 3;
 
             return (
               <li
@@ -36,28 +43,28 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
               >
                 {hasChildren ? (
                   <button
-                    className={`relative inline-flex items-center gap-1.5 h-12 px-3 xl:px-3.5 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 cursor-pointer ${
+                    className={`relative inline-flex items-center gap-1 xl:gap-1.5 h-11 xl:h-12 px-2 lg:px-2.5 xl:px-3 text-[11px] xl:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 cursor-pointer ${
                       isActive 
                         ? 'text-[#FFB740] border-[#DF711B] bg-white/5 font-extrabold' 
                         : 'text-slate-200 hover:text-[#FFB740] hover:bg-white/5 border-transparent'
                     }`}
                     aria-expanded={activeDropdown === item.label}
                   >
-                    <span>{item.label}</span>
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-200 shrink-0 ${
+                    <span>{getNavDisplayLabel(item.label)}</span>
+                    <ChevronDown className={`w-2.5 h-2.5 xl:w-3 xl:h-3 transition-transform duration-200 shrink-0 ${
                       activeDropdown === item.label ? 'rotate-180 text-[#FFB740]' : 'text-slate-400 group-hover:text-[#FFB740]'
                     }`} />
                   </button>
                 ) : (
                   <Link
                     to={item.href}
-                    className={`relative inline-flex items-center h-12 px-3 xl:px-3.5 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 ${
+                    className={`relative inline-flex items-center h-11 xl:h-12 px-2 lg:px-2.5 xl:px-3 text-[11px] xl:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 ${
                       isActive 
                         ? 'text-[#FFB740] border-[#DF711B] bg-white/5 font-extrabold' 
                         : 'text-slate-200 hover:text-[#FFB740] hover:bg-white/5 border-transparent'
                     }`}
                   >
-                    <span>{item.label}</span>
+                    <span>{getNavDisplayLabel(item.label)}</span>
                   </Link>
                 )}
 
@@ -69,7 +76,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.98 }}
                       transition={{ duration: 0.16, ease: 'easeOut' }}
-                      className="absolute left-0 top-full w-84 bg-white text-[#181C20] border-t-2 border-[#DF711B] py-2 shadow-2xl rounded-b-2xl overflow-hidden z-50 border border-[#E7E2D8]"
+                      className={`absolute ${isNearRightEdge ? 'right-0' : 'left-0'} top-full w-84 bg-white text-[#181C20] border-t-2 border-[#DF711B] py-2 shadow-2xl rounded-b-2xl overflow-hidden z-50 border border-[#E7E2D8]`}
                     >
                       {/* Submenu Header */}
                       <div className="px-4 py-2 border-b border-[#E7E2D8] bg-[#FAF8F5] flex items-center justify-between">
@@ -121,26 +128,27 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
         </ul>
 
         {/* Right Nav Utilities: Explore / Mega Menu & Apply CTA */}
-        <div className="shrink-0 flex items-center gap-3 pl-4">
+        <div className="shrink-0 flex items-center gap-2 xl:gap-3 pl-3 xl:pl-4 border-l border-white/10 ml-1">
           
           {/* Full Directory / Mega Menu Launcher */}
           {onOpenMegaMenu && (
             <button
               onClick={onOpenMegaMenu}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
               title="Open full campus sitemap & navigation"
             >
-              <LayoutGrid className="w-3.5 h-3.5 text-[#FFB740]" />
-              <span className="hidden xl:inline">Sitemap</span>
+              <LayoutGrid className="w-3.5 h-3.5 text-[#FFB740] shrink-0" />
+              <span className="hidden 2xl:inline">Sitemap</span>
             </button>
           )}
 
           {/* Quick Apply Pill */}
           <button
             onClick={onOpenAdmissionDrawer}
-            className="px-4 py-1.5 text-xs font-bold rounded-full bg-[#DF711B] hover:bg-[#C45B0E] text-white transition-all shadow-sm hover:shadow flex items-center gap-1.5 hover:scale-105 active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+            className="hidden xl:inline-flex px-3.5 py-1.5 text-xs font-bold rounded-full bg-[#DF711B] hover:bg-[#C45B0E] text-white transition-all shadow-sm hover:shadow items-center gap-1.5 hover:scale-105 active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+            title="Open Admissions Application"
           >
-            <GraduationCap className="w-3.5 h-3.5 text-amber-200" />
+            <GraduationCap className="w-3.5 h-3.5 text-amber-200 shrink-0" />
             <span>Apply Now</span>
           </button>
         </div>
