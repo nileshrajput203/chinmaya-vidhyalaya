@@ -12,7 +12,7 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     title: "CBSE Curriculum & Subjects",
     subtitle: "Co-educational coverage from Jr. KG to Std XII (Class strength capped at 40)",
     content: [
-      "CVT is a co-educational institution providing academic coverage from Jr. KG to Std XII. The medium of instruction in all classes is English. The Vidyalaya is affiliated to CBSE. The strength of the students in each class does not exceed 40.",
+      "Chinmaya Vidyalaya Tarapur is a premier co-educational institution providing academic coverage from Jr. KG to Std XII. The medium of instruction in all classes is English. The Vidyalaya is affiliated to CBSE. The strength of the students in each class does not exceed 40.",
       "Primary Section (Std I to V) focuses on foundational literacy, numeracy, and environmental awareness alongside creative pursuits in arts, craft, and physical education.",
       "Secondary Section (Std VI to X) offers a comprehensive blend of core languages, advanced sciences (Physics, Chemistry, Biology), Social Sciences (History, Civics, Geography, Economics, Disaster Management), Mathematics, and General Knowledge."
     ],

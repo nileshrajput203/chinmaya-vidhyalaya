@@ -45,29 +45,125 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const relatedLinks = parentCategory?.children || [];
 
   // Context flags
+  const isRootAbout = location.pathname === '/about';
   const isAbout = categoryLabel.toLowerCase().includes('about');
   const isAcademics = categoryLabel.toLowerCase().includes('academic') || title.toLowerCase().includes('curriculum');
   const isFeatures = categoryLabel.toLowerCase().includes('feature') || title.toLowerCase().includes('spiritual') || title.toLowerCase().includes('pillar') || title.toLowerCase().includes('holistic');
   const isManagement = title.toLowerCase().includes('management') || (slug && slug.includes('management'));
-  const isHistory = (slug && slug.includes('history')) || title.toLowerCase().includes('history');
+  const isSwami = slug === 'swami-chinmayananda' || title.toLowerCase().includes('chinmayananda');
+  const isHistory = ((slug && slug.includes('history')) || title.toLowerCase().includes('history')) && !isSwami;
   const isCurriculum = title.toLowerCase().includes('curriculum') || (slug && slug.includes('curriculum'));
-  const isEnrollment = title.toLowerCase().includes('enrollment') || (slug && slug.includes('enrollment'));
+  const isFaculty = title.toLowerCase().includes('faculty') || (slug && slug.includes('faculty'));
+  const isEnrollment = title.toLowerCase().includes('enrollment') || (slug && slug.includes('enrollment')) || categoryLabel.toLowerCase().includes('admission');
   const isSpiritual = title.toLowerCase().includes('spiritual') || (slug && slug.includes('spiritual'));
   const isInfrastructure = title.toLowerCase().includes('infrastructure') || (slug && slug.includes('infrastructure'));
-  const isFourPillars = slug === 'four-pillars' || title.toLowerCase().includes('4 pillars');
+  const isFourPillars = slug === 'four-pillars' || slug === '4-pillars' || title.toLowerCase().includes('4 pillars');
   const isHolistic = slug === 'holistic-development' || title.toLowerCase().includes('holistic');
-  
+
+  // Dynamic contextual eyebrow
+  const getSectionEyebrow = (): string => {
+    if (isRootAbout) return 'Institutional Overview & Heritage';
+    if (isManagement) return 'Institutional Governance & Leadership';
+    if (isSwami) return 'Spiritual Heritage & Visionary Master';
+    if (slug === 'mission-vision' || title.toLowerCase().includes('mission')) return 'Guiding Principles & Ideals';
+    if (slug === 'philosophy' || title.toLowerCase().includes('philosophy')) return 'Chinmaya Vision Programme (CVP)';
+    if (isFourPillars) return 'Pedagogical Framework • Four Pillars';
+    if (isHolistic) return 'Holistic Character Architecture';
+    if (isHistory) return 'Founding Roots & Milestone Chronicle';
+    if (isEnrollment) return 'Admissions Framework & Guidelines';
+    if (isCurriculum) return 'CBSE Scholastic Framework';
+    if (isFaculty) return 'Educators & Academic Mentorship';
+    if (isInfrastructure) return 'Campus Architecture & Facilities';
+    if (title.toLowerCase().includes('strategy') || slug === 'teaching-strategy') return 'Pedagogical Methodologies';
+    if (title.toLowerCase().includes('co-curricular') || slug === 'co-curricular') return 'Creative Arts & Personality Development';
+    if (isSpiritual) return 'Cultural Ethos & Daily Assemblies';
+    if (slug === 'career-counselling' || title.toLowerCase().includes('career')) return 'Career Guidance & Diagnostic Testing';
+    if (slug === 'library' || title.toLowerCase().includes('library')) return 'Knowledge Repository & Archives';
+    if (slug === 'education-tours' || title.toLowerCase().includes('tour')) return 'Experiential Field Learning';
+    return `${categoryLabel} • Academic Profile`;
+  };
+
   const pageImages = isSpiritual
     ? ["/images/guru-paduka-pooja.webp", SCHOOL_IMAGES.CULTURAL_EVENT, SCHOOL_IMAGES.STUDENTS_ACTIVITY]
-    : isAbout || isFourPillars
+    : isSwami
     ? ["/images/swami.jpeg", "/images/about2.jpeg", "/images/guru-paduka-pooja.webp"]
+    : isManagement
+    ? ["/images/about-banner.jpeg", "/images/about2.jpeg", "/images/banner-1.jpg"]
+    : isFaculty
+    ? [SCHOOL_IMAGES.TEACHING_STAFF, SCHOOL_IMAGES.NON_TEACHING_STAFF, SCHOOL_IMAGES.CLASSROOM_LEARNING]
     : isInfrastructure
     ? ["/images/lib.jpg", "/images/CHEM1.jpeg", "/images/phys.jpeg"]
+    : isCurriculum
+    ? [SCHOOL_IMAGES.CLASSROOM_LEARNING, SCHOOL_IMAGES.SCIENCE_LAB, SCHOOL_IMAGES.LIBRARY_STUDY, SCHOOL_IMAGES.COMPUTERS_TECH]
     : isAcademics
     ? [SCHOOL_IMAGES.CLASSROOM_LEARNING, SCHOOL_IMAGES.SCIENCE_LAB, SCHOOL_IMAGES.LIBRARY_STUDY, SCHOOL_IMAGES.COMPUTERS_TECH]
     : isFeatures
     ? [SCHOOL_IMAGES.CULTURAL_EVENT, SCHOOL_IMAGES.STUDENTS_ACTIVITY, SCHOOL_IMAGES.SPORTS_DAY, SCHOOL_IMAGES.ANNUAL_DAY]
-    : [SCHOOL_IMAGES.CAMPUS_HERO, SCHOOL_IMAGES.CAMPUS_BUILDING, SCHOOL_IMAGES.CLASSROOM_LEARNING, SCHOOL_IMAGES.FACILITIES_OVERVIEW];
+    : [SCHOOL_IMAGES.CAMPUS_BUILDING, SCHOOL_IMAGES.CAMPUS_HERO, SCHOOL_IMAGES.CLASSROOM_LEARNING, SCHOOL_IMAGES.FACILITIES_OVERVIEW];
+
+  // Specific visual assignment
+  const getPrimaryVisual = (): { src: string; caption: string } => {
+    if (isManagement) {
+      return {
+        src: SCHOOL_IMAGES.CAMPUS_WIDE,
+        caption: 'Chinmaya Vidyalaya Tarapur | School Campus & Administrative Office'
+      };
+    }
+    if (isSwami) {
+      return {
+        src: SCHOOL_IMAGES.SWAMIJI,
+        caption: 'Pujya Gurudev Swami Chinmayananda | Spiritual Guide & Founder'
+      };
+    }
+    if (isFaculty) {
+      return {
+        src: SCHOOL_IMAGES.TEACHING_STAFF,
+        caption: 'Dedicated Teaching Faculty & Mentors | Chinmaya Vidyalaya'
+      };
+    }
+    if (isInfrastructure) {
+      return {
+        src: SCHOOL_IMAGES.SCIENCE_LAB,
+        caption: 'Advanced Science & Computer Laboratories | Tarapur'
+      };
+    }
+    if (isCurriculum) {
+      return {
+        src: SCHOOL_IMAGES.CLASSROOM_LEARNING,
+        caption: 'Spacious CBSE Classroom Learning Environment'
+      };
+    }
+    if (isSpiritual) {
+      return {
+        src: SCHOOL_IMAGES.POOJA_CEREMONY,
+        caption: 'Daily Guru Paduka Pooja & Morning Spiritual Assembly'
+      };
+    }
+    if (isEnrollment) {
+      return {
+        src: SCHOOL_IMAGES.CAMPUS_HERO,
+        caption: 'Admissions & Campus Inquiries | Boisar, Tarapur'
+      };
+    }
+    if (isHistory || isRootAbout) {
+      return {
+        src: SCHOOL_IMAGES.CAMPUS_BUILDING,
+        caption: 'Chinmaya Vidyalaya Tarapur | Campus Building (Est. 1995)'
+      };
+    }
+    return {
+      src: image || pageImages[0],
+      caption: `Chinmaya Vidyalaya Tarapur | ${categoryLabel}`
+    };
+  };
+
+  const primaryVisual = getPrimaryVisual();
+
+  // Compliance section should ONLY show on root /about or dedicated mandatory information pages
+  const showComplianceSection = isRootAbout || slug === 'mandatory-information';
+
+  // Swamiji quote only on relevant philosophical/spiritual pages, NEVER on management or infrastructure
+  const showSwamijiQuote = (isSwami || isFourPillars || isSpiritual || slug === 'philosophy' || slug === 'mission-vision' || isRootAbout) && !isManagement && !isEnrollment && !isFaculty && !isInfrastructure;
 
   return (
     <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
@@ -104,22 +200,77 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 })}
               </ul>
 
-              {/* Quick links to Disclosures & TC */}
+              {/* Quick links contextual to category */}
               <div className="pt-3 border-t border-[#E7E2D8] space-y-2">
-                <Link
-                  to="/about/mandatory-information"
-                  className="w-full py-2.5 bg-white hover:bg-[#DF711B] hover:text-white text-[#181C20] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
-                >
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#DF711B]" />
-                  <span>Mandatory Disclosures & TC</span>
-                </Link>
-                <Link
-                  to="/faq"
-                  className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
-                  <span>Frequently Asked Questions</span>
-                </Link>
+                {isAbout ? (
+                  <>
+                    <Link
+                      to="/about/mandatory-information"
+                      className="w-full py-2.5 bg-white hover:bg-[#DF711B] hover:text-white text-[#181C20] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    >
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Mandatory Disclosures & TC</span>
+                    </Link>
+                    <Link
+                      to="/faq"
+                      className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Frequently Asked Questions</span>
+                    </Link>
+                  </>
+                ) : isAcademics ? (
+                  <>
+                    <Link
+                      to="/downloads/sample-papers"
+                      className="w-full py-2.5 bg-white hover:bg-[#DF711B] hover:text-white text-[#181C20] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Sample Question Papers</span>
+                    </Link>
+                    <Link
+                      to="/faq"
+                      className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Academics FAQs</span>
+                    </Link>
+                  </>
+                ) : isEnrollment ? (
+                  <>
+                    <Link
+                      to="/downloads/admissions"
+                      className="w-full py-2.5 bg-white hover:bg-[#DF711B] hover:text-white text-[#181C20] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    >
+                      <Download className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Admission Registration Forms</span>
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Contact Admissions Desk</span>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/gallery"
+                      className="w-full py-2.5 bg-white hover:bg-[#DF711B] hover:text-white text-[#181C20] border border-[#E7E2D8] rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Campus Photo Gallery</span>
+                    </Link>
+                    <Link
+                      to="/faq"
+                      className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
+                      <span>Frequently Asked Questions</span>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </aside>
@@ -132,7 +283,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
             <div className="space-y-2">
               <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-                Overview & Institutional Purpose
+                {getSectionEyebrow()}
               </span>
               <h2 className="font-cinzel text-3xl sm:text-5xl text-[#181C20] font-extrabold leading-tight tracking-tight">
                 {title}
@@ -148,12 +299,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               <div className="lg:col-span-5">
                 <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-2 rounded-2xl shadow-sm overflow-hidden group">
                   <img
-                    src={image || pageImages[0]}
+                    src={primaryVisual.src}
                     alt={`${title} visual`}
                     className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="p-2 text-xs text-[#4A5568] text-center font-medium font-sans">
-                    {isAbout || isFourPillars ? "Pujya Gurudev Swami Chinmayananda | Spiritual Guide" : `Chinmaya Vidyalaya Tarapur | ${categoryLabel}`}
+                    {primaryVisual.caption}
                   </div>
                 </div>
               </div>
@@ -161,7 +312,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           </section>
 
           {/* Pujya Gurudev Swami Chinmayananda Quote / Tribute Block */}
-          {(isAbout || isFourPillars || isSpiritual || swamijiQuote) && (
+          {showSwamijiQuote && (
             <section className="bg-gradient-to-br from-[#FFF8EE] to-[#FAF3E8] text-[#181C20] p-8 md:p-10 rounded-3xl border border-[#FDE49C] shadow-md relative overflow-hidden">
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
                 <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-[#DF711B] shadow-lg shrink-0">
@@ -256,8 +407,51 @@ export const ContentPage: React.FC<ContentPageProps> = ({
             </section>
           )}
 
-          {/* Mandatory Public Disclosures & Transfer Certificates (TC) Feature Box in About Us */}
-          {isAbout && (
+          {/* Special Section: Pujya Gurudev Swami Chinmayananda's Life Chronicle & Milestones */}
+          {isSwami && bulletPoints && bulletPoints.length > 0 && (
+            <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
+                  Sacred Life & Teachings
+                </span>
+                <h3 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold">
+                  Chronicle of Spiritual Awakening & Global Mission
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600 font-normal">
+                  From patriotic youth and fearless investigative journalism to Himalayan contemplation and world-transforming Vedantic revival.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {bulletPoints.map((item, idx) => {
+                  const parts = item.split(': ');
+                  const heading = parts.length > 1 ? parts[0] : `Milestone 0${idx + 1}`;
+                  const description = parts.length > 1 ? parts.slice(1).join(': ') : item;
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-[#FCFBF7] border border-[#E7E2D8] p-5 rounded-2xl space-y-2.5 flex flex-col justify-between hover:border-[#DF711B] transition-colors shadow-sm"
+                    >
+                      <div className="space-y-2">
+                        <div className="w-8 h-8 rounded-lg bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-mono font-bold text-xs">
+                          {String(idx + 1).padStart(2, '0')}
+                        </div>
+                        <h4 className="font-cinzel font-bold text-sm text-[#181C20]">
+                          {heading}
+                        </h4>
+                        <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          {/* Mandatory Public Disclosures & Transfer Certificates (TC) Feature Box - ONLY on root /about or statutory pages */}
+          {showComplianceSection && (
             <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E7E2D8] pb-4">
                 <div className="space-y-1">
@@ -432,7 +626,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   {
                     year: "Present Day",
                     title: "Flourishing Academic Sanctuary",
-                    desc: "Now educating approximately 1600 students from Nursery to Senior Secondary, guided by Central Chinmaya Vidyalaya Mission Trust, Mumbai and the Local Managing Committee.",
+                    desc: "Now educating approximately 1600 students from Nursery to Senior Secondary, guided by Central Chinmaya Mission Trust, Mumbai and the Local Managing Committee.",
                     icon: Users
                   }
                 ].map((item, idx) => {
@@ -479,7 +673,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   Board of Management & Managing Committee
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 font-normal">
-                  An Undertaking of Central Chinmaya Vidyalaya Mission Trust, Mumbai. The Local Managing Committee oversees institutional governance and academic leadership.
+                  An Undertaking of Central Chinmaya Mission Trust, Mumbai. The Local Managing Committee oversees institutional governance and academic leadership.
                 </p>
               </div>
 
@@ -490,7 +684,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     Supervising Trust Authority
                   </span>
                   <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
-                    Central Chinmaya Vidyalaya Mission Trust, Mumbai
+                    Central Chinmaya Mission Trust, Mumbai
                   </h4>
                   <p className="text-xs text-slate-600">
                     Day-to-day administration & academic stewardship handled by the Local Managing Committee.
@@ -757,7 +951,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           )}
 
           {/* Chapter 2: Full-Width Photographic Visual */}
-          {pageImages[1] && (
+          {!isManagement && pageImages[1] && (
             <section className="relative overflow-hidden border border-[#E7E2D8] bg-white p-3 rounded-3xl shadow-sm">
               <img
                 src={pageImages[1]}
@@ -783,7 +977,25 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               </div>
             )}
 
-            {bulletPoints && bulletPoints.length > 0 && (
+            {isManagement && (
+              <div className="bg-[#FAF3E8] border border-[#FDE49C] p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <h4 className="font-cinzel font-bold text-base text-[#181C20]">Governance & Administrative Office</h4>
+                  <p className="text-xs text-slate-600 max-w-xl">
+                    For official inquiries, trustee correspondence, or institutional records with the Local Managing Committee or Central Chinmaya Mission Trust, contact the Principal's administrative desk.
+                  </p>
+                </div>
+                <Link
+                  to="/contact"
+                  className="px-5 py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm shrink-0 flex items-center gap-1.5"
+                >
+                  <span>Contact Administration</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            )}
+
+            {!isManagement && !isSwami && bulletPoints && bulletPoints.length > 0 && (
               <div className="bg-[#F7F3EB] border-l-4 border-[#DF711B] p-6 sm:p-8 rounded-r-2xl space-y-4">
                 <h3 className="font-cinzel text-xl sm:text-2xl font-extrabold text-[#181C20]">Key Particulars & Highlights</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-[#181C20]">
@@ -799,7 +1011,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           </section>
 
           {/* Chapter 4: Features / Highlights Grid */}
-          {(features || highlights) && (
+          {!isManagement && !isSwami && (features || highlights) && (
             <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               <div className="lg:col-span-6 bg-white border border-[#E7E2D8] p-8 rounded-3xl shadow-card space-y-6 flex flex-col justify-between">
                 <div className="space-y-4">
@@ -834,27 +1046,58 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           )}
 
           {/* Action Footer Callout */}
-          <section className="bg-[#FAF3E8] text-[#181C20] p-8 sm:p-10 rounded-3xl border-l-4 border-[#DF711B] border border-[#E7E2D8] shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center sm:text-left">
-              <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20]">Have questions regarding {title}?</h3>
-              <p className="text-sm text-slate-600 font-normal">Contact our administrative office or explore our admissions guidelines.</p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/faq"
-                className="px-5 py-3 bg-white hover:bg-[#DF711B] text-[#181C20] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md border border-[#E7E2D8] hover:scale-105 active:scale-95"
-              >
-                Explore FAQs
-              </Link>
-              <Link
-                to="/contact"
-                className="px-6 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
-              >
-                <span>Contact Admissions</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </section>
+          {isSwami ? (
+            <section className="bg-gradient-to-r from-[#181818] to-[#252525] text-white p-8 sm:p-10 rounded-3xl border border-white/10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 text-center md:text-left">
+                <span className="text-xs font-mono font-bold text-[#FFB740] uppercase tracking-wider block">
+                  Living the Vision
+                </span>
+                <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-white">
+                  Carrying Forward Gurudev's Vision
+                </h3>
+                <p className="text-sm text-white/80 font-light max-w-xl">
+                  Every classroom, prayer assembly, and student activity at Chinmaya Vidyalaya Tarapur is an offering to Pujya Gurudev's ideal of value-based nation building.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3 shrink-0">
+                <Link
+                  to="/about/philosophy"
+                  className="px-5 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1.5"
+                >
+                  <span>Explore CVP Philosophy</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  to="/about/mission-vision"
+                  className="px-5 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all border border-white/20"
+                >
+                  <span>Mission & Vision</span>
+                </Link>
+              </div>
+            </section>
+          ) : (
+            <section className="bg-[#FAF3E8] text-[#181C20] p-8 sm:p-10 rounded-3xl border-l-4 border-[#DF711B] border border-[#E7E2D8] shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 text-center sm:text-left">
+                <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20]">Have questions regarding {title}?</h3>
+                <p className="text-sm text-slate-600 font-normal">Contact our administrative office or explore our admissions guidelines.</p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/faq"
+                  className="px-5 py-3 bg-white hover:bg-[#DF711B] text-[#181C20] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md border border-[#E7E2D8] hover:scale-105 active:scale-95"
+                >
+                  Explore FAQs
+                </Link>
+                <Link
+                  to="/contact"
+                  className="px-6 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
+                >
+                  <span>Contact Admissions</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </section>
+          )}
 
         </main>
       </div>

@@ -33,7 +33,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
       "First school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone",
       "CBSE Affiliation granted in 2003; First Batch of Std X (AISSE) in 2004–2005",
       "Location: P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501, Dist: Palghar, Maharashtra",
-      "Mandatory Disclosures & Transfer Certificates (TC) certified for transparent verification"
+      "Distinguished Tradition: Over three decades of holistic educational service in Boisar"
     ]
   },
   "mission-vision": {

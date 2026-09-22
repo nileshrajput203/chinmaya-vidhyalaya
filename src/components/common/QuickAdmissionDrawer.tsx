@@ -11,7 +11,7 @@ interface QuickAdmissionDrawerProps {
 }
 
 export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState<'forms' | 'enquiry' | 'disclosures'>('forms');
+  const [activeTab, setActiveTab] = useState<'forms' | 'enquiry' | 'guidelines'>('forms');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [submittedMailto, setSubmittedMailto] = useState<string | null>(null);
   const [viewingDoc, setViewingDoc] = useState<SchoolDocument | null>(null);
@@ -141,14 +141,14 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                   Direct Enquiry
                 </button>
                 <button
-                  onClick={() => setActiveTab('disclosures')}
+                  onClick={() => setActiveTab('guidelines')}
                   className={`flex-1 py-3 text-center transition-colors border-b-2 cursor-pointer ${
-                    activeTab === 'disclosures'
+                    activeTab === 'guidelines'
                       ? 'border-[#DF711B] text-[#181C20] bg-white font-bold'
                       : 'border-transparent text-[#4A5568] hover:text-[#181C20]'
                   }`}
                 >
-                  Key Compliance (TC)
+                  Admission Guidelines
                 </button>
               </div>
 
@@ -337,46 +337,82 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                   </div>
                 )}
 
-                {activeTab === 'disclosures' && (
-                  <div className="space-y-3">
-                    <div className="text-xs text-[#4A5568] bg-[#FAF6EF] p-3 rounded-xl border border-[#E7E2D8]">
-                      All statutory disclosure documents and Transfer Certificates (TC) are provided in verified view-only mode per CBSE regulations.
+                {activeTab === 'guidelines' && (
+                  <div className="space-y-4">
+                    <div className="text-xs text-[#4A5568] bg-[#FAF6EF] p-4 rounded-xl border border-[#E7E2D8] space-y-1.5 leading-relaxed">
+                      <strong className="text-[#181C20] block font-cinzel text-xs font-bold">Admission Framework 2026-27</strong>
+                      <span>Admissions are conducted strictly based on merit, seat availability, and CBSE age norms. Chinmaya Vidyalaya Tarapur maintains spacious classrooms with capacity seating over 40 students under personalized faculty care.</span>
                     </div>
 
-                    {[
-                      { title: "Sample Transfer Certificate (TC)", file: "/images/TC.jpg" },
-                      { title: "CBSE SARAS Portal Disclosure", file: "/images/cbse-saras-portal-mandatory-information.pdf" },
-                      { title: "Building Safety Certificate", file: "/images/building-safety-certificate.pdf" },
-                      { title: "Fire Safety Certificate", file: "/images/fire-safety-certificate.pdf" },
-                      { title: "Water & Sanitation Clearance", file: "/images/water-health-and-sanitation-certificate.pdf" },
-                      { title: "Recognition Certificate under RTE", file: "/images/recognition-certificate-under-rte.pdf" },
-                    ].map((doc, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] flex items-center justify-between gap-3 shadow-sm"
+                    <div className="bg-white p-4 rounded-xl border border-[#E7E2D8] space-y-3 shadow-sm">
+                      <h4 className="font-cinzel font-bold text-xs text-[#181C20] uppercase tracking-wider border-b border-[#E7E2D8] pb-2">
+                        Age Eligibility Criteria (as of 31st July)
+                      </h4>
+                      <ul className="text-xs text-[#4A5568] space-y-2">
+                        <li className="flex items-center justify-between">
+                          <span className="font-medium text-[#181C20]">Nursery</span>
+                          <span className="font-mono text-[#DF711B] font-bold">3 Years Complete</span>
+                        </li>
+                        <li className="flex items-center justify-between">
+                          <span className="font-medium text-[#181C20]">Junior KG</span>
+                          <span className="font-mono text-[#DF711B] font-bold">4 Years Complete</span>
+                        </li>
+                        <li className="flex items-center justify-between">
+                          <span className="font-medium text-[#181C20]">Senior KG</span>
+                          <span className="font-mono text-[#DF711B] font-bold">5 Years Complete</span>
+                        </li>
+                        <li className="flex items-center justify-between">
+                          <span className="font-medium text-[#181C20]">Class I</span>
+                          <span className="font-mono text-[#DF711B] font-bold">6 Years Complete</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-xl border border-[#E7E2D8] space-y-2.5 shadow-sm">
+                      <h4 className="font-cinzel font-bold text-xs text-[#181C20] uppercase tracking-wider border-b border-[#E7E2D8] pb-2">
+                        Required Documents Checklist
+                      </h4>
+                      <ul className="text-xs text-[#4A5568] space-y-1.5 font-light">
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Original & self-attested Birth Certificate</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Previous School Transfer Certificate (Class II onwards)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Latest Report Card / Progress Record</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>3 recent passport-size student photographs</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Aadhar Card of student and parents / guardian</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <a
+                        href="/images/fees-structure.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 py-2.5 bg-white hover:bg-[#FAF6EF] text-[#181C20] border border-[#E7E2D8] text-center text-xs font-semibold rounded-xl transition-colors shadow-sm"
                       >
-                        <div className="flex items-center gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                          <span className="font-medium text-xs text-[#181C20]">{doc.title}</span>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => setViewingDoc({
-                            id: `drawer-disc-${idx}`,
-                            title: doc.title,
-                            category: 'mandatory-information',
-                            fileUrl: doc.file,
-                            uploadDate: '2024-04-01',
-                            description: doc.title,
-                            downloadable: false,
-                          })}
-                          className="text-xs text-[#DF711B] hover:underline font-semibold flex items-center gap-1"
-                        >
-                          <Eye className="w-3.5 h-3.5" />
-                          <span>View Doc</span>
-                        </button>
-                      </div>
-                    ))}
+                        Fee Structure
+                      </a>
+                      <a
+                        href="/about/enrollment"
+                        onClick={onClose}
+                        className="flex-1 py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-center text-xs font-bold rounded-xl transition-colors shadow-sm"
+                      >
+                        Detailed Guidelines
+                      </a>
+                    </div>
                   </div>
                 )}
               </div>
