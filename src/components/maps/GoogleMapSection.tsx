@@ -12,14 +12,8 @@ export const GoogleMapSection: React.FC<GoogleMapSectionProps> = ({
   className = '',
   showTitle = true,
 }) => {
-  const apiKey = (import.meta as unknown as { env: { VITE_GOOGLE_MAPS_API_KEY?: string } }).env.VITE_GOOGLE_MAPS_API_KEY;
-  
-  // Construct the Google Maps URL
-  // If an API key is available, use Google Maps Embed API v1 with solution attribution
-  // Otherwise, use the standard embedded map view for seamless out-of-the-box preview
-  const embedUrl = apiKey
-    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Chinmaya+Vidyalaya,+Vidyanagar,+Saravali,+Boisar,+Maharashtra+401501&solution_id=gmp_mcp_codeassist_v1_aistudio`
-    : `https://maps.google.com/maps?q=Chinmaya+Vidyalaya+P-201+MIDC+Vidyanagar+Saravali+Boisar+401501&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+  // Standard public Google Maps embed - does not require an API key
+  const embedUrl = `https://maps.google.com/maps?q=Chinmaya+Vidyalaya+P-201+MIDC+Vidyanagar+Saravali+Boisar+401501&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   const directMapUrl = `https://www.google.com/maps/search/?api=1&query=Chinmaya+Vidyalaya+Vidyanagar+Saravali+Boisar`;
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=Chinmaya+Vidyalaya+Vidyanagar+Saravali+Boisar`;

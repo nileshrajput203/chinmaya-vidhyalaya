@@ -250,16 +250,14 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // Helper to compute admission form opacity and vertical offset at 57% scroll
+  // Helper to compute admission form opacity and vertical offset
   const getAdmissionFormVisibility = () => {
     const p = scrollProgress;
-    // Visible at 57% scroll (active range 0.42 to 0.72, peak 0.52 to 0.62)
-    const start = 0.42;
-    const peakIn = 0.52;
-    const peakOut = 0.62;
-    const end = 0.72;
+    // Enters smoothly as the user scrolls into the video and stays visible till the end without fading out
+    const start = 0.30;
+    const peakIn = 0.45;
 
-    if (p < start || p > end) {
+    if (p < start) {
       return { 
         opacity: 0, 
         transform: 'translateY(24px)', 
@@ -275,10 +273,10 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       const t = (p - start) / (peakIn - start);
       opacity = t;
       translateY = (1 - t) * 20;
-    } else if (p > peakOut) {
-      const t = (p - peakOut) / (end - peakOut);
-      opacity = 1 - t;
-      translateY = -t * 20;
+    } else {
+      // Stays permanently visible and interactive until the hero section completes
+      opacity = 1;
+      translateY = 0;
     }
 
     return {
