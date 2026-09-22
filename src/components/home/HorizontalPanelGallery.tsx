@@ -122,9 +122,9 @@ export const HorizontalPanelGallery: React.FC = () => {
           ref={trackRef} 
           className="track flex flex-col lg:flex-row flex-nowrap w-full lg:w-[260vw] xl:w-[250vw] will-change-transform"
         >
-          {/* ============================================================
+          {/* ------------------------------------------------------------
               PANEL A — "START STATE" (WE VALUE GRID)
-              ============================================================ */}
+              ------------------------------------------------------------ */}
           <section className="panel panel--values w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col justify-center px-[6%] lg:px-[8%] py-16 lg:py-10 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border">
             {/* Top-left Big Headline */}
             <div className="mb-6 lg:mb-8 shrink-0">
@@ -184,9 +184,9 @@ export const HorizontalPanelGallery: React.FC = () => {
             </div>
           </section>
 
-          {/* ============================================================
+          {/* ------------------------------------------------------------
               PANEL B — "END STATE" (ACHIEVEMENT / STUDIO CUTOUT PANEL)
-              ============================================================ */}
+              ------------------------------------------------------------ */}
           <section className="panel panel--award w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col lg:flex-row items-stretch border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border relative overflow-hidden">
             
             {/* ZONE A — LEFT (~32% width): User Provided Studio Backdrop & Cutout Composite Image */}
@@ -280,9 +280,9 @@ export const HorizontalPanelGallery: React.FC = () => {
             </div>
           </section>
 
-          {/* ============================================================
+          {/* ------------------------------------------------------------
               PANEL C — "SIDE GALLERY" (7 PHOTOS CONTINUOUSLY SCROLLING UP)
-              ============================================================ */}
+              ------------------------------------------------------------ */}
           <section className="panel panel--gallery w-full lg:w-[68vw] xl:w-[62vw] lg:h-screen shrink-0 bg-[#FAF8F5] flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 py-12 lg:py-0 box-border relative overflow-hidden">
             
             {/* Left Column: Heading & Information CTA */}

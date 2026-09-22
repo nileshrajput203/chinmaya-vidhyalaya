@@ -840,9 +840,9 @@ export const HomePage: React.FC = () => {
       {/* Frequently Asked Questions Section on Home */}
       <Faq05 />
 
-      {/* ====================================================
+      {/* ----------------------------------------------------
           ESCALATION SUPPORT CARD & STUDENT CUTOUT (Helpdesk & Inquiry)
-         ==================================================== */}
+         ---------------------------------------------------- */}
       <section className="bg-[#FAF8F5] pb-16 sm:pb-24 pt-6 relative overflow-visible">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 lg:gap-8 relative">
           
