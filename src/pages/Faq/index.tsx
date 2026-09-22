@@ -31,7 +31,7 @@ export const FaqPage: React.FC = () => {
                 <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Batch Norms
                 </span>
-                <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">
                   Max 40 Students / Class
                 </h3>
               </div>
@@ -51,7 +51,7 @@ export const FaqPage: React.FC = () => {
                 <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Board Rigor
                 </span>
-                <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">
                   100% CBSE Class X Pass
                 </h3>
               </div>
@@ -71,7 +71,7 @@ export const FaqPage: React.FC = () => {
                 <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Vedic Legacy
                 </span>
-                <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">
                   4 Pillars of CVP
                 </h3>
               </div>
@@ -91,7 +91,7 @@ export const FaqPage: React.FC = () => {
                 <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                   Statutory Trust
                 </span>
-                <h3 className="font-cinzel font-bold text-lg text-[#0B1D30]">
+                <h3 className="font-cinzel font-bold text-lg text-[#181C20]">
                   CBSE Affiliated 1130058
                 </h3>
               </div>
@@ -121,7 +121,7 @@ export const FaqPage: React.FC = () => {
                 <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-widest block">
                   Admissions Documentation
                 </span>
-                <h3 className="font-cinzel text-2xl font-bold text-[#0B1D30]">
+                <h3 className="font-cinzel text-2xl font-bold text-[#181C20]">
                   Download Official Registration Forms
                 </h3>
                 <p className="text-sm text-slate-600/90 leading-relaxed">
@@ -132,7 +132,7 @@ export const FaqPage: React.FC = () => {
               <div className="pt-2">
                 <Link
                   to="/downloads/admissions"
-                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#0B1D30] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
+                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#181818] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
                 >
                   <span>Access Admission Downloads</span>
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -150,7 +150,7 @@ export const FaqPage: React.FC = () => {
                 <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-widest block">
                   Campus Administration
                 </span>
-                <h3 className="font-cinzel text-2xl font-bold text-[#0B1D30]">
+                <h3 className="font-cinzel text-2xl font-bold text-[#181C20]">
                   Schedule a Campus Tour or Meeting
                 </h3>
                 <p className="text-sm text-slate-600/90 leading-relaxed">

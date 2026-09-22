@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, FileText, Download, Send, CheckCircle2, Phone, GraduationCap, Eye, Mail } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
@@ -15,6 +15,26 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [submittedMailto, setSubmittedMailto] = useState<string | null>(null);
   const [viewingDoc, setViewingDoc] = useState<SchoolDocument | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.stop();
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      const l = (window as any).__lenis;
+      if (l) {
+        l.start();
+      }
+    };
+  }, [isOpen]);
 
   const [formData, setFormData] = useState({
     parentName: '',
@@ -72,10 +92,12 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              data-lenis-prevent="true"
+              onWheel={(e) => e.stopPropagation()}
               className="relative w-full max-w-lg bg-[#FCFBF7] text-[#181C20] h-full shadow-2xl flex flex-col z-10 overflow-hidden border-l border-[#E7E2D8]"
             >
               {/* Drawer Header */}
-              <div className="p-6 bg-[#FAF8F5] text-[#181C20] flex items-center justify-between border-b border-[#E7E2D8]">
+              <div className="p-6 bg-[#FAF8F5] text-[#181C20] flex items-center justify-between border-b border-[#E7E2D8] shrink-0">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-[#DF711B]" />
@@ -89,7 +111,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-full bg-[#FAF3E8] hover:bg-[#EFEAE1] text-[#181C20] border border-[#E7E2D8] transition-colors"
+                  className="p-2 rounded-full bg-[#FAF3E8] hover:bg-[#EFEAE1] text-[#181C20] border border-[#E7E2D8] transition-colors cursor-pointer"
                   aria-label="Close drawer"
                 >
                   <X className="w-5 h-5" />
@@ -97,10 +119,10 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
               </div>
 
               {/* Tab Selectors */}
-              <div className="flex border-b border-[#E7E2D8] bg-[#F7F3EB] text-xs font-semibold">
+              <div className="flex border-b border-[#E7E2D8] bg-[#F7F3EB] text-xs font-semibold shrink-0">
                 <button
                   onClick={() => setActiveTab('forms')}
-                  className={`flex-1 py-3 text-center transition-colors border-b-2 ${
+                  className={`flex-1 py-3 text-center transition-colors border-b-2 cursor-pointer ${
                     activeTab === 'forms'
                       ? 'border-[#DF711B] text-[#181C20] bg-white font-bold'
                       : 'border-transparent text-[#4A5568] hover:text-[#181C20]'
@@ -110,7 +132,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                 </button>
                 <button
                   onClick={() => setActiveTab('enquiry')}
-                  className={`flex-1 py-3 text-center transition-colors border-b-2 ${
+                  className={`flex-1 py-3 text-center transition-colors border-b-2 cursor-pointer ${
                     activeTab === 'enquiry'
                       ? 'border-[#DF711B] text-[#181C20] bg-white font-bold'
                       : 'border-transparent text-[#4A5568] hover:text-[#181C20]'
@@ -120,7 +142,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                 </button>
                 <button
                   onClick={() => setActiveTab('disclosures')}
-                  className={`flex-1 py-3 text-center transition-colors border-b-2 ${
+                  className={`flex-1 py-3 text-center transition-colors border-b-2 cursor-pointer ${
                     activeTab === 'disclosures'
                       ? 'border-[#DF711B] text-[#181C20] bg-white font-bold'
                       : 'border-transparent text-[#4A5568] hover:text-[#181C20]'
@@ -131,7 +153,12 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
               </div>
 
               {/* Drawer Body Content */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-6">
+              <div 
+                data-lenis-prevent="true"
+                onWheel={(e) => e.stopPropagation()}
+                style={{ overscrollBehavior: 'contain' }}
+                className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth"
+              >
                 {activeTab === 'forms' && (
                   <div className="space-y-4">
                     <div className="bg-[#FAF6EF] p-4 rounded-xl border border-[#E7E2D8] text-xs text-[#4A5568] leading-relaxed">

@@ -64,15 +64,17 @@ export const Footer: React.FC = () => {
                 onClick={handleRestart}
                 className="inline-flex items-center gap-3.5 group cursor-pointer"
               >
-                <div className="w-14 h-14 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0 shadow-lg border border-amber-500/20 group-hover:scale-105 transition-transform">
-                  <img src="/images/Chinmaya_Logo.webp" alt="Chinmaya Logo" className="w-full h-full object-contain" />
-                </div>
+                <img 
+                  src="/images/Chinmaya_Logo.webp" 
+                  alt="Chinmaya Vidyalaya Logo" 
+                  className="h-16 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform" 
+                />
                 <div>
                   <h2 className="font-cinzel font-extrabold text-white text-xl sm:text-2xl tracking-wider uppercase leading-none">
-                    CHINMAYA
+                    CHINMAYA VIDYALAYA
                   </h2>
-                  <p className="text-xs text-amber-400 font-serif italic tracking-wide font-semibold mt-1">
-                    VIDYALAYA TARAPUR
+                  <p className="text-xs text-amber-400 font-mono tracking-widest uppercase font-semibold mt-1">
+                    TARAPUR • BOISAR
                   </p>
                 </div>
               </a>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -25,6 +25,26 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
 }) => {
   const location = useLocation();
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.stop();
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      const l = (window as any).__lenis;
+      if (l) {
+        l.start();
+      }
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleRestart = (e: React.MouseEvent) => {
@@ -45,7 +65,10 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.98 }}
         transition={{ duration: 0.25, ease: 'easeOut' }}
-        className="fixed inset-0 z-[100] bg-[#14161A]/95 backdrop-blur-2xl text-slate-100 flex flex-col justify-between overflow-y-auto selection:bg-[#DF711B] selection:text-white"
+        data-lenis-prevent="true"
+        onWheel={(e) => e.stopPropagation()}
+        style={{ overscrollBehavior: 'contain' }}
+        className="fixed inset-0 z-[100] bg-[#14161A]/95 backdrop-blur-2xl text-slate-100 flex flex-col justify-between overflow-y-auto selection:bg-[#DF711B] selection:text-white scroll-smooth"
       >
         {/* TOP BAR */}
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between border-b border-slate-800/80 shrink-0">
@@ -64,17 +87,19 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
             <a 
               href="/" 
               onClick={handleRestart}
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center gap-3.5 group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 border border-slate-700">
-                <img src="/images/Chinmaya_Logo.webp" alt="Logo" className="w-full h-full object-contain" />
-              </div>
+              <img 
+                src="/images/Chinmaya_Logo.webp" 
+                alt="Chinmaya Vidyalaya Emblem" 
+                className="h-12 sm:h-14 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform" 
+              />
               <div>
-                <h2 className="font-cinzel font-black text-white text-xl sm:text-2xl tracking-widest uppercase leading-none">
-                  CHINMAYA
+                <h2 className="font-cinzel font-black text-white text-lg sm:text-xl tracking-wider uppercase leading-none">
+                  CHINMAYA VIDYALAYA
                 </h2>
-                <p className="text-[10px] text-amber-400 font-mono uppercase tracking-wider font-semibold mt-0.5">
-                  VIDYALAYA TARAPUR
+                <p className="text-[10px] text-amber-400 font-mono uppercase tracking-widest font-semibold mt-1">
+                  TARAPUR • BOISAR
                 </p>
               </div>
             </a>
@@ -206,10 +231,11 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
 
               <div>
                 <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800">
-                  ABOUT CHINMAYA
+                  ABOUT CHINMAYA VIDYALAYA
                 </h3>
                 <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
                   {[
+                    { label: "Pujya Gurudev's Life & Heritage", href: "/about/swami-chinmayananda" },
                     { label: "Institutional History", href: "/about/history" },
                     { label: "Mission & Vision", href: "/about/mission-vision" },
                     { label: "Board of Management", href: "/about/management" },
@@ -311,7 +337,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
               
               <img 
                 src="/images/menu_students_cutout.png" 
-                alt="Chinmaya Students" 
+                alt="Chinmaya Vidyalaya Students" 
                 className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)] mix-blend-lighten pointer-events-none relative z-10"
               />
             </div>

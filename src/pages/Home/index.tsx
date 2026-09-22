@@ -19,6 +19,8 @@ import MarqueeAlongSvgPathDemo from '@/components/ui/demo';
 import { soundFx } from '../../utils/audio';
 import { HorizontalPanelGallery } from '../../components/home/HorizontalPanelGallery';
 import { NoticeEventBoard } from '../../components/home/NoticeEventBoard';
+import { HeroScrollytellingFilm } from '../../components/home/HeroScrollytellingFilm';
+import { BannerCarousel } from '../../components/home/BannerCarousel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,8 +67,7 @@ export const HomePage: React.FC = () => {
   const [activeQuote, setActiveQuote] = useState<number>(0);
 
   // GSAP Animation References
-  const heroRef = useRef<HTMLDivElement>(null);
-  const heroBgRef = useRef<HTMLImageElement>(null);
+  const homeWrapperRef = useRef<HTMLDivElement>(null);
   const pillarPreviewRef = useRef<HTMLDivElement>(null);
 
   // Load active notices from content service
@@ -79,24 +80,6 @@ export const HomePage: React.FC = () => {
 
     // GSAP Master Timeline & ScrollTrigger choreographies
     const ctx = gsap.context(() => {
-
-      // Parallax scroll scrub on hero backdrop
-      if (heroBgRef.current && heroRef.current) {
-        gsap.to(heroBgRef.current, {
-          yPercent: 20,
-          scale: 1.15,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 1.2
-          }
-        });
-      }
-
-      // Kinetic masked headline reveal removed
-
       // Scroll reveals for architectural sections
       gsap.utils.toArray<HTMLElement>('.editorial-reveal').forEach((el) => {
         gsap.from(el, {
@@ -111,7 +94,7 @@ export const HomePage: React.FC = () => {
           }
         });
       });
-    }, heroRef);
+    }, homeWrapperRef);
 
     return () => ctx.revert();
   }, []);
@@ -211,75 +194,12 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#FAF8F5] text-[#181C20] overflow-hidden selection:bg-[#DF711B] selection:text-white font-sans">
+    <div ref={homeWrapperRef} className="bg-[#FAF8F5] text-[#181C20] overflow-x-clip selection:bg-[#DF711B] selection:text-white font-sans">
       
       {/* ----------------------------------------------------
-          SECTION 01 — MASTER EDITORIAL HERO (LUXURY ARCHITECTURAL)
+          SECTION 01 — MASTER SCROLLYTELLING CAMPUS FILM & NARRATIVE AXIS
          ---------------------------------------------------- */}
-      <section 
-        ref={heroRef}
-        className="relative w-full h-[65vh] sm:h-[75vh] lg:h-[84vh] min-h-[480px] max-h-[820px] flex items-end justify-start bg-[#071320] overflow-hidden"
-      >
-        {/* Running Video Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster={SCHOOL_IMAGES.CAMPUS_HERO}
-            className="w-full h-full object-cover scale-105 will-change-transform pointer-events-none"
-          >
-            <source src="/videos/school-hero.mp4" type="video/mp4" />
-          </video>
-          {/* Architectural Cinematic Gradients for Legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071320] via-[#071320]/40 to-black/30" />
-        </div>
-
-        {/* Hero Bottom Institutional Banner */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14">
-          <div className="max-w-2xl text-white space-y-3 sm:space-y-4">
-            
-            {/* Accreditation Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-[#DF711B] animate-pulse" />
-              <span className="tracking-wider uppercase font-semibold text-amber-300">
-                Estd. 1995 • 30 Years of Value-Based Excellence
-              </span>
-            </div>
-
-            {/* Main Punchy Motto */}
-            <h1 className="font-cinzel font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight text-white drop-shadow-md">
-              School with a <span className="text-[#FFB740] italic font-serif">Difference</span>.
-            </h1>
-
-            <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans max-w-xl drop-shadow-sm">
-              Rooted in the Chinmaya Vision Programme, blending ancient Indian values with rigorous CBSE academic innovation to shape noble global leaders.
-            </p>
-
-            {/* Action Bar */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => setIsAdmissionDrawerOpen(true)}
-                className="px-5 py-2.5 rounded-xl bg-[#DF711B] hover:bg-[#c45b0e] text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
-              >
-                <GraduationCap className="w-4 h-4 text-amber-200" />
-                <span>Admissions 2025–26</span>
-              </button>
-
-              <Link
-                to="/about/school-profile"
-                className="px-5 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25 text-white font-semibold text-xs uppercase tracking-wider transition-colors flex items-center gap-2"
-              >
-                <span>Discover Campus</span>
-                <ChevronRight className="w-3.5 h-3.5 text-amber-300" />
-              </Link>
-            </div>
-
-          </div>
-        </div>
-
-      </section>
+      <HeroScrollytellingFilm onOpenAdmissions={() => setIsAdmissionDrawerOpen(true)} />
 
       {/* ----------------------------------------------------
           SECTION 02 — SCROLL-JACKED HORIZONTAL PANEL GALLERY
@@ -290,23 +210,19 @@ export const HomePage: React.FC = () => {
       <HorizontalPanelGallery />
 
       {/* ----------------------------------------------------
-          SECTION 2.5 — PLAIN BANNER (IMAGE UPLOAD PENDING)
+          SECTION 2.5 — BANNER CAROUSEL (1.jpeg & 2.jpeg)
          ---------------------------------------------------- */}
-      <section className="w-full bg-[#FAF8F5] relative overflow-hidden">
-        <div className="w-full h-auto min-h-[200px] md:min-h-[300px] lg:min-h-[400px] flex items-center justify-center bg-[#E5E5E5]">
-          {/* Placeholder for the banner image to be uploaded later */}
-          <span className="text-[#999999] font-mono text-sm uppercase tracking-widest">Banner Image Placeholder 1</span>
-        </div>
-      </section>
+      <BannerCarousel />
 
       {/* ----------------------------------------------------
-          SECTION 2.6 — PLAIN BANNER 2 (IMAGE UPLOAD PENDING)
+          SECTION 2.6 — BANNER IMAGE 2
          ---------------------------------------------------- */}
       <section className="w-full bg-[#FAF8F5] relative overflow-hidden">
-        <div className="w-full h-auto min-h-[200px] md:min-h-[300px] lg:min-h-[400px] flex items-center justify-center bg-[#DFDFDF]">
-          {/* Placeholder for the banner image to be uploaded later */}
-          <span className="text-[#888888] font-mono text-sm uppercase tracking-widest">Banner Image Placeholder 2</span>
-        </div>
+        <img 
+          src="/file_00000000129882308ffa3f6b1a6bab51.png" 
+          alt="Banner Image" 
+          className="w-full h-auto object-cover block"
+        />
       </section>
 
 
@@ -788,7 +704,7 @@ export const HomePage: React.FC = () => {
                 CAMPUS GALLERY • PHOTOGRAPHIC ARCHIVE
               </span>
               <h2 className="font-display text-[28px] sm:text-[36px] lg:text-[42px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
-                MOMENTS OF LIFE AT CHINMAYA
+                MOMENTS OF LIFE AT CHINMAYA VIDYALAYA
               </h2>
             </div>
             <Link
@@ -1004,7 +920,7 @@ export const HomePage: React.FC = () => {
           </h2>
 
           <p className="text-[16px] sm:text-[18px] text-white/90 max-w-2xl mx-auto font-normal leading-relaxed">
-            Join the Chinmaya family in Boisar / Tarapur. Download application forms, schedule a campus visit, or connect with our academic admissions office today.
+            Join the Chinmaya Vidyalaya family in Boisar / Tarapur. Download application forms, schedule a campus visit, or connect with our academic admissions office today.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">

@@ -26,6 +26,7 @@ export const router = createBrowserRouter([
       /* ABOUT ROUTES */
       { path: 'about', element: <ContentPage {...ABOUT_SECTIONS['history']} categoryLabel="About Us" /> },
       { path: 'about/history', element: <ContentPage {...ABOUT_SECTIONS['history']} categoryLabel="About Us" /> },
+      { path: 'about/swami-chinmayananda', element: <ContentPage {...ABOUT_SECTIONS['swami-chinmayananda']} categoryLabel="About Us" /> },
       { path: 'about/mission-vision', element: <ContentPage {...ABOUT_SECTIONS['mission-vision']} categoryLabel="About Us" /> },
       { path: 'about/philosophy', element: <ContentPage {...ABOUT_SECTIONS['philosophy']} categoryLabel="About Us" /> },
       { path: 'about/enrollment', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="About Us" /> },

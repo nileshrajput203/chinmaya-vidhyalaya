@@ -9,10 +9,10 @@ interface BreadcrumbProps {
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
-    <nav className="bg-slate-100 border-b border-slate-200 py-2.5 px-4 text-xs">
-      <div className="max-w-7xl mx-auto flex items-center flex-wrap gap-1.5 text-slate-600">
-        <Link to="/" className="flex items-center gap-1 hover:text-brand-saffron transition-colors">
-          <Home className="w-3.5 h-3.5 text-brand-navy" />
+    <nav className="bg-[#FAF8F5] border-b border-[#E7E2D8] py-2.5 px-4 sm:px-6 lg:px-8 text-xs font-mono">
+      <div className="max-w-7xl mx-auto flex items-center flex-wrap gap-2 text-[#555555]">
+        <Link to="/" className="flex items-center gap-1.5 text-[#555555] hover:text-[#DF711B] transition-colors uppercase tracking-wider font-semibold">
+          <Home className="w-3.5 h-3.5 text-[#DF711B]" />
           <span>Home</span>
         </Link>
 
@@ -20,11 +20,11 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
           const isLast = idx === items.length - 1;
           return (
             <React.Fragment key={idx}>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 text-[#C4BDB0] shrink-0" />
               {isLast || !item.href ? (
-                <span className="font-semibold text-brand-navy truncate max-w-xs">{item.label}</span>
+                <span className="font-bold text-[#181818] uppercase tracking-wider truncate max-w-xs">{item.label}</span>
               ) : (
-                <Link to={item.href} className="hover:text-brand-saffron transition-colors">
+                <Link to={item.href} className="hover:text-[#DF711B] transition-colors uppercase tracking-wider">
                   {item.label}
                 </Link>
               )}

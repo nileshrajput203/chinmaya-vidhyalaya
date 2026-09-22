@@ -33,18 +33,14 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           href="/" 
           onClick={handleRestart}
           title="Chinmaya Vidyalaya Tarapur Home"
-          className="flex items-center gap-3.5 sm:gap-4 group cursor-pointer min-w-0"
+          className="flex items-center gap-3.5 sm:gap-4.5 group cursor-pointer min-w-0"
         >
-          {/* Official Emblem Frame with Double-Bezel Architecture */}
-          <div className="relative w-13 h-13 sm:w-16 sm:h-16 rounded-2xl p-1 shrink-0 bg-gradient-to-b from-amber-100/60 to-white ring-1 ring-[#DF711B]/25 shadow-xs group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
-            <div className="w-full h-full rounded-[calc(1rem-2px)] bg-white flex items-center justify-center p-1">
-              <img
-                src="/images/Chinmaya_Logo.webp"
-                alt="Chinmaya Vidyalaya Emblem"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
+          {/* Official Emblem - Big and clean without enclosing container */}
+          <img
+            src="/images/Chinmaya_Logo.webp"
+            alt="Chinmaya Vidyalaya Emblem"
+            className="h-16 sm:h-20 lg:h-22 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
+          />
 
           <div className="space-y-0.5 min-w-0">
             {/* Governing Trust Eyebrow */}
@@ -69,7 +65,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
                 TARAPUR • BOISAR
               </span>
               <span className="text-slate-300">•</span>
-              <span className="font-serif italic text-[#DF711B] font-medium">
+              <span className="font-sans italic font-semibold text-[#DF711B]">
                 "{OFFICIAL_SCHOOL_INFO.tagline}"
               </span>
               <span className="hidden xl:inline text-slate-300">•</span>

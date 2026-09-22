@@ -9,6 +9,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     label: "About Us",
     href: "/about",
     children: [
+      { label: "Pujya Gurudev's Life & Heritage", href: "/about/swami-chinmayananda", description: "Life, spiritual awakening, and eternal vision of Swami Chinmayananda" },
       { label: "History & Overview", href: "/about/history", description: "Our institutional roots, 72 students batch to full-fledged school" },
       { label: "Mission & Vision", href: "/about/mission-vision", description: "Guiding principles for holistic education" },
       { label: "Philosophy (CVP)", href: "/about/philosophy", description: "Chinmaya Vision Program four pillars" },

@@ -70,7 +70,7 @@ export const ContactPage: React.FC = () => {
         {/* Left: Contact Info & Address Card */}
         <div className="lg:col-span-6 space-y-8">
           <div className="bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl space-y-6 shadow-card">
-            <h2 className="font-cinzel font-bold text-[#0B1D30] text-2xl border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
+            <h2 className="font-cinzel font-bold text-[#181C20] text-2xl border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
               Campus Details & Location
             </h2>
 
@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block font-bold text-[#0B1D30]">Postal Address</strong>
+                  <strong className="block font-bold text-[#181C20]">Postal Address</strong>
                   <span className="text-[#4A5568] leading-relaxed">{CONTACT_DETAILS.address}</span>
                 </div>
               </div>
@@ -86,10 +86,10 @@ export const ContactPage: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block font-bold text-[#0B1D30]">Telephone Desk</strong>
+                  <strong className="block font-bold text-[#181C20]">Telephone Desk</strong>
                   {CONTACT_DETAILS.phones.map((p, i) => (
                     <div key={i} className="text-[#4A5568]">
-                      {p.label}: <a href={`tel:${p.number}`} className="font-semibold text-[#0B1D30] hover:text-[#DF711B] font-mono">{p.number}</a>
+                      {p.label}: <a href={`tel:${p.number}`} className="font-semibold text-[#181C20] hover:text-[#DF711B] font-mono">{p.number}</a>
                     </div>
                   ))}
                 </div>
@@ -98,10 +98,10 @@ export const ContactPage: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block font-bold text-[#0B1D30]">Official Email Desk</strong>
+                  <strong className="block font-bold text-[#181C20]">Official Email Desk</strong>
                   {CONTACT_DETAILS.emails.map((e, i) => (
                     <div key={i} className="text-[#4A5568]">
-                      {e.label}: <a href={`mailto:${e.email}`} className="font-semibold text-[#0B1D30] hover:text-[#DF711B] font-mono">{e.email}</a>
+                      {e.label}: <a href={`mailto:${e.email}`} className="font-semibold text-[#181C20] hover:text-[#DF711B] font-mono">{e.email}</a>
                     </div>
                   ))}
                 </div>
@@ -112,11 +112,11 @@ export const ContactPage: React.FC = () => {
             <div className="bg-[#F7F3EB] p-4 rounded-2xl border border-[#E7E2D8] flex items-center justify-between text-xs font-mono">
               <div>
                 <span className="text-[#4A5568]">CBSE Affiliation No:</span>
-                <strong className="block text-[#0B1D30] font-bold">{CONTACT_DETAILS.affiliationNo}</strong>
+                <strong className="block text-[#181C20] font-bold">{CONTACT_DETAILS.affiliationNo}</strong>
               </div>
               <div className="text-right">
                 <span className="text-[#4A5568]">U-DISE Code:</span>
-                <strong className="block text-[#0B1D30] font-bold">{CONTACT_DETAILS.udiseNo}</strong>
+                <strong className="block text-[#181C20] font-bold">{CONTACT_DETAILS.udiseNo}</strong>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ export const ContactPage: React.FC = () => {
                 Direct Email Redirection
               </span>
             </div>
-            <h2 className="font-cinzel font-bold text-[#0B1D30] text-2xl md:text-3xl mb-1 uppercase tracking-tight">
+            <h2 className="font-cinzel font-bold text-[#181C20] text-2xl md:text-3xl mb-1 uppercase tracking-tight">
               Send an Enquiry
             </h2>
             <p className="text-xs text-[#4A5568] font-light">
@@ -153,7 +153,7 @@ export const ContactPage: React.FC = () => {
 
           {submitStatus && (
             <div className="p-5 rounded-2xl bg-[#FAF3E8] border border-[#E7E2D8] text-xs space-y-3">
-              <div className="flex items-start gap-2.5 text-[#0B1D30]">
+              <div className="flex items-start gap-2.5 text-[#181C20]">
                 <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-[#DF711B]" />
                 <div>
                   <span className="font-bold block text-sm">Enquiry Ready to Send</span>
@@ -165,7 +165,7 @@ export const ContactPage: React.FC = () => {
                 <div className="pt-2 border-t border-[#E7E2D8]">
                   <a
                     href={submitStatus.mailtoUrl}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#0B1D30] hover:bg-[#DF711B] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#181818] hover:bg-[#DF711B] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
                   >
                     <Mail className="w-4 h-4 text-[#DF711B]" />
                     <span>Open Email Client Directly</span>
@@ -178,7 +178,7 @@ export const ContactPage: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             <div>
-              <label className="block font-bold text-[#0B1D30] mb-1 uppercase tracking-wider">Full Name *</label>
+              <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Full Name *</label>
               <input
                 type="text"
                 required
@@ -191,7 +191,7 @@ export const ContactPage: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block font-bold text-[#0B1D30] mb-1 uppercase tracking-wider">Email Address *</label>
+                <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Email Address *</label>
                 <input
                   type="email"
                   required
@@ -203,7 +203,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-bold text-[#0B1D30] mb-1 uppercase tracking-wider">Phone Number *</label>
+                <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Phone Number *</label>
                 <input
                   type="tel"
                   required
@@ -216,7 +216,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block font-bold text-[#0B1D30] mb-1 uppercase tracking-wider">Subject *</label>
+              <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Subject *</label>
               <input
                 type="text"
                 required
@@ -228,7 +228,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block font-bold text-[#0B1D30] mb-1 uppercase tracking-wider">Message *</label>
+              <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Message *</label>
               <textarea
                 rows={4}
                 required
@@ -242,7 +242,7 @@ export const ContactPage: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 bg-[#0B1D30] hover:bg-[#DF711B] text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[#181818] hover:bg-[#DF711B] text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               {isSubmitting ? (
                 <span>Redirecting to Email...</span>

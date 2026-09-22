@@ -6,8 +6,8 @@ export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
   affiliationNo: "1130058",
   schoolCode: "30040",
   udiseNo: "27361116004",
-  trustName: "Central Chinmaya Vidyalaya Mission Trust, Mumbai",
-  undertaking: "An Undertaking of Central Chinmaya Vidyalaya Mission Trust, Mumbai",
+  trustName: "Central Chinmaya Mission Trust, Mumbai",
+  undertaking: "An Undertaking of Central Chinmaya Mission Trust, Mumbai",
   address: {
     street: "P-201, MIDC Area, Vidyanagar, Saravali",
     city: "Boisar",
@@ -21,7 +21,7 @@ export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
     officeHours: "Monday to Saturday: 8:00 AM - 4:00 PM",
     website: "https://cvtarapur.com"
   },
-  managingTrust: "Central Chinmaya Vidyalaya Mission Trust, Mumbai (Local Managing Committee handles day-to-day management)",
+  managingTrust: "Central Chinmaya Mission Trust, Mumbai (Local Managing Committee handles day-to-day management)",
   localCommittee: "Local Managing Committee handles day-to-day management",
   envisagedYear: "1993 — planned by devotees of Tarapur Chinmaya Mission Centre, inspired by Swami Chinmayanandaji",
   constructionBeganYear: "1994 — first phase, in the presence of Param Pujya Swami Tejomayanandaji",

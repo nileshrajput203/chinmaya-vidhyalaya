@@ -9,7 +9,7 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     academicYear: "2024-25",
     date: "December 2024",
     imageUrl: "/images/banner-9.webp",
-    caption: "Magnificent theatrical, classical dance, and scholastic award presentations at the Chinmaya Annual Day."
+    caption: "Magnificent theatrical, classical dance, and scholastic award presentations at the Chinmaya Vidyalaya Annual Day."
   },
   {
     id: "gal-2",

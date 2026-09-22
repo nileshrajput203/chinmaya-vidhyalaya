@@ -291,7 +291,7 @@ export const HorizontalPanelGallery: React.FC = () => {
                 SIDE GALLERY • VIBRANT CAMPUS
               </span>
               <h3 className="font-display text-[32px] sm:text-[40px] lg:text-[44px] font-black text-[#181818] uppercase tracking-tight leading-tight m-0">
-                LIFE AT CHINMAYA
+                LIFE AT CHINMAYA VIDYALAYA
               </h3>
               <p className="text-[15px] lg:text-[16px] text-[#555555] font-normal leading-relaxed">
                 Take a glimpse into our vibrant daily atmosphere, featuring state-of-the-art laboratories, sports tournaments, cultural heritage, and holistic learning environments.
