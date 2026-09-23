@@ -116,7 +116,6 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       if (isCancelled || imagesRef.current[index]) return;
       const img = new Image();
       img.decoding = 'async';
-      img.src = getFrameSrc(index);
       img.onload = () => {
         if (isCancelled) return;
         imagesRef.current[index] = img;
@@ -124,17 +123,37 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
           drawFrame(index);
         }
       };
+      img.onerror = () => {
+        console.warn(`[HeroFilm] Frame failed to load: ${getFrameSrc(index)}`);
+      };
+      img.src = getFrameSrc(index);
+
+      // In case image was already cached by browser
+      if (img.complete && img.naturalWidth > 0) {
+        imagesRef.current[index] = img;
+        if (index === 0 || index === Math.round(currentFrameRef.current)) {
+          drawFrame(index);
+        }
+      }
     };
 
     // 1. First frame rendered right away
     const firstImg = new Image();
     firstImg.decoding = 'async';
-    firstImg.src = getFrameSrc(0);
     firstImg.onload = () => {
       if (isCancelled) return;
       imagesRef.current[0] = firstImg;
       drawFrame(0);
     };
+    firstImg.onerror = () => {
+      console.warn(`[HeroFilm] First frame failed to load: ${getFrameSrc(0)}`);
+    };
+    firstImg.src = getFrameSrc(0);
+
+    if (firstImg.complete && firstImg.naturalWidth > 0) {
+      imagesRef.current[0] = firstImg;
+      drawFrame(0);
+    }
 
     // 2. Load milestone keyframes for immediate scrub coverage.
     // Loading every frame in one burst caused network contention and visible jank.
@@ -341,10 +360,17 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         ref={stickyRef}
         className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center bg-[#071320]"
       >
+        {/* Instant Poster Image: Ensures zero blank screen while frames initialize */}
+        <img
+          src={getFrameSrc(0)}
+          alt="Chinmaya Vidyalaya Campus"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        />
+
         {/* Render Canvas (Exact 1:1 image fidelity with bicubic smoothing, zero artificial filters) */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full z-0 will-change-transform block"
+          className="absolute inset-0 w-full h-full z-[1] will-change-transform block"
         />
 
         {/* ----------------------------------------------------
