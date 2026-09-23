@@ -9,18 +9,19 @@ interface HeroScrollytellingFilmProps {
   onOpenAdmissions: () => void;
 }
 
-// Exactly 30 frames matching /hero-video/frame001.jpg through frame030.jpg
-const TOTAL_FRAMES = 30;
+// 229 frames from ezgif-frame-008.jpg to ezgif-frame-236.jpg in /heronew/herovideo/
+const START_FRAME = 8;
+const END_FRAME = 236;
+const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 229 frames
 
-// Scroll budget: exactly 75px of scroll per frame (29 * 75 = 2175px of scroll)
-// Wrapper height is calculated directly from the frame count, leaving ZERO extra space
-const SCROLL_PX_PER_FRAME = 75;
-const TOTAL_SCROLLABLE_PX = (TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME; // 2175px
+// Scroll budget: calibrated for cinema-grade, fluid scrubbing across desktop and mobile
+const SCROLL_PX_PER_FRAME = 12;
+const TOTAL_SCROLLABLE_PX = (TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME;
 
-// Helper to construct zero-padded frame URLs
+// Helper to construct zero-padded frame URLs in heronew/herovideo
 const getFrameSrc = (index: number): string => {
-  const frameNum = Math.min(Math.max(1, index + 1), TOTAL_FRAMES);
-  return `/hero-video/frame${String(frameNum).padStart(3, '0')}.jpg`;
+  const frameNum = Math.min(Math.max(START_FRAME, START_FRAME + index), END_FRAME);
+  return `/heronew/herovideo/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
 };
 
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
@@ -37,7 +38,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   // Component scroll progress state (0.0 to 1.0)
   const [scrollProgress, setScrollProgress] = useState<number>(0);
 
-  // Draw a frame onto the canvas with cover sizing, perfectly centered
+  // Draw a frame onto the canvas with exact pixel fidelity, high-quality bicubic smoothing, zero distortion
   const drawFrame = useCallback((frameIdx: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -48,14 +49,14 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     let img = imagesRef.current[frameIdx];
     if (!img || !img.complete || img.naturalWidth === 0) {
       for (let i = frameIdx; i >= 0; i--) {
-        if (imagesRef.current[i]?.complete && imagesRef.current[i]?.naturalWidth! > 0) {
+        if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
           img = imagesRef.current[i];
           break;
         }
       }
       if (!img) {
         for (let i = frameIdx + 1; i < TOTAL_FRAMES; i++) {
-          if (imagesRef.current[i]?.complete && imagesRef.current[i]?.naturalWidth! > 0) {
+          if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
             img = imagesRef.current[i];
             break;
           }
@@ -69,60 +70,86 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     const height = canvas.clientHeight;
     if (width === 0 || height === 0) return;
 
+    // Scale canvas buffer to physical device pixels for high-DPI crispness without aliasing
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    if (canvas.width !== Math.round(width * dpr) || canvas.height !== Math.round(height * dpr)) {
-      canvas.width = Math.round(width * dpr);
-      canvas.height = Math.round(height * dpr);
+    const targetW = Math.round(width * dpr);
+    const targetH = Math.round(height * dpr);
+    if (canvas.width !== targetW || canvas.height !== targetH) {
+      canvas.width = targetW;
+      canvas.height = targetH;
     }
 
-    ctx.save();
-    ctx.scale(dpr, dpr);
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-    ctx.filter = 'contrast(1.08) brightness(1.03) saturate(1.20)';
+    const cw = canvas.width;
+    const ch = canvas.height;
+    if (cw === 0 || ch === 0) return;
 
-    // Calculate cover dimensions preserving aspect ratio, centered on the gate/silhouette
+    // Calculate cover dimensions preserving aspect ratio, centered on the scene
     const imgAspect = img.naturalWidth / img.naturalHeight;
-    const canvasAspect = width / height;
-    let drawWidth = width;
-    let drawHeight = height;
+    const canvasAspect = cw / ch;
+    let drawWidth = cw;
+    let drawHeight = ch;
     let offsetX = 0;
     let offsetY = 0;
 
     if (canvasAspect > imgAspect) {
-      drawHeight = width / imgAspect;
-      offsetY = (height - drawHeight) / 2;
+      drawHeight = cw / imgAspect;
+      offsetY = (ch - drawHeight) / 2;
     } else {
-      drawWidth = height * imgAspect;
-      offsetX = (width - drawWidth) / 2;
+      drawWidth = ch * imgAspect;
+      offsetX = (cw - drawWidth) / 2;
     }
 
-    ctx.clearRect(0, 0, width, height);
+    // High quality bicubic filtering, zero artificial filters - render exact image
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.filter = 'none';
+    ctx.clearRect(0, 0, cw, ch);
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-    ctx.restore();
   }, []);
 
-  // Preload all 30 frames immediately for instantaneous scrubbing without 404s
+  // Progressive preload: initial frame immediately, keyframes, then background batching
   useEffect(() => {
     let isCancelled = false;
 
-    for (let i = 0; i < TOTAL_FRAMES; i++) {
+    // 1. First frame rendered right away
+    const firstImg = new Image();
+    firstImg.src = getFrameSrc(0);
+    firstImg.onload = () => {
+      if (isCancelled) return;
+      imagesRef.current[0] = firstImg;
+      drawFrame(0);
+    };
+
+    // 2. Load milestone keyframes (every 6th frame) for immediate scrub coverage
+    const KEYFRAME_INTERVAL = 6;
+    for (let i = KEYFRAME_INTERVAL; i < TOTAL_FRAMES; i += KEYFRAME_INTERVAL) {
       const img = new Image();
       img.src = getFrameSrc(i);
       img.onload = () => {
         if (isCancelled) return;
         imagesRef.current[i] = img;
-        if (i === 0) {
-          drawFrame(0);
-        }
-      };
-      img.onerror = () => {
-        console.warn(`[HeroScrollytellingFilm] Failed to load frame ${i + 1} at ${img.src}`);
       };
     }
 
+    // 3. Incrementally load remaining intermediate frames
+    const loadRemaining = () => {
+      if (isCancelled) return;
+      for (let i = 1; i < TOTAL_FRAMES; i++) {
+        if (i % KEYFRAME_INTERVAL === 0) continue;
+        const img = new Image();
+        img.src = getFrameSrc(i);
+        img.onload = () => {
+          if (isCancelled) return;
+          imagesRef.current[i] = img;
+        };
+      }
+    };
+
+    const timer = setTimeout(loadRemaining, 150);
+
     return () => {
       isCancelled = true;
+      clearTimeout(timer);
     };
   }, [drawFrame]);
 
@@ -135,19 +162,19 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     return () => window.removeEventListener('resize', handleResize);
   }, [drawFrame]);
 
-  // Animation render loop (smooth frame easing without lag or skips)
+  // Animation render loop (smooth cinema-grade scrubbing without micro-stutters or dropped frames)
   useEffect(() => {
     let animId: number;
 
     const renderLoop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
-      if (Math.abs(diff) > 0.01) {
-        currentFrameRef.current += diff * 0.4;
+      if (Math.abs(diff) > 0.005) {
+        currentFrameRef.current += diff * 0.35;
         const rounded = Math.min(Math.max(0, Math.round(currentFrameRef.current)), TOTAL_FRAMES - 1);
         drawFrame(rounded);
       } else if (Math.round(currentFrameRef.current) !== Math.round(targetFrameRef.current)) {
         currentFrameRef.current = targetFrameRef.current;
-        const rounded = Math.round(currentFrameRef.current);
+        const rounded = Math.min(Math.max(0, Math.round(currentFrameRef.current)), TOTAL_FRAMES - 1);
         drawFrame(rounded);
       }
 
@@ -161,7 +188,6 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   }, [drawFrame]);
 
   // Pin stickyRef to viewport using GSAP ScrollTrigger to ensure screen stays fixed during scroll
-  // Exactly mapped: 0% scroll -> frame 1, 100% scroll -> frame 30, then unpins immediately
   useEffect(() => {
     const container = containerRef.current;
     const stickyEl = stickyRef.current;
@@ -179,13 +205,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       onUpdate: (self) => {
         const progress = Math.min(1, Math.max(0, self.progress));
         setScrollProgress(progress);
-
-        const target = progress * (TOTAL_FRAMES - 1);
-        targetFrameRef.current = target;
-
-        // Immediate draw for crisp responsiveness on every scroll tick
-        const targetIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.round(target)));
-        drawFrame(targetIndex);
+        targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
       },
     });
 
@@ -202,12 +222,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       const rawProgress = -rect.top / scrollableDistance;
       const progress = Math.min(Math.max(0, rawProgress), 1);
       setScrollProgress(progress);
-
-      const target = progress * (TOTAL_FRAMES - 1);
-      targetFrameRef.current = target;
-
-      const targetIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.round(target)));
-      drawFrame(targetIndex);
+      targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -216,7 +231,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       st.kill();
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [drawFrame]);
+  }, []);
 
   // Admission enquiry form state
   const [formData, setFormData] = useState({
@@ -299,17 +314,16 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     >
       {/* ----------------------------------------------------
           STICKY FULL-SCREEN CINEMATIC CANVAS VIEWPORT
-          Unpins at the exact moment frame 30 is reached
+          Unpins at the exact moment all frames are completed
          ---------------------------------------------------- */}
       <div 
         ref={stickyRef}
         className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center bg-[#071320]"
       >
-        {/* Render Canvas (Full-width, full-height, enhanced contrast and saturation) */}
+        {/* Render Canvas (Exact 1:1 image fidelity with bicubic smoothing, zero artificial filters) */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover z-0 will-change-transform"
-          style={{ filter: 'contrast(1.06) saturate(1.15) brightness(1.02)' }}
+          className="absolute inset-0 w-full h-full z-0 will-change-transform block"
         />
 
         {/* ----------------------------------------------------
