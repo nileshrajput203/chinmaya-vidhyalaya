@@ -10,13 +10,13 @@ interface HeroScrollytellingFilmProps {
   onOpenAdmissions: () => void;
 }
 
-// 229 frames from ezgif-frame-008.jpg to ezgif-frame-236.jpg in /heronew/herovideo/
-const START_FRAME = 8;
+// All 236 frames from ezgif-frame-001.jpg to ezgif-frame-236.jpg in /heronew/herovideo/
+const START_FRAME = 1;
 const END_FRAME = 236;
-const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 229 frames
+const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 236 frames
 
 // Scroll budget: calibrated for cinema-grade, fluid scrubbing across desktop and mobile
-const SCROLL_PX_PER_FRAME = 12;
+const SCROLL_PX_PER_FRAME = 14;
 const TOTAL_SCROLLABLE_PX = (TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME;
 
 // Helper to construct zero-padded frame URLs in heronew/herovideo
