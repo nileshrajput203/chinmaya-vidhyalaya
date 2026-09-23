@@ -34,6 +34,7 @@ export const router = createBrowserRouter([
         path: 'about/mandatory-information', 
         element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Mandatory Public Disclosures & Transfer Certificates" pageSubtitle="Official CBSE affiliation, land, building safety, sanitation certificates, and Transfer Certificates (TC)" /> 
       },
+      { path: 'about/transfer-certificates', element: <Navigate to="/about/mandatory-information" replace /> },
       { path: 'about/management', element: <ContentPage {...ABOUT_SECTIONS['management']} categoryLabel="About Us" /> },
 
       /* ACADEMICS ROUTES */

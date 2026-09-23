@@ -934,7 +934,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Std I to V */}
-                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4">
+                <div id="primary-wing" className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4 scroll-mt-28">
                   <h4 className="font-cinzel font-bold text-base text-[#181C20] border-b border-[#E7E2D8] pb-2">
                     Primary Wing: Std I to Std V
                   </h4>
@@ -958,7 +958,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </div>
 
                 {/* Std VI to X */}
-                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4">
+                <div id="secondary-wing" className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4 scroll-mt-28">
                   <h4 className="font-cinzel font-bold text-base text-[#181C20] border-b border-[#E7E2D8] pb-2">
                     Secondary Wing: Std VI to Std X
                   </h4>

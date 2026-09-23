@@ -105,7 +105,7 @@ export const CareersPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         
         {/* Culture & Benefits Matrix */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div id="pedagogic-training" className="grid grid-cols-1 md:grid-cols-4 gap-4 scroll-mt-28">
           {[
             {
               icon: GraduationCap,

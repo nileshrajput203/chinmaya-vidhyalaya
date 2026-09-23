@@ -14,25 +14,13 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
   onToggleMobileMenu,
   onOpenAdmissionDrawer,
 }) => {
-  const handleRestart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    sessionStorage.removeItem('cv_preloader_seen');
-    sessionStorage.setItem('cv_preloader_seen', 'true');
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    if ((window as any).__lenis) {
-      (window as any).__lenis.scrollTo(0, { immediate: true });
-    }
-    window.location.href = '/';
-  };
-
   return (
     <div className="bg-white text-[#181C20] border-b border-[#E7E2D8] py-3.5 sm:py-4 px-4 sm:px-6 lg:px-8 w-full shadow-2xs relative z-20">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-4 min-w-0">
         
         {/* Left: Emblem & Institutional Title Hierarchy */}
-        <a 
-          href="/" 
-          onClick={handleRestart}
+        <Link
+          to="/"
           title="Chinmaya Vidyalaya Tarapur Home"
           className="flex items-center gap-2.5 sm:gap-4.5 group cursor-pointer min-w-0 flex-1"
         >
@@ -75,7 +63,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
               </span>
             </div>
           </div>
-        </a>
+        </Link>
 
         {/* Right: Executive Contact Hotline, SARAS Quick Link & Button-in-Button CTA */}
         <div className="hidden lg:flex items-center gap-5 shrink-0">

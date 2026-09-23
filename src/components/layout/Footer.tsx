@@ -26,17 +26,6 @@ export const Footer: React.FC = () => {
     return () => window.clearInterval(timer);
   }, [accreditations.length]);
 
-  const handleRestart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    sessionStorage.removeItem('cv_preloader_seen');
-    sessionStorage.setItem('cv_preloader_seen', 'true');
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    if ((window as any).__lenis) {
-      (window as any).__lenis.scrollTo(0, { immediate: true });
-    }
-    window.location.href = '/';
-  };
-
   return (
     <footer className="relative bg-[#181A1E] text-slate-200 pt-16 md:pt-24 pb-0 border-t-4 border-[#DF711B] overflow-visible font-sans select-none">
       
@@ -47,9 +36,8 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 flex flex-col justify-between relative min-h-[500px] lg:min-h-[580px]">
             {/* Header Brand */}
             <div className="space-y-3 z-20 pb-4">
-              <a 
-                href="/"
-                onClick={handleRestart}
+              <Link
+                to="/"
                 className="inline-flex items-center gap-3.5 group cursor-pointer"
               >
                 <img 
@@ -65,7 +53,7 @@ export const Footer: React.FC = () => {
                     TARAPUR • BOISAR
                   </p>
                 </div>
-              </a>
+              </Link>
               <p className="text-xs text-slate-400 italic font-serif max-w-xs leading-relaxed">
                 "Keep Smiling — Knowledge, Vision & Character"
               </p>
@@ -120,8 +108,8 @@ export const Footer: React.FC = () => {
                 <ul className="mt-3 space-y-2 text-xs">
                   {[
                     { label: "Early Childhood (Pre-Primary)", href: "/academics/curriculum" },
-                    { label: "Primary Wing (Std I-V)", href: "/academics/curriculum" },
-                    { label: "Secondary Wing (Std VI-X)", href: "/academics/curriculum" },
+                    { label: "Primary Wing (Std I-V)", href: "/academics/curriculum#primary-wing" },
+                    { label: "Secondary Wing (Std VI-X)", href: "/academics/curriculum#secondary-wing" },
                   ].map((link) => (
                     <li key={link.label}>
                       <Link to={link.href} className="text-slate-300 hover:text-amber-400 hover:underline transition-colors block py-0.5 font-medium">
@@ -142,6 +130,7 @@ export const Footer: React.FC = () => {
                 <ul className="mt-3 space-y-2 text-xs">
                   {[
                       { label: "Notice Board & Events", href: "/news" },
+                      { label: "Upcoming Events", href: "/news?filter=events" },
                     { label: "School Calendar 2026-27", href: "/images/academic-calendar.pdf", external: true },
                     { label: "Evaluation Papers (1-5)", href: "/downloads/evaluation-papers" },
                   ].map((link) => (
@@ -196,7 +185,7 @@ export const Footer: React.FC = () => {
                   {[
                     { label: "Careers & Faculty Openings", href: "/careers" },
                     { label: "Teacher Application Form", href: "/images/application-form-for-the-post-of-teacher.docx", external: true },
-                    { label: "Pedagogic Training (CCMT)", href: "/careers" },
+                    { label: "Pedagogic Training (CCMT)", href: "/careers#pedagogic-training" },
                     { label: "Submit Online Inquiry", href: "/careers#apply-form" },
                   ].map((link) => (
                     <li key={link.label}>
@@ -242,8 +231,7 @@ export const Footer: React.FC = () => {
                 <ul className="mt-3 space-y-2 text-xs">
                   {[
                     { label: "Board of Management", href: "/about/management" },
-                    { label: "Mandatory Public Disclosures", href: "/about/mandatory-information" },
-                    { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates" },
+                    { label: "Mandatory Disclosures & TC", href: "/about/mandatory-information" },
                     { label: "Parents Teacher Assoc. (PTA)", href: "/about/management" },
                     { label: "Contact Campus Office", href: "/contact" },
                   ].map((link) => (

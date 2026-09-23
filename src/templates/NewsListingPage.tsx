@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Calendar, Bell, Download, Search, Sparkles, MapPin, ArrowRight } from 'lucide-react';
 import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
@@ -6,11 +7,14 @@ import { contentService } from '../services/contentService';
 import { NewsArticle, Notice } from '../types/news';
 
 export const NewsListingPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'circulars' | 'events' | 'academic'>('all');
+  const [selectedFilter, setSelectedFilter] = useState<'all' | 'circulars' | 'events' | 'academic'>(
+    searchParams.get('filter') === 'events' ? 'events' : 'all'
+  );
 
   useEffect(() => {
     async function loadData() {

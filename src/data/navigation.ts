@@ -14,8 +14,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
       { label: "Mission & Vision", href: "/about/mission-vision", description: "Guiding principles for holistic education" },
       { label: "Philosophy (CVP)", href: "/about/philosophy", description: "Chinmaya Vision Program four pillars" },
       { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees and leadership" },
-      { label: "Mandatory Disclosures", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates & affiliation" },
-      { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates", description: "Official Transfer Certificate specimen and annual registers" }
+      { label: "Mandatory Disclosures & Transfer Certificates", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates, affiliation and TC records" }
     ]
   },
   {

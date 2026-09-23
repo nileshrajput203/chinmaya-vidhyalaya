@@ -1,0 +1,51 @@
+desktop:
+
+home meh hero section ka video atak raha hai
+
+notification ka toast animation nahi
+
+if document preview kare toh back ka option nahi hai
+
+about us meh mandatary disclosure aur transfer certificate meh dono meh same content hai as it so remove one
+
+after visiting any so admission form ka button is cutted from side
+
+academic meh faculty directory is wired
+
+a weird empty box is there in teaching strategy, infrastructure labs, co curricular activities meh empty box hai aur in teeno page meh joh photos hai unka size proper nahi hai jisse box me emptyness dikh raha hai
+
+addmission meh about us ka directory aa raha hai
+
+student life meh 4 pillars cvp aur holistic development ka content al most similar hai
+
+educational study tour aur central library meh weird empty box hai
+
+aur pure students life meh kuch pages meh similar images use hue hai so change them
+
+if I go to notice toh usme already ek time pe dono pages active ho rahe hai joh hai: active circular upcoming events so merge them or remove one page
+
+aur footer meh ek chota sa box hai our accreditation kar ke toh woh automatic move karna chahiye
+
+footer meh student wings meh : primary and secondary wings are not working, dispatch meh upcoming events is not working, career and recruitment meh pedagonic training is not working,
+
+jab logo pe click karo toh pre loader deta hai
+
+chinmaya harder ke upar : cbse , school code , notice wagera details same row meh nahi hai , mobile
+
+home hero section video problem
+
+we value 4th card VITALITY ka learn more page nahi hai
+
+in home page explore full galary link is not available
+
+in home chinmaya vision program section sare cards meh joh black button hai woh sab cvp pe redirect ho raha hai
+
+footer issue same as desktop
+
+in mobile : Mandatory Public Disclosures & Transfer Certificates have issue in option of Academics & Curricula which should be fixed
+
+top up button is fixed to footer
+
+jab koi bhi page open kare toh unke contact ko scroll animation from top to bottom and bottom to top hona chahiye
+
+most of the errors agar desktop meh theek hua toh mobile meh bhi theek ho jayega . so be accurate solve all errors make website non laggy and smooth feel
