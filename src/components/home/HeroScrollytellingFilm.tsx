@@ -15,8 +15,8 @@ const START_FRAME = 1;
 const END_FRAME = 236;
 const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 236 frames
 
-// Scroll budget: calibrated for cinema-grade, fluid scrubbing across desktop and mobile
-const SCROLL_PX_PER_FRAME = 14;
+// Calibrated scroll budget for buttery, filmic scrubbing across desktop and mobile
+const SCROLL_PX_PER_FRAME = 18;
 const TOTAL_SCROLLABLE_PX = (TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME;
 
 // Helper to construct zero-padded frame URLs in heronew/herovideo
@@ -39,39 +39,18 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   // Component scroll progress state (0.0 to 1.0)
   const [scrollProgress, setScrollProgress] = useState<number>(0);
 
-  // Draw a frame onto the canvas with exact pixel fidelity, high-quality bicubic smoothing, zero distortion
-  const drawFrame = useCallback((frameIdx: number) => {
+  // Draw frame with sub-frame continuous blending for liquid-smooth 60/120fps motion
+  const drawFrame = useCallback((floatFrame: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
-
-    // Find requested frame or closest loaded frame
-    let img = imagesRef.current[frameIdx];
-    if (!img || !img.complete || img.naturalWidth === 0) {
-      for (let i = frameIdx; i >= 0; i--) {
-        if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
-          img = imagesRef.current[i];
-          break;
-        }
-      }
-      if (!img) {
-        for (let i = frameIdx + 1; i < TOTAL_FRAMES; i++) {
-          if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
-            img = imagesRef.current[i];
-            break;
-          }
-        }
-      }
-    }
-
-    if (!img || !img.complete || img.naturalWidth === 0) return;
 
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
     if (width === 0 || height === 0) return;
 
-    // Scale canvas buffer to physical device pixels for high-DPI crispness without aliasing
+    // Scale canvas buffer to physical device pixels for high-DPI crispness without pixelation
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const targetW = Math.round(width * dpr);
     const targetH = Math.round(height * dpr);
@@ -84,8 +63,38 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     const ch = canvas.height;
     if (cw === 0 || ch === 0) return;
 
-    // Calculate cover dimensions preserving aspect ratio, centered on the scene
-    const imgAspect = img.naturalWidth / img.naturalHeight;
+    const clamped = Math.min(Math.max(0, floatFrame), TOTAL_FRAMES - 1);
+    const baseIdx = Math.floor(clamped);
+    const nextIdx = Math.min(baseIdx + 1, TOTAL_FRAMES - 1);
+    const blendAlpha = clamped - baseIdx;
+
+    // Find requested base frame or closest loaded fallback
+    let baseImg = imagesRef.current[baseIdx];
+    if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) {
+      for (let i = baseIdx; i >= 0; i--) {
+        if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
+          baseImg = imagesRef.current[i];
+          break;
+        }
+      }
+      if (!baseImg) {
+        for (let i = baseIdx + 1; i < TOTAL_FRAMES; i++) {
+          if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
+            baseImg = imagesRef.current[i];
+            break;
+          }
+        }
+      }
+    }
+
+    if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) return;
+
+    // High quality bicubic filtering for ultra HD sharpness
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
+    // Calculate cover dimensions preserving aspect ratio, centered
+    const imgAspect = baseImg.naturalWidth / baseImg.naturalHeight;
     const canvasAspect = cw / ch;
     let drawWidth = cw;
     let drawHeight = ch;
@@ -100,126 +109,131 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       offsetX = (cw - drawWidth) / 2;
     }
 
-    // High quality bicubic filtering, zero artificial filters - render exact image
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-    ctx.filter = 'none';
-    ctx.clearRect(0, 0, cw, ch);
-    ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+    // 1. Draw base frame
+    ctx.globalAlpha = 1.0;
+    ctx.drawImage(baseImg, offsetX, offsetY, drawWidth, drawHeight);
+
+    // 2. Sub-frame blend with next frame if loaded (eliminates stepping, delivers liquid flow)
+    if (blendAlpha > 0.02 && nextIdx !== baseIdx) {
+      const nextImg = imagesRef.current[nextIdx];
+      if (nextImg && nextImg.complete && nextImg.naturalWidth > 0) {
+        const nextAspect = nextImg.naturalWidth / nextImg.naturalHeight;
+        let nDrawWidth = cw;
+        let nDrawHeight = ch;
+        let nOffsetX = 0;
+        let nOffsetY = 0;
+
+        if (canvasAspect > nextAspect) {
+          nDrawHeight = cw / nextAspect;
+          nOffsetY = (ch - nDrawHeight) / 2;
+        } else {
+          nDrawWidth = ch * nextAspect;
+          nOffsetX = (cw - nDrawWidth) / 2;
+        }
+
+        ctx.globalAlpha = blendAlpha;
+        ctx.drawImage(nextImg, nOffsetX, nOffsetY, nDrawWidth, nDrawHeight);
+        ctx.globalAlpha = 1.0;
+      }
+    }
   }, []);
 
-  // Progressive preload: initial frame immediately, keyframes, then background batching
+  // Aggressive multi-threaded progressive preloader ensuring zero missed frames
   useEffect(() => {
     let isCancelled = false;
+    const loadedSet = new Set<number>();
 
-    const loadFrame = (index: number) => {
-      if (isCancelled || imagesRef.current[index]) return;
-      const img = new Image();
-      img.decoding = 'async';
-      img.onload = () => {
-        if (isCancelled) return;
-        imagesRef.current[index] = img;
-        if (index === 0 || index === Math.round(currentFrameRef.current)) {
-          drawFrame(index);
+    const fetchFrame = (index: number): Promise<void> => {
+      if (isCancelled || imagesRef.current[index] || loadedSet.has(index)) {
+        return Promise.resolve();
+      }
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.decoding = 'async';
+        img.onload = () => {
+          if (isCancelled) return resolve();
+          loadedSet.add(index);
+          imagesRef.current[index] = img;
+          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
+            drawFrame(currentFrameRef.current);
+          }
+          resolve();
+        };
+        img.onerror = () => {
+          resolve();
+        };
+        img.src = getFrameSrc(index);
+        if (img.complete && img.naturalWidth > 0) {
+          loadedSet.add(index);
+          imagesRef.current[index] = img;
+          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
+            drawFrame(currentFrameRef.current);
+          }
+          resolve();
+        }
+      });
+    };
+
+    // Priority 1: Load initial 20 frames immediately so start is instantly responsive
+    const loadInitialSequence = async () => {
+      const initialPromises: Promise<void>[] = [];
+      for (let i = 0; i < Math.min(20, TOTAL_FRAMES); i++) {
+        initialPromises.push(fetchFrame(i));
+      }
+      await Promise.all(initialPromises);
+      if (isCancelled) return;
+      drawFrame(0);
+
+      // Priority 2: Concurrent worker pool for all remaining frames (batches of 8)
+      const remainingIndices: number[] = [];
+      for (let i = 20; i < TOTAL_FRAMES; i++) {
+        remainingIndices.push(i);
+      }
+
+      const CONCURRENCY = 8;
+      let currentIndex = 0;
+
+      const worker = async () => {
+        while (currentIndex < remainingIndices.length && !isCancelled) {
+          const idx = remainingIndices[currentIndex++];
+          await fetchFrame(idx);
         }
       };
-      img.onerror = () => {
-        console.warn(`[HeroFilm] Frame failed to load: ${getFrameSrc(index)}`);
-      };
-      img.src = getFrameSrc(index);
 
-      // In case image was already cached by browser
-      if (img.complete && img.naturalWidth > 0) {
-        imagesRef.current[index] = img;
-        if (index === 0 || index === Math.round(currentFrameRef.current)) {
-          drawFrame(index);
-        }
-      }
+      const workers = Array.from({ length: CONCURRENCY }, () => worker());
+      await Promise.all(workers);
     };
 
-    // 1. First frame rendered right away
-    const firstImg = new Image();
-    firstImg.decoding = 'async';
-    firstImg.onload = () => {
-      if (isCancelled) return;
-      imagesRef.current[0] = firstImg;
-      drawFrame(0);
-    };
-    firstImg.onerror = () => {
-      console.warn(`[HeroFilm] First frame failed to load: ${getFrameSrc(0)}`);
-    };
-    firstImg.src = getFrameSrc(0);
-
-    if (firstImg.complete && firstImg.naturalWidth > 0) {
-      imagesRef.current[0] = firstImg;
-      drawFrame(0);
-    }
-
-    // 2. Load milestone keyframes for immediate scrub coverage.
-    // Loading every frame in one burst caused network contention and visible jank.
-    const KEYFRAME_INTERVAL = 12;
-    for (let i = KEYFRAME_INTERVAL; i < TOTAL_FRAMES; i += KEYFRAME_INTERVAL) {
-      loadFrame(i);
-    }
-
-    // 3. Incrementally load intermediate frames in small idle batches.
-    let nextFrame = 1;
-    const loadRemaining = () => {
-      if (isCancelled) return;
-      const batchEnd = Math.min(TOTAL_FRAMES, nextFrame + 8);
-      while (nextFrame < batchEnd) {
-        if (nextFrame % KEYFRAME_INTERVAL !== 0) loadFrame(nextFrame);
-        nextFrame += 1;
-      }
-      if (nextFrame < TOTAL_FRAMES) {
-        if ('requestIdleCallback' in window) {
-          (window as Window & { requestIdleCallback: (cb: (deadline: IdleDeadline) => void) => number })
-            .requestIdleCallback(loadRemaining);
-        } else {
-          globalThis.setTimeout(() => loadRemaining(), 80);
-        }
-      }
-    };
-
-    const timer = window.setTimeout(() => loadRemaining(), 250);
+    loadInitialSequence();
 
     return () => {
       isCancelled = true;
-      window.clearTimeout(timer);
     };
   }, [drawFrame]);
 
   // Handle Window Resize
   useEffect(() => {
     const handleResize = () => {
-      drawFrame(Math.round(currentFrameRef.current));
+      drawFrame(currentFrameRef.current);
     };
     window.addEventListener('resize', handleResize, { passive: true });
     return () => window.removeEventListener('resize', handleResize);
   }, [drawFrame]);
 
-  // Animation render loop (smooth cinema-grade scrubbing without micro-stutters or dropped frames)
+  // Silky smooth physics interpolation loop (continuous sub-frame scrubbing, zero micro-stutter)
   useEffect(() => {
     let animId: number;
 
     const renderLoop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
-        if (Math.abs(diff) > 0.005) {
-        currentFrameRef.current += diff * 0.35;
-        const rounded = Math.min(Math.max(0, Math.round(currentFrameRef.current)), TOTAL_FRAMES - 1);
-          if (rounded !== lastDrawnFrameRef.current) {
-            lastDrawnFrameRef.current = rounded;
-            drawFrame(rounded);
-          }
-      } else if (Math.round(currentFrameRef.current) !== Math.round(targetFrameRef.current)) {
-        currentFrameRef.current = targetFrameRef.current;
-        const rounded = Math.min(Math.max(0, Math.round(currentFrameRef.current)), TOTAL_FRAMES - 1);
-          if (rounded !== lastDrawnFrameRef.current) {
-            lastDrawnFrameRef.current = rounded;
-            drawFrame(rounded);
-          }
+      if (Math.abs(diff) > 0.001) {
+        // Damping factor calibrated for effortless cinematic inertia and precision
+        currentFrameRef.current += diff * 0.18;
+        if (Math.abs(currentFrameRef.current - lastDrawnFrameRef.current) > 0.01) {
+          lastDrawnFrameRef.current = currentFrameRef.current;
+          drawFrame(currentFrameRef.current);
+        }
       }
-
       animId = requestAnimationFrame(renderLoop);
     };
 
