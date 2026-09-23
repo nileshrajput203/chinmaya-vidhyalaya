@@ -17,14 +17,17 @@ export const SmoothScrollProvider: React.FC<{ children: React.ReactNode }> = ({ 
       return;
     }
 
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
     const lenis = new Lenis({
-      duration: 0.85,
+      duration: isTouch ? 0.5 : 0.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.15,
+      touchMultiplier: 1,
+      syncTouch: false,
     });
 
     (window as any).__lenis = lenis;
@@ -36,7 +39,8 @@ export const SmoothScrollProvider: React.FC<{ children: React.ReactNode }> = ({ 
     };
 
     gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    // Smooth out any frame hitches instead of jarring jumps
+    gsap.ticker.lagSmoothing(500, 33);
 
     return () => {
       gsap.ticker.remove(updateTicker);

@@ -96,7 +96,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                               to={subItem.href}
                               className={`block px-3.5 py-2.5 rounded-xl text-xs transition-colors group/sub ${
                                 isSubActive
-                                  ? 'bg-[#FFF7DF] text-[#DF711B] font-bold'
+                                  ? 'bg-[#FFF3D6] text-[#B2530C] font-bold'
                                   : 'hover:bg-[#FAF8F5] text-slate-700 hover:text-[#DF711B]'
                               }`}
                             >
@@ -105,12 +105,12 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                                   {subItem.label}
                                 </span>
                                 <ArrowUpRight className={`w-3.5 h-3.5 transition-all ${
-                                  isSubActive ? 'text-[#DF711B]' : 'text-slate-400 group-hover/sub:text-[#DF711B] group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5'
+                                  isSubActive ? 'text-[#B2530C]' : 'text-slate-400 group-hover/sub:text-[#DF711B] group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5'
                                 }`} />
                               </div>
                               {subItem.description && (
                                 <div className={`text-[11px] font-normal mt-0.5 line-clamp-1 ${
-                                  isSubActive ? 'text-[#DF711B]/80' : 'text-slate-500'
+                                  isSubActive ? 'text-[#8C3F05] font-medium' : 'text-slate-600'
                                 }`}>
                                   {subItem.description}
                                 </div>

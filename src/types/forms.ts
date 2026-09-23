@@ -9,11 +9,13 @@ export interface ContactEnquiry {
 export interface AdmissionEnquiry {
   parentName: string;
   studentName: string;
-  gradeApplyingFor: string;
-  email: string;
+  gradeApplyingFor?: string;
+  grade?: string;
+  email?: string;
   phone: string;
-  city: string;
+  city?: string;
   notes?: string;
+  message?: string;
 }
 
 export interface FormSubmitResult {

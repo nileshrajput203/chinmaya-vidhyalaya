@@ -6,7 +6,7 @@ import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
 export const InstitutionTopBar: React.FC = () => {
   return (
     <div className="bg-[#071320] text-slate-200 text-[11px] font-mono py-2 px-4 border-b border-white/10 w-full">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap justify-between items-start sm:items-center gap-y-2 gap-x-4">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap justify-between items-center gap-y-2 gap-x-4">
         
         {/* Left: Verified CBSE Accreditation & Live Bulletin */}
         <div className="flex items-center gap-3 min-w-0 max-w-full overflow-hidden text-slate-300">

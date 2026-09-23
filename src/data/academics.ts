@@ -65,14 +65,14 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
       "Our teachers employ diverse interactive methods to ensure every child grasps core concepts with clarity and confidence."
     ],
     features: [
-      "Play way method for early childhood and foundational stages",
-      "Activity Oriented learning to promote conceptual understanding",
-      "Child centered learning tailored to diverse student aptitudes",
-      "Demonstrative and experimental method in laboratories",
-      "Interactive method encouraging open discussions and inquiry",
-      "Learning by doing through hands-on projects and model making",
-      "Using audio visual aids and digital smartboards in classrooms",
-      "Using latest educational software and multimedia resources"
+      "Play-way method for early childhood and foundational stages",
+      "Activity-oriented learning to promote conceptual understanding",
+      "Child-centered learning tailored to diverse student aptitudes",
+      "Demonstrative and experimental methods in laboratories",
+      "Interactive methods encouraging open discussions and inquiry",
+      "Learning-by-doing through hands-on projects and model making",
+      "Using audio-visual aids and digital smartboards in classrooms",
+      "Using the latest educational software and multimedia resources"
     ]
   },
   infrastructure: {

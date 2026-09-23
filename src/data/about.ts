@@ -119,14 +119,14 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     content: [
       "Chinmaya Vidyalaya is an undertaking of Central Chinmaya Mission Trust, Mumbai, with the Local Managing Committee handling day-to-day operations and strategic school governance.",
       "The Board of Management comprises eminent industrialists, doctors, educationists, and CCMT trustees dedicated to the highest standards of student development and institutional excellence.",
-      "Led by Chairman Sri. T.B. Thakur, Vice-Chairman Dr. Parag Kulkarni, Secretary Dr. Shivshankar, and Principal Smt. Dimple Mistry, the governance structure ensures rigorous academic standards rooted in Vedantic values."
+      "Led by Chairman Sri. T.B. Thakur, Vice Chairman Dr. Parag Kulkarni, Secretary Dr. Shivshankar, and Principal Smt. Dimple Mistry, the governance structure ensures rigorous academic standards rooted in Vedantic values."
     ],
     bulletPoints: [
       "Managing Trust: Central Chinmaya Mission Trust, Mumbai (Local Managing Committee)",
       "1. Sri. T.B. Thakur — Chairman (Industrialist | Tel: 9823147178 | thakur@tpr.grengg.com)",
       "2. Shri Shriram Bhalerao — Trustee, CCMT (Industrialist | bhaleraosg@labindia.com)",
       "3. Atul Karanjkar — Zonal Director (atul.karanjkar@chinmayaeducationcell.org)",
-      "4. Dr. Parag Kulkarni — Vice-Chairman (Doctor | Tel: 9823045534 | paragkulkarni1960@gmail.com)",
+      "4. Dr. Parag Kulkarni — Vice Chairman (Doctor | Tel: 9823045534 | paragkulkarni1960@gmail.com)",
       "5. Dr. Shivshankar — Secretary (Doctor | Tel: 9975527700 | drshankar.shiv@gmail.com)",
       "6. Dr. (Smt.) Shobha Sankhe — Member (Doctor | Tel: 9823147089 | 2005shobha@gmail.com)",
       "7. Dr. Ratnakar Mane — Member (Doctor | Tel: 9822634820 | drratnakarmane@gmail.com)",

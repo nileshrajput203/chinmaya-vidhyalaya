@@ -171,7 +171,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
                             >
                               <div className="font-medium">{subItem.label}</div>
                               {subItem.description && (
-                                <div className="text-[10px] text-slate-500 font-normal mt-0.5 line-clamp-1">
+                                <div className={`text-[10px] font-normal mt-0.5 line-clamp-1 ${
+                                  location.pathname === subItem.href ? 'text-amber-100/95 font-medium' : 'text-slate-600'
+                                }`}>
                                   {subItem.description}
                                 </div>
                               )}

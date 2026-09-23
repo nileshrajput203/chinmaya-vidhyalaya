@@ -10,11 +10,11 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/about",
     children: [
       { label: "Pujya Gurudev's Life & Heritage", href: "/about/swami-chinmayananda", description: "Life, spiritual awakening, and eternal vision of Swami Chinmayananda" },
-      { label: "History & Overview", href: "/about/history", description: "Our institutional roots, 72 students batch to full-fledged school" },
+      { label: "History & Overview", href: "/about/history", description: "Our institutional roots: from 72 students to a thriving campus" },
       { label: "Mission & Vision", href: "/about/mission-vision", description: "Guiding principles for holistic education" },
-      { label: "Philosophy (CVP)", href: "/about/philosophy", description: "Chinmaya Vision Program four pillars" },
-      { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees and leadership" },
-      { label: "Mandatory Disclosures & Transfer Certificates", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates, affiliation and TC records" }
+      { label: "Philosophy (CVP)", href: "/about/philosophy", description: "The four foundational pillars of the Chinmaya Vision Program" },
+      { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees, and leadership" },
+      { label: "Mandatory Disclosures & Transfer Certificates", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates, affiliation, and TC records" }
     ]
   },
   {
@@ -22,9 +22,9 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/academics",
     children: [
       { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Std I to V and Std VI to X scholastic & non-scholastic subjects" },
-      { label: "Teaching Strategy", href: "/academics/teaching-strategy", description: "Activity-oriented, digital and experiential methodologies" },
+      { label: "Teaching Strategy", href: "/academics/teaching-strategy", description: "Activity-oriented, digital, and experiential methodologies" },
       { label: "Faculty Directory", href: "/academics/faculty", description: "Qualified educators and dedicated non-teaching staff" },
-      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry labs, library and smart classrooms" },
+      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry labs, library, and smart classrooms" },
       { label: "Co-Curricular Programs", href: "/academics/co-curricular", description: "Arts, sports, music, and personality development" }
     ]
   },
@@ -32,9 +32,9 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     label: "Admissions",
     href: "/admissions",
     children: [
-      { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility criteria, age norms and process" },
-      { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG & Std I-IX application forms" },
-      { label: "Transfer Certificates (TC)", href: "/downloads/transfer-certificates", description: "TC 2023, TC 2021, TC 2020 official records" }
+      { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility criteria, age norms, and application process" },
+      { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG, and Std I–IX application forms" },
+      { label: "Transfer Certificates (TC)", href: "/downloads/transfer-certificates", description: "Official TC archives and verification records" }
     ]
   },
   {
@@ -42,11 +42,11 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/features",
     children: [
       { label: "4 Pillars of CVP", href: "/features/4-pillars", description: "Integrated Development, Indian Culture, Patriotism, Universal Outlook" },
-      { label: "Holistic Development", href: "/features/holistic-development", description: "Physical, emotional, intellectual & spiritual faculties" },
-      { label: "Spiritual Assemblies", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar & Gita chanting" },
-      { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz & ASSET diagnostic testing" },
-      { label: "Educational Study Tours", href: "/features/education-tours", description: "Annual study tours & industrial field trips" },
-      { label: "Central Library", href: "/features/library", description: "Thousands of titles, journals & reading room" }
+      { label: "Holistic Development", href: "/features/holistic-development", description: "Physical, emotional, intellectual, and spiritual transformation" },
+      { label: "Spiritual Assemblies", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar, and Gita chanting" },
+      { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz and ASSET diagnostic testing" },
+      { label: "Educational Study Tours", href: "/features/education-tours", description: "Annual study tours and industrial field visits" },
+      { label: "Central Library", href: "/features/library", description: "Thousands of titles, journals, and dedicated reading spaces" }
     ]
   },
   {

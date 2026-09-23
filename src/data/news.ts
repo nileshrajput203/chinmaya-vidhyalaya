@@ -7,7 +7,7 @@ export const OFFICIAL_NEWS: NewsArticle[] = [
     date: "2024-04-10",
     category: "latest-updates",
     summary: "Respected Principal Sri. B. Anilkumar has been appointed as a Member of the Academic Assessment and Guidance Team of Chinmaya Education Cell, Coimbatore.",
-    content: "Our respected Principal Sri. B. Anilkumar has been appointed as Member of Academic assessment and Guidance team of Chinmaya Education Cell, Coimbatore. He also serves as a member of the inspection committee constituted for the approval of composite provisional affiliation upto senior secondary level by the Chairman of CBSE board."
+    content: "Our respected Principal Sri. B. Anilkumar has been appointed as a Member of the Academic Assessment and Guidance Team of Chinmaya Education Cell, Coimbatore. He also serves as a member of the inspection committee constituted for the approval of composite provisional affiliation up to senior secondary level by the Chairman of the CBSE Board."
   },
   {
     id: "news-2",
@@ -15,7 +15,7 @@ export const OFFICIAL_NEWS: NewsArticle[] = [
     date: "2024-03-15",
     category: "achievements",
     summary: "Recognizing outstanding contributions in education with Shiksha Ratna, Rajiv Gandhi Siromani National Award, and Best Principal Award.",
-    content: "Principal Sri. B. Anilkumar was awarded with a Gold Medal and conferred Shiksha Ratna by Rashtriya Samatha Swatantra Manch, Delhi at the National Level. He received the Rajiv Gandhi Siromani National Award for outstanding contribution in education from Sri. M.V. Rajshekharan, Honorable Union Minister of State for Planning, New Delhi. He was also awarded the Best Principal Award from Giants Group of Palghar, the Vocational Service Award by Rotary Club of Tarapur, and the Avantika Rajiv Gandhi Education Excellency Award."
+    content: "Principal Sri. B. Anilkumar was awarded a Gold Medal and conferred the Shiksha Ratna by Rashtriya Samatha Swatantra Manch, Delhi at the national level. He received the Rajiv Gandhi Siromani National Award for outstanding contribution in education from Sri. M.V. Rajshekharan, Honourable Union Minister of State for Planning, New Delhi. He was also awarded the Best Principal Award from Giants Group of Palghar, the Vocational Service Award by Rotary Club of Tarapur, and the Avantika Rajiv Gandhi Education Excellency Award."
   },
   {
     id: "news-3",

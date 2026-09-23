@@ -209,12 +209,12 @@ export const HorizontalPanelGallery: React.FC = () => {
 
                 {/* Big Display Headline (near-black #181818, heavy grotesk, tight line-height) */}
                 <h2 className="font-display text-[38px] sm:text-[50px] lg:text-[58px] xl:text-[66px] font-black text-[#181818] tracking-tight leading-[1.04] uppercase m-0">
-                  TARAPUR DISTRICT'S BEST CBSE SCHOOL
+                  PALGHAR DISTRICT'S BEST CBSE SCHOOL
                 </h2>
 
                 {/* Supporting Body Paragraph (gray #555555 - #777777, ~18px) */}
                 <p className="text-[16px] sm:text-[17px] lg:text-[18px] text-[#555555] font-normal leading-relaxed max-w-[520px]">
-                  Imparting value-integrated academic brilliance under the aegis of the Chinmaya Vision Programme. Recognized by CBSE New Delhi (Affiliation No. {OFFICIAL_SCHOOL_INFO.affiliationNo}) with consecutive 100% AISSE board distinctions, modern STEM laboratories, and holistic spiritual grounding.
+                  Imparting value-integrated academic brilliance at Tarapur under the aegis of the Chinmaya Vision Programme. Recognized by CBSE New Delhi (Affiliation No. {OFFICIAL_SCHOOL_INFO.affiliationNo}) with consecutive 100% AISSE board distinctions, modern STEM laboratories, and holistic spiritual grounding.
                 </p>
 
                 {/* Metrics Callout Strip */}

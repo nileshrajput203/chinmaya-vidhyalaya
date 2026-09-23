@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send, CheckCircle2, Phone } from 'lucide-react';
+import { formService } from '../../services/formService';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -261,27 +262,27 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     grade: 'Class 1',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const schoolEmail = "cvtarapur@chinmayamission.com";
-    const subject = encodeURIComponent(`[Admission Enquiry 2026-27] ${formData.grade} - ${formData.studentName}`);
-    const body = encodeURIComponent(
-      `New Admission Inquiry via Campus Film:\n` +
-      `--------------------------------------\n` +
-      `Student Name: ${formData.studentName}\n` +
-      `Parent/Guardian: ${formData.parentName}\n` +
-      `Grade Applying For: ${formData.grade}\n` +
-      `Phone Number: ${formData.phone}\n` +
-      `--------------------------------------\n` +
-      `Submitted via Chinmaya Vidyalaya Tarapur Hero Film`
-    );
-    const mailtoLink = `mailto:${schoolEmail}?subject=${subject}&body=${body}`;
-    setIsSubmitted(true);
-    try {
-      window.location.href = mailtoLink;
-    } catch {
-      console.log('Redirecting to mail client');
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const res = await formService.submitAdmission({
+      studentName: formData.studentName,
+      parentName: formData.parentName,
+      gradeApplyingFor: formData.grade,
+      phone: formData.phone,
+    });
+
+    setIsSubmitting(false);
+
+    if (res.success) {
+      setIsSubmitted(true);
+    } else {
+      setSubmitError(res.error || res.message || 'Failed to submit admission enquiry.');
     }
   };
 
@@ -415,6 +416,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5">
+                  {submitError && (
+                    <div className="p-2.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded">
+                      {submitError}
+                    </div>
+                  )}
                   <div>
                     <label className="block text-[11px] font-mono font-bold text-[#444444] uppercase tracking-wider mb-1">
                       Student's Full Name *
@@ -491,10 +497,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                   <div className="pt-1.5">
                     <button
                       type="submit"
-                      className="w-full py-3 bg-[#DF711B] hover:bg-[#c86113] text-white font-sans font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full py-3 bg-[#DF711B] hover:bg-[#c86113] disabled:opacity-60 disabled:cursor-not-allowed text-white font-sans font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
                     >
-                      <Send className="w-3.5 h-3.5" />
-                      <span>SUBMIT ADMISSION ENQUIRY</span>
+                      <Send className={`w-3.5 h-3.5 ${isSubmitting ? 'animate-spin' : ''}`} />
+                      <span>{isSubmitting ? 'SUBMITTING ENQUIRY...' : 'SUBMIT ADMISSION ENQUIRY'}</span>
                     </button>
                   </div>
 

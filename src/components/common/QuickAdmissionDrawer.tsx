@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, FileText, Download, Send, CheckCircle2, Phone, GraduationCap, Eye, Mail } from 'lucide-react';
+import { X, FileText, Download, Send, CheckCircle2, Phone, GraduationCap, Eye } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
 import { DocumentViewerModal } from '../documents/DocumentViewerModal';
 import { SchoolDocument } from '../../types/documents';
+import { formService } from '../../services/formService';
 
 interface QuickAdmissionDrawerProps {
   isOpen: boolean;
@@ -13,7 +14,9 @@ interface QuickAdmissionDrawerProps {
 export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState<'forms' | 'enquiry' | 'guidelines'>('forms');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [submittedMailto, setSubmittedMailto] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccessMessage, setSubmitSuccessMessage] = useState<string | null>(null);
   const [viewingDoc, setViewingDoc] = useState<SchoolDocument | null>(null);
 
   useEffect(() => {
@@ -45,30 +48,27 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const schoolEmail = "cvtarapur@chinmayamission.com";
-    const subject = encodeURIComponent(`[Admission Enquiry 2026-27] Grade: ${formData.grade} - ${formData.studentName}`);
-    const body = encodeURIComponent(
-      `New Admission Inquiry:\n` +
-      `--------------------------------------\n` +
-      `Student Name: ${formData.studentName}\n` +
-      `Parent/Guardian: ${formData.parentName}\n` +
-      `Grade Applying For: ${formData.grade}\n` +
-      `Phone Number: ${formData.phone}\n` +
-      `Email Address: ${formData.email}\n` +
-      `Specific Queries / Message:\n${formData.message || 'None specified'}\n` +
-      `--------------------------------------\n` +
-      `Submitted via Chinmaya Vidyalaya Tarapur Portal`
-    );
-    const mailtoLink = `mailto:${schoolEmail}?subject=${subject}&body=${body}`;
-    setSubmittedMailto(mailtoLink);
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
 
-    try {
-      window.location.href = mailtoLink;
-    } catch {
-      console.log('Redirecting to mail client');
+    const result = await formService.submitAdmission({
+      parentName: formData.parentName,
+      studentName: formData.studentName,
+      gradeApplyingFor: formData.grade,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message,
+    });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitSuccessMessage(result.message);
+      setFormSubmitted(true);
+    } else {
+      setSubmitError(result.error || result.message || 'Failed to submit admission enquiry.');
     }
   };
 
@@ -223,32 +223,40 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                   <div>
                     {formSubmitted ? (
                       <div className="py-12 text-center space-y-4">
-                        <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-                        <h4 className="font-cinzel font-bold text-xl text-[#181C20]">Enquiry Ready!</h4>
-                        <p className="text-xs text-[#4A5568] max-w-xs mx-auto">
-                          We have redirected you to your email client addressed to <code className="text-[#DF711B]">cvtarapur@chinmayamission.com</code>.
+                        <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto animate-bounce" />
+                        <h4 className="font-cinzel font-bold text-xl text-[#181C20]">Enquiry Submitted!</h4>
+                        <p className="text-xs text-[#4A5568] max-w-xs mx-auto leading-relaxed">
+                          {submitSuccessMessage || 'Thank you! Your admission enquiry has been sent to our admissions office. Our admissions team will contact you shortly.'}
                         </p>
-                        {submittedMailto && (
-                          <div className="pt-2">
-                            <a
-                              href={submittedMailto}
-                              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
-                            >
-                              <Mail className="w-4 h-4 text-white" />
-                              <span>Open Email Application Directly</span>
-                            </a>
-                          </div>
-                        )}
+                        <div className="p-3 bg-[#FAF6EF] rounded-xl border border-[#E7E2D8] text-[11px] text-[#717A84] max-w-xs mx-auto">
+                          Our admissions officer will reach out on your registered contact number.
+                        </div>
                         <button
                           type="button"
-                          onClick={() => setFormSubmitted(false)}
-                          className="text-xs text-slate-500 hover:text-[#181C20] underline block mx-auto pt-4"
+                          onClick={() => {
+                            setFormSubmitted(false);
+                            setFormData({
+                              parentName: '',
+                              studentName: '',
+                              grade: 'Nursery',
+                              phone: '',
+                              email: '',
+                              message: ''
+                            });
+                          }}
+                          className="text-xs text-[#DF711B] hover:text-[#C8652D] font-bold underline block mx-auto pt-4 cursor-pointer"
                         >
                           Submit Another Enquiry
                         </button>
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
+                        {submitError && (
+                          <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-start gap-2">
+                            <span className="font-bold">Error:</span>
+                            <span>{submitError}</span>
+                          </div>
+                        )}
                         <div>
                           <label className="font-semibold text-[#181C20] block mb-1">Parent / Guardian Name *</label>
                           <input
@@ -327,10 +335,11 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
 
                         <button
                           type="submit"
-                          className="w-full py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white font-bold rounded-xl shadow-md transition-colors flex items-center justify-center gap-2"
+                          disabled={isSubmitting}
+                          className="w-full py-3 bg-[#DF711B] hover:bg-[#C8652D] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
                         >
-                          <Send className="w-4 h-4" />
-                          <span>Submit & Redirect to Email</span>
+                          <Send className={`w-4 h-4 ${isSubmitting ? 'animate-spin' : ''}`} />
+                          <span>{isSubmitting ? 'Submitting Enquiry...' : 'Submit Admission Enquiry'}</span>
                         </button>
                       </form>
                     )}

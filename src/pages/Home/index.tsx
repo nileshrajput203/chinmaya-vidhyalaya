@@ -204,7 +204,7 @@ export const HomePage: React.FC = () => {
       {/* ----------------------------------------------------
           SECTION 02 — SCROLL-JACKED HORIZONTAL PANEL GALLERY
           Panel A: "WE VALUE" 4-Column Grid
-          Panel B: "TARAPUR DISTRICT'S BEST CBSE SCHOOL" Studio Cutout
+          Panel B: "PALGHAR DISTRICT'S BEST CBSE SCHOOL" Studio Cutout
           Panel C: Campus Architectural Gallery Preview
          ---------------------------------------------------- */}
       <HorizontalPanelGallery />
