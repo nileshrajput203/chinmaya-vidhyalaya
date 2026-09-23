@@ -420,7 +420,7 @@ export const HomePage: React.FC = () => {
                   {/* Subtle placeholder guide (transparent background, no card/container box) */}
                   <div 
                     id="leadership-transparent-placeholder"
-                    className="w-full h-full flex flex-col items-center justify-center p-6 text-center space-y-2 border-2 border-dashed border-[#DF711B]/35 hover:border-[#DF711B]/60 transition-colors"
+                    className="hidden w-full h-full flex-col items-center justify-center p-6 text-center space-y-2 border-2 border-dashed border-[#DF711B]/35 hover:border-[#DF711B]/60 transition-colors"
                   >
                     <ImageIcon className="w-10 h-10 text-[#DF711B]/50" />
                     <span className="text-xs font-mono uppercase tracking-widest text-[#181818] font-bold">

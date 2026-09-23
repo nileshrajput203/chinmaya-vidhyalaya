@@ -57,6 +57,10 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const isEnrollment = title.toLowerCase().includes('enrollment') || (slug && slug.includes('enrollment')) || categoryLabel.toLowerCase().includes('admission');
   const isSpiritual = title.toLowerCase().includes('spiritual') || (slug && slug.includes('spiritual'));
   const isInfrastructure = title.toLowerCase().includes('infrastructure') || (slug && slug.includes('infrastructure'));
+  const isTeachingStrategy = title.toLowerCase().includes('strategy') || slug === 'teaching-strategy';
+  const isCoCurricular = title.toLowerCase().includes('co-curricular') || slug === 'co-curricular';
+  const isEducationTours = slug === 'education-tours' || title.toLowerCase().includes('tour');
+  const isLibrary = slug === 'library' || title.toLowerCase().includes('library');
   const isFourPillars = slug === 'four-pillars' || slug === '4-pillars' || title.toLowerCase().includes('4 pillars');
   const isHolistic = slug === 'holistic-development' || title.toLowerCase().includes('holistic');
 
@@ -93,6 +97,14 @@ export const ContentPage: React.FC<ContentPageProps> = ({
     ? [SCHOOL_IMAGES.TEACHING_STAFF, SCHOOL_IMAGES.NON_TEACHING_STAFF, SCHOOL_IMAGES.CLASSROOM_LEARNING]
     : isInfrastructure
     ? ["/images/lib.jpg", "/images/CHEM1.jpeg", "/images/phys.jpeg"]
+    : isTeachingStrategy
+    ? [SCHOOL_IMAGES.CLASSROOM_LEARNING, SCHOOL_IMAGES.COMPUTERS_TECH, SCHOOL_IMAGES.SCIENCE_LAB]
+    : isCoCurricular
+    ? [SCHOOL_IMAGES.CULTURAL_EVENT, SCHOOL_IMAGES.SPORTS_DAY, SCHOOL_IMAGES.ANNUAL_DAY]
+    : isEducationTours
+    ? [SCHOOL_IMAGES.EDUCATIONAL_TOUR, "/images/img6.jpg", "/images/img7.jpg"]
+    : isLibrary
+    ? [SCHOOL_IMAGES.LIBRARY_STUDY, "/images/lib.jpg", "/images/academic-books.png"]
     : isCurriculum
     ? [SCHOOL_IMAGES.CLASSROOM_LEARNING, SCHOOL_IMAGES.SCIENCE_LAB, SCHOOL_IMAGES.LIBRARY_STUDY, SCHOOL_IMAGES.COMPUTERS_TECH]
     : isAcademics
@@ -125,6 +137,30 @@ export const ContentPage: React.FC<ContentPageProps> = ({
       return {
         src: SCHOOL_IMAGES.SCIENCE_LAB,
         caption: 'Advanced Science & Computer Laboratories | Tarapur'
+      };
+    }
+    if (isTeachingStrategy) {
+      return {
+        src: SCHOOL_IMAGES.CLASSROOM_LEARNING,
+        caption: 'Activity-led Classroom Teaching & Digital Learning'
+      };
+    }
+    if (isCoCurricular) {
+      return {
+        src: SCHOOL_IMAGES.CULTURAL_EVENT,
+        caption: 'Co-Curricular Arts, Sports & Student Expression'
+      };
+    }
+    if (isEducationTours) {
+      return {
+        src: SCHOOL_IMAGES.EDUCATIONAL_TOUR,
+        caption: 'Educational Study Tours & Experiential Learning'
+      };
+    }
+    if (isLibrary) {
+      return {
+        src: SCHOOL_IMAGES.LIBRARY_STUDY,
+        caption: 'Central Library & Reading Room'
       };
     }
     if (isCurriculum) {
@@ -956,7 +992,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               <img
                 src={pageImages[1]}
                 alt={`${title} photographic showcase`}
-                className="w-full h-80 md:h-[400px] object-cover rounded-2xl"
+                    className="w-full h-72 sm:h-80 md:h-[400px] object-cover object-center rounded-2xl"
               />
               <div className="p-4 bg-[#FAF8F5] text-[#181C20] border-t border-[#E7E2D8] flex flex-col md:flex-row justify-between items-center gap-2 text-xs rounded-b-2xl">
                 <span className="font-cinzel text-sm font-bold text-[#181C20] uppercase tracking-wider">
@@ -1035,7 +1071,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   <img
                     src={pageImages[2]}
                     alt={`${title} visual`}
-                    className="w-full h-80 object-cover rounded-2xl"
+                    className="w-full h-72 sm:h-80 object-cover object-center rounded-2xl"
                   />
                   <div className="p-3 bg-[#FAF8F5] text-xs text-[#4A5568] text-center font-medium rounded-b-2xl">
                     Integrated Learning Facilities | Boisar / Tarapur

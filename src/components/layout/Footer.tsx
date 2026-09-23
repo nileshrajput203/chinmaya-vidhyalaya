@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Award, 
-  ArrowUp, 
   Facebook,
   Instagram,
   Youtube,
@@ -20,16 +19,17 @@ export const Footer: React.FC = () => {
     { title: "GREEN CAMPUS", desc: "Eco-Friendly & Safe Educational Facility", code: "Tarapur, Maharashtra" },
   ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if ((window as any).__lenis) {
-      (window as any).__lenis.scrollTo(0, { immediate: false });
-    }
-  };
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveAccreditation((current) => (current + 1) % accreditations.length);
+    }, 4200);
+    return () => window.clearInterval(timer);
+  }, [accreditations.length]);
 
   const handleRestart = (e: React.MouseEvent) => {
     e.preventDefault();
     sessionStorage.removeItem('cv_preloader_seen');
+    sessionStorage.setItem('cv_preloader_seen', 'true');
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     if ((window as any).__lenis) {
       (window as any).__lenis.scrollTo(0, { immediate: true });
@@ -40,18 +40,6 @@ export const Footer: React.FC = () => {
   return (
     <footer className="relative bg-[#181A1E] text-slate-200 pt-16 md:pt-24 pb-0 border-t-4 border-[#DF711B] overflow-visible font-sans select-none">
       
-      {/* Top Floating Back-to-Top Quick Accent Button */}
-      <div className="absolute -top-6 right-8 md:right-16 z-30">
-        <button
-          onClick={scrollToTop}
-          className="w-12 h-12 bg-[#DF711B] hover:bg-[#c85f12] text-white shadow-xl rounded-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 group"
-          aria-label="Back to top"
-          title="Back to Top"
-        >
-          <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
-        </button>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-16 items-start">
           
@@ -153,8 +141,7 @@ export const Footer: React.FC = () => {
                 </h3>
                 <ul className="mt-3 space-y-2 text-xs">
                   {[
-                    { label: "Notice Board & Circulars", href: "/news" },
-                    { label: "Upcoming Events Calendar", href: "/news" },
+                      { label: "Notice Board & Events", href: "/news" },
                     { label: "School Calendar 2026-27", href: "/images/academic-calendar.pdf", external: true },
                     { label: "Evaluation Papers (1-5)", href: "/downloads/evaluation-papers" },
                   ].map((link) => (
@@ -288,8 +275,7 @@ export const Footer: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Interactive Pagination Dots */}
-                <div className="flex items-center gap-1.5 mt-3 justify-start">
+                <div className="flex items-center gap-1.5 mt-3 justify-start" aria-label="Accreditation slides">
                   {accreditations.map((_, idx) => (
                     <button
                       key={idx}
@@ -299,7 +285,7 @@ export const Footer: React.FC = () => {
                           ? 'bg-amber-400 w-5' 
                           : 'bg-slate-600 hover:bg-slate-400 w-2'
                       }`}
-                      aria-label={`Accreditation slide ${idx + 1}`}
+                      aria-label={`Show accreditation ${idx + 1}`}
                     />
                   ))}
                 </div>

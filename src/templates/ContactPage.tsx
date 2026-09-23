@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Send, CheckCircle2, Sparkles, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { CONTACT_DETAILS } from '../data/contact';
@@ -68,7 +69,13 @@ export const ContactPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left: Contact Info & Address Card */}
-        <div className="lg:col-span-6 space-y-8">
+        <motion.div
+          initial={{ opacity: 0, y: -28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="lg:col-span-6 space-y-8"
+        >
           <div className="bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl space-y-6 shadow-card">
             <h2 className="font-cinzel font-bold text-[#181C20] text-2xl border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
               Campus Details & Location
@@ -132,10 +139,16 @@ export const ContactPage: React.FC = () => {
               Vidyalaya Main Academic Complex | Vidyanagar, Boisar 401501
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right: Interactive Contact Form with Direct Email Redirection */}
-        <div className="lg:col-span-6 bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl shadow-card space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.55, ease: 'easeOut', delay: 0.08 }}
+          className="lg:col-span-6 bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl shadow-card space-y-6"
+        >
           <div>
             <div className="flex items-center gap-2 mb-1">
               <Sparkles className="w-4 h-4 text-[#DF711B]" />
@@ -174,6 +187,22 @@ export const ContactPage: React.FC = () => {
                 </div>
               )}
             </div>
+          )}
+
+          {submitStatus && (
+            <motion.div
+              initial={{ opacity: 0, y: 18, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              role="status"
+              className="fixed right-4 bottom-24 lg:bottom-6 z-50 max-w-sm rounded-2xl bg-[#181818] text-white px-4 py-3 shadow-2xl border border-[#DF711B]/50 flex items-start gap-2.5"
+            >
+              <CheckCircle2 className="w-5 h-5 text-[#FFB740] shrink-0 mt-0.5" />
+              <div>
+                <strong className="block text-xs font-bold">Notification sent</strong>
+                <span className="block text-[11px] text-white/75 mt-0.5">{submitStatus.message}</span>
+              </div>
+            </motion.div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
@@ -254,7 +283,7 @@ export const ContactPage: React.FC = () => {
               )}
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
 
       {/* Campus Google Map & Navigation Section */}

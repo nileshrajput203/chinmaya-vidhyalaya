@@ -17,6 +17,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
   const handleRestart = (e: React.MouseEvent) => {
     e.preventDefault();
     sessionStorage.removeItem('cv_preloader_seen');
+    sessionStorage.setItem('cv_preloader_seen', 'true');
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     if ((window as any).__lenis) {
       (window as any).__lenis.scrollTo(0, { immediate: true });
@@ -26,20 +27,20 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
 
   return (
     <div className="bg-white text-[#181C20] border-b border-[#E7E2D8] py-3.5 sm:py-4 px-4 sm:px-6 lg:px-8 w-full shadow-2xs relative z-20">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-4 min-w-0">
         
         {/* Left: Emblem & Institutional Title Hierarchy */}
         <a 
           href="/" 
           onClick={handleRestart}
           title="Chinmaya Vidyalaya Tarapur Home"
-          className="flex items-center gap-2.5 sm:gap-4.5 group cursor-pointer min-w-0"
+          className="flex items-center gap-2.5 sm:gap-4.5 group cursor-pointer min-w-0 flex-1"
         >
           {/* Official Emblem - Scaled proportionally on mobile */}
           <img
             src="/images/Chinmaya_Logo.webp"
             alt="Chinmaya Vidyalaya Emblem"
-            className="h-12 xs:h-14 sm:h-20 lg:h-22 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
+            className="h-12 xs:h-14 sm:h-20 lg:h-22 w-auto max-w-[3.25rem] sm:max-w-none object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
           />
 
           <div className="space-y-0.5 min-w-0">
@@ -114,7 +115,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           {/* Primary CTA: Button-in-Button Architecture */}
           <button
             onClick={onOpenAdmissionDrawer}
-            className="group relative inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-gradient-to-r from-[#DF711B] to-[#C45B0E] hover:from-[#C45B0E] hover:to-[#9E3E07] text-white shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] cursor-pointer"
+            className="group relative inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-gradient-to-r from-[#DF711B] to-[#C45B0E] hover:from-[#C45B0E] hover:to-[#9E3E07] text-white shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] cursor-pointer shrink-0"
             title="Open Admissions Enquiry Form"
           >
             <div className="flex flex-col items-start text-left">

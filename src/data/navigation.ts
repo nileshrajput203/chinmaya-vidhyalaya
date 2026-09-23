@@ -54,8 +54,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     label: "Notice Board",
     href: "/news",
     children: [
-      { label: "Active Circulars", href: "/news", description: "Official parent notices, book lists, and administrative orders" },
-      { label: "Upcoming Events", href: "/news", description: "School celebrations, exhibitions, and athletic meets" },
+      { label: "Notice Board & Events", href: "/news", description: "Circulars, school celebrations, exhibitions, and athletic meets" },
       { label: "Academic Dispatches", href: "/downloads/evaluation-papers", description: "Evaluation revision papers and CBSE sample questions" }
     ]
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 import { HomePage } from '../pages/Home';
 import { NotFoundPage } from '../pages/NotFound';
@@ -33,10 +33,6 @@ export const router = createBrowserRouter([
       { 
         path: 'about/mandatory-information', 
         element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Mandatory Public Disclosures & Transfer Certificates" pageSubtitle="Official CBSE affiliation, land, building safety, sanitation certificates, and Transfer Certificates (TC)" /> 
-      },
-      { 
-        path: 'about/transfer-certificates', 
-        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Transfer Certificates (TC) & Disclosures" pageSubtitle="Official Transfer Certificate archives and specimen format per CBSE guidelines" /> 
       },
       { path: 'about/management', element: <ContentPage {...ABOUT_SECTIONS['management']} categoryLabel="About Us" /> },
 
@@ -73,6 +69,8 @@ export const router = createBrowserRouter([
 
       /* GALLERY ROUTE */
       { path: 'gallery', element: <GalleryPage /> },
+      { path: 'activities/gallery', element: <Navigate to="/gallery" replace /> },
+      { path: 'activities/sports', element: <Navigate to="/features/holistic-development" replace /> },
 
       /* FAQ ROUTE */
       { path: 'faq', element: <FaqPage /> },

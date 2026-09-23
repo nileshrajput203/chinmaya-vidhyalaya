@@ -18,13 +18,13 @@ export const SmoothScrollProvider: React.FC<{ children: React.ReactNode }> = ({ 
     }
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.85,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1.15,
     });
 
     (window as any).__lenis = lenis;

@@ -33,7 +33,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(TOTAL_FRAMES).fill(null));
   const currentFrameRef = useRef<number>(0);
   const targetFrameRef = useRef<number>(0);
-  const rafIdRef = useRef<number | null>(null);
+  const lastDrawnFrameRef = useRef<number>(-1);
 
   // Component scroll progress state (0.0 to 1.0)
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -111,8 +111,23 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   useEffect(() => {
     let isCancelled = false;
 
+    const loadFrame = (index: number) => {
+      if (isCancelled || imagesRef.current[index]) return;
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = getFrameSrc(index);
+      img.onload = () => {
+        if (isCancelled) return;
+        imagesRef.current[index] = img;
+        if (index === 0 || index === Math.round(currentFrameRef.current)) {
+          drawFrame(index);
+        }
+      };
+    };
+
     // 1. First frame rendered right away
     const firstImg = new Image();
+    firstImg.decoding = 'async';
     firstImg.src = getFrameSrc(0);
     firstImg.onload = () => {
       if (isCancelled) return;
@@ -120,36 +135,37 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       drawFrame(0);
     };
 
-    // 2. Load milestone keyframes (every 6th frame) for immediate scrub coverage
-    const KEYFRAME_INTERVAL = 6;
+    // 2. Load milestone keyframes for immediate scrub coverage.
+    // Loading every frame in one burst caused network contention and visible jank.
+    const KEYFRAME_INTERVAL = 12;
     for (let i = KEYFRAME_INTERVAL; i < TOTAL_FRAMES; i += KEYFRAME_INTERVAL) {
-      const img = new Image();
-      img.src = getFrameSrc(i);
-      img.onload = () => {
-        if (isCancelled) return;
-        imagesRef.current[i] = img;
-      };
+      loadFrame(i);
     }
 
-    // 3. Incrementally load remaining intermediate frames
+    // 3. Incrementally load intermediate frames in small idle batches.
+    let nextFrame = 1;
     const loadRemaining = () => {
       if (isCancelled) return;
-      for (let i = 1; i < TOTAL_FRAMES; i++) {
-        if (i % KEYFRAME_INTERVAL === 0) continue;
-        const img = new Image();
-        img.src = getFrameSrc(i);
-        img.onload = () => {
-          if (isCancelled) return;
-          imagesRef.current[i] = img;
-        };
+      const batchEnd = Math.min(TOTAL_FRAMES, nextFrame + 8);
+      while (nextFrame < batchEnd) {
+        if (nextFrame % KEYFRAME_INTERVAL !== 0) loadFrame(nextFrame);
+        nextFrame += 1;
+      }
+      if (nextFrame < TOTAL_FRAMES) {
+        if ('requestIdleCallback' in window) {
+          (window as Window & { requestIdleCallback: (cb: (deadline: IdleDeadline) => void) => number })
+            .requestIdleCallback(loadRemaining);
+        } else {
+          globalThis.setTimeout(() => loadRemaining(), 80);
+        }
       }
     };
 
-    const timer = setTimeout(loadRemaining, 150);
+    const timer = window.setTimeout(() => loadRemaining(), 250);
 
     return () => {
       isCancelled = true;
-      clearTimeout(timer);
+      window.clearTimeout(timer);
     };
   }, [drawFrame]);
 
@@ -168,22 +184,26 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     const renderLoop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
-      if (Math.abs(diff) > 0.005) {
+        if (Math.abs(diff) > 0.005) {
         currentFrameRef.current += diff * 0.35;
         const rounded = Math.min(Math.max(0, Math.round(currentFrameRef.current)), TOTAL_FRAMES - 1);
-        drawFrame(rounded);
+          if (rounded !== lastDrawnFrameRef.current) {
+            lastDrawnFrameRef.current = rounded;
+            drawFrame(rounded);
+          }
       } else if (Math.round(currentFrameRef.current) !== Math.round(targetFrameRef.current)) {
         currentFrameRef.current = targetFrameRef.current;
         const rounded = Math.min(Math.max(0, Math.round(currentFrameRef.current)), TOTAL_FRAMES - 1);
-        drawFrame(rounded);
+          if (rounded !== lastDrawnFrameRef.current) {
+            lastDrawnFrameRef.current = rounded;
+            drawFrame(rounded);
+          }
       }
 
       animId = requestAnimationFrame(renderLoop);
     };
 
     animId = requestAnimationFrame(renderLoop);
-    rafIdRef.current = animId;
-
     return () => cancelAnimationFrame(animId);
   }, [drawFrame]);
 

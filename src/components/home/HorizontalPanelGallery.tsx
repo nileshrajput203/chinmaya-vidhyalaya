@@ -76,7 +76,7 @@ export const HorizontalPanelGallery: React.FC = () => {
       title: 'VITALITY',
       desc: 'Sportsmanship, athletics & vigor',
       image: SCHOOL_IMAGES.SPORTS_DAY,
-      link: '/activities/sports',
+       link: '/features/holistic-development',
     },
   ];
 
@@ -299,7 +299,7 @@ export const HorizontalPanelGallery: React.FC = () => {
               
               <div className="pt-2">
                 <Link
-                  to="/activities/gallery"
+                  to="/gallery"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#DF711B] hover:bg-[#181818] text-[#FFFFFF] font-sans font-bold text-[12px] uppercase tracking-wider transition-colors shadow-sm"
                 >
                   <span>EXPLORE FULL GALLERY</span>

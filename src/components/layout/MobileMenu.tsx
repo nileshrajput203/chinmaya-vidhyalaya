@@ -47,6 +47,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
     e.preventDefault();
     onClose();
     sessionStorage.removeItem('cv_preloader_seen');
+    sessionStorage.setItem('cv_preloader_seen', 'true');
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     if ((window as any).__lenis) {
       (window as any).__lenis.scrollTo(0, { immediate: true });

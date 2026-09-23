@@ -51,6 +51,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
     e.preventDefault();
     onClose();
     sessionStorage.removeItem('cv_preloader_seen');
+    sessionStorage.setItem('cv_preloader_seen', 'true');
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     if ((window as any).__lenis) {
       (window as any).__lenis.scrollTo(0, { immediate: true });
@@ -172,7 +173,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                 </h3>
                 <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
                   {[
-                    { label: "Notice Board & Circulars", href: "/news" },
+                    { label: "Notice Board & Events", href: "/news" },
                     { label: "School Calendar 2026-27", href: "/images/academic-calendar.pdf", external: true },
                     { label: "Mandatory Disclosures", href: "/about/mandatory-information" },
                     { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates" },

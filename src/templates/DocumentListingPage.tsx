@@ -37,11 +37,11 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
 
   const categories: { label: string; value: DocumentCategory | 'all' }[] = [
     { label: 'All Documents', value: 'all' },
-    { label: 'Mandatory Public Disclosures (TC)', value: 'mandatory-information' },
+                    { label: 'Mandatory Public Disclosures & TC', value: 'mandatory-information' },
     { label: 'Sample Question Papers', value: 'sample-papers' },
     { label: 'School Circulars & Notices', value: 'circulars' },
     { label: 'Admissions & Forms', value: 'admissions' },
-    { label: 'Academics & Curricula', value: 'academics' },
+                    { label: 'Academics & Curricula', value: 'academics' },
   ];
 
   // Filter term-wise if applicable

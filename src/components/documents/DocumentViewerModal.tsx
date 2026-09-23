@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download, FileText, ShieldAlert, Maximize2 } from 'lucide-react';
+import { X, Download, FileText, ShieldAlert, Maximize2, ArrowLeft } from 'lucide-react';
 import { SchoolDocument } from '../../types/documents';
 
 interface DocumentViewerModalProps {
@@ -75,6 +75,16 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
               >
                 <Maximize2 className="w-4 h-4" />
               </a>
+
+              <button
+                onClick={onClose}
+                className="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
+                aria-label="Back to documents"
+                title="Back to documents"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span className="hidden sm:inline text-xs">Back</span>
+              </button>
 
               <button
                 onClick={onClose}

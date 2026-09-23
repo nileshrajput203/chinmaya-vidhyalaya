@@ -6,10 +6,10 @@ import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
 export const InstitutionTopBar: React.FC = () => {
   return (
     <div className="bg-[#071320] text-slate-200 text-[11px] font-mono py-2 px-4 border-b border-white/10 w-full">
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-y-2 gap-x-4">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap justify-between items-start sm:items-center gap-y-2 gap-x-4">
         
         {/* Left: Verified CBSE Accreditation & Live Bulletin */}
-        <div className="flex items-center gap-3 overflow-hidden text-slate-300">
+        <div className="flex items-center gap-3 min-w-0 max-w-full overflow-hidden text-slate-300">
           {/* CBSE Tag with Pulse */}
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[10px] uppercase font-bold tracking-wider shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -34,7 +34,7 @@ export const InstitutionTopBar: React.FC = () => {
         </div>
 
         {/* Right: Verified Direct Contact & Quick Regulatory Access */}
-        <div className="flex items-center gap-4 ml-auto text-slate-300 text-[11px]">
+        <div className="flex items-center gap-3 sm:gap-4 max-w-full ml-0 sm:ml-auto text-slate-300 text-[11px]">
           {/* Campus Helpline */}
           <a
             href={`tel:${OFFICIAL_SCHOOL_INFO.contact.phone[0]}`}
