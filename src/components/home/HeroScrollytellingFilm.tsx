@@ -9,21 +9,19 @@ interface HeroScrollytellingFilmProps {
   onOpenAdmissions: () => void;
 }
 
-// The imported source sequence contains 47 original 1280×720 frames.
-// Keep the source dimensions and filenames intact instead of scaling a
-// smaller video or requesting a non-existent frame directory.
-const START_FRAME = 1;
-const END_FRAME = 47;
-const TOTAL_FRAMES = END_FRAME - START_FRAME + 1;
+// 229 frames from ezgif-frame-008.jpg to ezgif-frame-236.jpg in /heronew/herovideo/
+const START_FRAME = 8;
+const END_FRAME = 236;
+const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 229 frames
 
 // Scroll budget: calibrated for cinema-grade, fluid scrubbing across desktop and mobile
-const SCROLL_PX_PER_FRAME = 9;
+const SCROLL_PX_PER_FRAME = 12;
 const TOTAL_SCROLLABLE_PX = (TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME;
 
-// Helper to construct zero-padded frame URLs in the imported source sequence.
+// Helper to construct zero-padded frame URLs in heronew/herovideo
 const getFrameSrc = (index: number): string => {
   const frameNum = Math.min(Math.max(START_FRAME, START_FRAME + index), END_FRAME);
-  return `/hero-frames/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
+  return `/heronew/herovideo/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
 };
 
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
@@ -109,9 +107,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
   }, []);
 
-  // Load the complete source sequence so scrubbing never substitutes a nearby
-  // frame while the user is scrolling. The sequence is small enough to keep
-  // the interaction smooth on both desktop and mobile.
+  // Progressive preload: initial frame immediately, keyframes, then background batching
   useEffect(() => {
     let isCancelled = false;
 
@@ -129,12 +125,47 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       };
     };
 
-    for (let i = 0; i < TOTAL_FRAMES; i += 1) {
+    // 1. First frame rendered right away
+    const firstImg = new Image();
+    firstImg.decoding = 'async';
+    firstImg.src = getFrameSrc(0);
+    firstImg.onload = () => {
+      if (isCancelled) return;
+      imagesRef.current[0] = firstImg;
+      drawFrame(0);
+    };
+
+    // 2. Load milestone keyframes for immediate scrub coverage.
+    // Loading every frame in one burst caused network contention and visible jank.
+    const KEYFRAME_INTERVAL = 12;
+    for (let i = KEYFRAME_INTERVAL; i < TOTAL_FRAMES; i += KEYFRAME_INTERVAL) {
       loadFrame(i);
     }
 
+    // 3. Incrementally load intermediate frames in small idle batches.
+    let nextFrame = 1;
+    const loadRemaining = () => {
+      if (isCancelled) return;
+      const batchEnd = Math.min(TOTAL_FRAMES, nextFrame + 8);
+      while (nextFrame < batchEnd) {
+        if (nextFrame % KEYFRAME_INTERVAL !== 0) loadFrame(nextFrame);
+        nextFrame += 1;
+      }
+      if (nextFrame < TOTAL_FRAMES) {
+        if ('requestIdleCallback' in window) {
+          (window as Window & { requestIdleCallback: (cb: (deadline: IdleDeadline) => void) => number })
+            .requestIdleCallback(loadRemaining);
+        } else {
+          globalThis.setTimeout(() => loadRemaining(), 80);
+        }
+      }
+    };
+
+    const timer = window.setTimeout(() => loadRemaining(), 250);
+
     return () => {
       isCancelled = true;
+      window.clearTimeout(timer);
     };
   }, [drawFrame]);
 
@@ -176,8 +207,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     return () => cancelAnimationFrame(animId);
   }, [drawFrame]);
 
-  // Pin the viewport and use one progress source. A second native scroll
-  // listener caused competing updates and visible frame jitter with Lenis.
+  // Pin stickyRef to viewport using GSAP ScrollTrigger to ensure screen stays fixed during scroll
   useEffect(() => {
     const container = containerRef.current;
     const stickyEl = stickyRef.current;
@@ -199,10 +229,27 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       },
     });
 
+    // Refresh ScrollTrigger to calculate initial positions with header height
     ScrollTrigger.refresh();
+
+    // Fallback scroll listener for direct DOM sync
+    const handleScroll = () => {
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      const scrollableDistance = rect.height - window.innerHeight;
+      if (scrollableDistance <= 0) return;
+
+      const rawProgress = -rect.top / scrollableDistance;
+      const progress = Math.min(Math.max(0, rawProgress), 1);
+      setScrollProgress(progress);
+      targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       st.kill();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -283,7 +330,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       ref={containerRef}
       id="campus-film-narrative"
       className="relative w-full bg-[#050C14] text-white"
-        style={{ height: `calc(100vh + ${TOTAL_SCROLLABLE_PX}px)` }}
+        style={{ height: `calc(100vh + ${TOTAL_SCROLLABLE_PX}px)` }} // Height calculated directly from frame count
     >
       {/* ----------------------------------------------------
           STICKY FULL-SCREEN CINEMATIC CANVAS VIEWPORT
@@ -293,7 +340,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         ref={stickyRef}
         className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center bg-[#071320]"
       >
-        {/* Render the original source frames with no CSS filters or overlays. */}
+        {/* Render Canvas (Exact 1:1 image fidelity with bicubic smoothing, zero artificial filters) */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full z-0 will-change-transform block"
