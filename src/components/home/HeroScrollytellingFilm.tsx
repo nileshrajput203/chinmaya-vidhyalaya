@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText } from 'lucide-react';
+import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formService } from '../../services/formService';
 
@@ -402,30 +402,32 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
               
               {/* Left Column: Admission Enquiry Form (7 cols on lg) */}
-              <div className="lg:col-span-7 bg-white text-[#181818] p-5 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.65)] border border-[#E7E2D8] pointer-events-auto rounded-2xl flex flex-col justify-between">
+              <div className="lg:col-span-7 bg-[#FCFBF7]/95 backdrop-blur-md text-[#181C20] p-5 sm:p-7 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-4">
+                {/* Decorative Top Accent Bar */}
+                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
                 {/* Header */}
-                <div className="border-b border-[#E7E2D8] pb-3 mb-3">
+                <div className="border-b border-[#E7E2D8] pb-3">
                   <div className="flex items-center gap-3">
                     <img
                       src="/images/Chinmaya_Logo.webp"
                       alt="Chinmaya Vidyalaya Logo"
-                      className="w-10 h-12 sm:w-11 sm:h-13 object-contain shrink-0"
+                      className="w-11 h-13 sm:w-12 sm:h-14 object-contain shrink-0 drop-shadow-sm"
                     />
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center justify-between gap-1 mb-0.5">
-                        <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.18em] text-[#DF711B] font-bold">
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
                           ADMISSIONS 2026–27
                         </span>
-                        <span className="text-[9px] font-mono text-[#555] font-semibold bg-[#F5F2EB] px-1.5 py-0.5 rounded shrink-0">
+                        <span className="text-[9.5px] font-mono text-[#0B1E34] font-bold bg-[#FAF8F5] border border-[#E7E2D8] px-2 py-0.5 rounded-full shrink-0">
                           CBSE #1130058
                         </span>
                       </div>
-                      <h3 className="font-display text-base sm:text-lg font-black text-[#181818] uppercase tracking-tight m-0 leading-tight">
+                      <h3 className="font-cinzel text-base sm:text-lg font-black text-[#0B1E34] tracking-wide m-0 leading-tight">
                         Chinmaya Vidyalaya
                       </h3>
-                      <p className="text-[11px] text-[#666] leading-tight m-0 mt-0.5">
-                        Vidyanagar, Boisar • Admission Enquiry
+                      <p className="text-[11px] text-[#555] font-sans leading-tight m-0 mt-0.5">
+                        Vidyanagar, Boisar • Official Admission Enquiry
                       </p>
                     </div>
                   </div>
@@ -434,20 +436,20 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 {/* Form Content */}
                 {isSubmitted ? (
                   <div className="py-6 text-center space-y-3">
-                    <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+                    <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200 shadow-sm">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
-                    <h4 className="font-display font-bold text-base text-[#181818] uppercase m-0">
+                    <h4 className="font-cinzel font-bold text-base text-[#0B1E34] uppercase m-0">
                       Enquiry Submitted Successfully
                     </h4>
-                    <p className="text-xs text-[#555] leading-relaxed max-w-sm mx-auto">
+                    <p className="text-xs text-[#555] font-sans leading-relaxed max-w-sm mx-auto">
                       Thank you! Your admission enquiry has been recorded. Our admissions coordinator will reach out to you on your registered phone number shortly.
                     </p>
                     <div className="pt-2 flex flex-col sm:flex-row gap-2 justify-center">
                       <button
                         type="button"
                         onClick={onOpenAdmissions}
-                        className="px-4 py-2.5 bg-[#DF711B] hover:bg-[#c86113] text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-colors cursor-pointer"
+                        className="px-4 py-2.5 bg-[#DF711B] hover:bg-[#c86113] text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm cursor-pointer"
                       >
                         View Admission Documents
                       </button>
@@ -457,7 +459,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                           setIsSubmitted(false);
                           setFormData({ studentName: '', parentName: '', phone: '', grade: 'Class 1' });
                         }}
-                        className="px-4 py-2.5 bg-[#F5F2EB] hover:bg-[#EBE5D8] text-[#181818] font-sans font-semibold text-xs rounded-xl transition-colors cursor-pointer"
+                        className="px-4 py-2.5 bg-white border border-[#E7E2D8] hover:bg-[#F5F2EB] text-[#181C20] font-sans font-semibold text-xs rounded-xl transition-all cursor-pointer"
                       >
                         Submit Another
                       </button>
@@ -473,57 +475,57 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     )}
 
                     <div>
-                      <label className="block text-[11px] font-mono font-bold text-[#444] uppercase tracking-wider mb-1">
-                        Student's Full Name *
+                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                        Student's Full Name <span className="text-[#DF711B]">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.studentName}
                         onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                        placeholder="Enter student's full name"
-                        className="w-full px-3 py-2 text-xs bg-[#FAF8F5] border border-[#D5CEC2] text-[#181818] placeholder-[#999] rounded-lg focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
+                        placeholder="e.g. Aarav Sharma"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[11px] font-mono font-bold text-[#444] uppercase tracking-wider mb-1">
-                          Parent / Guardian Name *
+                        <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                          Parent / Guardian Name <span className="text-[#DF711B]">*</span>
                         </label>
                         <input
                           type="text"
                           required
                           value={formData.parentName}
                           onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                          placeholder="Enter parent's full name"
-                          className="w-full px-3 py-2 text-xs bg-[#FAF8F5] border border-[#D5CEC2] text-[#181818] placeholder-[#999] rounded-lg focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
+                          placeholder="e.g. Rajesh Sharma"
+                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[11px] font-mono font-bold text-[#444] uppercase tracking-wider mb-1">
-                          Phone Number (10 Digits) *
+                        <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                          Phone Number (10 Digits) <span className="text-[#DF711B]">*</span>
                         </label>
                         <input
                           type="tel"
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="Enter 10-digit mobile number"
-                          className="w-full px-3 py-2 text-xs bg-[#FAF8F5] border border-[#D5CEC2] text-[#181818] placeholder-[#999] rounded-lg focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
+                          placeholder="e.g. 9823517700"
+                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono font-bold text-[#444] uppercase tracking-wider mb-1">
-                        Grade Applying For (Nursery to 12th) *
+                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                        Grade Applying For (Nursery to 12th) <span className="text-[#DF711B]">*</span>
                       </label>
                       <select
                         value={formData.grade}
                         onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                        className="w-full px-3 py-2 text-xs bg-[#FAF8F5] border border-[#D5CEC2] text-[#181818] rounded-lg focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all cursor-pointer font-sans"
                       >
                         <option value="Nursery">Nursery</option>
                         <option value="Junior KG">Junior KG</option>
@@ -551,24 +553,25 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-2.5 bg-[#DF711B] hover:bg-[#c86113] disabled:opacity-60 disabled:cursor-not-allowed text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                        className="w-full py-3 bg-gradient-to-r from-[#DF711B] via-[#E8873E] to-[#DF711B] hover:brightness-105 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-md shadow-[#DF711B]/20 cursor-pointer"
                       >
                         <Send className={`w-3.5 h-3.5 ${isSubmitting ? 'animate-spin' : ''}`} />
                         <span>{isSubmitting ? 'Submitting Enquiry...' : 'Submit Admission Enquiry'}</span>
                       </button>
                     </div>
 
-                    <div className="pt-0.5 flex items-center justify-between text-[11px] text-[#666]">
-                      <span className="flex items-center gap-1 font-mono">
-                        <Phone className="w-3 h-3 text-[#DF711B]" />
+                    <div className="pt-1 flex items-center justify-between text-[11px] text-[#555] border-t border-[#E7E2D8]">
+                      <span className="flex items-center gap-1.5 font-mono text-[11px]">
+                        <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
                         9322054713 / 9823517700
                       </span>
                       <button
                         type="button"
                         onClick={onOpenAdmissions}
-                        className="text-[#DF711B] hover:underline font-semibold cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[#DF711B] hover:text-[#C45B0E] font-sans font-bold hover:underline cursor-pointer"
                       >
-                        Download Forms ›
+                        <FileText className="w-3.5 h-3.5" />
+                        <span>Download Forms ›</span>
                       </button>
                     </div>
                   </form>
@@ -576,174 +579,151 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
               </div>
 
               {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) */}
-              <div className="lg:col-span-5 bg-[#0C1E34]/95 backdrop-blur-md text-white p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.65)] border border-white/15 pointer-events-auto rounded-2xl flex flex-col justify-between space-y-4">
+              <div 
+                data-lenis-prevent="true"
+                className="lg:col-span-5 bg-[#0B1E34]/95 backdrop-blur-md text-white p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/35 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-4"
+              >
+                {/* Decorative Top Accent Bar */}
+                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
                 {/* Header */}
                 <div className="border-b border-white/10 pb-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#FFB740] font-bold">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+                      <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#FFB740] font-bold">
                         WHAT'S NEW
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-slate-400">Live Updates</span>
+                    <span className="text-[10px] font-mono text-amber-200/90 bg-white/10 px-2 py-0.5 rounded-full border border-white/15">
+                      Live Updates
+                    </span>
                   </div>
-                  <h4 className="font-cinzel text-base sm:text-lg font-bold text-white mt-1">
+                  <h4 className="font-cinzel text-base sm:text-lg font-black text-white tracking-wide mt-2">
                     Latest Dispatches & Notices
                   </h4>
+                  <p className="text-[11px] text-slate-300 font-sans mt-0.5">
+                    Official announcements, board distinctions, and campus dispatches
+                  </p>
                 </div>
 
-                {/* Notice Ticker Items Container with Upward Motion */}
-                <div className="relative h-64 sm:h-72 overflow-hidden rounded-xl bg-white/[0.02] border border-white/5 p-1 group">
-                  <div className="animate-ticker-up space-y-3 group-hover:[animation-play-state:paused] cursor-pointer">
-                    
-                    {/* Item 1 */}
-                    <Link to="/about/cvp" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-[#DF711B]/20 text-[#FFB740] border border-[#DF711B]/30">
-                          Admissions 2026-27
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">Nursery to XII</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        Admissions Open: Nursery to Std XII (Arts, Commerce, Science)
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Click to learn more.
-                      </p>
-                    </Link>
+                {/* Notices Feed Container — Whole, clearly presented cards without jarring cut-offs */}
+                <div 
+                  data-lenis-prevent="true"
+                  onWheel={(e) => e.stopPropagation()}
+                  className="relative h-72 sm:h-80 overflow-y-auto space-y-2.5 pr-1 scrollbar-thin scrollbar-thumb-white/20 hover:scrollbar-thumb-[#DF711B]"
+                >
+                  {/* Notice 1: Admissions */}
+                  <Link 
+                    to="/about/enrollment" 
+                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-[#DF711B]/70 transition-all duration-200 group border-l-4 border-l-[#DF711B]"
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-[#DF711B]/30 text-[#FFB740] border border-[#DF711B]/50">
+                        Admissions 2026–27
+                      </span>
+                      <span className="text-[10px] text-amber-100/70 font-mono">Nursery to XII</span>
+                    </div>
+                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-[#FFB740] transition-colors leading-snug">
+                      Admissions Open: Nursery to Std XII (Arts, Commerce, Science)
+                    </h5>
+                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
+                      Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Complete prospectus and guidance available.
+                    </p>
+                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-[#FFB740] font-bold group-hover:translate-x-1 transition-transform">
+                      <span>Admission Guidelines</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Link>
 
-                    {/* Item 2 */}
-                    <Link to="/news" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                          CBSE Distinction
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">100% AISSE</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        100% First Class CBSE Class X Board Results
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Unbroken tradition of academic excellence with multiple students securing spots in the CBSE Board merit list.
-                      </p>
-                    </Link>
+                  {/* Notice 2: Board Results */}
+                  <Link 
+                    to="/news" 
+                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-emerald-400/70 transition-all duration-200 group border-l-4 border-l-emerald-400"
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-emerald-500/25 text-emerald-300 border border-emerald-500/50">
+                        CBSE Distinction
+                      </span>
+                      <span className="text-[10px] text-emerald-100/70 font-mono">100% AISSE</span>
+                    </div>
+                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
+                      100% First Class CBSE Class X Board Results
+                    </h5>
+                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
+                      Unbroken tradition of academic excellence with multiple students securing top merits in the CBSE Board examinations.
+                    </p>
+                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-emerald-300 font-bold group-hover:translate-x-1 transition-transform">
+                      <span>Read Results Archive</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Link>
 
-                    {/* Item 3 */}
-                    <Link to="/news" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                          Ecology
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">Jal Pakhwada</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        Jal Pakhwada Water Conservation Campaign
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Student-led community seminars and painting competitions promoting rainwater harvesting and water recycling.
-                      </p>
-                    </Link>
+                  {/* Notice 3: Ecology Campaign */}
+                  <Link 
+                    to="/news" 
+                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-amber-400/70 transition-all duration-200 group border-l-4 border-l-[#FFB740]"
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-amber-500/25 text-amber-300 border border-amber-500/50">
+                        Ecology & CVP
+                      </span>
+                      <span className="text-[10px] text-amber-100/70 font-mono">Jal Pakhwada</span>
+                    </div>
+                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-[#FFB740] transition-colors leading-snug">
+                      Jal Pakhwada Water Conservation Campaign
+                    </h5>
+                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
+                      Student-led community seminars, tree plantation drives, and creative painting exhibitions promoting rainwater harvesting.
+                    </p>
+                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-[#FFB740] font-bold group-hover:translate-x-1 transition-transform">
+                      <span>View Event Highlights</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Link>
 
-                    {/* Item 4 */}
-                    <Link to="/contact" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
-                          Notice
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">Parent Visits</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        Parent Meeting & Campus Visit Guidelines
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Campus visits are available for new prospective parents. Existing students' parents must submit a written letter to the school office.
-                      </p>
-                    </Link>
-
-                    {/* DUPLICATE SET FOR SEAMLESS CONTINUOUS INFINITE SCROLL */}
-                    <Link to="/about/cvp" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-[#DF711B]/20 text-[#FFB740] border border-[#DF711B]/30">
-                          Admissions 2026-27
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">Nursery to XII</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        Admissions Open: Nursery to Std XII (Arts, Commerce, Science)
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Click to learn more.
-                      </p>
-                    </Link>
-
-                    <Link to="/news" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                          CBSE Distinction
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">100% AISSE</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        100% First Class CBSE Class X Board Results
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Unbroken tradition of academic excellence with multiple students securing spots in the CBSE Board merit list.
-                      </p>
-                    </Link>
-
-                    <Link to="/news" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                          Ecology
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">Jal Pakhwada</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        Jal Pakhwada Water Conservation Campaign
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Student-led community seminars and painting competitions promoting rainwater harvesting and water recycling.
-                      </p>
-                    </Link>
-
-                    <Link to="/contact" className="block p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#DF711B] hover:bg-white/10 transition-all">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
-                          Notice
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-mono">Parent Visits</span>
-                      </div>
-                      <h5 className="text-xs font-bold text-slate-100 leading-snug">
-                        Parent Meeting & Campus Visit Guidelines
-                      </h5>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-                        Campus visits are available for new prospective parents. Existing students' parents must submit a written letter to the school office.
-                      </p>
-                    </Link>
-
-                  </div>
+                  {/* Notice 4: Campus Visits */}
+                  <Link 
+                    to="/contact" 
+                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-sky-400/70 transition-all duration-200 group border-l-4 border-l-sky-400"
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-sky-500/25 text-sky-300 border border-sky-500/50">
+                        Campus Office
+                      </span>
+                      <span className="text-[10px] text-sky-100/70 font-mono">Parent Visits</span>
+                    </div>
+                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-sky-300 transition-colors leading-snug">
+                      Parent Meeting & Campus Visit Guidelines
+                    </h5>
+                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
+                      Campus visits are welcomed for prospective families. Existing parents are requested to contact the administrative office.
+                    </p>
+                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-sky-300 font-bold group-hover:translate-x-1 transition-transform">
+                      <span>Campus Timings & Office</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Footer Buttons */}
-                <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
                   <a
                     href="/images/academic-calendar.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#FFB740] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#FFB740] hover:text-white transition-colors group"
                   >
-                    <FileText className="w-3.5 h-3.5" />
+                    <Calendar className="w-3.5 h-3.5 text-[#FFB740] group-hover:scale-110 transition-transform" />
                     <span>Academic Calendar ›</span>
                   </a>
 
                   <Link
                     to="/news"
-                    className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-[11px] font-mono font-semibold transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-xl text-xs font-bold font-sans uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 group"
                   >
                     <span>Full Bulletin</span>
-                    <ArrowRight className="w-3 h-3 text-[#FFB740]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-amber-200 group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
 
