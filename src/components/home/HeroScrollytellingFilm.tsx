@@ -26,6 +26,61 @@ const getFrameSrc = (index: number): string => {
   return `/heronew/herovideo/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
 };
 
+const HERO_NOTICES = [
+  {
+    tag: 'Admissions 2026–27',
+    tagColor: 'bg-[#DF711B]/30 text-[#FFB740] border-[#DF711B]/50',
+    borderColor: 'border-l-[#DF711B] hover:border-[#DF711B]/70',
+    subTag: 'Nursery to XII',
+    subTagColor: 'text-amber-100/70',
+    title: 'Admissions Open: Nursery to Std XII (Arts, Commerce, Science)',
+    titleColor: 'group-hover/card:text-[#FFB740]',
+    description: 'Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Complete prospectus and guidance available.',
+    linkText: 'Admission Guidelines',
+    linkTextColor: 'text-[#FFB740]',
+    to: '/about/enrollment',
+  },
+  {
+    tag: 'CBSE Distinction',
+    tagColor: 'bg-emerald-500/25 text-emerald-300 border-emerald-500/50',
+    borderColor: 'border-l-emerald-400 hover:border-emerald-400/70',
+    subTag: '100% AISSE',
+    subTagColor: 'text-emerald-100/70',
+    title: '100% First Class CBSE Class X Board Results',
+    titleColor: 'group-hover/card:text-emerald-300',
+    description: 'Unbroken tradition of academic excellence with multiple students securing top merits in the CBSE Board examinations.',
+    linkText: 'Read Results Archive',
+    linkTextColor: 'text-emerald-300',
+    to: '/news',
+  },
+  {
+    tag: 'Ecology & CVP',
+    tagColor: 'bg-amber-500/25 text-amber-300 border-amber-500/50',
+    borderColor: 'border-l-[#FFB740] hover:border-amber-400/70',
+    subTag: 'Jal Pakhwada',
+    subTagColor: 'text-amber-100/70',
+    title: 'Jal Pakhwada Water Conservation Campaign',
+    titleColor: 'group-hover/card:text-[#FFB740]',
+    description: 'Student-led community seminars, tree plantation drives, and creative painting exhibitions promoting rainwater harvesting.',
+    linkText: 'View Event Highlights',
+    linkTextColor: 'text-[#FFB740]',
+    to: '/news',
+  },
+  {
+    tag: 'Campus Office',
+    tagColor: 'bg-sky-500/25 text-sky-300 border-sky-500/50',
+    borderColor: 'border-l-sky-400 hover:border-sky-400/70',
+    subTag: 'Parent Visits',
+    subTagColor: 'text-sky-100/70',
+    title: 'Parent Meeting & Campus Visit Guidelines',
+    titleColor: 'group-hover/card:text-sky-300',
+    description: 'Campus visits are welcomed for prospective families. Existing parents are requested to contact the administrative office.',
+    linkText: 'Campus Timings & Office',
+    linkTextColor: 'text-sky-300',
+    to: '/contact',
+  },
+];
+
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
@@ -607,103 +662,43 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                   </p>
                 </div>
 
-                {/* Notices Feed Container — Whole, clearly presented cards without jarring cut-offs */}
+                {/* Notices Feed Container — Continuous moving ticker with pause-on-hover */}
                 <div 
                   data-lenis-prevent="true"
                   onWheel={(e) => e.stopPropagation()}
-                  className="relative h-72 sm:h-80 overflow-y-auto space-y-2.5 pr-1 scrollbar-thin scrollbar-thumb-white/20 hover:scrollbar-thumb-[#DF711B]"
+                  className="relative h-72 sm:h-80 overflow-hidden group select-none"
                 >
-                  {/* Notice 1: Admissions */}
-                  <Link 
-                    to="/about/enrollment" 
-                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-[#DF711B]/70 transition-all duration-200 group border-l-4 border-l-[#DF711B]"
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-[#DF711B]/30 text-[#FFB740] border border-[#DF711B]/50">
-                        Admissions 2026–27
-                      </span>
-                      <span className="text-[10px] text-amber-100/70 font-mono">Nursery to XII</span>
-                    </div>
-                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-[#FFB740] transition-colors leading-snug">
-                      Admissions Open: Nursery to Std XII (Arts, Commerce, Science)
-                    </h5>
-                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
-                      Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Complete prospectus and guidance available.
-                    </p>
-                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-[#FFB740] font-bold group-hover:translate-x-1 transition-transform">
-                      <span>Admission Guidelines</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </div>
-                  </Link>
+                  {/* Subtle top & bottom fade gradient masks for smooth edge transitions */}
+                  <div className="pointer-events-none absolute top-0 inset-x-0 h-7 bg-gradient-to-b from-[#0B1E34] to-transparent z-10" />
+                  <div className="pointer-events-none absolute bottom-0 inset-x-0 h-7 bg-gradient-to-t from-[#0B1E34] to-transparent z-10" />
 
-                  {/* Notice 2: Board Results */}
-                  <Link 
-                    to="/news" 
-                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-emerald-400/70 transition-all duration-200 group border-l-4 border-l-emerald-400"
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-emerald-500/25 text-emerald-300 border border-emerald-500/50">
-                        CBSE Distinction
-                      </span>
-                      <span className="text-[10px] text-emerald-100/70 font-mono">100% AISSE</span>
-                    </div>
-                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
-                      100% First Class CBSE Class X Board Results
-                    </h5>
-                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
-                      Unbroken tradition of academic excellence with multiple students securing top merits in the CBSE Board examinations.
-                    </p>
-                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-emerald-300 font-bold group-hover:translate-x-1 transition-transform">
-                      <span>Read Results Archive</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </div>
-                  </Link>
-
-                  {/* Notice 3: Ecology Campaign */}
-                  <Link 
-                    to="/news" 
-                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-amber-400/70 transition-all duration-200 group border-l-4 border-l-[#FFB740]"
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-amber-500/25 text-amber-300 border border-amber-500/50">
-                        Ecology & CVP
-                      </span>
-                      <span className="text-[10px] text-amber-100/70 font-mono">Jal Pakhwada</span>
-                    </div>
-                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-[#FFB740] transition-colors leading-snug">
-                      Jal Pakhwada Water Conservation Campaign
-                    </h5>
-                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
-                      Student-led community seminars, tree plantation drives, and creative painting exhibitions promoting rainwater harvesting.
-                    </p>
-                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-[#FFB740] font-bold group-hover:translate-x-1 transition-transform">
-                      <span>View Event Highlights</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </div>
-                  </Link>
-
-                  {/* Notice 4: Campus Visits */}
-                  <Link 
-                    to="/contact" 
-                    className="block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-sky-400/70 transition-all duration-200 group border-l-4 border-l-sky-400"
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full bg-sky-500/25 text-sky-300 border border-sky-500/50">
-                        Campus Office
-                      </span>
-                      <span className="text-[10px] text-sky-100/70 font-mono">Parent Visits</span>
-                    </div>
-                    <h5 className="font-cinzel text-xs sm:text-[13px] font-bold text-white group-hover:text-sky-300 transition-colors leading-snug">
-                      Parent Meeting & Campus Visit Guidelines
-                    </h5>
-                    <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
-                      Campus visits are welcomed for prospective families. Existing parents are requested to contact the administrative office.
-                    </p>
-                    <div className="mt-2 flex items-center gap-1 text-[10px] font-mono text-sky-300 font-bold group-hover:translate-x-1 transition-transform">
-                      <span>Campus Timings & Office</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </div>
-                  </Link>
+                  {/* Infinite Continuous Upward Track */}
+                  <div className="animate-ticker-up space-y-2.5">
+                    {[...HERO_NOTICES, ...HERO_NOTICES].map((notice, idx) => (
+                      <Link 
+                        key={idx}
+                        to={notice.to} 
+                        className={`block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 ${notice.borderColor} transition-all duration-200 group/card border-l-4`}
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className={`px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full border ${notice.tagColor}`}>
+                            {notice.tag}
+                          </span>
+                          <span className={`text-[10px] font-mono ${notice.subTagColor}`}>{notice.subTag}</span>
+                        </div>
+                        <h5 className={`font-cinzel text-xs sm:text-[13px] font-bold text-white ${notice.titleColor} transition-colors leading-snug`}>
+                          {notice.title}
+                        </h5>
+                        <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
+                          {notice.description}
+                        </p>
+                        <div className={`mt-2 flex items-center gap-1 text-[10px] font-mono font-bold ${notice.linkTextColor} group-hover/card:translate-x-1 transition-transform`}>
+                          <span>{notice.linkText}</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Footer Buttons */}

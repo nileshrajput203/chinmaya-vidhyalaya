@@ -180,10 +180,12 @@
 .animate-ticker-up {
   display: flex;
   flex-direction: column;
-  animation: tickerUpward 20s linear infinite;
+  animation: tickerUpward 24s linear infinite;
 }
 
-.animate-ticker-up:hover {
+.animate-ticker-up:hover,
+.group:hover .animate-ticker-up {
   animation-play-state: paused;
 }
+
 
