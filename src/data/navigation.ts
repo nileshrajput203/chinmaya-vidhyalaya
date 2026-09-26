@@ -21,10 +21,10 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     label: "Academics",
     href: "/academics",
     children: [
-      { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Std I to V and Std VI to X scholastic & non-scholastic subjects" },
+      { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Coverage from Nursery to Std XII (Arts, Commerce, Science) scholastic subjects" },
       { label: "Teaching Strategy", href: "/academics/teaching-strategy", description: "Activity-oriented, digital, and experiential methodologies" },
-      { label: "Faculty Directory", href: "/academics/faculty", description: "Qualified educators and dedicated non-teaching staff" },
-      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry labs, library, and smart classrooms" },
+      { label: "Faculty Directory", href: "/academics/faculty", description: "Qualified educators and experienced academic mentors" },
+      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry, Biology, IT labs, library, and spacious classrooms" },
       { label: "Co-Curricular Programs", href: "/academics/co-curricular", description: "Arts, sports, music, and personality development" }
     ]
   },
@@ -33,7 +33,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/admissions",
     children: [
       { label: "Admission Guidelines", href: "/about/enrollment", description: "Eligibility criteria, age norms, and application process" },
-      { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG, and Std I–IX application forms" },
+      { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG, and Std I–XII application forms" },
       { label: "Transfer Certificates (TC)", href: "/downloads/transfer-certificates", description: "Official TC archives and verification records" }
     ]
   },

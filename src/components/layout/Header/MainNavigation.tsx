@@ -70,57 +70,66 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
 
                 {/* Submenu Dropdown Card */}
                 <AnimatePresence>
-                  {hasChildren && activeDropdown === item.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 4, scale: 0.98 }}
-                      transition={{ duration: 0.16, ease: 'easeOut' }}
-                      className={`absolute ${isNearRightEdge ? 'right-0' : 'left-0'} top-full w-84 bg-white text-[#181C20] border-t-2 border-[#DF711B] py-2 shadow-2xl rounded-b-2xl overflow-hidden z-50 border border-[#E7E2D8]`}
-                    >
-                      {/* Submenu Header */}
-                      <div className="px-4 py-2 border-b border-[#E7E2D8] bg-[#FAF8F5] flex items-center justify-between">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#DF711B] font-bold">
-                          {item.label} Section
-                        </span>
-                        <span className="w-2 h-2 rounded-full bg-[#DF711B]" />
-                      </div>
+                  {hasChildren && activeDropdown === item.label && (() => {
+                    const isMultiColumn = (item.children?.length || 0) > 3;
+                    const alignClass = isNearRightEdge ? 'right-0' : 'left-0';
+                    const widthClass = isMultiColumn ? 'w-[480px] xl:w-[520px]' : 'w-72 sm:w-80';
 
-                      {/* Submenu Items List */}
-                      <div className="p-1.5 space-y-0.5">
-                        {item.children?.map((subItem) => {
-                          const isSubActive = location.pathname === subItem.href;
-                          return (
-                            <Link
-                              key={subItem.href}
-                              to={subItem.href}
-                              className={`block px-3.5 py-2.5 rounded-xl text-xs transition-colors group/sub ${
-                                isSubActive
-                                  ? 'bg-[#FFF3D6] text-[#B2530C] font-bold'
-                                  : 'hover:bg-[#FAF8F5] text-slate-700 hover:text-[#DF711B]'
-                              }`}
-                            >
-                              <div className="font-semibold text-xs flex items-center justify-between">
-                                <span className="group-hover/sub:translate-x-0.5 transition-transform">
-                                  {subItem.label}
-                                </span>
-                                <ArrowUpRight className={`w-3.5 h-3.5 transition-all ${
-                                  isSubActive ? 'text-[#B2530C]' : 'text-slate-400 group-hover/sub:text-[#DF711B] group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5'
-                                }`} />
-                              </div>
-                              {subItem.description && (
-                                <div className={`text-[11px] font-normal mt-0.5 line-clamp-1 ${
-                                  isSubActive ? 'text-[#8C3F05] font-medium' : 'text-slate-600'
-                                }`}>
-                                  {subItem.description}
+                    return (
+                      <motion.div
+                        initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 4, scale: 0.98 }}
+                        transition={{ duration: 0.16, ease: 'easeOut' }}
+                        className={`absolute ${alignClass} top-full ${widthClass} max-h-[calc(100vh-140px)] overflow-y-auto bg-white text-[#181C20] border-t-2 border-[#DF711B] shadow-2xl rounded-b-2xl z-50 border border-[#E7E2D8] scrollbar-thin`}
+                      >
+                        {/* Submenu Header */}
+                        <div className="px-4 py-2 border-b border-[#E7E2D8] bg-[#FAF8F5] flex items-center justify-between sticky top-0 z-10">
+                          <span className="text-[10px] font-mono uppercase tracking-widest text-[#DF711B] font-bold">
+                            {item.label} Section
+                          </span>
+                          <span className="text-[10px] font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full font-medium">
+                            {item.children?.length} Pages
+                          </span>
+                        </div>
+
+                        {/* Submenu Items List (Multi-column when > 3 items) */}
+                        <div className={isMultiColumn ? "p-2 grid grid-cols-2 gap-1.5" : "p-1.5 space-y-0.5"}>
+                          {item.children?.map((subItem) => {
+                            const isSubActive = location.pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.href}
+                                to={subItem.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className={`block p-2.5 rounded-xl text-xs transition-colors group/sub border ${
+                                  isSubActive
+                                    ? 'bg-[#FFF3D6] text-[#B2530C] border-[#DF711B]/40 font-bold'
+                                    : 'hover:bg-[#FAF8F5] text-slate-700 hover:text-[#DF711B] border-transparent hover:border-[#DF711B]/20'
+                                }`}
+                              >
+                                <div className="font-semibold text-xs flex items-center justify-between">
+                                  <span className="group-hover/sub:translate-x-0.5 transition-transform line-clamp-1">
+                                    {subItem.label}
+                                  </span>
+                                  <ArrowUpRight className={`w-3.5 h-3.5 shrink-0 ml-1 transition-all ${
+                                    isSubActive ? 'text-[#B2530C]' : 'text-slate-400 group-hover/sub:text-[#DF711B] group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5'
+                                  }`} />
                                 </div>
-                              )}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  )}
+                                {subItem.description && (
+                                  <div className={`text-[10.5px] font-normal mt-0.5 line-clamp-1 ${
+                                    isSubActive ? 'text-[#8C3F05] font-medium' : 'text-slate-500'
+                                  }`}>
+                                    {subItem.description}
+                                  </div>
+                                )}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    );
+                  })()}
                 </AnimatePresence>
               </li>
             );

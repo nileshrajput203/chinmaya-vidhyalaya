@@ -29,14 +29,14 @@ export const FaqPage: React.FC = () => {
                   <Users className="w-5 h-5" />
                 </div>
                 <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
-                  Batch Norms
+                  Classroom Capacity
                 </span>
                 <h3 className="font-cinzel font-bold text-lg text-[#181C20]">
-                  Max 40 Students / Class
+                  Over 40 Students / Class
                 </h3>
               </div>
               <p className="text-xs text-slate-600/90 leading-relaxed">
-                Strict classroom cap ensuring individualized guidance, personalized care, and active student participation.
+                Spacious, well-ventilated classrooms architected to comfortably accommodate more than 40 students with personalized faculty attention.
               </p>
             </div>
           </div>
@@ -148,13 +148,13 @@ export const FaqPage: React.FC = () => {
             <div className="bg-white p-8 rounded-[calc(1.5rem-0.25rem)] space-y-4 flex flex-col justify-between h-full">
               <div className="space-y-2">
                 <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-widest block">
-                  Campus Administration
+                  Campus Admissions & Meetings
                 </span>
                 <h3 className="font-cinzel text-2xl font-bold text-[#181C20]">
-                  Schedule a Campus Tour or Meeting
+                  Parent Meetings & Campus Visits
                 </h3>
                 <p className="text-sm text-slate-600/90 leading-relaxed">
-                  Meet our faculty, explore our laboratories, library, and botanical grounds in Vidyanagar, Boisar / Tarapur.
+                  Campus visits and admission tours are arranged exclusively for new parents seeking admission. For parents of existing students, formal Parent-Teacher Meetings (PTMs) are scheduled termly.
                 </p>
               </div>
 
@@ -164,7 +164,7 @@ export const FaqPage: React.FC = () => {
                   className="group inline-flex items-center gap-3 px-6 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  <span>Connect With Campus Office</span>
+                  <span>Connect With Administration Office</span>
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                     <ArrowRight className="w-3.5 h-3.5 text-white" />
                   </div>

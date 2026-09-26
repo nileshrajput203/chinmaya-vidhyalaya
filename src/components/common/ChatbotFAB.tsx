@@ -122,6 +122,20 @@ export const ChatbotFAB: React.FC = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatBodyRef = useRef<HTMLDivElement>(null);
+
+  // Ensure Lenis resumes when chat panel is closed or unmounted
+  useEffect(() => {
+    return () => {
+      (window as any).__lenis?.start();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) {
+      (window as any).__lenis?.start();
+    }
+  }, [isOpen]);
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -211,8 +225,21 @@ export const ChatbotFAB: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.93 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="w-[calc(100vw-32px)] sm:w-[380px] max-w-[420px] bg-[#FCFBF7] rounded-2xl shadow-2xl border border-[#D5CEC2] overflow-hidden flex flex-col"
-            style={{ maxHeight: 'min(580px, calc(100vh - 170px))' }}
+            data-lenis-prevent="true"
+            onMouseEnter={() => {
+              (window as any).__lenis?.stop();
+            }}
+            onMouseLeave={() => {
+              (window as any).__lenis?.start();
+            }}
+            onWheel={(e) => {
+              e.stopPropagation();
+              if (chatBodyRef.current && !chatBodyRef.current.contains(e.target as Node)) {
+                chatBodyRef.current.scrollTop += e.deltaY;
+              }
+            }}
+            className="w-[calc(100vw-32px)] sm:w-[380px] max-w-[420px] bg-[#FCFBF7] rounded-2xl shadow-2xl border border-[#D5CEC2] overflow-hidden flex flex-col overscroll-contain"
+            style={{ maxHeight: 'min(580px, calc(100vh - 170px))', overscrollBehavior: 'contain' }}
           >
             {/* Chat Header */}
             <div className="bg-[#0B1D30] text-white px-4 sm:px-5 py-3.5 flex items-center justify-between border-b border-[#182C44] shrink-0">
@@ -257,7 +284,13 @@ export const ChatbotFAB: React.FC = () => {
             </div>
 
             {/* Chat Messages Body */}
-            <div className="flex-1 p-4 space-y-3.5 overflow-y-auto bg-[#F7F3EB]/60 scrollbar-thin">
+            <div 
+              ref={chatBodyRef}
+              data-lenis-prevent="true"
+              onWheel={(e) => e.stopPropagation()}
+              className="flex-1 p-4 space-y-3.5 overflow-y-auto bg-[#F7F3EB]/60 scrollbar-thin overscroll-contain"
+              style={{ overscrollBehavior: 'contain' }}
+            >
               {messages.map((msg) => (
                 <div
                   key={msg.id}

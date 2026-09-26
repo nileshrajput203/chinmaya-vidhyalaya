@@ -14,45 +14,125 @@ import { OFFICIAL_NOTICES } from '../../data/notices';
 
 export const NoticeEventBoard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('notices');
+  const [selectedMonth, setSelectedMonth] = useState<string>('all');
   
   const upcomingEvents = [
     {
       id: 'ev-1',
       title: 'Pujya Gurudev Jayanti & Annual Balvihar Assembly',
-      date: 'May 08, 2025',
+      date: 'May 08, 2026',
+      month: 'May 2026',
       time: '08:30 AM IST',
       venue: 'School Main Prayer Auditorium',
       tag: 'Spiritual Heritage',
       desc: 'Reverent morning assembly, Paduka Pooja, and Chinmaya Yuva Kendra student presentations.'
     },
     {
+      id: 'ev-1b',
+      title: 'Faculty Development & CVP Value Orientation Workshop',
+      date: 'May 22, 2026',
+      month: 'May 2026',
+      time: '09:30 AM IST',
+      venue: 'AV Seminar Hall',
+      tag: 'Academic Rigour',
+      desc: 'Annual pedagogical training on value-integrated lesson plans and experiential learning modules.'
+    },
+    {
+      id: 'ev-2a',
+      title: 'School Reopening & Commencement of Academic Session 2026-27',
+      date: 'June 15, 2026',
+      month: 'June 2026',
+      time: '07:30 AM IST',
+      venue: 'Central Assembly Ground',
+      tag: 'Academic Calendar',
+      desc: 'Welcoming students from Nursery to Class XII across Arts, Commerce, and Science streams.'
+    },
+    {
       id: 'ev-2',
       title: 'Annual Inter-House Gita Chanting Competition',
-      date: 'June 20, 2025',
+      date: 'June 20, 2026',
+      month: 'June 2026',
       time: '10:00 AM IST',
       venue: 'Sanskrit & Value Education Wing',
       tag: 'Vedic Arts',
       desc: 'Recitation of Srimad Bhagavad Gita Chapter 12 by junior and senior house representatives.'
     },
     {
+      id: 'ev-2c',
+      title: 'International Day of Yoga Demonstration & Mass Asanas',
+      date: 'June 21, 2026',
+      month: 'June 2026',
+      time: '07:00 AM IST',
+      venue: 'School Sports Ground',
+      tag: 'Physical Fitness',
+      desc: 'Synchronized Surya Namaskar, Pranayama sessions, and holistic well-being discourses.'
+    },
+    {
       id: 'ev-3',
       title: 'Monsoon Tree Plantation & Jal Pakhwada Rally',
-      date: 'July 15, 2025',
+      date: 'July 15, 2026',
+      month: 'July 2026',
       time: '07:45 AM IST',
-      venue: 'Campus Green Belt & MIDC Tarapur',
+      venue: 'Campus Green Belt & Boisar Area',
       tag: 'Civic Responsibility',
-      desc: 'Eco-club initiative planting 250 native saplings and student street rallies on rainwater preservation.'
+      desc: 'Eco-club initiative planting native saplings and student rallies on rainwater preservation.'
+    },
+    {
+      id: 'ev-3b',
+      title: 'Guru Purnima Celebrations & Paduka Vandana',
+      date: 'July 29, 2026',
+      month: 'July 2026',
+      time: '08:30 AM IST',
+      venue: 'School Prayer Auditorium',
+      tag: 'Spiritual Heritage',
+      desc: 'Traditional tributes to teachers and spiritual masters with devotional Stotram chanting.'
+    },
+    {
+      id: 'ev-4a',
+      title: '80th Independence Day Flag Hoisting & Patriotic Cultural Assembly',
+      date: 'August 15, 2026',
+      month: 'August 2026',
+      time: '08:00 AM IST',
+      venue: 'Central Assembly Quadrangle',
+      tag: 'Patriotic Zeal',
+      desc: 'Ceremonial parade, national anthem, patriotic dance-drama, and recognition of student achievers.'
     },
     {
       id: 'ev-4',
-      title: 'Science & Analytical STEM Exhibition 2025',
-      date: 'August 22, 2025',
+      title: 'Science & Analytical STEM Exhibition 2026',
+      date: 'August 22, 2026',
+      month: 'August 2026',
       time: '09:00 AM IST',
-      venue: 'Central Physics & Chemistry Laboratories',
+      venue: 'Physics, Chemistry, Biology & IT Laboratories',
       tag: 'Scholastic Discovery',
-      desc: 'Live working models, robotics showcases, and chemical analytical exhibits presented by Classes VI to X.'
+      desc: 'Live working models, robotics showcases, and chemical analytical exhibits presented by Classes VI to XII.'
+    },
+    {
+      id: 'ev-5a',
+      title: 'Teachers\' Day Celebrations (Guru Vandana)',
+      date: 'September 05, 2026',
+      month: 'September 2026',
+      time: '09:30 AM IST',
+      venue: 'Main Auditorium',
+      tag: 'Teacher Reverence',
+      desc: 'Senior students honour faculty members with cultural skits, mementos, and expression of gratitude.'
+    },
+    {
+      id: 'ev-5b',
+      title: 'Periodic Assessment - I (Classes I to XII)',
+      date: 'September 18, 2026',
+      month: 'September 2026',
+      time: '08:00 AM IST',
+      venue: 'Examination Halls',
+      tag: 'Assessments',
+      desc: 'First comprehensive periodic evaluation for foundational, middle, and senior secondary stages.'
     }
   ];
+
+  const availableMonths = ['all', 'May 2026', 'June 2026', 'July 2026', 'August 2026', 'September 2026'];
+  const filteredEvents = selectedMonth === 'all' 
+    ? upcomingEvents 
+    : upcomingEvents.filter(ev => ev.month === selectedMonth);
 
   return (
     <section className="py-12 lg:py-16 bg-[#F3EFE6] text-[#181C20] relative overflow-hidden font-sans">
@@ -172,12 +252,33 @@ export const NoticeEventBoard: React.FC = () => {
         )}
 
         {activeTab === 'events' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {upcomingEvents.map((ev) => (
-              <div 
-                key={ev.id}
-                className="bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs"
-              >
+          <div className="space-y-4">
+            {/* Month Filter Bar */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+              <span className="text-[11px] font-mono text-[#777777] uppercase tracking-wider mr-1 hidden sm:inline">
+                Month:
+              </span>
+              {availableMonths.map((m) => (
+                <button
+                  key={m}
+                  onClick={() => setSelectedMonth(m)}
+                  className={`px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider rounded-full transition-all cursor-pointer ${
+                    selectedMonth === m
+                      ? 'bg-[#DF711B] text-white shadow-xs'
+                      : 'bg-white border border-[#D5CEC2] text-[#555555] hover:border-[#DF711B] hover:text-[#181818]'
+                  }`}
+                >
+                  {m === 'all' ? 'All Months' : m}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {filteredEvents.map((ev) => (
+                <div 
+                  key={ev.id}
+                  className="bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs"
+                >
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
                     <span className="text-[9px] font-mono font-bold text-[#DF711B] bg-[#FFF0E6] border border-[#DF711B]/30 px-2 py-0.5 uppercase tracking-wider">
@@ -221,6 +322,7 @@ export const NoticeEventBoard: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
         )}
 
         {activeTab === 'academic' && (

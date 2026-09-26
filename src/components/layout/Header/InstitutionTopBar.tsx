@@ -29,7 +29,7 @@ export const InstitutionTopBar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-1.5 text-slate-300 truncate max-w-md">
             <Megaphone className="w-3.5 h-3.5 text-[#DF711B] shrink-0" />
             <span className="text-[#DF711B] font-bold uppercase tracking-wider text-[10px] shrink-0">Notice:</span>
-            <span className="truncate text-slate-300">Admissions Open 2025–26 (Nursery to Class IX & XI) • 100% AISSE Board Distinction</span>
+            <span className="truncate text-slate-300">Admissions Open 2026–27 (Nursery to 12th — Arts, Commerce, Science) • 100% AISSE Board Distinction</span>
           </div>
         </div>
 

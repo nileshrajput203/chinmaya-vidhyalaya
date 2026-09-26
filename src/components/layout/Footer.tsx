@@ -49,8 +49,8 @@ export const Footer: React.FC = () => {
                   <h2 className="font-cinzel font-extrabold text-white text-xl sm:text-2xl tracking-wider uppercase leading-none">
                     CHINMAYA VIDYALAYA
                   </h2>
-                  <p className="text-xs text-amber-400 font-mono tracking-widest uppercase font-semibold mt-1">
-                    TARAPUR • BOISAR
+                  <p className="text-[11px] text-amber-400 font-mono tracking-wider uppercase font-semibold mt-1">
+                    CBSE AFFILIATED • ESTD. 1995
                   </p>
                 </div>
               </Link>

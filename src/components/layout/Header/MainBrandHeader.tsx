@@ -50,16 +50,12 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
 
             {/* Sub-identity & Authentic Motto */}
             <div className="flex items-center flex-wrap gap-x-1.5 sm:gap-x-2 text-[11px] sm:text-[13px] text-slate-600">
-              <span className="font-sans font-bold text-slate-800 tracking-wide">
-                TARAPUR • BOISAR
-              </span>
-              <span className="text-slate-300">•</span>
-              <span className="font-sans italic font-semibold text-[#DF711B] truncate max-w-[140px] sm:max-w-none">
+              <span className="font-sans italic font-semibold text-[#DF711B] truncate max-w-[180px] sm:max-w-none">
                 "{OFFICIAL_SCHOOL_INFO.tagline}"
               </span>
-              <span className="hidden xl:inline text-slate-300">•</span>
-              <span className="hidden xl:inline text-[11px] font-sans text-slate-500">
-                Dist. Palghar, Maharashtra
+              <span className="hidden sm:inline text-slate-300">•</span>
+              <span className="hidden sm:inline text-[11px] font-sans text-slate-500">
+                CBSE Affiliated No. 1130058
               </span>
             </div>
           </div>
@@ -75,7 +71,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
             </div>
             <div className="space-y-0.5">
               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
-                Admissions Helpline
+                Contact Administration
               </span>
               <a 
                 href={`tel:${OFFICIAL_SCHOOL_INFO.contact.phone[0]}`}
@@ -108,10 +104,10 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           >
             <div className="flex flex-col items-start text-left">
               <span className="text-[11px] font-bold uppercase tracking-wider leading-none">
-                Admissions 2025–26
+                Admissions 2026–27
               </span>
               <span className="text-[9px] text-amber-200/90 font-mono tracking-wide leading-none mt-0.5">
-                Nursery to Class XI
+                Nursery to Class XII
               </span>
             </div>
 

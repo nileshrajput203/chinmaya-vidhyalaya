@@ -63,6 +63,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const isLibrary = slug === 'library' || title.toLowerCase().includes('library');
   const isFourPillars = slug === 'four-pillars' || slug === '4-pillars' || title.toLowerCase().includes('4 pillars');
   const isHolistic = slug === 'holistic-development' || title.toLowerCase().includes('holistic');
+  const isMissionVision = slug === 'mission-vision' || title.toLowerCase().includes('mission');
 
   // Dynamic contextual eyebrow
   const getSectionEyebrow = (): string => {
@@ -73,7 +74,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
     if (slug === 'philosophy' || title.toLowerCase().includes('philosophy')) return 'Chinmaya Vision Programme (CVP)';
     if (isFourPillars) return 'Pedagogical Framework • Four Pillars';
     if (isHolistic) return 'Holistic Character Architecture';
-    if (isHistory) return 'Founding Roots & Milestone Chronicle';
+    if (isHistory) return 'Founding Roots & Institutional Milestones';
     if (isEnrollment) return 'Admissions Framework & Guidelines';
     if (isCurriculum) return 'CBSE Scholastic Framework';
     if (isFaculty) return 'Educators & Academic Mentorship';
@@ -238,7 +239,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
               {/* Quick links contextual to category */}
               <div className="pt-3 border-t border-[#E7E2D8] space-y-2">
-                {isAbout ? (
+                {isRootAbout ? (
                   <>
                     <Link
                       to="/about/mandatory-information"
@@ -255,6 +256,14 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                       <span>Frequently Asked Questions</span>
                     </Link>
                   </>
+                ) : isAbout ? (
+                  <Link
+                    to="/faq"
+                    className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
+                    <span>Frequently Asked Questions</span>
+                  </Link>
                 ) : isAcademics ? (
                   <>
                     <Link
@@ -286,7 +295,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                       className="w-full py-2.5 bg-[#FAF8F5] hover:bg-white text-[#4A5568] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
                     >
                       <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
-                      <span>Contact Admissions Desk</span>
+                      <span>Contact Administration</span>
                     </Link>
                   </>
                 ) : (
@@ -326,25 +335,84 @@ export const ContentPage: React.FC<ContentPageProps> = ({
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 prose max-w-none text-slate-600/90 text-base sm:text-lg leading-relaxed space-y-4 font-normal">
-                {content.slice(0, 2).map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
+            {isMissionVision ? (
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Distinct Panel 1: Vision */}
+                  <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#FFF9F2] to-[#FAF3E8] border-2 border-[#DF711B]/40 shadow-sm space-y-4 relative overflow-hidden">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#DF711B] text-white flex items-center justify-center font-bold shadow-md">
+                        <Sparkles className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#DF711B] block">
+                          CORE ASPIRATION
+                        </span>
+                        <h3 className="font-cinzel text-xl sm:text-2xl font-black text-[#181C20] uppercase tracking-tight">
+                          Our Vision
+                        </h3>
+                      </div>
+                    </div>
+                    <blockquote className="font-cinzel text-base sm:text-lg text-[#181C20] font-bold leading-relaxed border-l-4 border-[#DF711B] pl-4 italic">
+                      "To empower a community of learners who dare to dream, take risks and develop new realities."
+                    </blockquote>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                      We envision students who are self-reliant, intellectually bold, emotionally poised, and morally steadfast—ready to lead and uplift society in an ever-evolving world.
+                    </p>
+                  </div>
+
+                  {/* Distinct Panel 2: Mission */}
+                  <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#F5F8FC] to-[#EEF4FB] border-2 border-[#0B1E34]/30 shadow-sm space-y-4 relative overflow-hidden">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#0B1E34] text-white flex items-center justify-center font-bold shadow-md">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#0B1E34] block">
+                          SACRED PURPOSE
+                        </span>
+                        <h3 className="font-cinzel text-xl sm:text-2xl font-black text-[#181C20] uppercase tracking-tight">
+                          Our Mission
+                        </h3>
+                      </div>
+                    </div>
+                    <blockquote className="font-cinzel text-base sm:text-lg text-[#181C20] font-bold leading-relaxed border-l-4 border-[#0B1E34] pl-4 italic">
+                      "To offer value-based holistic education that integrates ancient Indian cultural ethos with modern scientific inquiry."
+                    </blockquote>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                      Nurturing physical vitality, mental agility, intellectual depth, and spiritual awakening through the 4 foundational pillars of the Chinmaya Vision Programme.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-3 rounded-2xl flex items-center gap-3 text-xs text-[#4A5568]">
+                  <CheckCircle2 className="w-4 h-4 text-[#DF711B] shrink-0" />
+                  <span>
+                    The Chinmaya Vision Programme (CVP) seamlessly integrates Value Education with academics for comprehensive personality development, inspiring noble citizenship.
+                  </span>
+                </div>
               </div>
-              <div className="lg:col-span-5">
-                <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-2 rounded-2xl shadow-sm overflow-hidden group">
-                  <img
-                    src={primaryVisual.src}
-                    alt={`${title} visual`}
-                    className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="p-2 text-xs text-[#4A5568] text-center font-medium font-sans">
-                    {primaryVisual.caption}
+            ) : (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7 prose max-w-none text-slate-600/90 text-base sm:text-lg leading-relaxed space-y-4 font-normal">
+                  {content.slice(0, 2).map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-2 rounded-2xl shadow-sm overflow-hidden group">
+                    <img
+                      src={primaryVisual.src}
+                      alt={`${title} visual`}
+                      className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="p-2 text-xs text-[#4A5568] text-center font-medium font-sans">
+                      {primaryVisual.caption}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </section>
 
           {/* Pujya Gurudev Swami Chinmayananda Quote / Tribute Block */}
@@ -443,48 +511,6 @@ export const ContentPage: React.FC<ContentPageProps> = ({
             </section>
           )}
 
-          {/* Special Section: Pujya Gurudev Swami Chinmayananda's Life Chronicle & Milestones */}
-          {isSwami && bulletPoints && bulletPoints.length > 0 && (
-            <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-                  Sacred Life & Teachings
-                </span>
-                <h3 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold">
-                  Chronicle of Spiritual Awakening & Global Mission
-                </h3>
-                <p className="text-sm sm:text-base text-slate-600 font-normal">
-                  From patriotic youth and fearless investigative journalism to Himalayan contemplation and world-transforming Vedantic revival.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {bulletPoints.map((item, idx) => {
-                  const parts = item.split(': ');
-                  const heading = parts.length > 1 ? parts[0] : `Milestone 0${idx + 1}`;
-                  const description = parts.length > 1 ? parts.slice(1).join(': ') : item;
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-[#FCFBF7] border border-[#E7E2D8] p-5 rounded-2xl space-y-2.5 flex flex-col justify-between hover:border-[#DF711B] transition-colors shadow-sm"
-                    >
-                      <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center font-mono font-bold text-xs">
-                          {String(idx + 1).padStart(2, '0')}
-                        </div>
-                        <h4 className="font-cinzel font-bold text-sm text-[#181C20]">
-                          {heading}
-                        </h4>
-                        <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                          {description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-          )}
 
           {/* Mandatory Public Disclosures & Transfer Certificates (TC) Feature Box - ONLY on root /about or statutory pages */}
           {showComplianceSection && (
@@ -513,70 +539,57 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </Link>
               </div>
 
-              {/* TC Sample & Archives Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl space-y-3 flex flex-col justify-between">
-                  <div className="space-y-2">
-                    <div className="h-28 overflow-hidden rounded-xl border border-[#E7E2D8] bg-white relative">
-                      <img
-                        src="/images/TC.jpg"
-                        alt="Sample Transfer Certificate (TC)"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/10" />
-                    </div>
-                    <h4 className="font-cinzel font-bold text-xs text-[#181C20] line-clamp-1">Sample TC Format</h4>
-                    <p className="text-[11px] text-[#4A5568]">Standard CBSE Transfer Certificate specimen</p>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setViewingDoc({
-                      id: 'sample-tc',
-                      title: 'Sample Transfer Certificate (TC)',
-                      category: 'mandatory-information',
-                      fileUrl: '/images/TC.jpg',
-                      fileSize: '180 KB',
-                      uploadDate: '2024-04-01',
-                      description: 'Official specimen format of Transfer Certificate issued by Chinmaya Vidyalaya Tarapur.',
-                      downloadable: false,
-                    })}
-                    className="w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95"
-                  >
-                    <Eye className="w-3.5 h-3.5 text-white" />
-                    <span>View Sample TC</span>
-                  </button>
-                </div>
-
+              {/* Merged TC Archives Grid (Sample TC Removed per Requirements) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
-                  { year: '2023', file: '/images/TC-2023.pdf', size: '44.8 MB' },
-                  { year: '2021', file: '/images/TC-2021.pdf', size: '14.8 MB' },
-                  { year: '2020', file: '/images/TC-2020.pdf', size: '56.8 MB' },
+                  { 
+                    id: 'doc-tc-2020-21', 
+                    title: 'Transfer Certificates (TC) 2020–21 Archive', 
+                    year: '2020–2021', 
+                    file: '/images/TC-2021.pdf', 
+                    size: '14.8 MB',
+                    desc: 'Combined official archive register of student Transfer Certificates issued during the 2020 and 2021 academic sessions.'
+                  },
+                  { 
+                    id: 'doc-tc-2023', 
+                    title: 'Transfer Certificates (TC) 2023 Archive', 
+                    year: '2023', 
+                    file: '/images/TC-2023.pdf', 
+                    size: '44.8 MB',
+                    desc: 'Official archive register of student Transfer Certificates issued during the 2023 academic session in verified view-only format.'
+                  },
                 ].map((tc) => (
-                  <div key={tc.year} className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-2xl space-y-3 flex flex-col justify-between">
+                  <div key={tc.id} className="bg-[#FAF8F5] border border-[#E7E2D8] p-5 rounded-2xl space-y-3 flex flex-col justify-between hover:border-[#DF711B] transition-all">
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
-                        <FileText className="w-5 h-5" />
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">
+                          <FileText className="w-5 h-5" />
+                        </div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">
+                          CBSE Compliant
+                        </span>
                       </div>
-                      <h4 className="font-cinzel font-bold text-xs text-[#181C20]">TC Register {tc.year}</h4>
-                      <p className="text-[11px] text-[#4A5568] font-mono">{tc.size} • Certified Records</p>
+                      <h4 className="font-cinzel font-bold text-sm text-[#181C20]">{tc.title}</h4>
+                      <p className="text-xs text-[#4A5568] leading-relaxed">{tc.desc}</p>
+                      <p className="text-[11px] text-slate-500 font-mono">{tc.size} • Official Archive</p>
                     </div>
                     <button
                       type="button"
                       onClick={() => setViewingDoc({
-                        id: `tc-${tc.year}`,
-                        title: `Transfer Certificates (TC) Archive - ${tc.year}`,
+                        id: tc.id,
+                        title: tc.title,
                         category: 'mandatory-information',
                         academicYear: tc.year,
                         fileUrl: tc.file,
                         fileSize: tc.size,
                         uploadDate: '2024-04-01',
-                        description: `Official archive register of student Transfer Certificates issued during academic session ${tc.year}.`,
+                        description: tc.desc,
                         downloadable: false,
                       })}
-                      className="w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-105 active:scale-95"
+                      className="w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 hover:scale-102 active:scale-98 cursor-pointer"
                     >
                       <Eye className="w-3.5 h-3.5 text-white" />
-                      <span>View TC {tc.year}</span>
+                      <span>View {tc.year} TC Register</span>
                     </button>
                   </div>
                 ))}
@@ -584,12 +597,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
             </section>
           )}
 
-          {/* Special Section: History Milestones & School Profile Chronicle */}
+          {/* Special Section: History Milestones & School Profile */}
           {isHistory && (
             <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-10">
               <div className="space-y-2">
                 <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-                  Institutional Chronicle
+                  Institutional Milestones & Heritage
                 </span>
                 <h3 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold">
                   Historical Milestones & Academic Legacy
@@ -1111,29 +1124,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </Link>
               </div>
             </section>
-          ) : (
-            <section className="bg-[#FAF3E8] text-[#181C20] p-8 sm:p-10 rounded-3xl border-l-4 border-[#DF711B] border border-[#E7E2D8] shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="space-y-2 text-center sm:text-left">
-                <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20]">Have questions regarding {title}?</h3>
-                <p className="text-sm text-slate-600 font-normal">Contact our administrative office or explore our admissions guidelines.</p>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  to="/faq"
-                  className="px-5 py-3 bg-white hover:bg-[#DF711B] text-[#181C20] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md border border-[#E7E2D8] hover:scale-105 active:scale-95"
-                >
-                  Explore FAQs
-                </Link>
-                <Link
-                  to="/contact"
-                  className="px-6 py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all whitespace-nowrap shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
-                >
-                  <span>Contact Admissions</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </section>
-          )}
+          ) : null}
 
         </main>
       </div>

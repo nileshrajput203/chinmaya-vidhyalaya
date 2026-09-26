@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
   ShieldCheck, ChevronRight, X, 
   Download, BookOpen, GraduationCap,
-  MapPin, FileText, Image as ImageIcon,
+  FileText, Image as ImageIcon,
   Sparkles, Phone, ArrowRight
 } from 'lucide-react';
 import { OFFICIAL_PRINCIPAL_INFO } from '../../data/school';
@@ -29,7 +29,7 @@ const GUIDING_QUOTES = [
     id: 'swami-1',
     quote: '"Children are not vessels to be filled, but lamps to be lit. When you ignite the noble flame within a child, you illuminate generations."',
     author: 'Pujya Gurudev Swami Chinmayananda',
-    role: 'Founder of Chinmaya Mission & Eternal Guide of Chinmaya Vidyalaya Tarapur',
+    role: 'Founder of Chinmaya Mission',
     image: '/images/swami.jpeg',
     label: 'VISION OF PUJYA GURUDEV',
   },
@@ -37,7 +37,7 @@ const GUIDING_QUOTES = [
     id: 'swami-2',
     quote: '"The tragedy of human history is decreasing happiness in the midst of increasing comforts."',
     author: 'Pujya Gurudev Swami Chinmayananda',
-    role: 'Founder of Chinmaya Mission & Eternal Guide of Chinmaya Vidyalaya Tarapur',
+    role: 'Founder of Chinmaya Mission',
     image: '/images/swami_chinmayananda_cutout.png',
     label: 'WISDOM OF THE MASTER',
   },
@@ -45,19 +45,87 @@ const GUIDING_QUOTES = [
     id: 'swami-3',
     quote: '"When you give what you have, more will come to you. When you hold on to what you have, even that will go away from you."',
     author: 'Pujya Gurudev Swami Chinmayananda',
-    role: 'Founder of Chinmaya Mission & Eternal Guide of Chinmaya Vidyalaya Tarapur',
+    role: 'Founder of Chinmaya Mission',
     image: '/images/swami.jpeg',
     label: 'GURUDEV ON GIVING',
+  },
+  {
+    id: 'swami-4',
+    quote: '"What you have is His gift to you. What you do with what you have is your gift to Him."',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami.jpeg',
+    label: 'ON PURPOSE',
+  },
+  {
+    id: 'swami-5',
+    quote: '"The mind is like a restless bird; the more it gets, the more it wants, and still remains unsatisfied."',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami_chinmayananda_cutout.png',
+    label: 'ON THE MIND',
+  },
+  {
+    id: 'swami-6',
+    quote: '"Be strict and eternally vigilant about the quality of your inner thoughts."',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami.jpeg',
+    label: 'ON SELF-DISCIPLINE',
+  },
+  {
+    id: 'swami-7',
+    quote: '"The world is a great university. Life is the greatest teacher. But without a guru, how will the student know what to study?"',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami.jpeg',
+    label: 'ON LEARNING',
+  },
+  {
+    id: 'swami-8',
+    quote: '"In all adversities, there is always in its depth, a treasure of spiritual blessings secretly hidden."',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami_chinmayananda_cutout.png',
+    label: 'ON RESILIENCE',
+  },
+  {
+    id: 'swami-9',
+    quote: '"Happiness depends on what you can give, not on what you can get."',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami.jpeg',
+    label: 'ON HAPPINESS',
+  },
+  {
+    id: 'swami-10',
+    quote: '"Your real wealth is what you are, not what you have."',
+    author: 'Pujya Gurudev Swami Chinmayananda',
+    role: 'Founder of Chinmaya Mission',
+    image: '/images/swami.jpeg',
+    label: 'ON TRUE WEALTH',
   },
   {
     id: 'principal-1',
     quote: '"Rooted in the Chinmaya Vision Programme, we integrate value education with academic distinction to prepare noble global citizens who dare to dream and develop new realities."',
     author: OFFICIAL_PRINCIPAL_INFO.name,
-    role: 'Principal, Chinmaya Vidyalaya Tarapur',
+    role: 'Principal, Chinmaya Vidyalaya',
     image: '/images/principal2.jpeg',
     label: "PRINCIPAL'S MESSAGE",
   },
 ];
+
+// Shuffle utility for no-repeat quote display
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+const SHUFFLED_QUOTES = shuffleArray(GUIDING_QUOTES);
 
 export const HomePage: React.FC = () => {
   const [notices, setNotices] = useState<Notice[]>([]);
@@ -99,15 +167,17 @@ export const HomePage: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  // Guiding Voices Carousel auto-rotation
+  // Guiding Voices Carousel auto-rotation with no-repeat
+  const [isQuoteHovered, setIsQuoteHovered] = useState(false);
   useEffect(() => {
+    if (isQuoteHovered) return;
     const timer = setInterval(() => {
-      setActiveQuote((prev) => (prev + 1) % GUIDING_QUOTES.length);
+      setActiveQuote((prev) => (prev + 1) % SHUFFLED_QUOTES.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isQuoteHovered]);
 
-  const currentQuote = GUIDING_QUOTES[activeQuote];
+  const currentQuote = SHUFFLED_QUOTES[activeQuote];
 
   // Handle interactive pillar selection with GSAP transition & haptic chime
   const handleSelectPillar = (idx: number) => {
@@ -186,9 +256,9 @@ export const HomePage: React.FC = () => {
 
   // Gallery Visual Archive Preview
   const galleryItems = [
-    { id: 1, src: SCHOOL_IMAGES.CAMPUS_HERO, title: "Main Academic Complex & Courtyard", cat: "Campus Architecture", span: "md:col-span-8" },
+    { id: 1, src: SCHOOL_IMAGES.CAMPUS_HERO, title: "Campus Building & Courtyard", cat: "Campus Architecture", span: "md:col-span-8" },
     { id: 2, src: "/images/guru-paduka-pooja.webp", title: "Guru Paduka Pooja & Spiritual Assembly", cat: "Value Foundation", span: "md:col-span-4" },
-    { id: 3, src: "/images/CHEM1.jpeg", title: "Chemistry & STEM Laboratory", cat: "Science & Discovery", span: "md:col-span-4" },
+    { id: 3, src: "/images/CHEM1.jpeg", title: "Chemistry Lab", cat: "Science & Discovery", span: "md:col-span-4" },
     { id: 4, src: SCHOOL_IMAGES.SPORTS_DAY, title: "Annual Athletic & Track Meet", cat: "Sports & Vitality", span: "md:col-span-4" },
     { id: 5, src: "/images/lib.jpg", title: "Central Library & Research Repository", cat: "Scholastic Sanctuary", span: "md:col-span-4" },
   ];
@@ -473,23 +543,23 @@ export const HomePage: React.FC = () => {
             {[
               {
                 id: 'lab-physics',
-                title: 'Physics & Optics Laboratory',
+                title: 'Physics Lab',
                 image: '/images/phys.jpeg',
               },
               {
                 id: 'lab-chemistry',
-                title: 'Chemistry & STEM Laboratory',
+                title: 'Chemistry Lab',
                 image: '/images/CHEM1.jpeg',
               },
               {
-                id: 'lab-computer',
-                title: 'Computer & Information Tech Lab',
-                image: '/images/img2.jpg',
+                id: 'lab-biology',
+                title: 'Biology Lab',
+                image: '/images/biology-lab.jpg',
               },
               {
-                id: 'lab-library',
-                title: 'Central Knowledge & Research Library',
-                image: '/images/lib.jpg',
+                id: 'lab-it',
+                title: 'IT Lab',
+                image: '/images/it-lab.jpg',
               },
             ].map((card) => (
               <div
@@ -508,7 +578,7 @@ export const HomePage: React.FC = () => {
                 {/* Bottom Solid Terracotta Banner */}
                 <div className="bg-[#DF711B] text-white py-3.5 sm:py-4 px-6 relative flex items-center">
                   <p className="font-sans font-bold text-xs sm:text-sm text-white uppercase tracking-wider m-0 leading-tight">
-                    {card.title} in Chinmaya Vidyalaya
+                    {card.title}
                   </p>
                 </div>
               </div>
@@ -775,8 +845,11 @@ export const HomePage: React.FC = () => {
       <section className="py-6 sm:py-8 bg-[#FAF8F5] relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
-          {/* Quote Carousel Card */}
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsQuoteHovered(true)}
+            onMouseLeave={() => setIsQuoteHovered(false)}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentQuote.id}
@@ -820,7 +893,7 @@ export const HomePage: React.FC = () => {
 
           {/* Carousel Indicators */}
           <div className="flex items-center justify-center gap-3">
-            {GUIDING_QUOTES.map((q, i) => (
+            {SHUFFLED_QUOTES.map((q, i) => (
               <button
                 key={q.id}
                 onClick={() => setActiveQuote(i)}
@@ -877,7 +950,7 @@ export const HomePage: React.FC = () => {
                   to="/contact"
                   className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
                 >
-                  <span>Contact Admissions Desk</span>
+                  <span>Contact Administration</span>
                   <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
                     <ArrowRight className="w-3.5 h-3.5 text-white" />
                   </div>
@@ -903,56 +976,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* ----------------------------------------------------
-          SECTION 08 — MASTER FINAL CONVERSION BANNER (ADMISSIONS)
-         ---------------------------------------------------- */}
-      <section className="py-24 sm:py-32 bg-gradient-to-br from-[#DF711B] via-[#C45B0E] to-[#9C3E08] text-white relative overflow-hidden shadow-2xl">
-        <div className="max-w-5xl mx-auto px-4 text-center space-y-8 relative z-10">
-          
-          <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 text-[11px] font-mono tracking-widest text-[#FFB740] uppercase font-bold border border-white/20">
-            <GraduationCap className="w-4 h-4" />
-            <span>SESSION 2026-27 ADMISSIONS OPEN</span>
-          </div>
 
-          <h2 className="font-display text-[40px] sm:text-[58px] lg:text-[68px] font-black text-white tracking-tight leading-[1.03] uppercase m-0">
-            SHAPE A FUTURE OF <br />
-            <span className="text-[#FFB740]">WISDOM AND DISTINCTION.</span>
-          </h2>
-
-          <p className="text-[16px] sm:text-[18px] text-white/90 max-w-2xl mx-auto font-normal leading-relaxed">
-            Join the Chinmaya Vidyalaya family in Boisar / Tarapur. Download application forms, schedule a campus visit, or connect with our academic admissions office today.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => setIsAdmissionDrawerOpen(true)}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-[#181818] text-[#DF711B] hover:text-white font-sans font-bold text-[12px] uppercase tracking-wider transition-colors shadow-lg"
-            >
-              <span className="text-[#DF711B] hover:text-white font-bold text-base">›</span>
-              <span>APPLY ONLINE & DOWNLOAD FORMS</span>
-            </button>
-
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 text-white border border-white/40 font-sans font-bold text-[12px] uppercase tracking-wider transition-colors"
-            >
-              <span className="text-[#FFB740] font-bold text-base">›</span>
-              <span>CONTACT CAMPUS OFFICE</span>
-            </Link>
-          </div>
-
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/80">
-            <span className="flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#FFB740]" />
-              P-201 MIDC Area, Boisar 401501
-            </span>
-            <span>•</span>
-            <span>Tel: 9322054713 / 9823517700</span>
-            <span>•</span>
-            <span>cvtarapur@chinmayamission.com</span>
-          </div>
-        </div>
-      </section>
 
       {/* Quick Admission Drawer */}
       <QuickAdmissionDrawer

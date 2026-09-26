@@ -286,7 +286,7 @@ export const CareersPage: React.FC = () => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Smt. Radhika Sharma"
+                    placeholder="Enter your full name"
                     className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
@@ -300,7 +300,7 @@ export const CareersPage: React.FC = () => {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="e.g. radhika.sharma@example.com"
+                    placeholder="Enter your email address"
                     className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
@@ -316,7 +316,7 @@ export const CareersPage: React.FC = () => {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="e.g. +91 98234 56789"
+                    placeholder="Enter 10-digit mobile number"
                     className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>

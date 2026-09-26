@@ -45,7 +45,6 @@ export const OFFICIAL_PRINCIPAL_INFO: PrincipalInfo = {
   qualification: "Educationist & Member of the Board of Management",
   message: "Emulating the holistic vision of our revered founder, Param Pujya Swami Chinmayanandaji, Chinmaya Vidyalaya empowers a community of learners who dare to dream, take risks and develop new realities. Rooted in the Chinmaya Vision Programme, we integrate value education with academic distinction to prepare noble global citizens.",
   image: "/images/principal2.jpeg",
-  phone: "7775872266",
   email: "cv.principal@chinmayamission.com"
 };
 
@@ -64,7 +63,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Chairman",
     role: "Chairman",
     occupation: "Industrialist",
-    phone: "9823147178",
+
     email: "thakur@tpr.grengg.com",
     image: "/images/board-of-management/tb-thakur-chairman.webp"
   },
@@ -93,7 +92,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Vice Chairman",
     role: "Vice Chairman",
     occupation: "Doctor",
-    phone: "9823045534",
+
     email: "paragkulkarni1960@gmail.com",
     image: "/images/board-of-management/parag-kulkarni.webp"
   },
@@ -104,7 +103,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Secretary",
     role: "Secretary",
     occupation: "Doctor",
-    phone: "9975527700",
+
     email: "drshankar.shiv@gmail.com",
     image: "/images/board-of-management/dr-shivshankar.webp"
   },
@@ -115,7 +114,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Member",
     role: "Member",
     occupation: "Doctor",
-    phone: "9823147089",
+
     email: "2005shobha@gmail.com",
     image: "/images/board-of-management/shobha-sankhe.webp"
   },
@@ -126,7 +125,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Member",
     role: "Member",
     occupation: "Doctor",
-    phone: "9822634820",
+
     email: "drratnakarmane@gmail.com",
     image: "/images/board-of-management/dr-mane.webp"
   },
@@ -137,7 +136,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Member",
     role: "Member",
     occupation: "Industrialist",
-    phone: "9987636090",
+
     email: "cvtarapur@rediffmail.com",
     image: "/images/board-of-management/sri-b-k-poddar.webp"
   },
@@ -148,7 +147,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Member",
     role: "Member",
     occupation: "Doctor",
-    phone: "9673776711",
+
     email: "ddnayak30@gmail.com",
     image: "/images/board-of-management/dr-nayak.webp"
   },
@@ -159,7 +158,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     designation: "Member (Principal)",
     role: "Member (Principal)",
     occupation: "Educationist",
-    phone: "7775872266",
+
     email: "cv.principal@chinmayamission.com",
     image: "/images/principal2.jpeg"
   }

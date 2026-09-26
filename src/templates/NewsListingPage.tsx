@@ -345,8 +345,6 @@ export const NewsListingPage: React.FC = () => {
                     { label: 'Evaluation Papers Std 1-5', href: '/downloads/evaluation-papers' },
                     { label: 'CBSE Sample Papers Std 1-10', href: '/downloads/sample-papers' },
                     { label: 'Admission Registration Forms', href: '/downloads/admissions' },
-                    { label: 'Mandatory CBSE Disclosures', href: '/about/mandatory-information' },
-                    { label: 'Transfer Certificates (TC)', href: '/about/transfer-certificates' },
                   ].map((doc, i) => (
                     <a
                       key={i}

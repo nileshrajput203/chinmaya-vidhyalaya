@@ -185,7 +185,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     fileUrl: "/images/class-wise-strength.pdf",
     fileSize: "296 KB",
     uploadDate: "2024-04-01",
-    description: "Grade-wise section counts and student enrollment statistics (capped at 40).",
+    description: "Grade-wise section counts and student enrolment statistics (capacity exceeding 40 per section).",
     downloadable: false
   },
   {
@@ -203,16 +203,6 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
   // TRANSFER CERTIFICATES (TC) (VIEW-ONLY PER MANDATORY DISCLOSURE)
   // -------------------------------------------------------------
   {
-    id: "doc-tc-sample",
-    title: "Sample Transfer Certificate (TC)",
-    category: "mandatory-information",
-    fileUrl: "/images/TC.jpg",
-    fileSize: "180 KB",
-    uploadDate: "2024-04-01",
-    description: "Official sample Transfer Certificate format issued by Chinmaya Vidyalaya Tarapur.",
-    downloadable: false
-  },
-  {
     id: "doc-tc-2023",
     title: "Transfer Certificates (TC) 2023 Official Archive",
     category: "mandatory-information",
@@ -224,25 +214,14 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     downloadable: false
   },
   {
-    id: "doc-tc-2021",
-    title: "Transfer Certificates (TC) 2021 Official Archive",
+    id: "doc-tc-2020-21",
+    title: "Transfer Certificates (TC) 2020–21 Official Archive",
     category: "mandatory-information",
-    academicYear: "2021",
+    academicYear: "2020-2021",
     fileUrl: "/images/TC-2021.pdf",
     fileSize: "14.8 MB",
     uploadDate: "2024-04-01",
-    description: "Official record of issued Transfer Certificates for the academic year 2021.",
-    downloadable: false
-  },
-  {
-    id: "doc-tc-2020",
-    title: "Transfer Certificates (TC) 2020 Official Archive",
-    category: "mandatory-information",
-    academicYear: "2020",
-    fileUrl: "/images/TC-2020.pdf",
-    fileSize: "56.8 MB",
-    uploadDate: "2024-04-01",
-    description: "Official record of issued Transfer Certificates for the academic year 2020.",
+    description: "Official combined record of issued Transfer Certificates for the academic years 2020 and 2021.",
     downloadable: false
   },
 
@@ -279,16 +258,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     description: "Admission registration form for Primary and Middle School (Classes I to IX).",
     downloadable: true
   },
-  {
-    id: "doc-teacher-app",
-    title: "Application Form for the Post of Teacher",
-    category: "admissions",
-    fileUrl: "/images/application-form-for-the-post-of-teacher.docx",
-    fileSize: "25 KB",
-    uploadDate: "2024-04-01",
-    description: "Official faculty recruitment application form for teaching positions.",
-    downloadable: true
-  },
+
 
   // -------------------------------------------------------------
   // SCHOOL CIRCULARS & NOTICES (DOWNLOADABLE)

@@ -2,22 +2,6 @@ import { NewsArticle } from '../types/news';
 
 export const OFFICIAL_NEWS: NewsArticle[] = [
   {
-    id: "news-1",
-    title: "Principal Sri. B. Anilkumar Appointed to Chinmaya Education Cell Academic Guidance Team",
-    date: "2024-04-10",
-    category: "latest-updates",
-    summary: "Respected Principal Sri. B. Anilkumar has been appointed as a Member of the Academic Assessment and Guidance Team of Chinmaya Education Cell, Coimbatore.",
-    content: "Our respected Principal Sri. B. Anilkumar has been appointed as a Member of the Academic Assessment and Guidance Team of Chinmaya Education Cell, Coimbatore. He also serves as a member of the inspection committee constituted for the approval of composite provisional affiliation up to senior secondary level by the Chairman of the CBSE Board."
-  },
-  {
-    id: "news-2",
-    title: "National & State Honors Conferred on Principal Sri. B. Anilkumar",
-    date: "2024-03-15",
-    category: "achievements",
-    summary: "Recognizing outstanding contributions in education with Shiksha Ratna, Rajiv Gandhi Siromani National Award, and Best Principal Award.",
-    content: "Principal Sri. B. Anilkumar was awarded a Gold Medal and conferred the Shiksha Ratna by Rashtriya Samatha Swatantra Manch, Delhi at the national level. He received the Rajiv Gandhi Siromani National Award for outstanding contribution in education from Sri. M.V. Rajshekharan, Honourable Union Minister of State for Planning, New Delhi. He was also awarded the Best Principal Award from Giants Group of Palghar, the Vocational Service Award by Rotary Club of Tarapur, and the Avantika Rajiv Gandhi Education Excellency Award."
-  },
-  {
     id: "news-3",
     title: "Outstanding 100% AISSE Class X CBSE Board Results",
     date: "2024-05-20",
@@ -31,6 +15,6 @@ export const OFFICIAL_NEWS: NewsArticle[] = [
     date: "2024-08-01",
     category: "festivals",
     summary: "Students participate in water conservation awareness rallies and poster presentations under the Jal Pakhwada initiative.",
-    content: "Under the Jal Pakhwada campaign, Chinmaya Vidyalaya Tarapur organized community awareness drives, painting competitions, and seminars on rainwater harvesting and water conservation techniques."
+    content: "Under the Jal Pakhwada campaign, Chinmaya Vidyalaya Tarapur organised community awareness drives, painting competitions, and seminars on rainwater harvesting and water conservation techniques."
   }
 ];

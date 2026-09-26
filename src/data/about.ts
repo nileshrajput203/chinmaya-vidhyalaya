@@ -91,7 +91,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
       "Registration Forms for Nursery, KG & Std I-IX available online",
       "Documents Required: Birth Certificate, Previous School Progress Report, Transfer Certificate (TC)",
       "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
-      "Stream allocations for Senior Secondary (XI & XII): Science & Commerce"
+      "Stream allocations for Senior Secondary (XI & XII): Arts, Commerce, and Science"
     ]
   },
   "mandatory-information": {
@@ -100,10 +100,10 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     subtitle: "Official CBSE disclosure certificates, affiliation documents, and Transfer Certificate records",
     content: [
       "In strict compliance with CBSE directives, SARAS portal guidelines, and transparency mandates, Chinmaya Vidyalaya publishes all statutory documents, safety certificates, and Transfer Certificates (TC) for public inspection.",
-      "All statutory certificates—including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, fee structure, SMC, PTA, and official Transfer Certificates (TC sample & annual registers for 2020, 2021, and 2023)—are available in verified view-only format."
+      "All statutory certificates—including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, SMC, PTA, and official Transfer Certificates (TC annual registers for 2020–21 and 2023)—are available in verified view-only format."
     ],
     bulletPoints: [
-      "Official Transfer Certificates (TC): View sample TC and archive registers (2020, 2021, 2023)",
+      "Official Transfer Certificates (TC): View certified archive registers (2020–21 and 2023)",
       "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
       "State Government NOC & RTE Recognition Certificate",
       "Building Stability and Fire Safety Clearance Certificates",
@@ -123,16 +123,16 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     ],
     bulletPoints: [
       "Managing Trust: Central Chinmaya Mission Trust, Mumbai (Local Managing Committee)",
-      "1. Sri. T.B. Thakur — Chairman (Industrialist | Tel: 9823147178 | thakur@tpr.grengg.com)",
+      "1. Sri. T.B. Thakur — Chairman (Industrialist | thakur@tpr.grengg.com)",
       "2. Shri Shriram Bhalerao — Trustee, CCMT (Industrialist | bhaleraosg@labindia.com)",
       "3. Atul Karanjkar — Zonal Director (atul.karanjkar@chinmayaeducationcell.org)",
-      "4. Dr. Parag Kulkarni — Vice Chairman (Doctor | Tel: 9823045534 | paragkulkarni1960@gmail.com)",
-      "5. Dr. Shivshankar — Secretary (Doctor | Tel: 9975527700 | drshankar.shiv@gmail.com)",
-      "6. Dr. (Smt.) Shobha Sankhe — Member (Doctor | Tel: 9823147089 | 2005shobha@gmail.com)",
-      "7. Dr. Ratnakar Mane — Member (Doctor | Tel: 9822634820 | drratnakarmane@gmail.com)",
-      "8. Sri. B.K. Poddar — Member (Industrialist | Tel: 9987636090 | cvtarapur@rediffmail.com)",
-      "9. Dr. Dathatreya Nayak — Member (Doctor | Tel: 9673776711 | ddnayak30@gmail.com)",
-      "10. Smt. Dimple Mistry — Member (Principal) (Educationist | Tel: 7775872266 | cv.principal@chinmayamission.com)"
+      "4. Dr. Parag Kulkarni — Vice Chairman (Doctor | paragkulkarni1960@gmail.com)",
+      "5. Dr. Shivshankar — Secretary (Doctor | drshankar.shiv@gmail.com)",
+      "6. Dr. (Smt.) Shobha Sankhe — Member (Doctor | 2005shobha@gmail.com)",
+      "7. Dr. Ratnakar Mane — Member (Doctor | drratnakarmane@gmail.com)",
+      "8. Sri. B.K. Poddar — Member (Industrialist | cvtarapur@rediffmail.com)",
+      "9. Dr. Dathatreya Nayak — Member (Doctor | ddnayak30@gmail.com)",
+      "10. Smt. Dimple Mistry — Member (Principal) (Educationist | cv.principal@chinmayamission.com)"
     ]
   },
   "swami-chinmayananda": {

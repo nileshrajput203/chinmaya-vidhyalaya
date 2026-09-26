@@ -32,11 +32,11 @@ interface FaqSectionProps {
 
 const QUICK_TAGS = [
   'Admissions 2026-27',
-  '40 Student Batch Cap',
+  'Capacity Exceeding 40 Students',
   '100% CBSE Pass Record',
   '4 Pillars of CVP',
   'Transfer Certificates',
-  'Smart Laboratories',
+  'Science & IT Laboratories',
 ];
 
 export const FaqSection: React.FC<FaqSectionProps> = ({
@@ -293,10 +293,10 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                         <div className="space-y-1.5">
                           <div className="flex items-center gap-2">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#DF711B] bg-[#FAF3E8] px-2 py-0.5 rounded-md">
-                              {faq.category}
+                              Question #{index + 1}
                             </span>
-                            <span className="text-[11px] font-mono text-slate-400">
-                              Question {index + 1}
+                            <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+                              {faq.category}
                             </span>
                           </div>
 
@@ -322,7 +322,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                       </div>
                     </button>
 
-                    {/* Accordion Content with Spring Motion */}
+                    {/* Accordion Content with Spring Motion: Distinct Answered Section */}
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
@@ -331,8 +331,16 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
                         >
-                          <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-[#E7E2D8]/60 space-y-4">
+                          <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-[#E7E2D8]/80 space-y-3 bg-[#FAF8F5]/50">
                             
+                            {/* Distinct Answered Header */}
+                            <div className="flex items-center gap-2 pl-0 sm:pl-12">
+                              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono font-bold uppercase tracking-wider">
+                                <Check className="w-3 h-3 text-emerald-600" />
+                                <span>Answered: Official Response</span>
+                              </span>
+                            </div>
+
                             {/* Answer Paragraph */}
                             <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal pl-0 sm:pl-12">
                               {faq.answer}
@@ -485,7 +493,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                   to="/contact"
                   className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
                 >
-                  <span>Contact Admissions Desk</span>
+                  <span>Contact Administration</span>
                   <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
                     <ArrowRight className="w-3.5 h-3.5 text-white" />
                   </div>

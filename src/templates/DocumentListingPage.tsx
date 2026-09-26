@@ -35,17 +35,36 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
     loadDocs();
   }, [selectedCategory, searchQuery]);
 
-  const categories: { label: string; value: DocumentCategory | 'all' }[] = [
-    { label: 'All Documents', value: 'all' },
-                    { label: 'Mandatory Public Disclosures & TC', value: 'mandatory-information' },
-    { label: 'Sample Question Papers', value: 'sample-papers' },
-    { label: 'School Circulars & Notices', value: 'circulars' },
-    { label: 'Admissions & Forms', value: 'admissions' },
-                    { label: 'Academics & Curricula', value: 'academics' },
-  ];
+  const isStudentSection = initialCategory === 'sample-papers' || initialCategory === 'academics';
 
-  // Filter term-wise if applicable
+  const categories: { label: string; value: DocumentCategory | 'all' }[] = isStudentSection
+    ? [
+        { label: 'Sample Question Papers', value: 'sample-papers' },
+        { label: 'School Circulars & Notices', value: 'circulars' },
+        { label: 'Academics & Curricula', value: 'academics' },
+      ]
+    : [
+        { label: 'All Documents', value: 'all' },
+        { label: 'Sample Question Papers', value: 'sample-papers' },
+        { label: 'School Circulars & Notices', value: 'circulars' },
+        { label: 'Admissions & Forms', value: 'admissions' },
+        { label: 'Academics & Curricula', value: 'academics' },
+      ];
+
+  const isMandatoryIsolated = initialCategory === 'mandatory-information';
+  const [mandatorySubFilter, setMandatorySubFilter] = useState<'all' | 'compliance' | 'safety' | 'tc'>('all');
+
+  // Filter term-wise or sub-filter if applicable
   const displayDocuments = documents.filter((doc) => {
+    if (isMandatoryIsolated) {
+      if (mandatorySubFilter === 'tc') return doc.title.toLowerCase().includes('transfer certificate');
+      if (mandatorySubFilter === 'safety') return doc.title.toLowerCase().includes('safety') || doc.title.toLowerCase().includes('fire') || doc.title.toLowerCase().includes('sanitation') || doc.title.toLowerCase().includes('water') || doc.title.toLowerCase().includes('building') || doc.title.toLowerCase().includes('land');
+      if (mandatorySubFilter === 'compliance') return !doc.title.toLowerCase().includes('transfer certificate') && !doc.title.toLowerCase().includes('safety') && !doc.title.toLowerCase().includes('fire') && !doc.title.toLowerCase().includes('sanitation') && !doc.title.toLowerCase().includes('water') && !doc.title.toLowerCase().includes('building');
+      return true;
+    }
+    if (isStudentSection && doc.category === 'mandatory-information') {
+      return false;
+    }
     if (selectedTerm === 'all') return true;
     return doc.term === selectedTerm;
   });
@@ -54,8 +73,12 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
 
   return (
     <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
-      <PageHero title={pageTitle} subtitle={pageSubtitle} badge="Official Repository" />
-      <Breadcrumb items={[{ label: "Downloads" }, { label: pageTitle }]} />
+      <PageHero 
+        title={pageTitle} 
+        subtitle={pageSubtitle} 
+        badge={isMandatoryIsolated ? "CBSE Mandatory Disclosure" : isStudentSection ? "Student Academic Repository" : "Official Repository"} 
+      />
+      <Breadcrumb items={[{ label: isMandatoryIsolated ? "About Us" : "Downloads" }, { label: pageTitle }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         
@@ -76,24 +99,47 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
         <div className="bg-white border border-[#E7E2D8] p-6 rounded-3xl shadow-card space-y-4">
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Category Filter Tabs (if not locked to initial category) */}
+            {/* Category Filter Tabs: Isolated strictly to Mandatory Disclosure when locked, otherwise full tabs */}
             <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
-              {categories.map((cat) => (
-                <button
-                  key={cat.value}
-                  onClick={() => {
-                    setSelectedCategory(cat.value);
-                    setSelectedTerm('all');
-                  }}
-                  className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
-                    selectedCategory === cat.value
-                      ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
-                      : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
+              {isMandatoryIsolated ? (
+                <>
+                  {[
+                    { label: 'All Disclosures & TC', value: 'all' },
+                    { label: 'SARAS & Affiliation Records', value: 'compliance' },
+                    { label: 'Safety & Building Clearances', value: 'safety' },
+                    { label: 'Transfer Certificates (TC)', value: 'tc' },
+                  ].map((sub) => (
+                    <button
+                      key={sub.value}
+                      onClick={() => setMandatorySubFilter(sub.value as any)}
+                      className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
+                        mandatorySubFilter === sub.value
+                          ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
+                          : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
+                      }`}
+                    >
+                      {sub.label}
+                    </button>
+                  ))}
+                </>
+              ) : (
+                categories.map((cat) => (
+                  <button
+                    key={cat.value}
+                    onClick={() => {
+                      setSelectedCategory(cat.value);
+                      setSelectedTerm('all');
+                    }}
+                    className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
+                      selectedCategory === cat.value
+                        ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
+                        : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))
+              )}
             </div>
 
             {/* Search Input */}

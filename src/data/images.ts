@@ -8,8 +8,11 @@ export const SCHOOL_IMAGES = {
 
   // Academics & Learning Environment
   CLASSROOM_LEARNING: "/images/banner-3.jpeg",
-  SCIENCE_LAB: "/images/CHEM1.jpeg",
   PHYSICS_LAB: "/images/phys.jpeg",
+  CHEMISTRY_LAB: "/images/CHEM1.jpeg",
+  BIOLOGY_LAB: "/images/biology-lab.jpg",
+  IT_LAB: "/images/it-lab.jpg",
+  SCIENCE_LAB: "/images/CHEM1.jpeg",
   LIBRARY_STUDY: "/images/lib.jpg",
 
   // Co-Curricular & Student Life

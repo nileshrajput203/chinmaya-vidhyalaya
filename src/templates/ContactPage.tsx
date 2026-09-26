@@ -20,19 +20,46 @@ export const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
 
+  const [validationError, setValidationError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setValidationError(null);
     setSubmitStatus(null);
 
-    const result = await formService.submitContact(formData);
+    // Strict validation
+    const nameRegex = /^[a-zA-Z\s.]+$/;
+    if (!nameRegex.test(formData.fullName.trim()) || formData.fullName.trim().length < 2) {
+      setValidationError('Please enter a valid full name containing only letters and spaces.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setValidationError('Please enter a valid email address.');
+      return;
+    }
+
+    const cleanedPhone = formData.phone.replace(/[\s\-]/g, '');
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(cleanedPhone)) {
+      setValidationError('Please enter a valid 10-digit mobile number containing only numbers.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const result = await formService.submitContact({
+      ...formData,
+      phone: cleanedPhone
+    });
 
     setIsSubmitting(false);
 
     if (result.success) {
       setSubmitStatus({
         success: true,
-        message: result.message || 'Your message has been sent successfully to the school administration.',
+        message: result.message || 'Your message has been sent successfully to the school administration. We will get back to you shortly.',
       });
       setFormData({
         fullName: '',
@@ -113,6 +140,23 @@ export const ContactPage: React.FC = () => {
                 <strong className="block text-[#181C20] font-bold">{CONTACT_DETAILS.udiseNo}</strong>
               </div>
             </div>
+
+            {/* Parent Meeting & Campus Visit Policy Notice */}
+            <div className="bg-amber-50/60 border border-amber-200/80 p-4 rounded-2xl space-y-2 text-xs">
+              <span className="font-bold font-mono text-[#DF711B] uppercase tracking-wider block text-[11px]">
+                Parent Interaction Guidelines
+              </span>
+              <ul className="space-y-1.5 text-slate-700 text-[11px] leading-relaxed">
+                <li className="flex items-start gap-1.5">
+                  <span className="text-[#DF711B] font-bold">•</span>
+                  <span><strong>New Parents:</strong> School visits and guided campus tours are available exclusively for new prospective parents looking to explore admissions.</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-[#DF711B] font-bold">•</span>
+                  <span><strong>Existing Students' Parents:</strong> Must submit a formal written letter or application to the school office in advance to request meetings with educators or the Principal.</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Integrated Campus Visual */}
@@ -123,7 +167,7 @@ export const ContactPage: React.FC = () => {
               className="w-full h-64 object-cover rounded-2xl"
             />
             <div className="p-3 text-xs text-[#4A5568] text-center font-medium font-sans">
-              Vidyalaya Main Academic Complex | Vidyanagar, Boisar 401501
+              Vidyalaya Academic & Administration Building | Vidyanagar, Boisar 401501
             </div>
           </div>
         </motion.div>
@@ -150,6 +194,13 @@ export const ContactPage: React.FC = () => {
               Submit your inquiry below. Our administrative team will review your message and reach out promptly.
             </p>
           </div>
+
+          {validationError && (
+            <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs">
+              <strong className="block font-bold mb-1">Please correct the following:</strong>
+              <span>{validationError}</span>
+            </div>
+          )}
 
           {submitStatus && (
             <div className={`p-5 rounded-2xl border text-xs space-y-2 ${
@@ -216,7 +267,7 @@ export const ContactPage: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="your.email@example.com"
+                  placeholder="Enter your email address"
                   className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
                 />
               </div>
@@ -228,7 +279,7 @@ export const ContactPage: React.FC = () => {
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="9322054713"
+                  placeholder="Enter 10-digit mobile number"
                   className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
                 />
               </div>
@@ -241,7 +292,7 @@ export const ContactPage: React.FC = () => {
                 required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                placeholder="General enquiry, admissions, certificates, TC..."
+                placeholder="Enquiry topic, admissions, certificates, TC..."
                 className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
               />
             </div>

@@ -50,16 +50,44 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmitError(null);
 
+    // Strict validation
+    const nameRegex = /^[a-zA-Z\s.]+$/;
+    if (!nameRegex.test(formData.parentName.trim()) || formData.parentName.trim().length < 2) {
+      setSubmitError('Please enter a valid parent or guardian name containing only letters.');
+      return;
+    }
+
+    if (!nameRegex.test(formData.studentName.trim()) || formData.studentName.trim().length < 2) {
+      setSubmitError('Please enter a valid student name containing only letters.');
+      return;
+    }
+
+    const cleanedPhone = formData.phone.replace(/[\s\-]/g, '');
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(cleanedPhone)) {
+      setSubmitError('Please enter a valid 10-digit mobile number containing only numbers.');
+      return;
+    }
+
+    if (formData.email && formData.email.trim()) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email.trim())) {
+        setSubmitError('Please enter a valid email address.');
+        return;
+      }
+    }
+
+    setIsSubmitting(true);
+
     const result = await formService.submitAdmission({
-      parentName: formData.parentName,
-      studentName: formData.studentName,
+      parentName: formData.parentName.trim(),
+      studentName: formData.studentName.trim(),
       gradeApplyingFor: formData.grade,
-      phone: formData.phone,
-      email: formData.email,
-      message: formData.message,
+      phone: cleanedPhone,
+      email: formData.email.trim() || undefined,
+      message: formData.message.trim() || undefined,
     });
 
     setIsSubmitting(false);
@@ -170,8 +198,6 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                         { title: "Nursery Registration Form", file: "/images/nursery.pdf", size: "113 KB" },
                         { title: "Junior / Senior KG Registration Form", file: "/images/kg.pdf", size: "185 KB" },
                         { title: "Standard I to IX Registration Form", file: "/images/1to9.pdf", size: "79 KB" },
-                        { title: "Teacher Application Form (Recruitment)", file: "/images/application-form-for-the-post-of-teacher.docx", size: "25 KB" },
-                        { title: "Official Fee Structure (2024-25)", file: "/images/fees-structure.pdf", size: "43 KB" },
                       ].map((item, idx) => (
                         <div
                           key={idx}
@@ -264,7 +290,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                             required
                             value={formData.parentName}
                             onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                            placeholder="e.g. Rajesh Sharma"
+                            placeholder="Enter parent or guardian full name"
                             className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                           />
                         </div>
@@ -276,7 +302,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                             required
                             value={formData.studentName}
                             onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                            placeholder="e.g. Aarav Sharma"
+                            placeholder="Enter student's full name"
                             className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                           />
                         </div>
@@ -289,13 +315,25 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                               onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                               className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                             >
-                              <option>Nursery</option>
-                              <option>Junior KG</option>
-                              <option>Senior KG</option>
-                              <option>Class 1 - 5</option>
-                              <option>Class 6 - 8</option>
-                              <option>Class 9 - 10</option>
-                              <option>Class 11 - 12</option>
+                              <option value="Nursery">Nursery</option>
+                              <option value="Junior KG">Junior KG</option>
+                              <option value="Senior KG">Senior KG</option>
+                              <option value="Class 1">Class 1</option>
+                              <option value="Class 2">Class 2</option>
+                              <option value="Class 3">Class 3</option>
+                              <option value="Class 4">Class 4</option>
+                              <option value="Class 5">Class 5</option>
+                              <option value="Class 6">Class 6</option>
+                              <option value="Class 7">Class 7</option>
+                              <option value="Class 8">Class 8</option>
+                              <option value="Class 9">Class 9</option>
+                              <option value="Class 10">Class 10</option>
+                              <option value="Class 11 Arts">Class 11 (Arts)</option>
+                              <option value="Class 11 Commerce">Class 11 (Commerce)</option>
+                              <option value="Class 11 Science">Class 11 (Science)</option>
+                              <option value="Class 12 Arts">Class 12 (Arts)</option>
+                              <option value="Class 12 Commerce">Class 12 (Commerce)</option>
+                              <option value="Class 12 Science">Class 12 (Science)</option>
                             </select>
                           </div>
                           <div>
@@ -305,7 +343,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                               required
                               value={formData.phone}
                               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                              placeholder="e.g. 9822000000"
+                              placeholder="Enter 10-digit mobile number"
                               className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                             />
                           </div>
@@ -317,7 +355,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                             type="email"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="parent@example.com"
+                            placeholder="Enter parent email address"
                             className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                           />
                         </div>
@@ -328,7 +366,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                             rows={3}
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                            placeholder="Ask about school bus routes, fees, or documents..."
+                            placeholder="Enquiry details or queries regarding admissions..."
                             className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                           />
                         </div>
@@ -405,21 +443,13 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                       </ul>
                     </div>
 
-                    <div className="flex gap-2">
-                      <a
-                        href="/images/fees-structure.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 py-2.5 bg-white hover:bg-[#FAF6EF] text-[#181C20] border border-[#E7E2D8] text-center text-xs font-semibold rounded-xl transition-colors shadow-sm"
-                      >
-                        Fee Structure
-                      </a>
+                    <div>
                       <a
                         href="/about/enrollment"
                         onClick={onClose}
-                        className="flex-1 py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-center text-xs font-bold rounded-xl transition-colors shadow-sm"
+                        className="block w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-center text-xs font-bold rounded-xl transition-colors shadow-sm"
                       >
-                        Detailed Guidelines
+                        Detailed Enrolment & Admission Guidelines
                       </a>
                     </div>
                   </div>

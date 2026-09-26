@@ -127,6 +127,12 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
     'Class 8',
     'Class 9',
     'Class 10',
+    'Class 11 (Arts Stream)',
+    'Class 11 (Commerce Stream)',
+    'Class 11 (Science Stream)',
+    'Class 12 (Arts Stream)',
+    'Class 12 (Commerce Stream)',
+    'Class 12 (Science Stream)',
   ];
 
   return (
@@ -365,7 +371,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         required
                         value={detailedData.parentName}
                         onChange={(e) => setDetailedData({ ...detailedData, parentName: e.target.value })}
-                        placeholder="Parent name"
+                        placeholder="Enter parent's full name"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B]"
                       />
                     </div>
@@ -397,7 +403,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         maxLength={12}
                         value={detailedData.phone}
                         onChange={(e) => setDetailedData({ ...detailedData, phone: e.target.value })}
-                        placeholder="10-digit number"
+                        placeholder="Enter 10-digit mobile number"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B]"
                       />
                     </div>
@@ -411,7 +417,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         type="email"
                         value={detailedData.email}
                         onChange={(e) => setDetailedData({ ...detailedData, email: e.target.value })}
-                        placeholder="parent@example.com"
+                        placeholder="Enter parent's email address"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B]"
                       />
                     </div>
@@ -438,7 +444,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         type="text"
                         value={detailedData.cityArea}
                         onChange={(e) => setDetailedData({ ...detailedData, cityArea: e.target.value })}
-                        placeholder="e.g. Boisar / Tarapur"
+                        placeholder="Enter residential area / town"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B]"
                       />
                     </div>

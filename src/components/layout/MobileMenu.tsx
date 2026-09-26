@@ -101,8 +101,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
                 <span className="font-cinzel font-bold text-base block text-[#181C20] leading-tight">
                   CHINMAYA VIDYALAYA
                 </span>
-                <p className="text-[10px] text-[#DF711B] font-mono uppercase tracking-widest font-bold mt-0.5">
-                  Tarapur • Boisar
+                <p className="text-[10px] text-[#DF711B] font-mono uppercase tracking-wider font-bold mt-0.5">
+                  CBSE Affiliated • Estd. 1995
                 </p>
               </div>
             </a>

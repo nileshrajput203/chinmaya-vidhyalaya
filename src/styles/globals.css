@@ -167,3 +167,23 @@
   }
 }
 
+/* Vertical Upward Notice Board Ticker */
+@keyframes tickerUpward {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-ticker-up {
+  display: flex;
+  flex-direction: column;
+  animation: tickerUpward 20s linear infinite;
+}
+
+.animate-ticker-up:hover {
+  animation-play-state: paused;
+}
+

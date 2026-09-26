@@ -10,11 +10,12 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
   curriculum: {
     slug: "curriculum",
     title: "CBSE Curriculum & Subjects",
-    subtitle: "Co-educational coverage from Jr. KG to Std XII (Class strength capped at 40)",
+    subtitle: "Co-educational coverage from Nursery to Std XII (Arts, Commerce, Science)",
     content: [
-      "Chinmaya Vidyalaya Tarapur is a premier co-educational institution providing academic coverage from Jr. KG to Std XII. The medium of instruction in all classes is English. The Vidyalaya is affiliated to CBSE. The strength of the students in each class does not exceed 40.",
+      "Chinmaya Vidyalaya is a premier co-educational institution providing academic coverage from Nursery to Std XII. The medium of instruction in all classes is English. The Vidyalaya is affiliated to CBSE. Classrooms have the capacity to accommodate more than 40 students per section.",
       "Primary Section (Std I to V) focuses on foundational literacy, numeracy, and environmental awareness alongside creative pursuits in arts, craft, and physical education.",
-      "Secondary Section (Std VI to X) offers a comprehensive blend of core languages, advanced sciences (Physics, Chemistry, Biology), Social Sciences (History, Civics, Geography, Economics, Disaster Management), Mathematics, and General Knowledge."
+      "Secondary Section (Std VI to X) offers a comprehensive blend of core languages, advanced sciences (Physics, Chemistry, Biology), Social Sciences (History, Civics, Geography, Economics, Disaster Management), Mathematics, and General Knowledge.",
+      "Senior Secondary Section (Std XI & XII) offers three streams: Arts, Commerce, and Science, providing students with comprehensive academic preparation for higher education and competitive examinations."
     ],
     features: [
       "Primary (Std I to V) Scholastic: English, Hindi, Mathematics, Environmental Studies (EVS), General Knowledge",
@@ -22,6 +23,7 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
       "Secondary (Std VI to X) Languages: English, Hindi, Sanskrit / Marathi",
       "Secondary (Std VI to X) Social Sciences: History, Civics, Geography, Economics, Disaster Management, EVS",
       "Secondary (Std VI to X) Science & Tech: Physics, Chemistry, Biology, Mathematics, General Knowledge",
+      "Senior Secondary (Std XI & XII): Arts, Commerce, and Science streams available",
       "Secondary Non-Scholastic: Activities under Work Education, Art & Craft Education, Physical Education"
     ]
   },
@@ -42,36 +44,34 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
   },
   faculty: {
     slug: "faculty",
-    title: "Teaching & Non-Teaching Faculty",
-    subtitle: "Experienced educators and dedicated support staff committed to student development",
+    title: "Teaching Faculty",
+    subtitle: "Experienced educators committed to student development",
     content: [
       "Our faculty comprises highly qualified and experienced teachers who act as mentors, facilitators, and compassionate guides.",
-      "Faculty members regularly participate in CBSE training workshops, pedagogical seminars, and technology integration programs to stay at the forefront of modern educational techniques.",
-      "Our non-teaching and administrative staff ensure the smooth day-to-day operation of the campus, providing a safe, clean, and welcoming environment."
+      "Faculty members regularly participate in CBSE training workshops, pedagogical seminars, and technology integration programmes to stay at the forefront of modern educational techniques."
     ],
     features: [
       "Qualified educators adhering to CBSE teacher recruitment criteria",
       "Regular in-service capacity building and pedagogical training workshops",
-      "Dedicated non-teaching staff for labs, library, transport, and campus security",
-      "Continuous mentoring and personalized doubt-clearing sessions for students"
+      "Continuous mentoring and personalised doubt-clearing sessions for students"
     ]
   },
   "teaching-strategy": {
     slug: "teaching-strategy",
     title: "Teaching Strategy & Pedagogy",
-    subtitle: "Child-centered and activity-oriented modern pedagogical practices",
+    subtitle: "Child-centred and activity-oriented modern pedagogical practices",
     content: [
-      "At Chinmaya Vidyalaya Tarapur, teaching strategies are designed to transform learning from rote memorization into active, joyful discovery.",
+      "At Chinmaya Vidyalaya, teaching strategies are designed to transform learning from rote memorisation into active, joyful discovery.",
       "Our teachers employ diverse interactive methods to ensure every child grasps core concepts with clarity and confidence."
     ],
     features: [
       "Play-way method for early childhood and foundational stages",
       "Activity-oriented learning to promote conceptual understanding",
-      "Child-centered learning tailored to diverse student aptitudes",
+      "Child-centred learning tailored to diverse student aptitudes",
       "Demonstrative and experimental methods in laboratories",
       "Interactive methods encouraging open discussions and inquiry",
       "Learning-by-doing through hands-on projects and model making",
-      "Using audio-visual aids and digital smartboards in classrooms",
+      "Using audio-visual aids and digital boards in classrooms",
       "Using the latest educational software and multimedia resources"
     ]
   },
@@ -80,14 +80,16 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     title: "School Infrastructure",
     subtitle: "Spacious classrooms, well-equipped science laboratories, and library facilities",
     content: [
-      "Located in Vidyanagar, Saravali, Boisar / Tarapur, the campus provides a safe, green, and spacious environment equipped with excellent academic and sports facilities.",
-      "The Vidyalaya features a well-stocked Library, dedicated Chemistry Lab, Physics Lab, Biology Lab, Computer Center, and outdoor sports fields."
+      "Located in Vidyanagar, Saravali, Boisar, the campus provides a safe, green, and spacious environment equipped with excellent academic and sports facilities.",
+      "The Vidyalaya features a well-stocked Library, dedicated Chemistry Lab, Physics Lab, Biology Lab, IT Lab, and outdoor sports fields."
     ],
     features: [
       "Central Library with thousands of reference books, periodicals, and quiet reading areas",
-      "Fully equipped Chemistry and Physics Laboratories for practical experimentation",
-      "Modern Computer and Information Technology Laboratory",
-      "Smartboard-enabled Classrooms with optimal natural lighting and ventilation",
+      "Fully equipped Physics Laboratory for practical experimentation",
+      "Fully equipped Chemistry Laboratory for practical experimentation",
+      "Biology Laboratory with specimens and microscopes",
+      "Modern IT (Computer) Laboratory",
+      "Classrooms with capacity for more than 40 students, with optimal natural lighting and ventilation",
       "Spacious Sports Ground for football, cricket, volleyball, and athletics",
       "CCTV surveillance, fire safety systems, and safe drinking water plants"
     ]
