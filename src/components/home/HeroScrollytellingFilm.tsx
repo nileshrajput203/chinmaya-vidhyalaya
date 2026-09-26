@@ -457,12 +457,12 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
               
               {/* Left Column: Admission Enquiry Form (7 cols on lg) */}
-              <div className="lg:col-span-7 bg-[#FCFBF7]/95 backdrop-blur-md text-[#181C20] p-5 sm:p-7 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-4">
+              <div className="lg:col-span-7 bg-[#FCFBF7]/95 backdrop-blur-md text-[#181C20] p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col">
                 {/* Decorative Top Accent Bar */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
                 {/* Header */}
-                <div className="border-b border-[#E7E2D8] pb-3">
+                <div className="border-b border-[#E7E2D8] pb-3 mb-3.5">
                   <div className="flex items-center gap-3">
                     <img
                       src="/images/Chinmaya_Logo.webp"
@@ -490,7 +490,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
                 {/* Form Content */}
                 {isSubmitted ? (
-                  <div className="py-6 text-center space-y-3">
+                  <div className="flex-1 flex flex-col items-center justify-center py-6 text-center space-y-3">
                     <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200 shadow-sm">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
@@ -521,90 +521,94 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-3">
-                    {submitError && (
-                      <div className="p-2.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
-                        <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
-                        <span>{submitError}</span>
-                      </div>
-                    )}
+                  <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-between">
+                    {/* Fields Group */}
+                    <div className="space-y-3">
+                      {submitError && (
+                        <div className="p-2.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
+                          <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                          <span>{submitError}</span>
+                        </div>
+                      )}
 
-                    <div>
-                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                        Student's Full Name <span className="text-[#DF711B]">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.studentName}
-                        onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                        placeholder="e.g. Aarav Sharma"
-                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
                         <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                          Parent / Guardian Name <span className="text-[#DF711B]">*</span>
+                          Student's Full Name <span className="text-[#DF711B]">*</span>
                         </label>
                         <input
                           type="text"
                           required
-                          value={formData.parentName}
-                          onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                          placeholder="e.g. Rajesh Sharma"
-                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all"
+                          value={formData.studentName}
+                          onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
+                          placeholder="e.g. Aarav Sharma"
+                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
                         />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                            Parent / Guardian Name <span className="text-[#DF711B]">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            value={formData.parentName}
+                            onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
+                            placeholder="e.g. Rajesh Sharma"
+                            className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                            Phone Number (10 Digits) <span className="text-[#DF711B]">*</span>
+                          </label>
+                          <input
+                            type="tel"
+                            required
+                            value={formData.phone}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            placeholder="e.g. 9823517700"
+                            className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
+                          />
+                        </div>
                       </div>
 
                       <div>
                         <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                          Phone Number (10 Digits) <span className="text-[#DF711B]">*</span>
+                          Grade Applying For (Nursery to 12th) <span className="text-[#DF711B]">*</span>
                         </label>
-                        <input
-                          type="tel"
-                          required
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="e.g. 9823517700"
-                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all"
-                        />
+                        <select
+                          value={formData.grade}
+                          onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
+                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all cursor-pointer font-sans shadow-sm"
+                        >
+                          <option value="Nursery">Nursery</option>
+                          <option value="Junior KG">Junior KG</option>
+                          <option value="Senior KG">Senior KG</option>
+                          <option value="Class 1">Class 1</option>
+                          <option value="Class 2">Class 2</option>
+                          <option value="Class 3">Class 3</option>
+                          <option value="Class 4">Class 4</option>
+                          <option value="Class 5">Class 5</option>
+                          <option value="Class 6">Class 6</option>
+                          <option value="Class 7">Class 7</option>
+                          <option value="Class 8">Class 8</option>
+                          <option value="Class 9">Class 9</option>
+                          <option value="Class 10">Class 10</option>
+                          <option value="Class 11 Arts">Class 11 (Arts Stream)</option>
+                          <option value="Class 11 Commerce">Class 11 (Commerce Stream)</option>
+                          <option value="Class 11 Science">Class 11 (Science Stream)</option>
+                          <option value="Class 12 Arts">Class 12 (Arts Stream)</option>
+                          <option value="Class 12 Commerce">Class 12 (Commerce Stream)</option>
+                          <option value="Class 12 Science">Class 12 (Science Stream)</option>
+                        </select>
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                        Grade Applying For (Nursery to 12th) <span className="text-[#DF711B]">*</span>
-                      </label>
-                      <select
-                        value={formData.grade}
-                        onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all cursor-pointer font-sans"
-                      >
-                        <option value="Nursery">Nursery</option>
-                        <option value="Junior KG">Junior KG</option>
-                        <option value="Senior KG">Senior KG</option>
-                        <option value="Class 1">Class 1</option>
-                        <option value="Class 2">Class 2</option>
-                        <option value="Class 3">Class 3</option>
-                        <option value="Class 4">Class 4</option>
-                        <option value="Class 5">Class 5</option>
-                        <option value="Class 6">Class 6</option>
-                        <option value="Class 7">Class 7</option>
-                        <option value="Class 8">Class 8</option>
-                        <option value="Class 9">Class 9</option>
-                        <option value="Class 10">Class 10</option>
-                        <option value="Class 11 Arts">Class 11 (Arts Stream)</option>
-                        <option value="Class 11 Commerce">Class 11 (Commerce Stream)</option>
-                        <option value="Class 11 Science">Class 11 (Science Stream)</option>
-                        <option value="Class 12 Arts">Class 12 (Arts Stream)</option>
-                        <option value="Class 12 Commerce">Class 12 (Commerce Stream)</option>
-                        <option value="Class 12 Science">Class 12 (Science Stream)</option>
-                      </select>
-                    </div>
-
-                    <div className="pt-1">
+                    {/* Action Group */}
+                    <div className="pt-3 space-y-2.5">
                       <button
                         type="submit"
                         disabled={isSubmitting}
@@ -613,21 +617,21 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         <Send className={`w-3.5 h-3.5 ${isSubmitting ? 'animate-spin' : ''}`} />
                         <span>{isSubmitting ? 'Submitting Enquiry...' : 'Submit Admission Enquiry'}</span>
                       </button>
-                    </div>
 
-                    <div className="pt-1 flex items-center justify-between text-[11px] text-[#555] border-t border-[#E7E2D8]">
-                      <span className="flex items-center gap-1.5 font-mono text-[11px]">
-                        <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
-                        9322054713 / 9823517700
-                      </span>
-                      <button
-                        type="button"
-                        onClick={onOpenAdmissions}
-                        className="inline-flex items-center gap-1 text-[#DF711B] hover:text-[#C45B0E] font-sans font-bold hover:underline cursor-pointer"
-                      >
-                        <FileText className="w-3.5 h-3.5" />
-                        <span>Download Forms ›</span>
-                      </button>
+                      <div className="pt-2 flex items-center justify-between text-[11px] text-[#555] border-t border-[#E7E2D8]">
+                        <span className="flex items-center gap-1.5 font-mono text-[11px]">
+                          <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
+                          9322054713 / 9823517700
+                        </span>
+                        <button
+                          type="button"
+                          onClick={onOpenAdmissions}
+                          className="inline-flex items-center gap-1 text-[#DF711B] hover:text-[#C45B0E] font-sans font-bold hover:underline cursor-pointer"
+                        >
+                          <FileText className="w-3.5 h-3.5" />
+                          <span>Download Forms ›</span>
+                        </button>
+                      </div>
                     </div>
                   </form>
                 )}
