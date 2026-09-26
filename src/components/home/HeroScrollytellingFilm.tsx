@@ -521,98 +521,97 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-between">
-                    {/* Fields Group */}
-                    <div className="space-y-3">
-                      {submitError && (
-                        <div className="p-2.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
-                          <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
-                          <span>{submitError}</span>
-                        </div>
-                      )}
-
-                      <div>
-                        <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                          Student's Full Name <span className="text-[#DF711B]">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.studentName}
-                          onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                          placeholder="e.g. Aarav Sharma"
-                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
-                        />
+                  <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-between space-y-3 pt-0.5">
+                    {submitError && (
+                      <div className="p-2.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
+                        <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                        <span>{submitError}</span>
                       </div>
+                    )}
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                          <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                            Parent / Guardian Name <span className="text-[#DF711B]">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            value={formData.parentName}
-                            onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                            placeholder="e.g. Rajesh Sharma"
-                            className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
-                          />
-                        </div>
+                    {/* Field 1: Student's Full Name */}
+                    <div>
+                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                        Student's Full Name <span className="text-[#DF711B]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.studentName}
+                        onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
+                        placeholder="e.g. Aarav Sharma"
+                        className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
+                      />
+                    </div>
 
-                        <div>
-                          <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                            Phone Number (10 Digits) <span className="text-[#DF711B]">*</span>
-                          </label>
-                          <input
-                            type="tel"
-                            required
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="e.g. 9823517700"
-                            className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
-                          />
-                        </div>
-                      </div>
+                    {/* Field 2: Parent / Guardian Name */}
+                    <div>
+                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                        Parent / Guardian Name <span className="text-[#DF711B]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.parentName}
+                        onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
+                        placeholder="e.g. Rajesh Sharma"
+                        className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
+                      />
+                    </div>
 
-                      <div>
-                        <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                          Grade Applying For (Nursery to 12th) <span className="text-[#DF711B]">*</span>
-                        </label>
-                        <select
-                          value={formData.grade}
-                          onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                          className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all cursor-pointer font-sans shadow-sm"
-                        >
-                          <option value="Nursery">Nursery</option>
-                          <option value="Junior KG">Junior KG</option>
-                          <option value="Senior KG">Senior KG</option>
-                          <option value="Class 1">Class 1</option>
-                          <option value="Class 2">Class 2</option>
-                          <option value="Class 3">Class 3</option>
-                          <option value="Class 4">Class 4</option>
-                          <option value="Class 5">Class 5</option>
-                          <option value="Class 6">Class 6</option>
-                          <option value="Class 7">Class 7</option>
-                          <option value="Class 8">Class 8</option>
-                          <option value="Class 9">Class 9</option>
-                          <option value="Class 10">Class 10</option>
-                          <option value="Class 11 Arts">Class 11 (Arts Stream)</option>
-                          <option value="Class 11 Commerce">Class 11 (Commerce Stream)</option>
-                          <option value="Class 11 Science">Class 11 (Science Stream)</option>
-                          <option value="Class 12 Arts">Class 12 (Arts Stream)</option>
-                          <option value="Class 12 Commerce">Class 12 (Commerce Stream)</option>
-                          <option value="Class 12 Science">Class 12 (Science Stream)</option>
-                        </select>
-                      </div>
+                    {/* Field 3: Phone Number */}
+                    <div>
+                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                        Phone Number (10-Digit Mobile) <span className="text-[#DF711B]">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="e.g. 9823517700"
+                        className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
+                      />
+                    </div>
+
+                    {/* Field 4: Grade Applying For */}
+                    <div>
+                      <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
+                        Grade Applying For (Nursery to 12th) <span className="text-[#DF711B]">*</span>
+                      </label>
+                      <select
+                        value={formData.grade}
+                        onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
+                        className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all cursor-pointer font-sans shadow-sm"
+                      >
+                        <option value="Nursery">Nursery</option>
+                        <option value="Junior KG">Junior KG</option>
+                        <option value="Senior KG">Senior KG</option>
+                        <option value="Class 1">Class 1</option>
+                        <option value="Class 2">Class 2</option>
+                        <option value="Class 3">Class 3</option>
+                        <option value="Class 4">Class 4</option>
+                        <option value="Class 5">Class 5</option>
+                        <option value="Class 6">Class 6</option>
+                        <option value="Class 7">Class 7</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                        <option value="Class 11 Arts">Class 11 (Arts Stream)</option>
+                        <option value="Class 11 Commerce">Class 11 (Commerce Stream)</option>
+                        <option value="Class 11 Science">Class 11 (Science Stream)</option>
+                        <option value="Class 12 Arts">Class 12 (Arts Stream)</option>
+                        <option value="Class 12 Commerce">Class 12 (Commerce Stream)</option>
+                        <option value="Class 12 Science">Class 12 (Science Stream)</option>
+                      </select>
                     </div>
 
                     {/* Action Group */}
-                    <div className="pt-3 space-y-2.5">
+                    <div className="pt-1.5 space-y-2.5">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-3 bg-gradient-to-r from-[#DF711B] via-[#E8873E] to-[#DF711B] hover:brightness-105 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-md shadow-[#DF711B]/20 cursor-pointer"
+                        className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-[#DF711B] via-[#E8873E] to-[#DF711B] hover:brightness-105 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-md shadow-[#DF711B]/20 cursor-pointer"
                       >
                         <Send className={`w-3.5 h-3.5 ${isSubmitting ? 'animate-spin' : ''}`} />
                         <span>{isSubmitting ? 'Submitting Enquiry...' : 'Submit Admission Enquiry'}</span>
@@ -670,7 +669,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 <div 
                   data-lenis-prevent="true"
                   onWheel={(e) => e.stopPropagation()}
-                  className="relative h-72 sm:h-80 overflow-hidden group select-none"
+                  className="relative h-64 sm:h-[19rem] overflow-hidden group select-none"
                 >
                   {/* Subtle top & bottom fade gradient masks for smooth edge transitions */}
                   <div className="pointer-events-none absolute top-0 inset-x-0 h-7 bg-gradient-to-b from-[#0B1E34] to-transparent z-10" />
