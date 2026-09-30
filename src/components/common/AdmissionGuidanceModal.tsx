@@ -223,37 +223,30 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
               {/* ============================================================
                   LEFT COLUMN: EDITORIAL VISUAL & TRUST PILLARS
                   ============================================================ */}
-              <div className="md:col-span-5 relative flex flex-col justify-between p-6 sm:p-8 overflow-hidden min-h-[360px] md:min-h-full">
-                {/* Background Image with Dark Vignette */}
+              <div className="md:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 overflow-hidden min-h-[360px] md:min-h-full">
+                {/* Clear Background Image with minimal edge vignettes */}
                 <div className="absolute inset-0 z-0">
                   <img
                     src="/images/chinmaya/academics/classroom_learning_001.jpg"
                     alt="Chinmaya Vidyalaya Academics"
-                    className="w-full h-full object-cover object-center scale-105"
+                    className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#14171C]/95 via-[#181C22]/80 to-[#181C22]/70" />
+                  {/* Subtle top/bottom gradient only so badges are readable, leaving center image 100% clear */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
                 </div>
 
-                {/* Top: School Badge & Headline */}
-                <div className="relative z-10 space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 border border-[#DF711B]/40 backdrop-blur-md">
+                {/* Top: School Badge */}
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
                     <GraduationCap className="w-4 h-4 text-[#FFD285]" />
                     <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#FFD285] font-bold">
                       Admissions Open 2026-27
                     </span>
                   </div>
-
-                  <h3 className="font-display text-2xl sm:text-3xl font-black text-white leading-tight uppercase tracking-tight">
-                    Before you go — were you able to find the information you were looking for?
-                  </h3>
-
-                  <p className="text-sm text-white/80 font-normal leading-relaxed">
-                    Choosing the right school for your child is an important decision. If you still have questions about admissions, curriculum, fees, or facilities, don't worry — we're here to help.
-                  </p>
                 </div>
 
-                {/* Bottom: Verified Trust Pillars Glass Card */}
-                <div className="relative z-10 mt-6 pt-5 border-t border-white/15 space-y-3">
+                {/* Bottom: Verified Trust Pillars Frosted Glass Panel */}
+                <div className="relative z-10 mt-auto bg-black/55 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/15 space-y-2.5 shadow-lg">
                   <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
                     <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-400/30">
                       <ShieldCheck className="w-3.5 h-3.5" />
@@ -275,9 +268,12 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                     <span>Friendly Guidance & Campus Visits Welcome</span>
                   </div>
 
-                  <div className="pt-1.5">
-                    <span className="inline-block text-[10px] font-mono text-[#FFD285] bg-white/10 px-2.5 py-0.5 rounded border border-white/15">
-                      CBSE Affiliation No. 1130095 • School Code: 30018
+                  <div className="pt-1 border-t border-white/10 flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-[#FFD285]">
+                      CBSE Affiliation No. 1130095
+                    </span>
+                    <span className="text-[10px] font-mono text-white/60">
+                      School Code: 30018
                     </span>
                   </div>
                 </div>
