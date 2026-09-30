@@ -79,6 +79,9 @@ export type JourneyItem = {
   year: string;
   month: Month;
   content: string;
+  image?: string;
+  imageAlt?: string;
+  tag?: string;
 };
 
 type SplitTextInstance = any;
@@ -478,11 +481,27 @@ export default function Timeline({
                     </div>
 
                     <div className="mt-[-1vw] space-y-[0.75vw] max-[600px]:mt-[-2vw]">
-                      <h4
-                        className={`title-${item.id} font-display font-extrabold text-[2vw] leading-none max-[600px]:text-[5.5vw] uppercase tracking-tight`}
-                      >
-                        {item.year} {item.month}
-                      </h4>
+                      {item.image && (
+                        <div className="w-[9vw] h-[6vw] max-[600px]:w-[32vw] max-[600px]:h-[22vw] rounded-[0.8vw] max-[600px]:rounded-[2vw] overflow-hidden border border-[#E7E2D8] shadow-md bg-black/10 shrink-0 mb-[0.6vw]">
+                          <img
+                            src={item.image}
+                            alt={item.imageAlt || item.content}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-wrap items-center gap-[0.5vw]">
+                        <h4
+                          className={`title-${item.id} font-display font-extrabold text-[2vw] leading-none max-[600px]:text-[5.5vw] uppercase tracking-tight`}
+                        >
+                          {item.year} {item.month}
+                        </h4>
+                        {item.tag && (
+                          <span className="text-[0.75vw] max-[600px]:text-[2.4vw] font-mono px-[0.5vw] py-[0.1vw] rounded bg-[#DF711B]/15 text-[#DF711B] font-bold">
+                            {item.tag}
+                          </span>
+                        )}
+                      </div>
                       <p
                         className={`description-${item.id} w-[95%] text-[1.1vw] leading-[1.3] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
                         style={mutedTextStyle}
@@ -523,11 +542,27 @@ export default function Timeline({
                     </div>
 
                     <div className="flex h-full w-full flex-col justify-end space-y-[0.75vw]">
-                      <h4
-                        className={`title-${item.id} font-display font-extrabold text-[2vw] leading-none max-[600px]:text-[5.5vw] uppercase tracking-tight`}
-                      >
-                        {item.year} {item.month}
-                      </h4>
+                      {item.image && (
+                        <div className="w-[9vw] h-[6vw] max-[600px]:w-[32vw] max-[600px]:h-[22vw] rounded-[0.8vw] max-[600px]:rounded-[2vw] overflow-hidden border border-[#E7E2D8] shadow-md bg-black/10 shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.imageAlt || item.content}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-wrap items-center gap-[0.5vw]">
+                        <h4
+                          className={`title-${item.id} font-display font-extrabold text-[2vw] leading-none max-[600px]:text-[5.5vw] uppercase tracking-tight`}
+                        >
+                          {item.year} {item.month}
+                        </h4>
+                        {item.tag && (
+                          <span className="text-[0.75vw] max-[600px]:text-[2.4vw] font-mono px-[0.5vw] py-[0.1vw] rounded bg-[#DF711B]/15 text-[#DF711B] font-bold">
+                            {item.tag}
+                          </span>
+                        )}
+                      </div>
                       <p
                         className={`description-${item.id} w-[95%] text-[1.1vw] leading-[1.3] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
                         style={mutedTextStyle}
