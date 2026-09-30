@@ -32,5 +32,9 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# OS
+# OS & Build Cache
 Thumbs.db
+*.tsbuildinfo
+.agents/
+school/
+tools/

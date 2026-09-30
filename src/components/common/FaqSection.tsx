@@ -118,11 +118,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
             HEADER BLOCK (Double-bezel badge + Typography)
            ==================================================== */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 bg-[#FAF3E8] border border-[#E7E2D8] px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] shadow-sm">
-            <HelpCircle className="w-4 h-4 text-[#DF711B]" />
-            <span>Institutional Knowledge & Policies</span>
-          </div>
-
           <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1D30] tracking-tight leading-tight">
             {title}
           </h2>
@@ -146,7 +141,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search questions (e.g., class capacity, registration, Gita chanting, laboratories, TC)..."
+                  placeholder="Search questions across admissions, curriculum, facilities, TC..."
                   className="w-full py-2 bg-transparent text-sm sm:text-base text-[#0B1D30] placeholder:text-slate-400 focus:outline-none"
                 />
                 {searchQuery && (
@@ -504,14 +499,14 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           </div>
 
           {/* Student Cutout on the Right with Question Mark on Head */}
-          <div className="shrink-0 flex justify-center lg:justify-end items-end relative self-center lg:self-end">
+          <div className="shrink-0 flex justify-center lg:justify-end items-end relative self-center lg:self-end pb-3 sm:pb-4">
             <div className="relative">
               {/* Subtle ambient light behind student */}
               <div className="absolute -inset-4 bg-gradient-to-t from-[#DF711B]/15 via-[#DF711B]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
               <img
                 src="/images/student_question_cutout.png"
                 alt="Chinmaya Vidyalaya Student with Inquiry"
-                className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out"
+                className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out origin-bottom"
               />
             </div>
           </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { PageHero } from '../../components/common/PageHero';
 import { Breadcrumb } from '../../components/common/Breadcrumb';
 import { FaqSection } from '../../components/common/FaqSection';
 import { Users, Award, ShieldCheck, HeartHandshake, Phone, Download, ArrowRight } from 'lucide-react';
@@ -8,12 +7,6 @@ import { Link } from 'react-router-dom';
 export const FaqPage: React.FC = () => {
   return (
     <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
-      {/* Editorial Page Hero */}
-      <PageHero
-        title="Frequently Asked Questions"
-        subtitle="Comprehensive answers regarding admissions 2026-27, CBSE academic curriculum, the Chinmaya Vision Program, campus infrastructure, and official disclosures."
-        badge="Official Knowledge Base"
-      />
       
       <Breadcrumb items={[{ label: "FAQs & School Policies" }]} />
 

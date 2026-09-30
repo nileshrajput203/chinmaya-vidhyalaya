@@ -3,13 +3,14 @@ import { FolderOpen } from "lucide-react"
 import MarqueeAlongSvgPath from "@/components/ui/marquee-along-svg-path"
 
 // The path starts off-screen left (-150), flows across the viewport in a dynamic loop,
-// and swoops straight into the open mouth of the 3D tilted "View Gallery" folder on the right (~1080, 160).
+// and swoops straight into the open mouth of the 3D tilted "View Gallery" folder on the right (~1090, 172).
+// Crests are calibrated with generous top clearance so cards and hover states never get clipped.
 const path =
-  "M-150 180C-50 260 150 320 350 200C480 120 420 -20 350 30C280 80 310 240 480 270C620 290 800 215 930 170C980 152 1035 156 1090 162"
+  "M-150 210C-50 280 150 340 350 230C480 150 420 68 350 110C280 155 310 270 480 285C620 300 800 225 930 180C980 162 1035 166 1090 172"
 
 export default function MarqueeAlongSvgPathDemo() {
   return (
-    <div className="w-full bg-[#FAF8F5] overflow-hidden border-y border-[#E7E2D8] relative select-none">
+    <div className="w-full bg-[#FAF8F5] overflow-hidden border-y border-[#E7E2D8] relative select-none py-4 sm:py-6">
       
       {/* ----------------------------------------------------
           LAYER 1 (z-[5]): Tilted Folder BACK PANEL
@@ -57,13 +58,13 @@ export default function MarqueeAlongSvgPathDemo() {
       <div className="relative z-10">
         <MarqueeAlongSvgPath
           path={path}
-          viewBox="-150 -50 1350 380"
+          viewBox="-150 0 1350 400"
           baseVelocity={8}
           slowdownOnHover={true}
           draggable={true}
-          repeat={2}
+          repeat={1}
           dragSensitivity={0.1}
-          className="w-full h-[340px] sm:h-[400px] md:h-[450px] lg:h-[500px]"
+          className="w-full h-[360px] sm:h-[420px] md:h-[460px] lg:h-[510px]"
           responsive
           grabCursor
           preserveAspectRatio="none"
@@ -76,6 +77,8 @@ export default function MarqueeAlongSvgPathDemo() {
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover rounded-xl shadow-[0_4px_14px_rgba(0,0,0,0.25)] border border-white/60"
                 draggable={false}
               />
@@ -176,58 +179,34 @@ export default function MarqueeAlongSvgPathDemo() {
   )
 }
 
-// School-relevant stock images from Unsplash (verified, persistent URLs)
+// Diverse school photographs with ZERO repetition across all faculties, labs, and activities
 const imgs = [
-  {
-    src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop",
-    alt: "School classroom with students",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&h=200&fit=crop",
-    alt: "Student studying at desk",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=200&h=200&fit=crop",
-    alt: "Students walking in campus",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=200&h=200&fit=crop",
-    alt: "School books and stationery",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=200&h=200&fit=crop",
-    alt: "Kids in school activity",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=200&h=200&fit=crop",
-    alt: "Children in classroom",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=200&h=200&fit=crop",
-    alt: "Student writing in notebook",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=200&h=200&fit=crop",
-    alt: "Library books on shelf",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=200&h=200&fit=crop",
-    alt: "Science laboratory equipment",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1556103255-4443dbae8e5a?w=200&h=200&fit=crop",
-    alt: "Children playing sports",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=200&h=200&fit=crop",
-    alt: "Art and crafts activity",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=200&h=200&fit=crop",
-    alt: "Graduation celebration",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=200&h=200&fit=crop",
-    alt: "Stack of textbooks",
-  },
-]
+  { src: "/images/banner-1.jpg", alt: "Chinmaya Vidyalaya Main Campus" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg", alt: "Athletic track championship" },
+  { src: "/images/phys.jpeg", alt: "Physics and Science Laboratory" },
+  { src: "/images/chinmaya/academics/classroom_learning_010.jpg", alt: "Co-curricular group collaboration" },
+  { src: "/images/CHEM1.jpeg", alt: "Chemistry laboratory experimentation" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg", alt: "Cultural stage performance" },
+  { src: "/images/biology-lab.jpg", alt: "Biology laboratory research" },
+  { src: "/images/chinmaya/academics/classroom_learning_025.jpg", alt: "Scholastic seminar and discussion" },
+  { src: "/images/it-lab.jpg", alt: "Computer and Robotics lab" },
+  { src: "/images/chinmaya/leadership/faculty_member_01.jpg", alt: "Dedicated teaching faculty" },
+  { src: "/images/lib.jpg", alt: "Central knowledge library" },
+  { src: "/images/chinmaya/cultural/arts_and_creativity_005.jpg", alt: "Arts, crafts and creativity exhibition" },
+  { src: "/images/banner-8.webp", alt: "Annual Sports Day sportsmanship" },
+  { src: "/images/chinmaya/academics/science_stem_lab_01.jpg", alt: "Science talent and innovation fair" },
+  { src: "/images/banner-9.webp", alt: "Annual Day cultural celebration" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg", alt: "Musical ensemble and devotional choir" },
+  { src: "/images/guru-paduka-pooja.webp", alt: "Guru Paduka Pooja sacred assembly" },
+  { src: "/images/chinmaya/academics/classroom_learning_050.jpg", alt: "Mathematics and logic workshop" },
+  { src: "/images/chinmaya/academics/classroom_learning_001.jpg", alt: "Interactive smart classroom session" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_010.jpg", alt: "Outdoor sports training and athletics" },
+  { src: "/images/tour.jpg", alt: "Educational excursion and field study" },
+  { src: "/images/chinmaya/campus/campus_facilities_002.jpg", alt: "Environmental and green campus drive" },
+  { src: "/images/about2.jpeg", alt: "Architectural quadrangle and academic wings" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_070.jpg", alt: "Student council investiture ceremony" },
+  { src: "/images/banner-4.jpeg", alt: "Vedic value education congregation" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_015.jpg", alt: "Inter-school scholastic championship" },
+  { src: "/images/chinmaya/leadership/principal_dimple_mistry.jpg", alt: "Principal leadership and mentorship" },
+  { src: "/images/swami.jpeg", alt: "Revered founder Pujya Gurudev Swami Chinmayananda" },
+];

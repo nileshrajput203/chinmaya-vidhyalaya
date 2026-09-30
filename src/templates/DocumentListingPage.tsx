@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Search, FileText, Download, Eye, ShieldCheck, Filter } from 'lucide-react';
-import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { documentService } from '../services/documentService';
 import { SchoolDocument, DocumentCategory, TermCategory } from '../types/documents';
@@ -9,13 +8,12 @@ import { DocumentViewerModal } from '../components/documents/DocumentViewerModal
 interface DocumentListingPageProps {
   initialCategory?: DocumentCategory;
   pageTitle: string;
-  pageSubtitle: string;
+  pageSubtitle?: string;
 }
 
 export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
   initialCategory,
   pageTitle,
-  pageSubtitle,
 }) => {
   const [documents, setDocuments] = useState<SchoolDocument[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<DocumentCategory | 'all'>(initialCategory || 'all');
@@ -73,11 +71,6 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
 
   return (
     <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
-      <PageHero 
-        title={pageTitle} 
-        subtitle={pageSubtitle} 
-        badge={isMandatoryIsolated ? "CBSE Mandatory Disclosure" : isStudentSection ? "Student Academic Repository" : "Official Repository"} 
-      />
       <Breadcrumb items={[{ label: isMandatoryIsolated ? "About Us" : "Downloads" }, { label: pageTitle }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">

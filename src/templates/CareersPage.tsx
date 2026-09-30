@@ -9,8 +9,8 @@ import {
   BookOpen, 
   FileText
 } from 'lucide-react';
-import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
+import { useToast } from '../context/ToastContext';
 
 interface JobOpening {
   id: string;
@@ -24,6 +24,7 @@ interface JobOpening {
 }
 
 export const CareersPage: React.FC = () => {
+  const { showSuccess } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -91,15 +92,14 @@ export const CareersPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    showSuccess(
+      'Application Submitted Successfully!',
+      'Thank you for applying. The school academic committee will review your credentials and get back to you.'
+    );
   };
 
   return (
     <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans">
-      <PageHero 
-        title="Careers & Faculty Opportunities" 
-        subtitle="Shape young minds in an inspiring, value-centric institution grounded in the noble vision of Pujya Gurudev Swami Chinmayananda." 
-        badge="Join Our Mission" 
-      />
       <Breadcrumb items={[{ label: "Careers" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
@@ -348,7 +348,7 @@ export const CareersPage: React.FC = () => {
                     required
                     value={formData.qualification}
                     onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
-                    placeholder="e.g. M.Sc Chemistry + B.Ed (First Class)"
+                    placeholder="Highest educational qualification & degree"
                     className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
@@ -362,7 +362,7 @@ export const CareersPage: React.FC = () => {
                     required
                     value={formData.experience}
                     onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                    placeholder="e.g. 4 Years in CBSE Senior Secondary School"
+                    placeholder="Total years of teaching experience & institution"
                     className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>

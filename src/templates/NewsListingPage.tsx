@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Calendar, Bell, Download, Search, Sparkles, MapPin, ArrowRight } from 'lucide-react';
-import { PageHero } from '../components/common/PageHero';
+import { Calendar, Bell, Download, Search, Sparkles, MapPin } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { contentService } from '../services/contentService';
 import { NewsArticle, Notice } from '../types/news';
@@ -15,6 +14,13 @@ export const NewsListingPage: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<'all' | 'circulars' | 'events' | 'academic'>(
     searchParams.get('filter') === 'events' ? 'events' : 'all'
   );
+
+  useEffect(() => {
+    const filter = searchParams.get('filter');
+    if (filter === 'events' || filter === 'circulars' || filter === 'academic' || filter === 'all') {
+      setSelectedFilter(filter);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     async function loadData() {
@@ -87,11 +93,6 @@ export const NewsListingPage: React.FC = () => {
 
   return (
     <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans">
-      <PageHero 
-        title="Notice Board & Events Hub" 
-        subtitle="Official school dispatches, administrative circulars, examination schedules, and campus calendar." 
-        badge="Live Notice Board" 
-      />
       <Breadcrumb items={[{ label: "Notice Board & Events" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -334,44 +335,6 @@ export const NewsListingPage: React.FC = () => {
                   <Download className="w-3.5 h-3.5" />
                 </a>
               </div>
-
-              {/* Quick Downloads Card */}
-              <div className="bg-white border border-[#D5CEC2] p-5 space-y-3 shadow-xs">
-                <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#181818] border-b border-[#E7E2D8] pb-2">
-                  Essential Student Documents
-                </h4>
-                <div className="space-y-1.5 text-xs">
-                  {[
-                    { label: 'Evaluation Papers Std 1-5', href: '/downloads/evaluation-papers' },
-                    { label: 'CBSE Sample Papers Std 1-10', href: '/downloads/sample-papers' },
-                    { label: 'Admission Registration Forms', href: '/downloads/admissions' },
-                  ].map((doc, i) => (
-                    <a
-                      key={i}
-                      href={doc.href}
-                      className="flex items-center justify-between p-2 bg-[#FAF8F5] border border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#DF711B] transition-colors"
-                    >
-                      <span className="font-medium text-[11px]">{doc.label}</span>
-                      <ArrowRight className="w-3 h-3 text-[#DF711B]" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Administrative Assistance */}
-              <div className="bg-[#FFF7DF] border border-[#DF711B]/40 p-5 space-y-2 text-xs text-[#181818]">
-                <strong className="block font-mono uppercase tracking-wider text-[#DF711B] text-[10px]">
-                  Administrative Office
-                </strong>
-                <p className="text-xs text-[#555555] leading-relaxed">
-                  For verification of circulars or inquiries regarding student notices, please contact the administrative desk at:
-                </p>
-                <div className="font-mono text-xs text-[#181818] pt-1">
-                  <div>Phone: <strong>02525-272044</strong></div>
-                  <div>Email: <strong>chinmayatarapur@gmail.com</strong></div>
-                </div>
-              </div>
-
             </aside>
 
           </div>

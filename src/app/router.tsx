@@ -10,6 +10,8 @@ import { NewsListingPage } from '../templates/NewsListingPage';
 import { GalleryPage } from '../templates/GalleryPage';
 import { ContactPage } from '../templates/ContactPage';
 import { CareersPage } from '../templates/CareersPage';
+import { AlumniPage } from '../templates/AlumniPage';
+import { BlogPage } from '../templates/BlogPage';
 
 import { ABOUT_SECTIONS } from '../data/about';
 import { ACADEMIC_SECTIONS } from '../data/academics';
@@ -26,16 +28,20 @@ export const router = createBrowserRouter([
       /* ABOUT ROUTES */
       { path: 'about', element: <ContentPage {...ABOUT_SECTIONS['history']} categoryLabel="About Us" /> },
       { path: 'about/history', element: <ContentPage {...ABOUT_SECTIONS['history']} categoryLabel="About Us" /> },
-      { path: 'about/swami-chinmayananda', element: <ContentPage {...ABOUT_SECTIONS['swami-chinmayananda']} categoryLabel="About Us" /> },
       { path: 'about/mission-vision', element: <ContentPage {...ABOUT_SECTIONS['mission-vision']} categoryLabel="About Us" /> },
-      { path: 'about/philosophy', element: <ContentPage {...ABOUT_SECTIONS['philosophy']} categoryLabel="About Us" /> },
-      { path: 'about/enrollment', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="About Us" /> },
+      { path: 'about/management', element: <ContentPage {...ABOUT_SECTIONS['management']} categoryLabel="About Us" /> },
       { 
         path: 'about/mandatory-information', 
-        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Mandatory Public Disclosures & Transfer Certificates" pageSubtitle="Official CBSE affiliation, land, building safety, sanitation certificates, and Transfer Certificates (TC)" /> 
+        element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Important Disclosures & Transfer Certificates" pageSubtitle="Official CBSE affiliation, land, building safety, sanitation certificates, and Transfer Certificates (TC)" /> 
       },
+      { path: 'about/important-disclosures', element: <Navigate to="/about/mandatory-information" replace /> },
+      { path: 'about/swami-chinmayananda', element: <ContentPage {...ABOUT_SECTIONS['swami-chinmayananda']} categoryLabel="About Us" /> },
+      { path: 'about/heritage', element: <ContentPage {...ABOUT_SECTIONS['swami-chinmayananda']} categoryLabel="About Us" /> },
+      { path: 'about/philosophy', element: <ContentPage {...ABOUT_SECTIONS['philosophy']} categoryLabel="About Us" /> },
+      { path: 'about/4-pillars', element: <ContentPage {...ABOUT_SECTIONS['philosophy']} categoryLabel="About Us" /> },
+      { path: 'about/four-pillars', element: <Navigate to="/about/philosophy" replace /> },
+      { path: 'about/enrollment', element: <Navigate to="/admissions/guidelines" replace /> },
       { path: 'about/transfer-certificates', element: <Navigate to="/about/mandatory-information" replace /> },
-      { path: 'about/management', element: <ContentPage {...ABOUT_SECTIONS['management']} categoryLabel="About Us" /> },
 
       /* ACADEMICS ROUTES */
       { path: 'academics', element: <ContentPage {...ACADEMIC_SECTIONS['curriculum']} categoryLabel="Academics" /> },
@@ -48,6 +54,11 @@ export const router = createBrowserRouter([
       /* ADMISSIONS ROUTES */
       { path: 'admissions', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="Admissions" /> },
       { path: 'admissions/guidelines', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="Admissions" /> },
+      { path: 'admission/guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
+      { path: 'admission-guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
+      { path: 'admissions-guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
+      { path: 'guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
+      { path: 'admission', element: <Navigate to="/admissions/guidelines" replace /> },
 
       /* UNIQUE FEATURES ROUTES */
       { path: 'features', element: <ContentPage {...FEATURE_SECTIONS['spiritual-activities']} categoryLabel="Unique Features" /> },
@@ -109,9 +120,16 @@ export const router = createBrowserRouter([
         path: 'downloads/documents', 
         element: <DocumentListingPage pageTitle="Official Documents & Forms" pageSubtitle="Download official certificates, disclosures, and administrative forms" /> 
       },
+      { path: 'essential-student-documents', element: <Navigate to="/downloads/documents" replace /> },
+      { path: 'downloads/essential-student-documents', element: <Navigate to="/downloads/documents" replace /> },
+      { path: 'student-documents', element: <Navigate to="/downloads/documents" replace /> },
 
-      /* CAREERS ROUTE */
+      /* CAREERS, ALUMNI & BLOG ROUTES */
       { path: 'careers', element: <CareersPage /> },
+      { path: 'alumni', element: <AlumniPage /> },
+      { path: 'blog', element: <BlogPage /> },
+      { path: 'blogs', element: <Navigate to="/blog" replace /> },
+      { path: 'blog/:slug', element: <BlogPage /> },
 
       { path: 'contact', element: <ContactPage /> },
 

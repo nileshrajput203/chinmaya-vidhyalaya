@@ -11,6 +11,7 @@ import {
   ArrowRight,
   RefreshCw
 } from 'lucide-react';
+import { useToast } from '../../context/ToastContext';
 
 type FormMode = 'quick' | 'detailed';
 
@@ -19,6 +20,7 @@ interface QuickAdmissionFormSectionProps {
 }
 
 export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps> = ({ className = '' }) => {
+  const { showSuccess } = useToast();
   const [mode, setMode] = useState<FormMode>('quick');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -66,6 +68,10 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
       setReferenceId(ref);
       setIsSubmitting(false);
       setIsSuccess(true);
+      showSuccess(
+        'Callback Request Submitted!',
+        `Your request #${ref} has been received. Our admissions team will call you.`
+      );
     }, 600);
   };
 
@@ -88,6 +94,10 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
       setReferenceId(ref);
       setIsSubmitting(false);
       setIsSuccess(true);
+      showSuccess(
+        'Admission Registration Submitted!',
+        `Application #${ref} for ${detailedData.studentName} has been received successfully.`
+      );
     }, 700);
   };
 
@@ -257,7 +267,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                           required
                           value={quickData.parentName}
                           onChange={(e) => setQuickData({ ...quickData, parentName: e.target.value })}
-                          placeholder="e.g. Ramesh Sharma"
+                          placeholder="Enter parent or guardian full name"
                           className="w-full pl-9 pr-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B] transition-all"
                         />
                       </div>
@@ -356,7 +366,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         required
                         value={detailedData.studentName}
                         onChange={(e) => setDetailedData({ ...detailedData, studentName: e.target.value })}
-                        placeholder="e.g. Aarav Sharma"
+                        placeholder="Enter student's full name"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B]"
                       />
                     </div>

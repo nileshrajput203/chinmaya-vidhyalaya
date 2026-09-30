@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   MessageCircle, X, Send, Phone, 
-  RotateCcw, ExternalLink, Download, Sparkles 
+  RotateCcw, ExternalLink, Download 
 } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
 
@@ -244,22 +244,24 @@ export const ChatbotFAB: React.FC = () => {
             {/* Chat Header */}
             <div className="bg-[#0B1D30] text-white px-4 sm:px-5 py-3.5 flex items-center justify-between border-b border-[#182C44] shrink-0">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-white/10 p-1 flex items-center justify-center border border-white/15 shrink-0">
-                  <img
-                    src="/images/Chinmaya_Logo.webp"
-                    alt="Logo"
-                    className="w-full h-full object-contain"
-                  />
+                <div className="relative">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#DF711B] shadow-sm bg-white shrink-0">
+                    <img
+                      src="/images/bot-avatar.png"
+                      alt="Chinmaya Assistant"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#0B1D30]" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
                     <h3 className="font-heading font-black text-sm tracking-wide leading-tight text-white">
-                      Chinmaya Vidyalaya
+                      Chinmaya Assistant
                     </h3>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   </div>
                   <p className="text-[10px] font-mono text-[#DF711B] tracking-wider uppercase m-0">
-                    Instant AI Assistant • Live
+                    Online • AI Campus Guide
                   </p>
                 </div>
               </div>
@@ -298,8 +300,12 @@ export const ChatbotFAB: React.FC = () => {
                 >
                   <div className="flex items-end gap-2 max-w-[92%]">
                     {msg.sender === 'bot' && (
-                      <div className="w-6 h-6 rounded-full bg-[#0B1D30] text-[#DF711B] flex items-center justify-center shrink-0 mb-1 border border-[#DF711B]/40">
-                        <Sparkles className="w-3 h-3" />
+                      <div className="w-7 h-7 rounded-full overflow-hidden shrink-0 mb-1 border border-[#DF711B]/40 shadow-xs bg-[#0B1D30]">
+                        <img
+                          src="/images/bot-avatar.png"
+                          alt="Bot Assistant"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     )}
                     
@@ -356,8 +362,12 @@ export const ChatbotFAB: React.FC = () => {
               {/* Typing indicator */}
               {isTyping && (
                 <div className="flex items-center gap-2 text-xs text-[#666666]">
-                  <div className="w-6 h-6 rounded-full bg-[#0B1D30] text-[#DF711B] flex items-center justify-center shrink-0">
-                    <Sparkles className="w-3 h-3 animate-spin" />
+                  <div className="w-7 h-7 rounded-full overflow-hidden shrink-0 border border-[#DF711B]/40 shadow-xs bg-[#0B1D30]">
+                    <img
+                      src="/images/bot-avatar.png"
+                      alt="Bot Assistant"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="bg-white px-3 py-2 rounded-2xl rounded-bl-xs border border-[#E7E2D8] flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#DF711B] animate-bounce" style={{ animationDelay: '0ms' }} />

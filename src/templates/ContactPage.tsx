@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { CONTACT_DETAILS } from '../data/contact';
 import { SCHOOL_IMAGES } from '../data/images';
 import { formService } from '../services/formService';
 import { ContactEnquiry } from '../types/forms';
 import { GoogleMapSection } from '../components/maps/GoogleMapSection';
+import { useToast } from '../context/ToastContext';
 
 export const ContactPage: React.FC = () => {
+  const { showSuccess } = useToast();
   const [formData, setFormData] = useState<ContactEnquiry>({
     fullName: '',
     email: '',
@@ -57,6 +58,10 @@ export const ContactPage: React.FC = () => {
     setIsSubmitting(false);
 
     if (result.success) {
+      showSuccess(
+        'Message Sent Successfully!',
+        'Your message has been delivered to the school administration. We will get back to you shortly.'
+      );
       setSubmitStatus({
         success: true,
         message: result.message || 'Your message has been sent successfully to the school administration. We will get back to you shortly.',
@@ -78,7 +83,6 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
-      <PageHero title="Contact Administration" subtitle="Get in touch with Chinmaya Vidyalaya Tarapur for official inquiries, admissions support, and campus visits" badge="Reach Us" />
       <Breadcrumb items={[{ label: "Contact Us" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">

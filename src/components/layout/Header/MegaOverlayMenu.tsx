@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -8,9 +8,45 @@ import {
   Youtube, 
   Linkedin, 
   GraduationCap, 
-  FileText
+  FileText,
+  ArrowUpRight,
+  ImageIcon,
+  ChevronRight
 } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
+
+const GALLERY_MOMENTS = [
+  {
+    title: "Annual Day Cultural Spectacle",
+    tag: "Celebrations",
+    date: "Dec 2024",
+    image: "/images/banner-9.webp"
+  },
+  {
+    title: "Inter-House Athletic Championship",
+    tag: "Sports Meet",
+    date: "Jan 2025",
+    image: "/images/banner-8.webp"
+  },
+  {
+    title: "Guru Paduka Pooja & Devotional Assembly",
+    tag: "Spiritual CVP",
+    date: "May 2024",
+    image: "/images/guru-paduka-pooja.webp"
+  },
+  {
+    title: "Experiential Chemistry Workstations",
+    tag: "Science Fest",
+    date: "Nov 2024",
+    image: "/images/CHEM1.jpeg"
+  },
+  {
+    title: "Physics Mechanics & Optical Labs",
+    tag: "STEM Innovation",
+    date: "Oct 2024",
+    image: "/images/phys.jpeg"
+  }
+];
 
 interface MegaOverlayMenuProps {
   isOpen: boolean;
@@ -24,6 +60,16 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
   onOpenAdmissionDrawer,
 }) => {
   const location = useLocation();
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [isGalleryPaused, setIsGalleryPaused] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen || isGalleryPaused) return;
+    const timer = window.setInterval(() => {
+      setActiveGalleryIndex((prev) => (prev + 1) % GALLERY_MOMENTS.length);
+    }, 3800);
+    return () => window.clearInterval(timer);
+  }, [isOpen, isGalleryPaused]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -138,25 +184,26 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
           {/* NAVIGATION COLUMNS (8 cols on lg) */}
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             
-            {/* COLUMN 1: ACADEMICS & NOTICE BOARD */}
+            {/* COLUMN 1: ABOUT US & ADMISSIONS */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
-                  <span>ACADEMIC WINGS</span>
+                <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
+                  <span>ABOUT THE SCHOOL</span>
                 </h3>
-                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
+                <ul className="mt-4 space-y-2 text-xs sm:text-sm">
                   {[
-                    { label: "Early Childhood (Pre-Primary)", href: "/academics/curriculum" },
-                    { label: "Primary Wing (Std I-V)", href: "/academics/curriculum" },
-                    { label: "Secondary Wing (Std VI-X)", href: "/academics/curriculum" },
-                    { label: "Curriculum & Labs", href: "/academics/curriculum" },
-                    { label: "Faculty Directory", href: "/academics/faculty" },
+                    { label: "School History", href: "/about/history" },
+                    { label: "School Vision & Mission", href: "/about/mission-vision" },
+                    { label: "Board of Management", href: "/about/management" },
+                    { label: "Important Disclosures", href: "/about/mandatory-information" },
+                    { label: "About the Heritage", href: "/about/heritage" },
+                    { label: "4 Pillars of CVP", href: "/about/philosophy" },
                   ].map((link) => (
                     <li key={link.label}>
                       <Link
                         to={link.href}
                         onClick={onClose}
-                        className={`hover:text-amber-400 transition-colors block py-0.5 ${
+                        className={`hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 ${
                           location.pathname === link.href ? 'text-amber-400 font-bold' : 'text-slate-300 font-medium'
                         }`}
                       >
@@ -168,15 +215,15 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
               </div>
 
               <div>
-                <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
-                  <span>NOTICE & EVENTS</span>
+                <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
+                  <span>ADMISSIONS & ENROLLMENT</span>
                 </h3>
-                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
+                <ul className="mt-4 space-y-2 text-xs sm:text-sm">
                   {[
-                    { label: "Notice Board & Events", href: "/news" },
-                    { label: "School Calendar 2026-27", href: "/images/academic-calendar.pdf", external: true },
-                    { label: "Mandatory Disclosures", href: "/about/mandatory-information" },
-                    { label: "Transfer Certificates (TC)", href: "/about/transfer-certificates" },
+                    { label: "Admission Guidelines", href: "/admissions/guidelines" },
+                    { label: "Registration Forms", href: "/downloads/admissions" },
+                    { label: "Annual Fee Structure", href: "/images/fees-structure.pdf", external: true },
+                    { label: "School Calendar 2026–27", href: "/images/academic-calendar.pdf", external: true },
                   ].map((link) => (
                     <li key={link.label}>
                       {link.external ? (
@@ -184,7 +231,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                           href={link.href}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
+                          className="text-slate-300 hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 font-medium"
                         >
                           {link.label}
                         </a>
@@ -192,7 +239,9 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                         <Link
                           to={link.href}
                           onClick={onClose}
-                          className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
+                          className={`hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 ${
+                            location.pathname === link.href ? 'text-amber-400 font-bold' : 'text-slate-300 font-medium'
+                          }`}
                         >
                           {link.label}
                         </Link>
@@ -203,25 +252,151 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
               </div>
             </div>
 
-            {/* COLUMN 2: CVP & CAMPUS LIFE */}
+            {/* COLUMN 2: ACADEMICS & CAMPUS GALLERY PREVIEW */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800">
-                  CVP & STUDENT LIFE
+                <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
+                  <span>ACADEMICS & CURRICULUM</span>
                 </h3>
-                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
+                <ul className="mt-4 space-y-2 text-xs sm:text-sm">
                   {[
-                    { label: "4 Pillars of CVP", href: "/about/philosophy" },
+                    { label: "CBSE Curriculum & Syllabi", href: "/academics/curriculum" },
+                    { label: "Teaching Methodology", href: "/academics/teaching-strategy" },
+                    { label: "Infrastructure & Science Labs", href: "/academics/infrastructure" },
+                    { label: "Faculty Directory", href: "/academics/faculty" },
+                    { label: "CBSE Sample Papers", href: "/downloads/sample-papers" },
+                  ].map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        to={link.href}
+                        onClick={onClose}
+                        className={`hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 ${
+                          location.pathname === link.href ? 'text-amber-400 font-bold' : 'text-slate-300 font-medium'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* 21ST.DEV STYLE INTERACTIVE CAMPUS GALLERY PREVIEW CARD */}
+              <div 
+                className="pt-1"
+                onMouseEnter={() => setIsGalleryPaused(true)}
+                onMouseLeave={() => setIsGalleryPaused(false)}
+              >
+                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                  <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                    <span>CAMPUS GALLERY</span>
+                  </h3>
+                  <Link
+                    to="/gallery"
+                    onClick={onClose}
+                    className="text-[11px] font-mono text-slate-400 hover:text-amber-400 flex items-center gap-1 transition-colors group/view"
+                  >
+                    <span>View All</span>
+                    <ArrowUpRight className="w-3 h-3 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5 transition-transform" />
+                  </Link>
+                </div>
+
+                {/* 21st.dev Interactive Image Card */}
+                <div className="mt-3 relative group/card rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900/90 shadow-xl transition-all duration-300 hover:border-amber-500/50 hover:shadow-amber-500/10 hover:shadow-2xl">
+                  {/* Image Display */}
+                  <Link 
+                    to="/gallery" 
+                    onClick={onClose}
+                    className="relative block aspect-[16/10] overflow-hidden"
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={activeGalleryIndex}
+                        src={GALLERY_MOMENTS[activeGalleryIndex].image}
+                        alt={GALLERY_MOMENTS[activeGalleryIndex].title}
+                        initial={{ opacity: 0, scale: 1.06 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.96 }}
+                        transition={{ duration: 0.4, ease: 'easeOut' }}
+                        className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
+                      />
+                    </AnimatePresence>
+
+                    {/* Gradient Overlay Scrim */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#14161A] via-[#14161A]/40 to-transparent" />
+
+                    {/* Bottom Caption & Pagination Controls */}
+                    <div className="absolute bottom-2.5 inset-x-2.5 flex items-end justify-between gap-2">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-white text-xs font-bold leading-tight drop-shadow truncate">
+                          {GALLERY_MOMENTS[activeGalleryIndex].title}
+                        </p>
+                        <p className="text-[10px] text-slate-300 font-mono mt-0.5 drop-shadow truncate">
+                          {GALLERY_MOMENTS[activeGalleryIndex].date}
+                        </p>
+                      </div>
+
+                      {/* Pill pagination dots */}
+                      <div className="flex items-center gap-1 shrink-0 pb-0.5">
+                        {GALLERY_MOMENTS.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              setActiveGalleryIndex(idx);
+                            }}
+                            className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                              activeGalleryIndex === idx
+                                ? 'w-4 bg-amber-400'
+                                : 'w-1.5 bg-white/40 hover:bg-white/80'
+                            }`}
+                            aria-label={`View slide ${idx + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+
+                  {/* Bottom Action Footer */}
+                  <Link
+                    to="/gallery"
+                    onClick={onClose}
+                    className="flex items-center justify-between px-3.5 py-2 bg-slate-900/90 hover:bg-amber-500/10 border-t border-slate-800 text-[11px] text-slate-300 hover:text-amber-400 transition-colors font-medium"
+                  >
+                    <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider">
+                      <ImageIcon className="w-3.5 h-3.5 text-amber-400" />
+                      Explore 50+ Visual Archives
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover/card:translate-x-1 group-hover/card:text-amber-400 transition-all" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMN 3: STUDENT LIFE & CONNECT */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
+                  <span>STUDENT ACTIVITIES & LIFE</span>
+                </h3>
+                <ul className="mt-4 space-y-2 text-xs sm:text-sm">
+                  {[
+                    { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
+                    { label: "Holistic Development", href: "/features/holistic-development" },
                     { label: "Spiritual Assemblies & Pooja", href: "/features/spiritual-activities" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
-                    { label: "Educational Field Tours", href: "/features/education-tours" },
-                    { label: "Central Library", href: "/features/library" },
+                    { label: "Educational Study Tours", href: "/features/education-tours" },
+                    { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
                     <li key={link.label}>
                       <Link
                         to={link.href}
                         onClick={onClose}
-                        className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
+                        className={`hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 ${
+                          location.pathname === link.href ? 'text-amber-400 font-bold' : 'text-slate-300 font-medium'
+                        }`}
                       >
                         {link.label}
                       </Link>
@@ -231,97 +406,27 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
               </div>
 
               <div>
-                <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800">
-                  ABOUT CHINMAYA VIDYALAYA
+                <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase pb-2 border-b border-slate-800 flex items-center justify-between">
+                  <span>CONNECT & COMMUNITY</span>
                 </h3>
-                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
+                <ul className="mt-4 space-y-2 text-xs sm:text-sm">
                   {[
-                    { label: "Pujya Gurudev's Life & Heritage", href: "/about/swami-chinmayananda" },
-                    { label: "Institutional History", href: "/about/history" },
-                    { label: "Mission & Vision", href: "/about/mission-vision" },
-                    { label: "Board of Management", href: "/about/management" },
-                  ].map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        to={link.href}
-                        onClick={onClose}
-                        className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* COLUMN 3: ADMISSIONS, GALLERY & CAREERS */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800">
-                  ADMISSIONS & FORMS
-                </h3>
-                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
-                  {[
-                    { label: "Admissions Guidelines", href: "/about/enrollment" },
-                    { label: "Fee Structure", href: "/images/fees-structure.pdf", external: true },
-                    { label: "Nursery Reg. Form", href: "/images/nursery.pdf", external: true },
-                    { label: "Primary Admission Form", href: "/images/1to9.pdf", external: true },
-                    { label: "Evaluation Papers (1-5)", href: "/downloads/evaluation-papers" },
-                  ].map((link) => (
-                    <li key={link.label}>
-                      {link.external ? (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
-                        >
-                          {link.label}
-                        </a>
-                      ) : (
-                        <Link
-                          to={link.href}
-                          onClick={onClose}
-                          className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
-                        >
-                          {link.label}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-heading font-black text-amber-400 text-sm tracking-widest uppercase pb-2 border-b border-slate-800">
-                  GALLERY & CAREERS
-                </h3>
-                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
-                  {[
-                    { label: "Visual Archives & Gallery", href: "/gallery" },
+                    { label: "Notice Board & Events", href: "/news" },
+                    { label: "School Blog & Insights", href: "/blog" },
+                    { label: "Alumni Network", href: "/alumni" },
                     { label: "Careers & Faculty Openings", href: "/careers" },
-                    { label: "Teacher Application (.docx)", href: "/images/application-form-for-the-post-of-teacher.docx", external: true },
                     { label: "Contact Campus Office", href: "/contact" },
                   ].map((link) => (
                     <li key={link.label}>
-                      {link.external ? (
-                        <a
-                          href={link.href}
-                          download
-                          className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
-                        >
-                          {link.label}
-                        </a>
-                      ) : (
-                        <Link
-                          to={link.href}
-                          onClick={onClose}
-                          className="text-slate-300 hover:text-amber-400 transition-colors block py-0.5 font-medium"
-                        >
-                          {link.label}
-                        </Link>
-                      )}
+                      <Link
+                        to={link.href}
+                        onClick={onClose}
+                        className={`hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 ${
+                          location.pathname === link.href ? 'text-amber-400 font-bold' : 'text-slate-300 font-medium'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>

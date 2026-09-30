@@ -10,8 +10,6 @@ interface MainNavigationProps {
 }
 
 const getNavDisplayLabel = (label: string) => {
-  if (label === 'Student Life & CVP') return 'Student Life';
-  if (label === 'Notice Board') return 'Notices';
   return label;
 };
 
@@ -43,7 +41,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
               >
                 {hasChildren ? (
                   <button
-                    className={`relative inline-flex items-center gap-1 xl:gap-1.5 h-11 xl:h-12 px-2 lg:px-2.5 xl:px-3 text-[11px] xl:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 cursor-pointer ${
+                    className={`relative inline-flex items-center gap-1 xl:gap-1.5 h-11 xl:h-12 px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 text-[10.5px] lg:text-[11px] xl:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 cursor-pointer ${
                       isActive 
                         ? 'text-[#FFB740] border-[#DF711B] bg-white/5 font-extrabold' 
                         : 'text-slate-200 hover:text-[#FFB740] hover:bg-white/5 border-transparent'
@@ -58,7 +56,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                 ) : (
                   <Link
                     to={item.href}
-                    className={`relative inline-flex items-center h-11 xl:h-12 px-2 lg:px-2.5 xl:px-3 text-[11px] xl:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 ${
+                    className={`relative inline-flex items-center h-11 xl:h-12 px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 text-[10.5px] lg:text-[11px] xl:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-b-2 ${
                       isActive 
                         ? 'text-[#FFB740] border-[#DF711B] bg-white/5 font-extrabold' 
                         : 'text-slate-200 hover:text-[#FFB740] hover:bg-white/5 border-transparent'

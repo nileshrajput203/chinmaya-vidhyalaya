@@ -3,6 +3,7 @@ export interface AcademicSectionData {
   title: string;
   subtitle: string;
   content: string[];
+  bulletPoints?: string[];
   features?: string[];
 }
 
@@ -12,10 +13,16 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     title: "CBSE Curriculum & Subjects",
     subtitle: "Co-educational coverage from Nursery to Std XII (Arts, Commerce, Science)",
     content: [
-      "Chinmaya Vidyalaya is a premier co-educational institution providing academic coverage from Nursery to Std XII. The medium of instruction in all classes is English. The Vidyalaya is affiliated to CBSE. Classrooms have the capacity to accommodate more than 40 students per section.",
-      "Primary Section (Std I to V) focuses on foundational literacy, numeracy, and environmental awareness alongside creative pursuits in arts, craft, and physical education.",
+      "Chinmaya Vidyalaya is a premier co-educational institution providing academic coverage from Nursery to Std XII. The medium of instruction in all classes is English. The Vidyalaya is affiliated to the Central Board of Secondary Education (CBSE), New Delhi.",
+      "Primary Section (Std I to V) focuses on foundational literacy, numeracy, and environmental awareness alongside creative pursuits in arts, craft, and physical education. Classrooms have the physical capacity to comfortably accommodate more than 40 students per section.",
       "Secondary Section (Std VI to X) offers a comprehensive blend of core languages, advanced sciences (Physics, Chemistry, Biology), Social Sciences (History, Civics, Geography, Economics, Disaster Management), Mathematics, and General Knowledge.",
-      "Senior Secondary Section (Std XI & XII) offers three streams: Arts, Commerce, and Science, providing students with comprehensive academic preparation for higher education and competitive examinations."
+      "Senior Secondary Section (Std XI & XII) offers three distinguished streams: Arts, Commerce, and Science, providing students with rigorous academic preparation for higher education, competitive entrance examinations, and ethical leadership."
+    ],
+    bulletPoints: [
+      "CBSE Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004",
+      "100% first-class record in CBSE AISSE Class X Board examinations",
+      "English medium instruction with trilingual proficiency (English, Hindi, Sanskrit/Marathi)",
+      "Continuous Formative and Summative Assessments as per CBSE pedagogical frameworks"
     ],
     features: [
       "Primary (Std I to V) Scholastic: English, Hindi, Mathematics, Environmental Studies (EVS), General Knowledge",
@@ -32,37 +39,62 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     title: "Co-Curricular Activities",
     subtitle: "Nurturing creative expression, athletic talents, and leadership skills",
     content: [
-      "Education at Chinmaya Vidyalaya extends beyond textbooks. We offer a rich array of co-curricular opportunities to ensure balanced physical, emotional, and creative development.",
-      "Students actively participate in debates, elocutions, science exhibitions, house competitions, and the prestigious annual Gita Chanting Competition."
+      "Education at Chinmaya Vidyalaya extends far beyond textbooks and chalkboards. We offer a rich array of co-curricular opportunities to ensure balanced physical, emotional, intellectual, and creative development for every child.",
+      "Students actively participate in intra-school and inter-school debates, elocutions, science and STEM exhibitions, house tournaments, and the prestigious annual Chinmaya Mission Gita Chanting Competition.",
+      "Our four-house system fosters leadership, camaraderie, healthy competition, and teamwork through regular sports meets, cultural fests, quiz bowls, and annual drama productions.",
+      "Through structured non-scholastic periods integrated into the weekly timetable, every student is encouraged to discover innate artistic talents, hone athletic skills, and cultivate public speaking confidence."
+    ],
+    bulletPoints: [
+      "Four dynamic student houses encouraging teamwork, democratic elections, and school spirit",
+      "Annual Athletic Meet and inter-house football, cricket, volleyball, and chess tournaments",
+      "Cultural celebration days including Gurudev Jayanti, Sanskrit Diwas, and Matru-Pitru Pujan",
+      "Active clubs: Eco-Club (Jal Pakhwada), Science & Robotics Forum, Literary & Debating Society"
     ],
     features: [
-      "Performing Arts: Classical & Light Music, Devotional Bhajans, Classical Dance, Drama",
-      "Visual Arts: Painting, Craft, Drawing Competitions, Rangoli, Sculpture workshops",
-      "Sports & Athletics: Cricket, Football, Volleyball, Table Tennis, Chess, Yoga, March Past",
-      "Student Clubs: Eco Club, Science Club, Literary Society, Mathematics Club"
+      "Performing Arts: Classical & Light Music, Devotional Bhajans, Classical Dance, Drama & Theatrics",
+      "Visual Arts: Painting, Craft, Drawing Competitions, Rangoli, Sculpture and Origami workshops",
+      "Sports & Athletics: Cricket, Football, Volleyball, Table Tennis, Chess, Daily Yoga, March Past",
+      "Student Leadership: Elected Student Council, Head Boy/Girl leadership corps, and House Captains"
     ]
   },
   faculty: {
     slug: "faculty",
     title: "Teaching Faculty",
-    subtitle: "Experienced educators committed to student development",
+    subtitle: "Experienced educators committed to student mentorship and academic excellence",
     content: [
-      "Our faculty comprises highly qualified and experienced teachers who act as mentors, facilitators, and compassionate guides.",
-      "Faculty members regularly participate in CBSE training workshops, pedagogical seminars, and technology integration programmes to stay at the forefront of modern educational techniques."
+      "Our faculty comprises highly qualified, compassionate, and experienced teachers who act as mentors, facilitators, and role models for our learners.",
+      "Faculty members regularly participate in CBSE training workshops, pedagogical seminars, and technology integration programmes to stay at the forefront of modern educational techniques.",
+      "Guided by the spiritual ethos of Central Chinmaya Mission Trust, our teachers blend modern digital instructional tools with the sacred tradition of the Guru-Shishya parampara.",
+      "Continuous professional development ensures our educators deliver personalized doubt-clearing, differentiated instruction, and caring pastoral mentorship for every student."
+    ],
+    bulletPoints: [
+      "100% adherence to CBSE teacher eligibility criteria, qualifications, and pedagogical standards",
+      "Regular in-service capacity building workshops conducted by Chinmaya Education Cell (CCMT)",
+      "Individualized student doubt-clearing sessions and parent-teacher consultative dialogues",
+      "Dedicated department heads across Sciences, Mathematics, Humanities, and Languages"
     ],
     features: [
       "Qualified educators adhering to CBSE teacher recruitment criteria",
       "Regular in-service capacity building and pedagogical training workshops",
-      "Continuous mentoring and personalised doubt-clearing sessions for students"
+      "Continuous mentoring and personalised doubt-clearing sessions for students",
+      "Integration of smart board digital content with hands-on experiential learning"
     ]
   },
   "teaching-strategy": {
     slug: "teaching-strategy",
     title: "Teaching Strategy & Pedagogy",
-    subtitle: "Child-centred and activity-oriented modern pedagogical practices",
+    subtitle: "Child-centred, activity-oriented, and modern experiential pedagogical practices",
     content: [
-      "At Chinmaya Vidyalaya, teaching strategies are designed to transform learning from rote memorisation into active, joyful discovery.",
-      "Our teachers employ diverse interactive methods to ensure every child grasps core concepts with clarity and confidence."
+      "At Chinmaya Vidyalaya, teaching strategies are meticulously designed to transform learning from passive memorisation into active, joyful discovery and conceptual clarity.",
+      "Our teachers employ diverse interactive methods to ensure every child grasps core concepts with confidence, fostering curiosity, inquiry, and critical thinking.",
+      "From play-way methodologies in the foundational kindergarten stages to rigorous experiential laboratory experiments in senior grades, our pedagogy adapts to each developmental milestone.",
+      "We integrate modern audio-visual aids, smart classroom software, hands-on science kits, and diagnostic skill assessments (ASSET) to continuously calibrate teaching to student learning needs."
+    ],
+    bulletPoints: [
+      "Play-way and joyful learning methodologies for foundational and pre-primary students",
+      "Experiential STEM learning through laboratory demonstrations and hands-on projects",
+      "Integration of ASSET diagnostic assessments for identifying strengths and remedial learning gaps",
+      "Continuous formative evaluations that emphasize deep conceptual understanding over rote recall"
     ],
     features: [
       "Play-way method for early childhood and foundational stages",
@@ -77,21 +109,30 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
   },
   infrastructure: {
     slug: "infrastructure",
-    title: "School Infrastructure",
-    subtitle: "Spacious classrooms, well-equipped science laboratories, and library facilities",
+    title: "School Infrastructure & Facilities",
+    subtitle: "Spacious classrooms, well-equipped science laboratories, IT hubs, and sports grounds",
     content: [
-      "Located in Vidyanagar, Saravali, Boisar, the campus provides a safe, green, and spacious environment equipped with excellent academic and sports facilities.",
-      "The Vidyalaya features a well-stocked Library, dedicated Chemistry Lab, Physics Lab, Biology Lab, IT Lab, and outdoor sports fields."
+      "Located in Vidyanagar, Saravali, Boisar, the Chinmaya Vidyalaya campus provides a safe, serene, green, and spacious environment equipped with top-tier academic and sports facilities.",
+      "The Vidyalaya features a well-stocked Central Library, dedicated Chemistry Lab, Physics Lab, Biology Lab, IT Computer Innovation Lab, and expansive outdoor sports grounds.",
+      "Classrooms are architecturally planned with generous floor areas capable of seating more than 40 students with optimal natural cross-ventilation, abundant sunlight, and ergonomic furniture.",
+      "Robust campus safety infrastructure includes 24/7 CCTV surveillance across all corridors and gates, certified municipal fire safety installations, safe RO drinking water plants, and modern sanitation amenities."
+    ],
+    bulletPoints: [
+      "Well-ventilated classrooms with generous capacity (>40 students) and smart audio-visual equipment",
+      "State-of-the-art Physics, Chemistry, Biology, and IT computer laboratories",
+      "Central Library housing thousands of academic titles, encyclopedias, and reference journals",
+      "Full municipal building safety certification, fire safety clearances, and RO drinking water"
     ],
     features: [
       "Central Library with thousands of reference books, periodicals, and quiet reading areas",
-      "Fully equipped Physics Laboratory for practical experimentation",
-      "Fully equipped Chemistry Laboratory for practical experimentation",
-      "Biology Laboratory with specimens and microscopes",
-      "Modern IT (Computer) Laboratory",
+      "Fully equipped Physics Laboratory with optical benches, electrical apparatus, and measuring instruments",
+      "Fully equipped Chemistry Laboratory with fume hoods, analytical reagents, and safety showers",
+      "Biology Laboratory with specimen archives, compound microscopes, and anatomical models",
+      "Modern IT (Computer) Laboratory with high-speed internet and educational software",
       "Classrooms with capacity for more than 40 students, with optimal natural lighting and ventilation",
-      "Spacious Sports Ground for football, cricket, volleyball, and athletics",
-      "CCTV surveillance, fire safety systems, and safe drinking water plants"
+      "Spacious Sports Ground for football, cricket, volleyball, athletic tracks, and march past",
+      "CCTV surveillance, fire safety systems, safe drinking water plants, and first-aid infirmary"
     ]
   }
 };
+

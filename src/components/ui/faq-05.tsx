@@ -12,7 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { OFFICIAL_FAQS } from "@/data/faq";
-import { ArrowRight, HelpCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export interface FaqItemLike {
   id: string;
@@ -34,7 +34,6 @@ interface Faq05Props {
 const Faq05: React.FC<Faq05Props> = ({
   items = OFFICIAL_FAQS as readonly FaqItemLike[],
   title = "QUESTIONS, ANSWERED.",
-  badge = "GUIDANCE & POLICIES",
   description = "Essential information regarding admissions 2026-27, CBSE curriculum, Chinmaya Vision Programme, and campus governance.",
   defaultValue = "faq-1",
 }) => {
@@ -48,11 +47,6 @@ const Faq05: React.FC<Faq05Props> = ({
           className="flex flex-col justify-between gap-6 border-b border-[#E7E2D8] p-6 sm:p-8 md:border-b-0 md:border-r md:p-10 md:col-span-5 bg-[#FAF8F5]/60"
         >
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#FAF3E8] border border-[#E7E2D8] text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
-              <HelpCircle className="w-3.5 h-3.5 text-[#DF711B]" />
-              <span>{badge}</span>
-            </div>
-
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-[#181818] uppercase tracking-tight leading-[1.05] m-0">
               {title}
             </h2>

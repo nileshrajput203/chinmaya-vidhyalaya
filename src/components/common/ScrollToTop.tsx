@@ -16,11 +16,29 @@ export const ScrollToTop = () => {
   useEffect(() => {
     // If navigating to a hash anchor, scroll to anchor, else scroll to top
     if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        return;
+      const scrollToHashElement = () => {
+        try {
+          const element = document.querySelector(hash);
+          if (element) {
+            const lenis = (window as any).__lenis;
+            if (lenis) {
+              lenis.scrollTo(element, { offset: -90, immediate: false });
+            } else {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+            return true;
+          }
+        } catch {
+          // ignore selector errors
+        }
+        return false;
+      };
+
+      if (!scrollToHashElement()) {
+        const timeoutId = setTimeout(scrollToHashElement, 150);
+        return () => clearTimeout(timeoutId);
       }
+      return;
     }
 
     // Always reset to top (0, 0) on new route/section click

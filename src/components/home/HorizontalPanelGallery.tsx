@@ -49,6 +49,10 @@ export const HorizontalPanelGallery: React.FC = () => {
     return () => mm.revert();
   }, []);
 
+  const slideNext = () => {
+    window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+  };
+
   const valuesData = [
     {
       num: '01',
@@ -80,14 +84,26 @@ export const HorizontalPanelGallery: React.FC = () => {
     },
   ];
 
-  const sevenPhotos = [
+  const col1Photos = [
     { src: SCHOOL_IMAGES.CAMPUS_BUILDING, title: 'Main Campus Building', category: 'Campus' },
     { src: SCHOOL_IMAGES.SCIENCE_LAB, title: 'STEM & Science Lab', category: 'Academics' },
-    { src: '/images/img1.jpg', title: 'Student Activities', category: 'Student Life' },
+    { src: '/images/chinmaya/sports/sports_athletic_meet_001.jpg', title: 'Track Championship', category: 'Sports' },
     { src: '/images/tour.jpg', title: 'Educational Excursion', category: 'Tours' },
     { src: SCHOOL_IMAGES.PHYSICS_LAB, title: 'Physics Laboratory', category: 'Academics' },
     { src: SCHOOL_IMAGES.LIBRARY_STUDY, title: 'Central Library', category: 'Learning' },
     { src: SCHOOL_IMAGES.SPORTS_DAY, title: 'Annual Sports Meet', category: 'Athletics' },
+    { src: '/images/chinmaya/academics/science_stem_lab_01.jpg', title: 'Science Exhibition', category: 'Academics' },
+  ];
+
+  const col2Photos = [
+    { src: SCHOOL_IMAGES.IT_LAB, title: 'Computer & Coding Lab', category: 'Technology' },
+    { src: SCHOOL_IMAGES.BIOLOGY_LAB, title: 'Biology & Life Sciences', category: 'Academics' },
+    { src: '/images/banner-9.webp', title: 'Cultural Fest Stage', category: 'Arts' },
+    { src: '/images/guru-paduka-pooja.webp', title: 'Guru Paduka Pooja', category: 'Values' },
+    { src: SCHOOL_IMAGES.CLASSROOM_LEARNING, title: 'Smart Interactive Classes', category: 'Academics' },
+    { src: '/images/chinmaya/cultural/cultural_celebration_015.jpg', title: 'Performing Arts', category: 'Culture' },
+    { src: '/images/chinmaya/cultural/cultural_celebration_040.jpg', title: 'Youth Choir', category: 'Music' },
+    { src: '/images/chinmaya/leadership/faculty_member_01.jpg', title: 'Faculty & Mentors', category: 'Leadership' },
   ];
 
   return (
@@ -99,6 +115,24 @@ export const HorizontalPanelGallery: React.FC = () => {
       }}
     >
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+        .font-pencil {
+          font-family: 'Caveat', cursive, sans-serif;
+        }
+        @keyframes pencilBounce {
+          0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+          50% { transform: translateY(-3px) rotate(0.8deg); }
+        }
+        .animate-pencil-hint {
+          animation: pencilBounce 3s ease-in-out infinite;
+        }
+        @keyframes wiggleArrow {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(5px); }
+        }
+        .animate-wiggle-arrow {
+          animation: wiggleArrow 1.5s ease-in-out infinite;
+        }
         @keyframes marqueeUp {
           0% { transform: translateY(0%); }
           100% { transform: translateY(-50%); }
@@ -125,15 +159,47 @@ export const HorizontalPanelGallery: React.FC = () => {
           {/* ============================================================
               PANEL A — "START STATE" (WE VALUE GRID)
               ============================================================ */}
-          <section className="panel panel--values w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col justify-center px-[6%] lg:px-[8%] py-16 lg:py-10 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border">
-            {/* Top-left Big Headline */}
-            <div className="mb-6 lg:mb-8 shrink-0">
-              <span className="block text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold mb-2">
-                CORE FOUNDATION • CVP ETHOS
-              </span>
-              <h2 className="font-display text-[44px] sm:text-[54px] lg:text-[60px] xl:text-[64px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
-                WE VALUE
-              </h2>
+          <section className="panel panel--values w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col justify-center px-[6%] lg:px-[8%] py-16 lg:py-10 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border relative">
+            {/* Top-left Big Headline & Hand-Drawn Pencil Scroll Cue */}
+            <div className="mb-6 lg:mb-8 shrink-0 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <span className="block text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold mb-2">
+                  CORE FOUNDATION • CVP ETHOS
+                </span>
+                <h2 className="font-display text-[44px] sm:text-[54px] lg:text-[60px] xl:text-[64px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
+                  WE VALUE
+                </h2>
+              </div>
+
+              {/* Hand-Drawn Pencil "Scroll to View" Callout */}
+              <div
+                onClick={slideNext}
+                className="hidden lg:flex items-center gap-3.5 bg-[#FAF8F5] hover:bg-[#FAF3E8] border-2 border-dashed border-[#DF711B]/40 hover:border-[#DF711B] px-5 py-2.5 rounded-2xl shadow-xs transition-all duration-300 animate-pencil-hint select-none cursor-pointer group"
+                title="Scroll down with mouse/trackpad to slide through panels (or click here)"
+              >
+                {/* Hand-drawn pencil sketch icon */}
+                <div className="w-8 h-8 rounded-full bg-[#FAF3E8] border border-[#DF711B]/50 flex items-center justify-center text-[#DF711B] shrink-0 group-hover:rotate-12 transition-transform shadow-2xs">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                  </svg>
+                </div>
+
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-1.5 font-pencil text-2xl xl:text-3xl text-[#0B1D30] group-hover:text-[#DF711B] font-bold leading-none tracking-wide transition-colors">
+                    <span>scroll to view</span>
+                    <span className="text-[#DF711B] animate-wiggle-arrow">➔</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-[#777777] uppercase tracking-wider mt-1 font-semibold">
+                    (slides sideways through panels)
+                  </span>
+                </div>
+
+                {/* Hand-drawn curvy pencil sketch arrow */}
+                <svg className="w-12 h-6 text-[#DF711B] group-hover:translate-x-1.5 transition-transform" viewBox="0 0 80 30" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M 5 18 Q 38 4, 68 15" strokeDasharray="3 2" />
+                  <path d="M 58 7 L 72 15 L 60 23" />
+                </svg>
+              </div>
             </div>
 
             {/* 4-Column Equal-Width Grid */}
@@ -182,6 +248,7 @@ export const HorizontalPanelGallery: React.FC = () => {
                 </div>
               ))}
             </div>
+
           </section>
 
           {/* ============================================================
@@ -271,9 +338,9 @@ export const HorizontalPanelGallery: React.FC = () => {
             {/* Peeking sliver of Panel C on the right edge (~8% of width) with vertical moving photos */}
             <div className="hidden lg:flex w-[8%] xl:w-[8%] bg-[#FAF8F5] border-l border-[#E5E5E5] shrink-0 flex-col justify-center opacity-80 overflow-hidden relative">
               <div className="absolute inset-x-0 top-0 flex flex-col gap-2.5 animate-marquee-up p-2 pointer-events-none">
-                {[...sevenPhotos, ...sevenPhotos].map((item, idx) => (
+                {col1Photos.map((item, idx) => (
                   <div key={idx} className="w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden border border-[#181818]/10 shrink-0">
-                    <img src={item.src} alt={item.title} className="w-full h-full object-cover" />
+                    <img src={item.src} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -311,10 +378,10 @@ export const HorizontalPanelGallery: React.FC = () => {
             {/* Right Column: 2-Column Vertical Scrolling Photo Wall (7 Photos Going UP Continuously) */}
             <div className="w-full lg:w-[60%] h-[500px] lg:h-screen relative overflow-hidden flex gap-4 p-2 lg:p-4">
               
-              {/* Column 1 (Scrolls UP at standard speed) */}
+              {/* Column 1 (Scrolls UP with col1Photos) */}
               <div className="w-1/2 h-full relative overflow-hidden">
                 <div className="absolute inset-x-0 top-0 flex flex-col gap-4 animate-marquee-up">
-                  {[...sevenPhotos, ...sevenPhotos].map((photo, i) => (
+                  {col1Photos.map((photo, i) => (
                     <div 
                       key={`col1-${i}`}
                       className="group relative w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden border border-[#181818]/15 shadow-sm shrink-0"
@@ -322,6 +389,8 @@ export const HorizontalPanelGallery: React.FC = () => {
                       <img 
                         src={photo.src} 
                         alt={photo.title} 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
@@ -337,11 +406,10 @@ export const HorizontalPanelGallery: React.FC = () => {
                 </div>
               </div>
 
-              {/* Column 2 (Scrolls UP at slightly offset speed & staggered order) */}
+              {/* Column 2 (Scrolls UP with col2Photos) */}
               <div className="w-1/2 h-full relative overflow-hidden">
                 <div className="absolute inset-x-0 top-0 flex flex-col gap-4 animate-marquee-up-slow">
-                  {/* Rotated array order for visual variety */}
-                  {[...sevenPhotos.slice(3), ...sevenPhotos.slice(0, 3), ...sevenPhotos.slice(3), ...sevenPhotos.slice(0, 3)].map((photo, i) => (
+                  {col2Photos.map((photo, i) => (
                     <div 
                       key={`col2-${i}`}
                       className="group relative w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden border border-[#181818]/15 shadow-sm shrink-0"
@@ -349,6 +417,8 @@ export const HorizontalPanelGallery: React.FC = () => {
                       <img 
                         src={photo.src} 
                         alt={photo.title} 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">

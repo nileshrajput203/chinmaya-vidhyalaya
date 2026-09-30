@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar } from 'lucide-react';
+import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formService } from '../../services/formService';
+import { useToast } from '../../context/ToastContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +39,7 @@ const HERO_NOTICES = [
     description: 'Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Complete prospectus and guidance available.',
     linkText: 'Admission Guidelines',
     linkTextColor: 'text-[#FFB740]',
-    to: '/about/enrollment',
+    to: '/admissions/guidelines',
   },
   {
     tag: 'CBSE Distinction',
@@ -82,6 +83,7 @@ const HERO_NOTICES = [
 ];
 
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
+  const { showSuccess } = useToast();
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -106,8 +108,9 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     const height = canvas.clientHeight;
     if (width === 0 || height === 0) return;
 
-    // Scale canvas buffer to physical device pixels for high-DPI crispness without pixelation
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const isMobile = window.innerWidth < 768;
+    // Scale canvas buffer: cap at 1.0 on mobile to prevent GPU lag, max 1.5 on desktop
+    const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
     const targetW = Math.round(width * dpr);
     const targetH = Math.round(height * dpr);
     if (canvas.width !== targetW || canvas.height !== targetH) {
@@ -145,9 +148,9 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) return;
 
-    // High quality bicubic filtering for ultra HD sharpness
+    // High quality bicubic filtering on desktop, fast on mobile
     ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
+    ctx.imageSmoothingQuality = isMobile ? 'medium' : 'high';
 
     // Calculate cover dimensions preserving aspect ratio, centered
     const imgAspect = baseImg.naturalWidth / baseImg.naturalHeight;
@@ -169,8 +172,8 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     ctx.globalAlpha = 1.0;
     ctx.drawImage(baseImg, offsetX, offsetY, drawWidth, drawHeight);
 
-    // 2. Sub-frame blend with next frame if loaded (eliminates stepping, delivers liquid flow)
-    if (blendAlpha > 0.02 && nextIdx !== baseIdx) {
+    // 2. Sub-frame blend with next frame only on desktop (avoids mobile stutter)
+    if (!isMobile && blendAlpha > 0.03 && nextIdx !== baseIdx) {
       const nextImg = imagesRef.current[nextIdx];
       if (nextImg && nextImg.complete && nextImg.naturalWidth > 0) {
         const nextAspect = nextImg.naturalWidth / nextImg.naturalHeight;
@@ -385,6 +388,10 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     setIsSubmitting(false);
 
     if (res.success) {
+      showSuccess(
+        'Enquiry Submitted Successfully!',
+        'Thank you! Our admissions coordinator will reach out to you on your registered phone number shortly.'
+      );
       setIsSubmitted(true);
     } else {
       setSubmitError(res.error || res.message || 'Failed to submit admission enquiry. Please verify details.');
@@ -448,10 +455,67 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         />
 
         {/* ----------------------------------------------------
-            ADMISSION FORM + WHAT'S NEW NOTICE BOARD (2-COLUMN HERO OVERLAY)
+            MOBILE-OPTIMIZED HERO SHOWCASE (< 1024px)
+            Clean, high-impact, instant interaction without lag
+           ---------------------------------------------------- */}
+        <div className="lg:hidden absolute inset-0 z-20 pointer-events-none flex flex-col justify-end p-4 pb-6 sm:pb-8">
+          <div className="pointer-events-auto bg-[#071320]/90 backdrop-blur-xl border border-white/20 p-4 sm:p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] space-y-3 max-w-md mx-auto w-full">
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#DF711B]/20 text-[#FFB740] border border-[#DF711B]/40 text-[9px] font-mono font-bold uppercase tracking-wider">
+                <Sparkles className="w-3 h-3 text-[#FFB740]" />
+                Admissions 2026–27 Open
+              </span>
+              <span className="text-[9px] font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded-full border border-white/10">
+                CBSE #1130058
+              </span>
+            </div>
+
+            <div className="space-y-0.5">
+              <h2 className="font-cinzel font-black text-lg sm:text-xl text-white tracking-wide leading-tight uppercase">
+                Chinmaya Vidyalaya
+              </h2>
+              <p className="text-[11px] text-amber-300 font-sans italic">
+                "Keep Smiling — Knowledge, Vision & Character"
+              </p>
+              <p className="text-[11px] text-slate-300 font-sans leading-relaxed pt-0.5">
+                Nursery to Std XII (Arts, Commerce, Science) • 100% First Class CBSE Board Record
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 pt-0.5">
+              <button
+                type="button"
+                onClick={onOpenAdmissions}
+                className="w-full py-2.5 px-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer"
+              >
+                <span>Admission Enquiry</span>
+                <ArrowRight className="w-3.5 h-3.5 text-amber-200" />
+              </button>
+
+              <Link
+                to="/admissions/guidelines"
+                className="w-full py-2.5 px-3 bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-xs rounded-xl transition-all border border-white/20 flex items-center justify-center gap-1 text-center"
+              >
+                <span>Guidelines</span>
+              </Link>
+            </div>
+
+            {/* Quick ticker */}
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <Link to="/news" className="text-[#FFB740] hover:underline flex items-center gap-1">
+                <span>Active Notices & Circulars</span>
+                <ArrowRight className="w-2.5 h-2.5" />
+              </Link>
+              <span>Estd. 1995</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ----------------------------------------------------
+            ADMISSION FORM + WHAT'S NEW NOTICE BOARD (DESKTOP HERO OVERLAY)
             Stays visible till the end in one smooth scroll
            ---------------------------------------------------- */}
-        <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center overflow-y-auto px-4 py-6">
+        <div className="hidden lg:flex absolute inset-0 z-20 pointer-events-none items-center justify-center overflow-y-auto px-4 py-6">
           <div className="w-full max-w-5xl mx-auto box-border" style={getHeroOverlayVisibility()}>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
@@ -539,7 +603,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         required
                         value={formData.studentName}
                         onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                        placeholder="e.g. Aarav Sharma"
+                        placeholder="Enter student's full name"
                         className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
                       />
                     </div>
@@ -554,7 +618,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         required
                         value={formData.parentName}
                         onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                        placeholder="e.g. Rajesh Sharma"
+                        placeholder="Enter parent or guardian full name"
                         className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
                       />
                     </div>
@@ -569,7 +633,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="e.g. 9823517700"
+                        placeholder="Enter 10-digit mobile number"
                         className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] placeholder-[#9E988D] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm"
                       />
                     </div>

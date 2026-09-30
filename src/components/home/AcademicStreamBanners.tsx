@@ -15,7 +15,7 @@ const CAROUSEL_SLIDES: CarouselSlide[] = [
   {
     id: 'arts-commerce',
     src: '/images/chinmaya-web-arts-and-commerce.jpg',
-    fallback: '/images/banner-3.jpeg',
+    fallback: '/images/chinmaya/academics/classroom_learning_001.jpg',
     alt: 'Chinmaya Vidyalaya Tarapur - Arts & Commerce Stream Banner',
     title: 'Senior Secondary • Arts & Commerce Stream',
     subtitle: 'Fostering analytical acumen, economic literacy, humanities, and visionary leadership.',

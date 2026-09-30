@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, Sparkles, Filter, ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
-import { PageHero } from '../components/common/PageHero';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { contentService } from '../services/contentService';
 import { GalleryItem } from '../types/gallery';
 import { GALLERY_YEARS, GALLERY_EVENTS } from '../data/gallery';
+
+const PAGE_SIZE = 18;
 
 export const GalleryPage: React.FC = () => {
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [selectedYear, setSelectedYear] = useState<string>('All Years');
   const [selectedEvent, setSelectedEvent] = useState<string>('All Events');
   const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState<number>(PAGE_SIZE);
   const [activeLightboxIndex, setActiveLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ export const GalleryPage: React.FC = () => {
         event: selectedEvent
       });
       setItems(data);
+      setVisibleCount(PAGE_SIZE);
       setLoading(false);
     }
     loadGallery();
@@ -46,17 +49,13 @@ export const GalleryPage: React.FC = () => {
   const handleResetFilters = () => {
     setSelectedYear('All Years');
     setSelectedEvent('All Events');
+    setVisibleCount(PAGE_SIZE);
   };
 
   const isFiltered = selectedYear !== 'All Years' || selectedEvent !== 'All Events';
 
   return (
     <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans">
-      <PageHero 
-        title="Visual Archives & Event Gallery" 
-        subtitle="Chronological glimpses into academic life, sacred traditions, athletic tournaments, and annual celebrations at Chinmaya Vidyalaya Tarapur." 
-        badge="Archival Showcase" 
-      />
       <Breadcrumb items={[{ label: "Gallery" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -162,59 +161,79 @@ export const GalleryPage: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((item, idx) => (
-              <div 
-                key={item.id} 
-                onClick={() => setActiveLightboxIndex(idx)}
-                className="cursor-pointer group bg-white border border-[#E7E2D8] hover:border-[#DF711B] transition-all shadow-sm hover:shadow-md flex flex-col"
-              >
-                {/* Photo frame */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#181818]">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Metadata pills */}
-                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 pointer-events-none">
-                    {item.academicYear && (
-                      <span className="text-[10px] font-mono text-white bg-black/60 backdrop-blur-sm px-2 py-0.5 border border-white/20">
-                        {item.academicYear}
-                      </span>
-                    )}
-                    {item.event && (
-                      <span className="text-[10px] font-mono text-[#FFB740] bg-black/60 backdrop-blur-sm px-2 py-0.5 border border-white/20">
-                        {item.event}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Card details */}
-                <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h4 className="font-display font-bold text-sm text-[#181818] uppercase tracking-tight group-hover:text-[#DF711B] transition-colors line-clamp-1">
-                      {item.title}
-                    </h4>
-                    {item.caption && (
-                      <p className="text-xs text-[#555555] font-normal leading-relaxed line-clamp-2 mt-1">
-                        {item.caption}
-                      </p>
-                    )}
+          <div className="space-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {items.slice(0, visibleCount).map((item, idx) => (
+                <div 
+                  key={item.id} 
+                  onClick={() => setActiveLightboxIndex(idx)}
+                  className="cursor-pointer group bg-white border border-[#E7E2D8] hover:border-[#DF711B] transition-all shadow-sm hover:shadow-md flex flex-col"
+                >
+                  {/* Photo frame */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[#181818]">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                    
+                    {/* Metadata pills */}
+                    <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 pointer-events-none">
+                      {item.academicYear && (
+                        <span className="text-[10px] font-mono text-white bg-black/60 backdrop-blur-sm px-2 py-0.5 border border-white/20">
+                          {item.academicYear}
+                        </span>
+                      )}
+                      {item.event && (
+                        <span className="text-[10px] font-mono text-[#FFB740] bg-black/60 backdrop-blur-sm px-2 py-0.5 border border-white/20">
+                          {item.event}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
-                  <div className="pt-2 border-t border-[#F3EFE6] flex items-center justify-between text-[11px] font-mono text-[#777777]">
-                    <span>{item.date || item.academicYear}</span>
-                    <span className="text-[#DF711B] font-bold group-hover:translate-x-0.5 transition-transform">
-                      View ›
-                    </span>
+                  {/* Card details */}
+                  <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-display font-bold text-sm text-[#181818] uppercase tracking-tight group-hover:text-[#DF711B] transition-colors line-clamp-1">
+                        {item.title}
+                      </h4>
+                      {item.caption && (
+                        <p className="text-xs text-[#555555] font-normal leading-relaxed line-clamp-2 mt-1">
+                          {item.caption}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="pt-2 border-t border-[#F3EFE6] flex items-center justify-between text-[11px] font-mono text-[#777777]">
+                      <span>{item.date || item.academicYear}</span>
+                      <span className="text-[#DF711B] font-bold group-hover:translate-x-0.5 transition-transform">
+                        View ›
+                      </span>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Load More Button & Gallery Count Counter */}
+            {visibleCount < items.length && (
+              <div className="pt-6 flex flex-col items-center justify-center gap-3 border-t border-[#E7E2D8]">
+                <button
+                  onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
+                  className="px-8 py-3.5 bg-[#DF711B] hover:bg-[#181818] text-white font-sans font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 group cursor-pointer"
+                >
+                  <span>Load More Photographs</span>
+                  <span className="text-amber-300 group-hover:translate-y-0.5 transition-transform">↓</span>
+                </button>
+                <span className="text-xs font-mono text-[#777777]">
+                  Showing {Math.min(visibleCount, items.length)} of {items.length} photographs
+                </span>
               </div>
-            ))}
+            )}
           </div>
         )}
 

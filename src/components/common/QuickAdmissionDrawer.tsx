@@ -5,6 +5,7 @@ import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
 import { DocumentViewerModal } from '../documents/DocumentViewerModal';
 import { SchoolDocument } from '../../types/documents';
 import { formService } from '../../services/formService';
+import { useToast } from '../../context/ToastContext';
 
 interface QuickAdmissionDrawerProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ interface QuickAdmissionDrawerProps {
 }
 
 export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOpen, onClose }) => {
+  const { showSuccess } = useToast();
   const [activeTab, setActiveTab] = useState<'forms' | 'enquiry' | 'guidelines'>('forms');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -93,6 +95,10 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
     setIsSubmitting(false);
 
     if (result.success) {
+      showSuccess(
+        'Admission Enquiry Submitted!',
+        'Thank you! Our admissions coordinator will reach out to you shortly.'
+      );
       setSubmitSuccessMessage(result.message);
       setFormSubmitted(true);
     } else {

@@ -11,7 +11,7 @@ export interface AboutSectionData {
 export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
   history: {
     slug: "history",
-    title: "About Us & History",
+    title: "School History",
     subtitle: "A school with a difference – started with 72 students and 4 teachers",
     swamijiQuote: "Children are not vessels to be filled, but lamps to be lit. — Pujya Gurudev Swami Chinmayananda",
     image: "/images/swami.jpeg",
@@ -38,7 +38,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
   },
   "mission-vision": {
     slug: "mission-vision",
-    title: "Mission & Vision",
+    title: "School Vision & Mission",
     subtitle: "To empower a community of learners who dare to dream, take risks and develop new realities",
     swamijiQuote: "To be human is to be aware. To be noble is to care. — Swami Chinmayananda",
     image: "/images/swami.jpeg",
@@ -57,7 +57,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
   },
   philosophy: {
     slug: "philosophy",
-    title: "Chinmaya Vision Program (CVP)",
+    title: "4 Pillars of CVP",
     subtitle: "A comprehensive educational philosophy designed by Pujya Gurudev Swami Chinmayananda",
     swamijiQuote: "The spirit of devotion and selfless action transforms standard schooling into a noble life-building exercise.",
     image: "/images/swami.jpeg",
@@ -137,7 +137,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
   },
   "swami-chinmayananda": {
     slug: "swami-chinmayananda",
-    title: "Pujya Gurudev Swami Chinmayananda",
+    title: "About the Heritage",
     subtitle: "The Visionary Saint, Spiritual Renaissance Master, and Founding Inspiration of Chinmaya Vidyalayas",
     swamijiQuote: "Children are not vessels to be filled, but lamps to be lit. To illuminate a child's heart is to illuminate the future of the nation.",
     image: "/images/swami.jpeg",

@@ -4,15 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
-  ShieldCheck, ChevronRight, X, 
-  Download, BookOpen, GraduationCap,
-  FileText, Image as ImageIcon,
+  X, Image as ImageIcon,
   Sparkles, Phone, ArrowRight
 } from 'lucide-react';
 import { OFFICIAL_PRINCIPAL_INFO } from '../../data/school';
 import { SCHOOL_IMAGES } from '../../data/images';
-import { contentService } from '../../services/contentService';
-import { Notice } from '../../types/news';
+import { BLOG_POSTS } from '../../data/blog';
 import { QuickAdmissionDrawer } from '../../components/common/QuickAdmissionDrawer';
 import Faq05 from '@/components/ui/faq-05';
 import MarqueeAlongSvgPathDemo from '@/components/ui/demo';
@@ -110,7 +107,7 @@ const GUIDING_QUOTES = [
     quote: '"Rooted in the Chinmaya Vision Programme, we integrate value education with academic distinction to prepare noble global citizens who dare to dream and develop new realities."',
     author: OFFICIAL_PRINCIPAL_INFO.name,
     role: 'Principal, Chinmaya Vidyalaya',
-    image: '/images/principal2.jpeg',
+    image: '/images/principal-photo.jpg',
     label: "PRINCIPAL'S MESSAGE",
   },
 ];
@@ -128,7 +125,6 @@ function shuffleArray<T>(arr: T[]): T[] {
 const SHUFFLED_QUOTES = shuffleArray(GUIDING_QUOTES);
 
 export const HomePage: React.FC = () => {
-  const [notices, setNotices] = useState<Notice[]>([]);
   const [activePillar, setActivePillar] = useState<number>(0);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState<string | null>(null);
   const [isAdmissionDrawerOpen, setIsAdmissionDrawerOpen] = useState<boolean>(false);
@@ -138,14 +134,7 @@ export const HomePage: React.FC = () => {
   const homeWrapperRef = useRef<HTMLDivElement>(null);
   const pillarPreviewRef = useRef<HTMLDivElement>(null);
 
-  // Load active notices from content service
   useEffect(() => {
-    async function loadData() {
-      const noticeList = await contentService.getNotices(3);
-      setNotices(noticeList);
-    }
-    loadData();
-
     // GSAP Master Timeline & ScrollTrigger choreographies
     const ctx = gsap.context(() => {
       // Scroll reveals for architectural sections
@@ -202,7 +191,9 @@ export const HomePage: React.FC = () => {
       sanskrit: "Sharirik, Bauddhik & Manasik Vikas",
       desc: "Nurturing the complete fourfold personality of the child. Instilling physical vitality through yoga, mental stability through mindfulness, and sharp intellectual discernment through scientific inquiry.",
       tag: "Holistic Core",
-      image: SCHOOL_IMAGES.CLASSROOM_LEARNING,
+      image: "/images/1.jpeg",
+      targetUrl: "/features/holistic-development",
+      ctaText: "EXPLORE HOLISTIC DEVELOPMENT",
       points: [
         "Daily Yoga, Pranayama & Surya Namaskar routine",
         "Experiential STEM laboratories & analytical inquiry",
@@ -217,6 +208,8 @@ export const HomePage: React.FC = () => {
       desc: "Immersing students in India's timeless philosophical heritage, Vedic principles, classical arts, festival celebrations, and daily Guru Paduka Pooja for moral rectitude.",
       tag: "Cultural Root",
       image: "/images/guru-paduka-pooja.webp",
+      targetUrl: "/features/spiritual-activities",
+      ctaText: "EXPLORE SPIRITUAL & CULTURAL ETHOS",
       points: [
         "Daily Guru Paduka Pooja for mental tranquility",
         "Annual Gita Chanting & Shloka recitation forum",
@@ -230,7 +223,9 @@ export const HomePage: React.FC = () => {
       sanskrit: "Rashtra Prem & Nagarik Kartavya",
       desc: "Fostering disciplined citizenship, national pride, environmental stewardship, and dedicated service toward societal progress without regional or communal bias.",
       tag: "National Duty",
-      image: SCHOOL_IMAGES.STUDENTS_ACTIVITY,
+      image: "/images/school_events/School_Event_2026-09-27_007.jpg",
+      targetUrl: "/features/4-pillars#pillar-3",
+      ctaText: "EXPLORE PATRIOTISM & CIVIC LIFE",
       points: [
         "Jal Pakhwada, tree plantation & green initiatives",
         "Elected Student Council & democratic house governance",
@@ -244,7 +239,9 @@ export const HomePage: React.FC = () => {
       sanskrit: "Vasudhaiva Kutumbakam",
       desc: "Instilling broad-minded global empathy, respect for all faiths and cultures, ecological consciousness, and harmonious coexistence with the global community.",
       tag: "Global Vision",
-      image: SCHOOL_IMAGES.SPORTS_DAY,
+      image: "/images/banner-8.webp",
+      targetUrl: "/features/4-pillars#pillar-4",
+      ctaText: "EXPLORE UNIVERSAL OUTLOOK",
       points: [
         "Universal prayer & inter-faith respect framework",
         "Global curriculum aligned with CBSE AISSE standards",
@@ -298,123 +295,7 @@ export const HomePage: React.FC = () => {
 
 
       {/* ----------------------------------------------------
-          SECTION 03 — FOUNDATIONAL MATRIX: CHINMAYA VISION PROGRAM (CVP)
-         ---------------------------------------------------- */}
-      <section className="py-8 lg:py-12 bg-[#F3EFE6] text-[#181C20] relative overflow-hidden">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          
-          {/* Section Header matching Section 02 Typography */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#D5CEC2] pb-3.5">
-            <div className="space-y-1">
-              <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
-                THE PEDAGOGIC ARCHITECTURE • CVP FRAMEWORK
-              </span>
-              <h2 className="font-display text-[26px] sm:text-[32px] lg:text-[36px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
-                CHINMAYA VISION PROGRAM
-              </h2>
-            </div>
-            <p className="text-[12px] sm:text-[13px] text-[#555555] max-w-md font-normal leading-relaxed m-0">
-              Formulated under the sublime vision of Pujya Gurudev Swami Chinmayananda. A quadruple matrix engineered to awaken the fullest human potential.
-            </p>
-          </div>
-
-          {/* Interactive 4 Pillars Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-            
-            {/* Left Pillar Selectors */}
-            <div className="lg:col-span-5 flex flex-col gap-2.5">
-              {cvpPillars.map((pillar, idx) => {
-                const isSelected = activePillar === idx;
-                return (
-                  <div
-                    key={idx}
-                    onClick={() => handleSelectPillar(idx)}
-                    onMouseEnter={() => handleSelectPillar(idx)}
-                    className={`p-3 sm:p-3.5 rounded-none border transition-all cursor-pointer ${
-                      isSelected
-                        ? 'bg-[#FFF7DF] border-[#DF711B] shadow-sm translate-x-1'
-                        : 'bg-white border-[#D5CEC2] hover:bg-[#FAF8F5]'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className={`font-display text-[20px] sm:text-[22px] font-black ${isSelected ? 'text-[#DF711B]' : 'text-slate-400'}`}>
-                          {pillar.num}
-                        </span>
-                        <div>
-                          <h3 className="font-display text-[14px] sm:text-[15px] font-black text-[#181818] uppercase tracking-tight m-0">
-                            {pillar.title}
-                          </h3>
-                          <span className="text-[9px] sm:text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-0.5">
-                            {pillar.sanskrit}
-                          </span>
-                        </div>
-                      </div>
-                      <ChevronRight className={`w-4 h-4 transition-transform ${isSelected ? 'text-[#DF711B] translate-x-1' : 'text-slate-400'}`} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right Active Pillar Preview Card */}
-            <div 
-              ref={pillarPreviewRef}
-              className="lg:col-span-7 bg-white text-[#181C20] rounded-none p-4 sm:p-4.5 shadow-sm border border-[#D5CEC2] flex flex-col space-y-3"
-            >
-              <div className="space-y-2.5">
-                <div className="flex flex-wrap justify-between items-center gap-2 border-b border-[#E7E2D8] pb-2">
-                  <div>
-                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold block">
-                      PILLAR {cvpPillars[activePillar].num} • {cvpPillars[activePillar].tag}
-                    </span>
-                    <h3 className="font-display text-[18px] sm:text-[20px] font-black text-[#181818] uppercase tracking-tight mt-0.5 m-0">
-                      {cvpPillars[activePillar].title}
-                    </h3>
-                  </div>
-                  <span className="font-serif italic text-[11px] text-[#555555] bg-[#F3EFE6] px-2.5 py-0.5 border border-[#D5CEC2]">
-                    {cvpPillars[activePillar].sanskrit}
-                  </span>
-                </div>
-
-                {/* Pillar Image Container */}
-                <div className="relative w-full h-[175px] sm:h-[185px] lg:h-[190px] overflow-hidden border border-[#E7E2D8] bg-[#181818] group">
-                  <img
-                    key={cvpPillars[activePillar].image}
-                    src={cvpPillars[activePillar].image}
-                    alt={cvpPillars[activePillar].title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between pointer-events-none">
-                    <span className="text-[9px] sm:text-[10px] font-mono text-white/95 uppercase tracking-wider bg-black/60 backdrop-blur-sm px-2 py-0.5 border border-white/20">
-                      {cvpPillars[activePillar].tag}
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] font-mono text-[#DF711B] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-sm px-2 py-0.5">
-                      {cvpPillars[activePillar].num} / 04
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2 border-t border-[#E7E2D8] flex items-center justify-between">
-                <Link
-                  to="/about/philosophy"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[10px] uppercase tracking-wider transition-colors select-none"
-                >
-                  <span className="text-[#FFB740] font-bold text-xs">›</span>
-                  <span>COMPREHENSIVE CVP TREATISE</span>
-                </Link>
-                <span className="text-[9px] sm:text-[10px] font-mono text-[#777777] uppercase tracking-wider">Chinmaya Mission Tarapur</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ----------------------------------------------------
-          SECTION 04 — PRINCIPAL LEADERSHIP & DISTINCTION SPOTLIGHT
+          SECTION 03 — PRINCIPAL LEADERSHIP & DISTINCTION SPOTLIGHT
          ---------------------------------------------------- */}
       <section className="min-h-screen lg:h-screen flex items-center py-6 lg:py-8 bg-[#FAF8F5] overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -428,7 +309,7 @@ export const HomePage: React.FC = () => {
                     {/* Official Photograph of Principal Mam */}
                     <div className="relative w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#DF711B] via-amber-300 to-[#DF711B] shadow-md shrink-0">
                       <img
-                        src="/images/principal2.jpeg"
+                        src="/images/principal-photo.jpg"
                         alt={OFFICIAL_PRINCIPAL_INFO.name}
                         className="w-full h-full object-cover object-center rounded-full border-2 border-white shadow-xs"
                       />
@@ -512,6 +393,140 @@ export const HomePage: React.FC = () => {
                   <span className="text-[#FFB740] font-bold text-xs">›</span>
                   <span>BOARD OF MANAGEMENT</span>
                 </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------------------------------------------
+          SECTION 04 — FOUNDATIONAL MATRIX: CHINMAYA VISION PROGRAM (CVP)
+         ---------------------------------------------------- */}
+      <section className="py-8 lg:py-12 bg-[#F3EFE6] text-[#181C20] relative overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          
+          {/* Section Header matching Section 02 Typography */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#D5CEC2] pb-3.5">
+            <div className="space-y-1">
+              <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
+                THE PEDAGOGIC ARCHITECTURE • CVP FRAMEWORK
+              </span>
+              <h2 className="font-display text-[26px] sm:text-[32px] lg:text-[36px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
+                CHINMAYA VISION PROGRAM
+              </h2>
+            </div>
+            <p className="text-[12px] sm:text-[13px] text-[#555555] max-w-md font-normal leading-relaxed m-0">
+              Formulated under the sublime vision of Pujya Gurudev Swami Chinmayananda. A quadruple matrix engineered to awaken the fullest human potential.
+            </p>
+          </div>
+
+          {/* Interactive 4 Pillars Showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            
+            {/* Left Pillar Selectors */}
+            <div className="lg:col-span-5 flex flex-col gap-2.5">
+              {cvpPillars.map((pillar, idx) => {
+                const isSelected = activePillar === idx;
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => handleSelectPillar(idx)}
+                    onMouseEnter={() => handleSelectPillar(idx)}
+                    className={`p-3 sm:p-3.5 rounded-none border transition-all cursor-pointer ${
+                      isSelected
+                        ? 'bg-[#FFF7DF] border-[#DF711B] shadow-sm translate-x-1'
+                        : 'bg-white border-[#D5CEC2] hover:bg-[#FAF8F5]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className={`font-display text-[20px] sm:text-[22px] font-black ${isSelected ? 'text-[#DF711B]' : 'text-slate-400'}`}>
+                          {pillar.num}
+                        </span>
+                        <div>
+                          <h3 className="font-display text-[14px] sm:text-[15px] font-black text-[#181818] uppercase tracking-tight m-0">
+                            {pillar.title}
+                          </h3>
+                          <span className="text-[9px] sm:text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-0.5">
+                            {pillar.sanskrit}
+                          </span>
+                        </div>
+                      </div>
+                      <Link
+                        to={pillar.targetUrl}
+                        onClick={(e) => e.stopPropagation()}
+                        title={`Visit ${pillar.title}`}
+                        className={`p-1.5 rounded transition-all ${
+                          isSelected
+                            ? 'text-white bg-[#DF711B]'
+                            : 'text-slate-400 hover:text-[#DF711B] hover:bg-[#FAF8F5]'
+                        }`}
+                      >
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Right Active Pillar Preview Card */}
+            <div 
+              ref={pillarPreviewRef}
+              className="lg:col-span-7 bg-white text-[#181C20] rounded-none p-4 sm:p-4.5 shadow-sm border border-[#D5CEC2] flex flex-col space-y-3"
+            >
+              <div className="space-y-2.5">
+                <div className="flex flex-wrap justify-between items-center gap-2 border-b border-[#E7E2D8] pb-2">
+                  <div>
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold block">
+                      PILLAR {cvpPillars[activePillar].num} • {cvpPillars[activePillar].tag}
+                    </span>
+                    <h3 className="font-display text-[18px] sm:text-[20px] font-black text-[#181818] uppercase tracking-tight mt-0.5 m-0">
+                      {cvpPillars[activePillar].title}
+                    </h3>
+                  </div>
+                  <span className="font-serif italic text-[11px] text-[#555555] bg-[#F3EFE6] px-2.5 py-0.5 border border-[#D5CEC2]">
+                    {cvpPillars[activePillar].sanskrit}
+                  </span>
+                </div>
+
+                {/* Pillar Image Container */}
+                <div className="relative w-full h-[175px] sm:h-[185px] lg:h-[190px] overflow-hidden border border-[#E7E2D8] bg-[#181818] group">
+                  <img
+                    key={cvpPillars[activePillar].image}
+                    src={cvpPillars[activePillar].image}
+                    alt={cvpPillars[activePillar].title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <span className="text-[9px] sm:text-[10px] font-mono text-white/95 uppercase tracking-wider bg-black/60 backdrop-blur-sm px-2 py-0.5 border border-white/20">
+                      {cvpPillars[activePillar].tag}
+                    </span>
+                    <span className="text-[9px] sm:text-[10px] font-mono text-[#DF711B] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-sm px-2 py-0.5">
+                      {cvpPillars[activePillar].num} / 04
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2.5 border-t border-[#E7E2D8] flex flex-wrap items-center justify-between gap-2">
+                <Link
+                  to={cvpPillars[activePillar].targetUrl}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#DF711B] hover:bg-[#C45B0E] text-[#FFFFFF] font-sans font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm select-none"
+                >
+                  <span className="text-[#FFB740] font-bold text-xs">›</span>
+                  <span>{cvpPillars[activePillar].ctaText}</span>
+                </Link>
+                <div className="flex items-center gap-3 text-[10px] font-mono">
+                  <Link
+                    to="/features/4-pillars"
+                    className="text-[#181818] font-bold hover:text-[#DF711B] underline uppercase tracking-wider"
+                  >
+                    All 4 Pillars →
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -604,158 +619,7 @@ export const HomePage: React.FC = () => {
          ---------------------------------------------------- */}
       <NoticeEventBoard />
 
-      {/* ----------------------------------------------------
-          SECTION 06 — ACADEMIC REPOSITORY & VERIFIED PDF DOWNLOADS
-         ---------------------------------------------------- */}
-      <section className="min-h-screen lg:h-screen flex items-center py-6 lg:py-8 bg-[#FAF8F5] text-[#181C20] relative overflow-hidden">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-5">
-          
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-b border-[#E7E2D8] pb-3">
-            <div className="space-y-1">
-              <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
-                AUTHENTIC RESOURCES • ADMISSION SHELF
-              </span>
-              <h2 className="font-display text-[28px] sm:text-[36px] lg:text-[42px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
-                DOWNLOADS & ACADEMIC CENTER
-              </h2>
-            </div>
-            <Link
-              to="/downloads"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[10px] sm:text-[11px] uppercase tracking-wider transition-colors select-none shrink-0"
-            >
-              <span className="text-[#FFB740] font-bold text-xs">›</span>
-              <span>VIEW ALL OFFICIAL PDFS</span>
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            
-            {/* Box 1: Registration Forms */}
-            <div className="bg-white border border-[#E7E2D8] p-4 space-y-2.5 flex flex-col justify-between shadow-xs">
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-[#DF711B]/10 text-[#DF711B] flex items-center justify-center font-bold">
-                  <FileText className="w-4 h-4" />
-                </div>
-                <h3 className="font-display text-[16px] font-black text-[#181818] uppercase tracking-tight m-0">Admissions 2026-27</h3>
-                <p className="text-[12px] sm:text-[13px] text-[#666666] font-normal leading-relaxed m-0">
-                  Download official admission forms for Nursery, Kindergarten (KG), and Classes I to IX.
-                </p>
-              </div>
-              <button
-                onClick={() => setIsAdmissionDrawerOpen(true)}
-                className="w-full py-2 bg-[#181818] hover:bg-[#DF711B] text-white font-sans font-bold text-[10px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5"
-              >
-                <span className="text-[#FFB740] font-bold text-xs">›</span>
-                <span>GET FORMS</span>
-              </button>
-            </div>
-
-            {/* Box 2: Sample Papers Std 1 - 10 */}
-            <div className="bg-white border border-[#E7E2D8] p-4 space-y-2.5 flex flex-col justify-between shadow-xs">
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-[#DF711B]/10 text-[#DF711B] flex items-center justify-center font-bold">
-                  <BookOpen className="w-4 h-4" />
-                </div>
-                <h3 className="font-display text-[16px] font-black text-[#181818] uppercase tracking-tight m-0">Sample Papers</h3>
-                <p className="text-[12px] sm:text-[13px] text-[#666666] font-normal leading-relaxed m-0">
-                  Official CBSE pattern question papers for Standard 1 to Standard 10 board preparation.
-                </p>
-              </div>
-              <Link
-                to="/downloads/sample-papers"
-                className="w-full py-2 bg-[#181818] hover:bg-[#DF711B] text-white font-sans font-bold text-[10px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5"
-              >
-                <span className="text-[#FFB740] font-bold text-xs">›</span>
-                <span>BROWSE PAPERS</span>
-              </Link>
-            </div>
-
-            {/* Box 3: Evaluation III Papers */}
-            <div className="bg-white border border-[#E7E2D8] p-4 space-y-2.5 flex flex-col justify-between shadow-xs">
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-[#DF711B]/10 text-[#DF711B] flex items-center justify-center font-bold">
-                  <GraduationCap className="w-4 h-4" />
-                </div>
-                <h3 className="font-display text-[16px] font-black text-[#181818] uppercase tracking-tight m-0">Evaluation III</h3>
-                <p className="text-[12px] sm:text-[13px] text-[#666666] font-normal leading-relaxed m-0">
-                  Evaluation III question papers for Standard 1, 2, 3, 4, and 5 formative assessment.
-                </p>
-              </div>
-              <Link
-                to="/downloads/evaluation-papers"
-                className="w-full py-2 bg-[#181818] hover:bg-[#DF711B] text-white font-sans font-bold text-[10px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5"
-              >
-                <span className="text-[#FFB740] font-bold text-xs">›</span>
-                <span>VIEW STD 1-5 PAPERS</span>
-              </Link>
-            </div>
-
-            {/* Box 4: CBSE SARAS Disclosures */}
-            <div className="bg-white border border-[#E7E2D8] p-4 space-y-2.5 flex flex-col justify-between shadow-xs">
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-[#DF711B]/10 text-[#DF711B] flex items-center justify-center font-bold">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <h3 className="font-display text-[16px] font-black text-[#181818] uppercase tracking-tight m-0">Public Disclosures</h3>
-                <p className="text-[12px] sm:text-[13px] text-[#666666] font-normal leading-relaxed m-0">
-                  Fire safety, structural stability, potable water test clearance, affiliation and NOC.
-                </p>
-              </div>
-              <Link
-                to="/about/mandatory-information"
-                className="w-full py-2 bg-[#181818] hover:bg-[#DF711B] text-white font-sans font-bold text-[10px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5"
-              >
-                <span className="text-[#FFB740] font-bold text-xs">›</span>
-                <span>VIEW DISCLOSURES</span>
-              </Link>
-            </div>
-
-          </div>
-
-          {/* Active Notices & Circulars Row */}
-          {notices.length > 0 && (
-            <div className="pt-3 border-t border-[#E7E2D8] space-y-2">
-              <div className="flex justify-between items-center text-xs">
-                <span className="font-mono uppercase tracking-widest text-[#DF711B] font-bold text-[11px]">
-                  Official Bulletin & Campus Circulars
-                </span>
-                <Link to="/news/circulars" className="text-[#555555] hover:text-[#DF711B] flex items-center gap-1 font-mono font-bold text-[11px]">
-                  <span>VIEW ALL CIRCULARS</span>
-                  <span className="text-amber-500 font-bold text-xs">›</span>
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {notices.map((notice) => (
-                  <div
-                    key={notice.id}
-                    className="p-3 bg-white border border-[#E7E2D8] space-y-1 shadow-xs"
-                  >
-                    <div className="flex justify-between items-center text-[10px] font-mono text-[#777777]">
-                      <span className="uppercase text-[#DF711B] font-bold">{notice.category}</span>
-                      <span>{notice.date}</span>
-                    </div>
-                    <h4 className="font-display font-black text-[13px] text-[#181818] uppercase tracking-tight line-clamp-1 m-0">{notice.title}</h4>
-                    <p className="text-[11px] text-[#666666] line-clamp-1 leading-normal font-normal m-0">{notice.summary}</p>
-                    {notice.fileUrl && (
-                      <a
-                        href={notice.fileUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-[10px] text-[#DF711B] hover:underline font-bold pt-0.5 uppercase tracking-wider"
-                      >
-                        <Download className="w-2.5 h-2.5" />
-                        <span>DOWNLOAD DOCUMENT</span>
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-        </div>
-      </section>
 
       {/* ----------------------------------------------------
           SECTION 06.5 — CAMPUS LIFE MARQUEE ALONG SVG PATH
@@ -910,13 +774,92 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* ----------------------------------------------------
+          SECTION 07.8 — FROM OUR BLOG & EDUCATIONAL INSIGHTS
+         ---------------------------------------------------- */}
+      <section className="py-12 sm:py-16 bg-[#FAF8F5] relative overflow-hidden border-t border-[#E7E2D8]">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-b border-[#E7E2D8] pb-4">
+            <div className="space-y-1">
+              <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
+                THOUGHT LEADERSHIP • EDUCATIONAL PERSPECTIVES
+              </span>
+              <h2 className="font-display text-[26px] sm:text-[34px] lg:text-[40px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
+                FROM OUR SCHOOL BLOG & INSIGHTS
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[10px] sm:text-[11px] uppercase tracking-wider transition-colors select-none shrink-0"
+            >
+              <span className="text-[#FFB740] font-bold text-xs">›</span>
+              <span>EXPLORE ALL ARTICLES</span>
+            </Link>
+          </div>
+
+          {/* 3 Featured Blog Articles Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {BLOG_POSTS.slice(0, 3).map((post) => (
+              <Link
+                key={post.id}
+                to={`/blog?post=${post.slug}`}
+                className="group bg-white rounded-2xl overflow-hidden border border-[#E7E2D8] hover:border-[#DF711B]/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1"
+              >
+                {/* Image */}
+                <div className="relative h-48 sm:h-52 overflow-hidden">
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                  <div className="absolute bottom-2.5 right-3.5 text-[10.5px] font-mono text-slate-200">
+                    <span>{post.publishDate}</span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <div className="space-y-1.5">
+                    <h3 className="font-cinzel text-base font-bold text-[#0B1E34] group-hover:text-[#DF711B] transition-colors line-clamp-2 leading-snug">
+                      {post.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#F0ECE1] flex items-center justify-between">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <img
+                        src={post.author.avatar}
+                        alt={post.author.name}
+                        className="w-6 h-6 rounded-full object-cover border border-[#DF711B]/40 shrink-0"
+                      />
+                      <span className="text-[11px] font-bold text-[#0C1E34] truncate">
+                        {post.author.name}
+                      </span>
+                    </div>
+                    <span className="text-xs font-bold text-[#DF711B] group-hover:translate-x-1 transition-transform flex items-center">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* Frequently Asked Questions Section on Home */}
       <Faq05 />
 
       {/* ====================================================
           ESCALATION SUPPORT CARD & STUDENT CUTOUT (Helpdesk & Inquiry)
          ==================================================== */}
-      <section className="bg-[#FAF8F5] pb-16 sm:pb-24 pt-6 relative overflow-visible">
+      <section className="bg-[#FAF8F5] pb-20 sm:pb-28 pt-8 relative overflow-visible">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 lg:gap-8 relative">
           
           {/* Shifted Left Helpdesk Container */}
@@ -961,14 +904,14 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Student Cutout on the Right with Question Mark on Head */}
-          <div className="shrink-0 flex justify-center lg:justify-end items-end relative self-center lg:self-end">
+          <div className="shrink-0 flex justify-center lg:justify-end items-end relative self-center lg:self-end pb-3 sm:pb-4">
             <div className="relative">
               {/* Subtle ambient light behind student */}
               <div className="absolute -inset-4 bg-gradient-to-t from-[#DF711B]/15 via-[#DF711B]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
               <img
                 src="/images/student_question_cutout.png"
                 alt="Chinmaya Vidyalaya Student with Inquiry"
-                className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out"
+                className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out origin-bottom"
               />
             </div>
           </div>

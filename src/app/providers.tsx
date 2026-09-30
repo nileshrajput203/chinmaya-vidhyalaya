@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastProvider } from '../context/ToastContext';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -7,7 +8,10 @@ interface ProvidersProps {
 export const AppProviders: React.FC<ProvidersProps> = ({ children }) => {
   return (
     <React.StrictMode>
-      {children}
+      <ToastProvider>
+        {children}
+      </ToastProvider>
     </React.StrictMode>
   );
 };
+
