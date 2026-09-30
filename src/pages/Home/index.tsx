@@ -18,7 +18,6 @@ import { HorizontalPanelGallery } from '../../components/home/HorizontalPanelGal
 import { NoticeEventBoard } from '../../components/home/NoticeEventBoard';
 import { HeroScrollytellingFilm } from '../../components/home/HeroScrollytellingFilm';
 import { BannerCarousel } from '../../components/home/BannerCarousel';
-import { VidyalayaCrest3D } from '../../components/3d/VidyalayaCrest3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -291,67 +290,6 @@ export const HomePage: React.FC = () => {
           alt="Banner Image" 
           className="w-full h-auto object-cover block"
         />
-      </section>
-
-      {/* ----------------------------------------------------
-          SECTION 2.7 — INTERACTIVE 3D EMBLEM & HERITAGE SHOWCASE
-         ---------------------------------------------------- */}
-      <section className="py-12 sm:py-16 bg-[#0B1D30] text-white relative overflow-hidden border-t border-b border-[#DF711B]/40">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(223,113,27,0.15),transparent_70%)] pointer-events-none" />
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
-            {/* Left 3D Canvas */}
-            <div className="lg:col-span-6">
-              <VidyalayaCrest3D className="h-[380px] sm:h-[440px]" />
-            </div>
-
-            {/* Right Story & Pillars */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="space-y-2">
-                <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#FFB740] font-bold">
-                  HERITAGE & SACRED EMBLEM • ESTD. 1995
-                </span>
-                <h2 className="font-cinzel text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
-                  The Radiant Lamp of Wisdom: Chinmaya Vidyalaya Tarapur
-                </h2>
-                <p className="text-sm text-amber-100/80 leading-relaxed font-sans">
-                  The sacred diya with radiant flames represents Gyan Yagna—the sacrificial fire of supreme knowledge dispelling darkness. Embedded within is the commitment of the Chinmaya Vision Programme to cultivate integrated physical, emotional, and intellectual excellence.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-                  <span className="text-[10px] font-mono text-[#FFB740] uppercase">CBSE Affiliation</span>
-                  <div className="font-cinzel font-bold text-sm text-white">No. 1130095</div>
-                  <p className="text-[11px] text-slate-300">Co-educational Day School</p>
-                </div>
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-                  <span className="text-[10px] font-mono text-[#FFB740] uppercase">First in Zone</span>
-                  <div className="font-cinzel font-bold text-sm text-white">Zone Pioneer</div>
-                  <p className="text-[11px] text-slate-300">Maharashtra–Gujarat–Goa</p>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Link
-                  to="/about/swami-chinmayananda"
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#DF711B] to-[#FF8C38] hover:from-[#C86012] hover:to-[#DF711B] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2"
-                >
-                  <Sparkles className="w-4 h-4 text-[#FFF0A0]" />
-                  <span>Discover Gurudev's Vision</span>
-                </Link>
-                <Link
-                  to="/about/mandatory-information"
-                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20"
-                >
-                  Public Disclosures
-                </Link>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </section>
 
       {/* ----------------------------------------------------
