@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, PhoneCall, Sparkles } from 'lucide-react';
+import { X, CheckCircle2, PhoneCall, GraduationCap } from 'lucide-react';
 import { formService } from '../../services/formService';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
@@ -237,7 +237,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                 {/* Top: School Badge & Headline */}
                 <div className="relative z-10 space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 border border-[#DF711B]/40 backdrop-blur-md">
-                    <Sparkles className="w-3.5 h-3.5 text-[#FFB740]" />
+                    <GraduationCap className="w-4 h-4 text-[#FFD285]" />
                     <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#FFD285] font-bold">
                       Admissions Open 2026-27
                     </span>

@@ -92,7 +92,7 @@ function getBotResponse(userText: string): {
     return {
       answer: "I can open our Admission Guidance Desk right now! You can submit your mobile number and child's standard for an immediate callback from our academic coordinator.",
       actions: [
-        { label: '✨ Open Admission Guidance Form', isModalTrigger: true },
+        { label: 'Open Admission Guidance Form', isModalTrigger: true },
         { label: 'View Fee Calculator', url: '/admissions/guidelines' }
       ]
     };
@@ -121,7 +121,7 @@ function getBotResponse(userText: string): {
     const actions: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> = [];
     
     if (matchedFaq.category === 'admissions') {
-      actions.push({ label: '✨ Request Admission Callback', isModalTrigger: true });
+      actions.push({ label: 'Request Admission Callback', isModalTrigger: true });
       actions.push({ label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true });
     } else if (matchedFaq.category === 'disclosures') {
       actions.push({ label: 'View Mandatory Disclosures', url: '/about/mandatory-information' });
@@ -151,7 +151,7 @@ function getBotResponse(userText: string): {
     return {
       ...FAQ_KNOWLEDGE_BASE['admission'],
       actions: [
-        { label: '✨ Request Admission Callback', isModalTrigger: true },
+        { label: 'Request Admission Callback', isModalTrigger: true },
         { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
         { label: 'Admission Guidelines', url: '/admissions/guidelines' }
       ]
@@ -180,8 +180,8 @@ function getBotResponse(userText: string): {
   return {
     answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130095 / 1130058.\n• Timings: Mon–Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request a callback.",
     actions: [
-      { label: '✨ Request Admission Callback', isModalTrigger: true },
-      { label: '🧮 Fee Estimator', url: '/admissions/guidelines' },
+      { label: 'Request Admission Callback', isModalTrigger: true },
+      { label: 'Fee Estimator', url: '/admissions/guidelines' },
       { label: 'Download Forms', url: '/downloads/documents' }
     ]
   };
