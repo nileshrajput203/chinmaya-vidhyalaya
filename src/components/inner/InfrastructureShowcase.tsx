@@ -9,6 +9,7 @@ import { AnimatedBackground } from '../ui/animated-background';
 import { InView } from '../ui/in-view';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
+import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 interface FacilityImage {
   src: string;
@@ -387,6 +388,9 @@ export const InfrastructureShowcase: React.FC = () => {
     caption: '',
   });
 
+  // Lock body/Lenis scrolling while lightbox is active
+  useBodyScrollLock(lightbox.isOpen);
+
   const location = useLocation();
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -654,7 +658,9 @@ export const InfrastructureShowcase: React.FC = () => {
       {/* Lightbox Fullscreen Modal */}
       {lightbox.isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-8"
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-8 overscroll-contain select-none"
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
           onClick={() => setLightbox({ isOpen: false, src: '', caption: '' })}
         >
           <button
@@ -667,8 +673,10 @@ export const InfrastructureShowcase: React.FC = () => {
           </button>
 
           <div
-            className="max-w-5xl max-h-[85vh] flex flex-col items-center gap-3"
+            className="max-w-5xl max-h-[85vh] flex flex-col items-center gap-3 overscroll-contain"
+            data-lenis-prevent="true"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             <img
               src={lightbox.src}

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Download, FileText, ShieldAlert, Maximize2, ArrowLeft } from 'lucide-react';
 import { SchoolDocument } from '../../types/documents';
+import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 interface DocumentViewerModalProps {
   document: SchoolDocument | null;
@@ -14,13 +15,20 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
   onClose,
   allowDownload = false,
 }) => {
+  // Lock body/Lenis scroll while document viewer is open
+  useBodyScrollLock(!!document);
+
   if (!document) return null;
 
   const isImage = document.fileUrl.match(/\.(jpeg|jpg|png|webp|gif)$/i);
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#0B1D30]/85 backdrop-blur-md">
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#0B1D30]/85 backdrop-blur-md overscroll-contain"
+        data-lenis-prevent="true"
+        onWheel={(e) => e.stopPropagation()}
+      >
         {/* Backdrop Click */}
         <div className="absolute inset-0" onClick={onClose} />
 
@@ -30,8 +38,10 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
           transition={{ duration: 0.2 }}
-          className="relative z-10 w-full max-w-5xl h-[88vh] bg-[#FCFBF7] rounded-3xl shadow-2xl border border-[#E7E2D8] flex flex-col overflow-hidden"
+          className="relative z-10 w-full max-w-5xl h-[88vh] bg-[#FCFBF7] rounded-3xl shadow-2xl border border-[#E7E2D8] flex flex-col overflow-hidden overscroll-contain"
+          data-lenis-prevent="true"
           onClick={(e) => e.stopPropagation()}
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Header Bar */}
           <div className="px-6 py-4 bg-[#0B1D30] text-white flex items-center justify-between border-b border-white/10 shrink-0">

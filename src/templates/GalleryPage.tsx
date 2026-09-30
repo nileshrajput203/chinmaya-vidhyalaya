@@ -5,6 +5,7 @@ import { Breadcrumb } from '../components/common/Breadcrumb';
 import { contentService } from '../services/contentService';
 import { GalleryItem } from '../types/gallery';
 import { GALLERY_YEARS, GALLERY_EVENTS } from '../data/gallery';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 const PAGE_SIZE = 18;
 
@@ -15,6 +16,9 @@ export const GalleryPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState<number>(PAGE_SIZE);
   const [activeLightboxIndex, setActiveLightboxIndex] = useState<number | null>(null);
+
+  // Lock scroll and Lenis while lightbox is open
+  useBodyScrollLock(activeLightboxIndex !== null);
 
   useEffect(() => {
     async function loadGallery() {
@@ -246,7 +250,9 @@ export const GalleryPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#121417]/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 select-none"
+            className="fixed inset-0 z-50 bg-[#121417]/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 select-none overscroll-contain"
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
             onClick={() => setActiveLightboxIndex(null)}
           >
             {/* Close Button */}

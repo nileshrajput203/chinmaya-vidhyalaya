@@ -9,6 +9,7 @@ import { Breadcrumb } from '../components/common/Breadcrumb';
 import { BLOG_POSTS, BLOG_CATEGORIES } from '../data/blog';
 import { BlogPost, BlogCategoryFilter } from '../types/blog';
 import { useToast } from '../context/ToastContext';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 export const BlogPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -44,17 +45,8 @@ export const BlogPage: React.FC = () => {
     }
   }, [searchParams]);
 
-  // Lock scroll when modal is open
-  useEffect(() => {
-    if (activeArticle) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [activeArticle]);
+  // Lock body/Lenis scroll when modal is open
+  useBodyScrollLock(!!activeArticle);
 
   // Filter posts based on category and search query
   const filteredPosts = useMemo(() => {
@@ -442,10 +434,20 @@ export const BlogPage: React.FC = () => {
           FULL ARTICLE READER MODAL
          ==================================================== */}
       {activeArticle && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex justify-center p-3 sm:p-6 lg:p-10">
-          <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden my-auto border border-slate-200">
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 lg:p-8 overscroll-contain"
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
+          onClick={handleCloseArticle}
+        >
+          <div
+            className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 overscroll-contain select-text"
+            data-lenis-prevent="true"
+            onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
+          >
             {/* Header Sticky Action Bar */}
-            <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+            <div className="shrink-0 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-200 flex items-center justify-between z-20">
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-[#FAF3E8] text-[#DF711B] text-[11px] font-mono font-bold uppercase tracking-wider">
                   {activeArticle.category}
@@ -458,7 +460,7 @@ export const BlogPage: React.FC = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleShare(activeArticle)}
-                  className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors flex items-center gap-1.5 text-xs font-medium"
+                  className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors flex items-center gap-1.5 text-xs font-medium cursor-pointer"
                   title="Share link"
                 >
                   {isCopied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
@@ -467,7 +469,7 @@ export const BlogPage: React.FC = () => {
 
                 <button
                   onClick={handleCloseArticle}
-                  className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+                  className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors cursor-pointer"
                   aria-label="Close article"
                 >
                   <X className="w-5 h-5" />
@@ -476,7 +478,11 @@ export const BlogPage: React.FC = () => {
             </div>
 
             {/* Modal Body Content */}
-            <div className="p-6 sm:p-10 lg:p-12 space-y-8 max-h-[85vh] overflow-y-auto">
+            <div
+              className="p-6 sm:p-10 lg:p-12 space-y-8 flex-1 overflow-y-auto overscroll-contain"
+              data-lenis-prevent="true"
+              onWheel={(e) => e.stopPropagation()}
+            >
               {/* Title & Subtitle */}
               <div className="space-y-4">
                 <h1 className="font-cinzel text-2xl sm:text-3xl lg:text-4xl font-black text-[#0B1E34] leading-tight">

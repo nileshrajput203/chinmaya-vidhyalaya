@@ -18,6 +18,7 @@ import { HorizontalPanelGallery } from '../../components/home/HorizontalPanelGal
 import { NoticeEventBoard } from '../../components/home/NoticeEventBoard';
 import { HeroScrollytellingFilm } from '../../components/home/HeroScrollytellingFilm';
 import { BannerCarousel } from '../../components/home/BannerCarousel';
+import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,6 +130,9 @@ export const HomePage: React.FC = () => {
   const [selectedGalleryImg, setSelectedGalleryImg] = useState<string | null>(null);
   const [isAdmissionDrawerOpen, setIsAdmissionDrawerOpen] = useState<boolean>(false);
   const [activeQuote, setActiveQuote] = useState<number>(0);
+
+  // Lock body/Lenis scrolling when enlarged gallery image is active
+  useBodyScrollLock(!!selectedGalleryImg);
 
   // GSAP Animation References
   const homeWrapperRef = useRef<HTMLDivElement>(null);
@@ -708,12 +712,14 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#181C20]/95 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-[#181C20]/95 backdrop-blur-md flex items-center justify-center p-4 overscroll-contain select-none"
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
             onClick={() => setSelectedGalleryImg(null)}
           >
             <button 
               onClick={() => setSelectedGalleryImg(null)}
-              className="absolute top-6 right-6 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              className="absolute top-6 right-6 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
             >
               <X className="w-6 h-6" />
             </button>
@@ -721,6 +727,7 @@ export const HomePage: React.FC = () => {
               src={selectedGalleryImg} 
               alt="Enlarged Campus Visual" 
               className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl border border-white/20 object-contain"
+              onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
         )}

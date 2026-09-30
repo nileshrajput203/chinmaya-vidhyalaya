@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle2, PhoneCall, Sparkles } from 'lucide-react';
 import { formService } from '../../services/formService';
+import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 interface AdmissionGuidanceModalProps {
   // Optional external control
@@ -21,6 +22,9 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
 
   const isControlled = typeof controlledIsOpen === 'boolean';
   const isOpen = isControlled ? controlledIsOpen : internalIsOpen;
+
+  // Lock body & Lenis smooth scroll while admission guidance modal is open
+  useBodyScrollLock(isOpen);
 
   const [formData, setFormData] = useState({
     parentName: '',
@@ -179,7 +183,11 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
     <>
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 select-none overflow-y-auto">
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 select-none overflow-y-auto overscroll-contain"
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
+          >
           {/* Glassmorphic Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -196,8 +204,10 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 15 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.55)] border border-[#E7E2D8] overflow-hidden z-10 my-auto"
+            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.55)] border border-[#E7E2D8] overflow-hidden z-10 my-auto overscroll-contain"
+            data-lenis-prevent="true"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Top Close Button */}
             <button
