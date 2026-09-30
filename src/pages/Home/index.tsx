@@ -399,6 +399,11 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
+          CAMPUS LIFE PHOTOGRAPHIC MARQUEE STREAM
+         ---------------------------------------------------- */}
+      <MarqueeAlongSvgPathDemo />
+
+      {/* ----------------------------------------------------
           SECTION 04 — FOUNDATIONAL MATRIX: CHINMAYA VISION PROGRAM (CVP)
          ---------------------------------------------------- */}
       <section className="py-8 lg:py-12 bg-[#F3EFE6] text-[#181C20] relative overflow-hidden">
@@ -643,13 +648,6 @@ export const HomePage: React.FC = () => {
           SECTION 05.5 — LIVE NOTICE & EVENT BOARD
          ---------------------------------------------------- */}
       <NoticeEventBoard />
-
-
-
-      {/* ----------------------------------------------------
-          SECTION 06.5 — CAMPUS LIFE MARQUEE ALONG SVG PATH
-         ---------------------------------------------------- */}
-      <MarqueeAlongSvgPathDemo />
 
       {/* ----------------------------------------------------
           SECTION 07 — VISUAL ARCHIVE & MASONRY EXHIBITION
