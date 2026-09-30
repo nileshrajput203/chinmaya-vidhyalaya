@@ -78,14 +78,84 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
   }
 };
 
-function getBotResponse(userText: string): { answer: string; actions?: Array<{ label: string; url?: string; download?: boolean }> } {
-  const query = userText.toLowerCase();
+import { OFFICIAL_FAQS } from '../../data/faq';
 
-  if (query.includes('fee') || query.includes('cost') || query.includes('charge') || query.includes('payment') || query.includes('installment')) {
-    return FAQ_KNOWLEDGE_BASE['fee'];
+function getBotResponse(userText: string): { 
+  answer: string; 
+  actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> 
+} {
+  const query = userText.toLowerCase().trim();
+  const tokens = query.split(/\s+/).filter(t => t.length > 2);
+
+  // Check if user specifically requested admission guidance modal
+  if (query.includes('guidance') || query.includes('call back') || query.includes('callback') || query.includes('counsellor') || query.includes('counselor') || query.includes('form modal')) {
+    return {
+      answer: "I can open our Admission Guidance Desk right now! You can submit your mobile number and child's standard for an immediate callback from our academic coordinator.",
+      actions: [
+        { label: '✨ Open Admission Guidance Form', isModalTrigger: true },
+        { label: 'View Fee Calculator', url: '/admissions/guidelines' }
+      ]
+    };
+  }
+
+  // Score against OFFICIAL_FAQS
+  let bestFaqMatch: { faq: typeof OFFICIAL_FAQS[0]; score: number } | null = null;
+  for (const faq of OFFICIAL_FAQS) {
+    const qLower = faq.question.toLowerCase();
+    const aLower = faq.answer.toLowerCase();
+    let score = 0;
+
+    for (const token of tokens) {
+      if (qLower.includes(token)) score += 3;
+      if (aLower.includes(token)) score += 1;
+    }
+
+    if (score > 0 && (!bestFaqMatch || score > bestFaqMatch.score)) {
+      bestFaqMatch = { faq, score };
+    }
+  }
+
+  // If high-confidence FAQ match found
+  if (bestFaqMatch && bestFaqMatch.score >= 3) {
+    const matchedFaq = bestFaqMatch.faq;
+    const actions: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> = [];
+    
+    if (matchedFaq.category === 'admissions') {
+      actions.push({ label: '✨ Request Admission Callback', isModalTrigger: true });
+      actions.push({ label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true });
+    } else if (matchedFaq.category === 'disclosures') {
+      actions.push({ label: 'View Mandatory Disclosures', url: '/about/mandatory-information' });
+    } else if (matchedFaq.category === 'cvp') {
+      actions.push({ label: 'Explore 4 Pillars', url: '/features/four-pillars' });
+    } else {
+      actions.push({ label: 'Academics & Curriculum', url: '/academics/curriculum' });
+    }
+
+    return {
+      answer: `${matchedFaq.question}\n\n${matchedFaq.answer}`,
+      actions
+    };
+  }
+
+  // Keyword rules fallback
+  if (query.includes('fee') || query.includes('cost') || query.includes('charge') || query.includes('payment') || query.includes('installment') || query.includes('calculator')) {
+    return {
+      answer: "Chinmaya Vidyalaya Tarapur offers a transparent, CBSE-regulated fee structure with term-wise installments.\n\n• Term 1 (June) & Term 2 (November) flexible installments\n• Lab and IT charges apply for Classes XI & XII Science/Commerce\n• Bus transport fees vary based on Boisar / MIDC / BARC route zones.\n\nYou can calculate exact fees for your child's standard using our Interactive Fee Estimator!",
+      actions: [
+        { label: '🧮 Interactive Fee Estimator', url: '/admissions/guidelines' },
+        { label: 'Call Accounts: 9322054713', url: 'tel:9322054713' }
+      ]
+    };
   }
   if (query.includes('admiss') || query.includes('apply') || query.includes('seat') || query.includes('join') || query.includes('nursery') || query.includes('std 1') || query.includes('class 1')) {
-    return FAQ_KNOWLEDGE_BASE['admission'];
+    return {
+      ...FAQ_KNOWLEDGE_BASE['admission'],
+      actions: [
+        { label: '✨ Request Admission Callback', isModalTrigger: true },
+        { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
+        { label: 'Admission Guidelines', url: '/admissions/guidelines' }
+      ]
+    };
   }
   if (query.includes('form') || query.includes('download') || query.includes('paper') || query.includes('pdf') || query.includes('sample') || query.includes('tc') || query.includes('certificate')) {
     return FAQ_KNOWLEDGE_BASE['forms'];
@@ -108,11 +178,11 @@ function getBotResponse(userText: string): { answer: string; actions?: Array<{ l
 
   // Default intelligent fallback
   return {
-    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• For Admissions (Nursery to Class IX): Session 2026-27 is open.\n• For Fees & Receipts: Term-wise payment schedule available.\n• For Campus Timings: Mon–Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 for instant personal guidance.",
+    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130095 / 1130058.\n• Timings: Mon–Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request a callback.",
     actions: [
-      { label: 'Admission Enquiry', url: '/admissions' },
-      { label: 'Download Forms', url: '/downloads/documents' },
-      { label: 'Call Office: 9322054713', url: 'tel:9322054713' }
+      { label: '✨ Request Admission Callback', isModalTrigger: true },
+      { label: '🧮 Fee Estimator', url: '/admissions/guidelines' },
+      { label: 'Download Forms', url: '/downloads/documents' }
     ]
   };
 }
@@ -328,6 +398,21 @@ export const ChatbotFAB: React.FC = () => {
                   {msg.actionButtons && msg.actionButtons.length > 0 && (
                     <div className="mt-2 pl-8 flex flex-wrap gap-1.5 max-w-full">
                       {msg.actionButtons.map((btn, idx) => {
+                        if ((btn as any).isModalTrigger) {
+                          return (
+                            <button
+                              key={idx}
+                              type="button"
+                              onClick={() => {
+                                window.dispatchEvent(new CustomEvent('open-admission-modal'));
+                              }}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-[#DF711B] to-[#FF8C38] hover:from-[#C86012] hover:to-[#DF711B] text-white border border-[#DF711B] rounded-lg text-[11px] font-bold transition-all shadow-xs cursor-pointer text-left"
+                            >
+                              <span>{btn.label}</span>
+                            </button>
+                          );
+                        }
+
                         if (btn.url) {
                           return (
                             <a

@@ -262,9 +262,23 @@ export const NewsListingPage: React.FC = () => {
                           </p>
                         </div>
 
-                        <div className="pt-2 border-t border-[#F3EFE6] text-xs font-mono text-[#777777] flex items-center justify-between">
-                          <span>{ev.date}</span>
-                          <span className="text-[#DF711B] font-bold">School Calendar ›</span>
+                        <div className="pt-2 border-t border-[#F3EFE6] text-xs font-mono text-[#777777] flex items-center justify-between gap-2">
+                          <span className="truncate">{ev.date}</span>
+                          <a
+                            href={(() => {
+                              const title = encodeURIComponent(`Chinmaya Vidyalaya: ${ev.title}`);
+                              const details = encodeURIComponent(`${ev.summary}\n\nVenue: ${ev.venue}\nChinmaya Vidyalaya Tarapur (CBSE No. 1130095)`);
+                              const location = encodeURIComponent(`${ev.venue}, Chinmaya Vidyalaya Tarapur, Boisar, Maharashtra 401501`);
+                              return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}`;
+                            })()}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#FAF3E8] hover:bg-[#DF711B] text-[#DF711B] hover:text-white border border-[#DF711B]/30 rounded-lg text-[11px] font-bold transition-all shrink-0"
+                            title="Add event to your Google Calendar"
+                          >
+                            <Calendar className="w-3 h-3" />
+                            <span>Add to Google Calendar</span>
+                          </a>
                         </div>
                       </div>
                     ))}

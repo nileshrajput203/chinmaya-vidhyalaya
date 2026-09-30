@@ -18,6 +18,7 @@ import { LibraryShowcase } from '../components/inner/LibraryShowcase';
 import { FacultyShowcase } from '../components/inner/FacultyShowcase';
 import { VisionMissionShowcase } from '../components/inner/VisionMissionShowcase';
 import { HeritageShowcase } from '../components/inner/HeritageShowcase';
+import { AdmissionFeeCalculator } from '../components/admissions/AdmissionFeeCalculator';
 
 interface ContentPageProps {
   slug?: string;
@@ -521,10 +522,17 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   </div>
                 </section>
               )}
-            </div>
-          )}
+          </div>
+        )}
 
-          {/* Mandatory Public Disclosures Feature Box - ONLY on statutory pages */}
+        {/* Interactive Fee & Eligibility Estimator for Prospective Parents */}
+        {isAdmissions && (
+          <div className="mt-4">
+            <AdmissionFeeCalculator />
+          </div>
+        )}
+
+        {/* Mandatory Public Disclosures Feature Box - ONLY on statutory pages */}
           {showComplianceSection && (
             <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E7E2D8] pb-4">

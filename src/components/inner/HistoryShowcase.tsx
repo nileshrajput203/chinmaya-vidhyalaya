@@ -11,7 +11,7 @@ interface Milestone {
   tag: string;
   description: string;
   image?: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const MILESTONES: Milestone[] = [

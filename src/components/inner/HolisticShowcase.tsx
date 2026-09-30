@@ -9,7 +9,7 @@ interface VikasPillar {
   name: string;
   sanskrit: string;
   domain: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   color: string;
   badgeBg: string;
   badgeText: string;

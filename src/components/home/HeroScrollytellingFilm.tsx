@@ -233,34 +233,75 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       });
     };
 
-    // Priority 1: Load initial 25 frames immediately so start is instantly responsive
+    // Adaptive preloader: detects connection speed and mobile constraints
+    const navConn = (navigator as any)?.connection;
+    const isSlowConnection = navConn?.saveData || navConn?.effectiveType === '2g' || navConn?.effectiveType === '3g';
+    const isMobileDevice = typeof window !== 'undefined' && window.innerWidth < 768;
+
     const loadInitialSequence = async () => {
+      // Step 1: Preload immediate start frames
+      const initialBatch = isSlowConnection || isMobileDevice ? 12 : 25;
       const initialPromises: Promise<void>[] = [];
-      for (let i = 0; i < Math.min(25, TOTAL_FRAMES); i++) {
+      for (let i = 0; i < Math.min(initialBatch, TOTAL_FRAMES); i++) {
         initialPromises.push(fetchFrame(i));
       }
       await Promise.all(initialPromises);
       if (isCancelled) return;
       drawFrame(0);
 
-      // Priority 2: Concurrent worker pool for all remaining frames (batches of 8)
-      const remainingIndices: number[] = [];
-      for (let i = 25; i < TOTAL_FRAMES; i++) {
-        remainingIndices.push(i);
-      }
-
-      const CONCURRENCY = 8;
-      let currentIndex = 0;
-
-      const worker = async () => {
-        while (currentIndex < remainingIndices.length && !isCancelled) {
-          const idx = remainingIndices[currentIndex++];
-          await fetchFrame(idx);
+      // Step 2: On mobile or constrained networks, prioritize keyframes with stride 3
+      // This immediately gives full scrubbing coverage across the entire 850px scroll with zero lag
+      if (isSlowConnection || isMobileDevice) {
+        const keyframeIndices: number[] = [];
+        for (let i = initialBatch; i < TOTAL_FRAMES; i += 3) {
+          keyframeIndices.push(i);
         }
-      };
+        
+        // Load keyframes first with gentle concurrency (3 concurrent)
+        const KEYFRAME_CONCURRENCY = 3;
+        let kIndex = 0;
+        const keyframeWorker = async () => {
+          while (kIndex < keyframeIndices.length && !isCancelled) {
+            const idx = keyframeIndices[kIndex++];
+            await fetchFrame(idx);
+          }
+        };
+        await Promise.all(Array.from({ length: KEYFRAME_CONCURRENCY }, () => keyframeWorker()));
+        if (isCancelled) return;
 
-      const workers = Array.from({ length: CONCURRENCY }, () => worker());
-      await Promise.all(workers);
+        // Step 3: Backfill all remaining in-between frames in background idle time
+        const backfillIndices: number[] = [];
+        for (let i = initialBatch; i < TOTAL_FRAMES; i++) {
+          if (!loadedSet.has(i)) backfillIndices.push(i);
+        }
+        let bIndex = 0;
+        const backfillWorker = async () => {
+          while (bIndex < backfillIndices.length && !isCancelled) {
+            const idx = backfillIndices[bIndex++];
+            await fetchFrame(idx);
+          }
+        };
+        await Promise.all(Array.from({ length: 2 }, () => backfillWorker()));
+      } else {
+        // Desktop / Fast connection: standard fast batch pool (batches of 6)
+        const remainingIndices: number[] = [];
+        for (let i = initialBatch; i < TOTAL_FRAMES; i++) {
+          remainingIndices.push(i);
+        }
+
+        const CONCURRENCY = 6;
+        let currentIndex = 0;
+
+        const worker = async () => {
+          while (currentIndex < remainingIndices.length && !isCancelled) {
+            const idx = remainingIndices[currentIndex++];
+            await fetchFrame(idx);
+          }
+        };
+
+        const workers = Array.from({ length: CONCURRENCY }, () => worker());
+        await Promise.all(workers);
+      }
     };
 
     loadInitialSequence();

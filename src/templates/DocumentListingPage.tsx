@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, FileText, Download, Eye, ShieldCheck, Filter } from 'lucide-react';
+import { Search, FileText, Download, Eye, ShieldCheck, Filter, X } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { documentService } from '../services/documentService';
 import { SchoolDocument, DocumentCategory, TermCategory } from '../types/documents';
@@ -135,7 +135,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
               )}
             </div>
 
-            {/* Search Input */}
+            {/* Search Input with count & clear */}
             <div className="relative w-full md:w-80">
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
@@ -143,9 +143,31 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                 placeholder="Search by title, standard, or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B] font-sans"
+                className="w-full pl-10 pr-9 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B] font-sans"
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5"
+                  title="Clear search"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
             </div>
+          </div>
+
+          {/* Quick Counter */}
+          <div className="flex items-center justify-between text-[11px] text-slate-500 font-mono pt-1">
+            <span>
+              Showing <strong className="text-[#DF711B] font-bold">{displayDocuments.length}</strong> verified records
+            </span>
+            {searchQuery && (
+              <span className="text-slate-400">
+                Filtered by: "{searchQuery}"
+              </span>
+            )}
           </div>
 
           {/* Term-Wise Filter (For Sample Papers per user request) */}

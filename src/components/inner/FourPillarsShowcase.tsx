@@ -15,7 +15,7 @@ interface PillarDetail {
   borderAccent: string;
   badgeBg: string;
   badgeText: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   philosophy: string;
   howWeFollow: {
     title: string;
