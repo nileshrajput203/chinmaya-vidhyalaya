@@ -382,7 +382,6 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                             className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E5E0D5] focus:border-[#C41E3A] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
                           >
                             <option value="Main Campus (Boisar, Tarapur)">Main Campus (Boisar, Tarapur)</option>
-                            <option value="Palghar / Boisar Region">Palghar / Boisar Region</option>
                             <option value="Book Campus Tour First">Book Campus Tour First</option>
                             <option value="General Fee & Curriculum Inquiry">General Fee & Curriculum Inquiry</option>
                           </select>
