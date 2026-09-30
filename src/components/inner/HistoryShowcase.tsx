@@ -1,70 +1,56 @@
 import React from 'react';
-import { Calendar, Building2, Users, Award, ShieldCheck, Sparkles } from 'lucide-react';
 import { GoogleMapSection } from '../maps/GoogleMapSection';
 import { InView } from '../ui/in-view';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
+import Timeline, { JourneyItem } from '../ui/timeline';
 
-interface Milestone {
-  year: string;
-  title: string;
-  tag: string;
-  description: string;
-  image?: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
+const CHINMAYA_TOP_MILESTONES: JourneyItem[] = [
+  {
+    id: "1993-conception",
+    year: "1993",
+    month: "April",
+    content: "Envisaged by devoted followers of the Tarapur Chinmaya Mission Centre under the inspiring spiritual vision of Param Pujya Swami Chinmayanandaji to establish an educational lighthouse.",
+  },
+  {
+    id: "1995-inauguration",
+    year: "1995",
+    month: "June",
+    content: "Formally inaugurated by H.H. Swami Purushottamanandaji with 72 students and 4 teachers — the very first Chinmaya Vidyalaya established across Maharashtra–Gujarat–Goa.",
+  },
+  {
+    id: "2004-aisse",
+    year: "2004",
+    month: "March",
+    content: "First batch of Standard X students appeared for the AISSE examinations, inaugurating our unbroken continuous tradition of 100% board examination distinctions.",
+  },
+  {
+    id: "2026-present",
+    year: "2026",
+    month: "May",
+    content: "Premier institution educating approximately 1,600 learners from Nursery through Senior Secondary (Science, Commerce & Arts) with state-of-the-art STEM and robotics laboratories.",
+  },
+];
 
-const MILESTONES: Milestone[] = [
+const CHINMAYA_BOTTOM_MILESTONES: JourneyItem[] = [
   {
-    year: '1993',
-    title: 'Divine Conception & Community Vision',
-    tag: 'Founding Vision',
-    description:
-      'Envisaged by devoted followers of the Tarapur Chinmaya Mission Centre under the inspiring spiritual vision of Param Pujya Swami Chinmayanandaji to establish a value-based educational lighthouse in Boisar.',
-    icon: Sparkles
+    id: "1994-groundbreaking",
+    year: "1994",
+    month: "October",
+    content: "Construction of the first phase commenced in the sacred presence of Param Pujya Swami Tejomayanandaji, creating the foundation for holistic schooling.",
   },
   {
-    year: '1994',
-    title: 'Groundbreaking & Construction Phase',
-    tag: 'Foundation Laid',
-    description:
-      'Construction of the first phase commenced in the sacred presence of Param Pujya Swami Tejomayanandaji, creating the architectural foundation for holistic schooling.',
-    icon: Building2
+    id: "2003-cbse",
+    year: "2003",
+    month: "August",
+    content: "Granted official composite affiliation by the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130095).",
   },
   {
-    year: '18 June 1995',
-    title: 'Grand Inauguration: First School in the Zone',
-    tag: 'Historic Opening',
-    description:
-      'Formally inaugurated by H.H. Swami Purushottamanandaji with an initial batch of 72 students and 4 teachers. Notably, it stands as the VERY FIRST Chinmaya Vidyalaya established across the Maharashtra–Gujarat–Goa zone.',
-    image: '/images/history2.jpeg',
-    icon: Calendar
+    id: "2015-campus",
+    year: "2015",
+    month: "November",
+    content: "Extensive campus expansion with modern computer and robotics laboratories, central knowledge library, and multi-sport athletic facilities.",
   },
-  {
-    year: '2003',
-    title: 'CBSE Affiliation Granted',
-    tag: 'Composite Affiliation',
-    description:
-      'The Vidyalaya was granted official composite affiliation by the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004).',
-    icon: ShieldCheck
-  },
-  {
-    year: '2004–2005',
-    title: 'Maiden AISSE Class X Examination Batch',
-    tag: 'Academic Distinction',
-    description:
-      'The first batch of Standard X students appeared for the All India Secondary School Examination (AISSE), inaugurating a continuous tradition of 100% board examination distinctions.',
-    icon: Award
-  },
-  {
-    year: 'Present Day',
-    title: 'Premier Center of 1,600+ Students',
-    tag: 'Flourishing Campus',
-    description:
-      'Now educating approximately 1,600 students across Nursery through Senior Secondary (Arts, Commerce & Science), guided by Central Chinmaya Mission Trust, Mumbai and the Local Managing Committee.',
-    image: '/images/about2.jpeg',
-    icon: Users
-  }
 ];
 
 export const HistoryShowcase: React.FC = () => {
@@ -101,7 +87,7 @@ export const HistoryShowcase: React.FC = () => {
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
                 <span className="text-[10px] font-mono text-slate-400 uppercase font-bold block">CBSE Affiliation</span>
-                <span className="font-cinzel font-bold text-lg text-[#DF711B]">1130058</span>
+                <span className="font-cinzel font-bold text-lg text-[#DF711B]">1130095</span>
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
                 <span className="text-[10px] font-mono text-slate-400 uppercase font-bold block">Initial Batch</span>
@@ -138,68 +124,37 @@ export const HistoryShowcase: React.FC = () => {
         </SpotlightCard>
       </InView>
 
-      {/* Chronological Milestone Cards with 21st.dev InView & Spotlight */}
-      <div className="bg-white border border-[#E7E2D8] rounded-3xl p-8 sm:p-12 shadow-card space-y-8">
-        <div className="space-y-1">
-          <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
-            Institutional Timeline
-          </span>
-          <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
-            Milestones of Excellence & Growth
-          </h3>
+      {/* ====================================================
+          INTERACTIVE HYPERIUX VAULT PINNED TIMELINE
+         ==================================================== */}
+      <div className="rounded-3xl overflow-hidden border border-[#E7E2D8] shadow-card bg-[#FAF8F5]">
+        <div className="p-6 sm:p-8 border-b border-[#E7E2D8] bg-[#FAF8F5] flex flex-col sm:flex-row justify-between sm:items-end gap-3">
+          <div className="space-y-1">
+            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
+              Institutional Heritage • Three Decades of Growth
+            </span>
+            <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] m-0">
+              Milestones of Excellence & Growth
+            </h3>
+          </div>
+          <p className="text-xs font-mono text-slate-500 m-0">
+            Scroll down to scrub through the timeline &rarr;
+          </p>
         </div>
 
-        <div className="relative border-l-2 border-[#DF711B]/30 ml-4 sm:ml-6 pl-6 sm:pl-8 space-y-8">
-          {MILESTONES.map((m, idx) => {
-            const Icon = m.icon;
-            return (
-              <InView key={idx}>
-                <div className="relative group">
-                  <div className="absolute -left-[37px] sm:-left-[45px] top-1.5 w-6 h-6 rounded-full bg-[#DF711B] border-4 border-[#FFF9F2] shadow-sm flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                  </div>
-                  <SpotlightCard
-                    spotlightColor="rgba(223, 113, 27, 0.06)"
-                    className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-2xl p-6 group-hover:border-[#DF711B] transition-all space-y-3"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center shrink-0">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <span className="text-xs font-mono font-bold text-[#DF711B]">
-                            {m.year}
-                          </span>
-                          <h4 className="font-cinzel font-bold text-base sm:text-lg text-[#181C20]">
-                            {m.title}
-                          </h4>
-                        </div>
-                      </div>
-                      <BadgePill label={m.tag} variant="neutral" />
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {m.description}
-                    </p>
-
-                    {m.image && (
-                      <div className="pt-2">
-                        <div className="rounded-xl overflow-hidden border border-[#E7E2D8] max-w-md aspect-[16/9] shadow-2xs">
-                          <img
-                            src={m.image}
-                            alt={m.title}
-                            className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </SpotlightCard>
-                </div>
-              </InView>
-            );
-          })}
-        </div>
+        <Timeline
+          title="Campus Journey"
+          periodLabel="1993 — 2026"
+          textColor="#181C20"
+          mutedTextColor="#555555"
+          activeColor="#DF711B"
+          backgroundColor="#FAF8F5"
+          imageUrl="/images/history2.jpeg"
+          imageAlt="Chinmaya Vidyalaya Historic Campus 1995"
+          duration={1.2}
+          topData={CHINMAYA_TOP_MILESTONES}
+          bottomData={CHINMAYA_BOTTOM_MILESTONES}
+        />
       </div>
 
       {/* Campus Map */}
