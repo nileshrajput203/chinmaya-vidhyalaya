@@ -551,50 +551,77 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          {/* 2x2 Verified Chinmaya Vidyalaya Laboratories Grid */}
+          {/* 2x2 Verified Chinmaya Vidyalaya Laboratories Grid (Clickable to Infrastructure Page) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
                 id: 'lab-physics',
+                targetId: 'physics-lab',
                 title: 'Physics Lab',
                 image: '/images/phys.jpeg',
+                tagline: 'CBSE Senior Secondary Optics, Mechanics & Circuits',
+                to: '/academics/infrastructure#physics-lab',
               },
               {
                 id: 'lab-chemistry',
+                targetId: 'chemistry-lab',
                 title: 'Chemistry Lab',
                 image: '/images/CHEM1.jpeg',
+                tagline: 'Analytical Titration, Reagents & Fume Hoods',
+                to: '/academics/infrastructure#chemistry-lab',
               },
               {
                 id: 'lab-biology',
+                targetId: 'biology-lab',
                 title: 'Biology Lab',
                 image: '/images/biology-lab.jpg',
+                tagline: 'Compound Microscopes, Specimen Archives & Histology',
+                to: '/academics/infrastructure#biology-lab',
               },
               {
                 id: 'lab-it',
+                targetId: 'it-lab',
                 title: 'IT Lab',
                 image: '/images/it-lab.jpg',
+                tagline: 'Networked Workstations, Python, Java & Cyber Labs',
+                to: '/academics/infrastructure#it-lab',
               },
             ].map((card) => (
-              <div
+              <Link
                 key={card.id}
-                className="rounded-[1.75rem] border-[3.5px] border-[#DF711B] bg-[#DF711B] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
+                to={card.to}
+                className="rounded-[1.75rem] border-[3.5px] border-[#DF711B] bg-[#DF711B] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer transform hover:-translate-y-1"
+                title={`Explore ${card.title} Infrastructure and Apparatus`}
               >
-                {/* Lab Image */}
+                {/* Lab Image with subtle hover badge */}
                 <div className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden bg-slate-100">
                   <img
                     src={card.image}
                     alt={card.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
+                  {/* Floating Action Pill on Hover */}
+                  <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-[#0B1E34]/85 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
+                    <span>Inspect Lab Details</span>
+                    <span className="text-[#FFB740]">›</span>
+                  </div>
                 </div>
 
-                {/* Bottom Solid Terracotta Banner */}
-                <div className="bg-[#DF711B] text-white py-3.5 sm:py-4 px-6 relative flex items-center">
-                  <p className="font-sans font-bold text-xs sm:text-sm text-white uppercase tracking-wider m-0 leading-tight">
-                    {card.title}
-                  </p>
+                {/* Bottom Solid Terracotta Banner with title & arrow */}
+                <div className="bg-[#DF711B] text-white py-3.5 sm:py-4 px-6 relative flex items-center justify-between">
+                  <div>
+                    <p className="font-sans font-black text-sm sm:text-base text-white uppercase tracking-wider m-0 leading-tight">
+                      {card.title}
+                    </p>
+                    <p className="font-sans text-[11px] text-amber-100/90 font-medium m-0 mt-0.5">
+                      {card.tagline}
+                    </p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/20 group-hover:bg-white text-white group-hover:text-[#DF711B] flex items-center justify-center transition-colors shrink-0 shadow-xs">
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
