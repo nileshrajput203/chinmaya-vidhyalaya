@@ -70,19 +70,33 @@ export default function MarqueeAlongSvgPathDemo() {
           preserveAspectRatio="none"
         >
           {imgs.map((img, i) => (
-            <div
+            <Link
+              to="/gallery"
               key={i}
-              className="w-16 h-16 sm:w-18 sm:h-18 hover:scale-125 duration-300 ease-in-out transition-transform"
+              className="group block relative w-16 h-16 sm:w-20 sm:h-20 aspect-square rounded-2xl overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.22)] border-2 border-white/90 bg-neutral-900 hover:scale-125 hover:shadow-[0_12px_28px_rgba(0,0,0,0.4)] hover:border-amber-300 duration-300 ease-out transition-all shrink-0 cursor-pointer"
+              title={img.alt}
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
-                className="w-full h-full object-cover rounded-xl shadow-[0_4px_14px_rgba(0,0,0,0.25)] border border-white/60"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== window.location.origin + "/images/banner-1.jpg") {
+                    target.src = "/images/banner-1.jpg";
+                  }
+                }}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none select-none"
                 draggable={false}
               />
-            </div>
+              {/* Subtle hover caption overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none flex items-end p-1.5">
+                <span className="text-[9px] sm:text-[10px] font-sans font-semibold text-white leading-tight line-clamp-1 drop-shadow">
+                  {img.alt}
+                </span>
+              </div>
+            </Link>
           ))}
         </MarqueeAlongSvgPath>
       </div>
@@ -194,7 +208,7 @@ const imgs = [
   { src: "/images/lib.jpg", alt: "Central knowledge library" },
   { src: "/images/chinmaya/cultural/arts_and_creativity_005.jpg", alt: "Arts, crafts and creativity exhibition" },
   { src: "/images/banner-8.webp", alt: "Annual Sports Day sportsmanship" },
-  { src: "/images/chinmaya/academics/science_stem_lab_01.jpg", alt: "Science talent and innovation fair" },
+  { src: "/images/chinmaya-web-science.jpg", alt: "Science talent and innovation fair" },
   { src: "/images/banner-9.webp", alt: "Annual Day cultural celebration" },
   { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg", alt: "Musical ensemble and devotional choir" },
   { src: "/images/guru-paduka-pooja.webp", alt: "Guru Paduka Pooja sacred assembly" },
@@ -209,4 +223,12 @@ const imgs = [
   { src: "/images/chinmaya/sports/sports_athletic_meet_015.jpg", alt: "Inter-school scholastic championship" },
   { src: "/images/chinmaya/leadership/principal_dimple_mistry.jpg", alt: "Principal leadership and mentorship" },
   { src: "/images/swami.jpeg", alt: "Revered founder Pujya Gurudev Swami Chinmayananda" },
+  { src: "/images/chinmaya/campus/campus_facilities_001.jpg", alt: "Landscaped campus courtyard" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_005.jpg", alt: "Inter-house football tournament" },
+  { src: "/images/chinmaya/academics/classroom_learning_020.jpg", alt: "Scholastic seminar workshop" },
+  { src: "/images/chinmaya/academics/classroom_learning_035.jpg", alt: "Literature and linguistic discourse" },
+  { src: "/images/chinmaya/academics/classroom_learning_060.jpg", alt: "Student peer presentations" },
+  { src: "/images/chinmaya/cultural/arts_and_creativity_001.jpg", alt: "Creative painting exhibition" },
+  { src: "/images/banner-3.jpeg", alt: "Traditional festival celebration" },
+  { src: "/images/1.jpeg", alt: "Morning prayer and student discipline" },
 ];
