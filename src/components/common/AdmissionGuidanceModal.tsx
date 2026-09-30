@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, PhoneCall, GraduationCap } from 'lucide-react';
+import { X, CheckCircle2, PhoneCall, GraduationCap, ShieldCheck, Award, HeartHandshake } from 'lucide-react';
 import { formService } from '../../services/formService';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
@@ -253,22 +253,31 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                 </div>
 
                 {/* Bottom: Verified Trust Pillars Glass Card */}
-                <div className="relative z-10 mt-6 pt-5 border-t border-white/15 space-y-2.5">
-                  <div className="flex items-center gap-2 text-xs text-white/90 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Dedicated Admissions Counseling Desk</span>
+                <div className="relative z-10 mt-6 pt-5 border-t border-white/15 space-y-3">
+                  <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-400/30">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </div>
+                    <span>Safe, Caring & Value-Based Campus</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-white/90 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Personalized Curriculum & Fee Guidance</span>
+
+                  <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
+                    <div className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-300/30">
+                      <Award className="w-3.5 h-3.5" />
+                    </div>
+                    <span>Consistent 100% CBSE Board Results</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-white/90 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Guaranteed Callback within 24 Hours</span>
+
+                  <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
+                    <div className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center shrink-0 border border-sky-300/30">
+                      <HeartHandshake className="w-3.5 h-3.5" />
+                    </div>
+                    <span>Friendly Guidance & Campus Visits Welcome</span>
                   </div>
-                  <div className="pt-1">
+
+                  <div className="pt-1.5">
                     <span className="inline-block text-[10px] font-mono text-[#FFD285] bg-white/10 px-2.5 py-0.5 rounded border border-white/15">
-                      CBSE Affiliation No. 1130058 • School Code: 30018
+                      CBSE Affiliation No. 1130095 • School Code: 30018
                     </span>
                   </div>
                 </div>
