@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, FileText, Download, Eye, ShieldCheck, Filter, X } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { documentService } from '../services/documentService';
@@ -15,6 +16,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
   initialCategory,
   pageTitle,
 }) => {
+  const navigate = useNavigate();
   const [documents, setDocuments] = useState<SchoolDocument[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<DocumentCategory | 'all'>(initialCategory || 'all');
   const [selectedTerm, setSelectedTerm] = useState<TermCategory | 'all'>('all');
@@ -120,6 +122,10 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                   <button
                     key={cat.value}
                     onClick={() => {
+                      if (cat.value === 'admissions') {
+                        navigate('/downloads/admissions');
+                        return;
+                      }
                       setSelectedCategory(cat.value);
                       setSelectedTerm('all');
                     }}

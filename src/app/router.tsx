@@ -12,6 +12,7 @@ import { ContactPage } from '../templates/ContactPage';
 import { CareersPage } from '../templates/CareersPage';
 import { AlumniPage } from '../templates/AlumniPage';
 import { BlogPage } from '../templates/BlogPage';
+import { RegistrationFormPage } from '../pages/Admissions/RegistrationFormPage';
 
 import { ABOUT_SECTIONS } from '../data/about';
 import { ACADEMIC_SECTIONS } from '../data/academics';
@@ -54,6 +55,9 @@ export const router = createBrowserRouter([
       /* ADMISSIONS ROUTES */
       { path: 'admissions', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="Admissions" /> },
       { path: 'admissions/guidelines', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="Admissions" /> },
+      { path: 'admissions/forms', element: <RegistrationFormPage /> },
+      { path: 'admissions/registration', element: <RegistrationFormPage /> },
+      { path: 'registration-forms', element: <RegistrationFormPage /> },
       { path: 'admission/guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
       { path: 'admission-guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
       { path: 'admissions-guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
@@ -102,7 +106,7 @@ export const router = createBrowserRouter([
       },
       { 
         path: 'downloads/admissions', 
-        element: <DocumentListingPage initialCategory="admissions" pageTitle="Admission Registration Forms" pageSubtitle="Download official application forms for Nursery, KG, and Std I to IX" /> 
+        element: <RegistrationFormPage /> 
       },
       { 
         path: 'downloads/transfer-certificates', 
