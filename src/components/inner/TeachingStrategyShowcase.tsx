@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { CheckCircle2, Sparkles, Microscope, BarChart3, Heart, LayoutGrid, Eye } from 'lucide-react';
+import { CheckCircle2, Sparkles, Microscope, BarChart3, Heart } from 'lucide-react';
 import gsap from 'gsap';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
@@ -116,21 +116,20 @@ const STRATEGIES: StrategyStep[] = [
 
 export const TeachingStrategyShowcase: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [showAllGrid, setShowAllGrid] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
 
   const activeStrategy = STRATEGIES[activeIdx];
 
   // GSAP smooth transition on strategy step change
   useEffect(() => {
-    if (stageRef.current && !showAllGrid) {
+    if (stageRef.current) {
       gsap.fromTo(
         stageRef.current,
         { opacity: 0, y: 14 },
         { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' }
       );
     }
-  }, [activeIdx, showAllGrid]);
+  }, [activeIdx]);
 
   return (
     <div className="space-y-10">
@@ -149,20 +148,17 @@ export const TeachingStrategyShowcase: React.FC = () => {
           At Chinmaya Vidyalaya Tarapur, teaching is an art of inspiration. We blend CBSE curricular rigor with modern experiential teaching methods, ASSET diagnostic analytics, and the timeless moral anchoring of the Chinmaya Vision Programme.
         </p>
 
-        {/* Action Bar: Step Navigator & View Switcher */}
+        {/* Action Bar: Step Navigator (Always in Focus Studio Mode) */}
         <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#E7E2D8]">
           <div className="flex flex-wrap items-center gap-2">
             {STRATEGIES.map((strat, idx) => (
               <button
                 key={strat.step}
                 type="button"
-                onClick={() => {
-                  setActiveIdx(idx);
-                  setShowAllGrid(false);
-                }}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
-                  !showAllGrid && activeIdx === idx
-                    ? 'bg-[#0B1E34] text-white shadow-md'
+                onClick={() => setActiveIdx(idx)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
+                  activeIdx === idx
+                    ? 'bg-[#0B1E34] text-white shadow-md scale-[1.02]'
                     : 'bg-white text-slate-700 hover:bg-[#FAF3E8] border border-[#E7E2D8]'
                 }`}
               >
@@ -172,29 +168,14 @@ export const TeachingStrategyShowcase: React.FC = () => {
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={() => setShowAllGrid(!showAllGrid)}
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#DF711B] hover:text-[#c45f12] bg-[#FAF3E8] px-3.5 py-2 rounded-xl border border-[#FDE49C] transition-colors ml-auto"
-          >
-            {showAllGrid ? (
-              <>
-                <Eye className="w-3.5 h-3.5" />
-                <span>Focus Studio View</span>
-              </>
-            ) : (
-              <>
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>Show All 4 Steps Grid</span>
-              </>
-            )}
-          </button>
+          <span className="text-xs font-mono text-slate-500 hidden md:inline-block">
+            Step {activeStrategy.step} of 04 • Focus Mode
+          </span>
         </div>
       </SpotlightCard>
 
-      {/* View Mode 1: Interactive Studio Stage (Zero-eye-travel, high visual retention) */}
-      {!showAllGrid ? (
-        <div ref={stageRef} className="space-y-6">
+      {/* Focus Studio Stage (Always in focus mode) */}
+      <div ref={stageRef} className="space-y-6">
           <SpotlightCard className="bg-white border-2 border-[#E7E2D8] rounded-3xl overflow-hidden shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Left Column: Visual Photography (Primary + Secondary) */}
@@ -282,69 +263,6 @@ export const TeachingStrategyShowcase: React.FC = () => {
             </div>
           </SpotlightCard>
         </div>
-      ) : (
-        /* View Mode 2: All 4 Steps Grid for High-Level Comparative Scanning */
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {STRATEGIES.map((strat, idx) => (
-            <SpotlightCard
-              key={strat.step}
-              className="bg-white border border-[#E7E2D8] rounded-3xl overflow-hidden shadow-card flex flex-col justify-between group"
-            >
-              <div>
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                  <img
-                    src={strat.image}
-                    alt={strat.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3 bg-[#DF711B] text-white px-3 py-1 rounded-xl text-xs font-mono font-bold shadow">
-                    Step {strat.step} • {strat.tag}
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-8 space-y-4">
-                  <h3 className="font-cinzel font-extrabold text-xl text-[#181C20] group-hover:text-[#DF711B] transition-colors">
-                    {strat.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    {strat.description}
-                  </p>
-
-                  <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-4 rounded-xl space-y-2">
-                    <span className="text-[11px] font-mono font-bold uppercase text-[#DF711B] block">
-                      Pedagogical Highlights:
-                    </span>
-                    <ul className="space-y-1.5">
-                      {strat.highlights.map((h, hIdx) => (
-                        <li key={hIdx} className="flex items-start gap-2 text-xs text-slate-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B] shrink-0 mt-0.5" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 pt-0 bg-white">
-                <div className="border-t border-[#E7E2D8] pt-4 flex items-center justify-between text-xs font-mono text-slate-500">
-                  <span>CBSE Pedagogical Framework</span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setActiveIdx(idx);
-                      setShowAllGrid(false);
-                    }}
-                    className="text-[#DF711B] font-bold hover:underline"
-                  >
-                    Focus In Studio →
-                  </button>
-                </div>
-              </div>
-            </SpotlightCard>
-          ))}
-        </div>
-      )}
     </div>
   );
 };

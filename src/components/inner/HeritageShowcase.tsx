@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Eye, LayoutGrid, ZoomIn, X } from 'lucide-react';
+import { ZoomIn, X } from 'lucide-react';
 import gsap from 'gsap';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
@@ -140,7 +140,6 @@ const GURUDEV_BOTTOM_MILESTONES: JourneyItem[] = [
 
 export const HeritageShowcase: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [showAllGrid, setShowAllGrid] = useState(false);
   const [lightbox, setLightbox] = useState<{ src: string; title: string; caption: string } | null>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
@@ -150,14 +149,14 @@ export const HeritageShowcase: React.FC = () => {
   const activePhase = PHASES[activeIdx];
 
   useEffect(() => {
-    if (stageRef.current && !showAllGrid) {
+    if (stageRef.current) {
       gsap.fromTo(
         stageRef.current,
         { opacity: 0, y: 12 },
         { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
       );
     }
-  }, [activeIdx, showAllGrid]);
+  }, [activeIdx]);
 
   return (
     <div className="space-y-12">
@@ -209,20 +208,17 @@ export const HeritageShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* View Switcher and Phase Pills */}
+        {/* View Switcher and Phase Pills (Always in Focus Studio Mode) */}
         <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#DF711B]/20">
           <div className="flex flex-wrap items-center gap-2">
             {PHASES.map((p, idx) => (
               <button
                 key={p.phase}
                 type="button"
-                onClick={() => {
-                  setActiveIdx(idx);
-                  setShowAllGrid(false);
-                }}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
-                  !showAllGrid && activeIdx === idx
-                    ? 'bg-[#0B1E34] text-white shadow-md'
+                onClick={() => setActiveIdx(idx)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
+                  activeIdx === idx
+                    ? 'bg-[#0B1E34] text-white shadow-md scale-[1.02]'
                     : 'bg-white text-slate-700 hover:bg-[#FAF8F5] border border-[#E7E2D8]'
                 }`}
               >
@@ -232,31 +228,16 @@ export const HeritageShowcase: React.FC = () => {
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={() => setShowAllGrid(!showAllGrid)}
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#DF711B] hover:text-[#c45f12] bg-white px-3.5 py-2 rounded-xl border border-[#DF711B]/30 transition-colors ml-auto shadow-2xs cursor-pointer"
-          >
-            {showAllGrid ? (
-              <>
-                <Eye className="w-3.5 h-3.5" />
-                <span>Focus Studio View</span>
-              </>
-            ) : (
-              <>
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>All 4 Phases Grid</span>
-              </>
-            )}
-          </button>
+          <span className="text-xs font-mono text-slate-500 hidden md:inline-block">
+            Phase {activePhase.phase} of 04 • Focus Mode
+          </span>
         </div>
       </SpotlightCard>
 
       {/* ====================================================
           PHASES VISUAL STUDIO (WITH PHOTO & DETAILS)
          ==================================================== */}
-      {!showAllGrid ? (
-        <div ref={stageRef}>
+      <div ref={stageRef}>
           <SpotlightCard className="bg-white border-2 border-[#E7E2D8] rounded-3xl p-6 sm:p-10 shadow-lg space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E7E2D8] pb-4">
               <div>
@@ -336,56 +317,6 @@ export const HeritageShowcase: React.FC = () => {
             </div>
           </SpotlightCard>
         </div>
-      ) : (
-        /* View Mode 2: All 4 Phases Grid with Photos */
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {PHASES.map((p, idx) => (
-            <SpotlightCard
-              key={p.phase}
-              className="bg-white border border-[#E7E2D8] p-6 rounded-3xl shadow-card space-y-4 flex flex-col justify-between"
-            >
-              <div className="space-y-3">
-                <div className="relative aspect-[16/9] rounded-xl overflow-hidden border border-[#E7E2D8] bg-slate-100">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-2 left-2 bg-[#0B1D30]/85 text-white px-2 py-0.5 rounded text-[10px] font-mono">
-                    Phase {p.phase} • {p.years}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase bg-[#FAF8F5] px-2 py-0.5 rounded border border-[#E7E2D8] text-[#DF711B] font-bold">
-                    {p.tag}
-                  </span>
-                </div>
-                <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
-                  {p.title}
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-normal line-clamp-3">
-                  {p.description}
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-[#E7E2D8] flex items-center justify-between">
-                <span className="text-xs text-slate-500 font-mono">Chinmaya Heritage</span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveIdx(idx);
-                    setShowAllGrid(false);
-                  }}
-                  className="text-xs font-mono text-[#DF711B] font-bold hover:underline cursor-pointer"
-                >
-                  Focus In Studio &rarr;
-                </button>
-              </div>
-            </SpotlightCard>
-          ))}
-        </div>
-      )}
 
       {/* ====================================================
           INTERACTIVE HYPERIUX VAULT PINNED TIMELINE

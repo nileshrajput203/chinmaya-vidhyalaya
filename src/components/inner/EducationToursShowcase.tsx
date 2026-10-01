@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { CheckCircle2, ShieldCheck, MapPin, Eye, LayoutGrid } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
 import gsap from 'gsap';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
@@ -73,20 +73,19 @@ const TOURS: TourDestination[] = [
 
 export const EducationToursShowcase: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [showAllGrid, setShowAllGrid] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
 
   const activeTour = TOURS[activeIdx];
 
   useEffect(() => {
-    if (stageRef.current && !showAllGrid) {
+    if (stageRef.current) {
       gsap.fromTo(
         stageRef.current,
         { opacity: 0, y: 14 },
         { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' }
       );
     }
-  }, [activeIdx, showAllGrid]);
+  }, [activeIdx]);
 
   return (
     <div className="space-y-10">
@@ -113,13 +112,10 @@ export const EducationToursShowcase: React.FC = () => {
               <button
                 key={tour.id}
                 type="button"
-                onClick={() => {
-                  setActiveIdx(idx);
-                  setShowAllGrid(false);
-                }}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
-                  !showAllGrid && activeIdx === idx
-                    ? 'bg-[#0B1E34] text-white shadow-md'
+                onClick={() => setActiveIdx(idx)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
+                  activeIdx === idx
+                    ? 'bg-[#0B1E34] text-white shadow-md scale-[1.02]'
                     : 'bg-white text-slate-700 hover:bg-[#FAF3E8] border border-[#E7E2D8]'
                 }`}
               >
@@ -128,29 +124,14 @@ export const EducationToursShowcase: React.FC = () => {
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={() => setShowAllGrid(!showAllGrid)}
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#DF711B] hover:text-[#c45f12] bg-[#FAF3E8] px-3.5 py-2 rounded-xl border border-[#FDE49C] transition-colors ml-auto"
-          >
-            {showAllGrid ? (
-              <>
-                <Eye className="w-3.5 h-3.5" />
-                <span>Focus Studio View</span>
-              </>
-            ) : (
-              <>
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>Show All 3 Tours Grid</span>
-              </>
-            )}
-          </button>
+          <span className="text-xs font-mono text-slate-500 hidden md:inline-block">
+            Expedition {activeIdx + 1} of {TOURS.length} • Focus Mode
+          </span>
         </div>
       </SpotlightCard>
 
       {/* View Mode 1: Interactive Studio Stage */}
-      {!showAllGrid ? (
-        <div ref={stageRef}>
+      <div ref={stageRef}>
           <SpotlightCard className="bg-white border-2 border-[#E7E2D8] rounded-3xl overflow-hidden shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Photo Area */}
@@ -240,67 +221,6 @@ export const EducationToursShowcase: React.FC = () => {
             </div>
           </SpotlightCard>
         </div>
-      ) : (
-        /* View Mode 2: All 3 Tours Grid */
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TOURS.map((tour, idx) => (
-            <SpotlightCard
-              key={tour.id}
-              className="bg-white border border-[#E7E2D8] rounded-3xl overflow-hidden shadow-card flex flex-col justify-between group"
-            >
-              <div>
-                <div className="relative aspect-[16/11] overflow-hidden bg-slate-100">
-                  <img
-                    src={tour.image}
-                    alt={tour.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3 bg-[#0B1E34]/85 text-white px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider backdrop-blur-sm">
-                    {tour.category}
-                  </div>
-                </div>
-
-                <div className="p-6 space-y-3">
-                  <h3 className="font-cinzel font-bold text-lg text-[#181C20] group-hover:text-[#DF711B] transition-colors">
-                    {tour.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                    {tour.description}
-                  </p>
-
-                  <div className="border-t border-[#E7E2D8] pt-3 space-y-1.5">
-                    <span className="text-[10px] font-mono text-[#DF711B] font-bold uppercase block">
-                      Learning Outcomes:
-                    </span>
-                    {tour.outcomes.map((o, oIdx) => (
-                      <div key={oIdx} className="flex items-center gap-1.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B] shrink-0" />
-                        <span className="line-clamp-1">{o}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 bg-[#FAF8F5] border-t border-[#E7E2D8] flex items-center justify-between">
-                <span className="text-[11px] text-[#4A5568] font-medium truncate">
-                  {tour.caption}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveIdx(idx);
-                    setShowAllGrid(false);
-                  }}
-                  className="text-xs font-mono text-[#DF711B] font-bold hover:underline shrink-0 ml-2"
-                >
-                  Focus →
-                </button>
-              </div>
-            </SpotlightCard>
-          ))}
-        </div>
-      )}
 
       {/* Safety Protocol Banner */}
       <SpotlightCard className="bg-[#FAF3E8] border border-[#FDE49C] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
