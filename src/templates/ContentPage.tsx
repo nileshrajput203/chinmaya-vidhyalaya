@@ -18,7 +18,7 @@ import { LibraryShowcase } from '../components/inner/LibraryShowcase';
 import { FacultyShowcase } from '../components/inner/FacultyShowcase';
 import { VisionMissionShowcase } from '../components/inner/VisionMissionShowcase';
 import { HeritageShowcase } from '../components/inner/HeritageShowcase';
-import { AdmissionFeeCalculator } from '../components/admissions/AdmissionFeeCalculator';
+import { AdmissionGuidelinesShowcase } from '../components/inner/AdmissionGuidelinesShowcase';
 
 interface ContentPageProps {
   slug?: string;
@@ -68,7 +68,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const isLibrary = slug === 'library' || title.toLowerCase().includes('library');
   const isFourPillars = slug === 'four-pillars' || slug === '4-pillars' || slug === 'philosophy' || title.toLowerCase().includes('4 pillars') || title.toLowerCase().includes('four pillars') || title.toLowerCase().includes('cvp');
   const isHolistic = slug === 'holistic-development' || title.toLowerCase().includes('holistic');
-  const isMissionVision = slug === 'mission-vision' || title.toLowerCase().includes('mission');
+  const isMissionVision = !isAdmissions && (slug === 'mission-vision' || title.toLowerCase().includes('vision & mission') || title.toLowerCase().includes('mission & vision') || (slug && slug.includes('mission-vision')) || (title.toLowerCase().includes('vision') && title.toLowerCase().includes('mission') && !title.toLowerCase().includes('admission')));
 
   // Dynamic contextual eyebrow
   const getSectionEyebrow = (): string => {
@@ -143,8 +143,11 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ) : isFaculty ? (
             /* 9. Teaching & Support Faculty Showcase */
             <FacultyShowcase />
+          ) : isAdmissions ? (
+            /* 10. Admission Guidelines, Interactive Dummy Form & Book a Call Showcase */
+            <AdmissionGuidelinesShowcase />
           ) : isMissionVision ? (
-            /* 10. School Vision & Mission Showcase */
+            /* 11. School Vision & Mission Showcase */
             <VisionMissionShowcase />
           ) : isSwami ? (
             /* 11. Pujya Gurudev Swami Chinmayananda Heritage Showcase */
@@ -522,13 +525,6 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                   </div>
                 </section>
               )}
-          </div>
-        )}
-
-        {/* Interactive Fee & Eligibility Estimator for Prospective Parents */}
-        {isAdmissions && (
-          <div className="mt-4">
-            <AdmissionFeeCalculator />
           </div>
         )}
 
