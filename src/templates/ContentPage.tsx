@@ -19,6 +19,7 @@ import { FacultyShowcase } from '../components/inner/FacultyShowcase';
 import { VisionMissionShowcase } from '../components/inner/VisionMissionShowcase';
 import { HeritageShowcase } from '../components/inner/HeritageShowcase';
 import { AdmissionGuidelinesShowcase } from '../components/inner/AdmissionGuidelinesShowcase';
+import { CurriculumShowcase } from '../components/inner/CurriculumShowcase';
 
 interface ContentPageProps {
   slug?: string;
@@ -143,6 +144,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ) : isFaculty ? (
             /* 9. Teaching & Support Faculty Showcase */
             <FacultyShowcase />
+          ) : isCurriculum ? (
+            /* 10. CBSE Curriculum & Graded Syllabi Showcase */
+            <CurriculumShowcase />
           ) : isAdmissions ? (
             /* 10. Admission Guidelines, Interactive Dummy Form & Book a Call Showcase */
             <AdmissionGuidelinesShowcase />
