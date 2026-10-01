@@ -13,6 +13,8 @@ import { CareersPage } from '../templates/CareersPage';
 import { AlumniPage } from '../templates/AlumniPage';
 import { BlogPage } from '../templates/BlogPage';
 import { RegistrationFormPage } from '../pages/Admissions/RegistrationFormPage';
+import { FeeStructurePage } from '../pages/Admissions/FeeStructurePage';
+import { SchoolCalendarPage } from '../pages/Admissions/SchoolCalendarPage';
 
 import { ABOUT_SECTIONS } from '../data/about';
 import { ACADEMIC_SECTIONS } from '../data/academics';
@@ -57,7 +59,17 @@ export const router = createBrowserRouter([
       { path: 'admissions/guidelines', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="Admissions" /> },
       { path: 'admissions/forms', element: <RegistrationFormPage /> },
       { path: 'admissions/registration', element: <RegistrationFormPage /> },
+      { path: 'admissions/registration-forms', element: <RegistrationFormPage /> },
       { path: 'registration-forms', element: <RegistrationFormPage /> },
+      { path: 'admissions/fee-structure', element: <FeeStructurePage /> },
+      { path: 'admissions/fees', element: <Navigate to="/admissions/fee-structure" replace /> },
+      { path: 'fee-structure', element: <Navigate to="/admissions/fee-structure" replace /> },
+      { path: 'fees', element: <Navigate to="/admissions/fee-structure" replace /> },
+      { path: 'admissions/calendar', element: <SchoolCalendarPage /> },
+      { path: 'admissions/academic-calendar', element: <Navigate to="/admissions/calendar" replace /> },
+      { path: 'calendar', element: <Navigate to="/admissions/calendar" replace /> },
+      { path: 'school-calendar', element: <Navigate to="/admissions/calendar" replace /> },
+      { path: 'academic-calendar', element: <Navigate to="/admissions/calendar" replace /> },
       { path: 'admission/guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
       { path: 'admission-guidelines', element: <Navigate to="/admissions/guidelines" replace /> },
       { path: 'admissions-guidelines', element: <Navigate to="/admissions/guidelines" replace /> },

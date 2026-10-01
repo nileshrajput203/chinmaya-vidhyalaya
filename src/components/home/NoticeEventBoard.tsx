@@ -391,15 +391,13 @@ export const NoticeEventBoard: React.FC = () => {
                 Download the complete academic schedule with term examination dates, vacation breaks, and co-curricular weeks.
               </p>
               <div className="space-y-2 pt-1">
-                <a
-                  href="/images/academic-calendar.pdf"
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  to="/admissions/calendar"
                   className="flex items-center justify-between p-2.5 bg-[#181818] text-white text-xs font-bold hover:bg-[#DF711B] transition-colors"
                 >
-                  <span>Download School Calendar 2026-27</span>
-                  <Download className="w-4 h-4 text-[#FFB740]" />
-                </a>
+                  <span>View School Calendar 2026-27</span>
+                  <Calendar className="w-4 h-4 text-[#FFB740]" />
+                </Link>
                 <Link
                   to="/academics/curriculum"
                   className="inline-flex items-center gap-1.5 text-xs text-[#555555] hover:text-[#DF711B] transition-colors"

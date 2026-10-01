@@ -11,8 +11,8 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     children: [
       { label: "Admission Guidelines", href: "/admissions/guidelines", description: "Eligibility criteria, age norms, and application process" },
       { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG, and Std I–XII application forms" },
-      { label: "Annual Fee Structure", href: "/images/fees-structure.pdf", description: "Annual academic fee schedule and payment terms" },
-      { label: "School Calendar 2026–27", href: "/images/academic-calendar.pdf", description: "Annual academic calendar, term dates, and examination schedule" }
+      { label: "Annual Fee Structure", href: "/admissions/fee-structure", description: "Approved annual fee schedule and installment details" },
+      { label: "School Calendar 2026–27", href: "/admissions/calendar", description: "Term dates, vacations, and examination schedule" }
     ]
   },
   {

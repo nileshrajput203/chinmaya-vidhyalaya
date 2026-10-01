@@ -811,15 +811,13 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
                 {/* Footer Buttons */}
                 <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
-                  <a
-                    href="/images/academic-calendar.pdf"
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    to="/admissions/calendar"
                     className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#FFB740] hover:text-white transition-colors group"
                   >
                     <Calendar className="w-3.5 h-3.5 text-[#FFB740] group-hover:scale-110 transition-transform" />
                     <span>Academic Calendar ›</span>
-                  </a>
+                  </Link>
 
                   <Link
                     to="/news"

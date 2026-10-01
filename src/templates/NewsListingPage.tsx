@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Calendar, Bell, Download, Search, Sparkles, MapPin } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { contentService } from '../services/contentService';
@@ -339,15 +339,13 @@ export const NewsListingPage: React.FC = () => {
                 <p className="text-xs text-white/70 leading-relaxed font-light">
                   Download the comprehensive CBSE annual planner with examination schedules, holiday lists, and house activity weeks.
                 </p>
-                <a
-                  href="/images/academic-calendar.pdf"
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  to="/admissions/calendar"
                   className="inline-flex items-center justify-between w-full p-2.5 bg-[#DF711B] hover:bg-[#c45b0e] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors"
                 >
-                  <span>Download Calendar PDF</span>
-                  <Download className="w-3.5 h-3.5" />
-                </a>
+                  <span>View Academic Calendar</span>
+                  <Calendar className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </aside>
 

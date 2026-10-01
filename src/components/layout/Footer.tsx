@@ -149,12 +149,12 @@ export const Footer: React.FC = () => {
                   </p>
                 </div>
                 <ul className="space-y-2 text-xs">
-                  {[
+                  {([
                     { label: "Admission Guidelines", href: "/admissions/guidelines" },
                     { label: "Registration Forms", href: "/downloads/admissions" },
-                    { label: "Annual Fee Structure", href: "/images/fees-structure.pdf", external: true },
-                    { label: "School Calendar 2026–27", href: "/images/academic-calendar.pdf", external: true },
-                  ].map((link) => (
+                    { label: "Annual Fee Structure", href: "/admissions/fee-structure" },
+                    { label: "School Calendar 2026–27", href: "/admissions/calendar" },
+                  ] as { label: string; href: string; external?: boolean }[]).map((link) => (
                     <li key={link.label}>
                       {link.external ? (
                         <a href={link.href} target="_blank" rel="noreferrer" className="text-slate-300 hover:text-amber-400 hover:translate-x-0.5 transition-all block py-0.5 font-medium">

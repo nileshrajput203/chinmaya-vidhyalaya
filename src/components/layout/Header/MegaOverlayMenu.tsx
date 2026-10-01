@@ -219,12 +219,12 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                   <span>ADMISSIONS & ENROLLMENT</span>
                 </h3>
                 <ul className="mt-4 space-y-2 text-xs sm:text-sm">
-                  {[
+                  {([
                     { label: "Admission Guidelines", href: "/admissions/guidelines" },
                     { label: "Registration Forms", href: "/downloads/admissions" },
-                    { label: "Annual Fee Structure", href: "/images/fees-structure.pdf", external: true },
-                    { label: "School Calendar 2026–27", href: "/images/academic-calendar.pdf", external: true },
-                  ].map((link) => (
+                    { label: "Annual Fee Structure", href: "/admissions/fee-structure" },
+                    { label: "School Calendar 2026–27", href: "/admissions/calendar" },
+                  ] as { label: string; href: string; external?: boolean }[]).map((link) => (
                     <li key={link.label}>
                       {link.external ? (
                         <a
