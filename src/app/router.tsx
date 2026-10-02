@@ -83,9 +83,8 @@ export const router = createBrowserRouter([
       { path: 'features/spiritual-activities', element: <ContentPage {...FEATURE_SECTIONS['spiritual-activities']} categoryLabel="Unique Features" /> },
       { path: 'features/4-pillars', element: <ContentPage {...FEATURE_SECTIONS['four-pillars']} categoryLabel="Unique Features" /> },
       { path: 'features/four-pillars', element: <ContentPage {...FEATURE_SECTIONS['four-pillars']} categoryLabel="Unique Features" /> },
-      { path: 'features/holistic-development', element: <ContentPage {...FEATURE_SECTIONS['holistic-development']} categoryLabel="Unique Features" /> },
       { path: 'features/career-counselling', element: <ContentPage {...FEATURE_SECTIONS['career-counselling']} categoryLabel="Unique Features" /> },
-      { path: 'features/education-tours', element: <Navigate to="/features/holistic-development" replace /> },
+      { path: 'features/education-tours', element: <Navigate to="/academics/co-curricular" replace /> },
       { path: 'features/library', element: <ContentPage {...FEATURE_SECTIONS['library']} categoryLabel="Unique Features" /> },
 
       /* NEWS & EVENTS ROUTES */
@@ -100,7 +99,7 @@ export const router = createBrowserRouter([
       /* GALLERY ROUTE */
       { path: 'gallery', element: <GalleryPage /> },
       { path: 'activities/gallery', element: <Navigate to="/gallery" replace /> },
-      { path: 'activities/sports', element: <Navigate to="/features/holistic-development" replace /> },
+      { path: 'activities/sports', element: <Navigate to="/academics/co-curricular" replace /> },
 
       /* FAQ ROUTE */
       { path: 'faq', element: <FaqPage /> },

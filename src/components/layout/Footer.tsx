@@ -181,7 +181,6 @@ export const Footer: React.FC = () => {
                 <ul className="space-y-2 text-xs">
                   {[
                     { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
-                    { label: "Holistic Development", href: "/features/holistic-development" },
                     { label: "Spiritual Assemblies & Pooja", href: "/features/spiritual-activities" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
                     { label: "Central Library & Archives", href: "/features/library" },

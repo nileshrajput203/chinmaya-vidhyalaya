@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselSlide {
   id: string;
@@ -117,13 +117,9 @@ export const AcademicStreamCarouselBanner: React.FC = () => {
                 {/* Subtle protective bottom vignette overlay for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
-                {/* Overlay Caption & Stream Badges */}
+                {/* Overlay Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-10 flex flex-col justify-end text-white z-20 pointer-events-none">
                   <div className="max-w-3xl space-y-2">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-amber-400/40 text-amber-300 text-[10px] sm:text-xs font-mono font-bold tracking-wider uppercase">
-                      <Sparkles className="w-3.5 h-3.5 text-[#FFB740]" />
-                      <span>{slide.tag}</span>
-                    </div>
                     <h3 className="font-display font-black text-xl sm:text-3xl md:text-4xl text-white tracking-tight leading-tight [text-shadow:_0_2px_12px_rgba(0,0,0,0.8)]">
                       {slide.title}
                     </h3>

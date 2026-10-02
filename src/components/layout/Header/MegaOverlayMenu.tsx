@@ -382,7 +382,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                 <ul className="mt-4 space-y-2 text-xs sm:text-sm">
                   {[
                     { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
-                    { label: "Holistic Development", href: "/features/holistic-development" },
                     { label: "Spiritual Assemblies & Pooja", href: "/features/spiritual-activities" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
                     { label: "Central Library & Archives", href: "/features/library" },

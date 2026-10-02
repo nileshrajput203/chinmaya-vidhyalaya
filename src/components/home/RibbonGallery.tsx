@@ -21,7 +21,7 @@ export const IMAGES: string[] = [
   '/images/chinmaya/academics/classroom_learning_001.jpg',
   '/images/chinmaya/academics/classroom_learning_005.jpg',
   '/images/chinmaya/sports/sports_athletic_meet_001.webp',
-  '/images/banner-7.jpeg',
+  '/images/banner-3.webp',
   '/images/img1.webp',
   '/images/img3.webp',
   '/images/img4.webp'

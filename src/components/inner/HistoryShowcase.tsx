@@ -298,9 +298,6 @@ export const HistoryShowcase: React.FC = () => {
                 alt={activePhoto.title}
                 className="w-full h-full object-contain"
               />
-              <div className="absolute top-4 left-4 bg-[#0B1D30]/90 text-white text-xs font-mono px-3 py-1 rounded-full border border-white/20">
-                {activePhoto.year} • {activePhoto.era}
-              </div>
             </div>
 
             {/* Archival Details */}

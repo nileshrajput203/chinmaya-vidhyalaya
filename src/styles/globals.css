@@ -190,4 +190,31 @@
   animation-play-state: paused;
 }
 
+/* Infinite Horizontal Loop — Left to Right */
+@keyframes loopLeftToRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.animate-loop-ltr {
+  animation: loopLeftToRight 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-loop-ltr-slow {
+  animation: loopLeftToRight 48s linear infinite;
+  will-change: transform;
+}
+
+.animate-loop-ltr:hover,
+.group:hover .animate-loop-ltr,
+.animate-loop-ltr-slow:hover,
+.group:hover .animate-loop-ltr-slow {
+  animation-play-state: paused;
+}
+
 

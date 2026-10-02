@@ -65,10 +65,6 @@ export const BlogPage: React.FC = () => {
     });
   }, [selectedCategory, searchQuery]);
 
-  const featuredPost = useMemo(() => {
-    return BLOG_POSTS.find((p) => p.featured) || BLOG_POSTS[0];
-  }, []);
-
   const handleOpenArticle = (post: BlogPost) => {
     setActiveArticle(post);
     setSearchParams((prev) => {
@@ -127,86 +123,6 @@ export const BlogPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         {/* ====================================================
-            FEATURED HERO POST BANNER
-           ==================================================== */}
-        {selectedCategory === 'All' && !searchQuery && featuredPost && (
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B1E34] via-[#102A45] to-[#181C20] text-white shadow-2xl border border-amber-500/20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-              {/* Image Side */}
-              <div className="lg:col-span-6 relative min-h-[300px] lg:min-h-[460px] overflow-hidden group">
-                <img
-                  src={featuredPost.coverImage}
-                  alt={featuredPost.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E34] via-black/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B1E34]/90" />
-                
-                {/* Floating Category Badge */}
-                <div className="absolute top-6 left-6 z-10">
-                  <span className="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#DF711B] text-white shadow-md flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-                    <span>Featured Article • {featuredPost.category}</span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Text / Action Side */}
-              <div className="lg:col-span-6 p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-6">
-                <div className="space-y-4">
-                  {/* Meta strip */}
-                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-300">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-amber-400" />
-                      {featuredPost.publishDate}
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-amber-400" />
-                      {featuredPost.readTime}
-                    </span>
-                  </div>
-
-                  <h2 className="font-cinzel text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-wide hover:text-amber-400 transition-colors">
-                    {featuredPost.title}
-                  </h2>
-
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed line-clamp-3">
-                    {featuredPost.excerpt}
-                  </p>
-                </div>
-
-                {/* Author & CTA Button */}
-                <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={featuredPost.author.avatar}
-                      alt={featuredPost.author.name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-amber-400/80 shadow-md shrink-0"
-                    />
-                    <div>
-                      <h4 className="text-sm font-bold text-white leading-none">
-                        {featuredPost.author.name}
-                      </h4>
-                      <p className="text-xs text-amber-300/90 font-mono mt-1">
-                        {featuredPost.author.role}
-                      </p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => handleOpenArticle(featuredPost)}
-                    className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#DF711B] to-[#C45B0E] hover:from-[#C45B0E] hover:to-[#9E3E07] text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shrink-0"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* ====================================================
             CONTROLS: SEARCH & CATEGORY PILLS
            ==================================================== */}
         <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E7E2D8] shadow-sm space-y-6">
@@ -261,7 +177,19 @@ export const BlogPage: React.FC = () => {
         {/* ====================================================
             POSTS GRID
            ==================================================== */}
-        {filteredPosts.length === 0 ? (
+        {BLOG_POSTS.length === 0 ? (
+          <div className="bg-white rounded-3xl p-16 text-center border border-[#E7E2D8] space-y-4 shadow-sm">
+            <div className="w-16 h-16 rounded-2xl bg-[#FAF3E8] border border-[#FDE49C] text-[#DF711B] flex items-center justify-center mx-auto">
+              <BookOpen className="w-8 h-8" />
+            </div>
+            <h3 className="font-cinzel text-2xl font-bold text-[#0B1E34]">
+              Articles Coming Soon
+            </h3>
+            <p className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed font-normal">
+              New articles, thought pieces, and school educational insights will be published here soon. Stay tuned!
+            </p>
+          </div>
+        ) : filteredPosts.length === 0 ? (
           <div className="bg-white rounded-3xl p-12 text-center border border-[#E7E2D8] space-y-4">
             <BookOpen className="w-12 h-12 text-slate-300 mx-auto" />
             <h3 className="font-cinzel text-xl font-bold text-slate-800">

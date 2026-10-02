@@ -17,7 +17,6 @@ import { HorizontalPanelGallery } from '../../components/home/HorizontalPanelGal
 import { NoticeEventBoard } from '../../components/home/NoticeEventBoard';
 import { HeroScrollytellingFilm } from '../../components/home/HeroScrollytellingFilm';
 import { BannerCarousel } from '../../components/home/BannerCarousel';
-import { RibbonGallery } from '../../components/home/RibbonGallery';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -196,8 +195,8 @@ export const HomePage: React.FC = () => {
       desc: "Nurturing the complete fourfold personality of the child. Instilling physical vitality through yoga, mental stability through mindfulness, and sharp intellectual discernment through scientific inquiry.",
       tag: "Holistic Core",
       image: "/images/1.jpeg",
-      targetUrl: "/features/holistic-development",
-      ctaText: "EXPLORE HOLISTIC DEVELOPMENT",
+      targetUrl: "/about/four-pillars",
+      ctaText: "EXPLORE 4 PILLARS",
       points: [
         "Daily Yoga, Pranayama & Surya Namaskar routine",
         "Experiential STEM laboratories & analytical inquiry",
@@ -593,18 +592,13 @@ export const HomePage: React.FC = () => {
                 className="rounded-[1.75rem] border-[3.5px] border-[#DF711B] bg-[#DF711B] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer transform hover:-translate-y-1"
                 title={`Explore ${card.title} Infrastructure and Apparatus`}
               >
-                {/* Lab Image with subtle hover badge */}
+                {/* Lab Image */}
                 <div className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden bg-slate-100">
                   <img
                     src={card.image}
                     alt={card.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  {/* Floating Action Pill on Hover */}
-                  <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-[#0B1E34]/85 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
-                    <span>Inspect Lab Details</span>
-                    <span className="text-[#FFB740]">›</span>
-                  </div>
                 </div>
 
                 {/* Bottom Solid Terracotta Banner with title & arrow */}
@@ -643,11 +637,6 @@ export const HomePage: React.FC = () => {
           SECTION 05.5 — LIVE NOTICE & EVENT BOARD
          ---------------------------------------------------- */}
       <NoticeEventBoard />
-
-      {/* ----------------------------------------------------
-          SECTION 07 — INTERACTIVE RIBBON PHOTO GALLERY
-         ---------------------------------------------------- */}
-      <RibbonGallery />
 
       {/* Lightbox Modal */}
       <AnimatePresence>
@@ -751,81 +740,83 @@ export const HomePage: React.FC = () => {
       {/* ----------------------------------------------------
           SECTION 07.8 — FROM OUR BLOG & EDUCATIONAL INSIGHTS
          ---------------------------------------------------- */}
-      <section className="py-12 sm:py-16 bg-[#FAF8F5] relative overflow-hidden border-t border-[#E7E2D8]">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-b border-[#E7E2D8] pb-4">
-            <div className="space-y-1">
-              <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
-                THOUGHT LEADERSHIP • EDUCATIONAL PERSPECTIVES
-              </span>
-              <h2 className="font-display text-[26px] sm:text-[34px] lg:text-[40px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
-                FROM OUR SCHOOL BLOG & INSIGHTS
-              </h2>
-            </div>
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[10px] sm:text-[11px] uppercase tracking-wider transition-colors select-none shrink-0"
-            >
-              <span className="text-[#FFB740] font-bold text-xs">›</span>
-              <span>EXPLORE ALL ARTICLES</span>
-            </Link>
-          </div>
-
-          {/* 3 Featured Blog Articles Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {BLOG_POSTS.slice(0, 3).map((post) => (
+      {BLOG_POSTS.length > 0 && (
+        <section className="py-12 sm:py-16 bg-[#FAF8F5] relative overflow-hidden border-t border-[#E7E2D8]">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-b border-[#E7E2D8] pb-4">
+              <div className="space-y-1">
+                <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
+                  THOUGHT LEADERSHIP • EDUCATIONAL PERSPECTIVES
+                </span>
+                <h2 className="font-display text-[26px] sm:text-[34px] lg:text-[40px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
+                  FROM OUR SCHOOL BLOG & INSIGHTS
+                </h2>
+              </div>
               <Link
-                key={post.id}
-                to={`/blog?post=${post.slug}`}
-                className="group bg-white rounded-2xl overflow-hidden border border-[#E7E2D8] hover:border-[#DF711B]/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1"
+                to="/blog"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[10px] sm:text-[11px] uppercase tracking-wider transition-colors select-none shrink-0"
               >
-                {/* Image */}
-                <div className="relative h-48 sm:h-52 overflow-hidden">
-                  <img
-                    src={post.coverImage}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-2.5 right-3.5 text-[10.5px] font-mono text-slate-200">
-                    <span>{post.publishDate}</span>
-                  </div>
-                </div>
+                <span className="text-[#FFB740] font-bold text-xs">›</span>
+                <span>EXPLORE ALL ARTICLES</span>
+              </Link>
+            </div>
 
-                {/* Content */}
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
-                  <div className="space-y-1.5">
-                    <h3 className="font-cinzel text-base font-bold text-[#0B1E34] group-hover:text-[#DF711B] transition-colors line-clamp-2 leading-snug">
-                      {post.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                      {post.excerpt}
-                    </p>
+            {/* 3 Featured Blog Articles Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {BLOG_POSTS.slice(0, 3).map((post) => (
+                <Link
+                  key={post.id}
+                  to={`/blog?post=${post.slug}`}
+                  className="group bg-white rounded-2xl overflow-hidden border border-[#E7E2D8] hover:border-[#DF711B]/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1"
+                >
+                  {/* Image */}
+                  <div className="relative h-48 sm:h-52 overflow-hidden">
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                    <div className="absolute bottom-2.5 right-3.5 text-[10.5px] font-mono text-slate-200">
+                      <span>{post.publishDate}</span>
+                    </div>
                   </div>
 
-                  <div className="pt-3 border-t border-[#F0ECE1] flex items-center justify-between">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <img
-                        src={post.author.avatar}
-                        alt={post.author.name}
-                        className="w-6 h-6 rounded-full object-cover border border-[#DF711B]/40 shrink-0"
-                      />
-                      <span className="text-[11px] font-bold text-[#0C1E34] truncate">
-                        {post.author.name}
+                  {/* Content */}
+                  <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                    <div className="space-y-1.5">
+                      <h3 className="font-cinzel text-base font-bold text-[#0B1E34] group-hover:text-[#DF711B] transition-colors line-clamp-2 leading-snug">
+                        {post.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                    </div>
+
+                    <div className="pt-3 border-t border-[#F0ECE1] flex items-center justify-between">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <img
+                          src={post.author.avatar}
+                          alt={post.author.name}
+                          className="w-6 h-6 rounded-full object-cover border border-[#DF711B]/40 shrink-0"
+                        />
+                        <span className="text-[11px] font-bold text-[#0C1E34] truncate">
+                          {post.author.name}
+                        </span>
+                      </div>
+                      <span className="text-xs font-bold text-[#DF711B] group-hover:translate-x-1 transition-transform flex items-center">
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
-                    <span className="text-xs font-bold text-[#DF711B] group-hover:translate-x-1 transition-transform flex items-center">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
 
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* Frequently Asked Questions Section on Home */}
       <Faq05 />

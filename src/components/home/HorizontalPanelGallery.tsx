@@ -80,30 +80,30 @@ export const HorizontalPanelGallery: React.FC = () => {
       title: 'VITALITY',
       desc: 'Sportsmanship, athletics & vigor',
       image: SCHOOL_IMAGES.SPORTS_DAY,
-       link: '/features/holistic-development',
+      link: '/academics/co-curricular',
     },
   ];
 
   const col1Photos = [
-    { src: SCHOOL_IMAGES.CAMPUS_BUILDING, title: 'Main Campus Building', category: 'Campus' },
-    { src: SCHOOL_IMAGES.SCIENCE_LAB, title: 'STEM & Science Lab', category: 'Academics' },
-    { src: '/images/chinmaya/sports/sports_athletic_meet_001.jpg', title: 'Track Championship', category: 'Sports' },
-    { src: '/images/tour.jpg', title: 'Educational Excursion', category: 'Tours' },
-    { src: SCHOOL_IMAGES.PHYSICS_LAB, title: 'Physics Laboratory', category: 'Academics' },
-    { src: SCHOOL_IMAGES.LIBRARY_STUDY, title: 'Central Library', category: 'Learning' },
-    { src: SCHOOL_IMAGES.SPORTS_DAY, title: 'Annual Sports Meet', category: 'Athletics' },
-    { src: '/images/chinmaya/academics/science_stem_lab_01.jpg', title: 'Science Exhibition', category: 'Academics' },
+    { src: SCHOOL_IMAGES.CAMPUS_BUILDING, title: 'Main Campus Building' },
+    { src: SCHOOL_IMAGES.SCIENCE_LAB, title: 'STEM & Science Lab' },
+    { src: '/images/chinmaya/sports/sports_athletic_meet_001.jpg', title: 'Track Championship' },
+    { src: '/images/tour.webp', title: 'Educational Excursion' },
+    { src: SCHOOL_IMAGES.PHYSICS_LAB, title: 'Physics Laboratory' },
+    { src: SCHOOL_IMAGES.LIBRARY_STUDY, title: 'Central Library' },
+    { src: SCHOOL_IMAGES.SPORTS_DAY, title: 'Annual Sports Meet' },
+    { src: '/images/chinmaya-web-science.webp', title: 'Science Exhibition' },
   ];
 
   const col2Photos = [
-    { src: SCHOOL_IMAGES.IT_LAB, title: 'Computer & Coding Lab', category: 'Technology' },
-    { src: SCHOOL_IMAGES.BIOLOGY_LAB, title: 'Biology & Life Sciences', category: 'Academics' },
-    { src: '/images/banner-9.webp', title: 'Cultural Fest Stage', category: 'Arts' },
-    { src: '/images/guru-paduka-pooja.webp', title: 'Guru Paduka Pooja', category: 'Values' },
-    { src: SCHOOL_IMAGES.CLASSROOM_LEARNING, title: 'Smart Interactive Classes', category: 'Academics' },
-    { src: '/images/chinmaya/cultural/cultural_celebration_015.jpg', title: 'Performing Arts', category: 'Culture' },
-    { src: '/images/chinmaya/cultural/cultural_celebration_040.jpg', title: 'Youth Choir', category: 'Music' },
-    { src: '/images/chinmaya/leadership/faculty_member_01.jpg', title: 'Faculty & Mentors', category: 'Leadership' },
+    { src: SCHOOL_IMAGES.IT_LAB, title: 'Computer & Coding Lab' },
+    { src: SCHOOL_IMAGES.BIOLOGY_LAB, title: 'Biology & Life Sciences' },
+    { src: '/images/banner-9.webp', title: 'Cultural Fest Stage' },
+    { src: '/images/guru-paduka-pooja.webp', title: 'Guru Paduka Pooja' },
+    { src: SCHOOL_IMAGES.CLASSROOM_LEARNING, title: 'Smart Interactive Classes' },
+    { src: '/images/chinmaya/cultural/cultural_celebration_015.jpg', title: 'Performing Arts' },
+    { src: '/images/chinmaya/cultural/cultural_celebration_040.jpg', title: 'Youth Choir' },
+    { src: '/images/chinmaya/leadership/faculty_member_01.jpg', title: 'Faculty & Mentors' },
   ];
 
   return (
@@ -111,7 +111,7 @@ export const HorizontalPanelGallery: React.FC = () => {
       ref={pinWrapRef} 
       className="pin-wrap relative w-full bg-[#FFFFFF]"
       style={{
-        // Desktop height provides scroll runway for 3 panels
+        // Desktop height provides scroll runway for horizontal panels
       }}
     >
       <style>{`
@@ -139,10 +139,10 @@ export const HorizontalPanelGallery: React.FC = () => {
           100% { transform: translateY(-50%); }
         }
         .animate-marquee-up {
-          animation: marqueeUp 22s linear infinite;
+          animation: marqueeUp 24s linear infinite;
         }
         .animate-marquee-up-slow {
-          animation: marqueeUp 30s linear infinite;
+          animation: marqueeUp 32s linear infinite;
         }
         .animate-marquee-up:hover, .animate-marquee-up-slow:hover {
           animation-play-state: paused;
@@ -155,7 +155,7 @@ export const HorizontalPanelGallery: React.FC = () => {
       >
         <div 
           ref={trackRef} 
-          className="track flex flex-col lg:flex-row flex-nowrap w-full lg:w-[260vw] xl:w-[250vw] will-change-transform"
+          className="track flex flex-col lg:flex-row flex-nowrap w-full lg:w-[200vw] will-change-transform"
         >
           {/* ============================================================
               PANEL A — "START STATE" (WE VALUE GRID)
@@ -253,12 +253,12 @@ export const HorizontalPanelGallery: React.FC = () => {
           </section>
 
           {/* ============================================================
-              PANEL B — "END STATE" (ACHIEVEMENT / STUDIO CUTOUT PANEL)
+              PANEL B — "END STATE" (ACHIEVEMENT + VERTICAL MOVING GALLERY)
               ============================================================ */}
-          <section className="panel panel--award w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col lg:flex-row items-stretch border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border relative overflow-hidden">
+          <section className="panel panel--award w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col lg:flex-row items-stretch border-b lg:border-b-0 box-border relative overflow-hidden">
             
-            {/* ZONE A — LEFT (~32% width): User Provided Studio Backdrop & Cutout Composite Image */}
-            <div className="w-full lg:w-[32%] xl:w-[30%] relative flex items-center justify-center min-h-[500px] lg:min-h-full overflow-hidden shrink-0">
+            {/* ZONE A — LEFT (~26% width): Studio Backdrop & Cutout Composite Image */}
+            <div className="w-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center min-h-[420px] lg:min-h-full overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5]">
               <img 
                 src="/images/panel_b_achiever_design.png" 
                 alt="Chinmaya Vidyalaya Student Achiever Studio Design" 
@@ -266,60 +266,60 @@ export const HorizontalPanelGallery: React.FC = () => {
               />
             </div>
 
-            {/* ZONE B — RIGHT (~60% width): Typography, Stats & Text-Link Rule CTA */}
-            <div className="w-full lg:w-[60%] xl:w-[62%] flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16 box-border">
-              <div className="max-w-[620px] space-y-6">
+            {/* ZONE B — MIDDLE (~40% width): Typography, Stats & Text-Link Rule CTA */}
+            <div className="w-full lg:w-[40%] xl:w-[39%] flex flex-col justify-center px-6 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 box-border border-b lg:border-b-0 lg:border-r border-[#E5E5E5]">
+              <div className="max-w-[560px] space-y-5">
                 
                 {/* Small Eyebrow Line */}
-                <div className="text-[13px] sm:text-[14px] lg:text-[15px] font-display font-black text-[#DF711B] uppercase tracking-[0.2em] leading-tight">
+                <div className="text-[12px] sm:text-[13px] lg:text-[14px] font-display font-black text-[#DF711B] uppercase tracking-[0.2em] leading-tight">
                   THAT'S WHY FOR THREE DECADES IN A ROW, WE ARE
                 </div>
 
-                {/* Big Display Headline (near-black #181818, heavy grotesk, tight line-height) */}
-                <h2 className="font-display text-[38px] sm:text-[50px] lg:text-[58px] xl:text-[66px] font-black text-[#181818] tracking-tight leading-[1.04] uppercase m-0">
+                {/* Big Display Headline */}
+                <h2 className="font-display text-[32px] sm:text-[42px] lg:text-[46px] xl:text-[54px] font-black text-[#181818] tracking-tight leading-[1.05] uppercase m-0">
                   PALGHAR DISTRICT'S BEST CBSE SCHOOL
                 </h2>
 
-                {/* Supporting Body Paragraph (gray #555555 - #777777, ~18px) */}
-                <p className="text-[16px] sm:text-[17px] lg:text-[18px] text-[#555555] font-normal leading-relaxed max-w-[520px]">
+                {/* Supporting Body Paragraph */}
+                <p className="text-[14px] sm:text-[15px] lg:text-[16px] text-[#555555] font-normal leading-relaxed">
                   Imparting value-integrated academic brilliance at Tarapur under the aegis of the Chinmaya Vision Programme. Recognized by CBSE New Delhi (Affiliation No. {OFFICIAL_SCHOOL_INFO.affiliationNo}) with consecutive 100% AISSE board distinctions, modern STEM laboratories, and holistic spiritual grounding.
                 </p>
 
                 {/* Metrics Callout Strip */}
-                <div className="grid grid-cols-3 gap-4 pt-2 pb-2 border-y border-[#E5E5E5]">
+                <div className="grid grid-cols-3 gap-3 pt-2 pb-2 border-y border-[#E5E5E5]">
                   <div>
-                    <span className="font-display text-[26px] lg:text-[32px] font-black text-[#DF711B] leading-none block">
+                    <span className="font-display text-[22px] lg:text-[28px] font-black text-[#DF711B] leading-none block">
                       100%
                     </span>
-                    <span className="text-[11px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
+                    <span className="text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
                       AISSE Pass
                     </span>
                   </div>
                   <div>
-                    <span className="font-display text-[26px] lg:text-[32px] font-black text-[#DF711B] leading-none block">
+                    <span className="font-display text-[22px] lg:text-[28px] font-black text-[#DF711B] leading-none block">
                       30+
                     </span>
-                    <span className="text-[11px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
+                    <span className="text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
                       Years Legacy
                     </span>
                   </div>
                   <div>
-                    <span className="font-display text-[26px] lg:text-[32px] font-black text-[#DF711B] leading-none block">
+                    <span className="font-display text-[22px] lg:text-[28px] font-black text-[#DF711B] leading-none block">
                       1:25
                     </span>
-                    <span className="text-[11px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
+                    <span className="text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
                       Mentor Ratio
                     </span>
                   </div>
                 </div>
 
                 {/* Text-Link CTA followed by thin horizontal rule ending in "+" icon */}
-                <div className="pt-4">
+                <div className="pt-2">
                   <Link 
                     to="/about/history" 
                     className="group flex items-center justify-between gap-4 text-[#DF711B] hover:text-[#181818] transition-colors"
                   >
-                    <span className="font-display text-[15px] lg:text-[16px] font-black uppercase tracking-wider shrink-0">
+                    <span className="font-display text-[14px] lg:text-[15px] font-black uppercase tracking-wider shrink-0">
                       READ MORE
                     </span>
                     
@@ -336,108 +336,52 @@ export const HorizontalPanelGallery: React.FC = () => {
               </div>
             </div>
 
-            {/* Peeking sliver of Panel C on the right edge (~8% of width) with vertical moving photos */}
-            <div className="hidden lg:flex w-[8%] xl:w-[8%] bg-[#FAF8F5] border-l border-[#E5E5E5] shrink-0 flex-col justify-center opacity-80 overflow-hidden relative">
-              <div className="absolute inset-x-0 top-0 flex flex-col gap-2.5 animate-marquee-up p-2 pointer-events-none">
-                {col1Photos.map((item, idx) => (
-                  <div key={idx} className="w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden border border-[#181818]/10 shrink-0">
-                    <img src={item.src} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* ============================================================
-              PANEL C — "SIDE GALLERY" (7 PHOTOS CONTINUOUSLY SCROLLING UP)
-              ============================================================ */}
-          <section className="panel panel--gallery w-full lg:w-[68vw] xl:w-[62vw] lg:h-screen shrink-0 bg-[#FAF8F5] flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 py-12 lg:py-0 box-border relative overflow-hidden">
-            
-            {/* Left Column: Heading & Information CTA */}
-            <div className="w-full lg:w-[38%] py-8 lg:py-0 pr-0 lg:pr-6 shrink-0 space-y-5">
-              <span className="block text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
-                SIDE GALLERY • VIBRANT CAMPUS
-              </span>
-              <h3 className="font-display text-[32px] sm:text-[40px] lg:text-[44px] font-black text-[#181818] uppercase tracking-tight leading-tight m-0">
-                LIFE AT CHINMAYA VIDYALAYA
-              </h3>
-              <p className="text-[15px] lg:text-[16px] text-[#555555] font-normal leading-relaxed">
-                Take a glimpse into our vibrant daily atmosphere, featuring state-of-the-art laboratories, sports tournaments, cultural heritage, and holistic learning environments.
-              </p>
+            {/* ZONE C — RIGHT (~34-36% width): VERTICAL MOVING UPWARD IMAGE GALLERY */}
+            <div className="w-full lg:w-[34%] xl:w-[36%] h-[480px] lg:h-full bg-[#FAF8F5] relative overflow-hidden flex gap-3.5 p-3 sm:p-4 box-border">
               
-              <div className="pt-2">
-                <Link
-                  to="/gallery"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#DF711B] hover:bg-[#181818] text-[#FFFFFF] font-sans font-bold text-[12px] uppercase tracking-wider transition-colors shadow-sm"
-                >
-                  <span>EXPLORE FULL GALLERY</span>
-                  <Plus className="w-4 h-4 text-amber-300" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: 2-Column Vertical Scrolling Photo Wall (7 Photos Going UP Continuously) */}
-            <div className="w-full lg:w-[60%] h-[500px] lg:h-screen relative overflow-hidden flex gap-4 p-2 lg:p-4">
-              
-              {/* Column 1 (Scrolls UP with col1Photos) */}
+              {/* Column 1 (Scrolls UP continuously) */}
               <div className="w-1/2 h-full relative overflow-hidden">
-                <div className="absolute inset-x-0 top-0 flex flex-col gap-4 animate-marquee-up">
-                  {col1Photos.map((photo, i) => (
+                <div className="absolute inset-x-0 top-0 flex flex-col gap-3.5 animate-marquee-up">
+                  {[...col1Photos, ...col1Photos].map((photo, i) => (
                     <div 
                       key={`col1-${i}`}
-                      className="group relative w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden border border-[#181818]/15 shadow-sm shrink-0"
+                      className="group relative w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden rounded-xl border border-[#181818]/10 shadow-xs shrink-0"
                     >
                       <img 
                         src={photo.src} 
                         alt={photo.title} 
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#FFB740] font-bold block">
-                          {photo.category}
-                        </span>
-                        <h4 className="text-[13px] font-display font-bold text-white uppercase tracking-tight m-0">
-                          {photo.title}
-                        </h4>
-                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Column 2 (Scrolls UP with col2Photos) */}
+              {/* Column 2 (Scrolls UP continuously at varied speed) */}
               <div className="w-1/2 h-full relative overflow-hidden">
-                <div className="absolute inset-x-0 top-0 flex flex-col gap-4 animate-marquee-up-slow">
-                  {col2Photos.map((photo, i) => (
+                <div className="absolute inset-x-0 top-0 flex flex-col gap-3.5 animate-marquee-up-slow">
+                  {[...col2Photos, ...col2Photos].map((photo, i) => (
                     <div 
                       key={`col2-${i}`}
-                      className="group relative w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden border border-[#181818]/15 shadow-sm shrink-0"
+                      className="group relative w-full aspect-[4/3] bg-[#E7E2D8] overflow-hidden rounded-xl border border-[#181818]/10 shadow-xs shrink-0"
                     >
                       <img 
                         src={photo.src} 
                         alt={photo.title} 
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#FFB740] font-bold block">
-                          {photo.category}
-                        </span>
-                        <h4 className="text-[13px] font-display font-bold text-white uppercase tracking-tight m-0">
-                          {photo.title}
-                        </h4>
-                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Top & Bottom Fade Overlays for seamless aesthetic */}
-              <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
-              <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+              {/* Top & Bottom Fade Overlays for seamless loop */}
+              <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+              <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
 
             </div>
 

@@ -17,6 +17,8 @@ import { VisionMissionShowcase } from '../components/inner/VisionMissionShowcase
 import { HeritageShowcase } from '../components/inner/HeritageShowcase';
 import { AdmissionGuidelinesShowcase } from '../components/inner/AdmissionGuidelinesShowcase';
 import { CurriculumShowcase } from '../components/inner/CurriculumShowcase';
+import { CoCurricularShowcase } from '../components/inner/CoCurricularShowcase';
+import { CareerCounsellingShowcase } from '../components/inner/CareerCounsellingShowcase';
 
 interface ContentPageProps {
   slug?: string;
@@ -60,6 +62,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const isSpiritual = title.toLowerCase().includes('spiritual') || (slug && slug.includes('spiritual'));
   const isInfrastructure = title.toLowerCase().includes('infrastructure') || (slug && slug.includes('infrastructure'));
   const isCoCurricular = title.toLowerCase().includes('co-curricular') || slug === 'co-curricular';
+  const isCareerCounselling = slug === 'career-counselling' || title.toLowerCase().includes('career counselling') || title.toLowerCase().includes('aptitude assessment');
   const isLibrary = slug === 'library' || title.toLowerCase().includes('library');
   const isFourPillars = slug === 'four-pillars' || slug === '4-pillars' || slug === 'philosophy' || title.toLowerCase().includes('4 pillars') || title.toLowerCase().includes('four pillars') || title.toLowerCase().includes('cvp');
   const isHolistic = slug === 'holistic-development' || title.toLowerCase().includes('holistic');
@@ -152,6 +155,12 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ) : isAdmissions ? (
             /* 10. Admission Guidelines, Interactive Dummy Form & Book a Call Showcase */
             <AdmissionGuidelinesShowcase />
+          ) : isCoCurricular ? (
+            /* Co-Curricular Activities Showcase */
+            <CoCurricularShowcase />
+          ) : isCareerCounselling ? (
+            /* Career Counselling & Aptitude Assessment Showcase */
+            <CareerCounsellingShowcase />
           ) : isMissionVision ? (
             /* 11. School Vision & Mission Showcase */
             <VisionMissionShowcase />

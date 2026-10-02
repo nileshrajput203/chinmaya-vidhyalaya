@@ -313,14 +313,7 @@ const FacilityCardCarousel: React.FC<{
         onClick={() => onOpenLightbox(currentPhoto.src, currentPhoto.caption)}
       />
 
-      {/* Floating Badges */}
-      <div className="absolute top-3.5 left-3.5 bg-[#0B1E34]/90 backdrop-blur-md text-white px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider shadow pointer-events-none">
-        {facility.badge}
-      </div>
 
-      <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold border border-white/20 flex items-center gap-1.5 pointer-events-none">
-        <span>Photo {currentIdx + 1}/{images.length}</span>
-      </div>
 
       {/* Bottom Photo Caption Banner */}
       <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 pt-6 flex items-end justify-between gap-3 text-white pointer-events-none">

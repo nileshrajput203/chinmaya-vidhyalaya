@@ -210,9 +210,6 @@ const PhaseScrollCard: React.FC<PhaseScrollCardProps> = ({
             alt={phase.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-3 left-3 bg-[#0B1D30]/85 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md">
-            {phase.years}
-          </div>
         </div>
       </div>
 
@@ -417,10 +414,6 @@ export const HeritageShowcase: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </AnimatePresence>
-
-                  <div className="absolute top-2.5 left-2.5 bg-black/70 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md border border-white/20">
-                    {activePhase.years}
-                  </div>
 
                   <div className="absolute bottom-2.5 right-2.5 bg-black/70 text-white p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                     <ZoomIn className="w-4 h-4 text-amber-300" />

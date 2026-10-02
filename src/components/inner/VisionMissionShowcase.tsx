@@ -169,9 +169,6 @@ const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
             alt={kosha.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-3 left-3 bg-[#0B1D30]/85 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md">
-            {kosha.imageTag}
-          </div>
         </div>
       </div>
 
@@ -486,10 +483,6 @@ export const VisionMissionShowcase: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </AnimatePresence>
-
-                <div className="absolute top-2.5 left-2.5 bg-black/70 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md border border-white/20">
-                  {activeKosha.imageTag}
-                </div>
 
                 <div className="absolute bottom-2.5 right-2.5 bg-black/70 text-white p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <ZoomIn className="w-4 h-4 text-amber-300" />
