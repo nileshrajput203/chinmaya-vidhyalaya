@@ -14,6 +14,24 @@ export default {
           DEFAULT: "hsl(var(--muted, 40 20% 95%))",
           foreground: "hsl(var(--muted-foreground, 0 0% 45%))",
         },
+        primary: {
+          DEFAULT: "hsl(var(--primary, 24 80% 49%))",
+          foreground: "hsl(var(--primary-foreground, 0 0% 100%))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary, 40 20% 95%))",
+          foreground: "hsl(var(--secondary-foreground, 210 14% 11%))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card, 0 0% 100%))",
+          foreground: "hsl(var(--card-foreground, 210 14% 11%))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive, 0 84% 60%))",
+          foreground: "hsl(var(--destructive-foreground, 0 0% 98%))",
+        },
+        ring: "hsl(var(--ring, 24 80% 49%))",
+        input: "hsl(var(--input, 38 18% 88%))",
         palette: {
           teal: "#64C9CF",
           tealLight: "#8EE0E4",
@@ -62,10 +80,10 @@ export default {
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        cinzel: ['Cinzel', 'serif'],
+        serif: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        cinzel: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         mono: ['Space Grotesk', 'monospace'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Archivo Black', 'Plus Jakarta Sans', 'sans-serif'],
       },
       boxShadow: {
         header: '0 4px 24px rgba(11, 29, 48, 0.06)',

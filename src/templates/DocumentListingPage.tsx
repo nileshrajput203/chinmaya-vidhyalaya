@@ -35,24 +35,17 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
     loadDocs();
   }, [selectedCategory, searchQuery]);
 
-  const isStudentSection = initialCategory === 'sample-papers' || initialCategory === 'academics';
-
-  const categories: { label: string; value: DocumentCategory | 'all' }[] = isStudentSection
-    ? [
-        { label: 'Sample Question Papers', value: 'sample-papers' },
-        { label: 'School Circulars & Notices', value: 'circulars' },
-        { label: 'Academics & Curricula', value: 'academics' },
-      ]
-    : [
-        { label: 'All Documents', value: 'all' },
-        { label: 'Sample Question Papers', value: 'sample-papers' },
-        { label: 'School Circulars & Notices', value: 'circulars' },
-        { label: 'Admissions & Forms', value: 'admissions' },
-        { label: 'Academics & Curricula', value: 'academics' },
-      ];
-
+  const isSamplePapersOnly = initialCategory === 'sample-papers';
   const isMandatoryIsolated = initialCategory === 'mandatory-information';
-  const [mandatorySubFilter, setMandatorySubFilter] = useState<'all' | 'compliance' | 'safety' | 'tc'>('all');
+  const [mandatorySubFilter, setMandatorySubFilter] = useState<'compliance' | 'safety' | 'tc'>('compliance');
+
+  const categories: { label: string; value: DocumentCategory | 'all' }[] = [
+    { label: 'All Documents', value: 'all' },
+    { label: 'Sample Question Papers', value: 'sample-papers' },
+    { label: 'School Circulars & Notices', value: 'circulars' },
+    { label: 'Admissions & Forms', value: 'admissions' },
+    { label: 'Academics & Curricula', value: 'academics' },
+  ];
 
   // Filter term-wise or sub-filter if applicable
   const displayDocuments = documents.filter((doc) => {
@@ -62,7 +55,10 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
       if (mandatorySubFilter === 'compliance') return !doc.title.toLowerCase().includes('transfer certificate') && !doc.title.toLowerCase().includes('safety') && !doc.title.toLowerCase().includes('fire') && !doc.title.toLowerCase().includes('sanitation') && !doc.title.toLowerCase().includes('water') && !doc.title.toLowerCase().includes('building');
       return true;
     }
-    if (isStudentSection && doc.category === 'mandatory-information') {
+    if (isSamplePapersOnly && doc.category !== 'sample-papers') {
+      return false;
+    }
+    if (doc.category === 'mandatory-information') {
       return false;
     }
     if (selectedTerm === 'all') return true;
@@ -99,7 +95,6 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
               {isMandatoryIsolated ? (
                 <>
                   {[
-                    { label: 'All Disclosures & TC', value: 'all' },
                     { label: 'SARAS & Affiliation Records', value: 'compliance' },
                     { label: 'Safety & Building Clearances', value: 'safety' },
                     { label: 'Transfer Certificates (TC)', value: 'tc' },
@@ -117,6 +112,26 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                     </button>
                   ))}
                 </>
+              ) : isSamplePapersOnly ? (
+                <>
+                  {[
+                    { label: 'All Terms', value: 'all' },
+                    { label: 'Term 1 / Periodic Assessments (Std 1 - 10)', value: 'Term 1' },
+                    { label: 'Term 2 / Evaluation III (Std 1 - 5)', value: 'Term 2' },
+                  ].map((termOpt) => (
+                    <button
+                      key={termOpt.value}
+                      onClick={() => setSelectedTerm(termOpt.value as TermCategory | 'all')}
+                      className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
+                        selectedTerm === termOpt.value
+                          ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
+                          : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
+                      }`}
+                    >
+                      {termOpt.label}
+                    </button>
+                  ))}
+                </>
               ) : (
                 categories.map((cat) => (
                   <button
@@ -124,6 +139,10 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                     onClick={() => {
                       if (cat.value === 'admissions') {
                         navigate('/downloads/admissions');
+                        return;
+                      }
+                      if (cat.value === 'sample-papers') {
+                        navigate('/downloads/sample-papers');
                         return;
                       }
                       setSelectedCategory(cat.value);
@@ -176,8 +195,8 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
             )}
           </div>
 
-          {/* Term-Wise Filter (For Sample Papers per user request) */}
-          {isSamplePapers && (
+          {/* Term-Wise Filter (For general downloads page when sample-papers is selected) */}
+          {isSamplePapers && !isSamplePapersOnly && (
             <div className="pt-3 border-t border-[#E7E2D8] flex flex-wrap items-center gap-3">
               <span className="text-xs font-mono font-bold text-[#181C20] uppercase flex items-center gap-1.5">
                 <Filter className="w-3.5 h-3.5 text-[#DF711B]" />

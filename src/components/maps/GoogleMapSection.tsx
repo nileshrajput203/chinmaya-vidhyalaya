@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MapPin, Navigation, ExternalLink, Train, Car, Clock, Phone, Mail } from 'lucide-react';
+import React from 'react';
+import { MapPin, Phone, Mail, Navigation, ExternalLink } from 'lucide-react';
 import { CONTACT_DETAILS } from '../../data/contact';
 
 interface GoogleMapSectionProps {
@@ -9,190 +9,136 @@ interface GoogleMapSectionProps {
 
 export const GoogleMapSection: React.FC<GoogleMapSectionProps> = ({
   className = '',
-  showTitle = true,
 }) => {
-  // 'map' = standard crisp vector roadmap with clear labels & pin
-  // 'satellite' = hybrid satellite with roads & landmark overlays
-  const [mapMode, setMapMode] = useState<'map' | 'satellite'>('map');
-
-  const embedUrl = mapMode === 'satellite'
-    ? 'https://maps.google.com/maps?q=Chinmaya+Vidyalaya+Tarapur,+Boisar&t=h&z=17&ie=UTF8&iwloc=B&output=embed'
-    : 'https://maps.google.com/maps?q=Chinmaya+Vidyalaya+Tarapur,+Boisar&t=&z=16&ie=UTF8&iwloc=B&output=embed';
-
-  const directMapUrl = 'https://www.google.com/maps/search/?api=1&query=Chinmaya+Vidyalaya+Tarapur+Boisar';
-  const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=Chinmaya+Vidyalaya+Tarapur+Boisar';
+  const embedUrl =
+    'https://maps.google.com/maps?q=Chinmaya+Vidyalaya+Tarapur,+Boisar&t=&z=16&ie=UTF8&iwloc=B&output=embed';
+  const directMapUrl =
+    'https://www.google.com/maps/search/?api=1&query=Chinmaya+Vidyalaya+Tarapur+Boisar';
+  const directionsUrl =
+    'https://www.google.com/maps/dir/?api=1&destination=Chinmaya+Vidyalaya+Tarapur+Boisar';
 
   return (
-    <div id="google-map-section" className={`bg-white border border-[#E7E2D8] rounded-3xl shadow-card overflow-hidden ${className}`}>
-      {showTitle && (
-        <div className="p-5 sm:p-6 border-b border-[#E7E2D8] bg-[#FAF8F5] flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div className="flex items-start sm:items-center gap-3.5">
-            <div className="w-11 h-11 rounded-2xl bg-[#0B1D30] text-[#DF711B] flex items-center justify-center shrink-0 shadow-sm">
-              <MapPin className="w-5 h-5 text-[#DF711B]" />
-            </div>
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0B1D30]">
-                  Campus Location & Access
-                </h3>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Campus Open
-                </span>
+    <div
+      id="google-map-section"
+      className={`w-full bg-[#0B1E34] text-white rounded-3xl overflow-hidden shadow-2xl border border-[#1b3452] ${className}`}
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[500px]">
+        {/* Left Column: Institutional Information & Contacts */}
+        <div className="lg:col-span-5 p-7 sm:p-9 lg:p-10 flex flex-col justify-between space-y-6">
+          {/* Header Title */}
+          <div className="space-y-1 border-b border-white/10 pb-5">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-[#DF711B] font-bold">
+              Saravali • Boisar Campus
+            </span>
+            <h3 className="font-sans font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+              Campus Location & Access
+            </h3>
+            <p className="text-xs text-slate-300 font-sans">
+              CBSE Affiliation No. {CONTACT_DETAILS.affiliationNo} • School Code: {CONTACT_DETAILS.schoolCode}
+            </p>
+          </div>
+
+          {/* Contact Details List */}
+          <div className="space-y-5">
+            {/* Address */}
+            <div className="flex items-start gap-3.5">
+              <div className="w-8 h-8 rounded-lg bg-[#DF711B]/15 border border-[#DF711B]/25 text-[#DF711B] flex items-center justify-center shrink-0 mt-0.5">
+                <MapPin className="w-4 h-4 text-[#DF711B]" />
               </div>
-              <p className="text-xs text-[#555555] font-sans mt-0.5">
-                Chinmaya Vidyalaya • P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501
-              </p>
+              <div className="space-y-1">
+                <div className="font-sans font-bold text-xs uppercase tracking-wider text-[#DF711B]">
+                  Address
+                </div>
+                <p className="font-sans text-sm text-slate-200 leading-relaxed font-normal">
+                  <strong className="text-white font-semibold block">{CONTACT_DETAILS.schoolName}</strong>
+                  {CONTACT_DETAILS.address}
+                </p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex items-start gap-3.5">
+              <div className="w-8 h-8 rounded-lg bg-[#DF711B]/15 border border-[#DF711B]/25 text-[#DF711B] flex items-center justify-center shrink-0 mt-0.5">
+                <Phone className="w-4 h-4 text-[#DF711B]" />
+              </div>
+              <div className="space-y-1.5">
+                <div className="font-sans font-bold text-xs uppercase tracking-wider text-[#DF711B]">
+                  Phone
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href={`tel:${CONTACT_DETAILS.phones[0].number}`}
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/5 hover:bg-[#DF711B]/20 border border-white/10 hover:border-[#DF711B]/40 text-white hover:text-[#DF711B] text-xs font-mono font-medium transition-all"
+                  >
+                    +91 {CONTACT_DETAILS.phones[0].number}
+                  </a>
+                  <a
+                    href={`tel:${CONTACT_DETAILS.principal.phone}`}
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/5 hover:bg-[#DF711B]/20 border border-white/10 hover:border-[#DF711B]/40 text-white hover:text-[#DF711B] text-xs font-mono font-medium transition-all"
+                  >
+                    +91 {CONTACT_DETAILS.principal.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Address */}
+            <div className="flex items-start gap-3.5">
+              <div className="w-8 h-8 rounded-lg bg-[#DF711B]/15 border border-[#DF711B]/25 text-[#DF711B] flex items-center justify-center shrink-0 mt-0.5">
+                <Mail className="w-4 h-4 text-[#DF711B]" />
+              </div>
+              <div className="space-y-1">
+                <div className="font-sans font-bold text-xs uppercase tracking-wider text-[#DF711B]">
+                  Email Address
+                </div>
+                <a
+                  href={`mailto:${CONTACT_DETAILS.emails[1].email}`}
+                  className="font-sans text-sm text-slate-200 hover:text-[#DF711B] transition-colors block font-medium"
+                >
+                  {CONTACT_DETAILS.emails[1].email}
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
-            {/* Map Mode Switcher */}
-            <div className="flex items-center bg-white border border-[#E7E2D8] p-1 rounded-xl text-xs font-sans shadow-xs">
-              <button
-                type="button"
-                onClick={() => setMapMode('map')}
-                className={`px-3 py-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
-                  mapMode === 'map'
-                    ? 'bg-[#0B1D30] text-white shadow-xs'
-                    : 'text-[#555555] hover:text-[#0B1D30] hover:bg-[#FAF8F5]'
-                }`}
-              >
-                Roadmap
-              </button>
-              <button
-                type="button"
-                onClick={() => setMapMode('satellite')}
-                className={`px-3 py-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
-                  mapMode === 'satellite'
-                    ? 'bg-[#0B1D30] text-white shadow-xs'
-                    : 'text-[#555555] hover:text-[#0B1D30] hover:bg-[#FAF8F5]'
-                }`}
-              >
-                Satellite
-              </button>
-            </div>
-
+          {/* Action Row */}
+          <div className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-3">
             <a
               href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#DF711B] hover:bg-[#c96213] text-white text-xs font-bold rounded-xl transition-all shadow-sm cursor-pointer"
-              title="Get driving directions in Google Maps"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DF711B] hover:bg-[#c96213] text-white font-sans text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all active:scale-[0.98] cursor-pointer"
             >
-              <Navigation className="w-3.5 h-3.5" />
+              <Navigation className="w-4 h-4 text-white" />
               <span>Get Directions</span>
-              <ExternalLink className="w-3 h-3 opacity-80" />
             </a>
 
             <a
               href={directMapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white border border-[#E7E2D8] hover:border-[#DF711B] text-[#0B1D30] text-xs font-semibold rounded-xl transition-colors shadow-xs cursor-pointer"
-              title="Open campus location in Google Maps"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#DF711B]/40 text-slate-200 hover:text-[#DF711B] font-sans text-xs sm:text-sm font-semibold rounded-xl transition-all cursor-pointer"
             >
-              <span>Open in Maps</span>
-              <ExternalLink className="w-3 h-3 text-[#777777]" />
+              <span>Open in Google Maps</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#DF711B]" />
             </a>
           </div>
         </div>
-      )}
 
-      {/* Clean Unobstructed Map Viewport */}
-      <div className="relative w-full h-80 sm:h-96 md:h-[460px] bg-[#EFECE6] overflow-hidden">
-        <iframe
-          key={mapMode}
-          title="Chinmaya Vidyalaya Tarapur Boisar Location"
-          src={embedUrl}
-          className="w-full h-full border-0"
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-
-      {/* Transit & Access Information Grid */}
-      <div className="p-6 sm:p-7 bg-[#FAF8F5] border-t border-[#E7E2D8] space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#E7E2D8] shadow-xs">
-            <div className="w-9 h-9 rounded-xl bg-[#FAF3E8] border border-[#E7E2D8] flex items-center justify-center shrink-0">
-              <Train className="w-4 h-4 text-[#DF711B]" />
-            </div>
-            <div>
-              <strong className="block font-bold text-[#0B1D30] text-xs mb-1">
-                By Western Railway
-              </strong>
-              <p className="text-[#555555] leading-relaxed">
-                Boisar Railway Station is ~3.5 km away. Frequent auto-rickshaws available directly to school gate (approx. 10 mins).
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#E7E2D8] shadow-xs">
-            <div className="w-9 h-9 rounded-xl bg-[#FAF3E8] border border-[#E7E2D8] flex items-center justify-center shrink-0">
-              <Car className="w-4 h-4 text-[#DF711B]" />
-            </div>
-            <div>
-              <strong className="block font-bold text-[#0B1D30] text-xs mb-1">
-                By Road & Highway
-              </strong>
-              <p className="text-[#555555] leading-relaxed">
-                Accessible via Palghar-Tarapur Highway and Boisar MIDC Link Road. Landmark: P-201, Vidyanagar, Saravali.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#E7E2D8] shadow-xs">
-            <div className="w-9 h-9 rounded-xl bg-[#FAF3E8] border border-[#E7E2D8] flex items-center justify-center shrink-0">
-              <Clock className="w-4 h-4 text-[#DF711B]" />
-            </div>
-            <div>
-              <strong className="block font-bold text-[#0B1D30] text-xs mb-1">
-                Administrative Timings
-              </strong>
-              <p className="text-[#555555] leading-relaxed">
-                Mon–Fri: 8:30 AM – 3:30 PM, Sat: 8:30 AM – 12:30 PM. Visitor registration at main entrance reception.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Institutional Contact Bar */}
-        <div className="pt-3 border-t border-[#E7E2D8]/70 flex flex-wrap items-center justify-between gap-3 text-xs text-[#555555]">
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="font-mono text-[11px] text-[#777777]">
-              CBSE Affil. No. {CONTACT_DETAILS.affiliationNo} • School Code: {CONTACT_DETAILS.schoolCode}
-            </span>
-            <span className="hidden sm:inline text-[#CCCCCC]">•</span>
-            <a
-              href={`tel:${CONTACT_DETAILS.phones[0].number}`}
-              className="inline-flex items-center gap-1.5 font-medium text-[#0B1D30] hover:text-[#DF711B] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
-              <span>{CONTACT_DETAILS.phones[0].number}</span>
-            </a>
-            <span className="hidden sm:inline text-[#CCCCCC]">•</span>
-            <a
-              href={`mailto:${CONTACT_DETAILS.emails[0].email}`}
-              className="inline-flex items-center gap-1.5 font-medium text-[#0B1D30] hover:text-[#DF711B] transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#DF711B]" />
-              <span>{CONTACT_DETAILS.emails[0].email}</span>
-            </a>
-          </div>
-
-          <a
-            href={directionsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-semibold text-[#DF711B] hover:underline"
-          >
-            <span>Navigate to Campus</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+        {/* Right Column: Google Map Embedded Viewport */}
+        <div className="lg:col-span-7 relative min-h-[360px] sm:min-h-[440px] lg:min-h-full bg-slate-900 border-t lg:border-t-0 lg:border-l border-white/10">
+          <iframe
+            title="Chinmaya Vidyalaya Tarapur Boisar Campus Location"
+            src={embedUrl}
+            className="w-full h-full min-h-[360px] sm:min-h-[440px] lg:min-h-full border-0"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </div>
   );
 };
+
+export default GoogleMapSection;

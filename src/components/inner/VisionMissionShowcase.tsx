@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Compass, Target, CheckCircle2, Quote, Heart, Activity, Brain, Sun, ZoomIn, X } from 'lucide-react';
-import gsap from 'gsap';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Target, CheckCircle2, ZoomIn, X } from 'lucide-react';
 import { SpotlightCard } from '../ui/spotlight-card';
-import { BadgePill } from '../ui/badge-pill';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
+import { useInView, motion, AnimatePresence } from 'motion/react';
+import { TextRotate, TextRotateRef } from '../ui/text-rotate';
 
 interface Kosha {
   id: string;
@@ -43,9 +43,9 @@ const KOSHAS: Kosha[] = [
     sheath: 'Vital Energy Sheath',
     color: '#059669',
     badgeBg: 'bg-emerald-100 text-emerald-900 border-emerald-300',
-    image: '/images/banner-4.jpeg',
-    imageTag: 'Breath Awareness & Assembly',
-    imageCaption: 'Vital Energy: Guided Pranayama and breath awareness in morning assembly to center youthful energies and steady the nervous system.',
+    image: '/images/banner-8.webp',
+    imageTag: 'Athletic Ground & Campus Vitality',
+    imageCaption: 'Vital Energy: Sprawling green campus grounds for morning fitness, athletics, and vital energy balance.',
     schoolPractice:
       'Pranayama breathing techniques, breath synchronization, and vital energy balancing to steady youthful nervousness and enhance concentration.',
     dailyRoutine: 'Guided Anulom Vilom and Bhramari Pranayama during morning assembly, breath awareness before exams.',
@@ -58,8 +58,8 @@ const KOSHAS: Kosha[] = [
     sheath: 'Mental-Emotional Sheath',
     color: '#B45309',
     badgeBg: 'bg-orange-100 text-orange-900 border-orange-300',
-    image: '/images/chinmaya/cultural/cultural_celebration_001.jpg',
-    imageTag: 'Classical Arts & Emotional Poise',
+    image: '/images/about-banner.jpeg',
+    imageTag: 'Music Studio & Expressive Arts',
     imageCaption: 'Mental-Emotional Harmony: Classical music, expressive performing arts, and annual cultural celebrations uniting students.',
     schoolPractice:
       'Emotional poise, aesthetic arts, classical music, drama, empathy exercises, and peer bonding within supportive house families.',
@@ -73,8 +73,8 @@ const KOSHAS: Kosha[] = [
     sheath: 'Intellectual Sheath',
     color: '#0B1E34',
     badgeBg: 'bg-blue-100 text-blue-900 border-blue-300',
-    image: '/images/chinmaya/academics/classroom_learning_001.jpg',
-    imageTag: 'Inquiry-Based Scientific Learning',
+    image: '/images/phys.jpeg',
+    imageTag: 'Hands-on STEM Lab Verification',
     imageCaption: 'Intellectual Depth: Hands-on laboratory experiments, ASSET diagnostic thinking, and fearless analytical problem-solving.',
     schoolPractice:
       'Inquiry-based STEM laboratories, ASSET diagnostic thinking analytics, scientific reasoning, and philosophical debate.',
@@ -89,7 +89,7 @@ const KOSHAS: Kosha[] = [
     color: '#7C3AED',
     badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
     image: '/images/guru-paduka-pooja.webp',
-    imageTag: 'Sacred Ethos & Joy of Seva',
+    imageTag: 'Guru Paduka Pooja & Sacred Ethos',
     imageCaption: 'Spiritual Bliss: Daily Guru Paduka Pooja, Vedic chanting, and character development rooted in selfless service (Seva).',
     schoolPractice:
       'Guru Paduka Pooja, Bhagavad Gita chanting, value education through Balvihar, and joy discovered in selfless service (Seva).',
@@ -98,92 +98,147 @@ const KOSHAS: Kosha[] = [
   }
 ];
 
-export const VisionMissionShowcase: React.FC = () => {
-  const [activeKoshaId, setActiveKoshaId] = useState('annamaya');
-  const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; caption: string } | null>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
+interface KoshaScrollCardProps {
+  kosha: Kosha;
+  index: number;
+  isActive: boolean;
+  onInView: (index: number) => void;
+  onImageClick: (kosha: Kosha) => void;
+}
 
-  // Prevent background scroll bleed when lightbox is open
-  useBodyScrollLock(lightboxImage !== null);
-
-  const activeKosha = KOSHAS.find((k) => k.id === activeKoshaId) || KOSHAS[0];
+const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
+  kosha,
+  index,
+  isActive,
+  onInView,
+  onImageClick,
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef, {
+    margin: '-25% 0px -25% 0px',
+  });
 
   useEffect(() => {
-    if (stageRef.current) {
-      gsap.fromTo(
-        stageRef.current,
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
-      );
+    if (isInView) {
+      onInView(index);
     }
-  }, [activeKoshaId]);
+  }, [isInView, index, onInView]);
 
   return (
-    <div className="space-y-12">
-      {/* ====================================================
-          FOUNDER'S GUIDING CREED SPOTLIGHT
-         ==================================================== */}
-      <div className="bg-gradient-to-br from-[#0B1D30] to-[#182C44] text-white rounded-3xl p-8 sm:p-10 border border-[#233B59] shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#DF711B]/15 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
-            <div 
-              onClick={() => setLightboxImage({
-                src: '/images/swami.jpeg',
-                title: 'Param Pujya Swami Chinmayananda',
-                caption: 'Founder & Visionary behind the Chinmaya Movement and Chinmaya Vision Programme.'
-              })}
-              className="relative w-44 h-52 sm:w-48 sm:h-56 rounded-2xl overflow-hidden border-2 border-[#DF711B]/50 shadow-2xl bg-black/40 group cursor-pointer"
-            >
-              <img
-                src="/images/swami.jpeg"
-                alt="Param Pujya Swami Chinmayananda"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-              <div className="absolute bottom-2 left-2 right-2 text-center">
-                <span className="text-xs font-serif font-bold text-amber-200 block">
-                  Pujya Gurudev
-                </span>
-                <span className="text-[10px] font-mono text-white/80 uppercase tracking-wider block">
-                  Swami Chinmayananda
-                </span>
-              </div>
-              <div className="absolute top-2 right-2 bg-black/60 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
-              </div>
+    <div
+      ref={cardRef}
+      id={`kosha-section-${index}`}
+      className={`transition-all duration-500 rounded-3xl p-6 sm:p-8 border ${
+        isActive
+          ? 'bg-white border-[#DF711B]/40 shadow-card'
+          : 'bg-[#FAF8F5]/90 border-[#E7E2D8] opacity-90 hover:opacity-100'
+      } space-y-6 scroll-mt-32`}
+    >
+      {/* Sheath Header */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E7E2D8] pb-4">
+        <div className="flex items-center gap-3">
+          <span className="w-8 h-8 rounded-xl bg-[#DF711B] text-white flex items-center justify-center font-mono font-bold text-xs shadow-xs">
+            0{index + 1}
+          </span>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
+                {kosha.sheath}
+              </span>
+              <span className="text-xs font-mono text-slate-400">• {kosha.sanskrit}</span>
             </div>
+            <h4 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20] pt-0.5">
+              {kosha.name}
+            </h4>
           </div>
+        </div>
 
-          <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 border border-[#DF711B]/40 text-[#DF711B] text-xs font-mono font-bold tracking-wide">
-              <Quote className="w-3.5 h-3.5" />
-              <span>Foundational Creed of Chinmaya Education</span>
-            </div>
+        <span className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border ${kosha.badgeBg}`}>
+          Sheath 0{index + 1}
+        </span>
+      </div>
 
-            <blockquote className="font-serif italic text-lg sm:text-2xl text-[#FAF8F5] leading-relaxed font-light">
-              “We are not here to teach our children merely how to make a living, but how to live. To enable them to meet life’s situations with courage and composure.”
-            </blockquote>
-
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-              Formulated under the spiritual guidance of Pujya Gurudev and administered by Central Chinmaya Mission Trust (CCMT), Mumbai, Chinmaya Vidyalaya Tarapur integrates <strong>ancient Indian cultural ethos with modern scientific inquiry</strong> to mold self-reliant, patriotic, and compassionate leaders.
-            </p>
-
-            <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-amber-200/90">
-              <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B]" />
-                Central Chinmaya Mission Trust, Mumbai
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B]" />
-                CBSE Affiliation No. 1130058 • Code: 30040
-              </span>
-            </div>
+      {/* Mobile-only Image Preview */}
+      <div className="block lg:hidden rounded-2xl overflow-hidden border border-[#E7E2D8] bg-slate-100 shadow-xs">
+        <div
+          className="relative aspect-[16/10] overflow-hidden cursor-pointer"
+          onClick={() => onImageClick(kosha)}
+        >
+          <img
+            src={kosha.image}
+            alt={kosha.name}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute top-3 left-3 bg-[#0B1D30]/85 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md">
+            {kosha.imageTag}
           </div>
         </div>
       </div>
 
+      {/* Pedagogical Focus */}
+      <div className="space-y-1.5">
+        <span className="text-xs font-mono font-bold uppercase text-[#0B1E34] tracking-wider block">
+          Campus Pedagogical Focus:
+        </span>
+        <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
+          {kosha.schoolPractice}
+        </p>
+      </div>
+
+      {/* Daily Boisar Realization */}
+      <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E7E2D8] space-y-1 shadow-2xs">
+        <span className="text-[11px] font-mono font-bold uppercase text-[#DF711B] block">
+          Daily Boisar Campus Realization:
+        </span>
+        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+          {kosha.dailyRoutine}
+        </p>
+      </div>
+
+      {/* Student Growth Outcomes */}
+      <div className="bg-white border border-[#E7E2D8] p-5 rounded-2xl space-y-3 shadow-2xs">
+        <span className="text-xs font-mono font-bold uppercase text-[#0B1E34] tracking-wider block">
+          Observed Student Growth Outcomes:
+        </span>
+        <ul className="space-y-2">
+          {kosha.outcomes.map((out, oIdx) => (
+            <li key={oIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <CheckCircle2 className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
+              <span className="leading-snug font-sans">{out}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export const VisionMissionShowcase: React.FC = () => {
+  const [activeKoshaIndex, setActiveKoshaIndex] = useState(0);
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; caption: string } | null>(null);
+  const textRotateRef = useRef<TextRotateRef>(null);
+
+  // Prevent background scroll bleed when lightbox is open
+  useBodyScrollLock(lightboxImage !== null);
+
+  const activeKosha = KOSHAS[activeKoshaIndex] || KOSHAS[0];
+
+  const handleKoshaInView = useCallback((index: number) => {
+    setActiveKoshaIndex(index);
+    textRotateRef.current?.jumpTo(index);
+  }, []);
+
+  const scrollToKosha = (index: number) => {
+    setActiveKoshaIndex(index);
+    textRotateRef.current?.jumpTo(index);
+    const el = document.getElementById(`kosha-section-${index}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  return (
+    <div className="space-y-14">
       {/* ====================================================
           VISION & MISSION MASTER VISUAL SPLIT CARDS
          ==================================================== */}
@@ -195,7 +250,7 @@ export const VisionMissionShowcase: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-2xl bg-[#DF711B] text-white flex items-center justify-center font-bold shadow-sm">
-                  <Compass className="w-5 h-5 text-white" />
+                  <span className="font-cinzel text-lg">01</span>
                 </div>
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#DF711B] block">
@@ -226,9 +281,6 @@ export const VisionMissionShowcase: React.FC = () => {
                   alt="Students conducting scientific inquiry in laboratory"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 bg-[#0B1D30]/85 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md">
-                  Scientific Inquiry & Rigour
-                </div>
                 <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
                 </div>
@@ -291,27 +343,24 @@ export const VisionMissionShowcase: React.FC = () => {
             {/* School Photograph for Mission */}
             <div 
               onClick={() => setLightboxImage({
-                src: '/images/banner-4.jpeg',
-                title: 'Morning Prayer Assembly & Sacred Ethos',
-                caption: 'Students gathered in the central courtyard for morning prayers, Gita chanting, and moral reflection.'
+                src: '/images/guru-paduka-pooja.webp',
+                title: 'Cultural Ethos & Sacred Value Education',
+                caption: 'Students and teachers participating in Guru Paduka Pooja and traditional prayers rooted in the vision of Swami Chinmayananda.'
               })}
               className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-xs group cursor-pointer"
             >
               <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                 <img
-                  src="/images/banner-4.jpeg"
-                  alt="Morning prayer assembly in central courtyard"
+                  src="/images/guru-paduka-pooja.webp"
+                  alt="Guru Paduka Pooja and cultural traditions at Chinmaya Vidyalaya"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 bg-[#0B1D30]/85 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md">
-                  Vedic Culture & Daily Ethos
-                </div>
                 <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
                 </div>
               </div>
               <div className="p-2.5 bg-[#FAF8F5] text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
-                Assembly Courtyard • Daily Moral & Spiritual Grounding &rarr;
+                Cultural Ethos • Sacred Traditions & Moral Grounding &rarr;
               </div>
             </div>
 
@@ -345,209 +394,157 @@ export const VisionMissionShowcase: React.FC = () => {
 
       {/* ====================================================
           THE PANCHAKOSHA HOLISTIC DEVELOPMENTAL FRAMEWORK
-          (NOW WITH PHOTOGRAPHIC VISUAL FOR EVERY SHEATH!)
+          (SCROLL-DRIVEN STICKY IMAGE LEFT & CONTENT RIGHT)
          ==================================================== */}
-      <SpotlightCard className="bg-white border border-[#E7E2D8] rounded-3xl p-6 sm:p-10 shadow-card space-y-8">
-        <div className="space-y-2">
-          <BadgePill variant="saffron" label="Vedantic Pedagogical Architecture" pulse />
-          <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
-            The Panchakosha Holistic Developmental Framework
+      <section className="w-full pt-10 sm:pt-14 border-t border-[#E7E2D8]/70">
+        {/* Animated Section Header */}
+        <div className="text-center max-w-5xl mx-auto px-4">
+          <h3 className="font-cinzel text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold text-[#181C20] tracking-tight sm:whitespace-nowrap">
+            The Panchakosha Holistic Framework
           </h3>
-          <p className="text-sm sm:text-base text-slate-600 font-normal max-w-3xl leading-relaxed">
-            Pujya Gurudev Swami Chinmayananda structured Chinmaya education around the Taittiriya Upanishad’s five developmental sheaths (Koshas) that constitute the human personality. Select each sheath below to discover its concrete campus realization and visual evidence:
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl sm:max-w-3xl mx-auto">
+            Pujya Gurudev Swami Chinmayananda structured Chinmaya education around the Taittiriya Upanishad’s five developmental sheaths (Koshas) that unfold the total human personality. Scroll through each layer to explore its pedagogical realization at Boisar:
           </p>
+
+          {/* Quick-Jump Step Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-6 sm:mt-8">
+            {KOSHAS.map((k, idx) => (
+              <button
+                key={k.id}
+                type="button"
+                onClick={() => scrollToKosha(idx)}
+                className={`px-3.5 py-2 rounded-xl font-mono text-xs font-bold transition-all cursor-pointer border ${
+                  activeKoshaIndex === idx
+                    ? 'bg-[#DF711B] text-white border-[#DF711B] shadow-sm scale-105'
+                    : 'bg-white text-slate-600 border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#DF711B]'
+                }`}
+              >
+                0{idx + 1}. {k.name.replace(' Kosha', '')}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* 5 Koshas Interactive Selector Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
-          {KOSHAS.map((k, idx) => (
-            <button
-              key={k.id}
-              type="button"
-              onClick={() => setActiveKoshaId(k.id)}
-              className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
-                activeKoshaId === k.id
-                  ? 'bg-[#0B1E34] text-white border-[#0B1E34] shadow-md scale-[1.02]'
-                  : 'bg-[#FAF8F5] text-slate-700 border-[#E7E2D8] hover:bg-white hover:border-[#DF711B]'
-              }`}
-            >
-              <span className={`text-[10px] font-mono font-bold block ${activeKoshaId === k.id ? 'text-[#F7B928]' : 'text-slate-400'}`}>
-                Kosha 0{idx + 1}
-              </span>
-              <h4 className="font-cinzel font-bold text-xs sm:text-sm pt-0.5 leading-tight">
-                {k.name}
-              </h4>
-              <span className={`text-[11px] font-mono block pt-0.5 ${activeKoshaId === k.id ? 'text-slate-300' : 'text-[#DF711B]'}`}>
-                {k.sheath}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {/* Kosha Detail Stage with Real Campus Photography */}
-        <div ref={stageRef}>
-          <div className="bg-[#FAF8F5] border-2 border-[#E7E2D8] rounded-2xl p-6 sm:p-8 space-y-6">
-            {/* Header of Active Kosha */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E7E2D8] pb-4">
-              <div>
+        {/* Scroll Container: Sticky Image on Left, Scrolling Content on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative pt-8 sm:pt-10">
+          {/* Sticky Left Column: Image & Rotating Title Showcase (Desktop) */}
+          <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-20 space-y-4">
+            <div className="bg-gradient-to-br from-[#E6731B] via-[#DF711B] to-[#C75A0A] text-white p-5 rounded-3xl border border-[#DF711B]/40 shadow-xl shadow-orange-950/20 space-y-3.5">
+              <div className="flex items-center justify-between border-b border-white/20 pb-2.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
-                    {activeKosha.sheath}
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-amber-200 font-extrabold">
+                    Active Sheath
                   </span>
-                  <span className="text-xs font-mono text-slate-400">• {activeKosha.sanskrit}</span>
+                  <span className="text-xs font-mono text-white/80">• 0{activeKoshaIndex + 1} / 05</span>
                 </div>
-                <h4 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20] pt-1">
-                  {activeKosha.name}
-                </h4>
-              </div>
-              <span className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border ${activeKosha.badgeBg}`}>
-                Holistic Personality Sheath
-              </span>
-            </div>
-
-            {/* Split: Details on Left, Concrete Campus Photograph on Right */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* Left Column: Pedagogical Details & Routine */}
-              <div className="lg:col-span-7 space-y-5">
-                <div>
-                  <span className="text-xs font-mono font-bold uppercase text-[#0B1E34] tracking-wider block">
-                    Campus Pedagogical Focus:
-                  </span>
-                  <p className="text-sm text-slate-700 leading-relaxed pt-1">
-                    {activeKosha.schoolPractice}
-                  </p>
-                </div>
-
-                <div className="bg-white p-4 rounded-xl border border-[#E7E2D8] space-y-1 shadow-2xs">
-                  <span className="text-[11px] font-mono font-bold uppercase text-[#DF711B] block">
-                    Daily Boisar Campus Realization:
-                  </span>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {activeKosha.dailyRoutine}
-                  </p>
-                </div>
-
-                <div className="bg-white border border-[#E7E2D8] p-5 rounded-2xl space-y-3 shadow-2xs">
-                  <span className="text-xs font-mono font-bold uppercase text-[#0B1E34] tracking-wider block">
-                    Observed Student Growth Outcomes:
-                  </span>
-                  <ul className="space-y-2">
-                    {activeKosha.outcomes.map((out, oIdx) => (
-                      <li key={oIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-[#DF711B] shrink-0 mt-0.5" />
-                        <span className="leading-snug">{out}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <span className="text-xs font-mono font-bold text-amber-100 bg-black/20 px-2.5 py-0.5 rounded-full border border-white/15">
+                  {activeKosha.sanskrit}
+                </span>
               </div>
 
-              {/* Right Column: Authentic Campus Photographic Proof */}
-              <div className="lg:col-span-5 space-y-3">
-                <div 
-                  onClick={() => setLightboxImage({
-                    src: activeKosha.image,
-                    title: `${activeKosha.name} (${activeKosha.sheath})`,
-                    caption: activeKosha.imageCaption
-                  })}
-                  className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-md group cursor-pointer"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
-                    <img
-                      src={activeKosha.image}
-                      alt={activeKosha.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 bg-[#0B1D30]/85 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md">
-                      {activeKosha.imageTag}
-                    </div>
-                    <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
-                    </div>
-                  </div>
-                  <div className="p-3 bg-[#FAF8F5] border-t border-[#E7E2D8]">
-                    <span className="text-[10px] font-mono text-[#DF711B] font-bold block uppercase tracking-wider">
-                      Campus Evidence
-                    </span>
-                    <p className="text-xs text-slate-600 leading-snug pt-0.5 font-sans">
-                      {activeKosha.imageCaption}
-                    </p>
-                  </div>
+              {/* Rotating Title */}
+              <div className="min-h-[36px] flex items-center">
+                <TextRotate
+                  ref={textRotateRef}
+                  texts={KOSHAS.map((k) => k.name)}
+                  mainClassName="font-cinzel text-xl xl:text-2xl font-black text-white tracking-tight drop-shadow-xs"
+                  splitLevelClassName="overflow-hidden"
+                  staggerFrom="first"
+                  animatePresenceMode="wait"
+                  loop={false}
+                  auto={false}
+                  staggerDuration={0.01}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ type: "spring", duration: 0.4, bounce: 0 }}
+                />
+              </div>
+
+              <p className="text-xs text-orange-50/90 font-sans leading-tight">
+                {activeKosha.sheath} — Tap photo to view high-resolution archival evidence:
+              </p>
+
+              {/* Dynamic Photo Container with smooth crossfade */}
+              <div
+                onClick={() => setLightboxImage({
+                  src: activeKosha.image,
+                  title: `${activeKosha.name} (${activeKosha.sheath})`,
+                  caption: activeKosha.imageCaption
+                })}
+                className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/25 bg-black/20 group cursor-pointer shadow-md"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={activeKosha.id}
+                    src={activeKosha.image}
+                    alt={activeKosha.name}
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </AnimatePresence>
+
+                <div className="absolute top-2.5 left-2.5 bg-black/70 text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono backdrop-blur-md border border-white/20">
+                  {activeKosha.imageTag}
                 </div>
+
+                <div className="absolute bottom-2.5 right-2.5 bg-black/70 text-white p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ZoomIn className="w-4 h-4 text-amber-300" />
+                </div>
+              </div>
+
+              <div className="p-3 bg-black/15 rounded-2xl border border-white/20 backdrop-blur-xs">
+                <span className="text-[10px] font-mono text-amber-200 font-bold block uppercase tracking-wider">
+                  Campus Evidence
+                </span>
+                <p className="text-xs text-white/95 leading-snug pt-0.5 font-sans">
+                  {activeKosha.imageCaption}
+                </p>
+              </div>
+
+              {/* Quick-Jump Step Dots */}
+              <div className="grid grid-cols-5 gap-1.5 pt-0.5">
+                {KOSHAS.map((k, idx) => (
+                  <button
+                    key={k.id}
+                    type="button"
+                    onClick={() => scrollToKosha(idx)}
+                    className={`py-1.5 px-1 rounded-xl text-center font-mono text-[10px] font-bold transition-all cursor-pointer ${
+                      activeKoshaIndex === idx
+                        ? 'bg-white text-[#DF711B] shadow-md scale-105 font-black border border-white'
+                        : 'bg-white/20 text-white hover:bg-white/30 border border-white/15 font-semibold'
+                    }`}
+                    title={k.name}
+                  >
+                    0{idx + 1}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </SpotlightCard>
 
-      {/* ====================================================
-          THE 4 FOUNDATIONAL PILLARS OF CHINMAYA VISION PROGRAM
-         ==================================================== */}
-      <div className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-6 sm:p-9 shadow-card space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-              Chinmaya Vision Programme (CVP)
-            </span>
-            <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] mt-1">
-              The 4 Pillars Translating Vision into Action
-            </h3>
-          </div>
-          <span className="text-xs font-mono text-slate-500">
-            Holistic Vedic & Modern Curriculum
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div className="bg-white rounded-2xl p-5 border border-[#E7E2D8] space-y-3 shadow-2xs hover:border-[#DF711B] transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#DF711B] flex items-center justify-center font-bold">
-              <Activity className="w-5 h-5" />
-            </div>
-            <h4 className="font-serif font-bold text-base text-[#181C20]">
-              1. Integrated Development
-            </h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
-              Harmonious training of the body, mind, intellect, and spiritual consciousness through physical yoga, ASSET analytical tests, and value contemplation.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 border border-[#E7E2D8] space-y-3 shadow-2xs hover:border-[#DF711B] transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center font-bold">
-              <Sun className="w-5 h-5" />
-            </div>
-            <h4 className="font-serif font-bold text-base text-[#181C20]">
-              2. Indian Culture & Ethos
-            </h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
-              Deep reverence for parents and teachers, daily morning Guru Paduka Pooja, Bhagavad Gita chanting competitions, and Vedic cultural pageantry.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 border border-[#E7E2D8] space-y-3 shadow-2xs hover:border-[#DF711B] transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
-              <Brain className="w-5 h-5" />
-            </div>
-            <h4 className="font-serif font-bold text-base text-[#181C20]">
-              3. Patriotism & Citizenship
-            </h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
-              National pride, civic responsibility, environmental awareness campaigns such as Jal Pakhwada, and active community outreach.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 border border-[#E7E2D8] space-y-3 shadow-2xs hover:border-[#DF711B] transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold">
-              <Heart className="w-5 h-5" />
-            </div>
-            <h4 className="font-serif font-bold text-base text-[#181C20]">
-              4. Universal Outlook
-            </h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
-              Embodying <em>Vasudhaiva Kutumbakam</em> (the world is one family), fostering global empathy, cross-cultural sensitivity, and cosmic love.
-            </p>
+          {/* Right Column: 5 Sequential Scroll Sections */}
+          <div className="lg:col-span-7 space-y-8">
+            {KOSHAS.map((kosha, idx) => (
+              <KoshaScrollCard
+                key={kosha.id}
+                kosha={kosha}
+                index={idx}
+                isActive={activeKoshaIndex === idx}
+                onInView={handleKoshaInView}
+                onImageClick={(k) => setLightboxImage({
+                  src: k.image,
+                  title: `${k.name} (${k.sheath})`,
+                  caption: k.imageCaption
+                })}
+              />
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ====================================================
           FULL-SCREEN IMAGE LIGHTBOX MODAL
@@ -597,3 +594,5 @@ export const VisionMissionShowcase: React.FC = () => {
     </div>
   );
 };
+
+export default VisionMissionShowcase;

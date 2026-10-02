@@ -115,9 +115,10 @@ export const HorizontalPanelGallery: React.FC = () => {
       }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
         .font-pencil {
-          font-family: 'Caveat', cursive, sans-serif;
+          font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+          font-weight: 700;
+          font-style: italic;
         }
         @keyframes pencilBounce {
           0%, 100% { transform: translateY(0) rotate(-0.5deg); }

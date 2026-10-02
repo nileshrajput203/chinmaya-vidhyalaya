@@ -15,6 +15,8 @@ import { BlogPage } from '../templates/BlogPage';
 import { RegistrationFormPage } from '../pages/Admissions/RegistrationFormPage';
 import { FeeStructurePage } from '../pages/Admissions/FeeStructurePage';
 import { SchoolCalendarPage } from '../pages/Admissions/SchoolCalendarPage';
+import TimelineDemo from '../components/ui/timeline-demo';
+import IntegrationDemo from '../components/ui/demo';
 
 import { ABOUT_SECTIONS } from '../data/about';
 import { ACADEMIC_SECTIONS } from '../data/academics';
@@ -50,8 +52,8 @@ export const router = createBrowserRouter([
       { path: 'academics', element: <ContentPage {...ACADEMIC_SECTIONS['curriculum']} categoryLabel="Academics" /> },
       { path: 'academics/curriculum', element: <ContentPage {...ACADEMIC_SECTIONS['curriculum']} categoryLabel="Academics" /> },
       { path: 'academics/co-curricular', element: <ContentPage {...ACADEMIC_SECTIONS['co-curricular']} categoryLabel="Academics" /> },
-      { path: 'academics/faculty', element: <ContentPage {...ACADEMIC_SECTIONS['faculty']} categoryLabel="Academics" /> },
-      { path: 'academics/teaching-strategy', element: <ContentPage {...ACADEMIC_SECTIONS['teaching-strategy']} categoryLabel="Academics" /> },
+      { path: 'academics/faculty', element: <Navigate to="/academics/curriculum" replace /> },
+      { path: 'academics/teaching-strategy', element: <Navigate to="/academics/curriculum" replace /> },
       { path: 'academics/infrastructure', element: <ContentPage {...ACADEMIC_SECTIONS['infrastructure']} categoryLabel="Academics" /> },
 
       /* ADMISSIONS ROUTES */
@@ -83,7 +85,7 @@ export const router = createBrowserRouter([
       { path: 'features/four-pillars', element: <ContentPage {...FEATURE_SECTIONS['four-pillars']} categoryLabel="Unique Features" /> },
       { path: 'features/holistic-development', element: <ContentPage {...FEATURE_SECTIONS['holistic-development']} categoryLabel="Unique Features" /> },
       { path: 'features/career-counselling', element: <ContentPage {...FEATURE_SECTIONS['career-counselling']} categoryLabel="Unique Features" /> },
-      { path: 'features/education-tours', element: <ContentPage {...FEATURE_SECTIONS['education-tours']} categoryLabel="Unique Features" /> },
+      { path: 'features/education-tours', element: <Navigate to="/features/holistic-development" replace /> },
       { path: 'features/library', element: <ContentPage {...FEATURE_SECTIONS['library']} categoryLabel="Unique Features" /> },
 
       /* NEWS & EVENTS ROUTES */
@@ -147,6 +149,8 @@ export const router = createBrowserRouter([
       { path: 'blogs', element: <Navigate to="/blog" replace /> },
       { path: 'blog/:slug', element: <BlogPage /> },
 
+      { path: 'timeline-demo', element: <TimelineDemo /> },
+      { path: 'integration-demo', element: <IntegrationDemo /> },
       { path: 'contact', element: <ContactPage /> },
 
       /* 404 CATCH-ALL ROUTE */

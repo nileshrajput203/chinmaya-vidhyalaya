@@ -20,9 +20,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/academics",
     children: [
       { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Coverage from Nursery to Std XII (Arts, Commerce, Science) scholastic subjects" },
-      { label: "Teaching Strategy", href: "/academics/teaching-strategy", description: "Activity-oriented, digital, and experiential methodologies" },
       { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry, Biology, IT labs, library, and spacious classrooms" },
-      { label: "Faculty Directory", href: "/academics/faculty", description: "Qualified educators and experienced academic mentors" },
       { label: "CBSE Sample Papers", href: "/downloads/sample-papers", description: "Sample question papers and evaluation revision modules" }
     ]
   },
@@ -38,7 +36,6 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
       { label: "Holistic Development", href: "/features/holistic-development", description: "Physical, emotional, intellectual, and spiritual transformation" },
       { label: "Spiritual Assemblies", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar, and Gita chanting" },
       { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz and ASSET diagnostic testing" },
-      { label: "Educational Study Tours", href: "/features/education-tours", description: "Annual study tours and industrial field visits" },
       { label: "Central Library", href: "/features/library", description: "Thousands of reference titles, journals, and dedicated reading spaces" }
     ]
   },

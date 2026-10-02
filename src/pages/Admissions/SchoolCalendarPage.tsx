@@ -13,12 +13,17 @@ import {
   Sparkles,
   BookOpen,
   Award,
-  ChevronRight
+  ChevronRight,
+  BookMarked
 } from 'lucide-react';
 import { Breadcrumb } from '../../components/common/Breadcrumb';
 import { BadgePill } from '../../components/ui/badge-pill';
+import { Book3d } from '@/components/rareui/Book3d';
 
 export const SchoolCalendarPage: React.FC = () => {
+  // View mode switcher: 3D interactive diary vs 2D calendar sheet
+  const [viewMode, setViewMode] = useState<'diary3d' | 'sheet'>('diary3d');
+
   // Zoom and fullscreen states
   const [zoomLevel, setZoomLevel] = useState<number>(100);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
@@ -38,6 +43,7 @@ export const SchoolCalendarPage: React.FC = () => {
     if (file) {
       const previewUrl = URL.createObjectURL(file);
       setCustomImage(previewUrl);
+      setViewMode('sheet');
     }
   };
 
@@ -67,7 +73,7 @@ export const SchoolCalendarPage: React.FC = () => {
                 School Academic Calendar 2026–27
               </h1>
               <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-                Official calendar showing working days, assessment cycles, vacation windows, and cultural observances. Inspect the high-resolution calendar directly in your browser without downloading.
+                Official calendar showing working days, assessment cycles, vacation windows, and cultural observances. Inspect the interactive 3D School Diary or review the high-resolution calendar sheet directly in your browser.
               </p>
             </div>
 
@@ -79,7 +85,7 @@ export const SchoolCalendarPage: React.FC = () => {
                 title="Upload or preview a new calendar image"
               >
                 <Upload className="w-4 h-4 text-[#DF711B]" />
-                <span>Upload / Preview New Image</span>
+                <span>Upload / Preview Image</span>
                 <input
                   id="cal-upload-input"
                   type="file"
@@ -103,83 +109,142 @@ export const SchoolCalendarPage: React.FC = () => {
           </div>
         </div>
 
-        {/* IMAGE VIEWER CONTAINER */}
+        {/* INTERACTIVE VIEWER CONTAINER (3D Diary vs 2D Sheet) */}
         <div className="bg-white border-2 border-[#E7E2D8] rounded-3xl shadow-card overflow-hidden">
           
-          {/* Controls Bar */}
-          <div className="bg-[#FAF8F5] border-b border-[#E7E2D8] px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <CalendarIcon className="w-4 h-4 text-[#DF711B]" />
-              <span className="text-xs font-bold text-[#181C20]">
-                Official Academic Year Calendar Sheet
-              </span>
-              <span className="text-[10px] font-mono bg-white px-2 py-0.5 rounded border border-[#E7E2D8] text-slate-500">
-                Zoom: {zoomLevel}%
-              </span>
+          {/* Controls Bar with Segmented View Switcher */}
+          <div className="bg-[#FAF8F5] border-b border-[#E7E2D8] px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
+            
+            {/* View Switcher Tabs */}
+            <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E7E2D8] rounded-2xl shadow-2xs">
+              <button
+                type="button"
+                onClick={() => setViewMode('diary3d')}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  viewMode === 'diary3d'
+                    ? 'bg-[#DF711B] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                <BookMarked className="w-3.5 h-3.5" />
+                <span>3D School Diary</span>
+                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20 font-mono">
+                  3D
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setViewMode('sheet')}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  viewMode === 'sheet'
+                    ? 'bg-[#DF711B] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                <CalendarIcon className="w-3.5 h-3.5" />
+                <span>Calendar Sheet</span>
+              </button>
             </div>
 
-            {/* Viewer Zoom Buttons */}
-            <div className="flex items-center gap-1.5 bg-white border border-[#E7E2D8] p-1 rounded-xl shadow-2xs">
-              <button
-                type="button"
-                onClick={handleZoomOut}
-                disabled={zoomLevel <= 50}
-                className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 disabled:opacity-30 transition-all"
-                title="Zoom Out"
-                aria-label="Zoom Out"
-              >
-                <ZoomOut className="w-4 h-4" />
-              </button>
-              <button
-                type="button"
-                onClick={handleResetZoom}
-                className="px-2.5 py-1 text-xs font-mono font-bold text-slate-700 hover:bg-slate-100 rounded-lg transition-all"
-                title="Reset Zoom"
-              >
-                Reset
-              </button>
-              <button
-                type="button"
-                onClick={handleZoomIn}
-                disabled={zoomLevel >= 250}
-                className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 disabled:opacity-30 transition-all"
-                title="Zoom In"
-                aria-label="Zoom In"
-              >
-                <ZoomIn className="w-4 h-4" />
-              </button>
-              <div className="h-4 w-px bg-slate-200 mx-0.5" />
-              <button
-                type="button"
-                onClick={() => setIsFullscreen(true)}
-                className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 transition-all"
-                title="View Fullscreen"
-                aria-label="View Fullscreen"
-              >
-                <Maximize2 className="w-4 h-4" />
-              </button>
-            </div>
+            {/* Context Information & Controls */}
+            {viewMode === 'sheet' ? (
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-mono bg-white px-2.5 py-1 rounded-lg border border-[#E7E2D8] text-slate-500">
+                  Zoom: {zoomLevel}%
+                </span>
+                <div className="flex items-center gap-1.5 bg-white border border-[#E7E2D8] p-1 rounded-xl shadow-2xs">
+                  <button
+                    type="button"
+                    onClick={handleZoomOut}
+                    disabled={zoomLevel <= 50}
+                    className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 disabled:opacity-30 transition-all"
+                    title="Zoom Out"
+                    aria-label="Zoom Out"
+                  >
+                    <ZoomOut className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleResetZoom}
+                    className="px-2.5 py-1 text-xs font-mono font-bold text-slate-700 hover:bg-slate-100 rounded-lg transition-all"
+                    title="Reset Zoom"
+                  >
+                    Reset
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleZoomIn}
+                    disabled={zoomLevel >= 250}
+                    className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 disabled:opacity-30 transition-all"
+                    title="Zoom In"
+                    aria-label="Zoom In"
+                  >
+                    <ZoomIn className="w-4 h-4" />
+                  </button>
+                  <div className="h-4 w-px bg-slate-200 mx-0.5" />
+                  <button
+                    type="button"
+                    onClick={() => setIsFullscreen(true)}
+                    className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 transition-all"
+                    title="View Fullscreen"
+                    aria-label="View Fullscreen"
+                  >
+                    <Maximize2 className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 text-xs text-slate-500">
+                <Sparkles className="w-3.5 h-3.5 text-[#DF711B]" />
+                <span className="hidden sm:inline">Hover & move your cursor to rotate in 3D</span>
+                <span className="font-mono text-[10px] bg-white border border-[#E7E2D8] px-2 py-0.5 rounded text-[#DF711B] font-bold">
+                  Physics Tilt
+                </span>
+              </div>
+            )}
           </div>
 
-          {/* Document Image Display */}
-          <div className="p-4 sm:p-8 bg-[#F4F1EA]/60 flex items-center justify-center overflow-auto min-h-[500px] max-h-[85vh]">
-            <div 
-              className="transition-transform duration-200 ease-out origin-top flex items-center justify-center shadow-lg rounded-2xl bg-white p-2 border border-[#E7E2D8]"
-              style={{ transform: `scale(${zoomLevel / 100})` }}
-            >
-              <img
-                src={displayImage}
-                alt="Chinmaya Vidyalaya Tarapur Official Academic Calendar 2026-2027"
-                className="max-w-full h-auto rounded-xl object-contain block select-none"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  if (!target.src.endsWith('academic-calendar.png')) {
-                    target.src = '/images/academic-calendar.png';
-                  }
-                }}
-              />
+          {/* Display Area: 3D Book vs 2D Sheet */}
+          {viewMode === 'diary3d' ? (
+            <div className="flex flex-col items-center justify-center p-6 sm:p-12 bg-gradient-to-b from-[#FAF8F5] via-white to-[#F4F1EA]/50 min-h-[540px] overflow-hidden">
+              <div className="text-center mb-2 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider font-bold text-[#DF711B] bg-orange-50 px-3 py-1 rounded-full border border-orange-200 inline-block">
+                  Interactive 3D Hardcover Edition
+                </span>
+                <h3 className="font-cinzel text-lg sm:text-xl font-bold text-slate-900 pt-1">
+                  Chinmaya Vidyalaya Official School Diary & Almanac
+                </h3>
+                <p className="text-xs text-slate-500 max-w-md mx-auto">
+                  Move your mouse over the diary to inspect spine bind, page edges, and foil reflections in real-time 3D.
+                </p>
+              </div>
+
+              {/* RENDER THE 3D BOOK COMPONENT */}
+              <div className="flex w-full items-center justify-center p-4">
+                <Book3d />
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="p-4 sm:p-8 bg-[#F4F1EA]/60 flex items-center justify-center overflow-auto min-h-[500px] max-h-[85vh]">
+              <div 
+                className="transition-transform duration-200 ease-out origin-top flex items-center justify-center shadow-lg rounded-2xl bg-white p-2 border border-[#E7E2D8]"
+                style={{ transform: `scale(${zoomLevel / 100})` }}
+              >
+                <img
+                  src={displayImage}
+                  alt="Chinmaya Vidyalaya Tarapur Official Academic Calendar 2026-2027"
+                  className="max-w-full h-auto rounded-xl object-contain block select-none"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.endsWith('academic-calendar.png')) {
+                      target.src = '/images/academic-calendar.png';
+                    }
+                  }}
+                />
+              </div>
+            </div>
+          )}
 
           {/* Upload notice helper for admin/user */}
           <div className="bg-[#FAF8F5] border-t border-[#E7E2D8] px-4 sm:px-6 py-2.5 flex items-center justify-between text-[11px] text-slate-500">

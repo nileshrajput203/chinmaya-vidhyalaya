@@ -22,6 +22,8 @@ import {
   Info
 } from 'lucide-react';
 import { BadgePill } from '../ui/badge-pill';
+import { SphereImageGrid } from '../ui/img-sphere';
+import { CURRICULUM_SPHERE_IMAGES } from '../ui/img-sphere-demo';
 
 type StageKey = 'primary' | 'middle' | 'secondary' | 'senior' | 'foundational';
 
@@ -94,6 +96,34 @@ export const CurriculumShowcase: React.FC = () => {
               <span className="text-[11px] text-slate-300 block">Experiential & Lab-Based</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* INTERACTIVE 3D CURRICULUM & SUBJECTS SPHERE (No container, no text) */}
+      <div className="w-full flex items-center justify-center py-4 overflow-hidden">
+        <div className="hidden sm:block">
+          <SphereImageGrid
+            images={CURRICULUM_SPHERE_IMAGES}
+            containerSize={580}
+            sphereRadius={210}
+            dragSensitivity={0.8}
+            autoRotate={true}
+            autoRotateSpeed={0.25}
+            baseImageScale={0.15}
+            hoverScale={1.3}
+          />
+        </div>
+        <div className="sm:hidden block">
+          <SphereImageGrid
+            images={CURRICULUM_SPHERE_IMAGES}
+            containerSize={340}
+            sphereRadius={130}
+            dragSensitivity={0.9}
+            autoRotate={true}
+            autoRotateSpeed={0.3}
+            baseImageScale={0.17}
+            hoverScale={1.25}
+          />
         </div>
       </div>
 

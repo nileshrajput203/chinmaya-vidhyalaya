@@ -1,234 +1,82 @@
-import { Link } from "react-router-dom"
-import { FolderOpen } from "lucide-react"
-import MarqueeAlongSvgPath from "@/components/ui/marquee-along-svg-path"
+// This is a file with a demo for your component
+// That's what users will see in the preview
+// Create new files in this directory to add more demos
 
-// The path starts off-screen left (-150), flows across the viewport in a dynamic loop,
-// and swoops straight into the open mouth of the 3D tilted "View Gallery" folder on the right (~1090, 172).
-// Crests are calibrated with generous top clearance so cards and hover states never get clipped.
-const path =
-  "M-150 210C-50 280 150 340 350 230C480 150 420 68 350 110C280 155 310 270 480 285C620 300 800 225 930 180C980 162 1035 166 1090 172"
+import { ImageStreamHero } from "@/components/ui/image-stream-hero";
 
-export default function MarqueeAlongSvgPathDemo() {
-  return (
-    <div className="w-full bg-[#FAF8F5] overflow-hidden border-y border-[#E7E2D8] relative select-none py-4 sm:py-6">
-      
-      {/* ----------------------------------------------------
-          LAYER 1 (z-[5]): Tilted Folder BACK PANEL
-          Rendered behind marquee images so they slide OVER it
-         ---------------------------------------------------- */}
-      <div
-        className="absolute right-2 sm:right-6 md:right-10 lg:right-14 top-1/2 -translate-y-1/2 z-[5] pointer-events-none"
-        style={{
-          perspective: "1000px",
-        }}
-      >
-        <div
-          className="relative w-[160px] sm:w-[190px] md:w-[220px] lg:w-[245px] h-[200px] sm:h-[230px] md:h-[255px] lg:h-[275px]"
-          style={{
-            transform: "rotateY(-28deg) rotateX(5deg) rotateZ(-3deg)",
-            transformOrigin: "right center",
-            transformStyle: "preserve-3d",
-          }}
-        >
-          {/* Back Cover Body */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#732902] via-[#8C3403] to-[#541B00] shadow-[0_20px_45px_rgba(0,0,0,0.38)] border border-[#DF711B]/40 overflow-hidden">
-            {/* Top Tab (Sticking out top right) */}
-            <div className="absolute -top-[1px] right-5 h-7 px-3.5 bg-[#993A04] rounded-t-lg border-t-2 border-x border-[#FFD285]/40 flex items-center justify-center -translate-y-[100%] shadow-md">
-              <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] text-[#FFD285] font-extrabold">
-                ARCHIVE
-              </span>
-            </div>
-
-            {/* Folder Interior Depth (Dark shadow cavity where images slide in) */}
-            <div className="absolute inset-0 bg-gradient-to-l from-black/75 via-black/35 to-transparent" />
-
-            {/* Subtle paper index lines inside */}
-            <div className="absolute top-8 left-4 right-4 h-[1px] bg-white/10" />
-            <div className="absolute top-14 left-4 right-4 h-[1px] bg-white/5" />
-            <div className="absolute top-20 left-4 right-4 h-[1px] bg-white/5" />
-          </div>
-        </div>
-      </div>
-
-      {/* ----------------------------------------------------
-          LAYER 2 (z-[10]): MARQUEE STREAM
-          Images enter from off-screen left and glide straight
-          into the folder pocket on the right
-         ---------------------------------------------------- */}
-      <div className="relative z-10">
-        <MarqueeAlongSvgPath
-          path={path}
-          viewBox="-150 0 1350 400"
-          baseVelocity={8}
-          slowdownOnHover={true}
-          draggable={true}
-          repeat={1}
-          dragSensitivity={0.1}
-          className="w-full h-[360px] sm:h-[420px] md:h-[460px] lg:h-[510px]"
-          responsive
-          grabCursor
-          preserveAspectRatio="none"
-        >
-          {imgs.map((img, i) => (
-            <Link
-              to="/gallery"
-              key={i}
-              className="group block relative w-16 h-16 sm:w-20 sm:h-20 aspect-square rounded-2xl overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.22)] border-2 border-white/90 bg-neutral-900 hover:scale-125 hover:shadow-[0_12px_28px_rgba(0,0,0,0.4)] hover:border-amber-300 duration-300 ease-out transition-all shrink-0 cursor-pointer"
-              title={img.alt}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="eager"
-                decoding="async"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (target.src !== window.location.origin + "/images/banner-1.jpg") {
-                    target.src = "/images/banner-1.jpg";
-                  }
-                }}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none select-none"
-                draggable={false}
-              />
-              {/* Subtle hover caption overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none flex items-end p-1.5">
-                <span className="text-[9px] sm:text-[10px] font-sans font-semibold text-white leading-tight line-clamp-1 drop-shadow">
-                  {img.alt}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </MarqueeAlongSvgPath>
-      </div>
-
-      {/* ----------------------------------------------------
-          LAYER 3 (z-[20]): Tilted Folder FRONT POCKET FLAP
-          Rendered IN FRONT of marquee images so they slide UNDER
-          the lip and look like they are physically going INSIDE!
-         ---------------------------------------------------- */}
-      <Link
-        to="/gallery"
-        className="absolute right-2 sm:right-6 md:right-10 lg:right-14 top-1/2 -translate-y-1/2 z-20 group no-underline cursor-pointer"
-        style={{
-          perspective: "1000px",
-        }}
-        aria-label="View Full Gallery"
-      >
-        <div
-          className="relative w-[160px] sm:w-[190px] md:w-[220px] lg:w-[245px] h-[200px] sm:h-[230px] md:h-[255px] lg:h-[275px] transition-transform duration-500 ease-out group-hover:scale-105"
-          style={{
-            transform: "rotateY(-28deg) rotateX(5deg) rotateZ(-3deg)",
-            transformOrigin: "right center",
-            transformStyle: "preserve-3d",
-          }}
-        >
-          {/* Front Pocket Lip & Cover:
-              Leaves the top ~25% open so the mouth and back panel are visible */}
-          <div className="absolute bottom-0 inset-x-0 h-[75%] sm:h-[77%] rounded-b-2xl rounded-tr-2xl rounded-tl-lg bg-gradient-to-br from-[#E2731D] via-[#CD610D] to-[#9C3E08] shadow-[0_14px_35px_rgba(0,0,0,0.35),-10px_0_24px_rgba(0,0,0,0.25)] border-t-2 border-l border-r border-[#FFD285]/80 flex flex-col justify-between p-3.5 sm:p-5 overflow-hidden">
-            
-            {/* Illuminated Pocket Lip with shadow underneath */}
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#FFE7B8] via-[#FFB740] to-[#CD610D] shadow-[0_3px_10px_rgba(255,183,64,0.4)]" />
-
-            {/* Diagonal cutout highlight on mouth entrance (left side) */}
-            <div className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-white/25 to-transparent rounded-br-2xl pointer-events-none" />
-
-            {/* Folder texture lines */}
-            <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-              {[...Array(6)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-full border-b border-white"
-                  style={{ marginTop: `${18 + i * 20}px` }}
-                />
-              ))}
-            </div>
-
-            {/* Header: Icon + Live Pill */}
-            <div className="relative z-10 flex items-center justify-between">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-inner group-hover:bg-white/30 transition-colors duration-300">
-                <FolderOpen className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-sm" />
-              </div>
-
-              <span className="inline-flex items-center gap-1 text-[8px] sm:text-[9px] font-mono font-bold tracking-[0.18em] text-[#FFD285] uppercase bg-black/30 px-2 py-0.5 rounded-full border border-[#FFD285]/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                PHOTOS
-              </span>
-            </div>
-
-            {/* Title: VIEW GALLERY */}
-            <div className="relative z-10 my-auto text-left">
-              <span className="block text-[8px] sm:text-[9px] font-mono uppercase tracking-[0.22em] text-[#FFD285] font-extrabold">
-                EXPLORE
-              </span>
-              <span className="block text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-black text-white uppercase tracking-tight leading-tight mt-0.5 drop-shadow">
-                VIEW
-                <br />
-                GALLERY
-              </span>
-            </div>
-
-            {/* Footer: Open Album prompt */}
-            <div className="relative z-10 flex items-center justify-between pt-1.5 border-t border-white/20">
-              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-medium text-white/90 group-hover:text-white transition-colors">
-                Browse Album
-              </span>
-              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold group-hover:translate-x-1 group-hover:bg-white group-hover:text-[#9C3E08] transition-all duration-300 shadow-sm">
-                →
-              </div>
-            </div>
-
-            {/* Interactive sheen on hover */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/12 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          </div>
-
-          {/* 3D Drop Shadow underneath the tilted folder */}
-          <div
-            className="absolute -bottom-3 left-4 right-2 h-6 bg-black/30 rounded-full blur-md pointer-events-none"
-            style={{ transform: "rotateZ(3deg) scaleY(0.6)" }}
-          />
-        </div>
-      </Link>
-
-    </div>
-  )
-}
-
-// Diverse school photographs with ZERO repetition across all faculties, labs, and activities
-const imgs = [
-  { src: "/images/banner-1.jpg", alt: "Chinmaya Vidyalaya Main Campus" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg", alt: "Athletic track championship" },
-  { src: "/images/phys.jpeg", alt: "Physics and Science Laboratory" },
-  { src: "/images/chinmaya/academics/classroom_learning_010.jpg", alt: "Co-curricular group collaboration" },
-  { src: "/images/CHEM1.jpeg", alt: "Chemistry laboratory experimentation" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg", alt: "Cultural stage performance" },
-  { src: "/images/biology-lab.jpg", alt: "Biology laboratory research" },
-  { src: "/images/chinmaya/academics/classroom_learning_025.jpg", alt: "Scholastic seminar and discussion" },
-  { src: "/images/it-lab.jpg", alt: "Computer and Robotics lab" },
-  { src: "/images/chinmaya/leadership/faculty_member_01.jpg", alt: "Dedicated teaching faculty" },
-  { src: "/images/lib.jpg", alt: "Central knowledge library" },
-  { src: "/images/chinmaya/cultural/arts_and_creativity_005.jpg", alt: "Arts, crafts and creativity exhibition" },
-  { src: "/images/banner-8.webp", alt: "Annual Sports Day sportsmanship" },
-  { src: "/images/chinmaya-web-science.jpg", alt: "Science talent and innovation fair" },
-  { src: "/images/banner-9.webp", alt: "Annual Day cultural celebration" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg", alt: "Musical ensemble and devotional choir" },
-  { src: "/images/guru-paduka-pooja.webp", alt: "Guru Paduka Pooja sacred assembly" },
-  { src: "/images/chinmaya/academics/classroom_learning_050.jpg", alt: "Mathematics and logic workshop" },
-  { src: "/images/chinmaya/academics/classroom_learning_001.jpg", alt: "Interactive smart classroom session" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_010.jpg", alt: "Outdoor sports training and athletics" },
-  { src: "/images/tour.jpg", alt: "Educational excursion and field study" },
-  { src: "/images/chinmaya/campus/campus_facilities_002.jpg", alt: "Environmental and green campus drive" },
-  { src: "/images/about2.jpeg", alt: "Architectural quadrangle and academic wings" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_070.jpg", alt: "Student council investiture ceremony" },
-  { src: "/images/banner-4.jpeg", alt: "Vedic value education congregation" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_015.jpg", alt: "Inter-school scholastic championship" },
-  { src: "/images/chinmaya/leadership/principal_dimple_mistry.jpg", alt: "Principal leadership and mentorship" },
-  { src: "/images/swami.jpeg", alt: "Revered founder Pujya Gurudev Swami Chinmayananda" },
-  { src: "/images/chinmaya/campus/campus_facilities_001.jpg", alt: "Landscaped campus courtyard" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_005.jpg", alt: "Inter-house football tournament" },
-  { src: "/images/chinmaya/academics/classroom_learning_020.jpg", alt: "Scholastic seminar workshop" },
-  { src: "/images/chinmaya/academics/classroom_learning_035.jpg", alt: "Literature and linguistic discourse" },
-  { src: "/images/chinmaya/academics/classroom_learning_060.jpg", alt: "Student peer presentations" },
-  { src: "/images/chinmaya/cultural/arts_and_creativity_001.jpg", alt: "Creative painting exhibition" },
-  { src: "/images/banner-3.jpeg", alt: "Traditional festival celebration" },
-  { src: "/images/1.jpeg", alt: "Morning prayer and student discipline" },
+const CDN = "https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev";
+ 
+const IMAGES = [
+  {
+    src: `${CDN}/stock-images/767d99bb371a54d0d36751e8cecae43c.jpg`,
+    alt: "Diver silhouetted inside a sunset seascape shaped like a profile",
+  },
+  {
+    src: `${CDN}/gradients/hero_gradient/hero-gradients-01.png`,
+    alt: "Soft multi-tone gradient wash",
+  },
+  {
+    src: `${CDN}/stock-images/821d815affa6496c39cbdeeec7a84603.jpg`,
+    alt: "Double-exposure portrait blended with a city skyline at dusk",
+  },
+  {
+    src: `${CDN}/gradients/crimson_aura/crimson-aura-02.png`,
+    alt: "Crimson aura gradient",
+  },
+  {
+    src: `${CDN}/stock-images/937438c560ada1c83317f2c11b3454b0.jpg`,
+    alt: "Motion-blurred side-profile portrait against a deep orange backdrop",
+  },
+  {
+    src: `${CDN}/gradients/hue-flow/hue-flow-01.png`,
+    alt: "Flowing hue gradient",
+  },
+  {
+    src: `${CDN}/stock-images/98f89cb9994f5c382ab964062c4039db.jpg`,
+    alt: "Figure holding a racket that dissolves into a swirling colourful cloud",
+  },
+  {
+    src: `${CDN}/gradients/moon/moon-grade-03.png`,
+    alt: "Moon-toned gradient",
+  },
+  {
+    src: `${CDN}/stock-images/ddcbee38be8b7274e19e132d7ab35b53.jpg`,
+    alt: "Hand gesture with a colourful cutout of a bird flying through the fingers",
+  },
+  {
+    src: `${CDN}/gradients/hero_gradient/hero-gradients-03.png`,
+    alt: "Layered hero gradient",
+  },
+  {
+    src: `${CDN}/gradients/hue-flow/hue-flow-02.png`,
+    alt: "Second flowing hue gradient",
+  },
+  {
+    src: `${CDN}/gradients/moon/moon-grade-05.png`,
+    alt: "Deep moon-toned gradient",
+  },
 ];
+
+// ONLY DEFAULT EXPORT WILL BE TREATED AS A DEMO
+export default function DemoOne() {
+  return (
+    <ImageStreamHero
+      images={IMAGES}
+      className="h-[560px] w-full rounded-lg border border-border bg-background"
+    >
+      <div className="relative z-10 flex h-full flex-col items-center justify-between py-12 text-center">
+        <div className="px-6">
+          <h1 className="text-balance text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
+            Your work,
+            <br />
+            front and centre.
+          </h1>
+        </div>
+        <p className="max-w-md text-balance px-6 text-sm text-muted-foreground">
+          A hero that leads with the images instead of describing them. Swap in
+          your own and the corridor rebuilds around them.
+        </p>
+      </div>
+    </ImageStreamHero>
+  );
+}

@@ -5,7 +5,7 @@ import {
   Maximize2, X, Sparkles, ArrowRight 
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { AnimatedBackground } from '../ui/animated-background';
+import { motion } from 'framer-motion';
 import { InView } from '../ui/in-view';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
@@ -45,9 +45,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'CBSE Senior STEM Lab',
     tagline: 'Precision Optics, Mechanics, Sound & Electromagnetic Investigation',
     description:
-      'Fully equipped in strict accordance with CBSE Senior Secondary specifications. The lab enables students from Class IX through XII to experimentally prove theoretical laws of physics through tactile inquiry, error calculation, and data plotting.',
+      'CBSE-certified laboratory for experimentally exploring optics, mechanics, sound waves, and semiconductor circuits.',
     curriculumDetails:
-      'Covers complete CBSE Class XI & XII practical syllabus including focal length of spherical mirrors/lenses, refractive index via travelling microscope, potentiometer comparisons, Ohm’s law, sonometer frequency tuning, and semiconductor p-n junction diode characteristics.',
+      'Covers complete CBSE practical syllabus: optical bench calibration, Ohm’s law, potentiometer, sonometers, and p-n junction diodes.',
     safetyProtocols: [
       'Shock-proof regulated DC/AC power supplies with centralized circuit breakers',
       'Dedicated dark room enclosure for laser diffraction and light experiments',
@@ -78,9 +78,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'CBSE Senior STEM Lab',
     tagline: 'Analytical Titration, Reagents, Kinetics & Qualitative Analysis',
     description:
-      'Engineered for chemical experimentation with continuous ventilation, fume hoods, reagent storage racks, emergency eye-wash stations, and precision digital balances for analytical salt analysis, volumetric titrations, and chemical kinetics.',
+      'Equipped with fume hoods, digital balances, and reagent stations for volumetric titrations and salt analysis.',
     curriculumDetails:
-      'Supports CBSE practical requirements: Acid-Base and Redox titrations using standard KMnO4 / Mohr’s salt solutions, systematic identification of acidic and basic radicals (qualitative inorganic salt analysis), enthalpy of solution thermochemistry, and organic functional group tests.',
+      'Supports CBSE practicals: KMnO4 redox titrations, qualitative inorganic radical analysis, and organic functional group testing.',
     safetyProtocols: [
       'Continuous mechanical fume exhaust hoods for toxic vapor mitigation',
       'Emergency chemical eye-wash shower and deluge fountain',
@@ -112,9 +112,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Life Sciences Lab',
     tagline: 'Microscopic Observation, Cytology & Anatomical Specimen Study',
     description:
-      'A sanctuary for biological inquiry containing advanced compound and dissecting microscopes, permanent histological slide collections, preserved botanical and zoological specimens, and three-dimensional human anatomical models.',
+      'Advanced life sciences facility equipped with compound microscopes, botanical herbariums, and anatomical models.',
     curriculumDetails:
-      'Curriculum aligned to CBSE Class IX to XII: Temporary mount preparation (onion peel, human cheek cells, stomata), study of mitosis in onion root tips, osmosis experiments via potato osmometer, enzyme salivary amylase action, and ecological quadrats.',
+      'Aligned to CBSE Class IX–XII: temporary mount preparation, onion root-tip mitosis, potato osmometer, and enzyme salivary amylase action.',
     safetyProtocols: [
       'Hygienic bio-specimen formalin containers sealed to OSHA standards',
       'Safe microtome sectioning with protective safety razors under faculty supervision',
@@ -145,9 +145,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Digital Innovation',
     tagline: 'Networked Computing, Python/Java Coding & Multimedia',
     description:
-      'State-of-the-art computer lab equipped with high-speed networked desktop computers, high-bandwidth fiber optic internet, licensed programming IDEs (Python, C++, Java), and interactive smart projection for modern digital literacy.',
+      'Modern computing facility featuring networked PC workstations and high-speed broadband for Python coding and IT studies.',
     curriculumDetails:
-      'Supports CBSE Computer Applications (Classes IX & X), Computer Science (Classes XI & XII), and Informatics Practices. Students learn algorithms, computational thinking, Python programming, MySQL database queries, cybersecurity ethics, and data structures.',
+      'Supports CBSE Computer Applications & Science: Python coding, MySQL database administration, cybersecurity, and data structures.',
     safetyProtocols: [
       'Industrial centralized Online UPS power backup preventing data loss or surge spikes',
       'Enterprise firewall filtering restricting access to age-appropriate educational domains',
@@ -177,9 +177,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Knowledge Hub',
     tagline: 'Over 10,000+ Scholastic Volumes & Serene Reading Lounge',
     description:
-      'A serene, well-lit intellectual repository housing comprehensive collections of NCERT/CBSE reference texts, national periodicals, daily newspapers, classic literature, encyclopedias, and competitive examination guides.',
+      'A serene reading lounge housing over 10,000 reference texts, national periodicals, and competitive exam guides.',
     curriculumDetails:
-      'Supports all classes from Pre-Primary through Class XII with graded reading levels, CBSE competitive guides (JEE, NEET, CUET, NDA), Chinmaya Mission spiritual literature, and monthly book review circles.',
+      'Supports all grades with graded reading levels, competitive entrance guides (JEE/NEET/CUET), and Chinmaya spiritual literature.',
     safetyProtocols: [
       'Fire-safe book shelving units with broad aisles',
       'Quiet acoustic dampening architecture',
@@ -206,9 +206,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Physical Conditioning',
     tagline: 'Expansive Campus Grounds for Track, Field & Team Leagues',
     description:
-      'Expansive outdoor sports grounds providing facilities for track and field athletics, football, cricket, volleyball, kabaddi, and kho-kho. Home to daily morning yoga drills, march past practice, and the grand Annual Sports Meet.',
+      'Expansive campus sports arena featuring a 200m running track, football turf, cricket pitch, and training courts.',
     curriculumDetails:
-      'Incorporates CBSE Health and Physical Education (HPE) mandatory curriculum: Daily sports periods, inter-house leagues, yoga conditioning, and District/State championship coaching.',
+      'CBSE Health & Physical Education compliant: daily fitness drills, inter-house championships, yoga sessions, and state tournament coaching.',
     safetyProtocols: [
       'First Aid response kit and trained sports physical educators present at every session',
       'Levelled grass and clay grounds maintained free of hazards',
@@ -235,9 +235,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Learning Spaces',
     tagline: 'High-Ceiling Classrooms with Capacity for Over 40 Students',
     description:
-      'Airy, naturally illuminated classrooms designed with ergonomic furniture, broad display boards, green writing surfaces, and capacity exceeding 40 students while maintaining optimal student-teacher interaction.',
+      'Airy, naturally lit learning rooms designed with ergonomic seating, display boards, and 40+ student capacity.',
     curriculumDetails:
-      'Compliant with CBSE classroom dimensional guidelines, ensuring at least 1.5 sq. meters of unhindered floor space per child with cross-ventilation windows.',
+      'CBSE compliant layout providing over 1.5 sq. meters floor space per student with acoustic dampening and natural cross-ventilation.',
     safetyProtocols: [
       'Dual emergency exit doors on all ground and upper floor classrooms',
       'Smooth rounded-edge wooden furniture',
@@ -264,9 +264,9 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Cultural Ethos',
     tagline: 'Morning Assembly, Gita Chanting & Annual Day Celebrations',
     description:
-      'The vibrant cultural nerve center of the school where daily Guru Paduka Pooja, morning prayer assemblies, monthly bhajans, Geeta chanting competitions, and grand theatrical performances take place.',
+      'The cultural heart of the school hosting daily morning prayer assemblies, Gita chanting, bhajans, and stage events.',
     curriculumDetails:
-      'The core physical anchor for the Chinmaya Vision Programme (CVP), cultivating Bhartiya Sanskriti, public speaking confidence, and spiritual values.',
+      'Anchors the Chinmaya Vision Programme (CVP), cultivating cultural values, public elocution, and stage confidence through theatricals.',
     safetyProtocols: [
       'Wide covered courtyard with non-slip flooring',
       'Overhead sun/rain protective architectural canopy',
@@ -447,7 +447,7 @@ export const InfrastructureShowcase: React.FC = () => {
                   pulse
                 />
                 <span className="text-xs font-mono text-slate-500">
-                  CBSE Affiliation No. 1130095 • Boisar
+                  CBSE Affiliation No. 1130058 • Boisar
                 </span>
               </div>
               <h2 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold leading-tight">
@@ -472,39 +472,42 @@ export const InfrastructureShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Animated Sliding Tab Filters */}
+          {/* Sliding Tab Filters */}
           <div className="pt-4 border-t border-[#E7E2D8]">
             <span className="text-xs font-mono text-slate-500 uppercase font-bold mr-3 block sm:inline mb-2 sm:mb-0">
               Filter Campus Facilities:
             </span>
-            <div className="inline-flex flex-wrap p-1.5 rounded-2xl bg-white border border-[#E7E2D8] shadow-2xs">
-              <AnimatedBackground
-                defaultValue={activeTab}
-                className="rounded-xl bg-[#DF711B] shadow-sm"
-                transition={{ type: 'spring', bounce: 0.15, duration: 0.35 }}
-                onValueChange={(val) => {
-                  if (val) setActiveTab(val as any);
-                }}
-              >
-                {[
-                  { id: 'all', label: 'All Campus Facilities' },
-                  { id: 'labs', label: '🔬 Science & IT Laboratories' },
-                  { id: 'academic', label: '📚 Classrooms & Library' },
-                  { id: 'sports', label: '⚽ Sports Arena & Grounds' },
-                  { id: 'campus', label: '🎭 Cultural Stage & Courtyard' }
-                ].map((tab) => (
+            <div className="inline-flex flex-wrap p-1.5 rounded-2xl bg-white border border-[#E7E2D8] shadow-2xs gap-1">
+              {[
+                { id: 'all', label: 'All Campus Facilities' },
+                { id: 'labs', label: '🔬 Science & IT Laboratories' },
+                { id: 'academic', label: '📚 Classrooms & Library' },
+                { id: 'sports', label: '⚽ Sports Arena & Grounds' },
+                { id: 'campus', label: '🎭 Cultural Stage & Courtyard' }
+              ].map((tab) => {
+                const isSelected = activeTab === tab.id;
+                return (
                   <button
                     key={tab.id}
-                    data-id={tab.id}
+                    onClick={() => setActiveTab(tab.id as any)}
                     type="button"
-                    className={`px-3.5 py-1.5 text-xs font-mono font-bold transition-colors cursor-pointer rounded-xl ${
-                      activeTab === tab.id ? 'text-white' : 'text-slate-600 hover:text-slate-900'
+                    className={`relative px-4 py-2 text-xs font-mono font-bold transition-all cursor-pointer rounded-xl flex items-center justify-center ${
+                      isSelected
+                        ? 'text-white'
+                        : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'
                     }`}
                   >
-                    {tab.label}
+                    {isSelected && (
+                      <motion.div
+                        layoutId="active-facility-tab-bg"
+                        className="absolute inset-0 bg-[#DF711B] rounded-xl shadow-sm z-0"
+                        transition={{ type: 'spring', bounce: 0.15, duration: 0.35 }}
+                      />
+                    )}
+                    <span className="relative z-10">{tab.label}</span>
                   </button>
-                ))}
-              </AnimatedBackground>
+                );
+              })}
             </div>
           </div>
         </SpotlightCard>
@@ -555,18 +558,18 @@ export const InfrastructureShowcase: React.FC = () => {
                       </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sans text-sm text-slate-600 leading-relaxed font-normal line-clamp-2">
                       {facility.description}
                     </p>
 
                     {/* CBSE Curriculum Scope */}
                     {facility.curriculumDetails && (
-                      <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#E7E2D8] space-y-1">
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#DF711B] font-bold block flex items-center gap-1.5">
-                          <Sparkles className="w-3.5 h-3.5" />
+                      <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] space-y-1">
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#DF711B] font-bold flex items-center gap-1.5">
+                          <Sparkles className="w-3.5 h-3.5 shrink-0" />
                           <span>Curriculum & Practical Syllabus Alignment:</span>
                         </span>
-                        <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium line-clamp-2">
                           {facility.curriculumDetails}
                         </p>
                       </div>

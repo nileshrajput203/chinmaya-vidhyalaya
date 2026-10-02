@@ -12,10 +12,7 @@ import { InfrastructureShowcase } from '../components/inner/InfrastructureShowca
 import { SpiritualShowcase } from '../components/inner/SpiritualShowcase';
 import { HolisticShowcase } from '../components/inner/HolisticShowcase';
 import { HistoryShowcase } from '../components/inner/HistoryShowcase';
-import { TeachingStrategyShowcase } from '../components/inner/TeachingStrategyShowcase';
-import { EducationToursShowcase } from '../components/inner/EducationToursShowcase';
 import { LibraryShowcase } from '../components/inner/LibraryShowcase';
-import { FacultyShowcase } from '../components/inner/FacultyShowcase';
 import { VisionMissionShowcase } from '../components/inner/VisionMissionShowcase';
 import { HeritageShowcase } from '../components/inner/HeritageShowcase';
 import { AdmissionGuidelinesShowcase } from '../components/inner/AdmissionGuidelinesShowcase';
@@ -60,12 +57,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const isSwami = slug === 'swami-chinmayananda' || slug === 'heritage' || title.toLowerCase().includes('chinmayananda') || title.toLowerCase().includes('heritage');
   const isHistory = ((slug && slug.includes('history')) || title.toLowerCase().includes('history') || isRootAbout) && !isSwami;
   const isCurriculum = title.toLowerCase().includes('curriculum') || (slug && slug.includes('curriculum'));
-  const isFaculty = title.toLowerCase().includes('faculty') || (slug && slug.includes('faculty'));
   const isSpiritual = title.toLowerCase().includes('spiritual') || (slug && slug.includes('spiritual'));
   const isInfrastructure = title.toLowerCase().includes('infrastructure') || (slug && slug.includes('infrastructure'));
-  const isTeachingStrategy = title.toLowerCase().includes('strategy') || slug === 'teaching-strategy';
   const isCoCurricular = title.toLowerCase().includes('co-curricular') || slug === 'co-curricular';
-  const isEducationTours = slug === 'education-tours' || title.toLowerCase().includes('tour');
   const isLibrary = slug === 'library' || title.toLowerCase().includes('library');
   const isFourPillars = slug === 'four-pillars' || slug === '4-pillars' || slug === 'philosophy' || title.toLowerCase().includes('4 pillars') || title.toLowerCase().includes('four pillars') || title.toLowerCase().includes('cvp');
   const isHolistic = slug === 'holistic-development' || title.toLowerCase().includes('holistic');
@@ -107,6 +101,26 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
   const primaryVisual = getPrimaryVisual();
 
+  // School History and Swami Chinmayananda Heritage features full-bleed horizontal GSAP timelines
+  // that must break out of the max-w-6xl container to prevent clipping and sticky scroll issues.
+  if (isHistory) {
+    return (
+      <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+        <Breadcrumb items={[{ label: displayCategoryLabel }, { label: title }]} />
+        <HistoryShowcase />
+      </div>
+    );
+  }
+
+  if (isSwami) {
+    return (
+      <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+        <Breadcrumb items={[{ label: displayCategoryLabel }, { label: title }]} />
+        <HeritageShowcase />
+      </div>
+    );
+  }
+
   // Compliance section should ONLY show on root /about or dedicated mandatory information pages
   const showComplianceSection = slug === 'mandatory-information';
 
@@ -129,21 +143,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ) : isHolistic ? (
             /* 4. Holistic Development & Student Well-Being Showcase */
             <HolisticShowcase />
-          ) : isHistory ? (
-            /* 5. School History & Heritage Milestones Showcase */
-            <HistoryShowcase />
-          ) : isTeachingStrategy ? (
-            /* 6. Pedagogical Strategy & Methodology Showcase */
-            <TeachingStrategyShowcase />
-          ) : isEducationTours ? (
-            /* 7. Educational Tours & Experiential Learning Showcase */
-            <EducationToursShowcase />
           ) : isLibrary ? (
             /* 8. Central Library & Knowledge Archives Showcase */
             <LibraryShowcase />
-          ) : isFaculty ? (
-            /* 9. Teaching & Support Faculty Showcase */
-            <FacultyShowcase />
           ) : isCurriculum ? (
             /* 10. CBSE Curriculum & Graded Syllabi Showcase */
             <CurriculumShowcase />
@@ -153,47 +155,46 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ) : isMissionVision ? (
             /* 11. School Vision & Mission Showcase */
             <VisionMissionShowcase />
-          ) : isSwami ? (
-            /* 11. Pujya Gurudev Swami Chinmayananda Heritage Showcase */
-            <HeritageShowcase />
           ) : (
             /* 12. Bespoke Editorial Layout for Management, Admissions, Curriculum & Other Pages */
             <div className="space-y-12">
-              <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
-                <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-                    {getSectionEyebrow()}
-                  </span>
-                  <h2 className="font-cinzel text-3xl sm:text-5xl text-[#181C20] font-extrabold leading-tight tracking-tight">
-                    {title}
-                  </h2>
-                  {subtitle && (
-                    <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-normal pt-1">
-                      {subtitle}
-                    </p>
-                  )}
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                  <div className="lg:col-span-7 prose max-w-none text-slate-600/90 text-base sm:text-lg leading-relaxed space-y-4 font-normal">
-                    {content.slice(0, 2).map((paragraph, idx) => (
-                      <p key={idx}>{paragraph}</p>
-                    ))}
+              {!isManagement && (
+                <section className="bg-white border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-8">
+                  <div className="space-y-2">
+                    <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
+                      {getSectionEyebrow()}
+                    </span>
+                    <h2 className="font-cinzel text-3xl sm:text-5xl text-[#181C20] font-extrabold leading-tight tracking-tight">
+                      {title}
+                    </h2>
+                    {subtitle && (
+                      <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-normal pt-1">
+                        {subtitle}
+                      </p>
+                    )}
                   </div>
-                  <div className="lg:col-span-5">
-                    <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-2 rounded-2xl shadow-sm overflow-hidden group">
-                      <img
-                        src={primaryVisual.src}
-                        alt={`${title} visual`}
-                        className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="p-2 text-xs text-[#4A5568] text-center font-medium font-sans">
-                        {primaryVisual.caption}
+
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div className="lg:col-span-7 prose max-w-none text-slate-600/90 text-base sm:text-lg leading-relaxed space-y-4 font-normal">
+                      {content.slice(0, 2).map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))}
+                    </div>
+                    <div className="lg:col-span-5">
+                      <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-2 rounded-2xl shadow-sm overflow-hidden group">
+                        <img
+                          src={primaryVisual.src}
+                          alt={`${title} visual`}
+                          className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="p-2 text-xs text-[#4A5568] text-center font-medium font-sans">
+                          {primaryVisual.caption}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </section>
+                </section>
+              )}
 
               {/* Special Section: Board of Management Directory */}
               {isManagement && (

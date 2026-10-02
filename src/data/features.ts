@@ -103,29 +103,7 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
       "Special guidance sessions for competitive examinations and future career pathways"
     ]
   },
-  "education-tours": {
-    slug: "education-tours",
-    title: "Educational Study Tours & Field Trips",
-    subtitle: "Experiential learning, industrial exposure in MIDC, and cultural excursions",
-    content: [
-      "Educational study tours and field trips form an integral cornerstone of the learning experience at Chinmaya Vidyalaya, taking education far beyond the four walls of the classroom.",
-      "Situated near the Tarapur industrial belt, students benefit from curated industrial visits to manufacturing installations, engineering hubs, and power generation units to observe practical applications of science.",
-      "Field excursions to botanical gardens, regional nature parks, planetariums, and historical heritage landmarks broaden students' ecological awareness and historical perspective.",
-      "These experiential journeys cultivate team collaboration, adaptability, observational acuity, and lifelong bonds among classmates under the careful supervision of faculty chaperones."
-    ],
-    bulletPoints: [
-      "Annual educational field visits organized for all classes from Pre-Primary to Class XII",
-      "Industrial visits to Tarapur MIDC engineering and technology manufacturing facilities",
-      "Visits to Nehru Science Centre, planetariums, and regional ecological sanctuaries",
-      "Structured student worksheets and post-tour presentation projects cementing learned insights"
-    ],
-    highlights: [
-      "Annual educational field trips for all primary and secondary classes",
-      "Industrial visits to manufacturing units and power installations",
-      "Visits to science exhibits, planetariums, and eco-parks",
-      "Team building, leadership, and social development opportunities during study excursions"
-    ]
-  },
+
   "library": {
     slug: "library",
     title: "Central Library & Knowledge Archives",

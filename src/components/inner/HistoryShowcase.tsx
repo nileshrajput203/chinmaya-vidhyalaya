@@ -4,8 +4,9 @@ import { InView } from '../ui/in-view';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { BadgePill } from '../ui/badge-pill';
 import Timeline, { JourneyItem } from '../ui/timeline';
+import { ImageStreamHero, StreamImage } from '../ui/image-stream-hero';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
-import { Quote, Users, Award, BookOpen, ZoomIn, X, Building2, CheckCircle2, ChevronRight, School } from 'lucide-react';
+import { ZoomIn, X } from 'lucide-react';
 
 interface ArchivalPhoto {
   id: string;
@@ -17,62 +18,6 @@ interface ArchivalPhoto {
   tag: string;
 }
 
-const ARCHIVAL_GALLERY: ArchivalPhoto[] = [
-  {
-    id: 'archival-1',
-    title: 'The Pioneer Campus Foundation',
-    era: 'Genesis Era',
-    year: '1995',
-    image: '/images/history2.jpeg',
-    tag: 'Foundation & Heritage',
-    caption: 'First batch of 72 students and 4 pioneer teachers at Saravali, Boisar — marking the very first Chinmaya Vidyalaya in Maharashtra.',
-  },
-  {
-    id: 'archival-2',
-    title: 'Pujya Gurudev’s Living Spiritual Ethos',
-    era: 'Sacred Tradition',
-    year: '1993 – Present',
-    image: '/images/swami.jpeg',
-    tag: 'Chinmaya Vision Program',
-    caption: 'Daily Guru Paduka Pooja, Geeta chanting, and value-based schooling rooted in the sublime vision of Param Pujya Swami Chinmayananda.',
-  },
-  {
-    id: 'archival-3',
-    title: 'Academic Quadrangle & Multi-Storey Wings',
-    era: 'Campus Growth',
-    year: '2004 – 2015',
-    image: '/images/about2.jpeg',
-    tag: 'Infrastructure Expansion',
-    caption: 'Gradual expansion of spacious classrooms, sunlit corridors, and modern scholastic wings accommodating over 1,600 learners.',
-  },
-  {
-    id: 'archival-4',
-    title: 'Modern Digital & Scholastic Classrooms',
-    era: 'Contemporary Era',
-    year: '2020 – 2026',
-    image: '/images/chinmaya/academics/classroom_learning_001.jpg',
-    tag: 'Academic Excellence',
-    caption: 'Transition to interactive multimedia smart classrooms, diagnostic ASSET testing, and unbroken 100% CBSE board distinction records.',
-  },
-  {
-    id: 'archival-5',
-    title: 'Cultural Festivals & Youth Leadership',
-    era: 'Holistic Culture',
-    year: 'Annual Tradition',
-    image: '/images/chinmaya/cultural/cultural_celebration_001.jpg',
-    tag: 'Arts & Cultural Heritage',
-    caption: 'Grand annual day celebrations, classical music and dance, patriotic rallies, and community celebrations connecting students to heritage.',
-  },
-  {
-    id: 'archival-6',
-    title: 'Tara Crescent Athletic Ground & Sports',
-    era: 'Physical Development',
-    year: 'Active Grounds',
-    image: '/images/banner-1.jpg',
-    tag: 'Athletics & Houses',
-    caption: 'Expansive outdoor grounds hosting four-house athletic meets, football, basketball, yoga, and state-level sports championships.',
-  },
-];
 
 const CHINMAYA_TOP_MILESTONES: JourneyItem[] = [
   {
@@ -85,7 +30,7 @@ const CHINMAYA_TOP_MILESTONES: JourneyItem[] = [
     id: "1995-inauguration",
     year: "1995",
     month: "June",
-    content: "Formally inaugurated by H.H. Swami Purushottamanandaji with 72 students and 4 teachers — the very first Chinmaya Vidyalaya established across Maharashtra–Gujarat–Goa.",
+    content: "Formally inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji — the very first Chinmaya Vidyalaya established across the Maharashtra–Gujarat–Goa region.",
   },
   {
     id: "2004-aisse",
@@ -112,13 +57,64 @@ const CHINMAYA_BOTTOM_MILESTONES: JourneyItem[] = [
     id: "2003-cbse",
     year: "2003",
     month: "August",
-    content: "Granted official composite affiliation by the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130095).",
+    content: "Granted official composite affiliation by the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058).",
   },
   {
     id: "2015-campus",
     year: "2015",
     month: "November",
     content: "Extensive campus expansion with modern computer and robotics laboratories, central knowledge library, and multi-sport athletic facilities.",
+  },
+];
+
+const CAMPUS_STREAM_IMAGES: StreamImage[] = [
+  {
+    src: "/images/about2.jpeg",
+    alt: "Chinmaya Vidyalaya Campus Building",
+  },
+  {
+    src: "/images/biology-lab.jpg",
+    alt: "Advanced Biology Laboratory",
+  },
+  {
+    src: "/images/lib.jpg",
+    alt: "Central Knowledge Library",
+  },
+  {
+    src: "/images/it-lab.jpg",
+    alt: "Computer and Robotics Lab",
+  },
+  {
+    src: "/images/phys.jpeg",
+    alt: "Physics Research Laboratory",
+  },
+  {
+    src: "/images/CHEM1.jpeg",
+    alt: "Chemistry Laboratory",
+  },
+  {
+    src: "/images/guru-paduka-pooja.webp",
+    alt: "Spiritual Traditions & Gurudev Ethos",
+  },
+  {
+    src: "/images/img1.jpg",
+    alt: "Student Activities and Campus Sports",
+  },
+  {
+    src: "/images/img2.jpg",
+    alt: "Interactive Classroom Learning",
+  },
+  {
+    src: "/images/img3.jpg",
+    alt: "Cultural & Value-Based Celebrations",
+  },
+  {
+    src: "/images/img4.jpg",
+    alt: "Collaborative Student Initiatives",
+  },
+  {
+    src: "/images/img7.jpg",
+    alt: "Scholastic & Co-Curricular Excellence",
   },
 ];
 
@@ -129,8 +125,10 @@ export const HistoryShowcase: React.FC = () => {
   useBodyScrollLock(activePhoto !== null);
 
   return (
-    <div className="space-y-12">
-      {/* Visual Header Grid with Archival Photography & 21st.dev Spotlight */}
+    <div className="w-full">
+      {/* Top Archival Sections Container */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-12">
+        {/* Visual Header Grid with Archival Photography & 21st.dev Spotlight */}
       <InView>
         <SpotlightCard
           spotlightColor="rgba(223, 113, 27, 0.08)"
@@ -149,10 +147,10 @@ export const HistoryShowcase: React.FC = () => {
             </div>
 
             <h2 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold leading-tight">
-              From 72 Students in 1995 to Over 1,600 Learners Today
+              Three Decades of Educational & Cultural Excellence
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Chinmaya Vidyalaya Tarapur was born out of a noble vision to bring Swami Chinmayananda’s holistic philosophy to the industrial hub of Boisar. Holding the distinction of being the first school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone, the institution has nurtured thousands of self-reliant, patriotic, and academically accomplished graduates.
+              Chinmaya Vidyalaya Tarapur was established to integrate Swami Chinmayananda’s holistic educational vision with modern scholastic rigor in the industrial hub of Boisar. Holding the distinction of being the first school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone, the institution nurtures over 1,600 learners with strong academic grounding and timeless values.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
@@ -161,11 +159,11 @@ export const HistoryShowcase: React.FC = () => {
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
                 <span className="text-[10px] font-mono text-slate-400 uppercase font-bold block">CBSE Affiliation</span>
-                <span className="font-cinzel font-bold text-lg text-[#DF711B]">1130095</span>
+                <span className="font-cinzel font-bold text-lg text-[#DF711B]">1130058</span>
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
-                <span className="text-[10px] font-mono text-slate-400 uppercase font-bold block">Initial Batch</span>
-                <span className="font-cinzel font-bold text-lg text-[#181C20]">72 Students</span>
+                <span className="text-[10px] font-mono text-slate-400 uppercase font-bold block">School Code</span>
+                <span className="font-cinzel font-bold text-lg text-[#181C20]">30040</span>
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
                 <span className="text-[10px] font-mono text-slate-400 uppercase font-bold block">Current Strength</span>
@@ -174,301 +172,102 @@ export const HistoryShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Historic Campus Photo with Archival Details */}
+          {/* Genuine Campus Photo with Verified Context */}
           <div className="lg:col-span-5 space-y-4">
             <div 
-              onClick={() => setActivePhoto(ARCHIVAL_GALLERY[0])}
+              onClick={() => setActivePhoto({
+                id: 'campus-building',
+                title: 'Chinmaya Vidyalaya Campus Building',
+                era: 'Academic Campus',
+                year: 'Boisar',
+                image: '/images/about2.jpeg',
+                tag: 'Campus Infrastructure',
+                caption: 'Spacious academic wings, laboratories, and green grounds at MIDC Saravali, Boisar.'
+              })}
               className="rounded-2xl overflow-hidden border border-[#E7E2D8] shadow-md group bg-white cursor-pointer"
             >
               <div className="relative aspect-[16/11] overflow-hidden bg-slate-100">
                 <img
-                  src="/images/history2.jpeg"
-                  alt="Chinmaya Vidyalaya Historic Campus Building"
+                  src="/images/about2.jpeg"
+                  alt="Chinmaya Vidyalaya Campus Building"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 bg-[#0B1E34]/90 text-white px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider backdrop-blur-md">
-                  Historic Campus Foundation
+                  Vidyalaya Campus
                 </div>
                 <div className="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white/90 px-2 py-0.5 rounded text-[10px] font-mono flex items-center gap-1">
                   <ZoomIn className="w-3 h-3 text-[#DF711B]" />
-                  <span>Boisar • Circa 1995</span>
+                  <span>Saravali, Boisar</span>
                 </div>
               </div>
               <div className="p-3 text-xs text-[#4A5568] text-center font-medium bg-[#FAF8F5] border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
-                Chinmaya Vidyalaya Campus (Est. 1995) | Boisar, Tarapur &rarr;
+                Chinmaya Vidyalaya Campus | Saravali, Boisar &rarr;
               </div>
             </div>
           </div>
         </SpotlightCard>
       </InView>
 
-      {/* ====================================================
-          FOUNDER & SPIRITUAL ROOTS SPOTLIGHT
-         ==================================================== */}
-      <InView>
-        <div className="bg-gradient-to-br from-[#0B1D30] to-[#162B45] text-white rounded-3xl p-8 sm:p-10 border border-[#233B59] shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#DF711B]/10 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {/* Spiritual Vision Portrait */}
-            <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="relative w-44 h-52 sm:w-48 sm:h-56 rounded-2xl overflow-hidden border-2 border-[#DF711B]/40 shadow-2xl bg-black/40">
-                <img
-                  src="/images/swami.jpeg"
-                  alt="Param Pujya Swami Chinmayananda"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-2 left-2 right-2 text-center">
-                  <span className="text-[11px] font-serif font-bold text-amber-200 block">
-                    Pujya Gurudev
-                  </span>
-                  <span className="text-[9px] font-mono text-white/75 uppercase tracking-wider block">
-                    Swami Chinmayananda
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            {/* Foundational Philosophy */}
-            <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 border border-[#DF711B]/40 text-[#DF711B] text-xs font-mono font-bold tracking-wide">
-                <Quote className="w-3.5 h-3.5" />
-                <span>The Guiding Light of Chinmaya Vision Program</span>
-              </div>
 
-              <blockquote className="font-serif italic text-lg sm:text-2xl text-[#FAF8F5] leading-relaxed font-light">
-                “We are not here to teach our children merely how to make a living, but how to live. To enable them to meet life’s situations with courage and composure.”
-              </blockquote>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                Under the blessings of <strong className="text-white">Param Pujya Swami Tejomayanandaji</strong> who blessed the foundation stone in 1994, and <strong className="text-white">H.H. Swami Purushottamanandaji</strong> who inaugurated the school on 18 June 1995, Chinmaya Vidyalaya Tarapur continues to serve as an enduring temple of holistic child development.
-              </p>
 
-              <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-amber-200/90">
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B]" />
-                  Integrated Child Development
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B]" />
-                  Indian Cultural Ethos
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#DF711B]" />
-                  Patriotism & Universal Outlook
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </InView>
+
+      </div>
 
       {/* ====================================================
-          CURATED ARCHIVAL PHOTOGRAPHIC GALLERY
+          STANDALONE FULL-WIDTH PINNED TIMELINE (OUTSIDE CONTAINER)
          ==================================================== */}
-      <InView>
-        <div className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#E7E2D8] pb-4">
-            <div>
-              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-                Visual Archives • 1995 to Present
-              </span>
-              <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] mt-1">
-                Archival Heritage Gallery
-              </h3>
-            </div>
-            <p className="text-xs text-slate-500 font-sans max-w-sm">
-              Click on any photograph to view high-resolution archival details and historic captions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ARCHIVAL_GALLERY.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setActivePhoto(item)}
-                className="group bg-white rounded-2xl border border-[#E7E2D8] overflow-hidden shadow-xs hover:shadow-card hover:border-[#DF711B]/60 transition-all duration-300 flex flex-col cursor-pointer"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 left-3 bg-[#0B1D30]/85 backdrop-blur-md text-white px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold">
-                    {item.year}
-                  </div>
-                  <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
-                  </div>
-                </div>
-
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
-                  <div>
-                    <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block mb-1">
-                      {item.tag}
-                    </span>
-                    <h4 className="font-serif font-bold text-base text-[#181C20] group-hover:text-[#DF711B] transition-colors line-clamp-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans line-clamp-2 mt-1.5">
-                      {item.caption}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 border-t border-[#EFECE6] flex items-center justify-between text-[11px] font-mono text-slate-500">
-                    <span>{item.era}</span>
-                    <span className="inline-flex items-center gap-1 text-[#DF711B] font-semibold group-hover:translate-x-0.5 transition-transform">
-                      View photo <ChevronRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
+      <section className="w-full pt-8 pb-4 text-center">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="flex items-center justify-center gap-2 text-xs font-mono text-[#DF711B] animate-bounce">
+            <span>Scroll down to scrub through the milestones</span>
+            <span>&darr;</span>
           </div>
         </div>
-      </InView>
+      </section>
 
-      {/* ====================================================
-          THEN & NOW: INSTITUTIONAL TRANSFORMATION
-         ==================================================== */}
-      <InView>
-        <div className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-6 sm:p-9 shadow-card space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div>
-              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-[0.2em] block">
-                Three Decades of Progress
-              </span>
-              <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] mt-1">
-                Then & Now: Institutional Evolution
-              </h3>
-            </div>
-            <span className="text-xs font-mono text-slate-500">
-              1995 Pioneer Genesis vs 2026 Academic Lighthouse
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* 1995 Genesis Card */}
-            <div className="bg-white rounded-2xl p-6 border border-[#E7E2D8] space-y-4 shadow-2xs">
-              <div className="flex items-center justify-between pb-3 border-b border-[#EFECE6]">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center font-mono font-bold text-xs">
-                    95
-                  </div>
-                  <div>
-                    <h4 className="font-serif font-bold text-[#181C20] text-base">Inception Era (1995)</h4>
-                    <span className="text-[11px] text-slate-500 font-mono">Founding Vidyalaya Campus</span>
-                  </div>
-                </div>
-                <span className="px-2.5 py-0.5 bg-slate-100 text-slate-600 rounded-full text-[10px] font-mono font-bold">
-                  Genesis
-                </span>
-              </div>
-
-              <ul className="space-y-2.5 text-xs text-slate-600 font-sans">
-                <li className="flex items-start gap-2.5">
-                  <Users className="w-3.5 h-3.5 text-[#DF711B] shrink-0 mt-0.5" />
-                  <span><strong>72 Students:</strong> Initial batch pioneering holistic education in Saravali.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Award className="w-3.5 h-3.5 text-[#DF711B] shrink-0 mt-0.5" />
-                  <span><strong>4 Pioneer Educators:</strong> Passionate founding faculty laying the academic bedrock.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Building2 className="w-3.5 h-3.5 text-[#DF711B] shrink-0 mt-0.5" />
-                  <span><strong>Single Foundational Block:</strong> Ground floor classrooms amid open industrial greens.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <BookOpen className="w-3.5 h-3.5 text-[#DF711B] shrink-0 mt-0.5" />
-                  <span><strong>Pre-Primary & Primary:</strong> Foundational schooling with daily prayers & Sanskrit chanting.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* 2026 Contemporary Card */}
-            <div className="bg-white rounded-2xl p-6 border-2 border-[#DF711B]/40 space-y-4 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#DF711B]/10 rounded-full blur-xl pointer-events-none" />
-              
-              <div className="flex items-center justify-between pb-3 border-b border-[#EFECE6] relative z-10">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-[#DF711B] text-white flex items-center justify-center font-mono font-bold text-xs shadow-xs">
-                    26
-                  </div>
-                  <div>
-                    <h4 className="font-serif font-bold text-[#181C20] text-base">Academic Lighthouse (Today)</h4>
-                    <span className="text-[11px] text-[#DF711B] font-mono font-semibold">CBSE Affil. No. 1130095</span>
-                  </div>
-                </div>
-                <span className="px-2.5 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-[10px] font-mono font-bold">
-                  Premier Center
-                </span>
-              </div>
-
-              <ul className="space-y-2.5 text-xs text-slate-700 font-sans relative z-10">
-                <li className="flex items-start gap-2.5">
-                  <Users className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>~1,600 Learners:</strong> Thriving student community from Nursery through Class XII.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Award className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>60+ Specialized Faculty:</strong> CBSE-certified subject educators and career mentors.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <School className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Comprehensive Facilities:</strong> 3 Science labs, Robotics lab, IT lab, Library & Athletic turf.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <BookOpen className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Senior Secondary Streams:</strong> Science, Commerce & Arts with 100% board examination distinction.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </InView>
-
-      {/* ====================================================
-          INTERACTIVE HYPERIUX VAULT PINNED TIMELINE
-         ==================================================== */}
-      <div className="rounded-3xl overflow-hidden border border-[#E7E2D8] shadow-card bg-[#FAF8F5]">
-        <div className="p-6 sm:p-8 border-b border-[#E7E2D8] bg-[#FAF8F5] flex flex-col sm:flex-row justify-between sm:items-end gap-3">
-          <div className="space-y-1">
-            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
-              Institutional Heritage • Three Decades of Growth
-            </span>
-            <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] m-0">
-              Milestones of Excellence & Growth
-            </h3>
-          </div>
-          <p className="text-xs font-mono text-slate-500 m-0">
-            Scroll down to scrub through the timeline &rarr;
-          </p>
-        </div>
-
+      {/* Full Bleed Timeline (No Card Border, No Overflow-Hidden, True Edge-to-Edge) */}
+      <div className="w-full">
         <Timeline
           title="Campus Journey"
           periodLabel="1993 — 2026"
           textColor="#181C20"
           mutedTextColor="#555555"
           activeColor="#DF711B"
-          backgroundColor="#FAF8F5"
-          imageUrl="/images/history2.jpeg"
-          imageAlt="Chinmaya Vidyalaya Historic Campus 1995"
-          duration={1.2}
+          backgroundColor="#ffffff"
+          imageUrl="/images/about2.jpeg"
+          imageAlt="Chinmaya Vidyalaya Campus Building, Boisar"
           topData={CHINMAYA_TOP_MILESTONES}
           bottomData={CHINMAYA_BOTTOM_MILESTONES}
         />
       </div>
 
-      {/* Campus Map */}
-      <InView>
-        <div className="pt-4">
+      {/* Visual Archives & Campus Life Stream Corridor (Full Bleed Edge-to-Edge Continuation) */}
+      <section className="w-full bg-white pt-8 pb-16">
+        <ImageStreamHero
+          images={CAMPUS_STREAM_IMAGES}
+          className="h-[560px] sm:h-[640px] w-full bg-white"
+        >
+          <div className="relative z-10 flex h-full flex-col items-center justify-between py-12 text-center pointer-events-none">
+            <div className="px-6 space-y-2 pointer-events-auto">
+              <h4 className="font-cinzel text-2xl sm:text-4xl font-extrabold tracking-tight text-[#181C20] max-w-xl leading-tight bg-white/85 backdrop-blur-md px-6 py-2.5 rounded-2xl border border-[#E7E2D8]/80 shadow-xs">
+                Tradition Meets Modern Excellence
+              </h4>
+            </div>
+            <p className="max-w-md text-balance px-6 text-xs sm:text-sm text-[#0B1E34] font-medium pointer-events-auto backdrop-blur-md bg-white/90 py-2.5 px-5 rounded-2xl border border-[#E7E2D8] shadow-sm">
+              Saravali, Boisar • Nurturing over 1,600 minds from Nursery through Senior Secondary.
+            </p>
+          </div>
+        </ImageStreamHero>
+      </section>
+
+      {/* Bottom Section: Campus Map Container */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <InView>
           <GoogleMapSection />
-        </div>
-      </InView>
+        </InView>
+      </div>
 
       {/* Archival Photo Lightbox Modal */}
       {activePhoto && (

@@ -124,9 +124,7 @@ export const Footer: React.FC = () => {
                 <ul className="space-y-2 text-xs">
                   {[
                     { label: "CBSE Curriculum & Syllabi", href: "/academics/curriculum" },
-                    { label: "Teaching Methodology", href: "/academics/teaching-strategy" },
                     { label: "Infrastructure & Labs", href: "/academics/infrastructure" },
-                    { label: "Faculty Directory", href: "/academics/faculty" },
                     { label: "CBSE Sample Papers", href: "/downloads/sample-papers" },
                   ].map((link) => (
                     <li key={link.label}>
@@ -186,7 +184,6 @@ export const Footer: React.FC = () => {
                     { label: "Holistic Development", href: "/features/holistic-development" },
                     { label: "Spiritual Assemblies & Pooja", href: "/features/spiritual-activities" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
-                    { label: "Educational Study Tours", href: "/features/education-tours" },
                     { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
                     <li key={link.label}>

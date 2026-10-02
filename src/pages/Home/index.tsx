@@ -8,16 +8,16 @@ import {
   Sparkles, Phone, ArrowRight
 } from 'lucide-react';
 import { OFFICIAL_PRINCIPAL_INFO } from '../../data/school';
-import { SCHOOL_IMAGES } from '../../data/images';
 import { BLOG_POSTS } from '../../data/blog';
 import { QuickAdmissionDrawer } from '../../components/common/QuickAdmissionDrawer';
 import Faq05 from '@/components/ui/faq-05';
-import MarqueeAlongSvgPathDemo from '@/components/ui/demo';
+import MarqueeAlongSvgPathDemo from '@/components/ui/marquee-demo';
 import { soundFx } from '../../utils/audio';
 import { HorizontalPanelGallery } from '../../components/home/HorizontalPanelGallery';
 import { NoticeEventBoard } from '../../components/home/NoticeEventBoard';
 import { HeroScrollytellingFilm } from '../../components/home/HeroScrollytellingFilm';
 import { BannerCarousel } from '../../components/home/BannerCarousel';
+import { RibbonGallery } from '../../components/home/RibbonGallery';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -253,15 +253,6 @@ export const HomePage: React.FC = () => {
         "Compassion, world brotherhood, and ethical leadership"
       ]
     }
-  ];
-
-  // Gallery Visual Archive Preview
-  const galleryItems = [
-    { id: 1, src: SCHOOL_IMAGES.CAMPUS_HERO, title: "Campus Building & Courtyard", cat: "Campus Architecture", span: "md:col-span-8" },
-    { id: 2, src: "/images/guru-paduka-pooja.webp", title: "Guru Paduka Pooja & Spiritual Assembly", cat: "Value Foundation", span: "md:col-span-4" },
-    { id: 3, src: "/images/CHEM1.jpeg", title: "Chemistry Lab", cat: "Science & Discovery", span: "md:col-span-4" },
-    { id: 4, src: SCHOOL_IMAGES.SPORTS_DAY, title: "Annual Athletic & Track Meet", cat: "Sports & Vitality", span: "md:col-span-4" },
-    { id: 5, src: "/images/lib.jpg", title: "Central Library & Research Repository", cat: "Scholastic Sanctuary", span: "md:col-span-4" },
   ];
 
   return (
@@ -654,56 +645,9 @@ export const HomePage: React.FC = () => {
       <NoticeEventBoard />
 
       {/* ----------------------------------------------------
-          SECTION 07 — VISUAL ARCHIVE & MASONRY EXHIBITION
+          SECTION 07 — INTERACTIVE RIBBON PHOTO GALLERY
          ---------------------------------------------------- */}
-      <section className="min-h-screen lg:h-screen flex items-center py-6 lg:py-8 bg-[#FAF8F5] relative overflow-hidden">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
-          
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-b border-[#E7E2D8] pb-3">
-            <div className="space-y-1">
-              <span className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
-                CAMPUS GALLERY • PHOTOGRAPHIC ARCHIVE
-              </span>
-              <h2 className="font-display text-[28px] sm:text-[36px] lg:text-[42px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
-                MOMENTS OF LIFE AT CHINMAYA VIDYALAYA
-              </h2>
-            </div>
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[10px] sm:text-[11px] uppercase tracking-wider transition-colors select-none shrink-0"
-            >
-              <span className="text-[#FFB740] font-bold text-xs">›</span>
-              <span>FULL PHOTOGRAPHIC ARCHIVE</span>
-            </Link>
-          </div>
-
-          {/* Masonry Layout with Section 02 Hard Corners & Borders */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {galleryItems.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setSelectedGalleryImg(item.src)}
-                className={`${item.span} group relative overflow-hidden border border-[#181818]/15 shadow-sm cursor-pointer h-48 sm:h-56 lg:h-64`}
-              >
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/90 via-[#181818]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end text-white">
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
-                    {item.cat}
-                  </span>
-                  <h4 className="font-display font-black text-[16px] text-white uppercase tracking-tight mt-0.5 m-0">
-                    {item.title}
-                  </h4>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      <RibbonGallery />
 
       {/* Lightbox Modal */}
       <AnimatePresence>

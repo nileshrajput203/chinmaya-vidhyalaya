@@ -80,33 +80,7 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
       "Integration of smart board digital content with hands-on experiential learning"
     ]
   },
-  "teaching-strategy": {
-    slug: "teaching-strategy",
-    title: "Teaching Strategy & Pedagogy",
-    subtitle: "Child-centred, activity-oriented, and modern experiential pedagogical practices",
-    content: [
-      "At Chinmaya Vidyalaya, teaching strategies are meticulously designed to transform learning from passive memorisation into active, joyful discovery and conceptual clarity.",
-      "Our teachers employ diverse interactive methods to ensure every child grasps core concepts with confidence, fostering curiosity, inquiry, and critical thinking.",
-      "From play-way methodologies in the foundational kindergarten stages to rigorous experiential laboratory experiments in senior grades, our pedagogy adapts to each developmental milestone.",
-      "We integrate modern audio-visual aids, smart classroom software, hands-on science kits, and diagnostic skill assessments (ASSET) to continuously calibrate teaching to student learning needs."
-    ],
-    bulletPoints: [
-      "Play-way and joyful learning methodologies for foundational and pre-primary students",
-      "Experiential STEM learning through laboratory demonstrations and hands-on projects",
-      "Integration of ASSET diagnostic assessments for identifying strengths and remedial learning gaps",
-      "Continuous formative evaluations that emphasize deep conceptual understanding over rote recall"
-    ],
-    features: [
-      "Play-way method for early childhood and foundational stages",
-      "Activity-oriented learning to promote conceptual understanding",
-      "Child-centred learning tailored to diverse student aptitudes",
-      "Demonstrative and experimental methods in laboratories",
-      "Interactive methods encouraging open discussions and inquiry",
-      "Learning-by-doing through hands-on projects and model making",
-      "Using audio-visual aids and digital boards in classrooms",
-      "Using the latest educational software and multimedia resources"
-    ]
-  },
+
   infrastructure: {
     slug: "infrastructure",
     title: "School Infrastructure & Facilities",

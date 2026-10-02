@@ -211,143 +211,147 @@ export const FeeStructurePage: React.FC = () => {
         </div>
 
         {/* BOTTOM SECTION: Key Fee Policies & Accounts Help Desk */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Policy Breakdown (8 Cols) */}
-          <div className="lg:col-span-8 bg-white border border-[#E7E2D8] rounded-3xl p-6 sm:p-8 shadow-card space-y-6">
-            <div className="border-b border-[#E7E2D8] pb-4">
-              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
-                Payment Guidelines & Schedule
-              </span>
-              <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-[#181C20] mt-1">
-                Installment Rules & Payment Modes
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              <div className="p-4 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl space-y-2">
-                <div className="flex items-center gap-2 font-bold text-slate-800 text-sm">
-                  <Clock className="w-4 h-4 text-[#DF711B]" />
-                  <span>Quarterly Installment Schedule</span>
-                </div>
-                <ul className="space-y-1.5 text-slate-600 text-[11px]">
-                  <li><strong>Term I (Apr–Jun):</strong> Payable at the time of admission / by April 15.</li>
-                  <li><strong>Term II (Jul–Sep):</strong> Payable on or before July 15.</li>
-                  <li><strong>Term III (Oct–Dec):</strong> Payable on or before October 15.</li>
-                  <li><strong>Term IV (Jan–Mar):</strong> Payable on or before January 15.</li>
-                </ul>
+          {/* Policy Breakdown (8 Cols) - Orange Theme */}
+          <div className="lg:col-span-8 bg-gradient-to-br from-[#DF711B] via-[#E27622] to-[#B85715] text-white border border-white/25 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between space-y-6">
+            <div className="space-y-6">
+              <div className="border-b border-white/20 pb-4">
+                <span className="text-xs font-mono font-bold text-amber-200 uppercase tracking-wider block">
+                  Payment Guidelines & Schedule
+                </span>
+                <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white mt-1">
+                  Installment Rules & Payment Modes
+                </h3>
               </div>
 
-              <div className="p-4 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl space-y-2">
-                <div className="flex items-center gap-2 font-bold text-slate-800 text-sm">
-                  <CreditCard className="w-4 h-4 text-[#DF711B]" />
-                  <span>Accepted Payment Channels</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div className="p-4 bg-white text-slate-800 rounded-2xl space-y-2 shadow-sm border border-orange-100">
+                  <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
+                    <Clock className="w-4 h-4 text-[#DF711B]" />
+                    <span>Quarterly Installment Schedule</span>
+                  </div>
+                  <ul className="space-y-1.5 text-slate-600 text-[11.5px]">
+                    <li><strong className="text-slate-900">Term I (Apr–Jun):</strong> Payable at admission / by April 15.</li>
+                    <li><strong className="text-slate-900">Term II (Jul–Sep):</strong> Payable on or before July 15.</li>
+                    <li><strong className="text-slate-900">Term III (Oct–Dec):</strong> Payable on or before October 15.</li>
+                    <li><strong className="text-slate-900">Term IV (Jan–Mar):</strong> Payable on or before January 15.</li>
+                  </ul>
                 </div>
-                <ul className="space-y-1.5 text-slate-600 text-[11px]">
-                  <li><strong>Online Parent Portal:</strong> UPI, Debit/Credit Card, Net Banking via school ERP.</li>
-                  <li><strong>Bank Transfer / NEFT / RTGS:</strong> Direct transfer to school official bank account.</li>
-                  <li><strong>Demand Draft / Cheque:</strong> In favor of <em>"Chinmaya Vidyalaya Tarapur"</em>.</li>
-                  <li><strong>Cash Payment:</strong> Strictly accepted only at the designated bank branch counter.</li>
-                </ul>
+
+                <div className="p-4 bg-white text-slate-800 rounded-2xl space-y-2 shadow-sm border border-orange-100">
+                  <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
+                    <CreditCard className="w-4 h-4 text-[#DF711B]" />
+                    <span>Accepted Payment Channels</span>
+                  </div>
+                  <ul className="space-y-1.5 text-slate-600 text-[11.5px]">
+                    <li><strong className="text-slate-900">Online Parent Portal:</strong> UPI, Net Banking, Cards via ERP.</li>
+                    <li><strong className="text-slate-900">Bank Transfer / NEFT:</strong> Direct transfer to school account.</li>
+                    <li><strong className="text-slate-900">Demand Draft / Cheque:</strong> To <em>"Chinmaya Vidyalaya Tarapur"</em>.</li>
+                    <li><strong className="text-slate-900">Cash Payment:</strong> Accepted only at designated bank counter.</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-3 text-xs text-slate-700">
-              <h4 className="font-bold text-slate-800">Important Fee Provisions:</h4>
-              <ul className="space-y-2 list-none">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Late Surcharge:</strong> A nominal late payment fee of ₹10 per day is applicable after the 15th of the respective due month.</span>
+            <div className="space-y-3 text-xs text-white pt-2 border-t border-white/15">
+              <h4 className="font-bold text-amber-100 text-sm">Important Fee Provisions:</h4>
+              <ul className="space-y-2.5 list-none text-[12px] leading-relaxed text-white/95">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-amber-200 shrink-0 mt-0.5" />
+                  <span><strong className="text-amber-100">Late Surcharge:</strong> A nominal late payment fee of ₹10 per day is applicable after the 15th of the respective due month.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Sibling Concession:</strong> As per institutional norms, fee assistance or concession is reviewed for eligible families with three or more enrolled wards.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-amber-200 shrink-0 mt-0.5" />
+                  <span><strong className="text-amber-100">Sibling Concession:</strong> As per institutional norms, fee assistance is reviewed for eligible families with three or more enrolled wards.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>RTE Free Seats:</strong> 25% seats in entry-level classes (Nursery / Std I) are allocated under Right to Education (RTE) free of tuition fees.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-amber-200 shrink-0 mt-0.5" />
+                  <span><strong className="text-amber-100">RTE Free Seats:</strong> 25% seats in entry-level classes (Nursery / Std I) are allocated under Right to Education (RTE) free of tuition fees.</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Accounts Help Desk Card (4 Cols) */}
-          <div className="lg:col-span-4 bg-white border-2 border-[#DF711B]/40 rounded-3xl p-6 sm:p-7 shadow-lg space-y-5">
-            <div className="space-y-1.5">
-              <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-xl bg-[#DF711B]/15 text-[#DF711B] flex items-center justify-center font-bold">
-                  <CreditCard className="w-5 h-5" />
+          {/* Accounts Help Desk Card (4 Cols) - Deep Navy Complementary Theme */}
+          <div className="lg:col-span-4 bg-gradient-to-br from-[#0B1E34] via-[#0F2744] to-[#162F52] text-white border border-[#28466E] rounded-3xl p-6 sm:p-7 shadow-xl flex flex-col justify-between space-y-5">
+            <div className="space-y-4">
+              <div className="space-y-1.5 border-b border-white/15 pb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-9 h-9 rounded-xl bg-[#DF711B]/25 text-[#DF711B] flex items-center justify-center font-bold">
+                    <CreditCard className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
+                      Accounts Office Desk
+                    </span>
+                    <h3 className="font-cinzel text-lg font-extrabold text-white">
+                      Fee & Billing Inquiries
+                    </h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
-                    Accounts Office Desk
-                  </span>
-                  <h3 className="font-cinzel text-lg font-extrabold text-[#181C20]">
-                    Fee & Billing Inquiries
-                  </h3>
-                </div>
+                <p className="text-xs text-slate-300 leading-relaxed pt-1 font-sans">
+                  Facing payment gateway issues or need duplicate fee receipts / tax exemption certificates? Contact the accounts desk.
+                </p>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed pt-1">
-                Facing payment gateway issues or need duplicate fee receipts / tax exemption certificates? Contact the accounts desk.
-              </p>
+
+              <div className="space-y-2.5 text-xs">
+                <a
+                  href="tel:02525272370"
+                  className="flex items-center justify-between p-3 bg-white/10 hover:bg-white/15 border border-white/15 rounded-xl text-white transition-all"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <PhoneCall className="w-4 h-4 text-[#DF711B]" />
+                    <div>
+                      <span className="text-[10px] text-slate-300 block font-mono">Accounts Line</span>
+                      <span className="font-bold text-white">02525-272370 / 272371</span>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-semibold text-amber-300">Call Desk</span>
+                </a>
+
+                <a
+                  href="tel:9322054713"
+                  className="flex items-center justify-between p-3 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 rounded-xl text-white transition-all"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <PhoneCall className="w-4 h-4 text-emerald-400" />
+                    <div>
+                      <span className="text-[10px] uppercase font-mono font-bold block text-emerald-300">Helpline Mobile</span>
+                      <span className="font-bold text-white">+91 9322054713</span>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-bold text-emerald-300">Connect</span>
+                </a>
+
+                <a
+                  href="mailto:cvtarapur@chinmayamission.com?subject=Fee%20Structure%20Query%202026-27"
+                  className="flex items-center justify-between p-3 bg-white/10 hover:bg-white/15 border border-white/15 rounded-xl text-white transition-all"
+                >
+                  <div className="flex items-center gap-2.5 overflow-hidden">
+                    <Mail className="w-4 h-4 text-[#DF711B] shrink-0" />
+                    <div className="truncate">
+                      <span className="text-[10px] text-slate-300 block font-mono">Official Email</span>
+                      <span className="font-bold truncate block text-white">cvtarapur@chinmayamission.com</span>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-semibold text-amber-300 shrink-0">Email</span>
+                </a>
+              </div>
+
+              <div className="p-3.5 bg-white/10 border border-white/15 rounded-xl text-xs space-y-1 text-slate-200">
+                <span className="font-bold text-amber-200 block text-xs">Fee Counter Hours:</span>
+                <p className="text-[11px] text-slate-300">Monday to Friday: 9:00 AM – 1:00 PM</p>
+                <p className="text-[11px] text-slate-300">Saturday: 9:00 AM – 12:00 Noon</p>
+              </div>
             </div>
 
-            <div className="space-y-2.5 text-xs">
-              <a
-                href="tel:02525272370"
-                className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all"
-              >
-                <div className="flex items-center gap-2.5">
-                  <PhoneCall className="w-4 h-4 text-[#DF711B]" />
-                  <div>
-                    <span className="text-[10px] text-slate-400 block font-mono">Accounts Line</span>
-                    <span className="font-bold">02525-272370 / 272371</span>
-                  </div>
-                </div>
-                <span className="text-[11px] font-semibold text-[#DF711B]">Call Desk</span>
-              </a>
-
-              <a
-                href="tel:9322054713"
-                className="flex items-center justify-between p-3 bg-[#0A5C36]/10 hover:bg-[#0A5C36]/20 border border-[#0A5C36]/20 rounded-xl text-[#0A5C36] transition-all"
-              >
-                <div className="flex items-center gap-2.5">
-                  <PhoneCall className="w-4 h-4 text-[#0A5C36]" />
-                  <div>
-                    <span className="text-[10px] uppercase font-mono font-bold block text-[#0A5C36]/80">Helpline Mobile</span>
-                    <span className="font-bold">+91 9322054713</span>
-                  </div>
-                </div>
-                <span className="text-[11px] font-bold text-[#0A5C36]">Connect</span>
-              </a>
-
-              <a
-                href="mailto:cvtarapur@chinmayamission.com?subject=Fee%20Structure%20Query%202026-27"
-                className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all"
-              >
-                <div className="flex items-center gap-2.5 overflow-hidden">
-                  <Mail className="w-4 h-4 text-[#DF711B] shrink-0" />
-                  <div className="truncate">
-                    <span className="text-[10px] text-slate-400 block font-mono">Official Email</span>
-                    <span className="font-bold truncate block">cvtarapur@chinmayamission.com</span>
-                  </div>
-                </div>
-                <span className="text-[11px] font-semibold text-[#DF711B] shrink-0">Email</span>
-              </a>
-            </div>
-
-            <div className="p-3 bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl text-xs space-y-1 text-slate-600">
-              <span className="font-bold text-slate-800 block">Fee Counter Hours:</span>
-              <p className="text-[11px]">Monday to Friday: 9:00 AM – 1:00 PM</p>
-              <p className="text-[11px]">Saturday: 9:00 AM – 12:00 Noon</p>
-            </div>
-
-            <div className="pt-2 border-t border-[#E7E2D8]">
+            <div className="pt-3 border-t border-white/15">
               <Link
-                to="/downloads/admissions"
-                className="w-full py-2.5 bg-[#DF711B] hover:bg-[#C8652D] text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 text-center"
+                to="/admissions/guidelines"
+                className="w-full py-2.5 bg-[#DF711B] hover:bg-[#c96213] text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-center"
               >
-                <span>Proceed to Admission Registration</span>
+                <span>Proceed to Admission Guidelines</span>
                 <span>→</span>
               </Link>
             </div>

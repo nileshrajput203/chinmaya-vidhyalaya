@@ -9,11 +9,9 @@ import {
 } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// @ts-ignore
-import { SplitText } from "gsap/SplitText";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
+  gsap.registerPlugin(ScrollTrigger);
 }
 
 /* Inline stand-in for @gsap/react's useGSAP. Mirrors its default
@@ -84,8 +82,6 @@ export type JourneyItem = {
   tag?: string;
 };
 
-type SplitTextInstance = any;
-
 export type TimelineProps = {
   title?: string;
   periodLabel?: string;
@@ -95,10 +91,7 @@ export type TimelineProps = {
   backgroundColor?: string;
   imageUrl?: string;
   imageAlt?: string;
-  /** Reveal animation duration, in seconds. */
   duration?: number;
-  /** Fallback reveal duration when `duration` is omitted, in seconds. */
-  scrollDuration?: number;
   topData?: JourneyItem[];
   bottomData?: JourneyItem[];
 };
@@ -182,15 +175,13 @@ const defaultBottomJourneyData: JourneyItem[] = [
 
 export default function Timeline({
   title = "Product Storyline",
-  periodLabel = "2020-2026",
-  textColor = "var(--color-foreground, #000000)",
-  mutedTextColor = "var(--color-muted-foreground, #3f3f46)",
+  periodLabel = "2020 — 2026",
+  textColor = "var(--color-foreground, #0f172a)",
+  mutedTextColor = "var(--color-muted-foreground, #64748b)",
   activeColor = "#ff5f00",
   backgroundColor = "var(--color-background, #ffffff)",
-  imageUrl = "https://cdn.21st.dev/assets/mirror/b0/b0c41784074f76ac5fb6b447da87780c901135841317a096241371f24bc13ddd.jpg",
-  imageAlt = "Modern office workspace",
-  duration,
-  scrollDuration = 1.2,
+  imageUrl = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+  imageAlt = "School Historic Campus",
   topData,
   bottomData,
 }: TimelineProps) {
@@ -210,9 +201,9 @@ export default function Timeline({
 
   const sectionRef = useRef<HTMLElement>(null);
   const wholeSliderRef = useRef<HTMLDivElement>(null);
+  const lineContainerRef = useRef<HTMLDivElement>(null);
   const reducedMotion = usePrefersReducedMotion();
-  const animationDuration = duration ?? scrollDuration;
-  const normalizedDuration = Math.max(0.2, animationDuration);
+
   const sectionStyle: CSSProperties = {
     color: textColor,
     backgroundColor,
@@ -226,183 +217,142 @@ export default function Timeline({
 
   useGSAP(() => {
     const section = sectionRef.current;
+    const wholeSlider = wholeSliderRef.current;
+    const lineContainer = lineContainerRef.current;
 
-    if (!section) return;
+    if (!section || !wholeSlider || !lineContainer) return;
 
     const isMobile = window.innerWidth < 600;
-    const slidePercent = isMobile ? -57 : -65;
-    const lineWidth = isMobile ? "65%" : "98%";
-    const lineStart = isMobile ? "top 30%" : "top 25%";
-    const slideEnd = isMobile ? "82% 50%" : "92% bottom";
-    const lineEnd = isMobile ? "80% 50%" : "92% bottom";
+    const slidePercent = isMobile ? -66 : -72;
+    const totalDuration = 100;
+    // The line finishes drawing at 82% of total scrub — giving 18% "dwell" time
+    // where everything stays pinned and visible before unpinning.
+    const lineTravelDuration = 82;
 
-    const tl = gsap.timeline({
+    // 1. Reduced Motion handling
+    if (reducedMotion) {
+      gsap.set(".journey-line", { width: "98%" });
+      allJourneyItems.forEach((item) => {
+        gsap.set(`.jl-${item.id}`, { scaleY: 1 });
+        gsap.set(`.jd-${item.id}`, { scale: 1 });
+        gsap.set(`.title-${item.id}`, { opacity: 1, y: 0 });
+        gsap.set(`.description-${item.id}`, { opacity: 1, y: 0 });
+      });
+      return;
+    }
+
+    // 2. Strict initial setup: hide all stems, dots, and text
+    topJourneyData.forEach((item) => {
+      gsap.set(`.jl-${item.id}`, { scaleY: 0, transformOrigin: "bottom center" });
+      gsap.set(`.jd-${item.id}`, { scale: 0, transformOrigin: "center center" });
+      gsap.set(`.title-${item.id}`, { opacity: 0, y: 18 });
+      gsap.set(`.description-${item.id}`, { opacity: 0, y: 18 });
+    });
+
+    bottomJourneyData.forEach((item) => {
+      gsap.set(`.jl-${item.id}`, { scaleY: 0, transformOrigin: "top center" });
+      gsap.set(`.jd-${item.id}`, { scale: 0, transformOrigin: "center center" });
+      gsap.set(`.title-${item.id}`, { opacity: 0, y: -18 });
+      gsap.set(`.description-${item.id}`, { opacity: 0, y: -18 });
+    });
+
+    gsap.set(".journey-line", { width: "0%" });
+
+    // 3. Single synchronized Master GSAP Timeline
+    const masterTl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: slideEnd,
-        scrub: true,
+        end: isMobile ? "85% bottom" : "90% bottom",
+        scrub: 1,
       },
       defaults: {
         ease: "none",
       },
     });
 
-    tl.fromTo(
-      wholeSliderRef.current,
+    // A. Track translates sideways horizontally
+    masterTl.fromTo(
+      wholeSlider,
       { xPercent: 0 },
-      { xPercent: slidePercent },
+      { xPercent: slidePercent, duration: totalDuration, ease: "none" },
+      0
     );
 
-    if (reducedMotion) {
-      gsap.set(".journey-line", { width: lineWidth });
-      return;
-    }
+    // B. Horizontal orange line draws from left to right
+    masterTl.fromTo(
+      ".journey-line",
+      { width: "0%" },
+      { width: "98%", duration: lineTravelDuration, ease: "none" },
+      0
+    );
 
-    gsap.to(".journey-line", {
-      width: lineWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: lineStart,
-        end: lineEnd,
-        scrub: true,
-      },
-    });
-  }, { dependencies: [reducedMotion], scope: sectionRef });
+    // C. Calculate ACCURATE milestone positions from layout geometry.
+    //    The track consists of: [image 26vw] [gap 5vw] [lineContainer fills rest].
+    //    Top row: [title column 18vw] then items at gap-x-[26vw] with w-[26vw] each.
+    //    Bottom row: [period column 18vw] then ml-[13vw] then items at gap-x-[26vw].
+    //    Each stem is at the left edge of its item div.
+    //    We compute the ratio of each stem's X position within the lineContainer width.
+    const topCount = topJourneyData.length;
+    const bottomCount = bottomJourneyData.length;
 
-  useGSAP(() => {
-    const section = sectionRef.current;
+    // Approximate the lineContainer total content width in vw units:
+    // Top row: 18 (title) + topCount * 26 (item widths) + (topCount - 1) * 26 (gaps) = 18 + topCount*52 - 26
+    // But items are absolutely positioned within the flex, so the stem left edge of item i is at:
+    //   topStemX(i) = 18 + i * (26 + 26)   [title width + i * (item width + gap)]
+    // For bottom row, stems start further right:
+    //   bottomStemX(i) = 18 + 13 + i * (26 + 26)   [title + ml offset + i * (item width + gap)]
+    // The total visual width of the lineContainer track is roughly:
+    const topLastStem = 18 + (topCount - 1) * 52;
+    const bottomLastStem = 18 + 13 + (bottomCount - 1) * 52;
+    const trackExtent = Math.max(topLastStem, bottomLastStem) + 26; // Add one more item width
 
-    if (!section) return;
+    // D. For each milestone, compute its arrival ratio and schedule animations
+    allJourneyItems.forEach((item) => {
+      const isTop = topJourneyData.some((t) => t.id === item.id);
+      let stemX: number;
 
-    const items = allJourneyItems;
-
-    if (reducedMotion) {
-      items.forEach((item) => {
-        gsap.set(`.jl-${item.id}`, { scaleY: 1 });
-        gsap.set(`.jd-${item.id}`, { scale: 1 });
-        gsap.set(`.title-${item.id}`, { opacity: 1, clearProps: "transform" });
-        gsap.set(`.description-${item.id}`, {
-          opacity: 1,
-          clearProps: "transform",
-        });
-      });
-      return;
-    }
-
-    items.forEach((item) => {
-      gsap.set(`.jl-${item.id}`, {
-        scaleY: 0,
-        transformOrigin: "bottom bottom",
-      });
-      gsap.set(`.jd-${item.id}`, { scale: 0 });
-      gsap.set(`.title-${item.id}`, { opacity: 1 });
-      gsap.set(`.description-${item.id}`, { opacity: 1 });
-    });
-
-    const titleSplits: Partial<Record<string, SplitTextInstance>> = {};
-    const descriptionSplits: Partial<Record<string, SplitTextInstance>> = {};
-
-    items.forEach((item) => {
-      if (typeof SplitText === "function") {
-        try {
-          titleSplits[item.id] = new SplitText(`.title-${item.id}`, {
-            type: "chars, words, lines",
-            mask: "lines",
-          });
-
-          descriptionSplits[item.id] = new SplitText(`.description-${item.id}`, {
-            type: "chars, words, lines",
-            mask: "lines",
-          });
-        } catch {
-          // Fallback if SplitText not licensed
-        }
-      }
-    });
-
-    const createItemTimeline = (
-      item: JourneyItem,
-      startPos: number,
-      endPos: number,
-    ) => {
-      const lineSelector = `.jl-${item.id}`;
-      const dotSelector = `.jd-${item.id}`;
-      const titleLines = titleSplits[item.id]?.lines || `.title-${item.id}`;
-      const descriptionLines = descriptionSplits[item.id]?.lines || `.description-${item.id}`;
-
-      const isTop = topJourneyData.some((topItem) => topItem.id === item.id);
-
-      if (!isTop) {
-        gsap.set(lineSelector, { transformOrigin: "top top" });
+      if (isTop) {
+        const idx = topJourneyData.findIndex((t) => t.id === item.id);
+        stemX = 18 + idx * 52;
+      } else {
+        const idx = bottomJourneyData.findIndex((b) => b.id === item.id);
+        stemX = 18 + 13 + idx * 52;
       }
 
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: `${startPos}% 30%`,
-          end: `${endPos}% 50%`,
-          scrub: true,
-        },
-      });
+      // Ratio along the track where this stem sits (0 → 1)
+      const ratio = Math.max(0.05, Math.min(0.95, stemX / trackExtent));
 
-      timeline
-        .to(lineSelector, {
-          scaleY: 1,
-          duration: normalizedDuration * 0.4,
-        })
-        .to(
-          dotSelector,
-          {
-            scale: 1,
-            duration: normalizedDuration * 0.4,
-          },
-          "<",
-        )
-        .fromTo(
-          titleLines,
-          { y: 60, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            delay: -0.8 * normalizedDuration,
-            duration: normalizedDuration,
-            stagger: 0.02,
-            ease: "power2.out",
-          },
-        )
-        .fromTo(
-          descriptionLines,
-          { y: 60, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: normalizedDuration,
-            stagger: 0.02,
-            ease: "power2.out",
-          },
-          "<",
-        );
+      // The exact playhead time when the horizontal line tip reaches this stem:
+      const arrivalTime = ratio * lineTravelDuration;
 
-      return timeline;
-    };
+      // 1. Stem grows from the horizontal line
+      masterTl.to(
+        `.jl-${item.id}`,
+        { scaleY: 1, duration: 3, ease: "power2.out" },
+        arrivalTime
+      );
 
-    const count = items.length;
-    const positions: ReadonlyArray<readonly [number, number]> =
-      window.innerWidth < 600
-        ? items.map((_, i) => [
-            Math.round(20 + (i * 55) / Math.max(1, count - 1)),
-            Math.round(30 + (i * 55) / Math.max(1, count - 1)),
-          ] as const)
-        : items.map((_, i) => [
-            Math.round(6 + (i * 60) / Math.max(1, count - 1)),
-            Math.round(26 + (i * 60) / Math.max(1, count - 1)),
-          ] as const);
+      // 2. Dot pops at the tip
+      masterTl.to(
+        `.jd-${item.id}`,
+        { scale: 1, duration: 2.5, ease: "back.out(2)" },
+        arrivalTime + 1
+      );
 
-    items.forEach((item, index) => {
-      const pos = positions[index] || [10 + index * 10, 25 + index * 10];
-      createItemTimeline(item, pos[0], pos[1]);
+      // 3. Title fades in
+      masterTl.to(
+        `.title-${item.id}`,
+        { opacity: 1, y: 0, duration: 3, ease: "power2.out" },
+        arrivalTime + 1.4
+      );
+
+      // 4. Description fades in
+      masterTl.to(
+        `.description-${item.id}`,
+        { opacity: 1, y: 0, duration: 3, ease: "power2.out" },
+        arrivalTime + 2
+      );
     });
 
     const handleResize = () => {
@@ -411,27 +361,30 @@ export default function Timeline({
 
     window.addEventListener("resize", handleResize);
 
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+
     return () => {
-      Object.values(titleSplits).forEach((split) => split?.revert?.());
-      Object.values(descriptionSplits).forEach((split) => split?.revert?.());
+      clearTimeout(refreshTimer);
       window.removeEventListener("resize", handleResize);
     };
-  }, { dependencies: [normalizedDuration, reducedMotion, topJourneyData, bottomJourneyData], scope: sectionRef });
+  }, { dependencies: [reducedMotion, topJourneyData, bottomJourneyData], scope: sectionRef });
 
   return (
     <section
       ref={sectionRef}
       id="journey"
-      className="h-[200vw] max-[600px]:h-[400vh] w-full relative"
+      className="h-[280vw] max-[600px]:h-[450vh] w-full relative"
       style={sectionStyle}
-      data-lenis-prevent="true"
     >
-      <div className="h-screen w-screen sticky top-[0%] pt-[10%] overflow-hidden max-[600px]:top-[5%]">
+      <div className="h-screen w-full sticky top-0 overflow-hidden flex items-center max-[600px]:items-start max-[600px]:pt-[8vh]">
         <div
           ref={wholeSliderRef}
-          className="mr-[2vw] flex h-[30vw] w-[240vw] items-center gap-[5vw] px-[5vw] max-[600px]:h-[80vh] max-[600px]:w-[800vw] max-[600px]:px-[7vw]"
+          className="mr-[2vw] flex h-[34vw] w-[260vw] items-center gap-[5vw] px-[5vw] max-[600px]:h-[80vh] max-[600px]:w-[850vw] max-[600px]:px-[7vw]"
         >
-          <div className="h-full w-[30vw] overflow-hidden rounded-[1vw] max-[600px]:h-[65vw] max-[600px]:w-[85vw] max-[600px]:rounded-[5vw] shadow-2xl border border-white/20 shrink-0">
+          {/* Leading Campus Image */}
+          <div className="h-full w-[26vw] overflow-hidden rounded-[1.2vw] max-[600px]:h-[60vw] max-[600px]:w-[80vw] max-[600px]:rounded-[4vw] shadow-md border border-slate-200/60 shrink-0">
             <img
               src={imageUrl}
               alt={imageAlt}
@@ -440,70 +393,63 @@ export default function Timeline({
             />
           </div>
 
-          <div className="relative h-full w-full">
-            <div className="w-full absolute left-0 top-[49%] -translate-y-1/2 flex items-center h-fit pointer-events-none">
+          {/* Timeline Track Container */}
+          <div ref={lineContainerRef} className="relative h-full w-full">
+            {/* The Horizontal Line with Traveling Tip Dot */}
+            <div className="w-full absolute left-0 top-[50%] -translate-y-1/2 flex items-center h-fit pointer-events-none z-10">
               <div
-                className="h-[.8vw] max-[600px]:h-[2vw] max-[600px]:w-[2vw] w-[.8vw] rounded-full"
+                className="size-[0.85vw] max-[600px]:size-[2.2vw] rounded-full shrink-0"
                 style={activeStyle}
-              ></div>
+              />
               <div
-                className="h-[2px] w-[0%] rounded-full journey-line"
+                className="h-[2px] w-[0%] rounded-full journey-line shrink-0"
                 style={activeStyle}
-              ></div>
+              />
               <div
-                className="h-[.8vw] max-[600px]:h-[2vw] max-[600px]:w-[2vw] w-[.8vw] rounded-full"
+                className="size-[0.85vw] max-[600px]:size-[2.2vw] rounded-full shrink-0 -ml-[0.425vw] max-[600px]:-ml-[1.1vw]"
                 style={activeStyle}
-              ></div>
+              />
             </div>
 
-            <div className="flex h-1/2 w-full items-center justify-start gap-[.5vw]">
-              <div className="h-full w-[20%] pt-[2vw] max-[600px]:h-fit max-[600px]:pt-[5vw] shrink-0">
-                <h2 className="w-[85%] font-display font-black text-[2.5vw] leading-[1] max-[600px]:text-[7vw] uppercase tracking-tight">
+            {/* TOP ROW MILESTONES */}
+            <div className="flex h-1/2 w-full items-end justify-start">
+              <div className="h-full w-[18vw] max-[600px]:w-[50vw] flex flex-col justify-end pb-[4.3vw] shrink-0">
+                <h2
+                  className="w-[85%] font-sans font-semibold text-[2.5vw] leading-[1.08] tracking-tight max-[600px]:text-[7vw]"
+                  style={{ color: textColor }}
+                >
                   {title}
                 </h2>
               </div>
 
-              <div className="w-full flex h-full gap-x-[15vw] max-[600px]:gap-x-[40vw]">
+              <div className="flex h-full gap-x-[26vw] max-[600px]:gap-x-[45vw]">
                 {topJourneyData.map((item) => (
                   <div
                     key={`top-${item.id}`}
-                    className="relative h-full w-[30vw] px-[3vw] max-[600px]:flex max-[600px]:w-[70vw] max-[600px]:flex-col max-[600px]:px-[7vw] shrink-0"
+                    className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-end pb-[1.8vw] max-[600px]:w-[70vw] max-[600px]:px-[6vw] shrink-0"
                   >
-                    <div className="w-full absolute left-0 bottom-0 top-0 h-full pointer-events-none">
+                    {/* Stem & Dot */}
+                    <div className="w-full absolute left-0 bottom-0 top-0 pointer-events-none">
                       <div
-                        className={`size-[1vw] max-[600px]:size-[2.5vw] -translate-x-1/2 relative aspect-square rounded-full jd-${item.id}`}
+                        className={`size-[0.9vw] max-[600px]:size-[2.5vw] -translate-x-1/2 absolute top-0 left-0 rounded-full jd-${item.id}`}
                         style={activeStyle}
-                      ></div>
+                      />
                       <div
-                        className={`h-[94%] w-[2px] origin-bottom rounded-full jl-${item.id}`}
+                        className={`w-[2px] absolute left-0 top-[0.45vw] max-[600px]:top-[1.25vw] bottom-0 -translate-x-1/2 origin-bottom jl-${item.id}`}
                         style={activeStyle}
-                      ></div>
+                      />
                     </div>
 
-                    <div className="mt-[-1vw] space-y-[0.75vw] max-[600px]:mt-[-2vw]">
-                      {item.image && (
-                        <div className="w-[9vw] h-[6vw] max-[600px]:w-[32vw] max-[600px]:h-[22vw] rounded-[0.8vw] max-[600px]:rounded-[2vw] overflow-hidden border border-[#E7E2D8] shadow-md bg-black/10 shrink-0 mb-[0.6vw]">
-                          <img
-                            src={item.image}
-                            alt={item.imageAlt || item.content}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-                      <div className="flex flex-wrap items-center gap-[0.5vw]">
-                        <h4
-                          className={`title-${item.id} font-display font-extrabold text-[2vw] leading-none max-[600px]:text-[5.5vw] uppercase tracking-tight`}
-                        >
-                          {item.year} {item.month}
-                        </h4>
-                        {item.tag && (
-                          <span className="text-[0.75vw] max-[600px]:text-[2.4vw] font-mono px-[0.5vw] py-[0.1vw] rounded bg-[#DF711B]/15 text-[#DF711B] font-bold">
-                            {item.tag}
-                          </span>
-                        )}
-                      </div>
+                    {/* Milestone Text */}
+                    <div className="space-y-[0.5vw] pb-[0.8vw] max-[600px]:space-y-[1.5vw]">
+                      <h4
+                        className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none max-[600px]:text-[5.5vw] tracking-tight uppercase`}
+                        style={{ color: textColor }}
+                      >
+                        {item.year} {item.month}
+                      </h4>
                       <p
-                        className={`description-${item.id} w-[95%] text-[1.1vw] leading-[1.3] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
+                        className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
                         style={mutedTextStyle}
                       >
                         {item.content}
@@ -514,57 +460,45 @@ export default function Timeline({
               </div>
             </div>
 
-            <div className="h-1/2 flex items-center justify-start w-full">
-              <div className="w-[34%] pt-[2vw] max-[600px]:pt-[5vw] max-[600px]:w-[30%] h-full shrink-0">
+            {/* BOTTOM ROW MILESTONES */}
+            <div className="flex h-1/2 w-full items-start justify-start">
+              <div className="h-full w-[18vw] max-[600px]:w-[50vw] pt-[4.3vw] shrink-0">
                 <p
-                  className="font-mono text-[1.4vw] leading-none max-[600px]:text-[3.8vw] tracking-wider uppercase font-bold"
+                  className="font-mono text-[1.3vw] leading-none max-[600px]:text-[3.8vw] tracking-wider font-medium"
                   style={mutedTextStyle}
                 >
                   {periodLabel}
                 </p>
               </div>
 
-              <div className="w-full flex h-full gap-x-[20vw] ml-[7vw] max-[600px]:gap-x-[40vw] max-[600px]:ml-[7vw]">
+              <div className="flex h-full gap-x-[26vw] ml-[13vw] max-[600px]:gap-x-[45vw] max-[600px]:ml-[22vw]">
                 {bottomJourneyData.map((item) => (
                   <div
                     key={`bottom-${item.id}`}
-                    className="relative h-full w-[25vw] px-[3vw] max-[600px]:w-[70vw] max-[600px]:px-[7vw] shrink-0"
+                    className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-start pt-[1.8vw] max-[600px]:w-[70vw] max-[600px]:px-[6vw] shrink-0"
                   >
-                    <div className="w-full absolute left-0 bottom-[-1%] h-full pointer-events-none">
+                    {/* Stem & Dot */}
+                    <div className="w-full absolute left-0 top-0 bottom-0 pointer-events-none">
                       <div
-                        className={`h-[94%] origin-top w-[2px] rounded-full max-[600px]:h-full jl-${item.id}`}
+                        className={`w-[2px] absolute left-0 top-0 bottom-[0.45vw] max-[600px]:bottom-[1.25vw] -translate-x-1/2 origin-top jl-${item.id}`}
                         style={activeStyle}
-                      ></div>
+                      />
                       <div
-                        className={`size-[1vw] max-[600px]:size-[2.5vw] -translate-x-1/2 relative w-auto aspect-square rounded-full jd-${item.id}`}
+                        className={`size-[0.9vw] max-[600px]:size-[2.5vw] -translate-x-1/2 absolute bottom-0 left-0 rounded-full jd-${item.id}`}
                         style={activeStyle}
-                      ></div>
+                      />
                     </div>
 
-                    <div className="flex h-full w-full flex-col justify-end space-y-[0.75vw]">
-                      {item.image && (
-                        <div className="w-[9vw] h-[6vw] max-[600px]:w-[32vw] max-[600px]:h-[22vw] rounded-[0.8vw] max-[600px]:rounded-[2vw] overflow-hidden border border-[#E7E2D8] shadow-md bg-black/10 shrink-0">
-                          <img
-                            src={item.image}
-                            alt={item.imageAlt || item.content}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-                      <div className="flex flex-wrap items-center gap-[0.5vw]">
-                        <h4
-                          className={`title-${item.id} font-display font-extrabold text-[2vw] leading-none max-[600px]:text-[5.5vw] uppercase tracking-tight`}
-                        >
-                          {item.year} {item.month}
-                        </h4>
-                        {item.tag && (
-                          <span className="text-[0.75vw] max-[600px]:text-[2.4vw] font-mono px-[0.5vw] py-[0.1vw] rounded bg-[#DF711B]/15 text-[#DF711B] font-bold">
-                            {item.tag}
-                          </span>
-                        )}
-                      </div>
+                    {/* Milestone Text */}
+                    <div className="space-y-[0.5vw] pt-[0.8vw] max-[600px]:space-y-[1.5vw]">
+                      <h4
+                        className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none max-[600px]:text-[5.5vw] tracking-tight uppercase`}
+                        style={{ color: textColor }}
+                      >
+                        {item.year} {item.month}
+                      </h4>
                       <p
-                        className={`description-${item.id} w-[95%] text-[1.1vw] leading-[1.3] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
+                        className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
                         style={mutedTextStyle}
                       >
                         {item.content}
