@@ -92,7 +92,7 @@ export const NewsListingPage: React.FC = () => {
   );
 
   return (
-    <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans">
+    <div className="bg-white text-[#181C20] pb-24 font-sans">
       <Breadcrumb items={[{ label: "Notice Board & Events" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -109,7 +109,7 @@ export const NewsListingPage: React.FC = () => {
                 placeholder="Search circulars or events..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none transition-colors"
+                className="w-full pl-9 pr-4 py-2 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none transition-colors"
               />
             </div>
 
@@ -173,7 +173,7 @@ export const NewsListingPage: React.FC = () => {
                             <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 ${
                               notice.isImportant 
                                 ? 'bg-[#FFF0E6] text-[#DF711B] border border-[#DF711B]/30' 
-                                : 'bg-[#F3EFE6] text-[#555555]'
+                                : 'bg-slate-100 text-slate-600 border border-slate-200'
                             }`}>
                               {notice.category}
                             </span>
@@ -262,7 +262,7 @@ export const NewsListingPage: React.FC = () => {
                           </p>
                         </div>
 
-                        <div className="pt-2 border-t border-[#F3EFE6] text-xs font-mono text-[#777777] flex items-center justify-between gap-2">
+                        <div className="pt-2 border-t border-slate-100 text-xs font-mono text-[#777777] flex items-center justify-between gap-2">
                           <span className="truncate">{ev.date}</span>
                           <a
                             href={(() => {

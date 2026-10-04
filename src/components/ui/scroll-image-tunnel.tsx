@@ -202,7 +202,7 @@ export function ScrollImageTunnel({
         style={{ height: `calc(${images.length} * ${stepHeight})` }}
         className="w-full relative"
       >
-        <section className="sticky top-16 h-[80vh] w-full overflow-hidden bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl shadow-inner">
+        <section className="sticky top-16 h-[80vh] w-full overflow-hidden bg-white border border-slate-200 rounded-3xl shadow-inner">
           {images.map((image, index) => (
             <TunnelFrame
               key={image.src}

@@ -101,9 +101,9 @@ export const SpiritualShowcase: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Every morning begins with the lighting of the lamp and Guru Stotram. Importantly, every academic year for Standard X and XII students commences and culminates with a solemn Guru Paduka Pooja, bestowing divine composure and clarity ahead of board examinations.
             </p>
-            <div className="border-t border-[#E7E2D8] pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ Morning Assemblies</span>
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ Std X & XII Blessings</span>
+            <div className="border-t border-slate-200 pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ Morning Assemblies</span>
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ Std X & XII Blessings</span>
             </div>
           </SpotlightCard>
 
@@ -120,9 +120,9 @@ export const SpiritualShowcase: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               On the third Saturday of every month, students, faculty, and devotees gather for an uplifting evening of soulful devotional singing, harmonium accompaniment, and rhythmic kirtans that elevate collective consciousness and celebrate Indian classical ragas.
             </p>
-            <div className="border-t border-[#E7E2D8] pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ 3rd Saturday Monthly</span>
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ Devotional Classical Music</span>
+            <div className="border-t border-slate-200 pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ 3rd Saturday Monthly</span>
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ Devotional Classical Music</span>
             </div>
           </SpotlightCard>
 
@@ -139,9 +139,9 @@ export const SpiritualShowcase: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Under the auspices of Central Chinmaya Mission Trust, students participate in rigorous Geeta chanting competitions. They master correct Sanskrit enunciation, rhythmic meter, and the philosophical wisdom encoded within the sacred verses of the Srimad Bhagavad Gita.
             </p>
-            <div className="border-t border-[#E7E2D8] pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ Sanskrit Metric Chanting</span>
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ Inter-School Trophy</span>
+            <div className="border-t border-slate-200 pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ Sanskrit Metric Chanting</span>
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ Inter-School Trophy</span>
             </div>
           </SpotlightCard>
 
@@ -158,9 +158,9 @@ export const SpiritualShowcase: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Revered Swamis, Swaminis, and Brahmacharis from CCMT visit the campus periodically to deliver engaging discourses tailored to young minds. Balvihar classes teach honesty, courage, and universal compassion through stories, discussions, and roleplay.
             </p>
-            <div className="border-t border-[#E7E2D8] pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ CCMT Sannyasi Satsangs</span>
-              <span className="bg-[#FAF8F5] px-2.5 py-1 rounded-md border border-[#E7E2D8]">✓ Moral Discernment</span>
+            <div className="border-t border-slate-200 pt-3 flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ CCMT Sannyasi Satsangs</span>
+              <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200">✓ Moral Discernment</span>
             </div>
           </SpotlightCard>
         </div>

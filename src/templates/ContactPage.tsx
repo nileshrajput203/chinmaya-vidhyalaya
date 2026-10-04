@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Send, CheckCircle2, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { Breadcrumb } from '../components/common/Breadcrumb';
-import { CONTACT_DETAILS } from '../data/contact';
-import { SCHOOL_IMAGES } from '../data/images';
+import { 
+  MapPin, Phone, Mail, CheckCircle2, 
+  Clock, ShieldCheck, ChevronRight
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { formService } from '../services/formService';
-import { ContactEnquiry } from '../types/forms';
 import { GoogleMapSection } from '../components/maps/GoogleMapSection';
 import { useToast } from '../context/ToastContext';
 
 export const ContactPage: React.FC = () => {
   const { showSuccess } = useToast();
-  const [formData, setFormData] = useState<ContactEnquiry>({
-    fullName: '',
+
+  const [formFields, setFormFields] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
-    subject: '',
     message: ''
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
-
   const [validationError, setValidationError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,313 +28,406 @@ export const ContactPage: React.FC = () => {
     setValidationError(null);
     setSubmitStatus(null);
 
-    // Strict validation
-    const nameRegex = /^[a-zA-Z\s.]+$/;
-    if (!nameRegex.test(formData.fullName.trim()) || formData.fullName.trim().length < 2) {
-      setValidationError('Please enter a valid full name containing only letters and spaces.');
+    const fullName = `${formFields.firstName.trim()} ${formFields.lastName.trim()}`.trim();
+    if (!fullName || fullName.length < 2) {
+      setValidationError('Please enter your first and last name.');
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email.trim())) {
+    if (!emailRegex.test(formFields.email.trim())) {
       setValidationError('Please enter a valid email address.');
       return;
     }
 
-    const cleanedPhone = formData.phone.replace(/[\s\-]/g, '');
+    const cleanedPhone = formFields.phone.replace(/[\s\-]/g, '');
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(cleanedPhone)) {
-      setValidationError('Please enter a valid 10-digit mobile number containing only numbers.');
+      setValidationError('Please enter a valid 10-digit mobile number.');
       return;
     }
 
     setIsSubmitting(true);
 
     const result = await formService.submitContact({
-      ...formData,
-      phone: cleanedPhone
+      fullName,
+      email: formFields.email.trim(),
+      phone: cleanedPhone,
+      subject: 'Prospect Parent / General Contact Enquiry',
+      message: formFields.message.trim() || 'Prospective student enquiry'
     });
 
     setIsSubmitting(false);
 
     if (result.success) {
       showSuccess(
-        'Message Sent Successfully!',
-        'Your message has been delivered to the school administration. We will get back to you shortly.'
+        'Enquiry Received!',
+        'Thank you for reaching out. Our admissions counselor will get in touch with you shortly.'
       );
       setSubmitStatus({
         success: true,
-        message: result.message || 'Your message has been sent successfully to the school administration. We will get back to you shortly.',
+        message: 'Thank you! Your enquiry has been received. Our counselor will contact you shortly.'
       });
-      setFormData({
-        fullName: '',
+      setFormFields({
+        firstName: '',
+        lastName: '',
         email: '',
         phone: '',
-        subject: '',
         message: ''
       });
     } else {
       setSubmitStatus({
         success: false,
-        message: result.error || result.message || 'Failed to send message. Please verify your details and try again.',
+        message: result.error || 'Unable to submit enquiry right now. Please call our admissions desk directly.'
       });
     }
   };
 
   return (
-    <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
-      <Breadcrumb items={[{ label: "Contact Us" }]} />
+    <div className="bg-white text-[#181C20] pb-20 font-sans select-none">
+      
+      {/* ------------------------------------------------------------------
+          SECTION 1: PANORAMIC HERO BANNER WITH BREADCRUMB & FLOATING OVERLAP
+          ------------------------------------------------------------------ */}
+      <div className="relative w-full bg-white">
+        
+        {/* Panoramic Banner Background */}
+        <div className="relative w-full h-[260px] sm:h-[300px] lg:h-[340px] overflow-hidden bg-slate-900">
+          <img
+            src="/images/about-banner.jpeg"
+            alt="Chinmaya Vidyalaya Students and Campus Life"
+            className="w-full h-full object-cover object-center opacity-85 filter contrast-105"
+          />
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left: Contact Info & Address Card */}
-        <motion.div
-          initial={{ opacity: 0, y: -28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.15 }}
-          transition={{ duration: 0.55, ease: 'easeOut' }}
-          className="lg:col-span-6 space-y-8"
-        >
-          <div className="bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl space-y-6 shadow-card">
-            <h2 className="font-cinzel font-bold text-[#181C20] text-2xl border-b border-[#E7E2D8] pb-3 uppercase tracking-wider">
-              Campus Details & Location
-            </h2>
-
-            <div className="space-y-5 text-xs text-[#181C20]">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block font-bold text-[#181C20]">Postal Address</strong>
-                  <span className="text-[#4A5568] leading-relaxed">{CONTACT_DETAILS.address}</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block font-bold text-[#181C20]">Telephone Desk</strong>
-                  {CONTACT_DETAILS.phones.map((p, i) => (
-                    <div key={i} className="text-[#4A5568]">
-                      {p.label}: <a href={`tel:${p.number}`} className="font-semibold text-[#181C20] hover:text-[#DF711B] font-mono">{p.number}</a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#DF711B] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block font-bold text-[#181C20]">Official Email Desk</strong>
-                  {CONTACT_DETAILS.emails.map((e, i) => (
-                    <div key={i} className="text-[#4A5568]">
-                      {e.label}: <a href={`mailto:${e.email}`} className="font-semibold text-[#181C20] hover:text-[#DF711B] font-mono">{e.email}</a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Official CBSE Badge */}
-            <div className="bg-[#F7F3EB] p-4 rounded-2xl border border-[#E7E2D8] flex items-center justify-between text-xs font-mono">
-              <div>
-                <span className="text-[#4A5568]">CBSE Affiliation No:</span>
-                <strong className="block text-[#181C20] font-bold">{CONTACT_DETAILS.affiliationNo}</strong>
-              </div>
-              <div className="text-right">
-                <span className="text-[#4A5568]">U-DISE Code:</span>
-                <strong className="block text-[#181C20] font-bold">{CONTACT_DETAILS.udiseNo}</strong>
-              </div>
-            </div>
-
-            {/* Parent Meeting & Campus Visit Policy Notice */}
-            <div className="bg-amber-50/60 border border-amber-200/80 p-4 rounded-2xl space-y-2 text-xs">
-              <span className="font-bold font-mono text-[#DF711B] uppercase tracking-wider block text-[11px]">
-                Parent Interaction Guidelines
-              </span>
-              <ul className="space-y-1.5 text-slate-700 text-[11px] leading-relaxed">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#DF711B] font-bold">•</span>
-                  <span><strong>New Parents:</strong> School visits and guided campus tours are available exclusively for new prospective parents looking to explore admissions.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#DF711B] font-bold">•</span>
-                  <span><strong>Existing Students' Parents:</strong> Must submit a formal written letter or application to the school office in advance to request meetings with educators or the Principal.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Integrated Campus Visual */}
-          <div className="border border-[#E7E2D8] bg-white p-2 rounded-3xl shadow-card overflow-hidden">
-            <img
-              src={SCHOOL_IMAGES.CAMPUS_HERO}
-              alt="Chinmaya Vidyalaya Tarapur Main Building"
-              className="w-full h-64 object-cover rounded-2xl"
-            />
-            <div className="p-3 text-xs text-[#4A5568] text-center font-medium font-sans">
-              Vidyalaya Academic & Administration Building | Vidyanagar, Boisar 401501
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right: Interactive Contact Form with Direct Email Redirection */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.15 }}
-          transition={{ duration: 0.55, ease: 'easeOut', delay: 0.08 }}
-          className="lg:col-span-6 bg-white border border-[#E7E2D8] p-8 md:p-10 rounded-3xl shadow-card space-y-6"
-        >
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <Sparkles className="w-4 h-4 text-[#DF711B]" />
-              <span className="text-[11px] font-mono font-bold text-[#DF711B] uppercase tracking-wider">
-                Direct Portal Submission
+          {/* Banner Left Content: Breadcrumb & Big "Contact Us" Title */}
+          <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+            
+            {/* Breadcrumb line */}
+            <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-white/80 mb-3">
+              <Link to="/" className="hover:text-[var(--color-primary)] transition-colors">
+                Home
+              </Link>
+              <span className="text-white/40">/</span>
+              <span style={{ color: 'var(--color-primary)' }} className="font-bold">
+                Contact Us
               </span>
             </div>
-            <h2 className="font-cinzel font-bold text-[#181C20] text-2xl md:text-3xl mb-1 uppercase tracking-tight">
-              Send an Enquiry
-            </h2>
-            <p className="text-xs text-[#4A5568] font-light">
-              Submit your inquiry below. Our administrative team will review your message and reach out promptly.
+
+            {/* Giant Title with Golden Accent Underline */}
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-condensed uppercase tracking-tight text-white m-0">
+                Contact Us
+              </h1>
+              {/* Amber/Gold underline bar matching reference design */}
+              <div className="w-20 h-1.5 bg-[#FFB740] mt-2 rounded-none" />
+            </div>
+          </div>
+        </div>
+
+        {/* ------------------------------------------------------------------
+            MAIN CONTAINER: CONTENT & FLOATING "GET IN TOUCH" FORM
+            ------------------------------------------------------------------ */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            {/* ==============================================================
+                LEFT COLUMN: VALUE PROPOSITION & DIRECT CALL/EMAIL CARDS
+                ============================================================== */}
+            <div className="lg:col-span-7 pt-10 sm:pt-14 space-y-8">
+              
+              {/* Heading matching reference */}
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-[#181C20] tracking-tight leading-tight">
+                  Let’s Help Your <span style={{ color: 'var(--color-primary)' }}>Child</span> Find The Right Path
+                </h2>
+                <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                  Our academic advisors and admissions officers are here to walk you through curriculum, campus life, and enrollment at your pace.
+                </p>
+              </div>
+
+              {/* Two Quick Action Cards side-by-side */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                {/* Give Us a Call Card */}
+                <div className="bg-white border border-slate-200 p-6 rounded-none shadow-xs flex flex-col items-center text-center space-y-3 transition-all hover:border-[var(--color-primary)] hover:shadow-md">
+                  <div className="w-14 h-14 rounded-full bg-[#FFB740]/20 text-[#DF711B] flex items-center justify-center shadow-xs">
+                    <Phone className="w-6 h-6 fill-[#FFB740] text-[#FFB740]" />
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-bold text-base text-[#181C20]">
+                      Give Us a Call
+                    </h3>
+                    <p className="font-mono text-xs text-slate-500 mt-0.5">
+                      Mon – Sat, 7:30 AM – 3:30 PM
+                    </p>
+                  </div>
+                  <div className="space-y-1 font-mono text-xs font-bold text-[#181C20] pt-1">
+                    <div>
+                      <a href="tel:+919405661995" className="hover:text-[var(--color-primary)] transition-colors">
+                        +91 94056 61995
+                      </a>
+                    </div>
+                    <div>
+                      <a href="tel:02525272044" className="hover:text-[var(--color-primary)] transition-colors text-slate-600">
+                        02525-272044 / 270724
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Write to Us Card */}
+                <div className="bg-white border border-slate-200 p-6 rounded-none shadow-xs flex flex-col items-center text-center space-y-3 transition-all hover:border-[var(--color-primary)] hover:shadow-md">
+                  <div className="w-14 h-14 rounded-full bg-[#FFB740]/20 text-[#DF711B] flex items-center justify-center shadow-xs">
+                    <Mail className="w-6 h-6 fill-[#FFB740] text-[#FFB740]" />
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-bold text-base text-[#181C20]">
+                      Write to Us
+                    </h3>
+                    <p className="font-mono text-xs text-slate-500 mt-0.5">
+                      Official administrative desk
+                    </p>
+                  </div>
+                  <div className="space-y-1 font-mono text-xs font-bold text-[#181C20] pt-1">
+                    <div>
+                      <a href="mailto:cvtarapur@gmail.com" className="hover:text-[var(--color-primary)] underline">
+                        cvtarapur@gmail.com
+                      </a>
+                    </div>
+                    <div>
+                      <a href="mailto:principal@chinmayatarapur.edu.in" className="hover:text-[var(--color-primary)] underline text-slate-600">
+                        principal@chinmayatarapur.edu.in
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Bottom Helpful Directives */}
+              <div className="pt-2 border-t border-slate-200 space-y-2 text-xs text-slate-600 font-sans leading-relaxed">
+                <p>
+                  To apply for teaching faculty or administrative positions, please submit your CV to:{' '}
+                  <a
+                    href="mailto:careers@chinmayatarapur.edu.in"
+                    style={{ color: 'var(--color-primary)' }}
+                    className="font-bold underline"
+                  >
+                    careers@chinmayatarapur.edu.in
+                  </a>
+                </p>
+                <p>
+                  To download the institutional prospectus and fee schedule,{' '}
+                  <Link
+                    to="/admissions/fee-structure"
+                    style={{ color: 'var(--color-primary)' }}
+                    className="font-bold underline"
+                  >
+                    click here
+                  </Link>
+                  .
+                </p>
+              </div>
+
+            </div>
+
+            {/* ==============================================================
+                RIGHT COLUMN: FLOATING "GET IN TOUCH" FORM CARD (Overlaps Banner!)
+                ============================================================== */}
+            <div className="lg:col-span-5 relative z-20 -mt-8 sm:-mt-16 lg:-mt-24">
+              <div className="bg-white border border-slate-200 p-6 sm:p-8 rounded-none shadow-2xl space-y-5">
+                
+                {/* Form Header */}
+                <div>
+                  <h3
+                    style={{ color: 'var(--color-primary)' }}
+                    className="font-sans font-extrabold text-2xl sm:text-3xl tracking-tight leading-none"
+                  >
+                    Get In Touch
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-slate-600 font-normal mt-1 leading-snug">
+                    Fill in the form below and our counselor will get in touch with you.
+                  </p>
+                </div>
+
+                {/* Validation Banner */}
+                {validationError && (
+                  <div className="p-3 bg-red-50 border border-red-200 text-red-800 text-xs font-sans">
+                    {validationError}
+                  </div>
+                )}
+
+                {/* Success Banner */}
+                {submitStatus && (
+                  <div className={`p-4 border text-xs font-sans space-y-1 ${
+                    submitStatus.success ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-red-50 border-red-300 text-red-900'
+                  }`}>
+                    <div className="flex items-center gap-2 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      <span>{submitStatus.success ? 'Enquiry Submitted' : 'Error'}</span>
+                    </div>
+                    <p className="text-[11px] leading-relaxed">{submitStatus.message}</p>
+                  </div>
+                )}
+
+                {/* The Contact Form */}
+                <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
+                  
+                  {/* First Name & Last Name (2 columns) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <input
+                        type="text"
+                        required
+                        placeholder="First Name*"
+                        value={formFields.firstName}
+                        onChange={(e) => setFormFields({ ...formFields, firstName: e.target.value })}
+                        className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Last Name*"
+                        value={formFields.lastName}
+                        onChange={(e) => setFormFields({ ...formFields, lastName: e.target.value })}
+                        className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Email ID */}
+                  <div>
+                    <input
+                      type="email"
+                      required
+                      placeholder="Email ID*"
+                      value={formFields.email}
+                      onChange={(e) => setFormFields({ ...formFields, email: e.target.value })}
+                      className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400"
+                    />
+                  </div>
+
+                  {/* Mobile Number */}
+                  <div>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="Mobile*"
+                      value={formFields.phone}
+                      onChange={(e) => setFormFields({ ...formFields, phone: e.target.value })}
+                      className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400"
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <textarea
+                      rows={3}
+                      placeholder="Message (Grade applying for, questions...)"
+                      value={formFields.message}
+                      onChange={(e) => setFormFields({ ...formFields, message: e.target.value })}
+                      className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400 resize-none"
+                    />
+                  </div>
+
+                  {/* Red/Crimson Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    style={{
+                      backgroundColor: 'var(--color-primary)',
+                      color: 'var(--color-primary-text)'
+                    }}
+                    className="w-full py-3.5 font-bold uppercase tracking-wider text-xs sm:text-sm rounded-none transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60"
+                  >
+                    {isSubmitting ? (
+                      <span>Submitting...</span>
+                    ) : (
+                      <>
+                        <span>Submit</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+
+                  <p className="text-[10px] text-slate-400 text-center font-mono">
+                    Protected by reCAPTCHA & Chinmaya Vidyalaya Privacy Policy
+                  </p>
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      {/* ------------------------------------------------------------------
+          SECTION 2: CAMPUS GUIDELINES & PARENT INTERACTION POLICY
+          ------------------------------------------------------------------ */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          <div className="bg-white border border-slate-200 p-6 rounded-none space-y-2 shadow-xs">
+            <div className="flex items-center gap-2 text-[var(--color-primary)]">
+              <Clock className="w-5 h-5" />
+              <span className="font-mono text-xs font-bold uppercase tracking-wider">
+                Visiting Hours
+              </span>
+            </div>
+            <h4 className="font-sans font-bold text-base text-[#181C20]">
+              Administrative Office
+            </h4>
+            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              Monday through Saturday: <strong>07:30 AM to 03:30 PM</strong>. Closed on Sundays, second Saturdays, and national holidays.
             </p>
           </div>
 
-          {validationError && (
-            <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs">
-              <strong className="block font-bold mb-1">Please correct the following:</strong>
-              <span>{validationError}</span>
+          <div className="bg-white border border-slate-200 p-6 rounded-none space-y-2 shadow-xs">
+            <div className="flex items-center gap-2 text-[var(--color-primary)]">
+              <ShieldCheck className="w-5 h-5" />
+              <span className="font-mono text-xs font-bold uppercase tracking-wider">
+                Campus Visit Policy
+              </span>
             </div>
-          )}
+            <h4 className="font-sans font-bold text-base text-[#181C20]">
+              Prospective Parents
+            </h4>
+            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              Guided campus walkthroughs and laboratory tours are open on weekdays with prior appointment. Existing parents require advance written notice.
+            </p>
+          </div>
 
-          {submitStatus && (
-            <div className={`p-5 rounded-2xl border text-xs space-y-2 ${
-              submitStatus.success 
-                ? 'bg-emerald-50 border-emerald-200 text-emerald-900' 
-                : 'bg-red-50 border-red-200 text-red-900'
-            }`}>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${
-                  submitStatus.success ? 'text-emerald-600' : 'text-red-600'
-                }`} />
-                <div>
-                  <span className="font-bold block text-sm">
-                    {submitStatus.success ? 'Message Sent Successfully' : 'Delivery Notice'}
-                  </span>
-                  <p className="font-normal mt-0.5 leading-relaxed">{submitStatus.message}</p>
-                </div>
-              </div>
+          <div className="bg-white border border-slate-200 p-6 rounded-none space-y-2 shadow-xs">
+            <div className="flex items-center gap-2 text-[var(--color-primary)]">
+              <MapPin className="w-5 h-5" />
+              <span className="font-mono text-xs font-bold uppercase tracking-wider">
+                Transit Accessibility
+              </span>
             </div>
-          )}
+            <h4 className="font-sans font-bold text-base text-[#181C20]">
+              Boisar Railway Connection
+            </h4>
+            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              Located 2.5 km from <strong>Boisar Railway Station</strong> (Western Railway Line), accessible by direct auto-rickshaws and school bus routes.
+            </p>
+          </div>
 
-          {submitStatus && (
-            <motion.div
-              initial={{ opacity: 0, y: 18, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              role="status"
-              className={`fixed right-4 bottom-24 lg:bottom-6 z-50 max-w-sm rounded-2xl text-white px-4 py-3 shadow-2xl border flex items-start gap-2.5 ${
-                submitStatus.success 
-                  ? 'bg-[#181818] border-emerald-500/50' 
-                  : 'bg-[#181818] border-red-500/50'
-              }`}
-            >
-              <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${
-                submitStatus.success ? 'text-emerald-400' : 'text-red-400'
-              }`} />
-              <div>
-                <strong className="block text-xs font-bold">
-                  {submitStatus.success ? 'Message Delivered' : 'Delivery Alert'}
-                </strong>
-                <span className="block text-[11px] text-white/75 mt-0.5">{submitStatus.message}</span>
-              </div>
-            </motion.div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-4 text-xs">
-            <div>
-              <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Full Name *</label>
-              <input
-                type="text"
-                required
-                value={formData.fullName}
-                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                placeholder="Enter your full name"
-                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Email Address *</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="Enter your email address"
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
-                />
-              </div>
-
-              <div>
-                <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Phone Number *</label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="Enter 10-digit mobile number"
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Subject *</label>
-              <input
-                type="text"
-                required
-                value={formData.subject}
-                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                placeholder="Enquiry topic, admissions, certificates, TC..."
-                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
-              />
-            </div>
-
-            <div>
-              <label className="block font-bold text-[#181C20] mb-1 uppercase tracking-wider">Message *</label>
-              <textarea
-                rows={4}
-                required
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Type your enquiry message here..."
-                className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B]"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-3.5 bg-[#181818] hover:bg-[#DF711B] text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.99]"
-            >
-              {isSubmitting ? (
-                <span>Sending Message...</span>
-              ) : (
-                <>
-                  <Send className="w-4 h-4 text-[#DF711B]" />
-                  <span>Send Message</span>
-                </>
-              )}
-            </button>
-          </form>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Campus Google Map & Navigation Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+      {/* ------------------------------------------------------------------
+          SECTION 3: INTERACTIVE GOOGLE MAPS & FULL LOCATION ACCESS
+          ------------------------------------------------------------------ */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <GoogleMapSection />
       </div>
+
     </div>
   );
 };

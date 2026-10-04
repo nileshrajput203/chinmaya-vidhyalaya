@@ -89,7 +89,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           {/* Mandatory Public Disclosure Link */}
           <Link
             to="/about/mandatory-information"
-            className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EFE6] border border-[#E7E2D8] text-xs font-semibold text-slate-700 transition-colors"
+            className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 transition-colors"
             title="View Official CBSE Mandatory Disclosures"
           >
             <ShieldCheck className="w-4 h-4 text-[#DF711B]" />
@@ -131,7 +131,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
 
           <button
             onClick={onToggleMobileMenu}
-            className="p-2 rounded-xl border border-[#D5CEC2] bg-white text-[#181C20] hover:bg-[#FAF8F5] transition-colors focus:outline-none"
+            className="p-2 rounded-xl border border-slate-200 bg-white text-[#181C20] hover:bg-slate-50 transition-colors focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6 text-[#DF711B]" /> : <Menu className="w-6 h-6 text-[#181C20]" />}

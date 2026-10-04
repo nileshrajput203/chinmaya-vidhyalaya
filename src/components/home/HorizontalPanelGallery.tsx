@@ -175,7 +175,7 @@ export const HorizontalPanelGallery: React.FC = () => {
               {/* Hand-Drawn Pencil "Scroll to View" Callout */}
               <div
                 onClick={slideNext}
-                className="hidden lg:flex items-center gap-3.5 bg-[#FAF8F5] hover:bg-[#FAF3E8] border-2 border-dashed border-[#DF711B]/40 hover:border-[#DF711B] px-5 py-2.5 rounded-2xl shadow-xs transition-all duration-300 animate-pencil-hint select-none cursor-pointer group"
+                className="hidden lg:flex items-center gap-3.5 bg-white hover:bg-slate-50 border-2 border-dashed border-[#DF711B]/40 hover:border-[#DF711B] px-5 py-2.5 rounded-2xl shadow-xs transition-all duration-300 animate-pencil-hint select-none cursor-pointer group"
                 title="Scroll down with mouse/trackpad to slide through panels (or click here)"
               >
                 {/* Hand-drawn pencil sketch icon */}
@@ -258,7 +258,7 @@ export const HorizontalPanelGallery: React.FC = () => {
           <section className="panel panel--award w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col lg:flex-row items-stretch border-b lg:border-b-0 box-border relative overflow-hidden">
             
             {/* ZONE A — LEFT (~26% width): Studio Backdrop & Cutout Composite Image */}
-            <div className="w-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center min-h-[420px] lg:min-h-full overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5]">
+            <div className="w-full h-[560px] sm:h-[600px] lg:h-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] bg-white">
               <img 
                 src="/images/panel_b_achiever_design.png" 
                 alt="Chinmaya Vidyalaya Student Achiever Studio Design" 
@@ -337,7 +337,7 @@ export const HorizontalPanelGallery: React.FC = () => {
             </div>
 
             {/* ZONE C — RIGHT (~34-36% width): VERTICAL MOVING UPWARD IMAGE GALLERY */}
-            <div className="w-full lg:w-[34%] xl:w-[36%] h-[480px] lg:h-full bg-[#FAF8F5] relative overflow-hidden flex gap-3.5 p-3 sm:p-4 box-border">
+            <div className="w-full lg:w-[34%] xl:w-[36%] h-[480px] lg:h-full bg-white relative overflow-hidden flex gap-3.5 p-3 sm:p-4 box-border">
               
               {/* Column 1 (Scrolls UP continuously) */}
               <div className="w-1/2 h-full relative overflow-hidden">
@@ -380,8 +380,8 @@ export const HorizontalPanelGallery: React.FC = () => {
               </div>
 
               {/* Top & Bottom Fade Overlays for seamless loop */}
-              <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
-              <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+              <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
             </div>
 

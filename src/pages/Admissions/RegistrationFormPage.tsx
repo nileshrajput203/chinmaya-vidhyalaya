@@ -216,7 +216,7 @@ export const RegistrationFormPage: React.FC = () => {
   const isSeniorSecondary = formData.gradeSeeking === 'Std XI' || formData.gradeSeeking === 'Std XII';
 
   return (
-    <div className="min-h-screen bg-[#FCFBF7] text-[#181C20] pb-24">
+    <div className="min-h-screen bg-white text-[#181C20] pb-24">
       {/* Top Breadcrumb Navigation */}
       <Breadcrumb
         items={[
@@ -299,7 +299,7 @@ export const RegistrationFormPage: React.FC = () => {
                   {OFFICIAL_FORMS.map((doc, idx) => (
                     <div
                       key={idx}
-                      className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] hover:bg-[#F8F5EE] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                      className="border border-[#E7E2D8] rounded-2xl p-5 bg-white hover:bg-[#F8F5EE] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                     >
                       <div className="flex items-start gap-3.5">
                         <div className="w-12 h-12 rounded-xl bg-[#DF711B]/10 text-[#DF711B] flex items-center justify-center shrink-0">
@@ -375,7 +375,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.studentName}
                         onChange={handleInputChange}
                         placeholder="e.g. Aarav Rajesh Sharma"
-                        className={`w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
+                        className={`w-full px-4 py-2.5 text-sm bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
                           errors.studentName ? 'border-red-500 bg-red-50/20' : 'border-[#E7E2D8]'
                         }`}
                       />
@@ -393,7 +393,7 @@ export const RegistrationFormPage: React.FC = () => {
                         name="dob"
                         value={formData.dob}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
+                        className={`w-full px-4 py-2.5 text-sm bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
                           errors.dob ? 'border-red-500 bg-red-50/20' : 'border-[#E7E2D8]'
                         }`}
                       />
@@ -408,7 +408,7 @@ export const RegistrationFormPage: React.FC = () => {
                         name="gender"
                         value={formData.gender}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       >
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -424,7 +424,7 @@ export const RegistrationFormPage: React.FC = () => {
                         name="gradeSeeking"
                         value={formData.gradeSeeking}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium"
                       >
                         <option value="Nursery">Nursery (Age 3+)</option>
                         <option value="Junior KG">Junior KG (Age 4+)</option>
@@ -452,7 +452,7 @@ export const RegistrationFormPage: React.FC = () => {
                           name="stream"
                           value={formData.stream}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium text-[#DF711B]"
+                          className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium text-[#DF711B]"
                         >
                           <option value="Science">Science (Physics, Chem, Bio/Maths, Comp)</option>
                           <option value="Commerce">Commerce (Accountancy, Business Studies, Economics)</option>
@@ -468,7 +468,7 @@ export const RegistrationFormPage: React.FC = () => {
                           name="bloodGroup"
                           value={formData.bloodGroup}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                          className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                         >
                           <option value="A+">A+</option>
                           <option value="A-">A-</option>
@@ -492,7 +492,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.motherTongue}
                         onChange={handleInputChange}
                         placeholder="e.g. Marathi / Gujarati / Hindi / English"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -507,7 +507,7 @@ export const RegistrationFormPage: React.FC = () => {
                         onChange={handleInputChange}
                         maxLength={12}
                         placeholder="12 digit Aadhaar number"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
                   </div>
@@ -537,7 +537,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.fatherName}
                         onChange={handleInputChange}
                         placeholder="Father's full name"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -551,7 +551,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.fatherOccupation}
                         onChange={handleInputChange}
                         placeholder="e.g. BARC / NPCIL / Business / Pvt."
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -565,7 +565,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.motherName}
                         onChange={handleInputChange}
                         placeholder="Mother's full name"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -579,7 +579,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.motherOccupation}
                         onChange={handleInputChange}
                         placeholder="e.g. Educator / Engineer / Homemaker"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -594,7 +594,7 @@ export const RegistrationFormPage: React.FC = () => {
                         onChange={handleInputChange}
                         maxLength={10}
                         placeholder="10-digit mobile number"
-                        className={`w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
+                        className={`w-full px-4 py-2.5 text-sm bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
                           errors.primaryPhone ? 'border-red-500 bg-red-50/20' : 'border-[#E7E2D8]'
                         }`}
                       />
@@ -613,7 +613,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="name@example.com"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -627,7 +627,7 @@ export const RegistrationFormPage: React.FC = () => {
                         onChange={handleInputChange}
                         rows={2}
                         placeholder="Flat/House No., Society/Colony, Area, Landmark"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
                   </div>
@@ -651,7 +651,7 @@ export const RegistrationFormPage: React.FC = () => {
                         value={formData.previousSchool}
                         onChange={handleInputChange}
                         placeholder="e.g. Atomic Energy Central School, Tarapur"
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       />
                     </div>
 
@@ -663,7 +663,7 @@ export const RegistrationFormPage: React.FC = () => {
                         name="hasTC"
                         value={formData.hasTC}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 text-sm bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       >
                         <option value="Yes">TC In Hand</option>
                         <option value="In Progress">TC Applied / Awaited</option>
@@ -675,7 +675,7 @@ export const RegistrationFormPage: React.FC = () => {
 
                 {/* Section 4: Declaration & Submit */}
                 <div className="space-y-4 pt-4 border-t border-[#E7E2D8]">
-                  <div className="p-4 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl space-y-3">
+                  <div className="p-4 bg-white border border-[#E7E2D8] rounded-2xl space-y-3">
                     <label className="flex items-start gap-3 cursor-pointer">
                       <input
                         type="checkbox"
@@ -793,7 +793,7 @@ export const RegistrationFormPage: React.FC = () => {
               </div>
 
               {/* Counter Timings */}
-              <div className="p-3.5 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl space-y-2 text-xs">
+              <div className="p-3.5 bg-white border border-[#E7E2D8] rounded-2xl space-y-2 text-xs">
                 <div className="flex items-center gap-2 font-bold text-slate-800">
                   <Clock className="w-4 h-4 text-[#DF711B]" />
                   <span>Help Desk Counter Hours</span>
@@ -846,7 +846,7 @@ export const RegistrationFormPage: React.FC = () => {
                       placeholder="Your Name (Parent/Guardian)"
                       value={callbackRequest.name}
                       onChange={e => setCallbackRequest(prev => ({ ...prev, name: e.target.value }))}
-                      className="w-full px-3 py-2 text-xs bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B]"
                     />
                     <input
                       type="tel"
@@ -855,12 +855,12 @@ export const RegistrationFormPage: React.FC = () => {
                       required
                       value={callbackRequest.phone}
                       onChange={e => setCallbackRequest(prev => ({ ...prev, phone: e.target.value }))}
-                      className="w-full px-3 py-2 text-xs bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B]"
                     />
                     <select
                       value={callbackRequest.preferredTime}
                       onChange={e => setCallbackRequest(prev => ({ ...prev, preferredTime: e.target.value }))}
-                      className="w-full px-3 py-2 text-xs bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B] text-slate-700"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B] text-slate-700"
                     >
                       <option value="Morning (9:00 AM – 12:00 PM)">Morning (9:00 AM – 12:00 PM)</option>
                       <option value="Afternoon (1:00 PM – 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
@@ -920,7 +920,7 @@ export const RegistrationFormPage: React.FC = () => {
             </div>
 
             {/* Application Reference Banner */}
-            <div className="p-4 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-4 bg-white border border-[#E7E2D8] rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <span className="text-[10px] font-mono uppercase text-slate-500 font-bold block">
                   Application Reference ID

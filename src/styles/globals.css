@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand Tokens mapped to site roles */
+  --color-bg: #FFFFFF;
+  --color-text: #181C20;
+  --color-primary: #DF711B;
+  --color-primary-text: #FFFFFF;
+  --color-dark: #181C20;
+  --color-dark-text: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-muted: #8A9099;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -32,7 +44,7 @@
   body {
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     color: #181C20;
-    background-color: #FCFBF7;
+    background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

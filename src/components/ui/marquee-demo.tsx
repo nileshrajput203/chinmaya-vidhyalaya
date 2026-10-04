@@ -10,7 +10,7 @@ const path =
 
 export default function MarqueeAlongSvgPathDemo() {
   return (
-    <div className="w-full bg-[#FAF8F5] overflow-hidden border-y border-[#E7E2D8] relative select-none py-4 sm:py-6">
+    <div className="w-full bg-white overflow-hidden border-y border-slate-200 relative select-none py-4 sm:py-6">
       
       {/* ----------------------------------------------------
           LAYER 1 (z-[5]): Tilted Folder BACK PANEL

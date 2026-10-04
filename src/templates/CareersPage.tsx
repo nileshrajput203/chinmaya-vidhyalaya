@@ -99,7 +99,7 @@ export const CareersPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans">
+    <div className="bg-white text-[#181C20] pb-24 font-sans">
       <Breadcrumb items={[{ label: "Careers" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
@@ -194,7 +194,7 @@ export const CareersPage: React.FC = () => {
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#DF711B] bg-[#FFF0E6] border border-[#DF711B]/30 px-2.5 py-0.5">
                       {job.type}
                     </span>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#555555] bg-[#F3EFE6] px-2.5 py-0.5">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-0.5">
                       {job.department}
                     </span>
                     <span className="text-[10px] font-mono text-[#777777] ml-auto lg:ml-0">
@@ -210,7 +210,7 @@ export const CareersPage: React.FC = () => {
                     {job.description}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1 border-t border-[#F3EFE6]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1 border-t border-slate-100">
                     <div>
                       <strong className="text-[#181818] font-mono uppercase text-[10px] block">Eligibility:</strong>
                       <span className="text-[#555555]">{job.qualifications}</span>
@@ -233,7 +233,7 @@ export const CareersPage: React.FC = () => {
                   <a
                     href="/images/application-form-for-the-post-of-teacher.docx"
                     download
-                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#FAF8F5] border border-[#D5CEC2] hover:border-[#DF711B] text-xs font-mono text-[#555555] hover:text-[#DF711B] transition-colors w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-white border border-[#D5CEC2] hover:border-[#DF711B] text-xs font-mono text-[#555555] hover:text-[#DF711B] transition-colors w-full sm:w-auto"
                   >
                     <Download className="w-3 h-3" />
                     <span>Download Form</span>
@@ -287,7 +287,7 @@ export const CareersPage: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Enter your full name"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
 
@@ -301,7 +301,7 @@ export const CareersPage: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Enter your email address"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
               </div>
@@ -317,7 +317,7 @@ export const CareersPage: React.FC = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="Enter 10-digit mobile number"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
 
@@ -328,7 +328,7 @@ export const CareersPage: React.FC = () => {
                   <select
                     value={formData.position}
                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   >
                     {jobOpenings.map(job => (
                       <option key={job.id} value={job.title}>{job.title}</option>
@@ -349,7 +349,7 @@ export const CareersPage: React.FC = () => {
                     value={formData.qualification}
                     onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
                     placeholder="Highest educational qualification & degree"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
 
@@ -363,7 +363,7 @@ export const CareersPage: React.FC = () => {
                     value={formData.experience}
                     onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
                     placeholder="Total years of teaching experience & institution"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
                 </div>
               </div>
@@ -377,7 +377,7 @@ export const CareersPage: React.FC = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Share a brief statement on your teaching methodology, co-curricular interests, and suitability for Chinmaya Vidyalaya..."
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
+                  className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                 />
               </div>
 

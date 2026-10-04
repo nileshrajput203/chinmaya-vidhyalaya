@@ -79,7 +79,7 @@ export const AcademicStreamCarouselBanner: React.FC = () => {
   return (
     <section 
       id="banner-stream-carousel"
-      className="w-full bg-[#FAF8F5] relative py-4 sm:py-6 overflow-hidden"
+      className="w-full bg-white relative py-4 sm:py-6 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -180,7 +180,7 @@ export const SecondaryAcademicBanner: React.FC = () => {
   return (
     <section 
       id="banner-secondary-feature"
-      className="w-full bg-[#FAF8F5] relative py-4 sm:py-6 overflow-hidden"
+      className="w-full bg-white relative py-4 sm:py-6 overflow-hidden"
       aria-label="Featured Campus and Academic Banner"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

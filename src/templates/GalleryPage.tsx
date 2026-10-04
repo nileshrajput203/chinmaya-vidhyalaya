@@ -59,7 +59,7 @@ export const GalleryPage: React.FC = () => {
   const isFiltered = selectedYear !== 'All Years' || selectedEvent !== 'All Events';
 
   return (
-    <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans">
+    <div className="bg-white text-[#181C20] pb-24 font-sans">
       <Breadcrumb items={[{ label: "Gallery" }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -88,7 +88,7 @@ export const GalleryPage: React.FC = () => {
                   className={`px-3.5 py-1.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border ${
                     selectedYear === yr
                       ? 'bg-[#181818] text-white border-[#181818] shadow-sm'
-                      : 'bg-[#FAF8F5] border-[#D5CEC2] text-[#444444] hover:bg-white hover:border-[#DF711B] hover:text-[#DF711B]'
+                      : 'bg-white border-[#D5CEC2] text-[#444444] hover:bg-white hover:border-[#DF711B] hover:text-[#DF711B]'
                   }`}
                 >
                   {yr}
@@ -134,7 +134,7 @@ export const GalleryPage: React.FC = () => {
           </div>
 
           {/* Active Summary Bar */}
-          <div className="flex items-center justify-between pt-2 text-xs font-mono text-[#777777] border-t border-[#F3EFE6]">
+          <div className="flex items-center justify-between pt-2 text-xs font-mono text-[#777777] border-t border-slate-100">
             <span>
               Viewing: <strong className="text-[#181818]">{selectedYear}</strong> • <strong className="text-[#181818]">{selectedEvent}</strong>
             </span>
@@ -212,7 +212,7 @@ export const GalleryPage: React.FC = () => {
                       )}
                     </div>
 
-                    <div className="pt-2 border-t border-[#F3EFE6] flex items-center justify-between text-[11px] font-mono text-[#777777]">
+                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-[#777777]">
                       <span>{item.date || item.academicYear}</span>
                       <span className="text-[#DF711B] font-bold group-hover:translate-x-0.5 transition-transform">
                         View ›

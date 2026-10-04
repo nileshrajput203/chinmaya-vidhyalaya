@@ -20,7 +20,7 @@ export const BadgePill: React.FC<BadgePillProps> = ({
     navy: 'bg-[#F5F8FC] text-[#0B1E34] border-[#0B1E34]/20',
     emerald: 'bg-emerald-50 text-emerald-800 border-emerald-300/40',
     amber: 'bg-amber-50 text-amber-800 border-amber-300/40',
-    neutral: 'bg-[#FAF8F5] text-slate-700 border-[#E7E2D8]',
+    neutral: 'bg-white text-slate-700 border-slate-200',
   };
 
   const pulseColors = {

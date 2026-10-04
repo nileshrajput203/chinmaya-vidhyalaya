@@ -287,17 +287,17 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                   <div className="space-y-5">
                     {/* Header Badge & Title */}
                     <div>
-                      <div className="inline-block px-3 py-1 bg-[#FFF4EC] text-[#DF711B] text-[11px] font-medium rounded-full mb-2.5 border border-[#DF711B]/20">
+                      <div className="inline-block px-3 py-1 bg-orange-50 text-[#DF711B] text-[11px] font-semibold rounded-full mb-2.5 border border-orange-200/80">
                         We're here to help you make the right choice for your child.
                       </div>
 
-                      <div className="border-l-4 border-[#C41E3A] pl-3">
-                        <h2 className="text-xl sm:text-2xl font-display font-black text-[#181818] tracking-tight uppercase m-0">
+                      <div className="border-l-4 border-[#DF711B] pl-3">
+                        <h2 className="text-xl sm:text-2xl font-cinzel font-black text-[#0B1D30] tracking-tight uppercase m-0">
                           Get Personalised Admission Guidance
                         </h2>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-[#666666] mt-1.5 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
                         Share your details below and our admissions experts will get in touch with you to guide you personally.
                       </p>
                     </div>
@@ -319,15 +319,15 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           value={formData.parentName}
                           onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
                           placeholder="Parent's full name *"
-                          className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E5E0D5] focus:border-[#C41E3A] focus:bg-white rounded-lg text-sm text-[#181818] placeholder-[#999999] outline-none transition-all shadow-inner"
+                          className="w-full px-4 py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-sm text-[#181818] placeholder-slate-400 outline-none transition-all shadow-inner"
                         />
                       </div>
 
                       {/* Phone Number + Email Row */}
                       <div className="grid grid-cols-1 sm:grid-cols-12 gap-3">
                         {/* Phone with Country Code Badge */}
-                        <div className="sm:col-span-6 flex items-center border border-[#E5E0D5] rounded-lg overflow-hidden focus-within:border-[#C41E3A] bg-[#FAF8F5] transition-all">
-                          <span className="px-3.5 py-3 text-xs sm:text-sm font-bold text-[#555555] bg-[#EFEBE4] border-r border-[#E5E0D5] select-none">
+                        <div className="sm:col-span-6 flex items-center border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#DF711B] bg-white transition-all">
+                          <span className="px-3.5 py-3 text-xs sm:text-sm font-bold text-slate-600 bg-slate-100 border-r border-slate-200 select-none">
                             +91
                           </span>
                           <input
@@ -348,7 +348,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="Email address (optional)"
-                            className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E5E0D5] focus:border-[#C41E3A] focus:bg-white rounded-lg text-sm text-[#181818] placeholder-[#999999] outline-none transition-all"
+                            className="w-full px-4 py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-sm text-[#181818] placeholder-slate-400 outline-none transition-all"
                           />
                         </div>
                       </div>
@@ -363,7 +363,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           <select
                             value={formData.grade}
                             onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                            className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E5E0D5] focus:border-[#C41E3A] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
+                            className="w-full px-3 py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
                           >
                             <option value="Nursery / Pre-Primary">Nursery / Pre-Primary</option>
                             <option value="LKG / UKG">LKG / UKG (Kindergarten)</option>
@@ -384,7 +384,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           <select
                             value={formData.streamOrCampus}
                             onChange={(e) => setFormData({ ...formData, streamOrCampus: e.target.value })}
-                            className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E5E0D5] focus:border-[#C41E3A] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
+                            className="w-full px-3 py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
                           >
                             <option value="Main Campus (Boisar, Tarapur)">Main Campus (Boisar, Tarapur)</option>
                             <option value="Book Campus Tour First">Book Campus Tour First</option>
@@ -393,11 +393,11 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                         </div>
                       </div>
 
-                      {/* Primary CTA Button */}
+                      {/* Primary CTA Button — Website Brand Colors */}
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-3.5 px-6 rounded-lg bg-gradient-to-r from-[#C41E3A] via-[#A8172F] to-[#8C1024] hover:from-[#DF711B] hover:to-[#C4590D] text-white font-sans font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 mt-2"
+                        className="w-full py-3.5 px-6 rounded-xl bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 mt-2 active:scale-[0.99]"
                       >
                         {isSubmitting ? (
                           <>
@@ -407,7 +407,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                         ) : (
                           <>
                             <span>Request a Call Back</span>
-                            <PhoneCall className="w-4 h-4 text-white/90" />
+                            <PhoneCall className="w-4 h-4 text-white" />
                           </>
                         )}
                       </button>
@@ -440,7 +440,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                       Our Chinmaya Vidyalaya Admissions Team has received your request for <strong>{formData.grade}</strong>. A dedicated academic counselor will call you at <strong>+91 {formData.phone}</strong> within 24 hours.
                     </p>
 
-                    <div className="p-4 bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl max-w-sm mx-auto text-left space-y-1 text-xs text-[#555555]">
+                    <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl max-w-sm mx-auto text-left space-y-1 text-xs text-[#555555]">
                       <div className="flex justify-between font-mono">
                         <span>Direct Admission Desk:</span>
                         <span className="font-bold text-[#181818]">+91 7775872266</span>
@@ -479,7 +479,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
         onClick={() => setInternalIsOpen(true)}
         className={`fixed bottom-6 left-6 z-40 hidden sm:flex items-center rounded-full shadow-[0_8px_25px_rgba(223,113,27,0.25)] backdrop-blur-md transition-all duration-300 group cursor-pointer ${
           isAtBottom
-            ? 'p-2 w-11 h-11 justify-center bg-gradient-to-tr from-[#C41E3A] to-[#DF711B] border-2 border-white/60 text-white hover:scale-110 shadow-lg'
+            ? 'p-2 w-11 h-11 justify-center bg-[#DF711B] hover:bg-[#C45B0E] border-2 border-white/60 text-white hover:scale-110 shadow-lg'
             : 'gap-2.5 px-4 py-2.5 bg-white/95 hover:bg-[#181818] text-[#181818] hover:text-white border border-[#DF711B]/40 hover:border-[#DF711B]'
         }`}
         title="Admission Guidance — Request a Call Back"
@@ -489,7 +489,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
           className={`rounded-full flex items-center justify-center shrink-0 transition-transform ${
             isAtBottom
               ? 'w-full h-full text-white group-hover:rotate-12'
-              : 'w-7 h-7 bg-gradient-to-tr from-[#C41E3A] to-[#DF711B] text-white group-hover:scale-110 shadow-sm'
+              : 'w-7 h-7 bg-[#DF711B] text-white group-hover:scale-110 shadow-sm'
           }`}
         >
           <PhoneCall className={isAtBottom ? 'w-5 h-5 stroke-[2.2]' : 'w-3.5 h-3.5'} />

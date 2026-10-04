@@ -212,7 +212,7 @@ export const FourPillarsShowcase: React.FC = () => {
                     </div>
 
                     {/* Image Card without overlays */}
-                    <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E7E2D8] bg-[#FAF8F5] shadow-md relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/11]">
+                    <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E7E2D8] bg-white shadow-md relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/11]">
                       <img
                         src={pillar.photos[0].src}
                         alt={pillar.photos[0].caption}
@@ -322,7 +322,7 @@ export const FourPillarsShowcase: React.FC = () => {
         <div className="flex flex-wrap gap-3 shrink-0">
           <Link
             to="/admissions/guidelines"
-            className="px-6 py-3 bg-white text-[#DF711B] hover:bg-[#FAF8F5] text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1.5"
+            className="px-6 py-3 bg-white text-[#DF711B] hover:bg-slate-50 text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1.5"
           >
             <span>Admission Guidelines</span>
             <ArrowRight className="w-3.5 h-3.5" />

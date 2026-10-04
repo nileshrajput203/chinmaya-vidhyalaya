@@ -1,0 +1,978 @@
+LOCAL: /1.jpeg | Dims: 1600x419 | Size: 420.0 KB
+   -> src/components/home/BannerCarousel.tsx
+LOCAL: /2.jpeg | Dims: 1600x419 | Size: 408.9 KB
+   -> src/components/home/BannerCarousel.tsx
+LOCAL: /favicon.ico | Dims: 239x438 | Size: 75.3 KB
+   -> index.html
+LOCAL: /favicon.png | Dims: 239x438 | Size: 75.3 KB
+   -> index.html
+LOCAL: /file_00000000129882308ffa3f6b1a6bab51.png | Dims: 1944x809 | Size: 1506.4 KB
+   -> src/pages/Home/index.tsx
+LOCAL: /images/1.jpeg | Dims: 1600x419 | Size: 420.0 KB
+   -> src/pages/Home/index.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/CHEM1.jpeg | Dims: 525x515 | Size: 55.3 KB
+   -> src/components/inner/HolisticShowcase.tsx
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+   -> src/components/inner/FourPillarsShowcase.tsx
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+   -> src/pages/Home/index.tsx
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/CHEM1.webp | Dims: 525x515 | Size: 34.9 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/Chinmaya_Logo.png | Dims: 239x438 | Size: 75.3 KB
+   -> index.html
+LOCAL: /images/Chinmaya_Logo.webp | Dims: 239x438 | Size: 50.5 KB
+   -> src/components/home/HeroScrollytellingFilm.tsx
+   -> src/components/layout/Footer.tsx
+   -> src/components/common/Preloader.tsx
+   -> src/components/layout/Header/MainBrandHeader.tsx
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+   -> src/components/layout/MobileMenu.tsx
+LOCAL: /images/about-banner.jpeg | Dims: 1600x1199 | Size: 396.6 KB
+   -> src/data/images.ts
+   -> src/components/inner/VisionMissionShowcase.tsx
+LOCAL: /images/about2.jpeg | Dims: 960x1280 | Size: 191.7 KB
+   -> src/data/images.ts
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/templates/ContentPage.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/academic-calendar.png | Dims: 400x500 | Size: 174.9 KB
+   -> src/pages/Admissions/SchoolCalendarPage.tsx
+LOCAL: /images/academic-calendar.webp | Dims: 400x500 | Size: 19.8 KB
+   -> src/pages/Admissions/SchoolCalendarPage.tsx
+LOCAL: /images/admission-form-placeholder.png | Dims: 416x488 | Size: 13.5 KB
+   -> src/components/inner/AdmissionGuidelinesShowcase.tsx
+LOCAL: /images/banner-1.jpg | Dims: 1600x1068 | Size: 419.5 KB
+   -> src/components/inner/HeritageShowcase.tsx
+   -> src/data/images.ts
+   -> src/components/inner/VisionMissionShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/banner-3.webp | Dims: 1000x667 | Size: 69.6 KB
+   -> src/components/home/RibbonGallery.tsx
+LOCAL: /images/banner-4.jpeg | Dims: 800x533 | Size: 50.6 KB
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/home/AcademicStreamBanners.tsx
+   -> src/components/inner/SpiritualShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/banner-8.webp | Dims: 1600x834 | Size: 1278.2 KB
+   -> src/components/inner/VisionMissionShowcase.tsx
+   -> src/components/inner/HolisticShowcase.tsx
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+   -> src/pages/Home/index.tsx
+   -> src/components/inner/CoCurricularShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/banner-9.webp | Dims: 1599x848 | Size: 1151.6 KB
+   -> src/components/inner/HolisticShowcase.tsx
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+LOCAL: /images/biology-lab.jpg | Dims: 1200x896 | Size: 935.1 KB
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/home/RibbonGallery.tsx
+   -> src/pages/Home/index.tsx
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/biology-lab.webp | Dims: 1200x896 | Size: 187.8 KB
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/board-of-management/dr-mane.webp | Dims: 100x100 | Size: 10.2 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/dr-nayak.webp | Dims: 100x100 | Size: 15.0 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/dr-shivshankar.webp | Dims: 100x100 | Size: 11.0 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/parag-kulkarni.webp | Dims: 100x100 | Size: 13.1 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/shobha-sankhe.webp | Dims: 100x100 | Size: 10.6 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/sri-b-k-poddar.webp | Dims: 100x100 | Size: 12.8 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/sri-sriram-bhaleroji.webp | Dims: 100x100 | Size: 1.4 KB
+   -> src/data/school.ts
+LOCAL: /images/board-of-management/tb-thakur-chairman.webp | Dims: 100x100 | Size: 10.5 KB
+   -> src/data/school.ts
+LOCAL: /images/bot-avatar.png | Dims: 1024x1024 | Size: 563.9 KB
+   -> src/components/common/ChatbotFAB.tsx
+LOCAL: /images/chinmaya-web-arts-and-commerce.jpg | Dims: 1599x848 | Size: 1151.6 KB
+   -> src/components/home/AcademicStreamBanners.tsx
+LOCAL: /images/chinmaya-web-science.jpg | Dims: 1600x1068 | Size: 419.5 KB
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/ui/marquee-demo.tsx
+   -> src/components/home/AcademicStreamBanners.tsx
+LOCAL: /images/chinmaya-web-science.webp | Dims: 1600x1068 | Size: 314.2 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/data/chinmayaImages.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_001.jpg | Dims: 1000x667 | Size: 95.7 KB
+   -> src/components/common/AdmissionGuidanceModal.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/data/chinmayaImages.ts
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/home/AcademicStreamBanners.tsx
+LOCAL: /images/chinmaya/academics/classroom_learning_001.webp | Dims: 1000x667 | Size: 69.6 KB
+   -> src/data/images.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_002.jpg | Dims: 1000x667 | Size: 55.6 KB
+   -> src/data/gallery.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/academics/classroom_learning_002.webp | Dims: 1000x667 | Size: 35.4 KB
+   -> src/data/images.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_003.jpg | Dims: 1000x667 | Size: 82.0 KB
+   -> src/data/gallery.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/academics/classroom_learning_004.jpg | Dims: 1000x667 | Size: 67.4 KB
+   -> src/data/gallery.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/academics/classroom_learning_005.jpg | Dims: 1000x667 | Size: 47.5 KB
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/academics/classroom_learning_006.jpg | Dims: 1000x667 | Size: 83.3 KB
+   -> src/data/gallery.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/academics/classroom_learning_007.jpg | Dims: 1000x667 | Size: 86.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_008.jpg | Dims: 1000x667 | Size: 65.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_009.jpg | Dims: 1000x667 | Size: 69.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_010.jpg | Dims: 1000x667 | Size: 75.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_011.jpg | Dims: 1000x667 | Size: 65.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_012.jpg | Dims: 1000x667 | Size: 66.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_013.jpg | Dims: 1000x667 | Size: 79.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_014.jpg | Dims: 1000x667 | Size: 69.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_015.jpg | Dims: 1000x667 | Size: 79.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_016.jpg | Dims: 1000x667 | Size: 94.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_017.jpg | Dims: 1000x667 | Size: 80.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_018.jpg | Dims: 1000x667 | Size: 85.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_019.jpg | Dims: 1000x667 | Size: 88.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_020.jpg | Dims: 1000x667 | Size: 89.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_021.jpg | Dims: 1000x667 | Size: 97.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_022.jpg | Dims: 1000x667 | Size: 69.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_023.jpg | Dims: 1000x667 | Size: 73.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_024.jpg | Dims: 1000x667 | Size: 75.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_025.jpg | Dims: 1000x667 | Size: 57.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_026.jpg | Dims: 1000x667 | Size: 102.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_027.jpg | Dims: 1000x667 | Size: 71.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_028.jpg | Dims: 1000x667 | Size: 86.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_029.jpg | Dims: 1000x667 | Size: 88.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_030.jpg | Dims: 1000x667 | Size: 78.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_031.jpg | Dims: 1000x667 | Size: 67.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_032.jpg | Dims: 1000x667 | Size: 71.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_033.jpg | Dims: 1000x667 | Size: 63.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_034.jpg | Dims: 1000x667 | Size: 65.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_035.jpg | Dims: 1000x667 | Size: 92.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_036.jpg | Dims: 1000x667 | Size: 61.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_037.jpg | Dims: 1000x667 | Size: 59.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_038.jpg | Dims: 1000x667 | Size: 61.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_039.jpg | Dims: 1000x667 | Size: 76.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_040.jpg | Dims: 1000x667 | Size: 95.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_041.jpg | Dims: 1000x667 | Size: 70.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_042.jpg | Dims: 1000x667 | Size: 73.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_043.jpg | Dims: 1000x667 | Size: 81.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_044.jpg | Dims: 1000x667 | Size: 81.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_045.jpg | Dims: 1000x667 | Size: 88.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_046.jpg | Dims: 1000x667 | Size: 86.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_047.jpg | Dims: 1000x667 | Size: 83.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_048.jpg | Dims: 1000x667 | Size: 82.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_049.jpg | Dims: 1000x667 | Size: 63.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_050.jpg | Dims: 1000x667 | Size: 54.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_051.jpg | Dims: 1000x667 | Size: 76.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_052.jpg | Dims: 1000x667 | Size: 62.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_053.jpg | Dims: 1000x667 | Size: 63.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_054.jpg | Dims: 1000x667 | Size: 68.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_055.jpg | Dims: 1000x667 | Size: 69.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_056.jpg | Dims: 1000x667 | Size: 88.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_057.jpg | Dims: 1000x667 | Size: 74.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_058.jpg | Dims: 1000x667 | Size: 83.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_059.jpg | Dims: 1000x667 | Size: 77.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_060.jpg | Dims: 1000x667 | Size: 76.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_061.jpg | Dims: 1000x667 | Size: 73.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_062.jpg | Dims: 1000x667 | Size: 66.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_063.jpg | Dims: 1000x667 | Size: 78.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_064.jpg | Dims: 1000x667 | Size: 62.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_065.jpg | Dims: 1000x667 | Size: 67.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_066.jpg | Dims: 1000x667 | Size: 57.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_067.jpg | Dims: 1000x667 | Size: 56.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_068.jpg | Dims: 1000x667 | Size: 58.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_069.jpg | Dims: 1000x667 | Size: 68.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_070.jpg | Dims: 1000x667 | Size: 61.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_071.jpg | Dims: 1000x667 | Size: 77.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_072.jpg | Dims: 1000x667 | Size: 64.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_073.jpg | Dims: 1000x667 | Size: 57.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_074.jpg | Dims: 1000x667 | Size: 63.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_075.jpg | Dims: 1000x667 | Size: 73.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_076.jpg | Dims: 1000x667 | Size: 57.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_077.jpg | Dims: 1000x667 | Size: 76.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_078.jpg | Dims: 1000x667 | Size: 76.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_079.jpg | Dims: 1000x667 | Size: 58.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_080.jpg | Dims: 1000x667 | Size: 46.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_081.jpg | Dims: 1000x667 | Size: 79.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_082.jpg | Dims: 1000x667 | Size: 66.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_083.jpg | Dims: 1000x667 | Size: 84.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_084.jpg | Dims: 1000x667 | Size: 68.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_085.jpg | Dims: 1000x667 | Size: 76.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_086.jpg | Dims: 1000x667 | Size: 76.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_087.jpg | Dims: 1000x667 | Size: 75.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_088.jpg | Dims: 1000x667 | Size: 66.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_089.jpg | Dims: 1000x667 | Size: 87.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_090.jpg | Dims: 1000x667 | Size: 82.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_091.jpg | Dims: 1000x667 | Size: 78.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_092.jpg | Dims: 1000x667 | Size: 80.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_093.jpg | Dims: 1000x667 | Size: 68.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_094.jpg | Dims: 1000x667 | Size: 78.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_095.jpg | Dims: 1000x667 | Size: 63.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_096.jpg | Dims: 1000x667 | Size: 73.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_097.jpg | Dims: 1000x667 | Size: 79.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_098.jpg | Dims: 1000x667 | Size: 67.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_099.jpg | Dims: 1000x667 | Size: 77.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_100.jpg | Dims: 1000x667 | Size: 89.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_101.jpg | Dims: 1000x667 | Size: 112.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_102.jpg | Dims: 1000x667 | Size: 131.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_103.jpg | Dims: 1000x667 | Size: 78.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_104.jpg | Dims: 1000x667 | Size: 79.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_105.jpg | Dims: 1000x667 | Size: 73.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_106.jpg | Dims: 1000x667 | Size: 77.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_107.jpg | Dims: 1000x667 | Size: 65.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_108.jpg | Dims: 1000x667 | Size: 66.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_109.jpg | Dims: 1000x667 | Size: 66.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_110.jpg | Dims: 1000x667 | Size: 82.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_111.jpg | Dims: 1000x667 | Size: 68.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_112.jpg | Dims: 1000x667 | Size: 60.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/academics/classroom_learning_113.jpg | Dims: 1000x667 | Size: 64.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_001.jpg | Dims: 1000x667 | Size: 104.0 KB
+   -> src/data/chinmayaImages.ts
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_001.webp | Dims: 1000x667 | Size: 80.5 KB
+   -> src/data/images.ts
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/campus/campus_facilities_002.jpg | Dims: 1000x667 | Size: 97.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_002.webp | Dims: 1000x667 | Size: 72.8 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/campus/campus_facilities_003.jpg | Dims: 1000x667 | Size: 59.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_004.jpg | Dims: 1000x667 | Size: 56.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_005.jpg | Dims: 1000x667 | Size: 48.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_006.jpg | Dims: 1000x667 | Size: 50.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_007.jpg | Dims: 1000x667 | Size: 57.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_008.jpg | Dims: 1000x667 | Size: 66.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_009.jpg | Dims: 1000x667 | Size: 62.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_010.jpg | Dims: 1000x667 | Size: 60.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_011.jpg | Dims: 1000x667 | Size: 59.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_012.jpg | Dims: 1000x667 | Size: 57.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/campus/campus_facilities_013.jpg | Dims: 1000x667 | Size: 76.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_001.jpg | Dims: 1000x667 | Size: 78.7 KB
+   -> src/data/chinmayaImages.ts
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_001.webp | Dims: 1000x667 | Size: 53.1 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_002.jpg | Dims: 1000x667 | Size: 65.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_003.jpg | Dims: 1000x667 | Size: 65.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_004.jpg | Dims: 1000x667 | Size: 78.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_005.jpg | Dims: 1000x667 | Size: 88.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_005.webp | Dims: 1000x667 | Size: 61.3 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_006.jpg | Dims: 1000x667 | Size: 92.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_007.jpg | Dims: 1000x667 | Size: 66.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_008.jpg | Dims: 1000x667 | Size: 71.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_009.jpg | Dims: 1000x667 | Size: 77.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_010.jpg | Dims: 1000x667 | Size: 75.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_011.jpg | Dims: 1000x667 | Size: 66.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_012.jpg | Dims: 1000x667 | Size: 105.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_012.webp | Dims: 1000x667 | Size: 78.6 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_013.jpg | Dims: 1000x667 | Size: 77.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_014.jpg | Dims: 1000x667 | Size: 193.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_015.jpg | Dims: 1000x667 | Size: 92.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_016.jpg | Dims: 1000x667 | Size: 100.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_017.jpg | Dims: 1000x667 | Size: 78.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_018.jpg | Dims: 1000x667 | Size: 106.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_019.jpg | Dims: 1000x667 | Size: 147.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_020.jpg | Dims: 1000x667 | Size: 60.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_021.jpg | Dims: 1000x667 | Size: 75.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_022.jpg | Dims: 1000x667 | Size: 67.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_023.jpg | Dims: 1000x667 | Size: 79.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_024.jpg | Dims: 1000x667 | Size: 68.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_025.jpg | Dims: 1000x667 | Size: 95.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_026.jpg | Dims: 1000x667 | Size: 99.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_027.jpg | Dims: 1000x667 | Size: 112.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_028.jpg | Dims: 1000x667 | Size: 62.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/arts_and_creativity_029.jpg | Dims: 1000x667 | Size: 56.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_001.jpg | Dims: 1000x667 | Size: 67.4 KB
+   -> src/data/chinmayaImages.ts
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_002.jpg | Dims: 1000x667 | Size: 60.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_003.jpg | Dims: 1000x667 | Size: 68.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_004.jpg | Dims: 1000x667 | Size: 64.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_005.jpg | Dims: 1000x667 | Size: 68.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_006.jpg | Dims: 1000x667 | Size: 117.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_006.webp | Dims: 1000x667 | Size: 88.1 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/cultural_celebration_007.jpg | Dims: 1000x667 | Size: 97.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_008.jpg | Dims: 1000x667 | Size: 97.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_009.jpg | Dims: 1000x667 | Size: 86.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_010.jpg | Dims: 1000x667 | Size: 66.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_011.jpg | Dims: 1000x667 | Size: 73.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_012.jpg | Dims: 1000x667 | Size: 62.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_013.jpg | Dims: 1000x667 | Size: 63.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_014.jpg | Dims: 1000x667 | Size: 66.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_015.jpg | Dims: 1000x667 | Size: 59.2 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/data/gallery.ts
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/chinmaya/cultural/cultural_celebration_016.jpg | Dims: 1000x667 | Size: 65.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_017.jpg | Dims: 1000x667 | Size: 73.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_018.jpg | Dims: 1000x667 | Size: 76.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_019.jpg | Dims: 1000x667 | Size: 76.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_020.jpg | Dims: 1000x667 | Size: 78.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_020.webp | Dims: 1000x667 | Size: 49.2 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/cultural_celebration_021.jpg | Dims: 1000x667 | Size: 74.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_022.jpg | Dims: 1000x667 | Size: 67.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_023.jpg | Dims: 1000x667 | Size: 65.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_024.jpg | Dims: 1000x667 | Size: 67.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_025.jpg | Dims: 1000x667 | Size: 66.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_026.jpg | Dims: 1000x667 | Size: 57.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_027.jpg | Dims: 1000x667 | Size: 80.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_028.jpg | Dims: 1000x667 | Size: 66.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_029.jpg | Dims: 1000x667 | Size: 55.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_030.jpg | Dims: 1000x667 | Size: 77.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_031.jpg | Dims: 1000x667 | Size: 60.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_032.jpg | Dims: 1000x667 | Size: 69.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_033.jpg | Dims: 1000x667 | Size: 66.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_034.jpg | Dims: 1000x667 | Size: 63.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_035.jpg | Dims: 1000x667 | Size: 63.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_036.jpg | Dims: 1000x667 | Size: 79.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_037.jpg | Dims: 1000x667 | Size: 68.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_038.jpg | Dims: 1000x667 | Size: 61.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_039.jpg | Dims: 1000x667 | Size: 76.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_040.jpg | Dims: 1000x667 | Size: 80.3 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_041.jpg | Dims: 1000x667 | Size: 81.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_042.jpg | Dims: 1000x667 | Size: 77.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_043.jpg | Dims: 1000x667 | Size: 59.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_044.jpg | Dims: 1000x667 | Size: 63.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_045.jpg | Dims: 1000x667 | Size: 74.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_046.jpg | Dims: 1000x667 | Size: 82.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_047.jpg | Dims: 1000x667 | Size: 82.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_048.jpg | Dims: 1000x667 | Size: 119.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_048.webp | Dims: 1000x667 | Size: 91.7 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/cultural_celebration_049.jpg | Dims: 1000x667 | Size: 97.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_050.jpg | Dims: 1000x667 | Size: 108.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_051.jpg | Dims: 1000x667 | Size: 81.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_052.jpg | Dims: 1000x667 | Size: 89.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_053.jpg | Dims: 1000x667 | Size: 75.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_054.jpg | Dims: 1000x667 | Size: 113.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_055.jpg | Dims: 1000x667 | Size: 105.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_056.jpg | Dims: 1000x667 | Size: 99.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_057.jpg | Dims: 1000x667 | Size: 94.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_058.jpg | Dims: 1000x667 | Size: 96.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_059.jpg | Dims: 1000x667 | Size: 78.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_060.jpg | Dims: 1000x667 | Size: 82.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_061.jpg | Dims: 1000x667 | Size: 56.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_062.jpg | Dims: 1000x667 | Size: 94.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_063.jpg | Dims: 1000x667 | Size: 96.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_064.jpg | Dims: 1000x667 | Size: 97.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_065.jpg | Dims: 1000x667 | Size: 82.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_066.jpg | Dims: 1000x667 | Size: 80.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_067.jpg | Dims: 1000x667 | Size: 88.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_068.jpg | Dims: 1000x667 | Size: 104.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_069.jpg | Dims: 1000x667 | Size: 77.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_070.jpg | Dims: 1000x667 | Size: 83.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_071.jpg | Dims: 1000x667 | Size: 90.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_072.jpg | Dims: 1000x667 | Size: 83.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_073.jpg | Dims: 1000x667 | Size: 111.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_073.webp | Dims: 1000x667 | Size: 84.4 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/cultural/cultural_celebration_074.jpg | Dims: 1000x667 | Size: 73.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_075.jpg | Dims: 1000x667 | Size: 78.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_076.jpg | Dims: 1000x667 | Size: 76.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_077.jpg | Dims: 1000x667 | Size: 85.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_078.jpg | Dims: 1000x667 | Size: 66.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_079.jpg | Dims: 1000x667 | Size: 66.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_080.jpg | Dims: 1000x667 | Size: 72.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_081.jpg | Dims: 1000x667 | Size: 77.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_082.jpg | Dims: 1000x667 | Size: 92.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_083.jpg | Dims: 1000x667 | Size: 75.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_084.jpg | Dims: 1000x667 | Size: 78.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_085.jpg | Dims: 1000x667 | Size: 79.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_086.jpg | Dims: 1000x667 | Size: 81.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_087.jpg | Dims: 1000x667 | Size: 78.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_088.jpg | Dims: 1000x667 | Size: 83.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_089.jpg | Dims: 1000x667 | Size: 91.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_090.jpg | Dims: 1000x667 | Size: 75.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_091.jpg | Dims: 1000x667 | Size: 69.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_092.jpg | Dims: 1000x667 | Size: 67.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_093.jpg | Dims: 1000x667 | Size: 83.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_094.jpg | Dims: 1000x667 | Size: 97.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_095.jpg | Dims: 1000x667 | Size: 69.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_096.jpg | Dims: 1000x667 | Size: 68.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_097.jpg | Dims: 1000x667 | Size: 67.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_098.jpg | Dims: 1000x667 | Size: 74.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_099.jpg | Dims: 1000x667 | Size: 62.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_100.jpg | Dims: 1000x667 | Size: 66.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_101.jpg | Dims: 1000x667 | Size: 53.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_102.jpg | Dims: 1000x667 | Size: 105.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_103.jpg | Dims: 1000x667 | Size: 96.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_104.jpg | Dims: 1000x667 | Size: 101.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_105.jpg | Dims: 1000x667 | Size: 54.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_106.jpg | Dims: 1000x667 | Size: 89.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_107.jpg | Dims: 1000x667 | Size: 85.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_108.jpg | Dims: 1000x667 | Size: 70.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_109.jpg | Dims: 1000x667 | Size: 89.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_110.jpg | Dims: 1000x667 | Size: 82.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_111.jpg | Dims: 1000x667 | Size: 78.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_112.jpg | Dims: 1000x667 | Size: 69.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_113.jpg | Dims: 1000x667 | Size: 84.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_114.jpg | Dims: 1000x667 | Size: 92.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_115.jpg | Dims: 1000x667 | Size: 80.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_116.jpg | Dims: 1000x667 | Size: 72.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_117.jpg | Dims: 1000x667 | Size: 75.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_118.jpg | Dims: 1000x667 | Size: 86.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_119.jpg | Dims: 1000x667 | Size: 57.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_120.jpg | Dims: 1000x667 | Size: 101.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_121.jpg | Dims: 1000x667 | Size: 115.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_122.jpg | Dims: 1000x667 | Size: 114.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/cultural/cultural_celebration_123.jpg | Dims: 1000x667 | Size: 123.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_01.jpg | Dims: 1000x562 | Size: 86.3 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_02.jpg | Dims: 1000x562 | Size: 54.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_03.jpg | Dims: 1000x562 | Size: 49.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_04.jpg | Dims: 1000x562 | Size: 44.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_05.jpg | Dims: 1000x562 | Size: 68.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_06.jpg | Dims: 1000x562 | Size: 64.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_07.jpg | Dims: 1000x562 | Size: 56.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_08.jpg | Dims: 1000x562 | Size: 85.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_09.jpg | Dims: 1000x562 | Size: 80.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_10.jpg | Dims: 1000x562 | Size: 80.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_11.jpg | Dims: 1000x562 | Size: 78.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_12.jpg | Dims: 1000x562 | Size: 78.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_13.jpg | Dims: 1000x562 | Size: 83.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_14.jpg | Dims: 1000x562 | Size: 82.3 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_15.jpg | Dims: 1000x562 | Size: 74.5 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_16.jpg | Dims: 1000x562 | Size: 74.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_17.jpg | Dims: 1000x562 | Size: 64.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/faculty_member_18.jpg | Dims: 1000x562 | Size: 113.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/leadership/principal_dimple_mistry.jpg | Dims: 1000x562 | Size: 73.2 KB
+   -> src/data/chinmayaImages.ts
+   -> src/data/gallery.ts
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/chinmaya/leadership/principal_dimple_mistry.webp | Dims: 1000x562 | Size: 54.8 KB
+   -> src/data/images.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_001.jpg | Dims: 1000x667 | Size: 92.0 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/data/gallery.ts
+   -> src/data/chinmayaImages.ts
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_001.webp | Dims: 1000x667 | Size: 66.9 KB
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/CoCurricularShowcase.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_002.jpg | Dims: 1000x667 | Size: 85.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_002.webp | Dims: 1000x667 | Size: 60.3 KB
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_003.jpg | Dims: 1000x667 | Size: 100.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_003.webp | Dims: 1000x667 | Size: 77.8 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_004.jpg | Dims: 1000x667 | Size: 121.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_005.jpg | Dims: 1000x667 | Size: 111.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_005.webp | Dims: 1000x667 | Size: 87.0 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_006.jpg | Dims: 1000x667 | Size: 59.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_007.jpg | Dims: 1000x667 | Size: 119.9 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_007.webp | Dims: 1000x667 | Size: 96.5 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_008.jpg | Dims: 1000x667 | Size: 97.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_009.jpg | Dims: 1000x667 | Size: 147.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_009.webp | Dims: 1000x667 | Size: 125.4 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_010.jpg | Dims: 1000x667 | Size: 102.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_010.webp | Dims: 1000x667 | Size: 73.9 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_011.jpg | Dims: 1000x667 | Size: 56.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_012.jpg | Dims: 1000x667 | Size: 48.8 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_013.jpg | Dims: 1000x667 | Size: 65.2 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_014.jpg | Dims: 1000x667 | Size: 93.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_014.webp | Dims: 1000x667 | Size: 69.0 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_015.jpg | Dims: 1000x667 | Size: 90.1 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_016.jpg | Dims: 1000x667 | Size: 97.7 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_016.webp | Dims: 1000x667 | Size: 70.8 KB
+   -> src/components/inner/CoCurricularShowcase.tsx
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_017.jpg | Dims: 1000x667 | Size: 102.0 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_018.jpg | Dims: 1000x667 | Size: 89.6 KB
+   -> src/data/gallery.ts
+LOCAL: /images/chinmaya/sports/sports_athletic_meet_019.jpg | Dims: 1000x667 | Size: 96.4 KB
+   -> src/data/gallery.ts
+LOCAL: /images/faq-student-thinking.png | Dims: 408x612 | Size: 237.3 KB
+   -> src/components/ui/faq-05.tsx
+LOCAL: /images/fees-structure.jpg | Dims: 1242x1755 | Size: 210.5 KB
+   -> src/pages/Admissions/FeeStructurePage.tsx
+LOCAL: /images/fees-structure.webp | Dims: 1242x1755 | Size: 122.5 KB
+   -> src/pages/Admissions/FeeStructurePage.tsx
+LOCAL: /images/file_00000000129882308ffa3f6b1a6bab51.jpg | Dims: 1944x809 | Size: 1506.4 KB
+   -> src/components/home/AcademicStreamBanners.tsx
+LOCAL: /images/file_00000000129882308ffa3f6b1a6bab51.png | Dims: 1944x809 | Size: 1506.4 KB
+   -> src/components/home/AcademicStreamBanners.tsx
+LOCAL: /images/guru-paduka-pooja.webp | Dims: 1600x1200 | Size: 260.7 KB
+   -> src/components/inner/VisionMissionShowcase.tsx
+   -> src/components/inner/HolisticShowcase.tsx
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/components/inner/HeritageShowcase.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/data/images.ts
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+   -> src/components/inner/FourPillarsShowcase.tsx
+   -> src/data/gallery.ts
+   -> src/components/home/RibbonGallery.tsx
+   -> src/pages/Home/index.tsx
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/components/inner/SpiritualShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/history2.jpeg | Dims: 1600x1064 | Size: 262.3 KB
+   -> src/components/inner/HeritageShowcase.tsx
+   -> src/components/ui/timeline-demo.tsx
+LOCAL: /images/img1.jpg | Dims: 1600x1067 | Size: 307.8 KB
+   -> src/components/inner/HistoryShowcase.tsx
+LOCAL: /images/img1.webp | Dims: 1600x1067 | Size: 188.8 KB
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/img2.jpg | Dims: 1600x1200 | Size: 278.7 KB
+   -> src/components/inner/HistoryShowcase.tsx
+LOCAL: /images/img3.jpg | Dims: 1600x1200 | Size: 261.0 KB
+   -> src/components/inner/HistoryShowcase.tsx
+LOCAL: /images/img3.webp | Dims: 1600x1200 | Size: 128.7 KB
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/img4.jpg | Dims: 1600x1200 | Size: 293.7 KB
+   -> src/components/inner/HistoryShowcase.tsx
+LOCAL: /images/img4.webp | Dims: 1600x1200 | Size: 152.7 KB
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/img7.jpg | Dims: 1600x1067 | Size: 256.7 KB
+   -> src/components/inner/HistoryShowcase.tsx
+LOCAL: /images/it-lab.jpg | Dims: 1200x896 | Size: 860.1 KB
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/pages/Home/index.tsx
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/it-lab.webp | Dims: 1200x896 | Size: 138.5 KB
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/jal-pakhwada-poster.jpeg | Dims: 1131x1600 | Size: 107.8 KB
+   -> src/components/inner/FourPillarsShowcase.tsx
+LOCAL: /images/leadership-cutout.png | Dims: 1085x1449 | Size: 1477.3 KB
+   -> src/pages/Home/index.tsx
+LOCAL: /images/lib.jpg | Dims: 1600x1067 | Size: 247.0 KB
+   -> src/components/inner/LibraryShowcase.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/lib.webp | Dims: 1600x1067 | Size: 134.4 KB
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/menu_students_cutout.png | Dims: 896x1200 | Size: 535.7 KB
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+LOCAL: /images/non-teaching-staff.webp | Dims: 64x64 | Size: 1.4 KB
+   -> src/data/images.ts
+LOCAL: /images/panel_b_achiever_design.png | Dims: 1366x768 | Size: 531.0 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+LOCAL: /images/phys.jpeg | Dims: 1600x1067 | Size: 207.4 KB
+   -> src/components/inner/HistoryShowcase.tsx
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/layout/Header/MegaOverlayMenu.tsx
+   -> src/components/home/RibbonGallery.tsx
+   -> src/pages/Home/index.tsx
+   -> src/components/inner/VisionMissionShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/phys.webp | Dims: 1600x1067 | Size: 103.3 KB
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+LOCAL: /images/principal-photo.jpg | Dims: 1280x720 | Size: 176.5 KB
+   -> src/pages/Home/index.tsx
+   -> src/data/school.ts
+LOCAL: /images/school-diary-cover.png | Dims: 732x714 | Size: 348.6 KB
+   -> src/components/rareui/Book3d.tsx
+LOCAL: /images/school_events/School_Event_2026-09-27_007.jpg | Dims: 1000x667 | Size: 86.3 KB
+   -> src/pages/Home/index.tsx
+LOCAL: /images/student_question_cutout.png | Dims: 1024x1580 | Size: 2777.1 KB
+   -> src/pages/Home/index.tsx
+   -> src/components/common/FaqSection.tsx
+LOCAL: /images/swami.jpeg | Dims: 900x1200 | Size: 228.5 KB
+   -> src/components/inner/HeritageShowcase.tsx
+   -> src/data/about.ts
+   -> src/pages/Home/index.tsx
+LOCAL: /images/swami_chinmayananda_cutout.png | Dims: 1085x1449 | Size: 1477.3 KB
+   -> src/components/layout/Footer.tsx
+   -> src/pages/Home/index.tsx
+LOCAL: /images/swami_chinmayananda_cutout.webp | Dims: 1085x1449 | Size: 193.7 KB
+   -> src/components/inner/HeritageShowcase.tsx
+LOCAL: /images/swamiji.png | Dims: 900x1200 | Size: 1727.2 KB
+   -> src/components/inner/HeritageShowcase.tsx
+LOCAL: /images/swamiji.webp | Dims: 900x1200 | Size: 141.9 KB
+   -> src/components/inner/HeritageShowcase.tsx
+   -> src/data/images.ts
+LOCAL: /images/teaching-staff.webp | Dims: 64x64 | Size: 1.4 KB
+   -> src/data/images.ts
+LOCAL: /images/tour.jpg | Dims: 640x419 | Size: 52.8 KB
+   -> src/components/inner/FourPillarsShowcase.tsx
+   -> src/components/ui/marquee-demo.tsx
+LOCAL: /images/tour.webp | Dims: 640x419 | Size: 44.2 KB
+   -> src/components/home/HorizontalPanelGallery.tsx
+   -> src/data/images.ts
+   -> src/components/inner/InfrastructureShowcase.tsx
+   -> src/components/home/RibbonGallery.tsx
+   -> src/components/inner/CoCurricularShowcase.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1400&q=80
+   -> src/components/inner/LibraryShowcase.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1507842229451-7f01be8610ce?auto=format&fit=crop&w=1400&q=80
+   -> src/components/inner/LibraryShowcase.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1400&q=80
+   -> src/components/inner/LibraryShowcase.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&w=1400&q=80
+   -> src/components/inner/LibraryShowcase.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80
+   -> src/components/ui/timeline.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80
+   -> src/components/ui/img-sphere-demo.tsx
+REMOTE/UNRESOLVED: https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80
+   -> src/components/ui/integration-card.tsx

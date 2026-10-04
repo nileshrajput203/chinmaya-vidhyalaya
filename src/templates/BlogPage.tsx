@@ -114,7 +114,7 @@ export const BlogPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FAF8F5] min-h-screen">
+    <div className="bg-white min-h-screen">
 
       {/* Breadcrumb Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
@@ -135,7 +135,7 @@ export const BlogPage: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles, topics, author, or tags..."
-                className="w-full pl-11 pr-10 py-3 bg-[#FAF8F5] border border-[#E7E2D8] focus:border-[#DF711B] rounded-2xl text-xs sm:text-sm text-slate-800 focus:outline-none transition-all placeholder:text-slate-400"
+                className="w-full pl-11 pr-10 py-3 bg-white border border-[#E7E2D8] focus:border-[#DF711B] rounded-2xl text-xs sm:text-sm text-slate-800 focus:outline-none transition-all placeholder:text-slate-400"
               />
               {searchQuery && (
                 <button
@@ -164,7 +164,7 @@ export const BlogPage: React.FC = () => {
                   className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer border ${
                     isSelected
                       ? 'bg-[#0B1E34] text-white border-[#0B1E34] shadow-md scale-105'
-                      : 'bg-[#FAF8F5] text-slate-700 border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#DF711B]'
+                      : 'bg-white text-slate-700 border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#DF711B]'
                   }`}
                 >
                   {cat}
@@ -264,7 +264,7 @@ export const BlogPage: React.FC = () => {
                       {post.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-0.5 rounded-md bg-[#FAF8F5] border border-[#E7E2D8] text-[10px] font-mono text-slate-600"
+                          className="px-2 py-0.5 rounded-md bg-white border border-[#E7E2D8] text-[10px] font-mono text-slate-600"
                         >
                           #{tag}
                         </span>
@@ -422,7 +422,7 @@ export const BlogPage: React.FC = () => {
               </div>
 
               {/* Author & Meta Row */}
-              <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E7E2D8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="p-4 rounded-2xl bg-white border border-[#E7E2D8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <img
                     src={activeArticle.author.avatar}

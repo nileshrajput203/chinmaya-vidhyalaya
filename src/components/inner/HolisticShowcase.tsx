@@ -49,7 +49,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     domain: 'Mind, Empathy & Creative Expression',
     icon: Heart,
     color: '#0B1E34',
-    badgeBg: 'bg-[#FAF8F5]',
+    badgeBg: 'bg-slate-100',
     badgeText: 'text-[#0B1E34]',
     image: '/images/banner-9.webp',
     imageCaption: 'Emotional Poise: Theatrical Drama & Cultural Music on Annual Day',
@@ -137,7 +137,7 @@ export const HolisticShowcase: React.FC = () => {
       {/* Banner Card */}
       <SpotlightCard
         spotlightColor="rgba(223, 113, 27, 0.08)"
-        className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-6 sm:p-10 shadow-card space-y-5"
+        className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-card space-y-5"
       >
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-2 max-w-2xl">
@@ -167,7 +167,7 @@ export const HolisticShowcase: React.FC = () => {
                 className={`p-3 rounded-2xl text-left transition-all cursor-pointer border flex flex-col justify-between ${
                   isSelected
                     ? 'bg-white border-[#DF711B] shadow-md scale-[1.02]'
-                    : 'bg-[#FAF8F5] border-[#E7E2D8] hover:border-slate-400'
+                    : 'bg-slate-50 border-slate-200 hover:border-slate-400'
                 }`}
               >
                 <div className="flex items-center justify-between w-full mb-1">
@@ -220,7 +220,7 @@ export const HolisticShowcase: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveIdx((prev) => (prev - 1 + VIKAS_DOMAINS.length) % VIKAS_DOMAINS.length)}
-                className="p-2 rounded-xl border border-[#E7E2D8] hover:border-[#DF711B] bg-[#FAF8F5] text-slate-700 hover:text-[#DF711B] transition-colors cursor-pointer"
+                className="p-2 rounded-xl border border-slate-200 hover:border-[#DF711B] bg-white text-slate-700 hover:text-[#DF711B] transition-colors cursor-pointer"
                 title="Previous Domain"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
@@ -228,7 +228,7 @@ export const HolisticShowcase: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveIdx((prev) => (prev + 1) % VIKAS_DOMAINS.length)}
-                className="p-2 rounded-xl border border-[#E7E2D8] hover:border-[#DF711B] bg-[#FAF8F5] text-slate-700 hover:text-[#DF711B] transition-colors cursor-pointer"
+                className="p-2 rounded-xl border border-slate-200 hover:border-[#DF711B] bg-white text-slate-700 hover:text-[#DF711B] transition-colors cursor-pointer"
                 title="Next Domain"
               >
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ export const HolisticShowcase: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Real Campus Photo */}
             <div className="lg:col-span-6">
-              <div className="rounded-2xl overflow-hidden border border-[#E7E2D8] shadow-sm group bg-[#FAF8F5]">
+              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm group bg-white">
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                   <img
                     src={current.image}
@@ -265,7 +265,7 @@ export const HolisticShowcase: React.FC = () => {
                 {current.description}
               </p>
 
-              <div className="bg-[#FAF8F5] border border-[#E7E2D8] p-5 rounded-2xl space-y-2.5">
+              <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2.5">
                 <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#DF711B] flex items-center gap-1.5">
                   <Icon className="w-3.5 h-3.5" />
                   <span>Daily School Implementation:</span>

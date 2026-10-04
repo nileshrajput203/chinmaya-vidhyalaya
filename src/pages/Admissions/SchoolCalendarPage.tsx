@@ -48,7 +48,7 @@ export const SchoolCalendarPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FCFBF7] text-[#181C20] pb-24">
+    <div className="min-h-screen bg-white text-[#181C20] pb-24">
       {/* Breadcrumb Navigation */}
       <Breadcrumb
         items={[
@@ -81,7 +81,7 @@ export const SchoolCalendarPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <label 
                 htmlFor="cal-upload-input"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#FAF8F5] hover:bg-slate-100 text-slate-700 border border-[#E7E2D8] text-xs font-bold rounded-xl transition-all shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs font-bold rounded-xl transition-all shadow-xs cursor-pointer"
                 title="Upload or preview a new calendar image"
               >
                 <Upload className="w-4 h-4 text-[#DF711B]" />
@@ -96,7 +96,7 @@ export const SchoolCalendarPage: React.FC = () => {
               </label>
 
               <a
-                href="/images/academic-calendar.pdf"
+                href="/images/Chinmaya ACADEMIC Calendar 2026-27.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
@@ -110,13 +110,13 @@ export const SchoolCalendarPage: React.FC = () => {
         </div>
 
         {/* INTERACTIVE VIEWER CONTAINER (3D Diary vs 2D Sheet) */}
-        <div className="bg-white border-2 border-[#E7E2D8] rounded-3xl shadow-card overflow-hidden">
+        <div className="bg-white border-2 border-slate-200 rounded-3xl shadow-card overflow-hidden">
           
           {/* Controls Bar with Segmented View Switcher */}
-          <div className="bg-[#FAF8F5] border-b border-[#E7E2D8] px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
+          <div className="bg-white border-b border-slate-200 px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
             
             {/* View Switcher Tabs */}
-            <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E7E2D8] rounded-2xl shadow-2xs">
+            <div className="flex items-center gap-1.5 p-1 bg-white border border-slate-200 rounded-2xl shadow-2xs">
               <button
                 type="button"
                 onClick={() => setViewMode('diary3d')}
@@ -207,7 +207,7 @@ export const SchoolCalendarPage: React.FC = () => {
 
           {/* Display Area: 3D Book vs 2D Sheet */}
           {viewMode === 'diary3d' ? (
-            <div className="flex flex-col items-center justify-center p-6 sm:p-12 bg-gradient-to-b from-[#FAF8F5] via-white to-[#F4F1EA]/50 min-h-[540px] overflow-hidden">
+            <div className="flex flex-col items-center justify-center p-6 sm:p-12 bg-white min-h-[540px] overflow-hidden">
               <div className="text-center mb-2 space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider font-bold text-[#DF711B] bg-orange-50 px-3 py-1 rounded-full border border-orange-200 inline-block">
                   Interactive 3D Hardcover Edition
@@ -247,7 +247,7 @@ export const SchoolCalendarPage: React.FC = () => {
           )}
 
           {/* Upload notice helper for admin/user */}
-          <div className="bg-[#FAF8F5] border-t border-[#E7E2D8] px-4 sm:px-6 py-2.5 flex items-center justify-between text-[11px] text-slate-500">
+          <div className="bg-white border-t border-slate-200 px-4 sm:px-6 py-2.5 flex items-center justify-between text-[11px] text-slate-500">
             <div className="flex items-center gap-1.5">
               <Info className="w-3.5 h-3.5 text-[#DF711B]" />
               <span>
@@ -281,7 +281,7 @@ export const SchoolCalendarPage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              <div className="p-4 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl space-y-2">
+              <div className="p-4 bg-white border border-[#E7E2D8] rounded-2xl space-y-2">
                 <div className="flex items-center gap-2 font-bold text-slate-800 text-sm">
                   <BookOpen className="w-4 h-4 text-[#DF711B]" />
                   <span>Scholastic Terms</span>
@@ -293,7 +293,7 @@ export const SchoolCalendarPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="p-4 bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl space-y-2">
+              <div className="p-4 bg-white border border-[#E7E2D8] rounded-2xl space-y-2">
                 <div className="flex items-center gap-2 font-bold text-slate-800 text-sm">
                   <CalendarIcon className="w-4 h-4 text-emerald-600" />
                   <span>Vacation Windows</span>
@@ -382,7 +382,7 @@ export const SchoolCalendarPage: React.FC = () => {
               </a>
             </div>
 
-            <div className="p-3 bg-[#FCFBF7] border border-[#E7E2D8] rounded-xl text-xs space-y-1 text-slate-600">
+            <div className="p-3 bg-white border border-[#E7E2D8] rounded-xl text-xs space-y-1 text-slate-600">
               <span className="font-bold text-slate-800 block">School Office Working Hours:</span>
               <p className="text-[11px]">Monday to Friday: 8:00 AM – 3:30 PM</p>
               <p className="text-[11px]">Saturday: 8:00 AM – 1:00 PM</p>
@@ -435,7 +435,7 @@ export const SchoolCalendarPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsFullscreen(false)}
-                className="px-4 py-1.5 bg-red-600 hover:bg-red-700 rounded-lg text-xs font-bold ml-2"
+                className="px-4 py-1.5 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-lg text-xs font-bold ml-2 cursor-pointer transition-colors"
               >
                 Close (ESC)
               </button>

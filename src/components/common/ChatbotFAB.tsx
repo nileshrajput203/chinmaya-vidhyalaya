@@ -308,7 +308,7 @@ export const ChatbotFAB: React.FC = () => {
                 chatBodyRef.current.scrollTop += e.deltaY;
               }
             }}
-            className="w-[calc(100vw-32px)] sm:w-[380px] max-w-[420px] bg-[#FCFBF7] rounded-2xl shadow-2xl border border-[#D5CEC2] overflow-hidden flex flex-col overscroll-contain"
+            className="w-[calc(100vw-32px)] sm:w-[380px] max-w-[420px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col overscroll-contain"
             style={{ maxHeight: 'min(580px, calc(100vh - 170px))', overscrollBehavior: 'contain' }}
           >
             {/* Chat Header */}
@@ -466,42 +466,42 @@ export const ChatbotFAB: React.FC = () => {
             </div>
 
             {/* Quick Suggestions Strip */}
-            <div className="bg-[#FAF8F5] border-t border-[#E7E2D8] px-3 py-2 overflow-x-auto flex items-center gap-1.5 scrollbar-none shrink-0">
+            <div className="bg-slate-50 border-t border-slate-200 px-3 py-2 overflow-x-auto flex items-center gap-1.5 scrollbar-none shrink-0">
               <span className="text-[10px] font-mono text-[#888888] shrink-0 uppercase tracking-wider font-bold">Quick:</span>
               <button
                 onClick={() => handleSendMessage('Admission enquiry')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-[#D5CEC2] rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
               >
                 Admission
               </button>
               <button
                 onClick={() => handleSendMessage('Fee structure')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-[#D5CEC2] rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
               >
                 Fee Info
               </button>
               <button
                 onClick={() => handleSendMessage('Download forms')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-[#D5CEC2] rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
               >
                 Forms
               </button>
               <button
                 onClick={() => handleSendMessage('Campus & Timings')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-[#D5CEC2] rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
               >
                 Timings
               </button>
               <button
                 onClick={() => handleSendMessage('CBSE & Curriculum')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-[#D5CEC2] rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
               >
                 Curriculum
               </button>
             </div>
 
             {/* In-Chat Input Form (Never redirects) */}
-            <div className="p-3 border-t border-[#E7E2D8] bg-white shrink-0">
+            <div className="p-3 border-t border-slate-200 bg-white shrink-0">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -514,7 +514,7 @@ export const ChatbotFAB: React.FC = () => {
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Ask any question..."
-                  className="flex-1 px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D5CEC2] rounded-xl text-xs text-[#181C20] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#DF711B]/40 focus:border-[#DF711B] transition-all"
+                  className="flex-1 px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-[#181C20] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#DF711B]/40 focus:border-[#DF711B] transition-all"
                 />
                 <button
                   type="submit"

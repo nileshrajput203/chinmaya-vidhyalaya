@@ -135,7 +135,7 @@ export const NoticeEventBoard: React.FC = () => {
     : upcomingEvents.filter(ev => ev.month === selectedMonth);
 
   return (
-    <section className="py-12 lg:py-16 bg-[#F3EFE6] text-[#181C20] relative overflow-hidden font-sans">
+    <section className="py-12 lg:py-16 bg-white text-[#181C20] relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         {/* Section Header */}
@@ -215,7 +215,7 @@ export const NoticeEventBoard: React.FC = () => {
                     <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 ${
                       notice.isImportant 
                         ? 'bg-[#FFF0E6] text-[#DF711B] border border-[#DF711B]/30' 
-                        : 'bg-[#F3EFE6] text-[#555555]'
+                        : 'bg-slate-100 text-[#555555]'
                     }`}>
                       {notice.category}
                     </span>
@@ -231,7 +231,7 @@ export const NoticeEventBoard: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-2.5 border-t border-[#F3EFE6] flex items-center justify-between">
+                <div className="pt-2.5 border-t border-slate-200 flex items-center justify-between">
                   {notice.fileUrl ? (
                     <a
                       href={notice.fileUrl}
@@ -315,7 +315,7 @@ export const NoticeEventBoard: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-[#F3EFE6] flex items-center justify-between text-xs">
+                <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
                   <span className="text-[10px] font-mono text-[#777777]">{ev.date}</span>
                   <span className="text-xs font-bold text-[#DF711B]">Official Event ›</span>
                 </div>
@@ -347,7 +347,7 @@ export const NoticeEventBoard: React.FC = () => {
                     key={idx}
                     href={item.file}
                     download
-                    className="flex items-center justify-between p-2 bg-[#FAF8F5] border border-[#E7E2D8] text-xs hover:border-[#DF711B] hover:text-[#DF711B] transition-colors"
+                    className="flex items-center justify-between p-2 bg-white border border-slate-200 text-xs hover:border-[#DF711B] hover:text-[#DF711B] transition-colors"
                   >
                     <span>{item.name}</span>
                     <Download className="w-3.5 h-3.5 text-[#DF711B]" />

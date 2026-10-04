@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export const FaqPage: React.FC = () => {
   return (
-    <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+    <div className="bg-white text-[#181C20] pb-24">
       
       <Breadcrumb items={[{ label: "FAQs & School Policies" }]} />
 

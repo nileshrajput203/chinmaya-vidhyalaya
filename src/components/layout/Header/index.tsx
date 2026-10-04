@@ -17,9 +17,9 @@ export const Header: React.FC = () => {
   return (
     <>
       {/* ----------------------------------------------------
-          MASTER STATIC INSTITUTIONAL HEADER (3-TIER ARCHITECTURE)
+          MASTER INSTITUTIONAL HEADER (STICKY ON MOBILE ONLY)
          ---------------------------------------------------- */}
-      <header className="w-full relative z-40 bg-white">
+      <header className="w-full sticky top-0 lg:relative z-40 bg-white shadow-xs">
         {/* Tier 1: Micro-Utility & Accreditation Strip */}
         <InstitutionTopBar />
 

@@ -38,13 +38,13 @@ const Faq05: React.FC<Faq05Props> = ({
   defaultValue = "faq-1",
 }) => {
   return (
-    <section data-slot="faq" className="bg-[#FAF8F5] py-14 sm:py-20">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 border border-[#E7E2D8] bg-white shadow-sm md:grid-cols-12">
+    <section data-slot="faq" className="bg-white py-14 sm:py-20">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 border border-slate-200 bg-white shadow-sm md:grid-cols-12">
         
         {/* Left column: Intro */}
         <div
           data-slot="faq-intro"
-          className="flex flex-col justify-between gap-6 border-b border-[#E7E2D8] p-6 sm:p-8 md:border-b-0 md:border-r md:p-10 md:col-span-5 bg-[#FAF8F5]/60"
+          className="flex flex-col justify-between gap-6 border-b border-slate-200 p-6 sm:p-8 md:border-b-0 md:border-r md:p-10 md:col-span-5 bg-white"
         >
           <div className="space-y-4">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-[#181818] uppercase tracking-tight leading-[1.05] m-0">

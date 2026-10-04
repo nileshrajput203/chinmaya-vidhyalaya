@@ -132,7 +132,7 @@ export const HistoryShowcase: React.FC = () => {
       <InView>
         <SpotlightCard
           spotlightColor="rgba(223, 113, 27, 0.08)"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-8 sm:p-12 shadow-card"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-[#E7E2D8] rounded-3xl p-8 sm:p-12 shadow-card"
         >
           <div className="lg:col-span-7 space-y-4">
             <div className="flex items-center gap-2">
@@ -200,7 +200,7 @@ export const HistoryShowcase: React.FC = () => {
                   <span>Saravali, Boisar</span>
                 </div>
               </div>
-              <div className="p-3 text-xs text-[#4A5568] text-center font-medium bg-[#FAF8F5] border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
+              <div className="p-3 text-xs text-[#4A5568] text-center font-medium bg-white border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
                 Chinmaya Vidyalaya Campus | Saravali, Boisar &rarr;
               </div>
             </div>
@@ -301,7 +301,7 @@ export const HistoryShowcase: React.FC = () => {
             </div>
 
             {/* Archival Details */}
-            <div className="p-6 sm:p-7 bg-[#FAF8F5] border-t border-[#E7E2D8] space-y-2">
+            <div className="p-6 sm:p-7 bg-white border-t border-[#E7E2D8] space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
                   {activePhoto.tag}

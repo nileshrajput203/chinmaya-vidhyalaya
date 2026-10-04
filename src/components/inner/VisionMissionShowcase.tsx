@@ -131,7 +131,7 @@ const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
       className={`transition-all duration-500 rounded-3xl p-6 sm:p-8 border ${
         isActive
           ? 'bg-white border-[#DF711B]/40 shadow-card'
-          : 'bg-[#FAF8F5]/90 border-[#E7E2D8] opacity-90 hover:opacity-100'
+          : 'bg-white/90 border-[#E7E2D8] opacity-90 hover:opacity-100'
       } space-y-6 scroll-mt-32`}
     >
       {/* Sheath Header */}
@@ -183,7 +183,7 @@ const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
       </div>
 
       {/* Daily Boisar Realization */}
-      <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E7E2D8] space-y-1 shadow-2xs">
+      <div className="bg-white p-4 rounded-2xl border border-[#E7E2D8] space-y-1 shadow-2xs">
         <span className="text-[11px] font-mono font-bold uppercase text-[#DF711B] block">
           Daily Boisar Campus Realization:
         </span>
@@ -241,7 +241,7 @@ export const VisionMissionShowcase: React.FC = () => {
          ==================================================== */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* PANEL 1: OUR VISION */}
-        <SpotlightCard className="bg-[#FAF8F5] border-2 border-[#DF711B]/35 rounded-3xl p-6 sm:p-8 shadow-card flex flex-col justify-between space-y-6">
+        <SpotlightCard className="bg-white border-2 border-[#DF711B]/35 rounded-3xl p-6 sm:p-8 shadow-card flex flex-col justify-between space-y-6">
           <div className="space-y-5">
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -282,7 +282,7 @@ export const VisionMissionShowcase: React.FC = () => {
                   <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
                 </div>
               </div>
-              <div className="p-2.5 bg-[#FAF8F5] text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
+              <div className="p-2.5 bg-white text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
                 Hands-on STEM Lab • Nurturing Inquisitive Minds &rarr;
               </div>
             </div>
@@ -315,7 +315,7 @@ export const VisionMissionShowcase: React.FC = () => {
         </SpotlightCard>
 
         {/* PANEL 2: OUR MISSION */}
-        <SpotlightCard className="bg-[#FAF8F5] border-2 border-[#0B1E34]/30 rounded-3xl p-6 sm:p-8 shadow-card flex flex-col justify-between space-y-6">
+        <SpotlightCard className="bg-white border-2 border-[#0B1E34]/30 rounded-3xl p-6 sm:p-8 shadow-card flex flex-col justify-between space-y-6">
           <div className="space-y-5">
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -356,7 +356,7 @@ export const VisionMissionShowcase: React.FC = () => {
                   <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
                 </div>
               </div>
-              <div className="p-2.5 bg-[#FAF8F5] text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
+              <div className="p-2.5 bg-white text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
                 Cultural Ethos • Sacred Traditions & Moral Grounding &rarr;
               </div>
             </div>
@@ -570,7 +570,7 @@ export const VisionMissionShowcase: React.FC = () => {
               />
             </div>
 
-            <div className="p-6 bg-[#FAF8F5] border-t border-[#E7E2D8] space-y-2">
+            <div className="p-6 bg-white border-t border-[#E7E2D8] space-y-2">
               <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                 Chinmaya Vidyalaya Tarapur • Visual Archives
               </span>

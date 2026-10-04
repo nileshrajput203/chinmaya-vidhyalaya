@@ -4,7 +4,7 @@ import { Home, Sparkles } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
   return (
-    <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+    <div className="bg-white text-[#181C20] pb-24">
       
       <div className="max-w-xl mx-auto px-4 py-20 text-center space-y-6">
         <div className="w-16 h-16 rounded-2xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center mx-auto shadow-sm border border-[#E7E2D8]">

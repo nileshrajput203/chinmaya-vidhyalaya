@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar, Sparkles } from 'lucide-react';
+import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formService } from '../../services/formService';
 import { useToast } from '../../context/ToastContext';
@@ -30,54 +30,54 @@ const getFrameSrc = (index: number): string => {
 const HERO_NOTICES = [
   {
     tag: 'Admissions 2026–27',
-    tagColor: 'bg-[#DF711B]/30 text-[#FFB740] border-[#DF711B]/50',
-    borderColor: 'border-l-[#DF711B] hover:border-[#DF711B]/70',
+    tagColor: 'bg-orange-50 text-[#DF711B] border-orange-200/90',
+    borderColor: 'border-l-[#DF711B]',
     subTag: 'Nursery to XII',
-    subTagColor: 'text-amber-100/70',
+    subTagColor: 'text-slate-500 font-mono',
     title: 'Admissions Open: Nursery to Std XII (Arts, Commerce, Science)',
-    titleColor: 'group-hover/card:text-[#FFB740]',
+    titleColor: 'group-hover/card:text-[#DF711B]',
     description: 'Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Complete prospectus and guidance available.',
     linkText: 'Admission Guidelines',
-    linkTextColor: 'text-[#FFB740]',
+    linkTextColor: 'text-[#DF711B]',
     to: '/admissions/guidelines',
   },
   {
     tag: 'CBSE Distinction',
-    tagColor: 'bg-emerald-500/25 text-emerald-300 border-emerald-500/50',
-    borderColor: 'border-l-emerald-400 hover:border-emerald-400/70',
+    tagColor: 'bg-emerald-50 text-emerald-700 border-emerald-200/90',
+    borderColor: 'border-l-emerald-500',
     subTag: '100% AISSE',
-    subTagColor: 'text-emerald-100/70',
+    subTagColor: 'text-slate-500 font-mono',
     title: '100% First Class CBSE Class X Board Results',
-    titleColor: 'group-hover/card:text-emerald-300',
+    titleColor: 'group-hover/card:text-emerald-700',
     description: 'Unbroken tradition of academic excellence with multiple students securing top merits in the CBSE Board examinations.',
     linkText: 'Read Results Archive',
-    linkTextColor: 'text-emerald-300',
+    linkTextColor: 'text-emerald-700',
     to: '/news',
   },
   {
     tag: 'Ecology & CVP',
-    tagColor: 'bg-amber-500/25 text-amber-300 border-amber-500/50',
-    borderColor: 'border-l-[#FFB740] hover:border-amber-400/70',
+    tagColor: 'bg-amber-50 text-amber-800 border-amber-200/90',
+    borderColor: 'border-l-amber-500',
     subTag: 'Jal Pakhwada',
-    subTagColor: 'text-amber-100/70',
+    subTagColor: 'text-slate-500 font-mono',
     title: 'Jal Pakhwada Water Conservation Campaign',
-    titleColor: 'group-hover/card:text-[#FFB740]',
+    titleColor: 'group-hover/card:text-amber-800',
     description: 'Student-led community seminars, tree plantation drives, and creative painting exhibitions promoting rainwater harvesting.',
     linkText: 'View Event Highlights',
-    linkTextColor: 'text-[#FFB740]',
+    linkTextColor: 'text-amber-800',
     to: '/news',
   },
   {
     tag: 'Campus Office',
-    tagColor: 'bg-sky-500/25 text-sky-300 border-sky-500/50',
-    borderColor: 'border-l-sky-400 hover:border-sky-400/70',
+    tagColor: 'bg-sky-50 text-sky-700 border-sky-200/90',
+    borderColor: 'border-l-sky-500',
     subTag: 'Parent Visits',
-    subTagColor: 'text-sky-100/70',
+    subTagColor: 'text-slate-500 font-mono',
     title: 'Parent Meeting & Campus Visit Guidelines',
-    titleColor: 'group-hover/card:text-sky-300',
+    titleColor: 'group-hover/card:text-sky-700',
     description: 'Campus visits are welcomed for prospective families. Existing parents are requested to contact the administrative office.',
     linkText: 'Campus Timings & Office',
-    linkTextColor: 'text-sky-300',
+    linkTextColor: 'text-sky-700',
     to: '/contact',
   },
 ];
@@ -87,6 +87,17 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Desktop guard: only active on screens >= 1024px to ensure mobile never loads or plays sequential frames
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Cached frame images
   const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(TOTAL_FRAMES).fill(null));
@@ -199,6 +210,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
   // Aggressive multi-threaded progressive preloader ensuring zero missed frames
   useEffect(() => {
+    if (!isDesktop) return;
     let isCancelled = false;
     const loadedSet = new Set<number>();
 
@@ -322,6 +334,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
   // Silky smooth physics interpolation loop
   useEffect(() => {
+    if (!isDesktop) return;
     let animId: number;
 
     const renderLoop = () => {
@@ -338,10 +351,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     animId = requestAnimationFrame(renderLoop);
     return () => cancelAnimationFrame(animId);
-  }, [drawFrame]);
+  }, [isDesktop, drawFrame]);
 
   // Pin stickyRef to viewport using GSAP ScrollTrigger
   useEffect(() => {
+    if (!isDesktop) return;
     const container = containerRef.current;
     const stickyEl = stickyRef.current;
     if (!container || !stickyEl) return;
@@ -467,6 +481,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     };
   };
 
+  // If not desktop, do not render sequential scrollytelling frames at all
+  if (!isDesktop) {
+    return null;
+  }
+
   return (
     <div 
       ref={containerRef}
@@ -496,73 +515,16 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         />
 
         {/* ----------------------------------------------------
-            MOBILE-OPTIMIZED HERO SHOWCASE (< 1024px)
-            Clean, high-impact, instant interaction without lag
-           ---------------------------------------------------- */}
-        <div className="lg:hidden absolute inset-0 z-20 pointer-events-none flex flex-col justify-end p-4 pb-6 sm:pb-8">
-          <div className="pointer-events-auto bg-[#071320]/90 backdrop-blur-xl border border-white/20 p-4 sm:p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] space-y-3 max-w-md mx-auto w-full">
-            <div className="flex items-center justify-between gap-2">
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#DF711B]/20 text-[#FFB740] border border-[#DF711B]/40 text-[9px] font-mono font-bold uppercase tracking-wider">
-                <Sparkles className="w-3 h-3 text-[#FFB740]" />
-                Admissions 2026–27 Open
-              </span>
-              <span className="text-[9px] font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded-full border border-white/10">
-                CBSE #1130058
-              </span>
-            </div>
-
-            <div className="space-y-0.5">
-              <h2 className="font-cinzel font-black text-lg sm:text-xl text-white tracking-wide leading-tight uppercase">
-                Chinmaya Vidyalaya
-              </h2>
-              <p className="text-[11px] text-amber-300 font-sans italic">
-                "Keep Smiling — Knowledge, Vision & Character"
-              </p>
-              <p className="text-[11px] text-slate-300 font-sans leading-relaxed pt-0.5">
-                Nursery to Std XII (Arts, Commerce, Science) • 100% First Class CBSE Board Record
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 pt-0.5">
-              <button
-                type="button"
-                onClick={onOpenAdmissions}
-                className="w-full py-2.5 px-3 bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer"
-              >
-                <span>Admission Enquiry</span>
-                <ArrowRight className="w-3.5 h-3.5 text-amber-200" />
-              </button>
-
-              <Link
-                to="/admissions/guidelines"
-                className="w-full py-2.5 px-3 bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-xs rounded-xl transition-all border border-white/20 flex items-center justify-center gap-1 text-center"
-              >
-                <span>Guidelines</span>
-              </Link>
-            </div>
-
-            {/* Quick ticker */}
-            <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-slate-400">
-              <Link to="/news" className="text-[#FFB740] hover:underline flex items-center gap-1">
-                <span>Active Notices & Circulars</span>
-                <ArrowRight className="w-2.5 h-2.5" />
-              </Link>
-              <span>Estd. 1995</span>
-            </div>
-          </div>
-        </div>
-
-        {/* ----------------------------------------------------
             ADMISSION FORM + WHAT'S NEW NOTICE BOARD (DESKTOP HERO OVERLAY)
             Stays visible till the end in one smooth scroll
            ---------------------------------------------------- */}
-        <div className="hidden lg:flex absolute inset-0 z-20 pointer-events-none items-center justify-center overflow-y-auto px-4 py-6">
+        <div className="flex absolute inset-0 z-20 pointer-events-none items-center justify-center overflow-y-auto px-4 py-6">
           <div className="w-full max-w-5xl mx-auto box-border" style={getHeroOverlayVisibility()}>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
               
               {/* Left Column: Admission Enquiry Form (7 cols on lg) */}
-              <div className="lg:col-span-7 bg-[#FCFBF7]/95 backdrop-blur-md text-[#181C20] p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col">
+              <div className="lg:col-span-7 bg-white/95 backdrop-blur-md text-[#181C20] p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col">
                 {/* Decorative Top Accent Bar */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
@@ -579,7 +541,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
                           ADMISSIONS 2026–27
                         </span>
-                        <span className="text-[9.5px] font-mono text-[#0B1E34] font-bold bg-[#FAF8F5] border border-[#E7E2D8] px-2 py-0.5 rounded-full shrink-0">
+                        <span className="text-[9.5px] font-mono text-[#0B1E34] font-bold bg-white border border-slate-200 px-2 py-0.5 rounded-full shrink-0">
                           CBSE #1130058
                         </span>
                       </div>
@@ -741,63 +703,63 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 )}
               </div>
 
-              {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) */}
+              {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) — White Box Feel with Outlines */}
               <div 
                 data-lenis-prevent="true"
-                className="lg:col-span-5 bg-[#0B1E34]/95 backdrop-blur-md text-white p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/35 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-4"
+                className="lg:col-span-5 bg-white/95 backdrop-blur-md text-[#181C20] p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-slate-200 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-4"
               >
                 {/* Decorative Top Accent Bar */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
                 {/* Header */}
-                <div className="border-b border-white/10 pb-3">
+                <div className="border-b border-slate-200 pb-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
-                      <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#FFB740] font-bold">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                      <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
                         WHAT'S NEW
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-amber-200/90 bg-white/10 px-2 py-0.5 rounded-full border border-white/15">
+                    <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200 font-semibold">
                       Live Updates
                     </span>
                   </div>
-                  <h4 className="font-cinzel text-base sm:text-lg font-black text-white tracking-wide mt-2">
+                  <h4 className="font-cinzel text-base sm:text-lg font-black text-[#0B1D30] tracking-wide mt-2">
                     Latest Dispatches & Notices
                   </h4>
-                  <p className="text-[11px] text-slate-300 font-sans mt-0.5">
+                  <p className="text-[11px] text-slate-500 font-sans mt-0.5">
                     Official announcements, board distinctions, and campus dispatches
                   </p>
                 </div>
 
-                {/* Notices Feed Container — Continuous moving ticker with pause-on-hover */}
+                {/* Notices Feed Container — Continuous auto swimming up ticker with pause-on-hover */}
                 <div 
                   data-lenis-prevent="true"
                   onWheel={(e) => e.stopPropagation()}
                   className="relative h-64 sm:h-[19rem] overflow-hidden group select-none"
                 >
                   {/* Subtle top & bottom fade gradient masks for smooth edge transitions */}
-                  <div className="pointer-events-none absolute top-0 inset-x-0 h-7 bg-gradient-to-b from-[#0B1E34] to-transparent z-10" />
-                  <div className="pointer-events-none absolute bottom-0 inset-x-0 h-7 bg-gradient-to-t from-[#0B1E34] to-transparent z-10" />
+                  <div className="pointer-events-none absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
+                  <div className="pointer-events-none absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
-                  {/* Infinite Continuous Upward Track */}
+                  {/* Infinite Continuous Upward Track (Auto Swimming Up) */}
                   <div className="animate-ticker-up space-y-2.5">
                     {[...HERO_NOTICES, ...HERO_NOTICES].map((notice, idx) => (
                       <Link 
                         key={idx}
                         to={notice.to} 
-                        className={`block p-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 ${notice.borderColor} transition-all duration-200 group/card border-l-4`}
+                        className={`block p-3.5 rounded-2xl bg-white hover:bg-slate-50/90 border border-slate-200 shadow-2xs hover:shadow-md ${notice.borderColor} transition-all duration-200 group/card border-l-4`}
                       >
                         <div className="flex items-center justify-between gap-2 mb-1.5">
                           <span className={`px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full border ${notice.tagColor}`}>
                             {notice.tag}
                           </span>
-                          <span className={`text-[10px] font-mono ${notice.subTagColor}`}>{notice.subTag}</span>
+                          <span className={`text-[10px] font-mono font-medium ${notice.subTagColor}`}>{notice.subTag}</span>
                         </div>
-                        <h5 className={`font-cinzel text-xs sm:text-[13px] font-bold text-white ${notice.titleColor} transition-colors leading-snug`}>
+                        <h5 className={`font-cinzel text-xs sm:text-[13px] font-bold text-[#0B1D30] ${notice.titleColor} transition-colors leading-snug`}>
                           {notice.title}
                         </h5>
-                        <p className="text-[11.5px] text-slate-300 mt-1 leading-relaxed font-sans font-normal">
+                        <p className="text-[11.5px] text-slate-600 mt-1 leading-relaxed font-sans font-normal">
                           {notice.description}
                         </p>
                         <div className={`mt-2 flex items-center gap-1 text-[10px] font-mono font-bold ${notice.linkTextColor} group-hover/card:translate-x-1 transition-transform`}>
@@ -810,12 +772,12 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 </div>
 
                 {/* Footer Buttons */}
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
+                <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
                   <Link
                     to="/admissions/calendar"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#FFB740] hover:text-white transition-colors group"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-slate-700 hover:text-[#DF711B] transition-colors group"
                   >
-                    <Calendar className="w-3.5 h-3.5 text-[#FFB740] group-hover:scale-110 transition-transform" />
+                    <Calendar className="w-3.5 h-3.5 text-[#DF711B] group-hover:scale-110 transition-transform" />
                     <span>Academic Calendar ›</span>
                   </Link>
 
@@ -824,7 +786,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-xl text-xs font-bold font-sans uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 group"
                   >
                     <span>Full Bulletin</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-amber-200 group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
 

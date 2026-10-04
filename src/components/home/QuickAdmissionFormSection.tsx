@@ -174,7 +174,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
             </div>
 
             {/* The Mode Toggle */}
-            <div className="inline-flex p-1 bg-[#F3EFE6] rounded-lg border border-[#E5E0D5] self-start sm:self-center shrink-0">
+            <div className="inline-flex p-1 bg-slate-100 rounded-lg border border-slate-200 self-start sm:self-center shrink-0">
               <button
                 type="button"
                 onClick={() => { setMode('quick'); setErrorMsg(''); }}
@@ -234,7 +234,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#F3EFE6] hover:bg-[#EAE4D7] text-[#181818] text-xs font-bold uppercase tracking-wider rounded border border-[#DCD5C9] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-[#181818] text-xs font-bold uppercase tracking-wider rounded border border-slate-200 transition-colors cursor-pointer"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                   <span>Submit Another Form</span>
@@ -320,7 +320,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                       <select
                         value={quickData.callbackTime}
                         onChange={(e) => setQuickData({ ...quickData, callbackTime: e.target.value })}
-                        className="py-1 px-2 text-[11px] bg-[#F3EFE6] border border-[#DDD7CD] rounded text-[#333333] focus:outline-none focus:border-[#DF711B]"
+                        className="py-1 px-2 text-[11px] bg-white border border-slate-200 rounded text-[#333333] focus:outline-none focus:border-[#DF711B]"
                       >
                         <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
                         <option value="Afternoon (12 PM - 3 PM)">Afternoon (12 PM - 3 PM)</option>

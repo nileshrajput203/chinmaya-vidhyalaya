@@ -17,7 +17,7 @@ export const BannerCarousel: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full bg-[#FAF8F5] relative overflow-hidden select-none">
+    <section className="w-full bg-white relative overflow-hidden select-none">
       <div className="relative w-full aspect-[1600/419] overflow-hidden">
         {BANNER_SLIDES.map((slide, idx) => (
           <div

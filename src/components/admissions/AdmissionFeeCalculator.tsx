@@ -155,12 +155,12 @@ export const AdmissionFeeCalculator: React.FC = () => {
   };
 
   return (
-    <section className="py-14 sm:py-20 bg-[#FAF8F5] border-t border-b border-[#E7E2D8] relative">
+    <section className="py-14 sm:py-20 bg-white border-t border-b border-slate-200 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF3E8] border border-[#DF711B]/30 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-wider">
             <Calculator className="w-3.5 h-3.5" />
             <span>Admissions 2026–27 Planning Tool</span>
           </div>
@@ -176,7 +176,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Controls Column */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-[#E7E2D8] shadow-sm space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
             
             {/* Step 1: Select Grade Category */}
             <div>
@@ -194,7 +194,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
                       className={`p-3 rounded-2xl text-left border transition-all cursor-pointer ${
                         isSelected
                           ? 'bg-[#0B1D30] text-white border-[#0B1D30] shadow-md scale-[1.02]'
-                          : 'bg-[#FAF8F5] hover:bg-[#F2EDE4] text-slate-700 border-[#E7E2D8]'
+                          : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
                       }`}
                     >
                       <div className="text-[10px] font-mono opacity-70 uppercase tracking-widest">{grade.category}</div>
@@ -207,7 +207,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
 
             {/* Step 1.5: If Class XI/XII, Select Academic Stream */}
             {isSeniorSec && selectedGrade.streams && (
-              <div className="pt-2 border-t border-[#F0ECE1]">
+              <div className="pt-2 border-t border-slate-100">
                 <label className="block text-xs font-mono uppercase tracking-wider text-[#DF711B] font-bold mb-3 flex items-center gap-1.5">
                   <GraduationCap className="w-4 h-4" />
                   <span>Choose Senior Secondary Stream (Class XI & XII)</span>
@@ -223,7 +223,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
                         className={`w-full p-3.5 rounded-2xl text-left border transition-all cursor-pointer flex items-center justify-between gap-3 ${
                           isSelected
                             ? 'bg-[#FFF8F0] border-[#DF711B] text-[#0B1D30] shadow-xs'
-                            : 'bg-[#FAF8F5] border-[#E7E2D8] text-slate-600 hover:bg-[#F2EDE4]'
+                            : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                         }`}
                       >
                         <div>
@@ -245,7 +245,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
             )}
 
             {/* Step 2: Transport Route */}
-            <div className="pt-2 border-t border-[#F0ECE1]">
+            <div className="pt-2 border-t border-slate-100">
               <label className="block text-xs font-mono uppercase tracking-wider text-slate-500 font-bold mb-3 flex items-center gap-1.5">
                 <Bus className="w-4 h-4 text-[#DF711B]" />
                 <span>2. School Bus Transport Route (Optional)</span>
@@ -253,7 +253,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
               <select
                 value={selectedTransportId}
                 onChange={(e) => setSelectedTransportId(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] text-xs sm:text-sm font-sans text-slate-800 focus:outline-none focus:border-[#DF711B] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-sans text-slate-800 focus:outline-none focus:border-[#DF711B] transition-colors"
               >
                 {TRANSPORT_ZONES.map((zone) => (
                   <option key={zone.id} value={zone.id}>

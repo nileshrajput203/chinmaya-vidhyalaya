@@ -74,10 +74,10 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     <div
       ref={containerRef}
       style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
-      className="fixed inset-0 z-[9999] bg-[#FAF8F5] text-[#181C20] flex flex-col justify-between p-8 sm:p-14 select-none overflow-hidden"
+      className="fixed inset-0 z-[9999] bg-white text-[#181C20] flex flex-col justify-between p-8 sm:p-14 select-none overflow-hidden"
     >
       {/* Top Metadata */}
-      <div className="flex justify-between items-center text-[11px] uppercase tracking-[0.25em] text-[#64748B] font-mono border-b border-[#E7E2D8] pb-4">
+      <div className="flex justify-between items-center text-[11px] uppercase tracking-[0.25em] text-[#64748B] font-mono border-b border-slate-200 pb-4">
         <span>ESTD. 1993 • BOISAR / TARAPUR</span>
         <span>CBSE AFFILIATION: 1130058</span>
       </div>
@@ -85,7 +85,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       {/* Centerpiece Branding */}
       <div className="max-w-3xl mx-auto text-center space-y-6">
         <div ref={logoRef} className="space-y-4">
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-white border-2 border-[#E7E2D8] shadow-lg p-3 mx-auto">
+          <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-white border-2 border-slate-200 shadow-lg p-3 mx-auto">
             <img
               src="/images/Chinmaya_Logo.webp"
               alt="Chinmaya Vidyalaya Emblem"

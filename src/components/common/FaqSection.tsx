@@ -108,7 +108,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
   };
 
   return (
-    <section id={id} className="py-16 sm:py-24 pb-8 sm:pb-12 bg-[#FCFBF7] text-[#181C20] relative overflow-visible">
+    <section id={id} className="py-16 sm:py-24 pb-8 sm:pb-12 bg-white text-[#181C20] relative overflow-visible">
       {/* Background ambient texture */}
       <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
 
@@ -189,7 +189,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                       className={`group relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
                         isActive
                           ? 'bg-[#0B1D30] text-white shadow-md scale-105'
-                          : 'bg-white text-[#4A5568] border border-[#E7E2D8] hover:bg-[#FAF8F5] hover:text-[#0B1D30]'
+                          : 'bg-white text-[#4A5568] border border-[#E7E2D8] hover:bg-slate-50 hover:text-[#0B1D30]'
                       }`}
                     >
                       <span>{cat.label}</span>
@@ -279,7 +279,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                           className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                             isOpen
                               ? 'bg-[#0B1D30] text-white shadow-md'
-                              : 'bg-[#FAF8F5] text-[#DF711B] border border-[#E7E2D8] group-hover:border-[#DF711B]'
+                              : 'bg-white text-[#DF711B] border border-slate-200 group-hover:border-[#DF711B]'
                           }`}
                         >
                           {getCategoryIcon(faq.category)}
@@ -310,7 +310,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                         className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1 transition-all duration-300 ${
                           isOpen
                             ? 'bg-[#DF711B] text-white rotate-180 shadow-sm'
-                            : 'bg-[#FAF8F5] text-slate-500 border border-[#E7E2D8] group-hover:bg-white group-hover:text-[#0B1D30]'
+                            : 'bg-white text-slate-500 border border-slate-200 group-hover:bg-slate-100 group-hover:text-[#0B1D30]'
                         }`}
                       >
                         <ChevronDown className="w-4 h-4 transition-transform duration-300" />
@@ -326,7 +326,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
                         >
-                          <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-[#E7E2D8]/80 space-y-3 bg-[#FAF8F5]/50">
+                          <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-slate-200 space-y-3 bg-slate-50/60">
                             
                             {/* Distinct Answered Header */}
                             <div className="flex items-center gap-2 pl-0 sm:pl-12">
@@ -356,14 +356,14 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                                   <div className="inline-flex items-center gap-1.5">
                                     <button
                                       onClick={() => handleFeedback(faq.id, 'helpful')}
-                                      className="p-1.5 px-2.5 rounded-lg bg-[#FAF8F5] hover:bg-[#FAF3E8] text-slate-600 hover:text-[#0B1D30] border border-[#E7E2D8] transition-colors flex items-center gap-1 font-mono text-[11px]"
+                                      className="p-1.5 px-2.5 rounded-lg bg-white hover:bg-slate-100 text-slate-600 hover:text-[#0B1D30] border border-slate-200 transition-colors flex items-center gap-1 font-mono text-[11px]"
                                     >
                                       <ThumbsUp className="w-3 h-3" />
                                       <span>Yes</span>
                                     </button>
                                     <button
                                       onClick={() => handleFeedback(faq.id, 'not-helpful')}
-                                      className="p-1.5 px-2.5 rounded-lg bg-[#FAF8F5] hover:bg-[#FAF3E8] text-slate-600 hover:text-[#0B1D30] border border-[#E7E2D8] transition-colors flex items-center gap-1 font-mono text-[11px]"
+                                      className="p-1.5 px-2.5 rounded-lg bg-white hover:bg-slate-100 text-slate-600 hover:text-[#0B1D30] border border-slate-200 transition-colors flex items-center gap-1 font-mono text-[11px]"
                                     >
                                       <ThumbsDown className="w-3 h-3" />
                                       <span>No</span>

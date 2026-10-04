@@ -83,10 +83,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
             e.stopPropagation();
           }}
           style={{ overscrollBehavior: 'contain' }}
-          className="relative ml-auto w-full max-w-sm bg-[#FCFBF7] text-[#181C20] h-full shadow-2xl flex flex-col z-10 overflow-y-auto border-l border-[#E7E2D8] scroll-smooth"
+          className="relative ml-auto w-full max-w-sm bg-white text-[#181C20] h-full shadow-2xl flex flex-col z-10 overflow-y-auto border-l border-slate-200 scroll-smooth"
         >
           {/* Mobile Header with Logo Restart */}
-          <div className="p-5 bg-[#FAF8F5] text-[#181C20] flex items-center justify-between border-b border-[#E7E2D8] shrink-0">
+          <div className="p-5 bg-white text-[#181C20] flex items-center justify-between border-b border-slate-200 shrink-0">
             <a 
               href="/" 
               onClick={handleRestart}

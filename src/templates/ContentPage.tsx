@@ -108,7 +108,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   // that must break out of the max-w-6xl container to prevent clipping and sticky scroll issues.
   if (isHistory) {
     return (
-      <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+      <div className="bg-white text-[#181C20] pb-24">
         <Breadcrumb items={[{ label: displayCategoryLabel }, { label: title }]} />
         <HistoryShowcase />
       </div>
@@ -117,7 +117,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
   if (isSwami) {
     return (
-      <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+      <div className="bg-white text-[#181C20] pb-24">
         <Breadcrumb items={[{ label: displayCategoryLabel }, { label: title }]} />
         <HeritageShowcase />
       </div>
@@ -128,7 +128,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   const showComplianceSection = slug === 'mandatory-information';
 
   return (
-    <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+    <div className="bg-white text-[#181C20] pb-24">
       <Breadcrumb items={[{ label: displayCategoryLabel }, { label: title }]} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-12">
@@ -190,7 +190,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                       ))}
                     </div>
                     <div className="lg:col-span-5">
-                      <div className="border border-[#E7E2D8] bg-[#FAF8F5] p-2 rounded-2xl shadow-sm overflow-hidden group">
+                      <div className="border border-[#E7E2D8] bg-white p-2 rounded-2xl shadow-sm overflow-hidden group">
                         <img
                           src={primaryVisual.src}
                           alt={`${title} visual`}
@@ -244,7 +244,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     {OFFICIAL_BOARD_OF_MANAGEMENT.map((member) => (
                       <div 
                         key={member.id}
-                        className="bg-[#FCFBF7] border border-[#E7E2D8] rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4"
+                        className="bg-white border border-[#E7E2D8] rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4"
                       >
                         <div className="flex items-center gap-4">
                           {member.image ? (
@@ -307,7 +307,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     <div className="overflow-x-auto rounded-2xl border border-[#E7E2D8] shadow-sm">
                       <table className="w-full text-left border-collapse text-xs">
                         <thead>
-                          <tr className="bg-[#FAF8F5] border-b border-[#E7E2D8] font-cinzel font-bold text-[#181C20]">
+                          <tr className="bg-white border-b border-[#E7E2D8] font-cinzel font-bold text-[#181C20]">
                             <th className="py-3 px-4">Sr. No.</th>
                             <th className="py-3 px-4">Name</th>
                             <th className="py-3 px-4">Designation</th>
@@ -318,7 +318,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                         </thead>
                         <tbody className="divide-y divide-[#E7E2D8] bg-white font-sans text-slate-700">
                           {OFFICIAL_BOARD_OF_MANAGEMENT.map((m) => (
-                            <tr key={m.id} className="hover:bg-[#FAF8F5]/60 transition-colors">
+                            <tr key={m.id} className="hover:bg-white/60 transition-colors">
                               <td className="py-3 px-4 font-mono font-bold text-[#DF711B]">{m.srNo}</td>
                               <td className="py-3 px-4 font-semibold text-[#181C20]">{m.name}</td>
                               <td className="py-3 px-4">
@@ -441,7 +441,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Std I to V */}
-                    <div id="primary-wing" className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4 scroll-mt-28">
+                    <div id="primary-wing" className="bg-white border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4 scroll-mt-28">
                       <h4 className="font-cinzel font-bold text-base text-[#181C20] border-b border-[#E7E2D8] pb-2">
                         Primary Wing: Std I to Std V
                       </h4>
@@ -465,7 +465,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     </div>
 
                     {/* Std VI to X */}
-                    <div id="secondary-wing" className="bg-[#FAF8F5] border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4 scroll-mt-28">
+                    <div id="secondary-wing" className="bg-white border border-[#E7E2D8] p-6 rounded-2xl shadow-sm space-y-4 scroll-mt-28">
                       <h4 className="font-cinzel font-bold text-base text-[#181C20] border-b border-[#E7E2D8] pb-2">
                         Secondary Wing: Std VI to Std X
                       </h4>
@@ -588,7 +588,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     desc: 'Official archive register of student Transfer Certificates issued during the 2023 academic session in verified view-only format.'
                   },
                 ].map((tc) => (
-                  <div key={tc.id} className="bg-[#FAF8F5] border border-[#E7E2D8] p-5 rounded-2xl space-y-3 flex flex-col justify-between hover:border-[#DF711B] transition-all">
+                  <div key={tc.id} className="bg-white border border-[#E7E2D8] p-5 rounded-2xl space-y-3 flex flex-col justify-between hover:border-[#DF711B] transition-all">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <div className="w-10 h-10 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center">

@@ -172,7 +172,7 @@ const PhaseScrollCard: React.FC<PhaseScrollCardProps> = ({
       className={`transition-all duration-500 rounded-3xl p-6 sm:p-8 border ${
         isActive
           ? 'bg-white border-[#DF711B]/40 shadow-card'
-          : 'bg-[#FAF8F5]/90 border-[#E7E2D8] opacity-90 hover:opacity-100'
+          : 'bg-white/90 border-[#E7E2D8] opacity-90 hover:opacity-100'
       } space-y-6 scroll-mt-32`}
     >
       {/* Phase Header */}
@@ -219,7 +219,7 @@ const PhaseScrollCard: React.FC<PhaseScrollCardProps> = ({
       </p>
 
       {/* Historical & Spiritual Significance */}
-      <div className="bg-[#FAF8F5] p-4.5 rounded-2xl border border-[#E7E2D8] space-y-1.5 shadow-2xs">
+      <div className="bg-white p-4.5 rounded-2xl border border-[#E7E2D8] space-y-1.5 shadow-2xs">
         <span className="text-xs font-mono font-bold uppercase text-[#0B1E34] tracking-wider block">
           Historical & Spiritual Significance:
         </span>
@@ -535,7 +535,7 @@ export const HeritageShowcase: React.FC = () => {
               />
             </div>
 
-            <div className="p-6 bg-[#FAF8F5] border-t border-[#E7E2D8] space-y-2">
+            <div className="p-6 bg-white border-t border-[#E7E2D8] space-y-2">
               <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                 Chinmaya Archives • Sacred Heritage
               </span>

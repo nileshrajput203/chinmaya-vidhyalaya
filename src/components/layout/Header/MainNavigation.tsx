@@ -79,10 +79,10 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 4, scale: 0.98 }}
                         transition={{ duration: 0.16, ease: 'easeOut' }}
-                        className={`absolute ${alignClass} top-full ${widthClass} max-h-[calc(100vh-140px)] overflow-y-auto bg-white text-[#181C20] border-t-2 border-[#DF711B] shadow-2xl rounded-b-2xl z-50 border border-[#E7E2D8] scrollbar-thin`}
+                        className={`absolute ${alignClass} top-full ${widthClass} max-h-[calc(100vh-140px)] overflow-y-auto bg-white text-[#181C20] border-t-2 border-[#DF711B] shadow-2xl rounded-b-2xl z-50 border border-slate-200 scrollbar-thin`}
                       >
                         {/* Submenu Header */}
-                        <div className="px-4 py-2 border-b border-[#E7E2D8] bg-[#FAF8F5] flex items-center justify-between sticky top-0 z-10">
+                        <div className="px-4 py-2 border-b border-slate-200 bg-white flex items-center justify-between sticky top-0 z-10">
                           <span className="text-[10px] font-mono uppercase tracking-widest text-[#DF711B] font-bold">
                             {item.label} Section
                           </span>
@@ -103,7 +103,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                                 className={`block p-2.5 rounded-xl text-xs transition-colors group/sub border ${
                                   isSubActive
                                     ? 'bg-[#FFF3D6] text-[#B2530C] border-[#DF711B]/40 font-bold'
-                                    : 'hover:bg-[#FAF8F5] text-slate-700 hover:text-[#DF711B] border-transparent hover:border-[#DF711B]/20'
+                                    : 'hover:bg-slate-50 text-slate-700 hover:text-[#DF711B] border-transparent hover:border-[#DF711B]/20'
                                 }`}
                               >
                                 <div className="font-semibold text-xs flex items-center justify-between">

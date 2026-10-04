@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  GraduationCap, Users, 
-  Send, CheckCircle2, Sparkles, MapPin, 
-  Mail, Phone, Calendar, Heart 
+  GraduationCap, 
+  Send, CheckCircle2, 
+  Mail, Phone, MapPin, 
+  ArrowLeft, ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { useToast } from '../context/ToastContext';
@@ -20,6 +22,134 @@ interface AlumniFormData {
   message: string;
 }
 
+interface AlumniReview {
+  id: string;
+  name: string;
+  role: string;
+  batch: string;
+  cutoutImage: string;
+  review: string;
+  bookTitle?: string;
+}
+
+interface AlumniEventBlog {
+  id: string;
+  date: string;
+  title: string;
+  image: string;
+  category: string;
+  link?: string;
+}
+
+const ALUMNI_REVIEWS: AlumniReview[] = [
+  {
+    id: 'rev-1',
+    name: 'Dr. Ananya P. Kulkarni',
+    role: 'Physician Researcher & Alumna',
+    batch: 'Class of 2012',
+    cutoutImage: '/images/1.jpeg',
+    review:
+      'Chinmaya Vidyalaya was a phenomenal environment in which to learn. The curriculum and the Chinmaya Vision Programme ignited critical thinking and empowered me to articulate and share thoughts in large medical and research settings. I’m grateful for the deep moral and ethical insights provided by our teachers and the opportunity to grow with clarity and compassion. My experience as an alumna has more than doubled my appreciation for the school as I see new generations of students blossom here.',
+    bookTitle: 'CBSE SCHOLASTIC EXCELLENCE'
+  },
+  {
+    id: 'rev-2',
+    name: 'Rohan V. Sharma',
+    role: 'Lead Systems Architect & Tech Innovator',
+    batch: 'Class of 2008',
+    cutoutImage: '/images/student_question_cutout.png',
+    review:
+      'The morning assemblies, Gita chanting, and rational scientific inquiry instilled during my foundational years at Tarapur continue to be my strongest anchor in executive leadership and cloud architecture. Chinmaya Vidyalaya doesn’t just teach academic subjects; it builds resilient character, analytical discipline, and a profound sense of purpose that stays with you across the globe.',
+    bookTitle: 'SYSTEMS & ANALYTICS'
+  },
+  {
+    id: 'rev-3',
+    name: 'Prateek Deshmukh',
+    role: 'Civil Services Officer & Public Administrator',
+    batch: 'Class of 2016',
+    cutoutImage: '/images/banner-1.jpg',
+    review:
+      'The third pillar of CVP—Patriotism and Civic Duty—truly inspired my path into public administration. From student house governance to tree plantation drives in Palghar district, we were taught that real accomplishment lies in societal progress. That noble grounding continues to guide every policy decision I make in public service.',
+    bookTitle: 'PATRIOTISM & CIVIC DUTY'
+  },
+  {
+    id: 'rev-4',
+    name: 'Kriti Sengupta',
+    role: 'Fintech Product Lead & Alumna',
+    batch: 'Class of 2015',
+    cutoutImage: '/images/2.jpeg',
+    review:
+      'From inter-house debate championships in Boisar to presenting in international fintech boardrooms, the eloquence, moral fortitude, and self-confidence nurtured by our educators laid the foundation for every milestone. Chinmaya Vidyalaya gave me a family that spans continents.',
+    bookTitle: 'GLOBAL LEADERSHIP'
+  }
+];
+
+const ALUMNI_EVENTS_NEWS: AlumniEventBlog[] = [
+  {
+    id: 'ev-1',
+    date: 'WED, 20 MAY 2026',
+    title: 'ANNUAL WINTER ALUMNI REUNION & FACULTY FELICITATION BANQUET',
+    image: '/images/school_events/School_Event_2026-09-27_083.jpg',
+    category: 'Reunion'
+  },
+  {
+    id: 'ev-2',
+    date: 'THU, 30 APR 2026',
+    title: 'ALUMNI CAREER CONCLAVE: JEE, NEET & UPSC STRATEGY WORKSHOPS',
+    image: '/images/school_events/School_Event_2026-09-27_014.jpg',
+    category: 'Mentorship'
+  },
+  {
+    id: 'ev-3',
+    date: 'FRI, 12 DEC 2025',
+    title: 'DISTINGUISHED ALUMNI SPORTS CUP & TIGERS ANNUAL CHAMPIONSHIP',
+    image: '/images/school_events/School_Event_2026-09-28_025.jpg',
+    category: 'Athletics'
+  },
+  {
+    id: 'ev-4',
+    date: 'THU, 17 OCT 2024',
+    title: 'ENTREPRENEURSHIP PANEL: STARTUP FOUNDERS SHARING BOISAR TO GLOBAL JOURNEYS',
+    image: '/images/school_events/School_Event_2026-09-28_035.jpg',
+    category: 'Innovation'
+  },
+  {
+    id: 'ev-5',
+    date: 'WED, 14 AUG 2024',
+    title: 'INDEPENDENCE DAY SEVA DRIVE: TREE PLANTATION & COMMUNITY CLEANLINESS',
+    image: '/images/school_events/School_Event_2026-09-27_007.jpg',
+    category: 'Civic Service'
+  },
+  {
+    id: 'ev-6',
+    date: 'TUE, 23 JUL 2024',
+    title: 'CAMPUS RETROSPECTIVE: THREE DECADES OF VALUE-INTEGRATED EDUCATION',
+    image: '/images/school_events/School_Event_2026-09-27_047.jpg',
+    category: 'Heritage'
+  },
+  {
+    id: 'ev-7',
+    date: 'WED, 05 JUN 2024',
+    title: 'GLOBAL ALUMNI CHAPTERS CONVENE ACROSS MUMBAI, BANGALORE & DUBAI',
+    image: '/images/school_events/School_Event_2026-09-27_112.jpg',
+    category: 'Global Network'
+  },
+  {
+    id: 'ev-8',
+    date: 'MON, 29 APR 2024',
+    title: 'PUJYA GURUDEV JAYANTI: ALUMNI CHORAL & GEETA RECITATION TRIBUTE',
+    image: '/images/school_events/School_Event_2026-09-27_018.jpg',
+    category: 'Spiritual Life'
+  },
+  {
+    id: 'ev-9',
+    date: 'THU, 18 JAN 2024',
+    title: 'INTER-GENERATIONAL SCHOLARSHIP FUND ESTABLISHED BY CLASS OF 2005',
+    image: '/images/school_events/School_Event_2026-09-27_144.jpg',
+    category: 'Scholarship'
+  }
+];
+
 export const AlumniPage: React.FC = () => {
   const { showSuccess } = useToast();
   const [formData, setFormData] = useState<AlumniFormData>({
@@ -36,6 +166,17 @@ export const AlumniPage: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentReviewIdx, setCurrentReviewIdx] = useState(0);
+
+  const prevReview = () => {
+    setCurrentReviewIdx((prev) => (prev - 1 + ALUMNI_REVIEWS.length) % ALUMNI_REVIEWS.length);
+  };
+
+  const nextReview = () => {
+    setCurrentReviewIdx((prev) => (prev + 1) % ALUMNI_REVIEWS.length);
+  };
+
+  const currentReview = ALUMNI_REVIEWS[currentReviewIdx];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,364 +192,462 @@ export const AlumniPage: React.FC = () => {
     }, 400);
   };
 
-  const alumniSpotlights = [
-    {
-      name: "Rohan V. Sharma",
-      batch: "Class of 2008",
-      role: "Lead Systems Architect, Bangalore",
-      quote: "The discipline, Gita chanting, and rational inquiry instilled during morning assemblies at Tarapur continue to be my strongest anchor in executive leadership.",
-      field: "Technology & Engineering"
-    },
-    {
-      name: "Dr. Ananya P. Kulkarni",
-      batch: "Class of 2012",
-      role: "Consultant Physician & Researcher, Mumbai",
-      quote: "Our teachers at Chinmaya weren't just educators; they were mentors who nurtured ethical empathy alongside rigorous science. That foundation made me the doctor I am.",
-      field: "Medicine & Healthcare"
-    },
-    {
-      name: "Prateek Deshmukh",
-      batch: "Class of 2016",
-      role: "Civil Services Officer & Public Administrator",
-      quote: "The third pillar of CVP—Patriotism and Civic Duty—inspired me to serve our country. Chinmaya Vidyalaya taught us to dream beyond personal gain for societal progress.",
-      field: "Public Administration"
-    }
-  ];
-
   return (
-    <div className="bg-[#FAF8F5] text-[#181C20] pb-24 font-sans select-none">
+    <div style={{ backgroundColor: 'var(--color-bg)' }} className="text-[#181C20] pb-24 font-sans select-none">
       <Breadcrumb items={[{ label: "Alumni" }]} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
         
-        {/* Institutional Legacy & Metrics Ribbon */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white border border-[#E7E2D8] p-5 rounded-2xl shadow-xs text-center space-y-1">
-            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">First Batch</span>
-            <div className="font-cinzel text-3xl font-extrabold text-[#181C20]">2004–05</div>
-            <p className="text-[11px] text-slate-500">Inaugural AISSE Class X</p>
-          </div>
-
-          <div className="bg-white border border-[#E7E2D8] p-5 rounded-2xl shadow-xs text-center space-y-1">
-            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">Graduates</span>
-            <div className="font-cinzel text-3xl font-extrabold text-[#181C20]">2,500+</div>
-            <p className="text-[11px] text-slate-500">Alumni Worldwide</p>
-          </div>
-
-          <div className="bg-white border border-[#E7E2D8] p-5 rounded-2xl shadow-xs text-center space-y-1">
-            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">Board Record</span>
-            <div className="font-cinzel text-3xl font-extrabold text-[#181C20]">100%</div>
-            <p className="text-[11px] text-slate-500">First-Class Pass Tradition</p>
-          </div>
-
-          <div className="bg-white border border-[#E7E2D8] p-5 rounded-2xl shadow-xs text-center space-y-1">
-            <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">Global Reach</span>
-            <div className="font-cinzel text-3xl font-extrabold text-[#181C20]">15+ Countries</div>
-            <p className="text-[11px] text-slate-500">Professionals & Researchers</p>
-          </div>
-        </div>
-
-        {/* Association Pillars Grid */}
-        <div className="space-y-4">
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold block">
-              ALUMNI ENGAGEMENT & ENGAGED FELLOWSHIP
+        {/* ==================================================================
+            TOP SECTION: REGISTRATION FORM ON TOP + METRICS & CONTACT
+            ================================================================== */}
+        <div id="register" className="space-y-8">
+          
+          {/* Header Title strip */}
+          <div className="border-b border-slate-200 pb-4">
+            <span
+              style={{ color: 'var(--color-primary)' }}
+              className="text-xs font-mono uppercase tracking-[0.25em] font-bold block"
+            >
+              CHINMAYA VIDYALAYA TARAPUR ALUMNI NETWORK
             </span>
-            <h2 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] tracking-tight">
-              Giving Back to Your Alma Mater
-            </h2>
+            <h1
+              style={{ color: 'var(--color-text)' }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-condensed uppercase tracking-tight leading-none mt-1"
+            >
+              RECONNECT WITH YOUR ALMA MATER
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-2 leading-relaxed">
+              Register in our official alumni registry to mentor high school students, receive reunion invitations, and stay connected with thousands of Vidyalaya graduates worldwide.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white border border-[#E7E2D8] p-6 rounded-2xl space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-xl bg-[#FFF7DF] text-[#DF711B] flex items-center justify-center font-bold">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Student Mentorship</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Guide Class IX and X students through career paths, college entrance choices, and personal experience in competitive exams like JEE, NEET, and UPSC.
-              </p>
+          {/* Quick Metrics Ribbon */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
+              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
+                First Batch
+              </span>
+              <div className="font-condensed text-3xl font-black text-[#181C20]">2004–05</div>
+              <p className="text-[11px] text-slate-500 font-sans">Inaugural AISSE Class X</p>
             </div>
 
-            <div className="bg-white border border-[#E7E2D8] p-6 rounded-2xl space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-xl bg-[#EEF4FB] text-[#0B1E34] flex items-center justify-center font-bold">
-                <Calendar className="w-6 h-6" />
-              </div>
-              <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Annual Homecoming</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Reconnect with classmates, retrace memories in the school courtyard, and meet revered retired and serving faculty members during our winter reunion.
-              </p>
+            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
+              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
+                Graduates
+              </span>
+              <div className="font-condensed text-3xl font-black text-[#181C20]">2,500+</div>
+              <p className="text-[11px] text-slate-500 font-sans">Alumni Worldwide</p>
             </div>
 
-            <div className="bg-white border border-[#E7E2D8] p-6 rounded-2xl space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-xl bg-[#FFF7DF] text-[#DF711B] flex items-center justify-center font-bold">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <h3 className="font-cinzel font-bold text-lg text-[#181C20]">Guest Masterclasses</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Conduct technical workshops, entrepreneurial discussions, and artistic sessions sharing industry knowledge directly with high school learners.
-              </p>
+            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
+              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
+                Board Record
+              </span>
+              <div className="font-condensed text-3xl font-black text-[#181C20]">100%</div>
+              <p className="text-[11px] text-slate-500 font-sans">First-Class Tradition</p>
+            </div>
+
+            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
+              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
+                Global Reach
+              </span>
+              <div className="font-condensed text-3xl font-black text-[#181C20]">15+ Countries</div>
+              <p className="text-[11px] text-slate-500 font-sans">Professionals & Researchers</p>
             </div>
           </div>
-        </div>
 
-        {/* Alumni Spotlights */}
-        <div className="space-y-6">
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold block">
-              TESTIMONIALS & VOICES
-            </span>
-            <h2 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20] tracking-tight">
-              Reflections from Vidyalaya Graduates
-            </h2>
-          </div>
+          {/* Form and Office Contact Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* The Alumni Registration Form */}
+            <div className="lg:col-span-8 bg-white border border-slate-200 p-6 sm:p-8 rounded-none shadow-sm space-y-5">
+              <div className="border-b border-slate-200 pb-3">
+                <span
+                  style={{ color: 'var(--color-primary)' }}
+                  className="text-[10px] font-mono uppercase tracking-widest font-bold block"
+                >
+                  OFFICIAL REGISTRY ENROLLMENT
+                </span>
+                <h3 className="font-condensed text-2xl sm:text-3xl text-[#181C20] tracking-wide uppercase mt-0.5">
+                  Alumni Registration Form
+                </h3>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {alumniSpotlights.map((alum, idx) => (
-              <div key={idx} className="bg-white border border-[#E7E2D8] p-6 rounded-2xl space-y-4 shadow-xs flex flex-col justify-between">
-                <div className="space-y-3">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-[#FAF3E8] text-[#DF711B] rounded-full inline-block">
-                    {alum.field}
-                  </span>
-                  <blockquote className="font-serif italic text-xs sm:text-sm text-slate-700 leading-relaxed">
-                    "{alum.quote}"
-                  </blockquote>
+              {isSubmitted ? (
+                <div className="bg-[#FFF9F2] border-2 border-[var(--color-primary)] p-8 rounded-none text-center space-y-3">
+                  <CheckCircle2 style={{ color: 'var(--color-primary)' }} className="w-12 h-12 mx-auto" />
+                  <h4 className="font-condensed font-bold text-2xl text-[#181C20] uppercase">
+                    Registration Recorded Successfully
+                  </h4>
+                  <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed font-sans">
+                    Hari Om! Thank you for staying connected. We have recorded your alumni profile in our database and will keep you informed of upcoming alumni reunions, mentorship forums, and school events.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setIsSubmitted(false)}
+                    style={{ backgroundColor: 'var(--color-dark)', color: 'var(--color-dark-text)' }}
+                    className="mt-2 px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider rounded-none hover:bg-[var(--color-primary)] transition-colors cursor-pointer"
+                  >
+                    Submit Another Update
+                  </button>
                 </div>
-                <div className="pt-3 border-t border-[#E7E2D8] space-y-0.5">
-                  <h4 className="font-cinzel font-bold text-sm text-[#181C20]">{alum.name}</h4>
-                  <div className="flex items-center justify-between text-[11px] text-slate-500 font-mono">
-                    <span>{alum.batch}</span>
-                    <span className="text-slate-400">• {alum.role.split(',')[1] || alum.role}</span>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        placeholder="Enter full name"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                        Class X Passing Year *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.batchYear}
+                        onChange={(e) => setFormData({ ...formData, batchYear: e.target.value })}
+                        placeholder="e.g. 2012"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="name@domain.com"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                        Phone / Mobile *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 98765 43210"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                        Current City & Country *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.currentCity}
+                        onChange={(e) => setFormData({ ...formData, currentCity: e.target.value })}
+                        placeholder="e.g. Mumbai, India"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                        Profession / Current Role
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.profession}
+                        onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
+                        placeholder="e.g. Software Engineer / Doctor"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                      Organization / University Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.organization}
+                      onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                      placeholder="Organization or university name"
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
+                      Message / Memories / Mentorship Interests
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Share your fondest memory at Chinmaya Vidyalaya or how you would like to support current students..."
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-1">
+                    <input
+                      type="checkbox"
+                      id="willingToMentor"
+                      checked={formData.willingToMentor}
+                      onChange={(e) => setFormData({ ...formData, willingToMentor: e.target.checked })}
+                      className="w-4 h-4 text-[var(--color-primary)] rounded-none focus:ring-[var(--color-primary)]"
+                    />
+                    <label htmlFor="willingToMentor" className="text-xs text-slate-700 font-medium">
+                      I am willing to mentor current Vidyalaya students or deliver guest lectures.
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    style={{
+                      backgroundColor: 'var(--color-primary)',
+                      color: 'var(--color-primary-text)'
+                    }}
+                    className="w-full py-3.5 font-bold text-xs uppercase tracking-wider rounded-none transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01] active:scale-[0.99]"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                    <span>{isSubmitting ? 'Submitting Details...' : 'Submit Alumni Profile'}</span>
+                  </button>
+                </form>
+              )}
+            </div>
+
+            {/* Right Information & Office Card */}
+            <div className="lg:col-span-4 space-y-5">
+              <div className="bg-white border-2 border-[var(--color-primary)] p-6 rounded-none space-y-4 shadow-sm">
+                <div className="flex items-center gap-2 text-[var(--color-primary)]">
+                  <GraduationCap className="w-5 h-5" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider">
+                    Alumni Relations Office
+                  </span>
+                </div>
+                <h4 className="font-condensed font-bold text-xl text-[#181C20] uppercase">
+                  Stay Connected
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  Planning a batch reunion or campus visit during working hours? Please notify our administrative team in advance to arrange a guided walkthrough.
+                </p>
+                <div className="space-y-2 pt-2 border-t border-slate-200 text-xs font-mono">
+                  <div className="flex items-center gap-2 text-slate-700">
+                    <Mail className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0" />
+                    <a href={`mailto:${OFFICIAL_SCHOOL_INFO.contact.email[0]}`} className="hover:text-[var(--color-primary)] underline truncate">
+                      {OFFICIAL_SCHOOL_INFO.contact.email[0]}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-700">
+                    <Phone className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0" />
+                    <span>02525-272044 / 270724</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-slate-700 pt-1">
+                    <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0 mt-0.5" />
+                    <span className="text-[11px] font-sans leading-tight">
+                      Chinmaya Vidyalaya, Behind Post Office, Boisar, Tarapur, Maharashtra 401501
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-6 rounded-none space-y-3 shadow-xs">
+                <span style={{ color: 'var(--color-primary)' }} className="text-xs font-mono font-bold uppercase tracking-wider block">
+                  Gurudev's Message to Alumni
+                </span>
+                <blockquote className="font-sans text-xs italic text-slate-700 leading-relaxed border-l-2 border-[var(--color-primary)] pl-3">
+                  "Keep Smiling! Whatever you do, do it with love, dedication, and joy. You are the ambassadors of Chinmaya values in the world."
+                </blockquote>
+                <span className="text-[10px] font-mono text-slate-400 block pt-1">
+                  — Param Pujya Swami Chinmayananda
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ==================================================================
+            MIDDLE SECTION: ALUMNI REVIEWS (Matching 1st Image Format)
+            ================================================================== */}
+        <div className="relative py-12 lg:py-16 border-t border-b border-slate-200">
+          
+          {/* Giant Background Word "REVIEWS" */}
+          <div className="absolute top-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden z-0">
+            <span
+              style={{ color: 'var(--color-primary)' }}
+              className="font-condensed text-[100px] sm:text-[140px] lg:text-[190px] font-black uppercase tracking-tight leading-none opacity-90"
+            >
+              REVIEWS
+            </span>
+          </div>
+
+          {/* Foreground Review Content Layout */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-16 sm:pt-20 lg:pt-24">
+            
+            {/* Center-Left: Tall Dark Block + Overlapping Cutout Image */}
+            <div className="lg:col-span-6 flex justify-center items-center">
+              <div className="relative w-[300px] sm:w-[360px] lg:w-[400px] h-[400px] sm:h-[460px] lg:h-[490px] flex items-end justify-center">
+                
+                {/* Dark rectangular vertical backdrop card */}
+                <div
+                  style={{ backgroundColor: 'var(--color-dark)' }}
+                  className="absolute inset-x-8 sm:inset-x-10 top-12 bottom-0 rounded-none shadow-2xl overflow-hidden border border-white/10"
+                >
+                  <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
+                </div>
+
+                {/* Overlapping standing cutout of alumna/alumnus */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentReview.id}
+                    initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -15 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    className="relative z-20 w-full h-[98%] flex items-end justify-center pointer-events-none"
+                  >
+                    <img
+                      src={currentReview.cutoutImage}
+                      alt={currentReview.name}
+                      className="h-full w-auto max-h-[96%] object-contain object-bottom filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.65)]"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Right: Review Paragraph & Attribution */}
+            <div className="lg:col-span-6 flex flex-col justify-center space-y-6 px-2 sm:px-4">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentReview.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.28, ease: 'easeOut' }}
+                  className="space-y-5"
+                >
+                  {/* Detailed Review Quote text */}
+                  <p className="font-sans text-base sm:text-lg lg:text-[19px] leading-[1.65] text-[#181C20] font-normal">
+                    {currentReview.review}
+                  </p>
+
+                  {/* Attribution line */}
+                  <div className="pt-2">
+                    <p className="font-sans text-sm sm:text-base text-slate-800 font-semibold">
+                      – {currentReview.name}, {currentReview.role} ({currentReview.batch})
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Review Carousel Controls */}
+              <div className="flex items-center gap-3 pt-3">
+                <button
+                  onClick={prevReview}
+                  aria-label="Previous Review"
+                  className="w-11 h-11 rounded-full border border-slate-200 bg-white text-[#181C20] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={nextReview}
+                  aria-label="Next Review"
+                  className="w-11 h-11 rounded-full border border-slate-200 bg-white text-[#181C20] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <span className="font-mono text-xs tracking-widest text-slate-500 font-bold pl-2">
+                  0{currentReviewIdx + 1} / 0{ALUMNI_REVIEWS.length}
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ==================================================================
+            BOTTOM SECTION: ALUMNI NEWS & EVENTS (Matching 2nd Image Format)
+            ================================================================== */}
+        <div className="space-y-8">
+          
+          {/* Centered Giant Crimson "NEWS" Heading */}
+          <div className="text-center">
+            <h2
+              style={{ color: 'var(--color-primary)' }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-condensed uppercase tracking-tight leading-none m-0"
+            >
+              NEWS
+            </h2>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-500 mt-2 font-semibold">
+              ALUMNI EVENTS, REUNIONS & MILESTONES
+            </p>
+          </div>
+
+          {/* 3×3 Grid of Event Cards matching the reference design */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {ALUMNI_EVENTS_NEWS.map((event) => (
+              <div
+                key={event.id}
+                style={{ borderColor: 'var(--color-primary)' }}
+                className="group border rounded-none bg-white overflow-hidden flex flex-col justify-between transition-transform duration-300 hover:shadow-lg"
+              >
+                {/* Top Image (aspect-[16/10]) */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900 border-b border-[var(--color-primary)]">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-mono uppercase px-2 py-0.5 border border-white/20">
+                    {event.category}
+                  </div>
+                </div>
+
+                {/* Bottom Content: Date & Bold Crimson Title */}
+                <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-2">
+                  <span
+                    style={{ color: 'var(--color-primary)' }}
+                    className="text-[11px] font-mono uppercase tracking-wider font-bold block"
+                  >
+                    {event.date}
+                  </span>
+
+                  <h3 className="font-condensed text-[16px] sm:text-[18px] uppercase tracking-wide text-[#181C20] group-hover:text-[var(--color-primary)] transition-colors leading-tight line-clamp-2">
+                    {event.title}
+                  </h3>
+
+                  <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-slate-400 group-hover:text-[var(--color-primary)] transition-colors">
+                    <span>READ DETAILS</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Interactive Registration Form Section */}
-        <div id="register" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start scroll-mt-28">
-          
-          {/* Left Form: Register with Alumni Network */}
-          <div className="lg:col-span-8 bg-white border border-[#E7E2D8] p-6 sm:p-8 rounded-3xl shadow-card space-y-6">
-            <div className="border-b border-[#E7E2D8] pb-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#DF711B] font-bold block">
-                OFFICIAL REGISTRY ENROLLMENT
-              </span>
-              <h3 className="font-cinzel font-extrabold text-2xl sm:text-3xl text-[#181C20] tracking-tight mt-1">
-                Alumni Registration Form
-              </h3>
-              <p className="text-xs text-slate-600 mt-1">
-                Keep in touch with your alma mater, receive event invitations, and help mentor the next generation of Chinmaya scholars.
-              </p>
-            </div>
-
-            {isSubmitted ? (
-              <div className="bg-[#FFF9F2] border-2 border-[#DF711B]/40 p-8 rounded-2xl text-center space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-[#DF711B] mx-auto" />
-                <h4 className="font-cinzel font-bold text-xl text-[#181C20]">
-                  Registration Recorded Successfully
-                </h4>
-                <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-                  Hari Om! Thank you for staying connected. We have recorded your alumni profile in our database and will keep you informed of upcoming events and reunions.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setIsSubmitted(false)}
-                  className="mt-2 px-5 py-2.5 bg-[#181C20] text-white text-xs font-mono font-bold uppercase tracking-wider rounded-xl hover:bg-[#DF711B] transition-colors"
-                >
-                  Submit Another Update
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      placeholder="Enter your full name"
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                      Class X Passing Year *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.batchYear}
-                      onChange={(e) => setFormData({ ...formData, batchYear: e.target.value })}
-                      placeholder="Class X passing year (YYYY)"
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Enter email address"
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                      Phone / Mobile *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="Enter 10-digit mobile number"
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                      Current City & Country *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.currentCity}
-                      onChange={(e) => setFormData({ ...formData, currentCity: e.target.value })}
-                      placeholder="Current city & country"
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                      Profession / Current Role
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.profession}
-                      onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
-                      placeholder="Current profession or designation"
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                    Organization / University Name
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.organization}
-                    onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                    placeholder="Organization or university name"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-mono uppercase text-[#181C20] font-bold mb-1">
-                    Message / Memories / Mentorship Interests
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Share your fondest memory at Chinmaya Vidyalaya or how you would like to help current students..."
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:border-[#DF711B] focus:bg-white focus:outline-none transition-colors"
-                  />
-                </div>
-
-                <div className="flex items-center gap-2 pt-1">
-                  <input
-                    type="checkbox"
-                    id="willingToMentor"
-                    checked={formData.willingToMentor}
-                    onChange={(e) => setFormData({ ...formData, willingToMentor: e.target.checked })}
-                    className="w-4 h-4 text-[#DF711B] border-slate-300 rounded focus:ring-[#DF711B]"
-                  />
-                  <label htmlFor="willingToMentor" className="text-xs text-slate-700 font-medium">
-                    I am willing to mentor current Vidyalaya students or deliver guest sessions.
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3 bg-[#DF711B] hover:bg-[#C8652D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer hover:scale-101 active:scale-99"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>{isSubmitting ? 'Submitting Details...' : 'Submit Alumni Profile'}</span>
-                </button>
-              </form>
-            )}
-          </div>
-
-          {/* Right Information Card */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="bg-[#FAF3E8] border border-[#FDE49C] p-6 rounded-3xl space-y-4">
-              <div className="flex items-center gap-2 text-[#DF711B]">
-                <GraduationCap className="w-5 h-5" />
-                <span className="text-xs font-mono font-bold uppercase tracking-wider">
-                  Alumni Relations Office
-                </span>
-              </div>
-              <h4 className="font-cinzel font-bold text-lg text-[#181C20]">
-                Stay Connected
-              </h4>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                If you are planning an alumni batch meet or want to visit the campus during working hours, please notify our administrative desk in advance.
-              </p>
-              <div className="space-y-2 pt-2 border-t border-[#E7E2D8] text-xs font-mono">
-                <div className="flex items-center gap-2 text-slate-700">
-                  <Mail className="w-3.5 h-3.5 text-[#DF711B] shrink-0" />
-                  <a href={`mailto:${OFFICIAL_SCHOOL_INFO.contact.email[0]}`} className="hover:text-[#DF711B] underline truncate">
-                    {OFFICIAL_SCHOOL_INFO.contact.email[0]}
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-slate-700">
-                  <Phone className="w-3.5 h-3.5 text-[#DF711B] shrink-0" />
-                  <span>02525-272044 / 270724</span>
-                </div>
-                <div className="flex items-start gap-2 text-slate-700 pt-1">
-                  <MapPin className="w-3.5 h-3.5 text-[#DF711B] shrink-0 mt-0.5" />
-                  <span className="text-[11px] font-sans leading-tight">
-                    Chinmaya Vidyalaya, Behind Post Office, Boisar, Tarapur, Maharashtra 401501
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-[#E7E2D8] p-6 rounded-3xl space-y-3 shadow-xs">
-              <div className="flex items-center gap-2 text-[#0B1E34]">
-                <Heart className="w-4 h-4 text-[#DF711B]" />
-                <h4 className="font-cinzel font-bold text-sm text-[#181C20]">Gurudev's Blessing</h4>
-              </div>
-              <blockquote className="font-cinzel text-xs italic text-slate-700 leading-relaxed">
-                "Keep Smiling! Whatever you do, do it with love, dedication, and joy. You are the ambassadors of Chinmaya values in the world."
-              </blockquote>
-              <span className="text-[10px] font-mono text-slate-400 block pt-1">
-                — Param Pujya Swami Chinmayananda
-              </span>
-            </div>
           </div>
 
         </div>

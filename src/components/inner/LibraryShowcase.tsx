@@ -41,7 +41,7 @@ export const LibraryShowcase: React.FC = () => {
   return (
     <div className="space-y-12">
       {/* Visual Editorial Banner */}
-      <SpotlightCard className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-8 sm:p-12 shadow-card space-y-8">
+      <SpotlightCard className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-card space-y-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <div className="flex flex-wrap items-center gap-2">
@@ -91,7 +91,7 @@ export const LibraryShowcase: React.FC = () => {
                   Central Library • Boisar
                 </div>
               </div>
-              <div className="p-3 text-xs text-[#4A5568] text-center font-medium bg-[#FAF8F5]">
+              <div className="p-3 text-xs text-[#4A5568] text-center font-medium bg-slate-50 border-t border-slate-200">
                 Central Reading Hall & Reference Book Archives | Tarapur Campus
               </div>
             </div>
@@ -107,7 +107,7 @@ export const LibraryShowcase: React.FC = () => {
       />
 
       {/* Library Code of Conduct & Operational Protocols */}
-      <SpotlightCard className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-6 sm:p-8 space-y-4">
+      <SpotlightCard className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-[#0B1E34] text-white flex items-center justify-center font-bold">
             <Clock className="w-5 h-5" />

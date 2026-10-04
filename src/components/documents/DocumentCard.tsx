@@ -59,7 +59,7 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({ document }) => {
             <button
               type="button"
               onClick={() => setIsViewerOpen(true)}
-              className="px-3 py-1.5 rounded-xl bg-[#FAF8F5] hover:bg-[#0B1D30] hover:text-white text-[#0B1D30] border border-[#E7E2D8] transition-colors flex items-center gap-1.5 font-medium text-xs shadow-sm"
+              className="px-3 py-1.5 rounded-xl bg-white hover:bg-[#0B1D30] hover:text-white text-[#0B1D30] border border-slate-200 transition-colors flex items-center gap-1.5 font-medium text-xs shadow-sm"
               title="View document online"
             >
               <Eye className="w-3.5 h-3.5 text-[#DF711B]" />

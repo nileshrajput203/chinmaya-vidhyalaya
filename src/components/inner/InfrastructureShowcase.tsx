@@ -429,7 +429,7 @@ export const InfrastructureShowcase: React.FC = () => {
       <InView>
         <SpotlightCard
           spotlightColor="rgba(223, 113, 27, 0.08)"
-          className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-8 sm:p-12 shadow-card space-y-6"
+          className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-card space-y-6"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
@@ -557,7 +557,7 @@ export const InfrastructureShowcase: React.FC = () => {
 
                     {/* CBSE Curriculum Scope */}
                     {facility.curriculumDetails && (
-                      <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] space-y-1">
+                      <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                         <span className="text-[10px] font-mono uppercase tracking-wider text-[#DF711B] font-bold flex items-center gap-1.5">
                           <Sparkles className="w-3.5 h-3.5 shrink-0" />
                           <span>Curriculum & Practical Syllabus Alignment:</span>
@@ -577,7 +577,7 @@ export const InfrastructureShowcase: React.FC = () => {
                         {facility.equipment.map((eq, eqIdx) => (
                           <div
                             key={eqIdx}
-                            className="bg-[#FAF8F5] border border-[#E7E2D8] p-2 rounded-lg text-[11px] font-medium text-slate-700 flex items-center gap-1.5"
+                            className="bg-slate-50 border border-slate-200 p-2 rounded-lg text-[11px] font-medium text-slate-700 flex items-center gap-1.5"
                           >
                             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                             <span className="truncate">{eq}</span>

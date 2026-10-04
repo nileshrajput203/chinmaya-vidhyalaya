@@ -162,7 +162,7 @@ export const CurriculumShowcase: React.FC = () => {
                 className={`px-5 py-3 rounded-2xl transition-all flex flex-col items-start text-left border shrink-0 ${
                   isActive
                     ? 'bg-[#181C20] text-white border-[#181C20] shadow-md scale-[1.02]'
-                    : 'bg-white text-slate-700 border-[#E7E2D8] hover:bg-[#FAF8F5] hover:text-[#181C20]'
+                    : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:text-[#181C20]'
                 }`}
               >
                 <span className={`text-xs sm:text-sm font-bold ${isActive ? 'text-white' : 'text-slate-900'}`}>
@@ -202,7 +202,7 @@ export const CurriculumShowcase: React.FC = () => {
 
             {/* Core Learning Domains */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+              <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
                   <Languages className="w-5 h-5" />
                 </div>
@@ -215,7 +215,7 @@ export const CurriculumShowcase: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+              <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#DF711B] flex items-center justify-center font-bold">
                   <Calculator className="w-5 h-5" />
                 </div>
@@ -228,7 +228,7 @@ export const CurriculumShowcase: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+              <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
                   <Palette className="w-5 h-5" />
                 </div>
@@ -279,7 +279,7 @@ export const CurriculumShowcase: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               
               {/* Scholastic Subjects */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-6 bg-[#FCFBF7] space-y-4">
+              <div className="border border-[#E7E2D8] rounded-2xl p-6 bg-white space-y-4">
                 <div className="flex items-center gap-2 border-b border-[#E7E2D8] pb-3 text-sm font-bold text-[#181C20]">
                   <FileText className="w-4 h-4 text-[#DF711B]" />
                   <span>Scholastic Core Subjects</span>
@@ -319,7 +319,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Co-Scholastic & Value Pillars */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-6 bg-[#FCFBF7] space-y-4">
+              <div className="border border-[#E7E2D8] rounded-2xl p-6 bg-white space-y-4">
                 <div className="flex items-center gap-2 border-b border-[#E7E2D8] pb-3 text-sm font-bold text-[#181C20]">
                   <Award className="w-4 h-4 text-[#DF711B]" />
                   <span>Co-Scholastic & Enrichment Domains</span>
@@ -391,7 +391,7 @@ export const CurriculumShowcase: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               
               {/* Box 1: Three Language Formula */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] space-y-3">
+              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-white space-y-3">
                 <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
                   <Languages className="w-5 h-5" />
                 </div>
@@ -404,7 +404,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Box 2: Integrated Sciences */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] space-y-3">
+              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-white space-y-3">
                 <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
                   <FlaskConical className="w-5 h-5" />
                 </div>
@@ -418,7 +418,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Box 3: Mathematics */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] space-y-3">
+              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-white space-y-3">
                 <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
                   <Calculator className="w-5 h-5" />
                 </div>
@@ -432,7 +432,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Box 4: Social Sciences */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] space-y-3">
+              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-white space-y-3">
                 <div className="w-9 h-9 rounded-xl bg-orange-100 text-[#DF711B] flex items-center justify-center">
                   <Globe2 className="w-5 h-5" />
                 </div>
@@ -446,7 +446,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Box 5: Technology & AI */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] space-y-3">
+              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-white space-y-3">
                 <div className="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center">
                   <Cpu className="w-5 h-5" />
                 </div>
@@ -459,7 +459,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Box 6: SEWA & Sports */}
-              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-[#FCFBF7] space-y-3">
+              <div className="border border-[#E7E2D8] rounded-2xl p-5 bg-white space-y-3">
                 <div className="w-9 h-9 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center">
                   <Dumbbell className="w-5 h-5" />
                 </div>
@@ -535,7 +535,7 @@ export const CurriculumShowcase: React.FC = () => {
                     <div className="col-span-3 font-semibold text-emerald-700">20 Marks (ASL + Project)</div>
                   </div>
 
-                  <div className="grid grid-cols-12 p-3.5 bg-[#FCFBF7] hover:bg-slate-50 items-center">
+                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
                     <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 002 / 122</div>
                     <div className="col-span-4 font-bold text-slate-900">
                       Hindi Course-A / Sanskrit
@@ -553,7 +553,7 @@ export const CurriculumShowcase: React.FC = () => {
                     <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Lab Activities + Tests)</div>
                   </div>
 
-                  <div className="grid grid-cols-12 p-3.5 bg-[#FCFBF7] hover:bg-slate-50 items-center">
+                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
                     <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 086</div>
                     <div className="col-span-4 font-bold text-slate-900">
                       Science (Physics, Chemistry, Biology)
@@ -571,7 +571,7 @@ export const CurriculumShowcase: React.FC = () => {
                     <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Map Work + Projects)</div>
                   </div>
 
-                  <div className="grid grid-cols-12 p-3.5 bg-[#FCFBF7] hover:bg-slate-50 items-center">
+                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
                     <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 402 / 417</div>
                     <div className="col-span-4 font-bold text-slate-900">
                       Skill Subject: IT / Artificial Intelligence
@@ -654,7 +654,7 @@ export const CurriculumShowcase: React.FC = () => {
               </div>
 
               {/* Stream Switcher Pills */}
-              <div className="flex items-center gap-2 p-1.5 bg-[#FAF8F5] border border-[#E7E2D8] rounded-2xl shrink-0">
+              <div className="flex items-center gap-2 p-1.5 bg-white border border-slate-200 rounded-2xl shrink-0">
                 <button
                   type="button"
                   onClick={() => setSeniorStream('science')}
@@ -705,7 +705,7 @@ export const CurriculumShowcase: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Core Scholastic Subjects
                     </span>
@@ -725,7 +725,7 @@ export const CurriculumShowcase: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Electives & Specialized Combinations
                     </span>
@@ -761,7 +761,7 @@ export const CurriculumShowcase: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Core Commerce Foundations
                     </span>
@@ -781,7 +781,7 @@ export const CurriculumShowcase: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Language & Optional Electives
                     </span>
@@ -817,7 +817,7 @@ export const CurriculumShowcase: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Core Humanities Subjects
                     </span>
@@ -837,7 +837,7 @@ export const CurriculumShowcase: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#E7E2D8] space-y-3">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E7E2D8] space-y-3">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
                       Language & Optional Electives
                     </span>
@@ -866,7 +866,7 @@ export const CurriculumShowcase: React.FC = () => {
       </div>
 
       {/* 3. FOUR CORE PEDAGOGICAL PILLARS OF OUR SYLLABUS */}
-      <div className="bg-[#FAF8F5] border border-[#E7E2D8] rounded-3xl p-6 sm:p-10 space-y-6">
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 space-y-6">
         <div className="space-y-2">
           <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
             Pedagogical Philosophy & Distinctive Strengths

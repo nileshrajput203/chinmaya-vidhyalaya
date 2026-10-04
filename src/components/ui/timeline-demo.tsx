@@ -6,7 +6,7 @@ const settings = {
   textColor: "var(--color-foreground, #181C20)",
   mutedTextColor: "var(--color-muted-foreground, #555555)",
   activeColor: "#DF711B",
-  backgroundColor: "var(--color-background, #FAF8F5)",
+  backgroundColor: "var(--color-background, #FFFFFF)",
   duration: 1.4,
 };
 

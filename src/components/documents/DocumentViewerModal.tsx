@@ -38,7 +38,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
           transition={{ duration: 0.2 }}
-          className="relative z-10 w-full max-w-5xl h-[88vh] bg-[#FCFBF7] rounded-3xl shadow-2xl border border-[#E7E2D8] flex flex-col overflow-hidden overscroll-contain"
+          className="relative z-10 w-full max-w-5xl h-[88vh] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden overscroll-contain"
           data-lenis-prevent="true"
           onClick={(e) => e.stopPropagation()}
           onWheel={(e) => e.stopPropagation()}

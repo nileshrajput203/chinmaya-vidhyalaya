@@ -490,7 +490,7 @@ export const CareerCounsellingShowcase: React.FC = () => {
         </div>
 
         {/* Quick Callback Form */}
-        <div className="w-full lg:w-96 bg-[#FCFBF7] p-6 rounded-2xl border border-[#E7E2D8]">
+        <div className="w-full lg:w-96 bg-white p-6 rounded-2xl border border-[#E7E2D8]">
           {consultationBooked ? (
             <div className="text-center py-6 space-y-3">
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">

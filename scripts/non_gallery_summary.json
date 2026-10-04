@@ -1,0 +1,1232 @@
+[
+  {
+    "url": "/1.jpeg",
+    "is_local": true,
+    "current_dims": "1600x419",
+    "size_kb": "420.0 KB",
+    "used_in": [
+      "src/components/home/BannerCarousel.tsx"
+    ]
+  },
+  {
+    "url": "/2.jpeg",
+    "is_local": true,
+    "current_dims": "1600x419",
+    "size_kb": "408.9 KB",
+    "used_in": [
+      "src/components/home/BannerCarousel.tsx"
+    ]
+  },
+  {
+    "url": "/favicon.ico",
+    "is_local": true,
+    "current_dims": "239x438",
+    "size_kb": "75.3 KB",
+    "used_in": [
+      "index.html"
+    ]
+  },
+  {
+    "url": "/favicon.png",
+    "is_local": true,
+    "current_dims": "239x438",
+    "size_kb": "75.3 KB",
+    "used_in": [
+      "index.html"
+    ]
+  },
+  {
+    "url": "/file_00000000129882308ffa3f6b1a6bab51.png",
+    "is_local": true,
+    "current_dims": "1944x809",
+    "size_kb": "1506.4 KB",
+    "used_in": [
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/1.jpeg",
+    "is_local": true,
+    "current_dims": "1600x419",
+    "size_kb": "420.0 KB",
+    "used_in": [
+      "src/components/ui/marquee-demo.tsx",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/CHEM1.jpeg",
+    "is_local": true,
+    "current_dims": "525x515",
+    "size_kb": "55.3 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/FourPillarsShowcase.tsx",
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/inner/HolisticShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/layout/Header/MegaOverlayMenu.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/CHEM1.webp",
+    "is_local": true,
+    "current_dims": "525x515",
+    "size_kb": "34.9 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/Chinmaya_Logo.png",
+    "is_local": true,
+    "current_dims": "239x438",
+    "size_kb": "75.3 KB",
+    "used_in": [
+      "index.html"
+    ]
+  },
+  {
+    "url": "/images/Chinmaya_Logo.webp",
+    "is_local": true,
+    "current_dims": "239x438",
+    "size_kb": "50.5 KB",
+    "used_in": [
+      "src/components/common/Preloader.tsx",
+      "src/components/home/HeroScrollytellingFilm.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header/MainBrandHeader.tsx",
+      "src/components/layout/Header/MegaOverlayMenu.tsx",
+      "src/components/layout/MobileMenu.tsx"
+    ]
+  },
+  {
+    "url": "/images/about-banner.jpeg",
+    "is_local": true,
+    "current_dims": "1600x1199",
+    "size_kb": "396.6 KB",
+    "used_in": [
+      "src/components/inner/VisionMissionShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/about2.jpeg",
+    "is_local": true,
+    "current_dims": "960x1280",
+    "size_kb": "191.7 KB",
+    "used_in": [
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts",
+      "src/templates/ContentPage.tsx"
+    ]
+  },
+  {
+    "url": "/images/academic-calendar.png",
+    "is_local": true,
+    "current_dims": "400x500",
+    "size_kb": "174.9 KB",
+    "used_in": [
+      "src/pages/Admissions/SchoolCalendarPage.tsx"
+    ]
+  },
+  {
+    "url": "/images/academic-calendar.webp",
+    "is_local": true,
+    "current_dims": "400x500",
+    "size_kb": "19.8 KB",
+    "used_in": [
+      "src/pages/Admissions/SchoolCalendarPage.tsx"
+    ]
+  },
+  {
+    "url": "/images/admission-form-placeholder.png",
+    "is_local": true,
+    "current_dims": "416x488",
+    "size_kb": "13.5 KB",
+    "used_in": [
+      "src/components/inner/AdmissionGuidelinesShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/banner-1.jpg",
+    "is_local": true,
+    "current_dims": "1600x1068",
+    "size_kb": "419.5 KB",
+    "used_in": [
+      "src/components/inner/HeritageShowcase.tsx",
+      "src/components/inner/VisionMissionShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/banner-3.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "69.6 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx"
+    ]
+  },
+  {
+    "url": "/images/banner-4.jpeg",
+    "is_local": true,
+    "current_dims": "800x533",
+    "size_kb": "50.6 KB",
+    "used_in": [
+      "src/components/home/AcademicStreamBanners.tsx",
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/inner/SpiritualShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/banner-8.webp",
+    "is_local": true,
+    "current_dims": "1600x834",
+    "size_kb": "1278.2 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/CoCurricularShowcase.tsx",
+      "src/components/inner/HolisticShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/inner/VisionMissionShowcase.tsx",
+      "src/components/layout/Header/MegaOverlayMenu.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/banner-9.webp",
+    "is_local": true,
+    "current_dims": "1599x848",
+    "size_kb": "1151.6 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx",
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/HolisticShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/layout/Header/MegaOverlayMenu.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/biology-lab.jpg",
+    "is_local": true,
+    "current_dims": "1200x896",
+    "size_kb": "935.1 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/biology-lab.webp",
+    "is_local": true,
+    "current_dims": "1200x896",
+    "size_kb": "187.8 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/dr-mane.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "10.2 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/dr-nayak.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "15.0 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/dr-shivshankar.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "11.0 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/parag-kulkarni.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "13.1 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/shobha-sankhe.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "10.6 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/sri-b-k-poddar.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "12.8 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/sri-sriram-bhaleroji.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "1.4 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/board-of-management/tb-thakur-chairman.webp",
+    "is_local": true,
+    "current_dims": "100x100",
+    "size_kb": "10.5 KB",
+    "used_in": [
+      "src/data/school.ts"
+    ]
+  },
+  {
+    "url": "/images/bot-avatar.png",
+    "is_local": true,
+    "current_dims": "1024x1024",
+    "size_kb": "563.9 KB",
+    "used_in": [
+      "src/components/common/ChatbotFAB.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya-web-arts-and-commerce.jpg",
+    "is_local": true,
+    "current_dims": "1599x848",
+    "size_kb": "1151.6 KB",
+    "used_in": [
+      "src/components/home/AcademicStreamBanners.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya-web-science.jpg",
+    "is_local": true,
+    "current_dims": "1600x1068",
+    "size_kb": "419.5 KB",
+    "used_in": [
+      "src/components/home/AcademicStreamBanners.tsx",
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya-web-science.webp",
+    "is_local": true,
+    "current_dims": "1600x1068",
+    "size_kb": "314.2 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_001.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "95.7 KB",
+    "used_in": [
+      "src/components/common/AdmissionGuidanceModal.tsx",
+      "src/components/home/AcademicStreamBanners.tsx",
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_001.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "69.6 KB",
+    "used_in": [
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_002.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "55.6 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_002.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "35.4 KB",
+    "used_in": [
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_003.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "82.0 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_004.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "67.4 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_005.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "47.5 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/academics/classroom_learning_006.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "83.3 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/campus/campus_facilities_001.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "104.0 KB",
+    "used_in": [
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/campus/campus_facilities_001.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "80.5 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/campus/campus_facilities_002.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "72.8 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/arts_and_creativity_001.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "78.7 KB",
+    "used_in": [
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/arts_and_creativity_001.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "53.1 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/arts_and_creativity_005.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "61.3 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/arts_and_creativity_012.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "78.6 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_001.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "67.4 KB",
+    "used_in": [
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_006.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "88.1 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_015.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "59.2 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx",
+      "src/components/ui/marquee-demo.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_020.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "49.2 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_040.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "80.3 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_048.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "91.7 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/cultural/cultural_celebration_073.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "84.4 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/leadership/faculty_member_01.jpg",
+    "is_local": true,
+    "current_dims": "1000x562",
+    "size_kb": "86.3 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/leadership/principal_dimple_mistry.jpg",
+    "is_local": true,
+    "current_dims": "1000x562",
+    "size_kb": "73.2 KB",
+    "used_in": [
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/leadership/principal_dimple_mistry.webp",
+    "is_local": true,
+    "current_dims": "1000x562",
+    "size_kb": "54.8 KB",
+    "used_in": [
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_001.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "92.0 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/chinmayaImages.ts"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_001.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "66.9 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/CoCurricularShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_002.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "60.3 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_003.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "77.8 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_005.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "87.0 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_007.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "96.5 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_009.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "125.4 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_010.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "73.9 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_014.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "69.0 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/chinmaya/sports/sports_athletic_meet_016.webp",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "70.8 KB",
+    "used_in": [
+      "src/components/inner/CoCurricularShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/faq-student-thinking.png",
+    "is_local": true,
+    "current_dims": "408x612",
+    "size_kb": "237.3 KB",
+    "used_in": [
+      "src/components/ui/faq-05.tsx"
+    ]
+  },
+  {
+    "url": "/images/fees-structure.jpg",
+    "is_local": true,
+    "current_dims": "1242x1755",
+    "size_kb": "210.5 KB",
+    "used_in": [
+      "src/pages/Admissions/FeeStructurePage.tsx"
+    ]
+  },
+  {
+    "url": "/images/fees-structure.webp",
+    "is_local": true,
+    "current_dims": "1242x1755",
+    "size_kb": "122.5 KB",
+    "used_in": [
+      "src/pages/Admissions/FeeStructurePage.tsx"
+    ]
+  },
+  {
+    "url": "/images/file_00000000129882308ffa3f6b1a6bab51.jpg",
+    "is_local": true,
+    "current_dims": "1944x809",
+    "size_kb": "1506.4 KB",
+    "used_in": [
+      "src/components/home/AcademicStreamBanners.tsx"
+    ]
+  },
+  {
+    "url": "/images/file_00000000129882308ffa3f6b1a6bab51.png",
+    "is_local": true,
+    "current_dims": "1944x809",
+    "size_kb": "1506.4 KB",
+    "used_in": [
+      "src/components/home/AcademicStreamBanners.tsx"
+    ]
+  },
+  {
+    "url": "/images/guru-paduka-pooja.webp",
+    "is_local": true,
+    "current_dims": "1600x1200",
+    "size_kb": "260.7 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx",
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/FourPillarsShowcase.tsx",
+      "src/components/inner/HeritageShowcase.tsx",
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/inner/HolisticShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/inner/SpiritualShowcase.tsx",
+      "src/components/inner/VisionMissionShowcase.tsx",
+      "src/components/layout/Header/MegaOverlayMenu.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/history2.jpeg",
+    "is_local": true,
+    "current_dims": "1600x1064",
+    "size_kb": "262.3 KB",
+    "used_in": [
+      "src/components/inner/HeritageShowcase.tsx",
+      "src/components/ui/timeline-demo.tsx"
+    ]
+  },
+  {
+    "url": "/images/img1.jpg",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "307.8 KB",
+    "used_in": [
+      "src/components/inner/HistoryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img1.webp",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "188.8 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img2.jpg",
+    "is_local": true,
+    "current_dims": "1600x1200",
+    "size_kb": "278.7 KB",
+    "used_in": [
+      "src/components/inner/HistoryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img3.jpg",
+    "is_local": true,
+    "current_dims": "1600x1200",
+    "size_kb": "261.0 KB",
+    "used_in": [
+      "src/components/inner/HistoryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img3.webp",
+    "is_local": true,
+    "current_dims": "1600x1200",
+    "size_kb": "128.7 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img4.jpg",
+    "is_local": true,
+    "current_dims": "1600x1200",
+    "size_kb": "293.7 KB",
+    "used_in": [
+      "src/components/inner/HistoryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img4.webp",
+    "is_local": true,
+    "current_dims": "1600x1200",
+    "size_kb": "152.7 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/img7.jpg",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "256.7 KB",
+    "used_in": [
+      "src/components/inner/HistoryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/it-lab.jpg",
+    "is_local": true,
+    "current_dims": "1200x896",
+    "size_kb": "860.1 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/it-lab.webp",
+    "is_local": true,
+    "current_dims": "1200x896",
+    "size_kb": "138.5 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/jal-pakhwada-poster.jpeg",
+    "is_local": true,
+    "current_dims": "1131x1600",
+    "size_kb": "107.8 KB",
+    "used_in": [
+      "src/components/inner/FourPillarsShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/leadership-cutout.png",
+    "is_local": true,
+    "current_dims": "1085x1449",
+    "size_kb": "1477.3 KB",
+    "used_in": [
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/lib.jpg",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "247.0 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/inner/LibraryShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx"
+    ]
+  },
+  {
+    "url": "/images/lib.webp",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "134.4 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/menu_students_cutout.png",
+    "is_local": true,
+    "current_dims": "896x1200",
+    "size_kb": "535.7 KB",
+    "used_in": [
+      "src/components/layout/Header/MegaOverlayMenu.tsx"
+    ]
+  },
+  {
+    "url": "/images/non-teaching-staff.webp",
+    "is_local": true,
+    "current_dims": "64x64",
+    "size_kb": "1.4 KB",
+    "used_in": [
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/panel_b_achiever_design.png",
+    "is_local": true,
+    "current_dims": "1366x768",
+    "size_kb": "531.0 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx"
+    ]
+  },
+  {
+    "url": "/images/phys.jpeg",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "207.4 KB",
+    "used_in": [
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/HistoryShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/components/inner/VisionMissionShowcase.tsx",
+      "src/components/layout/Header/MegaOverlayMenu.tsx",
+      "src/components/ui/marquee-demo.tsx",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/phys.webp",
+    "is_local": true,
+    "current_dims": "1600x1067",
+    "size_kb": "103.3 KB",
+    "used_in": [
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/principal-photo.jpg",
+    "is_local": true,
+    "current_dims": "1280x720",
+    "size_kb": "176.5 KB",
+    "used_in": [
+      "src/data/school.ts",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/school-diary-cover.png",
+    "is_local": true,
+    "current_dims": "732x714",
+    "size_kb": "348.6 KB",
+    "used_in": [
+      "src/components/rareui/Book3d.tsx"
+    ]
+  },
+  {
+    "url": "/images/school_events/School_Event_2026-09-27_007.jpg",
+    "is_local": true,
+    "current_dims": "1000x667",
+    "size_kb": "86.3 KB",
+    "used_in": [
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/student_question_cutout.png",
+    "is_local": true,
+    "current_dims": "1024x1580",
+    "size_kb": "2777.1 KB",
+    "used_in": [
+      "src/components/common/FaqSection.tsx",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/swami.jpeg",
+    "is_local": true,
+    "current_dims": "900x1200",
+    "size_kb": "228.5 KB",
+    "used_in": [
+      "src/components/inner/HeritageShowcase.tsx",
+      "src/data/about.ts",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/swami_chinmayananda_cutout.png",
+    "is_local": true,
+    "current_dims": "1085x1449",
+    "size_kb": "1477.3 KB",
+    "used_in": [
+      "src/components/layout/Footer.tsx",
+      "src/pages/Home/index.tsx"
+    ]
+  },
+  {
+    "url": "/images/swami_chinmayananda_cutout.webp",
+    "is_local": true,
+    "current_dims": "1085x1449",
+    "size_kb": "193.7 KB",
+    "used_in": [
+      "src/components/inner/HeritageShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/swamiji.png",
+    "is_local": true,
+    "current_dims": "900x1200",
+    "size_kb": "1727.2 KB",
+    "used_in": [
+      "src/components/inner/HeritageShowcase.tsx"
+    ]
+  },
+  {
+    "url": "/images/swamiji.webp",
+    "is_local": true,
+    "current_dims": "900x1200",
+    "size_kb": "141.9 KB",
+    "used_in": [
+      "src/components/inner/HeritageShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/teaching-staff.webp",
+    "is_local": true,
+    "current_dims": "64x64",
+    "size_kb": "1.4 KB",
+    "used_in": [
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "/images/tour.jpg",
+    "is_local": true,
+    "current_dims": "640x419",
+    "size_kb": "52.8 KB",
+    "used_in": [
+      "src/components/inner/FourPillarsShowcase.tsx",
+      "src/components/ui/marquee-demo.tsx"
+    ]
+  },
+  {
+    "url": "/images/tour.webp",
+    "is_local": true,
+    "current_dims": "640x419",
+    "size_kb": "44.2 KB",
+    "used_in": [
+      "src/components/home/HorizontalPanelGallery.tsx",
+      "src/components/home/RibbonGallery.tsx",
+      "src/components/inner/CoCurricularShowcase.tsx",
+      "src/components/inner/InfrastructureShowcase.tsx",
+      "src/data/images.ts"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1400&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/inner/LibraryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?auto=format&fit=crop&w=1400&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/inner/LibraryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1400&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/inner/LibraryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&w=1400&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/inner/LibraryShowcase.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/timeline.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/img-sphere-demo.tsx"
+    ]
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80",
+    "is_local": false,
+    "current_dims": "Remote / External",
+    "size_kb": "Remote",
+    "used_in": [
+      "src/components/ui/integration-card.tsx"
+    ]
+  }
+]

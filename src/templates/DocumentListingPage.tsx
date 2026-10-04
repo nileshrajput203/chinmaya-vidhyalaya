@@ -68,7 +68,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
   const isSamplePapers = selectedCategory === 'sample-papers' || initialCategory === 'sample-papers';
 
   return (
-    <div className="bg-[#FCFBF7] text-[#181C20] pb-24">
+    <div className="bg-white text-[#181C20] pb-24">
       <Breadcrumb items={[{ label: isMandatoryIsolated ? "About Us" : "Downloads" }, { label: pageTitle }]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
@@ -105,7 +105,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                       className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
                         mandatorySubFilter === sub.value
                           ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
-                          : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
+                          : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
                       }`}
                     >
                       {sub.label}
@@ -125,7 +125,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                       className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
                         selectedTerm === termOpt.value
                           ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
-                          : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
+                          : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
                       }`}
                     >
                       {termOpt.label}
@@ -151,7 +151,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                     className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
                       selectedCategory === cat.value
                         ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
-                        : 'bg-[#FAF8F5] border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
+                        : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
                     }`}
                   >
                     {cat.label}
@@ -168,7 +168,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                 placeholder="Search by title, standard, or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-9 py-2.5 text-xs bg-[#FAF8F5] border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B] font-sans"
+                className="w-full pl-10 pr-9 py-2.5 text-xs bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:border-[#DF711B] font-sans"
               />
               {searchQuery && (
                 <button
@@ -214,7 +214,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
                       selectedTerm === termOpt.value
                         ? 'bg-[#DF711B] text-white border-[#DF711B] font-bold shadow-sm'
-                        : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-[#FAF8F5]'
+                        : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-white'
                     }`}
                   >
                     {termOpt.label}
@@ -231,14 +231,83 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
           <div className="text-center py-20 text-[#4A5568] text-xs font-mono">Loading repository documents...</div>
         ) : displayDocuments.length > 0 ? (
           <div className="bg-white border border-[#E7E2D8] rounded-3xl shadow-card overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
+            {/* Mobile View: Dedicated Card List (< md) */}
+            <div className="block md:hidden divide-y divide-[#E7E2D8]">
+              {displayDocuments.map((doc) => {
+                const isDownloadAllowed = doc.downloadable && doc.category !== 'mandatory-information';
+
+                return (
+                  <div key={doc.id} className="p-4 space-y-3 hover:bg-slate-50/60 transition-colors">
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center shrink-0 mt-0.5">
+                        <FileText className="w-4 h-4" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-semibold text-xs sm:text-sm text-[#181C20] leading-snug">
+                          {doc.title}
+                        </h4>
+                        {doc.description && (
+                          <p className="text-[11px] text-[#4A5568] font-light leading-relaxed mt-1">
+                            {doc.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-100 text-[11px]">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {doc.term ? (
+                          <span className="font-bold text-[10px] text-[#DF711B] bg-[#FAF3E8] px-2 py-0.5 rounded border border-[#E7E2D8]">
+                            {doc.term}
+                          </span>
+                        ) : (
+                          <span className="font-mono text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
+                            {doc.academicYear || 'Session'}
+                          </span>
+                        )}
+                        <span className="font-mono text-[10px] text-slate-500">
+                          {doc.fileSize || 'Standard'}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2 shrink-0">
+                        <button
+                          type="button"
+                          onClick={() => setActiveViewingDoc(doc)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-xs"
+                          title="View Document Online"
+                        >
+                          <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
+                          <span>View</span>
+                        </button>
+
+                        {isDownloadAllowed && (
+                          <a
+                            href={doc.fileUrl}
+                            download
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
+                            title="Download PDF File"
+                          >
+                            <Download className="w-3.5 h-3.5" />
+                            <span>Download</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Desktop / Tablet View: Spacious Table (>= md) */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full min-w-[680px] text-left text-xs">
                 <thead className="bg-[#181818] text-white text-[11px] font-mono uppercase tracking-wider">
                   <tr>
                     <th className="py-4 px-6 font-bold">Document Title & Description</th>
-                    <th className="py-4 px-4 font-bold">Term / Session</th>
-                    <th className="py-4 px-4 font-bold">File Size</th>
-                    <th className="py-4 px-6 font-bold text-right">Access Options</th>
+                    <th className="py-4 px-4 font-bold whitespace-nowrap">Term / Session</th>
+                    <th className="py-4 px-4 font-bold whitespace-nowrap">File Size</th>
+                    <th className="py-4 px-6 font-bold text-right whitespace-nowrap">Access Options</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#E7E2D8]">
@@ -246,7 +315,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                     const isDownloadAllowed = doc.downloadable && doc.category !== 'mandatory-information';
 
                     return (
-                      <tr key={doc.id} className="hover:bg-[#FAF8F5] transition-colors group">
+                      <tr key={doc.id} className="hover:bg-slate-50/50 transition-colors group">
                         <td className="py-4 px-6 text-[#181C20]">
                           <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-lg bg-[#FAF3E8] text-[#DF711B] flex items-center justify-center shrink-0 group-hover:bg-[#181818] group-hover:text-white transition-colors">
@@ -265,7 +334,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                           </div>
                         </td>
 
-                        <td className="py-4 px-4 text-[11px] font-mono text-[#181C20]">
+                        <td className="py-4 px-4 text-[11px] font-mono text-[#181C20] whitespace-nowrap">
                           {doc.term ? (
                             <span className="font-bold text-[#DF711B] bg-[#FAF3E8] px-2 py-0.5 rounded border border-[#E7E2D8]">
                               {doc.term}
@@ -275,17 +344,17 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                           )}
                         </td>
 
-                        <td className="py-4 px-4 text-[11px] font-mono text-[#4A5568]">
+                        <td className="py-4 px-4 text-[11px] font-mono text-[#4A5568] whitespace-nowrap">
                           {doc.fileSize || 'Standard'}
                         </td>
 
-                        <td className="py-4 px-6 text-right">
+                        <td className="py-4 px-6 text-right whitespace-nowrap">
                           <div className="inline-flex items-center gap-2 justify-end">
                             {/* Eye View Button for all documents */}
                             <button
                               type="button"
                               onClick={() => setActiveViewingDoc(doc)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF8F5] hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-sm cursor-pointer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-sm cursor-pointer"
                               title="View Document Online"
                             >
                               <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
