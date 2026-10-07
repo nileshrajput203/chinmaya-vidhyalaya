@@ -1,0 +1,494 @@
+[
+  {
+    "file": "src/components/common/AdmissionGuidanceModal.tsx",
+    "src": "/images/chinmaya/academics/classroom_learning_001.jpg",
+    "className": "w-full h-full object-cover object-center",
+    "alt": "Chinmaya Vidyalaya Academics"
+  },
+  {
+    "file": "src/components/common/ChatbotFAB.tsx",
+    "src": "/images/bot-avatar.png",
+    "className": "w-full h-full object-cover",
+    "alt": "Chinmaya Assistant"
+  },
+  {
+    "file": "src/components/common/ChatbotFAB.tsx",
+    "src": "/images/bot-avatar.png",
+    "className": "w-full h-full object-cover",
+    "alt": "Bot Assistant"
+  },
+  {
+    "file": "src/components/common/ChatbotFAB.tsx",
+    "src": "/images/bot-avatar.png",
+    "className": "w-full h-full object-cover",
+    "alt": "Bot Assistant"
+  },
+  {
+    "file": "src/components/common/FaqSection.tsx",
+    "src": "/images/student_question_cutout.png",
+    "className": "w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out origin-bottom",
+    "alt": "Chinmaya Vidyalaya Student with Inquiry"
+  },
+  {
+    "file": "src/components/common/Preloader.tsx",
+    "src": "/images/Chinmaya_Logo.webp",
+    "className": "w-full h-full object-contain",
+    "alt": "Chinmaya Vidyalaya Emblem"
+  },
+  {
+    "file": "src/components/documents/DocumentViewerModal.tsx",
+    "src": "document.fileUrl",
+    "className": "max-w-full max-h-[72vh] object-contain rounded-xl shadow-lg border border-[#E7E2D8]",
+    "alt": "document.title"
+  },
+  {
+    "file": "src/components/gallery/GalleryCard.tsx",
+    "src": "item.imageUrl",
+    "className": "w-full h-64 object-cover hover:scale-105 transition-transform duration-500",
+    "alt": "item.title"
+  },
+  {
+    "file": "src/components/home/AcademicStreamBanners.tsx",
+    "src": "slide.src",
+    "className": "w-full h-full object-cover object-center select-none",
+    "alt": "slide.alt"
+  },
+  {
+    "file": "src/components/home/AcademicStreamBanners.tsx",
+    "src": "bannerSrc",
+    "className": "w-full h-full object-cover object-center select-none",
+    "alt": "Chinmaya Vidyalaya Tarapur - Campus and Academic Excellence Feature Banner"
+  },
+  {
+    "file": "src/components/home/BannerCarousel.tsx",
+    "src": "slide.src",
+    "className": "w-full h-full object-cover block",
+    "alt": "slide.alt"
+  },
+  {
+    "file": "src/components/home/HeroScrollytellingFilm.tsx",
+    "src": "dynamic",
+    "className": "absolute inset-0 w-full h-full object-cover z-0 pointer-events-none",
+    "alt": "Chinmaya Vidyalaya Campus"
+  },
+  {
+    "file": "src/components/home/HeroScrollytellingFilm.tsx",
+    "src": "/images/Chinmaya_Logo.webp",
+    "className": "w-11 h-13 sm:w-12 sm:h-14 object-contain shrink-0 drop-shadow-sm",
+    "alt": "Chinmaya Vidyalaya Logo"
+  },
+  {
+    "file": "src/components/home/HorizontalPanelGallery.tsx",
+    "src": "item.image",
+    "className": "w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out",
+    "alt": "item.title"
+  },
+  {
+    "file": "src/components/home/HorizontalPanelGallery.tsx",
+    "src": "/images/panel_b_achiever_design.png",
+    "className": "w-full h-full object-cover object-center relative z-10",
+    "alt": "Chinmaya Vidyalaya Student Achiever Studio Design"
+  },
+  {
+    "file": "src/components/home/HorizontalPanelGallery.tsx",
+    "src": "photo.src",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out",
+    "alt": "photo.title"
+  },
+  {
+    "file": "src/components/home/HorizontalPanelGallery.tsx",
+    "src": "photo.src",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out",
+    "alt": "photo.title"
+  },
+  {
+    "file": "src/components/inner/AdmissionGuidelinesShowcase.tsx",
+    "src": "/images/admission-form-placeholder.png",
+    "className": "w-full h-auto max-h-[460px] object-contain drop-shadow-sm select-none",
+    "alt": "Admission Registration Form Preview"
+  },
+  {
+    "file": "src/components/inner/FourPillarsShowcase.tsx",
+    "src": "dynamic",
+    "className": "w-full h-full object-cover",
+    "alt": ""
+  },
+  {
+    "file": "src/components/inner/HeritageShowcase.tsx",
+    "src": "phase.image",
+    "className": "w-full h-full object-cover",
+    "alt": "phase.title"
+  },
+  {
+    "file": "src/components/inner/HeritageShowcase.tsx",
+    "src": "/images/swami.jpeg",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Pujya Gurudev Swami Chinmayananda"
+  },
+  {
+    "file": "src/components/inner/HeritageShowcase.tsx",
+    "src": "activePhase.image",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "activePhase.title"
+  },
+  {
+    "file": "src/components/inner/HeritageShowcase.tsx",
+    "src": "lightbox.src",
+    "className": "w-full h-full object-contain",
+    "alt": "lightbox.title"
+  },
+  {
+    "file": "src/components/inner/HistoryShowcase.tsx",
+    "src": "/images/about2.jpeg",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Chinmaya Vidyalaya Campus Building"
+  },
+  {
+    "file": "src/components/inner/HistoryShowcase.tsx",
+    "src": "activePhoto.image",
+    "className": "w-full h-full object-contain",
+    "alt": "activePhoto.title"
+  },
+  {
+    "file": "src/components/inner/HolisticShowcase.tsx",
+    "src": "current.image",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "current.name"
+  },
+  {
+    "file": "src/components/inner/InfrastructureShowcase.tsx",
+    "src": "currentPhoto.src",
+    "className": "w-full h-full object-cover transition-transform duration-500 cursor-pointer hover:scale-105",
+    "alt": "${facility.name} - ${currentPhoto.caption}"
+  },
+  {
+    "file": "src/components/inner/InfrastructureShowcase.tsx",
+    "src": "lightbox.src",
+    "className": "max-w-full max-h-[75vh] object-contain rounded-2xl border border-white/20 shadow-2xl",
+    "alt": "lightbox.caption"
+  },
+  {
+    "file": "src/components/inner/LibraryShowcase.tsx",
+    "src": "/images/lib.jpg",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Chinmaya Vidyalaya School Library"
+  },
+  {
+    "file": "src/components/inner/SpiritualShowcase.tsx",
+    "src": "/images/guru-paduka-pooja.webp",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Guru Paduka Pooja at Chinmaya Vidyalaya"
+  },
+  {
+    "file": "src/components/inner/SpiritualShowcase.tsx",
+    "src": "/images/banner-4.jpeg",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Cultural assemblies and Bhagavad Gita Chanting"
+  },
+  {
+    "file": "src/components/inner/VisionMissionShowcase.tsx",
+    "src": "kosha.image",
+    "className": "w-full h-full object-cover",
+    "alt": "kosha.name"
+  },
+  {
+    "file": "src/components/inner/VisionMissionShowcase.tsx",
+    "src": "/images/phys.jpeg",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Students conducting scientific inquiry in laboratory"
+  },
+  {
+    "file": "src/components/inner/VisionMissionShowcase.tsx",
+    "src": "/images/guru-paduka-pooja.webp",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "Guru Paduka Pooja and cultural traditions at Chinmaya Vidyalaya"
+  },
+  {
+    "file": "src/components/inner/VisionMissionShowcase.tsx",
+    "src": "activeKosha.image",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+    "alt": "activeKosha.name"
+  },
+  {
+    "file": "src/components/inner/VisionMissionShowcase.tsx",
+    "src": "lightboxImage.src",
+    "className": "w-full h-full object-contain",
+    "alt": "lightboxImage.title"
+  },
+  {
+    "file": "src/components/layout/Footer.tsx",
+    "src": "/images/Chinmaya_Logo.webp",
+    "className": "h-14 sm:h-16 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform",
+    "alt": "Chinmaya Vidyalaya Logo"
+  },
+  {
+    "file": "src/components/layout/Footer.tsx",
+    "src": "/images/swami_chinmayananda_cutout.png",
+    "className": "w-full h-auto max-h-[320px] xl:max-h-[350px] object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] scale-x-[-1] relative z-10 pointer-events-none",
+    "alt": "Pujya Gurudev Swami Chinmayananda"
+  },
+  {
+    "file": "src/components/layout/Header/MainBrandHeader.tsx",
+    "src": "/images/Chinmaya_Logo.webp",
+    "className": "h-12 xs:h-14 sm:h-20 lg:h-22 w-auto max-w-[3.25rem] sm:max-w-none object-contain shrink-0 group-hover:scale-105 transition-transform duration-300",
+    "alt": "Chinmaya Vidyalaya Emblem"
+  },
+  {
+    "file": "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src": "/images/Chinmaya_Logo.webp",
+    "className": "h-12 sm:h-14 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform",
+    "alt": "Chinmaya Vidyalaya Emblem"
+  },
+  {
+    "file": "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src": "dynamic",
+    "className": "w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500",
+    "alt": ""
+  },
+  {
+    "file": "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src": "/images/menu_students_cutout.png",
+    "className": "w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)] mix-blend-lighten pointer-events-none relative z-10",
+    "alt": "Chinmaya Vidyalaya Students"
+  },
+  {
+    "file": "src/components/layout/MobileMenu.tsx",
+    "src": "/images/Chinmaya_Logo.webp",
+    "className": "h-12 w-auto object-contain shrink-0",
+    "alt": "Chinmaya Vidyalaya Logo"
+  },
+  {
+    "file": "src/components/rareui/Book3d.tsx",
+    "src": "coverImage",
+    "className": "w-full h-full object-cover rounded-2xl block",
+    "alt": "title"
+  },
+  {
+    "file": "src/components/ui/bento-gallery.tsx",
+    "src": "item.url",
+    "className": "h-auto max-h-[90vh] w-full rounded-lg object-contain",
+    "alt": "item.title"
+  },
+  {
+    "file": "src/components/ui/bento-gallery.tsx",
+    "src": "item.url",
+    "className": "absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105",
+    "alt": "item.title"
+  },
+  {
+    "file": "src/components/ui/faq-05.tsx",
+    "src": "/images/faq-student-thinking.png",
+    "className": "w-28 sm:w-36 md:w-40 h-auto object-contain drop-shadow-md",
+    "alt": "Student thinking about questions"
+  },
+  {
+    "file": "src/components/ui/image-stream-hero.tsx",
+    "src": "img.src",
+    "className": "h-full w-full object-cover",
+    "alt": ""
+  },
+  {
+    "file": "src/components/ui/img-sphere.tsx",
+    "src": "image.src",
+    "className": "w-full h-full object-cover",
+    "alt": "image.alt"
+  },
+  {
+    "file": "src/components/ui/img-sphere.tsx",
+    "src": "selectedImage.src",
+    "className": "w-full h-full object-cover",
+    "alt": "selectedImage.alt"
+  },
+  {
+    "file": "src/components/ui/infinite-loop-gallery.tsx",
+    "src": "item.url",
+    "className": "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
+    "alt": ""
+  },
+  {
+    "file": "src/components/ui/infinite-loop-gallery.tsx",
+    "src": "selectedItem.url",
+    "className": "max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl",
+    "alt": ""
+  },
+  {
+    "file": "src/components/ui/integration-card.tsx",
+    "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80",
+    "className": "size-5 object-cover sm:size-9 block dark:hidden rounded-md",
+    "alt": "logo"
+  },
+  {
+    "file": "src/components/ui/integration-card.tsx",
+    "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80",
+    "className": "size-5 object-cover sm:size-9 hidden dark:block rounded-md",
+    "alt": "logo"
+  },
+  {
+    "file": "src/components/ui/marquee-demo.tsx",
+    "src": "img.src",
+    "className": "",
+    "alt": "img.alt"
+  },
+  {
+    "file": "src/components/ui/scroll-image-tunnel.tsx",
+    "src": "src",
+    "className": "h-full w-full object-cover",
+    "alt": "alt"
+  },
+  {
+    "file": "src/components/ui/scroll-image-tunnel.tsx",
+    "src": "image.src",
+    "className": "h-full w-full object-cover",
+    "alt": "image.alt"
+  },
+  {
+    "file": "src/components/ui/text-rotate-demo.tsx",
+    "src": "image",
+    "className": "w-full h-full object-cover",
+    "alt": "Example ${index + 1}"
+  },
+  {
+    "file": "src/components/ui/timeline.tsx",
+    "src": "imageUrl",
+    "className": "h-full w-full object-cover",
+    "alt": "imageAlt"
+  },
+  {
+    "file": "src/pages/Admissions/FeeStructurePage.tsx",
+    "src": "displayImage",
+    "className": "max-w-full h-auto rounded-xl object-contain block select-none",
+    "alt": "Chinmaya Vidyalaya Tarapur Annual Fee Structure 2026-2027"
+  },
+  {
+    "file": "src/pages/Admissions/FeeStructurePage.tsx",
+    "src": "displayImage",
+    "className": "max-h-[90vh] max-w-[95vw] object-contain rounded-xl shadow-2xl",
+    "alt": "Chinmaya Vidyalaya Annual Fee Structure 2026-2027 Fullscreen"
+  },
+  {
+    "file": "src/pages/Admissions/SchoolCalendarPage.tsx",
+    "src": "displayImage",
+    "className": "max-w-full h-auto rounded-xl object-contain block select-none",
+    "alt": "Chinmaya Vidyalaya Tarapur Official Academic Calendar 2026-2027"
+  },
+  {
+    "file": "src/pages/Admissions/SchoolCalendarPage.tsx",
+    "src": "displayImage",
+    "className": "max-h-[90vh] max-w-[95vw] object-contain rounded-xl shadow-2xl",
+    "alt": "Chinmaya Vidyalaya Academic Calendar 2026-2027 Fullscreen"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "/file_00000000129882308ffa3f6b1a6bab51.png",
+    "className": "w-full h-auto object-cover block",
+    "alt": "Banner Image"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "/images/principal-photo.jpg",
+    "className": "w-full h-full object-cover object-center rounded-full border-2 border-white shadow-xs",
+    "alt": "OFFICIAL_PRINCIPAL_INFO.name"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "/images/leadership-cutout.png",
+    "className": "",
+    "alt": "Leadership Feature"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "dynamic",
+    "className": "w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105",
+    "alt": ""
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "card.image",
+    "className": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out",
+    "alt": "card.title"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "selectedGalleryImg",
+    "className": "max-w-full max-h-[85vh] rounded-2xl shadow-2xl border border-white/20 object-contain",
+    "alt": "Enlarged Campus Visual"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "currentQuote.image",
+    "className": "w-full h-full object-cover",
+    "alt": "currentQuote.author"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "post.coverImage",
+    "className": "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
+    "alt": "post.title"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "post.author.avatar",
+    "className": "w-6 h-6 rounded-full object-cover border border-[#DF711B]/40 shrink-0",
+    "alt": "post.author.name"
+  },
+  {
+    "file": "src/pages/Home/index.tsx",
+    "src": "/images/student_question_cutout.png",
+    "className": "w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out origin-bottom",
+    "alt": "Chinmaya Vidyalaya Student with Inquiry"
+  },
+  {
+    "file": "src/templates/BlogPage.tsx",
+    "src": "post.coverImage",
+    "className": "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
+    "alt": "post.title"
+  },
+  {
+    "file": "src/templates/BlogPage.tsx",
+    "src": "post.author.avatar",
+    "className": "w-8 h-8 rounded-full object-cover border border-[#DF711B]/40 shrink-0",
+    "alt": "post.author.name"
+  },
+  {
+    "file": "src/templates/BlogPage.tsx",
+    "src": "activeArticle.author.avatar",
+    "className": "w-12 h-12 rounded-full object-cover border-2 border-[#DF711B]",
+    "alt": "activeArticle.author.name"
+  },
+  {
+    "file": "src/templates/BlogPage.tsx",
+    "src": "activeArticle.coverImage",
+    "className": "w-full h-full object-cover",
+    "alt": "activeArticle.title"
+  },
+  {
+    "file": "src/templates/ContactPage.tsx",
+    "src": "SCHOOL_IMAGES.CAMPUS_HERO",
+    "className": "w-full h-64 object-cover rounded-2xl",
+    "alt": "Chinmaya Vidyalaya Tarapur Main Building"
+  },
+  {
+    "file": "src/templates/ContentPage.tsx",
+    "src": "primaryVisual.src",
+    "className": "w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500",
+    "alt": "${title} visual"
+  },
+  {
+    "file": "src/templates/ContentPage.tsx",
+    "src": "member.image",
+    "className": "w-16 h-16 rounded-2xl object-cover border-2 border-[#DF711B] shadow-sm shrink-0",
+    "alt": "member.name"
+  },
+  {
+    "file": "src/templates/GalleryPage.tsx",
+    "src": "item.imageUrl",
+    "className": "w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105",
+    "alt": "item.title"
+  },
+  {
+    "file": "src/templates/GalleryPage.tsx",
+    "src": "activeItem.imageUrl",
+    "className": "w-full max-h-[65vh] object-contain",
+    "alt": "activeItem.title"
+  }
+]

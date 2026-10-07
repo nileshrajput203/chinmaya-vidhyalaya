@@ -1,0 +1,155 @@
+[
+  {
+    "category": "Principal Smt. Dimple Mistry (Official Spotlight)",
+    "imageName": "principal-photo.jpg / .webp",
+    "nativeDim": "1280 × 720 px (16:9 HD)",
+    "aspectRatio": "16:9 native -> 1:1 circular crop",
+    "mobileDisplay": "128 × 128 px (w-32 h-32 rounded-full) in centered card",
+    "desktopDisplay": "144 × 144 px (sm:w-36 sm:h-36 rounded-full) in 5-col spotlight card",
+    "responsiveBehavior": "object-cover object-center, circular border with gold/amber gradient ring. On mobile it sits above text; on desktop it anchors the editorial left card."
+  },
+  {
+    "category": "Principal Desk & Leadership Cutout",
+    "imageName": "leadership-cutout.png / .webp",
+    "nativeDim": "1085 × 1449 px (Portrait)",
+    "aspectRatio": "3:4 vertical",
+    "mobileDisplay": "Max height 288 px (h-72 container, max-h-full max-w-full object-contain)",
+    "desktopDisplay": "Max height 320 px (sm:h-80 container, max-h-full max-w-full object-contain)",
+    "responsiveBehavior": "object-contain, drop-shadow-md. Scaled automatically without cropping."
+  },
+  {
+    "category": "Main Header School Logo",
+    "imageName": "Chinmaya_Logo.webp",
+    "nativeDim": "239 × 438 px (Crest)",
+    "aspectRatio": "1:1.83 vertical",
+    "mobileDisplay": "Height 48 px to 56 px (h-12 xs:h-14 max-w-[3.25rem] w-auto)",
+    "desktopDisplay": "Height 80 px to 88 px (sm:h-20 lg:h-22 w-auto)",
+    "responsiveBehavior": "object-contain shrink-0. Compact on mobile navigation bar; expansive high-res crest on desktop banner."
+  },
+  {
+    "category": "Mobile Drawer Navigation Logo",
+    "imageName": "Chinmaya_Logo.webp",
+    "nativeDim": "239 × 438 px (Crest)",
+    "aspectRatio": "1:1.83 vertical",
+    "mobileDisplay": "Height 48 px (h-12 w-auto) in mobile slide-out drawer header",
+    "desktopDisplay": "Hidden completely (drawer is lg:hidden)",
+    "responsiveBehavior": "Visible only on screens <1024px."
+  },
+  {
+    "category": "Global Footer Gurudev Cutout",
+    "imageName": "swami_chinmayananda_cutout.png / .webp",
+    "nativeDim": "1085 × 1449 px (Portrait)",
+    "aspectRatio": "3:4 vertical",
+    "mobileDisplay": "Max height 320 px (max-h-[320px] w-full h-auto object-contain)",
+    "desktopDisplay": "Max height 350 px (xl:max-h-[350px] w-full h-auto object-contain)",
+    "responsiveBehavior": "object-contain, horizontally flipped (scale-x-[-1]), deep drop-shadow. Positioned above footer content."
+  },
+  {
+    "category": "Global Footer Logo",
+    "imageName": "Chinmaya_Logo.webp",
+    "nativeDim": "239 × 438 px (Crest)",
+    "aspectRatio": "1:1.83 vertical",
+    "mobileDisplay": "Height 56 px (h-14 w-auto)",
+    "desktopDisplay": "Height 64 px (sm:h-16 w-auto)",
+    "responsiveBehavior": "object-contain shrink-0 with subtle hover scale."
+  },
+  {
+    "category": "Mega Menu Student Cutout (Desktop Overlay)",
+    "imageName": "menu_students_cutout.png / .webp",
+    "nativeDim": "896 × 1200 px (Portrait)",
+    "aspectRatio": "3:4 vertical",
+    "mobileDisplay": "Hidden (Mega menu overlay is desktop only; mobile uses drawer)",
+    "desktopDisplay": "Width ~280–340 px, full height object-contain with ambient backlight",
+    "responsiveBehavior": "Hidden on mobile; renders exclusively inside desktop full-screen overlay."
+  },
+  {
+    "category": "Admissions & FAQ Inquiring Student Cutout",
+    "imageName": "student_question_cutout.png / .webp",
+    "nativeDim": "1024 × 1580 px (Portrait)",
+    "aspectRatio": "1:1.54 vertical",
+    "mobileDisplay": "Width 192 px to 224 px (w-48 sm:w-56 h-auto object-contain)",
+    "desktopDisplay": "Width 256 px -> 288 px -> 320 px (md:w-64 lg:w-72 xl:w-80 h-auto)",
+    "responsiveBehavior": "object-contain, origin-bottom hover-lift. Anchors the contact & FAQ callout."
+  },
+  {
+    "category": "FAQ Thinking Student Badge",
+    "imageName": "faq-student-thinking.png / .webp",
+    "nativeDim": "408 × 612 px",
+    "aspectRatio": "2:3 vertical",
+    "mobileDisplay": "Width 112 px (w-28 h-auto object-contain)",
+    "desktopDisplay": "Width 144 px to 160 px (sm:w-36 md:w-40 h-auto object-contain)",
+    "responsiveBehavior": "object-contain, drop-shadow-md floating accent."
+  },
+  {
+    "category": "Floating Chatbot Assistant Avatar",
+    "imageName": "bot-avatar.webp",
+    "nativeDim": "1024 × 1024 px (Square 1:1)",
+    "aspectRatio": "1:1 square",
+    "mobileDisplay": "48 × 48 px (Floating FAB trigger), 36 × 36 px inside chat bubble header",
+    "desktopDisplay": "56 × 56 px (Floating FAB trigger), 40 × 40 px inside chat bubble header",
+    "responsiveBehavior": "rounded-full, object-cover, shadow-lg with interactive ripple ring."
+  },
+  {
+    "category": "Home Horizontal Panel Gallery (Campus, Labs, Sports, Arts)",
+    "imageName": "chinmaya/campus/, academics/, cultural/, sports/",
+    "nativeDim": "1000 × 667 px (3:2 Landscape)",
+    "aspectRatio": "3:2 native",
+    "mobileDisplay": "Full-width cards (w-full h-[260px] to h-[300px] object-cover rounded-xl)",
+    "desktopDisplay": "Fixed panel width 420 px to 480 px, height 520 px to 580 px (object-cover)",
+    "responsiveBehavior": "On mobile: vertically scrolling cards. On desktop: horizontal GSAP pinning track with smooth card expansion."
+  },
+  {
+    "category": "Subpage Header Banners (History, Mission, Contact)",
+    "imageName": "history2.webp, mission.webp, contact.webp, banner-1.jpg",
+    "nativeDim": "1600 × 1064 px / 1600 × 1067 px",
+    "aspectRatio": "3:2 panoramic",
+    "mobileDisplay": "Full width, height 220 px to 260 px (w-full h-56 sm:h-64 object-cover)",
+    "desktopDisplay": "Full width or 50% split, height 320 px to 384 px (md:h-80 lg:h-96 object-cover)",
+    "responsiveBehavior": "object-cover rounded-xl / 2xl, subtle zoom on hover."
+  },
+  {
+    "category": "Science Laboratories (Physics, Chemistry, Biology, IT)",
+    "imageName": "phys.webp, CHEM1.webp, biology-lab.webp, it-lab.webp",
+    "nativeDim": "1600×1067, 525×515, 1200×896, 1200×896 px",
+    "aspectRatio": "Landscape 4:3 & 3:2",
+    "mobileDisplay": "1-column card grid, full width, height 200–240 px (object-cover)",
+    "desktopDisplay": "2-column grid (grid-cols-2), card height 280–340 px (object-cover rounded-xl)",
+    "responsiveBehavior": "object-cover, interactive lightbox modal trigger on tap/click."
+  },
+  {
+    "category": "Board of Management Portraits (12 Trustees)",
+    "imageName": "board-of-management/*.webp",
+    "nativeDim": "100 × 100 px (11 members) & 200 × 200 px (1 member)",
+    "aspectRatio": "1:1 square",
+    "mobileDisplay": "56 × 56 px to 64 × 64 px (w-14 h-14 sm:w-16 sm:h-16 rounded-2xl) in 2–3 col grid",
+    "desktopDisplay": "64 × 64 px (w-16 h-16 rounded-2xl border-2 border-[#DF711B]) in 4–6 col grid",
+    "responsiveBehavior": "object-cover shrink-0, avatar card layout with name and designation below or alongside."
+  },
+  {
+    "category": "Mandatory Public Disclosures & Certificates (15 Documents)",
+    "imageName": "affliation.webp, fire-safety-certificate.webp, TC.webp, etc.",
+    "nativeDim": "1242×1755, 1600×2259, 1240×1753, 400×500 px",
+    "aspectRatio": "A4 Vertical Document (~1:1.41)",
+    "mobileDisplay": "Card thumbnail: full width (aspect-[4/5] max-h-[280px]). Modal: max-w-[95vw] max-h-[80vh]",
+    "desktopDisplay": "Card thumbnail: 3–4 col grid (aspect-[4/5] h-72). Modal: max-w-4xl max-h-[88vh]",
+    "responsiveBehavior": "object-contain, protected document viewer modal with pinch/zoom on mobile and high-def fit on desktop."
+  },
+  {
+    "category": "Class 1–10 & Evaluation Question Papers (15 Papers)",
+    "imageName": "papers/STD-1..10.webp, standard-1..5-evaluation-iii.webp",
+    "nativeDim": "400 × 500 px (A4 portrait preview)",
+    "aspectRatio": "4:5 vertical",
+    "mobileDisplay": "2-column grid on mobile (grid-cols-2 gap-3), thumbnail height ~180 px",
+    "desktopDisplay": "4-to-5 column grid (md:grid-cols-4 lg:grid-cols-5), thumbnail height 220–250 px",
+    "responsiveBehavior": "object-contain, instant full-size preview modal with direct PDF download link."
+  },
+  {
+    "category": "Photo Gallery Showcase Grid (/gallery)",
+    "imageName": "chinmaya/ (634 photos) & school_events/ (316 photos)",
+    "nativeDim": "1000 × 667 px (3:2) & 1000 × 562 px (16:9)",
+    "aspectRatio": "3:2 and 16:9",
+    "mobileDisplay": "1-to-2 column grid (grid-cols-1 sm:grid-cols-2), card height ~220 px (aspect-[4/3])",
+    "desktopDisplay": "3-to-4 column grid (md:grid-cols-3 lg:grid-cols-4), card height ~240 px (aspect-[16/10])",
+    "responsiveBehavior": "object-cover with smooth hover-zoom. Tap/click opens responsive lightbox (max-w-[95vw] on mobile, max-w-5xl on desktop)."
+  }
+]

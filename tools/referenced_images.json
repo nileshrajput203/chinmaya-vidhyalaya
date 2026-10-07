@@ -1,0 +1,3595 @@
+[
+  {
+    "referencedPath": "/images/swami.jpeg",
+    "foundInFiles": [
+      "src/data/about.ts",
+      "src/data/about.ts",
+      "src/data/about.ts",
+      "src/data/about.ts",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "900x1200",
+    "format": ".jpeg",
+    "sizeKb": "228.54",
+    "fullLocalPath": "zip-repl/public/images/swami.jpeg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/principal_dimple_mistry.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/gallery.ts",
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "73.19",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/principal_dimple_mistry.jpg"
+  },
+  {
+    "referencedPath": "/images/banner-9.webp",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/images.ts"
+    ],
+    "dimension": "1599x848",
+    "format": ".webp",
+    "sizeKb": "1151.58",
+    "fullLocalPath": "zip-repl/public/images/banner-9.webp"
+  },
+  {
+    "referencedPath": "/images/banner-8.webp",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1600x834",
+    "format": ".webp",
+    "sizeKb": "1278.22",
+    "fullLocalPath": "zip-repl/public/images/banner-8.webp"
+  },
+  {
+    "referencedPath": "/images/guru-paduka-pooja.webp",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1600x1200",
+    "format": ".webp",
+    "sizeKb": "260.67",
+    "fullLocalPath": "zip-repl/public/images/guru-paduka-pooja.webp"
+  },
+  {
+    "referencedPath": "/images/CHEM1.jpeg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/images.ts",
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "525x515",
+    "format": ".jpeg",
+    "sizeKb": "55.27",
+    "fullLocalPath": "zip-repl/public/images/CHEM1.jpeg"
+  },
+  {
+    "referencedPath": "/images/banner-4.jpeg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/images.ts"
+    ],
+    "dimension": "800x533",
+    "format": ".jpeg",
+    "sizeKb": "50.56",
+    "fullLocalPath": "zip-repl/public/images/banner-4.jpeg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_001.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "95.72",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_001.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_002.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "55.55",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_002.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_003.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.01",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_003.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_004.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_004.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_005.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "47.50",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_005.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_006.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.33",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_006.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_007.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "86.25",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_007.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_008.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.78",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_008.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_009.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.88",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_009.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_010.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.50",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_010.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_011.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.69",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_011.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_001.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.37",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_001.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_002.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "60.46",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_002.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_003.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.12",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_003.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_004.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "64.21",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_004.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_005.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.76",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_005.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_006.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "117.79",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_006.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_007.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.90",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_007.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_008.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.11",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_008.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_009.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "86.94",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_009.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_010.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.81",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_010.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_011.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_011.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_001.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.71",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_001.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_012.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.64",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_012.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_013.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.93",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_013.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_014.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.70",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_014.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_015.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.97",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_015.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_016.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "94.05",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_016.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_017.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "80.59",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_017.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_018.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "85.52",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_018.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_019.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "88.14",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_019.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_020.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "89.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_020.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_021.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.85",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_021.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_022.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.78",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_022.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_023.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.02",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_023.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_024.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.00",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_024.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_025.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.11",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_025.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_026.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "102.81",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_026.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_027.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "71.90",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_027.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_028.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "86.17",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_028.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_029.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "88.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_029.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_030.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.06",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_030.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_031.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.75",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_031.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_032.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "71.53",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_032.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_033.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.74",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_033.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_034.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.11",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_034.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_035.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.23",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_035.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_036.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "61.64",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_036.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_037.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "59.10",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_037.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_038.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "61.06",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_038.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_039.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_039.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_040.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "95.44",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_040.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_041.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "70.23",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_041.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_042.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.44",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_042.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_043.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "81.70",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_043.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_044.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "81.27",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_044.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_045.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "88.16",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_045.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_046.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "86.45",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_046.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_047.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.54",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_047.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_048.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_048.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_049.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.93",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_049.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_050.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "54.25",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_050.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_051.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.72",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_051.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_052.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "62.95",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_052.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_053.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.93",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_053.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_054.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.81",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_054.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_055.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.18",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_055.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_056.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "87.98",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_056.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_057.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "74.49",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_057.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_058.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.38",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_058.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_059.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.35",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_059.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_060.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.57",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_060.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_061.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.17",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_061.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_062.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.04",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_062.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_063.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.47",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_063.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_064.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "62.30",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_064.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_065.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.79",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_065.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_066.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.68",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_066.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_067.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "56.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_067.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_068.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "58.05",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_068.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_069.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.30",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_069.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_070.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "61.54",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_070.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_071.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.05",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_071.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_072.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "64.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_072.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_073.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.91",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_073.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_074.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.76",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_074.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_075.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.36",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_075.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_076.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.35",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_076.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_077.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.50",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_077.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_078.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.00",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_078.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_079.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "58.61",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_079.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_080.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "46.75",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_080.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_081.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.92",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_081.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_082.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.90",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_082.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_083.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "84.09",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_083.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_084.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.99",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_084.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_085.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.61",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_085.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_086.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.71",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_086.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_087.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.08",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_087.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_088.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.83",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_088.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_089.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "87.83",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_089.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_090.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.53",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_090.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_091.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.16",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_091.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_092.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "80.05",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_092.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_093.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.65",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_093.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_094.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.09",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_094.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_095.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.04",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_095.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_096.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.83",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_096.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_097.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.94",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_097.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_098.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.86",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_098.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_099.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.92",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_099.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_100.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "89.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_100.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_101.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "112.09",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_101.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_102.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "131.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_102.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_103.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.07",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_103.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_104.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.32",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_104.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_105.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.09",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_105.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_106.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.22",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_106.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_107.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.19",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_107.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_108.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.49",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_108.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_109.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.08",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_109.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_110.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_110.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_111.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.77",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_111.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_112.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "60.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_112.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_113.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "64.08",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_113.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_012.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "62.77",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_012.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_013.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.88",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_013.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_014.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.87",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_014.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_015.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "59.21",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_015.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_016.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.36",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_016.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_017.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_017.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_018.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.11",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_018.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_019.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.08",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_019.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_020.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.99",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_020.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_021.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "74.41",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_021.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_022.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.73",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_022.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_023.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_023.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_024.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.00",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_024.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_025.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.54",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_025.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_026.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.20",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_026.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_027.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "80.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_027.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_028.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.36",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_028.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_029.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "55.67",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_029.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_030.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.25",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_030.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_031.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "59.98",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_031.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_032.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.03",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_032.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_033.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.63",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_033.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_034.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.65",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_034.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_035.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.35",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_035.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_036.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.66",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_036.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_037.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.08",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_037.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_038.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "61.25",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_038.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_039.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.85",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_039.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_040.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "80.27",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_040.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_041.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "81.52",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_041.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_042.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.33",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_042.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_043.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "59.37",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_043.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_044.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "63.79",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_044.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_045.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "74.88",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_045.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_046.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.02",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_046.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_047.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.75",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_047.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_048.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "119.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_048.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_049.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.59",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_049.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_050.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "108.20",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_050.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_051.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "81.56",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_051.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_052.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "89.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_052.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_053.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.50",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_053.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_054.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "113.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_054.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_055.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "105.15",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_055.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_056.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "99.75",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_056.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_057.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "94.50",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_057.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_058.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "96.19",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_058.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_059.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.00",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_059.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_060.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.21",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_060.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_061.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "56.19",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_061.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_062.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "94.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_062.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_063.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "96.59",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_063.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_064.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.84",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_064.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_065.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.66",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_065.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_066.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "80.19",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_066.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_067.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "88.41",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_067.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_068.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "104.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_068.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_069.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_069.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_070.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.54",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_070.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_071.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "90.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_071.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_072.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_072.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_073.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "111.33",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_073.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_074.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.87",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_074.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_075.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.92",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_075.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_076.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.27",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_076.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_077.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "85.47",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_077.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_078.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.84",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_078.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_079.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.33",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_079.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_080.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "72.90",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_080.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_081.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.76",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_081.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_082.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.35",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_082.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_083.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_083.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_084.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.14",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_084.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_085.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.95",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_085.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_086.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "81.92",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_086.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_087.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.26",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_087.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_088.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_088.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_089.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "91.91",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_089.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_090.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.38",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_090.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_091.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.53",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_091.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_092.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.50",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_092.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_093.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.67",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_093.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_094.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.43",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_094.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_095.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.97",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_095.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_096.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.72",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_096.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_097.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.99",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_097.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_098.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "73.98",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_098.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_099.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "62.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_099.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_100.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.51",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_100.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_101.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "53.77",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_101.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_102.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "105.55",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_102.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_103.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "96.06",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_103.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_104.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "101.08",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_104.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_105.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "54.27",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_105.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_106.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "89.74",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_106.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_107.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "85.62",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_107.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_108.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "70.09",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_108.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_109.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "89.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_109.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_110.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "82.37",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_110.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_111.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.34",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_111.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_112.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "69.84",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_112.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_113.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "83.99",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_113.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_114.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.05",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_114.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_115.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "80.13",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_115.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_116.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "72.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_116.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_117.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.83",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_117.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_118.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "86.18",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_118.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_119.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.33",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_119.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_120.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "101.35",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_120.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_121.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "115.01",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_121.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_122.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "114.69",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_122.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/cultural_celebration_123.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "123.07",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/cultural_celebration_123.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_002.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_002.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_003.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.47",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_003.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_004.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "78.52",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_004.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_005.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "88.86",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_005.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_006.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.61",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_006.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_007.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.44",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_007.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_008.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "71.62",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_008.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_009.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.81",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_009.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_010.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.45",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_010.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_011.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_011.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_012.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "105.59",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_012.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_013.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_013.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_014.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "193.16",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_014.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_015.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.00",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_015.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_016.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "99.98",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_016.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_017.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "77.99",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_017.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_018.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "106.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_018.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_019.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "147.91",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_019.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_020.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "60.34",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_020.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_021.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "75.91",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_021.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_022.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "67.26",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_022.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_023.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "79.02",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_023.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_024.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "68.48",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_024.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_025.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "95.58",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_025.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_026.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "99.85",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_026.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_027.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "112.06",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_027.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_028.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "62.19",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_028.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/cultural/arts_and_creativity_029.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "56.79",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/cultural/arts_and_creativity_029.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_001.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.00",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_001.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_002.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "85.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_002.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_003.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "100.65",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_003.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_004.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "120.96",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_004.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_005.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "111.76",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_005.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_006.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "58.96",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_006.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_007.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "119.87",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_007.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_008.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.76",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_008.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_009.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "147.40",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_009.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_010.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "102.68",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_010.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_011.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "56.71",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_011.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_012.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "48.77",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_012.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_013.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "65.22",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_013.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_014.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "92.95",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_014.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_015.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "90.07",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_015.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_016.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.73",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_016.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_017.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "101.96",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_017.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_018.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "89.57",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_018.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/sports/sports_athletic_meet_019.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "96.37",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/sports/sports_athletic_meet_019.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_001.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts",
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "103.99",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_001.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_002.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "97.69",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_002.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_003.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "59.02",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_003.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_004.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "56.49",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_004.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_005.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "48.53",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_005.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_006.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "50.81",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_006.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_007.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.65",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_007.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_008.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "66.17",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_008.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_009.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "62.02",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_009.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_010.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "60.64",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_010.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_011.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "59.56",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_011.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_012.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "57.63",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_012.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_013.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "76.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_013.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_01.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "86.35",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_01.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_02.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "54.78",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_02.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_03.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "49.07",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_03.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_04.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "44.65",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_04.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_05.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "68.60",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_05.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_06.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "64.64",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_06.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_07.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "56.24",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_07.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_08.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "85.79",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_08.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_09.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "80.89",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_09.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_10.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "80.54",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_10.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_11.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "78.64",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_11.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_12.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "78.63",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_12.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_13.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "83.30",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_13.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_14.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "82.34",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_14.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_15.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "74.52",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_15.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_16.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "74.82",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_16.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_17.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "64.11",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_17.jpg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/faculty_member_18.jpg",
+    "foundInFiles": [
+      "src/data/gallery.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".jpg",
+    "sizeKb": "113.79",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/faculty_member_18.jpg"
+  },
+  {
+    "referencedPath": "/images/principal-photo.jpg",
+    "foundInFiles": [
+      "src/data/school.ts",
+      "src/data/school.ts",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1280x720",
+    "format": ".jpg",
+    "sizeKb": "176.50",
+    "fullLocalPath": "zip-repl/public/images/principal-photo.jpg"
+  },
+  {
+    "referencedPath": "/images/board-of-management/tb-thakur-chairman.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "10.45",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/tb-thakur-chairman.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/sri-sriram-bhaleroji.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "1.37",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/sri-sriram-bhaleroji.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/parag-kulkarni.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "13.12",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/parag-kulkarni.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/dr-shivshankar.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "10.98",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/dr-shivshankar.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/shobha-sankhe.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "10.61",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/shobha-sankhe.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/dr-mane.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "10.22",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/dr-mane.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/sri-b-k-poddar.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "12.75",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/sri-b-k-poddar.webp"
+  },
+  {
+    "referencedPath": "/images/board-of-management/dr-nayak.webp",
+    "foundInFiles": [
+      "src/data/school.ts"
+    ],
+    "dimension": "100x100",
+    "format": ".webp",
+    "sizeKb": "15.00",
+    "fullLocalPath": "zip-repl/public/images/board-of-management/dr-nayak.webp"
+  },
+  {
+    "referencedPath": "/images/banner-1.jpg",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1600x1068",
+    "format": ".jpg",
+    "sizeKb": "419.51",
+    "fullLocalPath": "zip-repl/public/images/banner-1.jpg"
+  },
+  {
+    "referencedPath": "/images/about2.jpeg",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "960x1280",
+    "format": ".jpeg",
+    "sizeKb": "191.71",
+    "fullLocalPath": "zip-repl/public/images/about2.jpeg"
+  },
+  {
+    "referencedPath": "/images/about-banner.jpeg",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1600x1199",
+    "format": ".jpeg",
+    "sizeKb": "396.57",
+    "fullLocalPath": "zip-repl/public/images/about-banner.jpeg"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_001.webp",
+    "foundInFiles": [
+      "src/data/images.ts",
+      "src/data/images.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".webp",
+    "sizeKb": "69.60",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_001.webp"
+  },
+  {
+    "referencedPath": "/images/phys.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1600x1067",
+    "format": ".webp",
+    "sizeKb": "103.35",
+    "fullLocalPath": "zip-repl/public/images/phys.webp"
+  },
+  {
+    "referencedPath": "/images/biology-lab.jpg",
+    "foundInFiles": [
+      "src/data/images.ts",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1200x896",
+    "format": ".jpg",
+    "sizeKb": "935.12",
+    "fullLocalPath": "zip-repl/public/images/biology-lab.jpg"
+  },
+  {
+    "referencedPath": "/images/it-lab.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1200x896",
+    "format": ".webp",
+    "sizeKb": "138.49",
+    "fullLocalPath": "zip-repl/public/images/it-lab.webp"
+  },
+  {
+    "referencedPath": "/images/lib.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1600x1067",
+    "format": ".webp",
+    "sizeKb": "134.44",
+    "fullLocalPath": "zip-repl/public/images/lib.webp"
+  },
+  {
+    "referencedPath": "/images/chinmaya/academics/classroom_learning_002.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".webp",
+    "sizeKb": "35.41",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/academics/classroom_learning_002.webp"
+  },
+  {
+    "referencedPath": "/images/chinmaya/campus/campus_facilities_001.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1000x667",
+    "format": ".webp",
+    "sizeKb": "80.46",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/campus/campus_facilities_001.webp"
+  },
+  {
+    "referencedPath": "/images/tour.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "640x419",
+    "format": ".webp",
+    "sizeKb": "44.18",
+    "fullLocalPath": "zip-repl/public/images/tour.webp"
+  },
+  {
+    "referencedPath": "/images/chinmaya/leadership/principal_dimple_mistry.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "1000x562",
+    "format": ".webp",
+    "sizeKb": "54.80",
+    "fullLocalPath": "zip-repl/public/images/chinmaya/leadership/principal_dimple_mistry.webp"
+  },
+  {
+    "referencedPath": "/images/swamiji.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "900x1200",
+    "format": ".webp",
+    "sizeKb": "141.91",
+    "fullLocalPath": "zip-repl/public/images/swamiji.webp"
+  },
+  {
+    "referencedPath": "/images/teaching-staff.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "64x64",
+    "format": ".webp",
+    "sizeKb": "1.41",
+    "fullLocalPath": "zip-repl/public/images/teaching-staff.webp"
+  },
+  {
+    "referencedPath": "/images/non-teaching-staff.webp",
+    "foundInFiles": [
+      "src/data/images.ts"
+    ],
+    "dimension": "64x64",
+    "format": ".webp",
+    "sizeKb": "1.37",
+    "fullLocalPath": "zip-repl/public/images/non-teaching-staff.webp"
+  },
+  {
+    "referencedPath": "/images/chinmaya-web-science.webp",
+    "foundInFiles": [
+      "src/data/chinmayaImages.ts"
+    ],
+    "dimension": "1600x1068",
+    "format": ".webp",
+    "sizeKb": "314.23",
+    "fullLocalPath": "zip-repl/public/images/chinmaya-web-science.webp"
+  },
+  {
+    "referencedPath": "/images/swami_chinmayananda_cutout.png",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx",
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1085x1449",
+    "format": ".png",
+    "sizeKb": "1477.34",
+    "fullLocalPath": "zip-repl/public/images/swami_chinmayananda_cutout.png"
+  },
+  {
+    "referencedPath": "/images/1.jpeg",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1600x419",
+    "format": ".jpeg",
+    "sizeKb": "419.99",
+    "fullLocalPath": "zip-repl/public/images/1.jpeg"
+  },
+  {
+    "referencedPath": "/images/school_events/School_Event_2026-09-27_007.jpg",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1000x667",
+    "format": ".jpg",
+    "sizeKb": "86.25",
+    "fullLocalPath": "zip-repl/public/images/school_events/School_Event_2026-09-27_007.jpg"
+  },
+  {
+    "referencedPath": "/file_00000000129882308ffa3f6b1a6bab51.png",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1944x809",
+    "format": ".png",
+    "sizeKb": "1506.44",
+    "fullLocalPath": "zip-repl/public/file_00000000129882308ffa3f6b1a6bab51.png"
+  },
+  {
+    "referencedPath": "/images/leadership-cutout.png",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1085x1449",
+    "format": ".png",
+    "sizeKb": "1477.34",
+    "fullLocalPath": "zip-repl/public/images/leadership-cutout.png"
+  },
+  {
+    "referencedPath": "/images/phys.jpeg",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1600x1067",
+    "format": ".jpeg",
+    "sizeKb": "207.38",
+    "fullLocalPath": "zip-repl/public/images/phys.jpeg"
+  },
+  {
+    "referencedPath": "/images/it-lab.jpg",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1200x896",
+    "format": ".jpg",
+    "sizeKb": "860.09",
+    "fullLocalPath": "zip-repl/public/images/it-lab.jpg"
+  },
+  {
+    "referencedPath": "/images/student_question_cutout.png",
+    "foundInFiles": [
+      "src/pages/Home/index.tsx"
+    ],
+    "dimension": "1024x1580",
+    "format": ".png",
+    "sizeKb": "2777.08",
+    "fullLocalPath": "zip-repl/public/images/student_question_cutout.png"
+  },
+  {
+    "referencedPath": "/images/Chinmaya_Logo.webp",
+    "foundInFiles": [
+      "src/components/layout/MobileMenu.tsx"
+    ],
+    "dimension": "239x438",
+    "format": ".webp",
+    "sizeKb": "50.46",
+    "fullLocalPath": "zip-repl/public/images/Chinmaya_Logo.webp"
+  }
+]
