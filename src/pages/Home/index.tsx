@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
-  X, Image as ImageIcon,
+  X,
   Sparkles, Phone, ArrowRight, GraduationCap, MapPin
 } from 'lucide-react';
 import { OFFICIAL_PRINCIPAL_INFO } from '../../data/school';
@@ -271,35 +271,17 @@ export const HomePage: React.FC = () => {
                 </h2>
               </div>
 
-              {/* Transparent Background Image (No Container) */}
+              {/* Leadership & Conference Facility Image */}
               <div className="w-full flex items-center justify-start py-2">
                 <div className="w-full h-72 sm:h-80 flex items-center justify-center relative">
-                  {/* Transparent Cutout Image (When user uploads transparent PNG to /images/principal-photo.jpg) */}
-                  <img
-                    src="/images/principal-photo.jpg"
-                    alt="Leadership Feature"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      const fallback = document.getElementById('leadership-transparent-placeholder');
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                    className="max-h-full max-w-full object-contain pointer-events-none drop-shadow-md"
-                  />
-                  
-                  {/* Subtle placeholder guide (transparent background, no card/container box) */}
-                  <div 
-                    id="leadership-transparent-placeholder"
-                    className="hidden w-full h-full flex-col items-center justify-center p-6 text-center space-y-2 border-2 border-dashed border-[#DF711B]/35 hover:border-[#DF711B]/60 transition-colors"
-                  >
-                    <ImageIcon className="w-10 h-10 text-[#DF711B]/50" />
-                    <span className="text-xs font-mono uppercase tracking-widest text-[#181818] font-bold">
-                      Transparent Background Image Placeholder
-                    </span>
-                    <span className="text-[11px] font-mono text-[#777777] max-w-md">
-                      Upload your transparent image to <code className="text-[#DF711B] font-bold">/public/images/principal-photo.jpg</code>
-                      <span className="block mt-0.5 text-[10px] text-[#999999]">(No container • image sits directly on background)</span>
-                    </span>
-                  </div>
+                  <picture className="h-full flex items-center justify-center">
+                    <source srcSet="/images/board-conference-room.webp" type="image/webp" />
+                    <img
+                      src="/images/board-conference-room.png"
+                      alt="Executive Boardroom & Leadership Suite"
+                      className="max-h-full max-w-full object-contain rounded-sm shadow-md border border-slate-200 pointer-events-none"
+                    />
+                  </picture>
                 </div>
               </div>
 

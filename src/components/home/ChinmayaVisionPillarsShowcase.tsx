@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Quote, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export interface PillarData {
@@ -9,8 +9,8 @@ export interface PillarData {
   representativeName: string;
   roleTag: string;
   sanskrit: string;
-  cutoutImage: string;
-  bgPhoto: string;
+  image: string;
+  isCutout?: boolean;
   quote: string;
   explanation: string;
   targetUrl: string;
@@ -24,8 +24,8 @@ const CVP_PILLARS: PillarData[] = [
     representativeName: 'SANJANA',
     roleTag: 'Scholastic Topper & Yoga Leader',
     sanskrit: 'Sharirik, Bauddhik & Manasik Vikas',
-    cutoutImage: '/images/1.jpeg',
-    bgPhoto: '/images/biology-lab.webp',
+    image: '/images/yoga-student.png',
+    isCutout: true,
     quote:
       'Since my first day at Chinmaya Vidyalaya, learning has felt like a journey of self-discovery. Through morning yoga, analytical STEM experiments, and dedicated teachers, I gained not just academic marks, but physical vitality and mental poise.',
     explanation:
@@ -44,8 +44,8 @@ const CVP_PILLARS: PillarData[] = [
     representativeName: 'ADITYA',
     roleTag: 'Gita Chanting Champion & Classical Artist',
     sanskrit: 'Bhartiya Sanskriti & Parampara',
-    cutoutImage: '/images/student_question_cutout.png',
-    bgPhoto: '/images/guru-paduka-pooja.webp',
+    image: '/images/puja-ceremony-cutout.png',
+    isCutout: true,
     quote:
       'Chanting the Bhagavad Gita and learning our heritage has given me a moral compass that guides every decision. Here, ancient wisdom is not an old story—it is living value education that builds character and humility.',
     explanation:
@@ -64,8 +64,8 @@ const CVP_PILLARS: PillarData[] = [
     representativeName: 'DHRUVA & KRITI',
     roleTag: 'Student Council & Community Seva Leads',
     sanskrit: 'Rashtra Prem & Nagarik Kartavya',
-    cutoutImage: '/images/banner-1.jpg',
-    bgPhoto: '/images/school_events/School_Event_2026-09-27_007.jpg',
+    image: '/images/smiling-volunteer.png',
+    isCutout: true,
     quote:
       'Being part of Chinmaya Vidyalaya taught us that patriotism is active service. Whether spearheading water conservation in Tarapur or leading the Student Council, we learn to put society before self.',
     explanation:
@@ -84,8 +84,7 @@ const CVP_PILLARS: PillarData[] = [
     representativeName: 'RUGVEDA',
     roleTag: 'Global Citizenship & Science Forum Delegate',
     sanskrit: 'Vasudhaiva Kutumbakam',
-    cutoutImage: '/images/2.jpeg',
-    bgPhoto: '/images/banner-8.webp',
+    image: '/images/banner-8.webp',
     quote:
       'Vasudhaiva Kutumbakam—the world is one family. My school has taught me to see beyond borders, to embrace diversity with open arms, and to use science and compassion to solve global challenges.',
     explanation:
@@ -227,65 +226,40 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
           </div>
 
           {/* ================================================================
-              CENTER COLUMN: TALL DARK CARD + POPPING CUTOUT + "THE PILLARS OF CHINMAYA"
+              CENTER COLUMN: SINGLE AUTHORITATIVE PILLAR IMAGE (NO OVERLAPPING IMAGES)
               ================================================================ */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-[420px] h-[480px] sm:h-[540px] flex items-end justify-center">
-              
-              {/* Dark rectangular backdrop card */}
-              <div
-                style={{ backgroundColor: 'var(--color-dark)' }}
-                className="absolute inset-x-6 sm:inset-x-8 top-12 bottom-0 rounded-none shadow-2xl overflow-hidden border border-white/10"
-              >
-                {/* Subtle background ambient texture */}
-                <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
-                
-                {/* Background blurred photo of the campus/lab */}
-                <img
-                  src={current.bgPhoto}
-                  alt=""
-                  className="w-full h-full object-cover opacity-15 filter grayscale scale-110"
-                />
-
-                {/* Top-Left Circular White Quote Badge */}
-                <div className="absolute top-5 left-5 w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-lg z-20">
-                  <Quote
-                    style={{ color: 'var(--color-primary)' }}
-                    className="w-5 h-5 fill-current"
-                  />
-                </div>
-
-                {/* Bottom Bold Text: "THE VOICES OF CHINMAYA" */}
-                <div className="absolute bottom-2 left-0 right-0 z-20 px-4 text-center pointer-events-none">
-                  <div className="flex items-baseline justify-center gap-1.5 leading-none">
-                    <span className="text-white/80 font-condensed text-xl sm:text-2xl uppercase tracking-wider">
-                      THE PILLARS OF
-                    </span>
-                    <span
-                      style={{ color: 'var(--color-primary)' }}
-                      className="font-condensed text-3xl sm:text-4xl uppercase tracking-tight font-black"
-                    >
-                      CHINMAYA
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Standing Transparent Person Cutout (Pops out above the card!) */}
+            <div className="relative w-full max-w-[460px] xl:max-w-[500px] h-[480px] sm:h-[540px] flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.num}
-                  initial={{ opacity: 0, scale: 0.94, y: 15 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.94, y: -15 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.35, ease: 'easeOut' }}
-                  className="relative z-30 w-full h-[95%] flex items-end justify-center pointer-events-none"
+                  className="w-full h-full flex items-center justify-center"
                 >
-                  <img
-                    src={current.cutoutImage}
-                    alt={current.representativeName}
-                    className="h-full w-auto max-h-[96%] object-contain object-bottom filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.65)]"
-                  />
+                  {current.isCutout ? (
+                    /* Transparent cutouts: 100% opacity, sitting directly on section bg */
+                    <img
+                      src={current.image}
+                      alt={current.representativeName}
+                      className={`h-full w-auto max-h-full max-w-full opacity-100 filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] pointer-events-none transition-all duration-300 ${
+                        current.num === '02'
+                          ? 'object-contain object-center scale-115 sm:scale-125'
+                          : 'object-contain object-bottom'
+                      }`}
+                    />
+                  ) : (
+                    /* Other Pillars: Clean, 100% opacity photographic card */
+                    <div className="w-full h-full rounded-none overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+                      <img
+                        src={current.image}
+                        alt={current.representativeName}
+                        className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>

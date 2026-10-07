@@ -74,7 +74,6 @@ export default function MarqueeAlongSvgPathDemo() {
               to="/gallery"
               key={i}
               className="group block relative w-20 h-20 sm:w-24 sm:h-24 aspect-square rounded-2xl overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.22)] border-2 border-white/90 bg-neutral-900 hover:scale-125 hover:shadow-[0_12px_28px_rgba(0,0,0,0.4)] hover:border-amber-300 duration-300 ease-out transition-all shrink-0 cursor-pointer"
-              title={img.alt}
             >
               <img
                 src={img.src}
@@ -90,12 +89,6 @@ export default function MarqueeAlongSvgPathDemo() {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none select-none"
                 draggable={false}
               />
-              {/* Subtle hover caption overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none flex items-end p-1.5">
-                <span className="text-[9px] sm:text-[10px] font-sans font-semibold text-white leading-tight line-clamp-1 drop-shadow">
-                  {img.alt}
-                </span>
-              </div>
             </Link>
           ))}
         </MarqueeAlongSvgPath>
