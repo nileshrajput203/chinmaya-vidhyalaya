@@ -67,7 +67,7 @@ export const ScrollToTop = () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       }}
-      className={`fixed right-4 sm:right-6 bottom-[5.75rem] lg:bottom-6 z-40 w-11 h-11 rounded-xl bg-[#DF711B] text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-[#C45B0E] hover:-translate-y-1 ${
+      className={`fixed left-4 sm:left-auto sm:right-6 bottom-[5.75rem] lg:bottom-6 z-40 w-11 h-11 rounded-xl bg-[#DF711B] text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-[#C45B0E] hover:-translate-y-1 ${
         isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-3 opacity-0 pointer-events-none'
       }`}
     >

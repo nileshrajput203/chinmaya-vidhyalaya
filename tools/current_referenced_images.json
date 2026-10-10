@@ -1,0 +1,1595 @@
+{
+  "/images/chinmaya/academics/classroom_learning_001.jpg": [
+    "src/components/common/AdmissionGuidanceModal.tsx",
+    "src/components/home/AcademicStreamBanners.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/chinmayaImages.ts",
+    "src/data/gallery.ts"
+  ],
+  "/images/bot-avatar.png": [
+    "src/components/common/ChatbotFAB.tsx",
+    "src/components/common/ChatbotFAB.tsx",
+    "src/components/common/ChatbotFAB.tsx"
+  ],
+  "/images/student_question_cutout.png": [
+    "src/components/common/FaqSection.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/pages/Home/index.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/Chinmaya_Logo.webp": [
+    "src/components/common/Preloader.tsx",
+    "src/components/home/HeroScrollytellingFilm.tsx",
+    "src/components/home/MobileHeroSection.tsx",
+    "src/components/layout/Footer.tsx",
+    "src/components/layout/Header/MainBrandHeader.tsx",
+    "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src/components/layout/MobileMenu.tsx"
+  ],
+  "/images/chinmaya-web-arts-and-commerce.jpg": [
+    "src/components/home/AcademicStreamBanners.tsx"
+  ],
+  "/images/chinmaya-web-science.jpg": [
+    "src/components/home/AcademicStreamBanners.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx"
+  ],
+  "/images/banner-4.jpeg": [
+    "src/components/home/AcademicStreamBanners.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/inner/SpiritualShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/gallery.ts",
+    "src/data/images.ts"
+  ],
+  "/images/file_00000000129882308ffa3f6b1a6bab51.png": [
+    "src/components/home/AcademicStreamBanners.tsx"
+  ],
+  "/images/file_00000000129882308ffa3f6b1a6bab51.jpg": [
+    "src/components/home/AcademicStreamBanners.tsx"
+  ],
+  "/1.jpeg": [
+    "src/components/home/BannerCarousel.tsx"
+  ],
+  "/2.jpeg": [
+    "src/components/home/BannerCarousel.tsx"
+  ],
+  "/images/yoga-student.png": [
+    "src/components/home/ChinmayaVisionPillarsShowcase.tsx"
+  ],
+  "/images/puja-ceremony-cutout.png": [
+    "src/components/home/ChinmayaVisionPillarsShowcase.tsx"
+  ],
+  "/images/smiling-volunteer.png": [
+    "src/components/home/ChinmayaVisionPillarsShowcase.tsx"
+  ],
+  "/images/banner-8.webp": [
+    "src/components/home/ChinmayaVisionPillarsShowcase.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/CoCurricularShowcase.tsx",
+    "src/components/inner/HolisticShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/gallery.ts",
+    "src/data/images.ts"
+  ],
+  "/images/1.jpeg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_014.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_022.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_033.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_041.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_056.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_068.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_073.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_082.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/principal-photo.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/data/school.ts",
+    "src/data/school.ts"
+  ],
+  "/images/banner-1.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/MobileHeroSection.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/images.ts",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_025.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ScrollExpandingMosaic.tsx",
+    "src/components/home/ScrollExpandingMosaic.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_035.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_041.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_055.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_063.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_074.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_084.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/2.jpeg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_092.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_015.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ScrollExpandingMosaic.tsx",
+    "src/components/home/ScrollExpandingMosaic.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_089.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_094.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_102.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_113.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_121.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_131.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_134.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/swami.jpeg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/data/about.ts",
+    "src/data/about.ts",
+    "src/data/about.ts",
+    "src/data/about.ts"
+  ],
+  "/images/school_events/School_Event_2026-09-27_001.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_018.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_028.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_047.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_070.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_114.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_125.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_133.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_007.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_021.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_031.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_047.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_057.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_081.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_098.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-28_105.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_083.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_095.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_101.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_112.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_122.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_144.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx",
+    "src/templates/AlumniPage.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_153.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_160.jpg": [
+    "src/components/home/ExperienceBentoGrid.tsx"
+  ],
+  "/images/guru-paduka-pooja.webp": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/FourPillarsShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/HolisticShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/inner/SpiritualShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/gallery.ts",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_001.jpg": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/chinmayaImages.ts",
+    "src/data/gallery.ts"
+  ],
+  "/images/tour.webp": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/CoCurricularShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya-web-science.webp": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/banner-9.webp": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/HolisticShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src/data/gallery.ts",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_015.jpg": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_040.jpg": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_01.jpg": [
+    "src/components/home/HorizontalPanelGallery.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/panel_b_achiever_design.png": [
+    "src/components/home/HorizontalPanelGallery.tsx"
+  ],
+  "/images/banner-1.webp": [
+    "src/components/home/MobileHeroSection.tsx"
+  ],
+  "/images/phys.jpeg": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/CHEM1.jpeg": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/FourPillarsShowcase.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/HolisticShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/layout/Header/MegaOverlayMenu.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/gallery.ts",
+    "src/data/images.ts",
+    "src/data/images.ts",
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/biology-lab.jpg": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/images.ts",
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/it-lab.jpg": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/lib.jpg": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/components/inner/LibraryShowcase.tsx",
+    "src/components/inner/LibraryShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx"
+  ],
+  "/images/chinmaya/academics/classroom_learning_005.jpg": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_001.webp": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/CoCurricularShowcase.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/banner-3.webp": [
+    "src/components/home/RibbonGallery.tsx"
+  ],
+  "/images/img1.webp": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/img3.webp": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/img4.webp": [
+    "src/components/home/RibbonGallery.tsx",
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/campus-video-poster.webp": [
+    "src/components/home/ScrollExpandingMosaic.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_006.jpg": [
+    "src/components/home/ScrollExpandingMosaic.tsx",
+    "src/components/home/ScrollExpandingMosaic.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_010.jpg": [
+    "src/components/home/ScrollExpandingMosaic.tsx",
+    "src/components/home/ScrollExpandingMosaic.tsx"
+  ],
+  "/images/Chinmaya_Logo.png": [
+    "src/components/home/ScrollExpandingMosaic.tsx"
+  ],
+  "/images/admission-form-placeholder.png": [
+    "src/components/inner/AdmissionGuidelinesShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_003.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_005.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_007.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_009.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_010.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_014.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_016.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/campus/campus_facilities_002.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_006.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_001.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_020.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_005.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_012.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_048.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/CHEM1.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_073.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx"
+  ],
+  "/images/chinmaya/campus/campus_facilities_001.webp": [
+    "src/components/inner/CoCurricularShowcase.tsx",
+    "src/data/images.ts"
+  ],
+  "/images/jal-pakhwada-poster.jpeg": [
+    "src/components/inner/FourPillarsShowcase.tsx"
+  ],
+  "/images/tour.jpg": [
+    "src/components/inner/FourPillarsShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx"
+  ],
+  "/images/swamiji.webp": [
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/data/images.ts"
+  ],
+  "/images/history2.jpeg": [
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/inner/HeritageShowcase.tsx",
+    "src/components/ui/timeline-demo.tsx"
+  ],
+  "/images/swami_chinmayananda_cutout.webp": [
+    "src/components/inner/HeritageShowcase.tsx"
+  ],
+  "/images/swamiji.png": [
+    "src/components/inner/HeritageShowcase.tsx"
+  ],
+  "/images/about2.jpeg": [
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/inner/HistoryShowcase.tsx",
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/images.ts",
+    "src/templates/ContentPage.tsx"
+  ],
+  "/images/img1.jpg": [
+    "src/components/inner/HistoryShowcase.tsx"
+  ],
+  "/images/img2.jpg": [
+    "src/components/inner/HistoryShowcase.tsx"
+  ],
+  "/images/img3.jpg": [
+    "src/components/inner/HistoryShowcase.tsx"
+  ],
+  "/images/img4.jpg": [
+    "src/components/inner/HistoryShowcase.tsx"
+  ],
+  "/images/img7.jpg": [
+    "src/components/inner/HistoryShowcase.tsx"
+  ],
+  "/images/phys.webp": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_003.jpg": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/biology-lab.webp": [
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/it-lab.webp": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_002.jpg": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/lib.webp": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_002.webp": [
+    "src/components/inner/InfrastructureShowcase.tsx"
+  ],
+  "/images/chinmaya/academics/classroom_learning_004.jpg": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_006.jpg": [
+    "src/components/inner/InfrastructureShowcase.tsx",
+    "src/data/gallery.ts"
+  ],
+  "/images/about-banner.jpeg": [
+    "src/components/inner/VisionMissionShowcase.tsx",
+    "src/data/images.ts",
+    "src/templates/ContactPage.tsx"
+  ],
+  "/images/swami_chinmayananda_cutout.png": [
+    "src/components/layout/Footer.tsx"
+  ],
+  "/images/menu_students_cutout.png": [
+    "src/components/layout/Header/MegaOverlayMenu.tsx"
+  ],
+  "/images/school-diary-cover.png": [
+    "src/components/rareui/Book3d.tsx"
+  ],
+  "/images/faq-student-thinking.png": [
+    "src/components/ui/faq-05.tsx"
+  ],
+  "/images/chinmaya/leadership/principal_dimple_mistry.jpg": [
+    "src/components/ui/marquee-demo.tsx",
+    "src/data/chinmayaImages.ts",
+    "src/data/gallery.ts",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/science_stem_lab_01.jpg": [
+    "src/data/chinmayaImages.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_001.jpg": [
+    "src/data/chinmayaImages.ts",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_001.jpg": [
+    "src/data/chinmayaImages.ts",
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_001.jpg": [
+    "src/data/chinmayaImages.ts",
+    "src/data/gallery.ts"
+  ],
+  "/images/NOC.jpeg": [
+    "src/data/documents.ts"
+  ],
+  "/images/FIRE SAFETY.jpeg": [
+    "src/data/documents.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_007.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_008.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_009.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_010.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_011.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_002.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_003.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_004.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_005.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_006.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_007.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_008.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_009.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_010.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_011.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_012.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_013.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_014.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_015.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_016.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_017.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_018.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_019.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_020.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_021.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_022.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_023.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_024.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_025.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_026.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_027.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_028.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_029.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_030.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_031.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_032.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_033.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_034.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_035.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_036.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_037.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_038.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_039.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_040.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_041.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_042.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_043.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_044.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_045.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_046.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_047.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_048.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_049.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_050.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_051.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_052.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_053.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_054.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_055.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_056.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_057.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_058.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_059.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_060.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_061.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_062.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_063.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_064.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_065.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_066.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_067.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_068.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_069.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_070.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_071.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_072.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_073.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_074.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_075.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_076.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_077.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_078.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_079.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_080.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_081.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_082.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_083.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_084.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_085.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_086.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_087.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_088.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_089.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_090.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_091.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_092.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_093.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_094.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_095.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_096.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_097.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_098.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_099.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_100.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_101.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_102.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_103.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_104.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_105.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_106.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_107.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_108.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_109.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_110.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_111.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_112.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_113.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_012.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_013.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_014.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_016.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_017.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_018.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_019.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_020.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_021.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_022.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_023.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_024.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_025.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_026.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_027.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_028.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_029.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_030.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_031.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_032.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_033.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_034.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_035.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_036.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_037.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_038.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_039.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_041.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_042.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_043.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_044.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_045.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_046.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_047.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_048.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_049.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_050.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_051.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_052.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_053.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_054.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_055.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_056.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_057.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_058.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_059.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_060.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_061.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_062.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_063.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_064.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_065.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_066.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_067.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_068.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_069.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_070.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_071.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_072.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_073.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_074.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_075.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_076.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_077.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_078.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_079.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_080.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_081.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_082.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_083.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_084.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_085.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_086.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_087.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_088.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_089.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_090.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_091.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_092.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_093.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_094.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_095.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_096.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_097.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_098.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_099.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_100.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_101.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_102.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_103.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_104.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_105.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_106.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_107.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_108.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_109.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_110.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_111.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_112.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_113.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_114.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_115.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_116.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_117.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_118.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_119.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_120.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_121.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_122.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/cultural_celebration_123.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_002.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_003.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_004.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_005.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_006.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_007.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_008.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_009.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_010.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_011.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_012.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_013.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_014.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_015.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_016.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_017.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_018.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_019.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_020.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_021.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_022.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_023.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_024.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_025.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_026.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_027.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_028.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/cultural/arts_and_creativity_029.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_002.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_003.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_004.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_005.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_006.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_007.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_008.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_009.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_010.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_011.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_012.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_013.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_014.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_015.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_016.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_017.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_018.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/sports/sports_athletic_meet_019.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_002.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_003.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_004.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_005.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_006.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_007.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_008.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_009.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_010.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_011.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_012.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/campus/campus_facilities_013.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_02.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_03.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_04.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_05.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_06.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_07.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_08.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_09.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_10.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_11.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_12.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_13.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_14.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_15.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_16.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_17.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/leadership/faculty_member_18.jpg": [
+    "src/data/gallery.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_001.webp": [
+    "src/data/images.ts",
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/academics/classroom_learning_002.webp": [
+    "src/data/images.ts"
+  ],
+  "/images/chinmaya/leadership/principal_dimple_mistry.webp": [
+    "src/data/images.ts"
+  ],
+  "/images/teaching-staff.webp": [
+    "src/data/images.ts"
+  ],
+  "/images/non-teaching-staff.webp": [
+    "src/data/images.ts"
+  ],
+  "/images/board-of-management/tb-thakur-chairman.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/sri-sriram-bhaleroji.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/parag-kulkarni.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/dr-shivshankar.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/shobha-sankhe.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/dr-mane.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/sri-b-k-poddar.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/board-of-management/dr-nayak.webp": [
+    "src/data/school.ts"
+  ],
+  "/images/fees-structure.webp": [
+    "src/pages/Admissions/FeeStructurePage.tsx"
+  ],
+  "/images/fees-structure.jpg": [
+    "src/pages/Admissions/FeeStructurePage.tsx"
+  ],
+  "/images/academic-calendar.webp": [
+    "src/pages/Admissions/SchoolCalendarPage.tsx"
+  ],
+  "/images/academic-calendar.png": [
+    "src/pages/Admissions/SchoolCalendarPage.tsx"
+  ],
+  "/images/swami_chinmayananda_square.webp": [
+    "src/pages/Home/index.tsx",
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/principal_dimple_mistry_square.webp": [
+    "src/pages/Home/index.tsx",
+    "src/pages/Home/index.tsx"
+  ],
+  "/file_00000000129882308ffa3f6b1a6bab51.png": [
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/board-conference-room.webp": [
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/board-conference-room.png": [
+    "src/pages/Home/index.tsx"
+  ],
+  "/images/school_events/School_Event_2026-09-27_007.jpg": [
+    "src/templates/AlumniPage.tsx"
+  ]
+}

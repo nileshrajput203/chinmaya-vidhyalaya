@@ -1,35 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
-export interface VideoClip {
-  src: string;
-  poster: string;
-  title: string;
-}
-
-const DEFAULT_CLIPS: VideoClip[] = [
-  {
-    src: '/videos/school-hero.mp4',
-    poster: '/images/banner-1.webp',
-    title: 'Academic Excellence & Campus Life'
-  },
-  {
-    src: '/videos/school-hero.mp4',
-    poster: '/images/banner-8.webp',
-    title: 'Sports, Culture & Annual Athletic Meet'
-  },
-  {
-    src: '/videos/school-hero.mp4',
-    poster: '/images/banner-9.webp',
-    title: 'Chinmaya Vision Programme & Holistic Growth'
-  }
-];
+const CAMPUS_VIDEO = {
+  src: '/videos/campus-life-1080p.mp4',
+  poster: '/images/pages/home/mosaic/video-poster.webp',
+};
 
 export const ScrollExpandingMosaic: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const blurVideoRef = useRef<HTMLVideoElement>(null);
-  const [currentClipIndex, setCurrentClipIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
   // Scroll progress for the sticky expansion track (0 -> 1)
@@ -54,21 +34,27 @@ export const ScrollExpandingMosaic: React.FC = () => {
   const rightColX = useTransform(scrollYProgress, [0.05, 0.7], [0, 120]);
   const rightColOpacity = useTransform(scrollYProgress, [0.05, 0.6], [1, 0]);
 
-  // Playlist clip progression: advance clip every 3.5 seconds
-  useEffect(() => {
-    if (shouldReduceMotion) return;
-    const timer = setInterval(() => {
-      setCurrentClipIndex((prev) => (prev + 1) % DEFAULT_CLIPS.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, [shouldReduceMotion]);
-
   // Sync blurred background video with primary foreground video
   useEffect(() => {
     if (videoRef.current && blurVideoRef.current) {
       blurVideoRef.current.currentTime = videoRef.current.currentTime;
     }
-  }, [currentClipIndex]);
+  }, []);
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current && blurVideoRef.current) {
+      const diff = Math.abs(videoRef.current.currentTime - blurVideoRef.current.currentTime);
+      if (diff > 0.3) {
+        blurVideoRef.current.currentTime = videoRef.current.currentTime;
+      }
+    }
+  };
+
+  const handlePlay = () => {
+    if (blurVideoRef.current && blurVideoRef.current.paused) {
+      blurVideoRef.current.play().catch(() => {});
+    }
+  };
 
   // IntersectionObserver to pause video playback when off-screen
   useEffect(() => {
@@ -93,8 +79,6 @@ export const ScrollExpandingMosaic: React.FC = () => {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
-  const activeClip = DEFAULT_CLIPS[currentClipIndex];
 
   return (
     <div
@@ -126,7 +110,7 @@ export const ScrollExpandingMosaic: React.FC = () => {
             </p>
             <h2
               style={{ color: 'var(--color-primary)' }}
-              className="text-[clamp(44px,7.5vw,118px)] font-condensed uppercase tracking-wide leading-[0.9] mt-0.5 whitespace-nowrap"
+              className="text-[clamp(32px,6vw,90px)] font-display font-black uppercase tracking-tight leading-[0.95] mt-1 whitespace-nowrap"
             >
               CHINMAYA VIDYALAYA
             </h2>
@@ -148,8 +132,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
                 className="flex-1 overflow-hidden rounded-none relative border border-transparent"
               >
                 <img
-                  src="/images/school_events/School_Event_2026-09-27_006.jpg"
-                  alt="Chinmaya Vidyalaya Student Trumpet and Band"
+                  src="/images/pages/home/mosaic/top-left.jpg"
+                  alt="Chinmaya Vidyalaya Science and Optics Lab"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -159,8 +143,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
                 className="flex-1 overflow-hidden rounded-none relative border border-transparent"
               >
                 <img
-                  src="/images/school_events/School_Event_2026-09-27_010.jpg"
-                  alt="Chinmaya Students Assembly & Cheer"
+                  src="/images/pages/home/mosaic/bottom-left.jpg"
+                  alt="Chinmaya Central Reference Library"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -179,8 +163,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <video
                   ref={blurVideoRef}
-                  src={activeClip.src}
-                  poster={activeClip.poster}
+                  src={CAMPUS_VIDEO.src}
+                  poster={CAMPUS_VIDEO.poster}
                   muted
                   playsInline
                   autoPlay={!shouldReduceMotion}
@@ -194,21 +178,21 @@ export const ScrollExpandingMosaic: React.FC = () => {
               <div className="relative w-full h-full flex items-center justify-center bg-black/40">
                 <video
                   ref={videoRef}
-                  src={activeClip.src}
-                  poster={activeClip.poster}
+                  src={CAMPUS_VIDEO.src}
+                  poster={CAMPUS_VIDEO.poster}
                   muted
                   playsInline
                   autoPlay={!shouldReduceMotion}
                   loop
                   preload="metadata"
+                  onTimeUpdate={handleTimeUpdate}
+                  onPlay={handlePlay}
                   className="w-full h-full object-contain relative z-10"
-                />
-              </div>
-
-              {/* Video playlist badge indicator */}
-              <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-none border border-white/20 text-white font-mono text-[11px] uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>{activeClip.title}</span>
+                >
+                  <source src="/videos/campus-life-1080p.mp4" type="video/mp4" />
+                  <source src="/videos/campus-life.mp4" type="video/mp4" />
+                  <source src="/videos/IMG_5730.MOV" type="video/quicktime" />
+                </video>
               </div>
             </motion.div>
 
@@ -225,8 +209,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
                 className="flex-1 overflow-hidden rounded-none relative border border-transparent"
               >
                 <img
-                  src="/images/school_events/School_Event_2026-09-28_015.jpg"
-                  alt="Chinmaya Vidyalaya Youth Festival & Arts"
+                  src="/images/pages/home/mosaic/top-right.jpg"
+                  alt="Chinmaya Vidyalaya Interactive Learning"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -236,8 +220,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
                 className="flex-1 overflow-hidden rounded-none relative border border-transparent"
               >
                 <img
-                  src="/images/school_events/School_Event_2026-09-28_025.jpg"
-                  alt="Chinmaya Vidyalaya Sports & Mascot"
+                  src="/images/pages/home/mosaic/bottom-right.jpg"
+                  alt="Chinmaya Vidyalaya Scholastic Focus"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -271,40 +255,44 @@ export const ScrollExpandingMosaic: React.FC = () => {
         {/* Center Video on top */}
         <div className="w-full aspect-video relative overflow-hidden rounded-none shadow-xl mb-4 bg-black">
           <video
-            src={activeClip.src}
-            poster={activeClip.poster}
+            src={CAMPUS_VIDEO.src}
+            poster={CAMPUS_VIDEO.poster}
             muted
             playsInline
             autoPlay
             loop
             preload="metadata"
             className="w-full h-full object-cover"
-          />
+          >
+            <source src="/videos/campus-life-1080p.mp4" type="video/mp4" />
+            <source src="/videos/campus-life.mp4" type="video/mp4" />
+            <source src="/videos/IMG_5730.MOV" type="video/quicktime" />
+          </video>
         </div>
 
         {/* Grid of supporting still photos */}
         <div className="grid grid-cols-2 gap-3">
           <img
-            src="/images/school_events/School_Event_2026-09-27_006.jpg"
-            alt="School Band"
+            src="/images/pages/home/mosaic/top-left.jpg"
+            alt="Science Lab"
             loading="lazy"
             className="w-full h-36 object-cover rounded-none"
           />
           <img
-            src="/images/school_events/School_Event_2026-09-27_010.jpg"
-            alt="Students Assembly"
+            src="/images/pages/home/mosaic/bottom-left.jpg"
+            alt="Library Lounge"
             loading="lazy"
             className="w-full h-36 object-cover rounded-none"
           />
           <img
-            src="/images/school_events/School_Event_2026-09-28_015.jpg"
-            alt="Arts Festival"
+            src="/images/pages/home/mosaic/top-right.jpg"
+            alt="Smart Classroom"
             loading="lazy"
             className="w-full h-36 object-cover rounded-none"
           />
           <img
-            src="/images/school_events/School_Event_2026-09-28_025.jpg"
-            alt="Sports Meet"
+            src="/images/pages/home/mosaic/bottom-right.jpg"
+            alt="Scholastic Focus"
             loading="lazy"
             className="w-full h-36 object-cover rounded-none"
           />

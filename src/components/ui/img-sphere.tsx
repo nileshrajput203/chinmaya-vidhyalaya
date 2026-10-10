@@ -575,16 +575,6 @@ export const SphereImageGrid: React.FC<SphereImageGridProps> = ({
             </button>
           </div>
 
-          {(selectedImage.title || selectedImage.description) && (
-            <div className="p-6 space-y-2">
-              {selectedImage.title && (
-                <h3 className="text-lg font-bold text-slate-900">{selectedImage.title}</h3>
-              )}
-              {selectedImage.description && (
-                <p className="text-xs text-slate-600 leading-relaxed">{selectedImage.description}</p>
-              )}
-            </div>
-          )}
         </div>
       </div>
     );

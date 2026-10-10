@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, PhoneCall, GraduationCap, ShieldCheck, Clock } from 'lucide-react';
+import { Menu, X, PhoneCall, GraduationCap, Clock } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
 
 interface MainBrandHeaderProps {
@@ -27,6 +27,12 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           {/* Official Emblem - Scaled proportionally on mobile */}
           <img
             src="/images/Chinmaya_Logo.webp"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.endsWith('.png')) {
+                target.src = '/images/Chinmaya_Logo.png';
+              }
+            }}
             alt="Chinmaya Vidyalaya Emblem"
             className="h-12 xs:h-14 sm:h-20 lg:h-22 w-auto max-w-[3.25rem] sm:max-w-none object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
           />
@@ -85,16 +91,6 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
               </div>
             </div>
           </div>
-
-          {/* Mandatory Public Disclosure Link */}
-          <Link
-            to="/about/mandatory-information"
-            className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 transition-colors"
-            title="View Official CBSE Mandatory Disclosures"
-          >
-            <ShieldCheck className="w-4 h-4 text-[#DF711B]" />
-            <span>Public Disclosure</span>
-          </Link>
 
           {/* Primary CTA: Button-in-Button Architecture */}
           <button

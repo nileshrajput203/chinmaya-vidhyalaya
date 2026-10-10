@@ -24,7 +24,7 @@ const CAROUSEL_SLIDES: CarouselSlide[] = [
   {
     id: 'science',
     src: '/images/chinmaya-web-science.jpg',
-    fallback: '/images/banner-4.jpeg',
+    fallback: '/images/banner-7.jpeg',
     alt: 'Chinmaya Vidyalaya Tarapur - Science & STEM Stream Banner',
     title: 'Senior Secondary • Science & STEM Stream',
     subtitle: 'Advanced laboratories, experiential physics, chemistry, biology, and competitive entrance mentoring.',

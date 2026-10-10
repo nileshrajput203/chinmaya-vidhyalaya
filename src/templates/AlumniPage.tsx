@@ -84,71 +84,8 @@ const ALUMNI_REVIEWS: AlumniReview[] = [
   }
 ];
 
-const ALUMNI_EVENTS_NEWS: AlumniEventBlog[] = [
-  {
-    id: 'ev-1',
-    date: 'WED, 20 MAY 2026',
-    title: 'ANNUAL WINTER ALUMNI REUNION & FACULTY FELICITATION BANQUET',
-    image: '/images/school_events/School_Event_2026-09-27_083.jpg',
-    category: 'Reunion'
-  },
-  {
-    id: 'ev-2',
-    date: 'THU, 30 APR 2026',
-    title: 'ALUMNI CAREER CONCLAVE: JEE, NEET & UPSC STRATEGY WORKSHOPS',
-    image: '/images/school_events/School_Event_2026-09-27_014.jpg',
-    category: 'Mentorship'
-  },
-  {
-    id: 'ev-3',
-    date: 'FRI, 12 DEC 2025',
-    title: 'DISTINGUISHED ALUMNI SPORTS CUP & TIGERS ANNUAL CHAMPIONSHIP',
-    image: '/images/school_events/School_Event_2026-09-28_025.jpg',
-    category: 'Athletics'
-  },
-  {
-    id: 'ev-4',
-    date: 'THU, 17 OCT 2024',
-    title: 'ENTREPRENEURSHIP PANEL: STARTUP FOUNDERS SHARING BOISAR TO GLOBAL JOURNEYS',
-    image: '/images/school_events/School_Event_2026-09-28_035.jpg',
-    category: 'Innovation'
-  },
-  {
-    id: 'ev-5',
-    date: 'WED, 14 AUG 2024',
-    title: 'INDEPENDENCE DAY SEVA DRIVE: TREE PLANTATION & COMMUNITY CLEANLINESS',
-    image: '/images/school_events/School_Event_2026-09-27_007.jpg',
-    category: 'Civic Service'
-  },
-  {
-    id: 'ev-6',
-    date: 'TUE, 23 JUL 2024',
-    title: 'CAMPUS RETROSPECTIVE: THREE DECADES OF VALUE-INTEGRATED EDUCATION',
-    image: '/images/school_events/School_Event_2026-09-27_047.jpg',
-    category: 'Heritage'
-  },
-  {
-    id: 'ev-7',
-    date: 'WED, 05 JUN 2024',
-    title: 'GLOBAL ALUMNI CHAPTERS CONVENE ACROSS MUMBAI, BANGALORE & DUBAI',
-    image: '/images/school_events/School_Event_2026-09-27_112.jpg',
-    category: 'Global Network'
-  },
-  {
-    id: 'ev-8',
-    date: 'MON, 29 APR 2024',
-    title: 'PUJYA GURUDEV JAYANTI: ALUMNI CHORAL & GEETA RECITATION TRIBUTE',
-    image: '/images/school_events/School_Event_2026-09-27_018.jpg',
-    category: 'Spiritual Life'
-  },
-  {
-    id: 'ev-9',
-    date: 'THU, 18 JAN 2024',
-    title: 'INTER-GENERATIONAL SCHOLARSHIP FUND ESTABLISHED BY CLASS OF 2005',
-    image: '/images/school_events/School_Event_2026-09-27_144.jpg',
-    category: 'Scholarship'
-  }
-];
+// Temporary empty array; add new alumni events & news here when updated
+const ALUMNI_EVENTS_NEWS: AlumniEventBlog[] = [];
 
 export const AlumniPage: React.FC = () => {
   const { showSuccess } = useToast();
@@ -213,7 +150,7 @@ export const AlumniPage: React.FC = () => {
             </span>
             <h1
               style={{ color: 'var(--color-text)' }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-condensed uppercase tracking-tight leading-none mt-1"
+              className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-tight mt-1"
             >
               RECONNECT WITH YOUR ALMA MATER
             </h1>
@@ -228,7 +165,7 @@ export const AlumniPage: React.FC = () => {
               <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
                 First Batch
               </span>
-              <div className="font-condensed text-3xl font-black text-[#181C20]">2004–05</div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">2004–05</div>
               <p className="text-[11px] text-slate-500 font-sans">Inaugural AISSE Class X</p>
             </div>
 
@@ -236,7 +173,7 @@ export const AlumniPage: React.FC = () => {
               <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
                 Graduates
               </span>
-              <div className="font-condensed text-3xl font-black text-[#181C20]">2,500+</div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">2,500+</div>
               <p className="text-[11px] text-slate-500 font-sans">Alumni Worldwide</p>
             </div>
 
@@ -244,7 +181,7 @@ export const AlumniPage: React.FC = () => {
               <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
                 Board Record
               </span>
-              <div className="font-condensed text-3xl font-black text-[#181C20]">100%</div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">100%</div>
               <p className="text-[11px] text-slate-500 font-sans">First-Class Tradition</p>
             </div>
 
@@ -252,7 +189,7 @@ export const AlumniPage: React.FC = () => {
               <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
                 Global Reach
               </span>
-              <div className="font-condensed text-3xl font-black text-[#181C20]">15+ Countries</div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">15+ Countries</div>
               <p className="text-[11px] text-slate-500 font-sans">Professionals & Researchers</p>
             </div>
           </div>
@@ -269,7 +206,7 @@ export const AlumniPage: React.FC = () => {
                 >
                   OFFICIAL REGISTRY ENROLLMENT
                 </span>
-                <h3 className="font-condensed text-2xl sm:text-3xl text-[#181C20] tracking-wide uppercase mt-0.5">
+                <h3 className="font-display font-black text-xl sm:text-2xl text-[#181C20] tracking-tight uppercase mt-0.5">
                   Alumni Registration Form
                 </h3>
               </div>
@@ -277,7 +214,7 @@ export const AlumniPage: React.FC = () => {
               {isSubmitted ? (
                 <div className="bg-[#FFF9F2] border-2 border-[var(--color-primary)] p-8 rounded-none text-center space-y-3">
                   <CheckCircle2 style={{ color: 'var(--color-primary)' }} className="w-12 h-12 mx-auto" />
-                  <h4 className="font-condensed font-bold text-2xl text-[#181C20] uppercase">
+                  <h4 className="font-display font-bold text-xl text-[#181C20] uppercase">
                     Registration Recorded Successfully
                   </h4>
                   <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed font-sans">
@@ -447,7 +384,7 @@ export const AlumniPage: React.FC = () => {
                     Alumni Relations Office
                   </span>
                 </div>
-                <h4 className="font-condensed font-bold text-xl text-[#181C20] uppercase">
+                <h4 className="font-display font-bold text-lg text-[#181C20] uppercase">
                   Stay Connected
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -498,49 +435,17 @@ export const AlumniPage: React.FC = () => {
           <div className="absolute top-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden z-0">
             <span
               style={{ color: 'var(--color-primary)' }}
-              className="font-condensed text-[100px] sm:text-[140px] lg:text-[190px] font-black uppercase tracking-tight leading-none opacity-90"
+              className="font-display text-[64px] sm:text-[100px] lg:text-[140px] font-black uppercase tracking-tight leading-none opacity-90"
             >
               REVIEWS
             </span>
           </div>
 
           {/* Foreground Review Content Layout */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-16 sm:pt-20 lg:pt-24">
+          <div className="relative z-10 flex flex-col items-center pt-16 sm:pt-20 lg:pt-24 max-w-3xl mx-auto">
             
-            {/* Center-Left: Tall Dark Block + Overlapping Cutout Image */}
-            <div className="lg:col-span-6 flex justify-center items-center">
-              <div className="relative w-[300px] sm:w-[360px] lg:w-[400px] h-[400px] sm:h-[460px] lg:h-[490px] flex items-end justify-center">
-                
-                {/* Dark rectangular vertical backdrop card */}
-                <div
-                  style={{ backgroundColor: 'var(--color-dark)' }}
-                  className="absolute inset-x-8 sm:inset-x-10 top-12 bottom-0 rounded-none shadow-2xl overflow-hidden border border-white/10"
-                >
-                  <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
-                </div>
-
-                {/* Overlapping standing cutout of alumna/alumnus */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentReview.id}
-                    initial={{ opacity: 0, scale: 0.95, y: 15 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, y: -15 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="relative z-20 w-full h-[98%] flex items-end justify-center pointer-events-none"
-                  >
-                    <img
-                      src={currentReview.cutoutImage}
-                      alt={currentReview.name}
-                      className="h-full w-auto max-h-[96%] object-contain object-bottom filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.65)]"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
-
-            {/* Right: Review Paragraph & Attribution */}
-            <div className="lg:col-span-6 flex flex-col justify-center space-y-6 px-2 sm:px-4">
+            {/* Review Paragraph & Attribution */}
+            <div className="flex flex-col justify-center space-y-6 px-2 sm:px-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentReview.id}
@@ -558,7 +463,7 @@ export const AlumniPage: React.FC = () => {
                   {/* Attribution line */}
                   <div className="pt-2">
                     <p className="font-sans text-sm sm:text-base text-slate-800 font-semibold">
-                      – {currentReview.name}, {currentReview.role} ({currentReview.batch})
+                      – {currentReview.name} ({currentReview.batch})
                     </p>
                   </div>
                 </motion.div>
@@ -590,67 +495,67 @@ export const AlumniPage: React.FC = () => {
         </div>
 
         {/* ==================================================================
-            BOTTOM SECTION: ALUMNI NEWS & EVENTS (Matching 2nd Image Format)
+            BOTTOM SECTION: ALUMNI NEWS & EVENTS (Only rendered when items exist)
             ================================================================== */}
-        <div className="space-y-8">
-          
-          {/* Centered Giant Crimson "NEWS" Heading */}
-          <div className="text-center">
-            <h2
-              style={{ color: 'var(--color-primary)' }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-condensed uppercase tracking-tight leading-none m-0"
-            >
-              NEWS
-            </h2>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-500 mt-2 font-semibold">
-              ALUMNI EVENTS, REUNIONS & MILESTONES
-            </p>
-          </div>
-
-          {/* 3×3 Grid of Event Cards matching the reference design */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {ALUMNI_EVENTS_NEWS.map((event) => (
-              <div
-                key={event.id}
-                style={{ borderColor: 'var(--color-primary)' }}
-                className="group border rounded-none bg-white overflow-hidden flex flex-col justify-between transition-transform duration-300 hover:shadow-lg"
+        {ALUMNI_EVENTS_NEWS.length > 0 && (
+          <div className="space-y-8">
+            {/* Centered Giant Crimson "NEWS" Heading */}
+            <div className="text-center">
+              <h2
+                style={{ color: 'var(--color-primary)' }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight leading-none m-0"
               >
-                {/* Top Image (aspect-[16/10]) */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900 border-b border-[var(--color-primary)]">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-mono uppercase px-2 py-0.5 border border-white/20">
-                    {event.category}
+                NEWS
+              </h2>
+              <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-500 mt-2 font-semibold">
+                ALUMNI EVENTS, REUNIONS & MILESTONES
+              </p>
+            </div>
+
+            {/* 3×3 Grid of Event Cards matching the reference design */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {ALUMNI_EVENTS_NEWS.map((event) => (
+                <div
+                  key={event.id}
+                  style={{ borderColor: 'var(--color-primary)' }}
+                  className="group border rounded-none bg-white overflow-hidden flex flex-col justify-between transition-transform duration-300 hover:shadow-lg"
+                >
+                  {/* Top Image (aspect-[16/10]) */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900 border-b border-[var(--color-primary)]">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-mono uppercase px-2 py-0.5 border border-white/20">
+                      {event.category}
+                    </div>
+                  </div>
+
+                  {/* Bottom Content: Date & Bold Crimson Title */}
+                  <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-2">
+                    <span
+                      style={{ color: 'var(--color-primary)' }}
+                      className="text-[11px] font-mono uppercase tracking-wider font-bold block"
+                    >
+                      {event.date}
+                    </span>
+
+                    <h3 className="font-display font-bold text-sm sm:text-base uppercase tracking-tight text-[#181C20] group-hover:text-[var(--color-primary)] transition-colors leading-snug line-clamp-2">
+                      {event.title}
+                    </h3>
+
+                    <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-slate-400 group-hover:text-[var(--color-primary)] transition-colors">
+                      <span>READ DETAILS</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
                   </div>
                 </div>
-
-                {/* Bottom Content: Date & Bold Crimson Title */}
-                <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-2">
-                  <span
-                    style={{ color: 'var(--color-primary)' }}
-                    className="text-[11px] font-mono uppercase tracking-wider font-bold block"
-                  >
-                    {event.date}
-                  </span>
-
-                  <h3 className="font-condensed text-[16px] sm:text-[18px] uppercase tracking-wide text-[#181C20] group-hover:text-[var(--color-primary)] transition-colors leading-tight line-clamp-2">
-                    {event.title}
-                  </h3>
-
-                  <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-slate-400 group-hover:text-[var(--color-primary)] transition-colors">
-                    <span>READ DETAILS</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-
-        </div>
+        )}
 
       </div>
     </div>

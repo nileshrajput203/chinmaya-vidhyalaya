@@ -104,7 +104,7 @@ const row1GalleryImages: InfiniteGalleryItem[] = [
     title: 'Outdoor Expeditions & Treks',
     category: 'Tours & Adventure',
     desc: 'Experiential nature learning journeys that cultivate resilience and leadership.',
-    url: '/images/tour.webp',
+    url: '/images/chinmaya/cultural/cultural_celebration_001.webp',
   },
 ];
 
@@ -163,7 +163,7 @@ const row2GalleryImages: InfiniteGalleryItem[] = [
     title: 'Science & Innovation Expo',
     category: 'STEM Learning',
     desc: 'Interactive chemical experiments and scientific working models.',
-    url: '/images/CHEM1.webp',
+    url: '/images/chinmaya/academics/science_stem_lab_01.webp',
   },
   {
     id: 'row2-9',

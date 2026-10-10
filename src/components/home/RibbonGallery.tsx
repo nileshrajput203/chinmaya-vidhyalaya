@@ -2,30 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
+import { RIBBON_GALLERY_IMAGES } from '../../data/images';
+
 /**
- * IMAGES - Paste your school photo URLs here.
- * Tiles cycle through this array with background-size: cover.
+ * IMAGES - Sourced directly from central `src/data/images.ts`.
+ * Modifying `RIBBON_GALLERY_IMAGES` in `src/data/images.ts` will instantly update this ribbon gallery.
  */
-export const IMAGES: string[] = [
-  '/images/tour.webp',
-  '/images/banner-8.webp',
-  '/images/phys.jpeg',
-  '/images/CHEM1.jpeg',
-  '/images/biology-lab.jpg',
-  '/images/it-lab.jpg',
-  '/images/lib.jpg',
-  '/images/banner-4.jpeg',
-  '/images/banner-9.webp',
-  '/images/chinmaya-web-science.jpg',
-  '/images/guru-paduka-pooja.webp',
-  '/images/chinmaya/academics/classroom_learning_001.jpg',
-  '/images/chinmaya/academics/classroom_learning_005.jpg',
-  '/images/chinmaya/sports/sports_athletic_meet_001.webp',
-  '/images/banner-3.webp',
-  '/images/img1.webp',
-  '/images/img3.webp',
-  '/images/img4.webp'
-];
+export const IMAGES: string[] = RIBBON_GALLERY_IMAGES;
 
 /**
  * Interactive "Ribbon" Photo Gallery

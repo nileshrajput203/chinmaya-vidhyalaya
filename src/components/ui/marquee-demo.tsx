@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { FolderOpen } from "lucide-react"
 import MarqueeAlongSvgPath from "@/components/ui/marquee-along-svg-path"
+import { MARQUEE_GALLERY_IMAGES } from "@/data/images"
 
 // The path starts off-screen left (-150), flows across the viewport in a dynamic loop,
 // and swoops straight into the open mouth of the 3D tilted "View Gallery" folder on the right (~1090, 172).
@@ -186,22 +187,5 @@ export default function MarqueeAlongSvgPathDemo() {
   )
 }
 
-// Diverse school photographs with ZERO repetition across all faculties, labs, and activities
-const imgs = [
-  { src: "/images/banner-1.jpg", alt: "Chinmaya Vidyalaya Main Campus" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg", alt: "Athletic Championship" },
-  { src: "/images/phys.jpeg", alt: "Physics Laboratory" },
-  { src: "/images/CHEM1.jpeg", alt: "Chemistry Laboratory" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg", alt: "Cultural Performance" },
-  { src: "/images/biology-lab.jpg", alt: "Biology Laboratory" },
-  { src: "/images/it-lab.jpg", alt: "Computer & Robotics Lab" },
-  { src: "/images/lib.jpg", alt: "Central Library" },
-  { src: "/images/banner-8.webp", alt: "Annual Sports Day" },
-  { src: "/images/chinmaya-web-science.jpg", alt: "Science & Innovation Fair" },
-  { src: "/images/guru-paduka-pooja.webp", alt: "Guru Paduka Pooja" },
-  { src: "/images/tour.jpg", alt: "Educational Excursion" },
-  { src: "/images/about2.jpeg", alt: "Academic Campus Wings" },
-  { src: "/images/banner-4.jpeg", alt: "Value Education" },
-  { src: "/images/chinmaya/leadership/principal_dimple_mistry.jpg", alt: "Principal & Leadership" },
-  { src: "/images/1.jpeg", alt: "Morning Prayer Assembly" },
-];
+// Sourced directly from central `src/data/images.ts`
+const imgs = MARQUEE_GALLERY_IMAGES;

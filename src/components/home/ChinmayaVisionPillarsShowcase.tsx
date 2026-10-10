@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 
 export interface PillarData {
   num: string;
+  tabLabel: string;
   pillarTitle: string;
-  representativeName: string;
-  roleTag: string;
+  shortTitle: string;
+  subtitleTag: string;
   sanskrit: string;
   image: string;
   isCutout?: boolean;
-  quote: string;
+  visionStatement: string;
   explanation: string;
   targetUrl: string;
   keyPoints: string[];
@@ -20,81 +21,86 @@ export interface PillarData {
 const CVP_PILLARS: PillarData[] = [
   {
     num: '01',
-    pillarTitle: 'INTEGRATED DEVELOPMENT',
-    representativeName: 'SANJANA',
-    roleTag: 'Scholastic Topper & Yoga Leader',
+    tabLabel: 'Integrated',
+    shortTitle: 'INTEGRATED\nDEVELOPMENT',
+    pillarTitle: 'INTEGRATED PERSONALITY DEVELOPMENT',
+    subtitleTag: 'Body, Mind & Intellect in Harmony',
     sanskrit: 'Sharirik, Bauddhik & Manasik Vikas',
-    image: '/images/yoga-student.png',
+    image: '/images/pages/home/pillars/pillar-01-integrated.png',
     isCutout: true,
-    quote:
-      'Since my first day at Chinmaya Vidyalaya, learning has felt like a journey of self-discovery. Through morning yoga, analytical STEM experiments, and dedicated teachers, I gained not just academic marks, but physical vitality and mental poise.',
+    visionStatement:
+      'True education nurtures the entire being—harmonizing physical vitality, an analytical intellect, and emotional equilibrium to build purposeful leaders.',
     explanation:
-      'The first pillar harmonizes the fourfold dimensions of personality: physical health through daily yoga and athletics, emotional balance through mindfulness, intellectual rigor through experiential sciences, and spiritual awareness through self-reflection.',
+      'The first pillar of the Chinmaya Vision Programme harmonizes the multidimensional growth of every child. Through morning yoga, sports, experiential science labs, and mindful self-reflection, students cultivate physical vigor, critical thinking, and inner poise.',
     targetUrl: '/about/four-pillars',
     keyPoints: [
-      'Daily Surya Namaskar, Pranayama & fitness regimen',
-      'Hands-on STEM laboratories with analytical problem-solving',
-      '1:25 personalized faculty mentoring & guidance',
-      'Inter-house sports, athletics meets & martial arts'
+      'Daily Surya Namaskar, Pranayama & holistic wellness regimen',
+      'Inquiry-driven STEM laboratories & analytical problem-solving',
+      'Faculty mentorship fostering emotional stability & focus',
+      'Inter-house sports meets, martial arts & track athletics'
     ]
   },
   {
     num: '02',
-    pillarTitle: 'INDIAN CULTURE & ETHOS',
-    representativeName: 'ADITYA',
-    roleTag: 'Gita Chanting Champion & Classical Artist',
+    tabLabel: 'Culture',
+    shortTitle: 'INDIAN\nCULTURE',
+    pillarTitle: 'INDIAN CULTURE & TIMELESS VALUES',
+    subtitleTag: 'Heritage, Ethics & Living Wisdom',
     sanskrit: 'Bhartiya Sanskriti & Parampara',
-    image: '/images/puja-ceremony-cutout.png',
+    image: '/images/pages/home/pillars/pillar-02-culture.png',
     isCutout: true,
-    quote:
-      'Chanting the Bhagavad Gita and learning our heritage has given me a moral compass that guides every decision. Here, ancient wisdom is not an old story—it is living value education that builds character and humility.',
+    visionStatement:
+      'Rooted in ancient wisdom, our heritage is a living moral compass—instilling reverence, cultural pride, and righteous character in every young mind.',
     explanation:
-      'The second pillar anchors children in India’s timeless cultural heritage, rich traditions, and noble philosophies. Students internalize universal ethics, respect for elders, classical music, and spiritual practices for inner tranquility.',
+      'The second pillar anchors students in India’s timeless cultural ethos. Through daily morning prayers, Sanskrit chanting, value-based discussions, and celebrations of traditional festivals, students develop deep respect for elders, humility, and unshakeable ethical grounding.',
     targetUrl: '/features/spiritual-activities',
     keyPoints: [
-      'Daily morning prayer assembly & Paduka Pooja',
-      'Annual Bhagavad Gita chanting and Vedic shloka forum',
-      'Matru-Pitru Pujan & Chinmaya Jayanti celebrations',
-      'Linguistic mastery across Sanskrit, Hindi, and Marathi'
+      'Daily morning prayer assembly, shloka chanting & value education',
+      'Annual Bhagavad Gita chanting competitions & cultural forums',
+      'Matru-Pitru Pujan & celebrations of sacred Indian festivals',
+      'Appreciation of classical Indian music, art, and Sanskrit heritage'
     ]
   },
   {
     num: '03',
-    pillarTitle: 'PATRIOTISM & CIVIC DUTY',
-    representativeName: 'DHRUVA & KRITI',
-    roleTag: 'Student Council & Community Seva Leads',
+    tabLabel: 'Patriotism',
+    shortTitle: 'PATRIOTISM &\nCIVIC DUTY',
+    pillarTitle: 'PATRIOTISM & ACTIVE CITIZENSHIP',
+    subtitleTag: 'Nation Building & Selfless Service',
     sanskrit: 'Rashtra Prem & Nagarik Kartavya',
-    image: '/images/smiling-volunteer.png',
+    image: '/images/pages/home/pillars/pillar-03-patriotism.png',
     isCutout: true,
-    quote:
-      'Being part of Chinmaya Vidyalaya taught us that patriotism is active service. Whether spearheading water conservation in Tarapur or leading the Student Council, we learn to put society before self.',
+    visionStatement:
+      'Patriotism is translated into action through dedicated community seva, civic awareness, and selfless service to the motherland and society.',
     explanation:
-      'The third pillar nurtures responsible, disciplined citizens dedicated to societal progress and democratic values. It builds deep national pride alongside ecological stewardship and selfless community service (Seva).',
+      'The third pillar nurtures responsible, empathetic citizens committed to national progress. Through democratic house governance, tree plantation drives, and local community outreach across Tarapur, learners internalize that the highest honor is serving society with dedication.',
     targetUrl: '/features/4-pillars#pillar-3',
     keyPoints: [
-      'Jal Pakhwada, tree plantation & green eco-club drives',
-      'Elected Student Council & democratic house governance',
-      'Grand national observances of Republic & Independence Days',
-      'Active local civic outreach & blood donation initiatives'
+      'Elected Student Council & democratic leadership development',
+      'Jal Pakhwada, green plantation drives & eco-club sustainability',
+      'Ceremonial observances of Independence Day & Republic Day',
+      'Community outreach, campus cleanliness & active social service'
     ]
   },
   {
     num: '04',
-    pillarTitle: 'UNIVERSAL OUTLOOK',
-    representativeName: 'RUGVEDA',
-    roleTag: 'Global Citizenship & Science Forum Delegate',
+    tabLabel: 'Universal',
+    shortTitle: 'UNIVERSAL\nOUTLOOK',
+    pillarTitle: 'UNIVERSAL OUTLOOK & GLOBAL PERSPECTIVE',
+    subtitleTag: 'Vasudhaiva Kutumbakam • One World Family',
     sanskrit: 'Vasudhaiva Kutumbakam',
-    image: '/images/banner-8.webp',
-    quote:
-      'Vasudhaiva Kutumbakam—the world is one family. My school has taught me to see beyond borders, to embrace diversity with open arms, and to use science and compassion to solve global challenges.',
+    image: '/images/sections/four_pillars/pillar-04-universal.webp?v=20261009',
+    isCutout: false,
+    visionStatement:
+      'Vasudhaiva Kutumbakam—the whole world is one family. Education must transcend narrow boundaries to foster universal brotherhood and planetary empathy.',
     explanation:
-      'The fourth pillar instills a cosmopolitan, empathetic worldview. It transcends regional, linguistic, and national boundaries, guiding students to appreciate all cultures, practice environmental empathy, and lead with universal benevolence.',
+      'The fourth pillar broadens student awareness beyond geographic and cultural borders. By combining rigorous CBSE curricula with a universal Vedantic outlook, students learn to appreciate global cultures, champion environmental sustainability, and lead with empathy.',
     targetUrl: '/features/4-pillars#pillar-4',
     keyPoints: [
-      'Universal prayer framework celebrating world harmony',
-      'Global CBSE curriculum with international perspectives',
-      'Ecological sustainability and carbon-neutral campus awareness',
-      'Empathy, peace education, and ethical global leadership'
+      'Universal prayer framework honoring global peace & goodwill',
+      'Globally benchmarked CBSE academic standards & critical thinking',
+      'Planetary ecological stewardship & sustainable green practices',
+      'Cosmopolitan perspective, ethical leadership & cultural appreciation'
     ]
   }
 ];
@@ -130,7 +136,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
             </span>
             <h2
               style={{ color: 'var(--color-text)' }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-condensed uppercase tracking-tight leading-tight mt-1"
+              className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-tight mt-1"
             >
               CHINMAYA VISION PROGRAM
             </h2>
@@ -156,7 +162,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                 >
                   <span>{p.num}</span>
                   <span className="ml-1.5 hidden xl:inline font-sans text-xs font-semibold">
-                    {p.pillarTitle.split(' ')[0]}
+                    {p.tabLabel}
                   </span>
                 </button>
               );
@@ -165,12 +171,12 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
         </div>
 
         {/* ------------------------------------------------------------------
-            MASTER 3-COLUMN EDITORIAL SHOWCASE (Matching Target Design)
+            MASTER 3-COLUMN EDITORIAL SHOWCASE
             ------------------------------------------------------------------ */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* ================================================================
-              LEFT COLUMN: MEET / TITLE + CIRCULAR ARROW CONTROLS
+              LEFT COLUMN: FOUNDATIONAL PILLAR TITLE + NAVIGATION CONTROLS
               ================================================================ */}
           <div className="lg:col-span-3 flex flex-col justify-center items-start space-y-6">
             <AnimatePresence mode="wait">
@@ -184,15 +190,15 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
               >
                 <p
                   style={{ color: 'var(--color-text)' }}
-                  className="text-lg sm:text-xl lg:text-2xl font-condensed uppercase tracking-wider text-slate-600 font-bold"
+                  className="text-sm sm:text-base lg:text-lg font-mono uppercase tracking-wider text-slate-600 font-bold"
                 >
-                  MEET THE VOICES OF
+                  FOUNDATIONAL PILLAR
                 </p>
                 <h3
                   style={{ color: 'var(--color-primary)' }}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-condensed uppercase tracking-tight leading-[0.88] m-0"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-[1.05] m-0 whitespace-pre-line"
                 >
-                  {current.representativeName}
+                  {current.shortTitle}
                 </h3>
                 <span
                   style={{ color: 'var(--color-text)' }}
@@ -226,10 +232,10 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
           </div>
 
           {/* ================================================================
-              CENTER COLUMN: SINGLE AUTHORITATIVE PILLAR IMAGE (NO OVERLAPPING IMAGES)
+              CENTER COLUMN: SINGLE AUTHORITATIVE PILLAR IMAGE
               ================================================================ */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-[460px] xl:max-w-[500px] h-[480px] sm:h-[540px] flex items-center justify-center">
+            <div className="relative w-full max-w-[460px] xl:max-w-[500px] h-[320px] xs:h-[380px] sm:h-[540px] flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.num}
@@ -243,7 +249,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                     /* Transparent cutouts: 100% opacity, sitting directly on section bg */
                     <img
                       src={current.image}
-                      alt={current.representativeName}
+                      alt={current.pillarTitle}
                       className={`h-full w-auto max-h-full max-w-full opacity-100 filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] pointer-events-none transition-all duration-300 ${
                         current.num === '02'
                           ? 'object-contain object-center scale-115 sm:scale-125'
@@ -255,7 +261,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                     <div className="w-full h-full rounded-none overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
                       <img
                         src={current.image}
-                        alt={current.representativeName}
+                        alt={current.pillarTitle}
                         className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 hover:scale-105"
                       />
                     </div>
@@ -266,7 +272,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
           </div>
 
           {/* ================================================================
-              RIGHT COLUMN: EXPLANATION, QUOTE, KEY POINTS, AND CTA BUTTON
+              RIGHT COLUMN: EXPLANATION, GUIDING VISION, KEY POINTS, AND CTA
               ================================================================ */}
           <div className="lg:col-span-4 flex flex-col justify-center space-y-5">
             <AnimatePresence mode="wait">
@@ -278,28 +284,28 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                 transition={{ duration: 0.28, ease: 'easeOut' }}
                 className="space-y-4"
               >
-                {/* Role / Pillar Subtitle */}
+                {/* Pillar Subtitle Tag & Full Title */}
                 <div>
                   <span
                     style={{ color: 'var(--color-primary)' }}
                     className="text-sm sm:text-base font-sans font-bold uppercase tracking-wider block"
                   >
-                    {current.roleTag}
+                    {current.subtitleTag}
                   </span>
                   <h4
                     style={{ color: 'var(--color-text)' }}
-                    className="text-2xl sm:text-3xl font-condensed uppercase tracking-tight mt-0.5"
+                    className="text-xl sm:text-2xl font-display font-black uppercase tracking-tight mt-0.5"
                   >
                     {current.pillarTitle}
                   </h4>
                 </div>
 
-                {/* Personal Voice Quote */}
+                {/* Core Guiding Vision Statement */}
                 <blockquote
                   style={{ color: 'var(--color-text)' }}
                   className="font-sans text-sm sm:text-base leading-relaxed italic border-l-2 border-[var(--color-primary)] pl-3.5 text-slate-700 font-normal"
                 >
-                  "{current.quote}"
+                  "{current.visionStatement}"
                 </blockquote>
 
                 {/* Pedagogical Explanation */}
@@ -333,7 +339,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                     }}
                     className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none uppercase font-bold text-xs sm:text-sm tracking-wider transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-sm"
                   >
-                    <span>DISCOVER {current.pillarTitle}</span>
+                    <span>EXPLORE THIS PILLAR</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

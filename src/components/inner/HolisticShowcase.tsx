@@ -72,7 +72,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#1E40AF',
     badgeBg: 'bg-indigo-50',
     badgeText: 'text-indigo-800',
-    image: '/images/CHEM1.jpeg',
+    image: '/images/chinmaya/academics/science_stem_lab_01.webp',
     imageCaption: 'Cognitive Rigor: Hands-on Chemistry Experimentation & Analysis',
     locationMeta: 'Chemistry Laboratory • Station 2',
     description:

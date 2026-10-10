@@ -6,34 +6,34 @@ import { ScrollImageTunnel, ScrollImageTunnelImage } from '../ui/scroll-image-tu
 
 const ARCHIVE_IMAGES: ScrollImageTunnelImage[] = [
   {
-    src: "/images/lib.jpg",
-    alt: "Chinmaya Vidyalaya Central Reading Hall and Reference Stacks",
-    title: "Central Reading Hall & Reference Stacks",
-    category: "Tarapur Campus Archives"
+    src: "/images/pages/academics/library/lib-1.jpg",
+    alt: "Chinmaya Vidyalaya Central Reading Hall and Study Stations",
+    title: "Central Reading Hall & Study Stations",
+    category: "Reading Hall Archives"
   },
   {
-    src: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1400&q=80",
-    alt: "CBSE Scholastic and Advanced Science Reference Archives",
-    title: "CBSE Scholastic Reference Archives (5,500+ Volumes)",
+    src: "/images/pages/academics/library/lib-2.jpg",
+    alt: "Periodicals, Journals, Magazines and Cultural Archives",
+    title: "Periodicals, Magazines & Cultural Reference Section",
+    category: "Periodicals & Heritage"
+  },
+  {
+    src: "/images/pages/academics/library/lib-3.jpg",
+    alt: "Scholastic Reference Reading and Student Study Tables",
+    title: "Scholastic Reference Archives & Student Study Hall",
     category: "Academic Core"
   },
   {
-    src: "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?auto=format&fit=crop&w=1400&q=80",
-    alt: "Chinmaya Philosophy, Vedantic Commentaries and Sacred Heritage",
-    title: "Chinmaya Philosophy & Vedantic Heritage (1,200+ Sacred Texts)",
-    category: "Cultural Wisdom"
+    src: "/images/pages/academics/library/lib-4.jpg",
+    alt: "Comprehensive Curricular Book Stacks and Steel Storage Cabinets",
+    title: "Curricular Book Stacks & Classified Reference Collection",
+    category: "Book Stacks"
   },
   {
-    src: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1400&q=80",
-    alt: "Competitive Examination Resource Hub and National Olympiad Test Banks",
-    title: "Competitive Exam Hub: JEE, NEET & CUET Prep Banks",
-    category: "Entrance Preparation"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&w=1400&q=80",
-    alt: "World Literature, Classic Fiction Anthologies and Encyclopedias",
-    title: "World Literature, Fiction & Encyclopedic Atlases",
-    category: "Creative Horizons"
+    src: "/images/pages/academics/library/lib-5.jpg",
+    alt: "Central Library Stacks, Open Circulation Aisles and Study Spaces",
+    title: "Central Library Stacks & Open Circulation Aisles",
+    category: "Campus Archives"
   }
 ];
 
@@ -83,7 +83,7 @@ export const LibraryShowcase: React.FC = () => {
             <div className="rounded-2xl overflow-hidden border border-[#E7E2D8] shadow-md group bg-white">
               <div className="relative aspect-[16/11] overflow-hidden bg-slate-100">
                 <img
-                  src="/images/lib.jpg"
+                  src="/images/pages/academics/library/lib-1.jpg"
                   alt="Chinmaya Vidyalaya School Library"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

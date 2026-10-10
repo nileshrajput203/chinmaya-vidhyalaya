@@ -6,7 +6,8 @@ import { BadgePill } from '../ui/badge-pill';
 import Timeline, { JourneyItem } from '../ui/timeline';
 import { ImageStreamHero, StreamImage } from '../ui/image-stream-hero';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
-import { ZoomIn, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import { CAMPUS_STREAM_ARCHIVE } from '../../data/images';
 
 interface ArchivalPhoto {
   id: string;
@@ -67,56 +68,8 @@ const CHINMAYA_BOTTOM_MILESTONES: JourneyItem[] = [
   },
 ];
 
-const CAMPUS_STREAM_IMAGES: StreamImage[] = [
-  {
-    src: "/images/about2.jpeg",
-    alt: "Chinmaya Vidyalaya Campus Building",
-  },
-  {
-    src: "/images/biology-lab.jpg",
-    alt: "Advanced Biology Laboratory",
-  },
-  {
-    src: "/images/lib.jpg",
-    alt: "Central Knowledge Library",
-  },
-  {
-    src: "/images/it-lab.jpg",
-    alt: "Computer and Robotics Lab",
-  },
-  {
-    src: "/images/phys.jpeg",
-    alt: "Physics Research Laboratory",
-  },
-  {
-    src: "/images/CHEM1.jpeg",
-    alt: "Chemistry Laboratory",
-  },
-  {
-    src: "/images/guru-paduka-pooja.webp",
-    alt: "Spiritual Traditions & Gurudev Ethos",
-  },
-  {
-    src: "/images/img1.jpg",
-    alt: "Student Activities and Campus Sports",
-  },
-  {
-    src: "/images/img2.jpg",
-    alt: "Interactive Classroom Learning",
-  },
-  {
-    src: "/images/img3.jpg",
-    alt: "Cultural & Value-Based Celebrations",
-  },
-  {
-    src: "/images/img4.jpg",
-    alt: "Collaborative Student Initiatives",
-  },
-  {
-    src: "/images/img7.jpg",
-    alt: "Scholastic & Co-Curricular Excellence",
-  },
-];
+// Sourced directly from central `src/data/images.ts`
+const CAMPUS_STREAM_IMAGES: StreamImage[] = CAMPUS_STREAM_ARCHIVE;
 
 export const HistoryShowcase: React.FC = () => {
   const [activePhoto, setActivePhoto] = useState<ArchivalPhoto | null>(null);
@@ -180,25 +133,21 @@ export const HistoryShowcase: React.FC = () => {
                 title: 'Chinmaya Vidyalaya Campus Building',
                 era: 'Academic Campus',
                 year: 'Boisar',
-                image: '/images/about2.jpeg',
+                image: '/images/banner-1.jpg',
                 tag: 'Campus Infrastructure',
                 caption: 'Spacious academic wings, laboratories, and green grounds at MIDC Saravali, Boisar.'
               })}
               className="rounded-2xl overflow-hidden border border-[#E7E2D8] shadow-md group bg-white cursor-pointer"
             >
               <div className="relative aspect-[16/11] overflow-hidden bg-slate-100">
-                <img
-                  src="/images/about2.jpeg"
-                  alt="Chinmaya Vidyalaya Campus Building"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 bg-[#0B1E34]/90 text-white px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider backdrop-blur-md">
-                  Vidyalaya Campus
-                </div>
-                <div className="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white/90 px-2 py-0.5 rounded text-[10px] font-mono flex items-center gap-1">
-                  <ZoomIn className="w-3 h-3 text-[#DF711B]" />
-                  <span>Saravali, Boisar</span>
-                </div>
+                <picture>
+                  <source srcSet="/images/banner-1.webp" type="image/webp" />
+                  <img
+                    src="/images/banner-1.jpg"
+                    alt="Chinmaya Vidyalaya Campus Building"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
               </div>
               <div className="p-3 text-xs text-[#4A5568] text-center font-medium bg-white border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
                 Chinmaya Vidyalaya Campus | Saravali, Boisar &rarr;

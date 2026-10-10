@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { 
   ShieldCheck, CheckCircle2, ChevronLeft, ChevronRight, 
-  Maximize2, X, Sparkles, ArrowRight 
+  Maximize2, X, ArrowRight 
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -37,10 +37,11 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Physics Laboratory',
     gallery: [
-      { src: '/images/phys.jpeg', caption: 'Senior Secondary Physics Lab: Optical Benches & Ray Optics Station' },
-      { src: '/images/phys.webp', caption: 'Individual Student Workstations with Precision Galvanometers & Circuits' },
-      { src: '/images/chinmaya-web-science.jpg', caption: 'Senior STEM Students Performing Optics Calibration' },
-      { src: '/images/chinmaya/academics/classroom_learning_001.jpg', caption: 'Faculty Mentorship & Practical Demonstration Session' }
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-infra-1.jpg', caption: 'Physics Lab Infrastructure: Workbenches, Equipment Cabinets & Chalkboard Station' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-2.jpg', caption: 'Students Performing Optical Bench & Sonometer Experiments at Individual Stations' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-3.jpg', caption: 'Hands-on Practicals: Senior Students with Travelling Microscope & Vernier Calipers' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-4.jpg', caption: 'Full-Class Physics Practical Session: 40+ Students Across Workstations' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-5.jpg', caption: 'Faculty-Guided Demonstration: Optical Bench Calibration & Ray Optics Setup' }
     ],
     badge: 'CBSE Senior STEM Lab',
     tagline: 'Precision Optics, Mechanics, Sound & Electromagnetic Investigation',
@@ -70,10 +71,14 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Chemistry Laboratory',
     gallery: [
-      { src: '/images/CHEM1.jpeg', caption: 'Analytical Chemistry Lab: Acid-Base Titration Workstations with Aprons' },
-      { src: '/images/chinmaya-web-science.webp', caption: 'Chemical Synthesis & Qualitative Salt Analysis Bench' },
-      { src: '/images/chinmaya/academics/classroom_learning_003.jpg', caption: 'Student Groups Executing Organic Reagent Tests' },
-      { src: '/images/img3.webp', caption: 'Fume Hood Ventilation & Dedicated Reagent Storage Shelf' }
+      { src: '/images/pages/academics/laboratories/chemistry/chem-1.jpg', caption: 'Chemistry Lab Overview: Fully Equipped Workstations & Reagent Shelves' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-dsc.jpg', caption: 'Students Performing Volumetric Titration with Burettes' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-2.jpg', caption: 'Hands-On Practical: Salt Analysis & Chemical Testing' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-3.jpg', caption: 'Collaborative Lab Session: Students at Titration Benches' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-4.jpg', caption: 'Student Conducting Precise Burette Readings' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-5.jpg', caption: 'Teacher Demonstrating Analytical Techniques to Students' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-6.jpg', caption: 'Student Performing Flask & Reagent Experiment' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-7.jpg', caption: 'Students Working with Conical Flasks & Bunsen Burners' }
     ],
     badge: 'CBSE Senior STEM Lab',
     tagline: 'Analytical Titration, Reagents, Kinetics & Qualitative Analysis',
@@ -104,10 +109,12 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Biology Laboratory',
     gallery: [
-      { src: '/images/biology-lab.jpg', caption: 'Life Sciences Lab: Students Examining Cellular Structures under Microscopes' },
-      { src: '/images/biology-lab.webp', caption: 'Compound Microscopes & 3D Human Skeletal Anatomy Models' },
-      { src: '/images/chinmaya/academics/classroom_learning_005.jpg', caption: 'Botanical Slide Preparation & Tissue Cross-Sectioning' },
-      { src: '/images/tour.webp', caption: 'Botanical Herbarium & Specimen Archive Collection' }
+      { src: '/images/pages/academics/laboratories/biology/bio-6.jpg', caption: 'Student Observing Specimen Slide Under High-Power Compound Microscope' },
+      { src: '/images/pages/academics/laboratories/biology/bio-2.jpg', caption: 'Senior Student Examining Human Skeletal Model & Recording Observations' },
+      { src: '/images/pages/academics/laboratories/biology/bio-1.jpg', caption: 'Digital Interactive Smart Board, Faculty Station & Anatomical Charts' },
+      { src: '/images/pages/academics/laboratories/biology/bio-3.jpg', caption: 'Specimen Storage Cabinets with Reagents, Stains & Laboratory Glassware' },
+      { src: '/images/pages/academics/laboratories/biology/bio-5.jpg', caption: '3D Human Torso Anatomical Dissection Model in Showcase' },
+      { src: '/images/pages/academics/laboratories/biology/bio-4.jpg', caption: 'Full-Scale Articulated Human Skeleton with Anatomical Reference Key' }
     ],
     badge: 'Life Sciences Lab',
     tagline: 'Microscopic Observation, Cytology & Anatomical Specimen Study',
@@ -137,10 +144,12 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Computer & IT Innovation Lab',
     gallery: [
-      { src: '/images/it-lab.jpg', caption: 'Central Computer Center: Networked Workstations with Individual PCs' },
-      { src: '/images/it-lab.webp', caption: 'CBSE IT Lab Coding Session: Python, Java & Web Development' },
-      { src: '/images/chinmaya/academics/classroom_learning_002.jpg', caption: 'Smart Whiteboard Projection & Digital Mentoring Station' },
-      { src: '/images/img1.webp', caption: 'High-Speed Broadband Infrastructure & Central Server Rack' }
+      { src: '/images/pages/academics/laboratories/it/it-6.jpg', caption: 'Interactive IT & Coding Practical: High-Density Computer Workstations with Projection Feed' },
+      { src: '/images/pages/academics/laboratories/it/it-3.jpg', caption: 'Teacher Mentoring & Hands-on Coding Session: Students at Individual Terminals' },
+      { src: '/images/pages/academics/laboratories/it/it-4.jpg', caption: 'Focused Programming Practice: Students Developing Python & Web Scripts' },
+      { src: '/images/pages/academics/laboratories/it/it-5.jpg', caption: 'Digital Innovation Session: Interactive Smart Screen & Collaborative Workspace' },
+      { src: '/images/pages/academics/laboratories/it/it-1.jpg', caption: 'Computer & IT Lab Infrastructure: Multi-Row Workstations with Ergonomic Seating' },
+      { src: '/images/pages/academics/laboratories/it/it-2.jpg', caption: 'Modular Central Aisle Architecture: Networked Systems with High-Speed Connectivity' }
     ],
     badge: 'Digital Innovation',
     tagline: 'Networked Computing, Python/Java Coding & Multimedia',
@@ -170,9 +179,11 @@ const FACILITIES: FacilityItem[] = [
     category: 'academic',
     name: 'Central School Library',
     gallery: [
-      { src: '/images/lib.jpg', caption: 'Central Library: Reading Lounge with Open-Shelf Reference Archives' },
-      { src: '/images/lib.webp', caption: 'Quiet Study Niches & National Scholastic Journals' },
-      { src: '/images/img4.webp', caption: 'Digital Indexing & Student Book Issue Counter' }
+      { src: '/images/pages/academics/library/lib-1.jpg', caption: 'Central Reading Hall: Spacious Study Desks, Ergonomic Seating & Audio-Visual Setup' },
+      { src: '/images/pages/academics/library/lib-2.jpg', caption: 'Scholastic Periodicals & Magazines: National Geographic Kids, Science Journals & Reference Racks' },
+      { src: '/images/pages/academics/library/lib-3.jpg', caption: 'Quiet Research & Self-Study: Students Immersed in Reference Texts and Note-Taking' },
+      { src: '/images/pages/academics/library/lib-4.jpg', caption: 'Collaborative Learning Environment: Senior Students Engaged in Scholastic Group Reading' },
+      { src: '/images/pages/academics/library/lib-5.jpg', caption: 'Open-Access Book Stacks: Student Exploring Categorized Literature & Reference Archives' }
     ],
     badge: 'Knowledge Hub',
     tagline: 'Over 10,000+ Scholastic Volumes & Serene Reading Lounge',
@@ -199,9 +210,9 @@ const FACILITIES: FacilityItem[] = [
     category: 'sports',
     name: 'Athletic Arena & Sports Fields',
     gallery: [
-      { src: '/images/banner-8.webp', caption: 'East Athletic Grounds: Running Track & Outdoor Field Events' },
-      { src: '/images/chinmaya/sports/sports_athletic_meet_001.webp', caption: 'Annual Sports Meet: Track Sprint Finals & March Past' },
-      { src: '/images/chinmaya/sports/sports_athletic_meet_002.webp', caption: 'House Athletic Drills & Physical Vitality Training' }
+      { src: '/images/pages/academics/sports/sports-1.jpg', caption: 'Outdoor Basketball & Sports Court: Marked Playing Surface & High-Hoop Backboards' },
+      { src: '/images/pages/academics/sports/sports-2.jpg', caption: 'Open Campus Arena: Multi-Sport Court Overlooking School Grounds & Greenery' },
+      { src: '/images/pages/academics/sports/sports-3.jpg', caption: 'Expansive Athletic Grass Turf: Outdoor Field & Assembly Grounds with Stage Pavilion' }
     ],
     badge: 'Physical Conditioning',
     tagline: 'Expansive Campus Grounds for Track, Field & Team Leagues',
@@ -228,9 +239,10 @@ const FACILITIES: FacilityItem[] = [
     category: 'academic',
     name: 'Spacious Ventilated Classrooms',
     gallery: [
-      { src: '/images/chinmaya/academics/classroom_learning_001.jpg', caption: 'High-Ceiling Classrooms with Ergonomic Multi-Student Seating' },
-      { src: '/images/chinmaya/academics/classroom_learning_004.jpg', caption: 'Interactive Group Discussions and Academic Mentoring' },
-      { src: '/images/chinmaya/academics/classroom_learning_006.jpg', caption: 'Natural Cross-Ventilation & Expansive Blackboard Surfaces' }
+      { src: '/images/pages/academics/classrooms/classroom-1.jpg', caption: 'Spacious Multi-Purpose Examination & Lecture Hall with Modular Desks' },
+      { src: '/images/pages/academics/classrooms/classroom-2.jpg', caption: 'Naturally Lit & Ventilated Classrooms with Active Student-Teacher Mentorship' },
+      { src: '/images/pages/academics/classrooms/classroom-3.jpg', caption: 'Smart Digital Classrooms Equipped with Interactive Flat Panel Displays' },
+      { src: '/images/pages/academics/classrooms/classroom-4.jpg', caption: 'Vibrant Primary Classrooms with Child-Centric Ergonomics & Creative Activity Corners' }
     ],
     badge: 'Learning Spaces',
     tagline: 'High-Ceiling Classrooms with Capacity for Over 40 Students',
@@ -257,9 +269,8 @@ const FACILITIES: FacilityItem[] = [
     category: 'campus',
     name: 'Cultural Assembly Arena & Stage',
     gallery: [
-      { src: '/images/banner-4.jpeg', caption: 'Central Courtyard Stage: Morning Prayer Assembly & Cultural Celebrations' },
-      { src: '/images/banner-9.webp', caption: 'Annual Day Theatricals & Inter-House Classical Dance Showcases' },
-      { src: '/images/guru-paduka-pooja.webp', caption: 'Guru Paduka Pooja & Spiritual Devotional Gatherings' }
+      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-1.jpg', caption: 'Elevated Performance Stage & Cultural Auditorium with Pujya Gurudev Altar' },
+      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-2.jpg', caption: 'Central Courtyard Morning Assembly Arena with Sacred Saraswati Shrine' }
     ],
     badge: 'Cultural Ethos',
     tagline: 'Morning Assembly, Gita Chanting & Annual Day Celebrations',
@@ -315,23 +326,18 @@ const FacilityCardCarousel: React.FC<{
 
 
 
-      {/* Bottom Photo Caption Banner */}
-      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 pt-6 flex items-end justify-between gap-3 text-white pointer-events-none">
-        <p className="text-[11px] font-sans font-medium line-clamp-1 drop-shadow m-0">
-          {currentPhoto.caption}
-        </p>
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            onOpenLightbox(currentPhoto.src, currentPhoto.caption);
-          }}
-          className="pointer-events-auto p-1.5 rounded-lg bg-white/20 hover:bg-[#DF711B] text-white transition-colors shrink-0"
-          title="Inspect Fullscreen"
-        >
-          <Maximize2 className="w-3.5 h-3.5" />
-        </button>
-      </div>
+      {/* Fullscreen Inspect Button */}
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onOpenLightbox(currentPhoto.src, currentPhoto.caption);
+        }}
+        className="absolute top-2.5 right-2.5 p-1.5 rounded-lg bg-black/50 hover:bg-[#DF711B] text-white transition-all opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer z-10"
+        title="Inspect Fullscreen"
+      >
+        <Maximize2 className="w-3.5 h-3.5" />
+      </button>
 
       {/* Arrow Controls (visible when multiple photos exist) */}
       {images.length > 1 && (
@@ -340,7 +346,7 @@ const FacilityCardCarousel: React.FC<{
             type="button"
             onClick={handlePrev}
             aria-label="Previous photo"
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer z-10"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
@@ -348,13 +354,13 @@ const FacilityCardCarousel: React.FC<{
             type="button"
             onClick={handleNext}
             aria-label="Next photo"
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer z-10"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
 
           {/* Dots Indicator */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-1.5 pointer-events-none">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 pointer-events-none z-10">
             {images.map((_, dotIdx) => (
               <span
                 key={dotIdx}
@@ -539,9 +545,6 @@ export const InfrastructureShowcase: React.FC = () => {
                         <span className="text-[11px] font-mono text-slate-500 uppercase font-bold">
                           {facility.locationMeta}
                         </span>
-                        <span className="text-xs font-mono font-bold text-[#DF711B] bg-[#FAF3E8] px-2.5 py-0.5 rounded-full border border-[#DF711B]/20">
-                          {facility.capacity}
-                        </span>
                       </div>
                       <h3 className="font-cinzel text-2xl font-black text-[#181C20] group-hover:text-[#DF711B] transition-colors mt-1">
                         {facility.name}
@@ -555,18 +558,7 @@ export const InfrastructureShowcase: React.FC = () => {
                       {facility.description}
                     </p>
 
-                    {/* CBSE Curriculum Scope */}
-                    {facility.curriculumDetails && (
-                      <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#DF711B] font-bold flex items-center gap-1.5">
-                          <Sparkles className="w-3.5 h-3.5 shrink-0" />
-                          <span>Curriculum & Practical Syllabus Alignment:</span>
-                        </span>
-                        <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium line-clamp-2">
-                          {facility.curriculumDetails}
-                        </p>
-                      </div>
-                    )}
+
 
                     {/* Equipment / Apparatus Checklist */}
                     <div className="space-y-2 pt-1">

@@ -84,7 +84,7 @@ export default {
         cinzel: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         mono: ['Space Grotesk', 'monospace'],
         display: ['Archivo Black', 'Plus Jakarta Sans', 'sans-serif'],
-        condensed: ['"Bebas Neue"', 'Archivo Black', 'Plus Jakarta Sans', 'sans-serif'],
+        condensed: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         header: '0 4px 24px rgba(11, 29, 48, 0.06)',

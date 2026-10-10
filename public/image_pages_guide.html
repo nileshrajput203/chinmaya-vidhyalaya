@@ -1,0 +1,4067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page-Wise & Section-Wise Image Directory - Chinmaya Vidyalaya</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #080C14; color: #f1f5f9; padding: 40px 24px; }
+    .container { max-width: 1540px; margin: 0 auto; }
+    header { margin-bottom: 36px; border-bottom: 1px solid #1E293B; padding-bottom: 28px; }
+    .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    h1 { font-size: 30px; font-weight: 800; color: #DF711B; text-transform: uppercase; letter-spacing: 0.04em; }
+    .badge { background: #1E293B; border: 1px solid #334155; color: #38BDF8; font-family: monospace; font-size: 13px; padding: 6px 14px; border-radius: 999px; }
+    p.subtitle { color: #94A3B8; font-size: 15px; margin-top: 10px; line-height: 1.6; max-width: 900px; }
+    .stats-bar { display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+    .stat-pill { background: #0F172A; border: 1px solid #1E293B; padding: 8px 16px; border-radius: 8px; font-size: 13px; color: #CBD5E1; }
+    .stat-pill strong { color: #DF711B; }
+    
+    .nav-tabs { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+    .nav-tab { background: #0F172A; color: #CBD5E1; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; border: 1px solid #1E293B; }
+    .nav-tab:hover, .nav-tab.active { background: #DF711B; color: #FFFFFF; border-color: #DF711B; box-shadow: 0 4px 14px rgba(223, 113, 27, 0.35); }
+    
+    .tip-box { background: #0E1626; border-left: 4px solid #DF711B; padding: 18px 22px; border-radius: 6px; margin-top: 24px; font-size: 14px; color: #E2E8F0; line-height: 1.6; }
+    .tip-box code { background: #060910; padding: 2px 7px; border-radius: 4px; color: #F59E0B; font-family: monospace; font-size: 13px; border: 1px solid #1E293B; }
+    
+    .page-section-block { margin-top: 54px; scroll-margin-top: 30px; }
+    .page-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #DF711B; padding-bottom: 12px; margin-bottom: 30px; flex-wrap: wrap; gap: 12px; }
+    .page-title { font-size: 26px; font-weight: 800; text-transform: uppercase; color: #FFFFFF; letter-spacing: 0.03em; }
+    .page-badge { background: #DF711B; color: #FFFFFF; font-family: monospace; font-size: 12px; padding: 4px 10px; border-radius: 6px; font-weight: 700; }
+    
+    .section-box { background: #0C121E; border: 1px solid #1E293B; border-radius: 12px; padding: 24px; margin-bottom: 30px; }
+    .section-title { font-size: 18px; font-weight: 700; color: #F8FAFC; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .folder-path { font-family: monospace; font-size: 12px; background: #060A12; color: #F59E0B; padding: 5px 12px; border-radius: 6px; border: 1px solid #1E293B; }
+    .section-desc { font-size: 13px; color: #94A3B8; margin: 8px 0 20px 0; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+    .card { background: #070B13; border: 1px solid #1E293B; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+    .card:hover { transform: translateY(-4px); border-color: #DF711B; box-shadow: 0 10px 24px rgba(0,0,0,0.5); }
+    .card-img-wrap { width: 100%; height: 170px; background: #04060A; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .card img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .file-name { font-family: monospace; font-size: 13px; font-weight: 700; color: #F59E0B; word-break: break-all; }
+    .file-label { font-size: 12px; color: #CBD5E1; margin-top: 5px; line-height: 1.4; }
+    .file-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; font-size: 11px; color: #64748B; font-family: monospace; }
+    .file-path { font-family: monospace; font-size: 10px; color: #64748B; margin-top: 8px; word-break: break-all; background: #0E1626; padding: 4px 8px; border-radius: 4px; border: 1px solid #1E293B; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <h1>Page-Wise & Section-Wise Image Directory</h1>
+        <span class="badge">CHINMAYA VIDYALAYA TARAPUR</span>
+      </div>
+      <p class="subtitle">Complete catalog of every active image across all pages and sections, organized with zero duplicacy and clean 2-level folder hierarchy: <strong>PAGE</strong> &rarr; <strong>SECTION</strong>.</p>
+      
+      <div class="stats-bar">
+        <div class="stat-pill">Total Pages: <strong>8</strong></div>
+        <div class="stat-pill">Total Sections: <strong>31</strong></div>
+        <div class="stat-pill">Total Images: <strong>189</strong></div>
+        <div class="stat-pill">Duplicacy: <strong>0% (Guaranteed Unique)</strong></div>
+      </div>
+
+      <div class="nav-tabs">
+        <a href="#page-home" class="nav-tab">home</a>
+        <a href="#page-about" class="nav-tab">about</a>
+        <a href="#page-academics" class="nav-tab">academics</a>
+        <a href="#page-admissions" class="nav-tab">admissions</a>
+        <a href="#page-features" class="nav-tab">features</a>
+        <a href="#page-news_events" class="nav-tab">news_events</a>
+        <a href="#page-gallery" class="nav-tab">gallery</a>
+        <a href="#page-contact" class="nav-tab">contact</a>
+      </div>
+
+      <div class="tip-box">
+        <strong>How to Replace Any Photo on the Website:</strong><br>
+        1. Locate your page and section below.<br>
+        2. Open the folder: <code>public/images/pages/&lt;page&gt;/&lt;section&gt;/</code><br>
+        3. Replace the file with your new photo using the <strong>exact same file name</strong>.<br>
+        4. The website updates automatically with your new image!
+      </div>
+    </header>
+
+    <div id="page-home" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">Home Page (/)</h2>
+        <span class="page-badge">public/images/pages/home/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>Hero & Campus Identity (6 images)</span>
+          <span class="folder-path">public/images/pages/home/hero/</span>
+        </div>
+        <p class="section-desc">Campus identity visuals, video poster, and official school emblems.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/hero/video-poster.webp" alt="Campus Life Scrollytelling Poster (WebP)" loading="lazy" onerror="this.src='/public/images/campus-video-poster.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">video-poster.webp</div>
+                <div class="file-label">Campus Life Scrollytelling Poster (WebP)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 339 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/hero/video-poster.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/hero/video-poster.jpg" alt="Campus Life Scrollytelling Poster (JPEG)" loading="lazy" onerror="this.src='/public/images/campus-video-poster.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">video-poster.jpg</div>
+                <div class="file-label">Campus Life Scrollytelling Poster (JPEG)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 626 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/hero/video-poster.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/hero/campus-building.jpg" alt="School Architectural Wing" loading="lazy" onerror="this.src='/public/images/about2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">campus-building.jpg</div>
+                <div class="file-label">School Architectural Wing</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 192 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/hero/campus-building.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/hero/school-logo.webp" alt="Chinmaya Vidyalaya Emblem" loading="lazy" onerror="this.src='/public/images/Chinmaya_Logo.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">school-logo.webp</div>
+                <div class="file-label">Chinmaya Vidyalaya Emblem</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 50 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/hero/school-logo.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/hero/banner-01.jpg" alt="Campus Banner Slide 1" loading="lazy" onerror="this.src='/public/1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">banner-01.jpg</div>
+                <div class="file-label">Campus Banner Slide 1</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/hero/banner-01.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/hero/banner-02.jpg" alt="Campus Banner Slide 2" loading="lazy" onerror="this.src='/public/2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">banner-02.jpg</div>
+                <div class="file-label">Campus Banner Slide 2</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 409 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/hero/banner-02.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Scroll-Expanding Video Mosaic (5 images)</span>
+          <span class="folder-path">public/images/pages/home/mosaic/</span>
+        </div>
+        <p class="section-desc">4 surrounding corner photo tiles that expand around the sticky center campus video.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/mosaic/top-left.jpg" alt="Top Left: Physics Optics Laser Workbench" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_007.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">top-left.jpg</div>
+                <div class="file-label">Top Left: Physics Optics Laser Workbench</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/mosaic/top-left.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/mosaic/bottom-left.jpg" alt="Bottom Left: Central Knowledge Reading Lounge" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_010.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">bottom-left.jpg</div>
+                <div class="file-label">Bottom Left: Central Knowledge Reading Lounge</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 76 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/mosaic/bottom-left.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/mosaic/top-right.jpg" alt="Top Right: Interactive Classroom Learning" loading="lazy" onerror="this.src='/public/images/school_events/School_Event_2026-09-28_015.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">top-right.jpg</div>
+                <div class="file-label">Top Right: Interactive Classroom Learning</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 95 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/mosaic/top-right.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/mosaic/bottom-right.jpg" alt="Bottom Right: Scholastic Academic Focus" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_040.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">bottom-right.jpg</div>
+                <div class="file-label">Bottom Right: Scholastic Academic Focus</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 95 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/mosaic/bottom-right.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/mosaic/video-poster.webp" alt="Center Video Poster" loading="lazy" onerror="this.src='/public/images/campus-video-poster.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">video-poster.webp</div>
+                <div class="file-label">Center Video Poster</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 339 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/mosaic/video-poster.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Experience Bento Grid (11 images)</span>
+          <span class="folder-path">public/images/pages/home/bento/</span>
+        </div>
+        <p class="section-desc">11 distinct photo tiles showcasing hands-on learning, labs, arts, and leadership.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-01-academics.jpg" alt="Tile 01: Compound Microscopy & Research" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-01-academics.jpg</div>
+                <div class="file-label">Tile 01: Compound Microscopy & Research</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 96 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-01-academics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-03-optics-lab.jpg" alt="Tile 03: Physics Optics Experimentation" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_007.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-03-optics-lab.jpg</div>
+                <div class="file-label">Tile 03: Physics Optics Experimentation</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-03-optics-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-04-smart-class.jpg" alt="Tile 04: Smart Interactive Board Classroom" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_003.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-04-smart-class.jpg</div>
+                <div class="file-label">Tile 04: Smart Interactive Board Classroom</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 82 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-04-smart-class.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-05-library.jpg" alt="Tile 05: Central Library & Reading Cubicles" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_010.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-05-library.jpg</div>
+                <div class="file-label">Tile 05: Central Library & Reading Cubicles</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 76 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-05-library.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-06-olympiad.jpg" alt="Tile 06: Mathematics & Science Olympiad" loading="lazy" onerror="this.src='/public/images/school_events/School_Event_2026-09-27_041.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-06-olympiad.jpg</div>
+                <div class="file-label">Tile 06: Mathematics & Science Olympiad</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 89 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-06-olympiad.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-07-seminar.jpg" alt="Tile 07: Scholastic Seminars & Debates" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_028.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-07-seminar.jpg</div>
+                <div class="file-label">Tile 07: Scholastic Seminars & Debates</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-07-seminar.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-08-cultural.jpg" alt="Tile 08: Classical Cultural Heritage" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-08-cultural.jpg</div>
+                <div class="file-label">Tile 08: Classical Cultural Heritage</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-08-cultural.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-09-exam-focus.jpg" alt="Tile 09: Examination Hall Concentration" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_030.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-09-exam-focus.jpg</div>
+                <div class="file-label">Tile 09: Examination Hall Concentration</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 78 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-09-exam-focus.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-10-stem-robotics.jpg" alt="Tile 10: STEM Robotics & Prototyping" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_050.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-10-stem-robotics.jpg</div>
+                <div class="file-label">Tile 10: STEM Robotics & Prototyping</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 54 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-10-stem-robotics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-11-it-lab.jpg" alt="Tile 11: IT Coding Stations & Systems" loading="lazy" onerror="this.src='/public/images/school_events/School_Event_2026-09-27_082.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-11-it-lab.jpg</div>
+                <div class="file-label">Tile 11: IT Coding Stations & Systems</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 62 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-11-it-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/bento/tile-12-faculty-mentor.jpg" alt="Tile 12: Principal Mentorship & Direction" loading="lazy" onerror="this.src='/public/images/chinmaya/leadership/principal_dimple_mistry.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">tile-12-faculty-mentor.jpg</div>
+                <div class="file-label">Tile 12: Principal Mentorship & Direction</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 230 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/bento/tile-12-faculty-mentor.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Chinmaya Vision Programme (4 Pillars) (4 images)</span>
+          <span class="folder-path">public/images/pages/home/pillars/</span>
+        </div>
+        <p class="section-desc">Visual representations of the 4 CVP foundational pillars.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/pillars/pillar-01-integrated.png" alt="Pillar 01: Integrated Development (Yoga & Fitness)" loading="lazy" onerror="this.src='/public/images/yoga-student.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">pillar-01-integrated.png</div>
+                <div class="file-label">Pillar 01: Integrated Development (Yoga & Fitness)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 2197 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/pillars/pillar-01-integrated.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/pillars/pillar-02-culture.png" alt="Pillar 02: Indian Culture (Heritage & Traditions)" loading="lazy" onerror="this.src='/public/images/puja-ceremony-cutout.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">pillar-02-culture.png</div>
+                <div class="file-label">Pillar 02: Indian Culture (Heritage & Traditions)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 2209 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/pillars/pillar-02-culture.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/pillars/pillar-03-patriotism.png" alt="Pillar 03: Patriotism & Civic Duty (Seva)" loading="lazy" onerror="this.src='/public/images/smiling-volunteer.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">pillar-03-patriotism.png</div>
+                <div class="file-label">Pillar 03: Patriotism & Civic Duty (Seva)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 2384 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/pillars/pillar-03-patriotism.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/pillars/pillar-04-universal.webp" alt="Pillar 04: Universal Outlook (Global Perspective)" loading="lazy" onerror="this.src='/public/images/banner-8.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">pillar-04-universal.webp</div>
+                <div class="file-label">Pillar 04: Universal Outlook (Global Perspective)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/pillars/pillar-04-universal.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>CBSE Science & Tech Laboratories (4 images)</span>
+          <span class="folder-path">public/images/pages/home/laboratories/</span>
+        </div>
+        <p class="section-desc">The 4 central experimental laboratories on the Home page.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/laboratories/physics-lab.jpg" alt="Physics Laboratory" loading="lazy" onerror="this.src='/public/images/phys.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">physics-lab.jpg</div>
+                <div class="file-label">Physics Laboratory</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 207 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/laboratories/physics-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/laboratories/chemistry-lab.jpg" alt="Chemistry Laboratory" loading="lazy" onerror="this.src='/public/images/CHEM1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">chemistry-lab.jpg</div>
+                <div class="file-label">Chemistry Laboratory</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 55 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/laboratories/chemistry-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/laboratories/biology-lab.jpg" alt="Biology Laboratory" loading="lazy" onerror="this.src='/public/images/biology-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">biology-lab.jpg</div>
+                <div class="file-label">Biology Laboratory</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 177 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/laboratories/biology-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/laboratories/it-lab.jpg" alt="IT & Computer Science Laboratory" loading="lazy" onerror="this.src='/public/images/it-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">it-lab.jpg</div>
+                <div class="file-label">IT & Computer Science Laboratory</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 118 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/laboratories/it-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Leadership & Spiritual Direction (4 images)</span>
+          <span class="folder-path">public/images/pages/home/leadership/</span>
+        </div>
+        <p class="section-desc">Principal Smt. Dimple Mistry, Gurudev Swami Chinmayananda, and boardroom.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/leadership/principal-square.webp" alt="Principal Smt. Dimple Mistry (Square WebP)" loading="lazy" onerror="this.src='/public/images/principal_dimple_mistry_square.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">principal-square.webp</div>
+                <div class="file-label">Principal Smt. Dimple Mistry (Square WebP)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 93 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/leadership/principal-square.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/leadership/principal-square.jpg" alt="Principal Smt. Dimple Mistry (Square JPEG)" loading="lazy" onerror="this.src='/public/images/principal_dimple_mistry_square.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">principal-square.jpg</div>
+                <div class="file-label">Principal Smt. Dimple Mistry (Square JPEG)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 121 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/leadership/principal-square.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/leadership/conference-room.png" alt="Executive Boardroom Suite" loading="lazy" onerror="this.src='/public/images/board-conference-room.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">conference-room.png</div>
+                <div class="file-label">Executive Boardroom Suite</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1872 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/leadership/conference-room.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/leadership/swami-chinmayananda.webp" alt="Pujya Gurudev Swami Chinmayananda" loading="lazy" onerror="this.src='/public/images/swami_chinmayananda_square.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">swami-chinmayananda.webp</div>
+                <div class="file-label">Pujya Gurudev Swami Chinmayananda</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 194 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/leadership/swami-chinmayananda.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Marquee Gallery Stream (16 images)</span>
+          <span class="folder-path">public/images/pages/home/marquee_gallery/</span>
+        </div>
+        <p class="section-desc">16 distinct school photographs flowing along the S-curve into the 3D gallery folder.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-01-campus.jpg" alt="Main Campus Facade" loading="lazy" onerror="this.src='/public/images/banner-1.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-01-campus.jpg</div>
+                <div class="file-label">Main Campus Facade</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-01-campus.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-02-athletics.jpg" alt="Athletic Meet Track Sprints" loading="lazy" onerror="this.src='/public/images/chinmaya/sports/sports_athletic_meet_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-02-athletics.jpg</div>
+                <div class="file-label">Athletic Meet Track Sprints</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 92 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-02-athletics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-03-physics.jpg" alt="Physics Mechanics Bench" loading="lazy" onerror="this.src='/public/images/phys.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-03-physics.jpg</div>
+                <div class="file-label">Physics Mechanics Bench</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 207 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-03-physics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-04-chemistry.jpg" alt="Chemistry Titration Practical" loading="lazy" onerror="this.src='/public/images/CHEM1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-04-chemistry.jpg</div>
+                <div class="file-label">Chemistry Titration Practical</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 55 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-04-chemistry.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-05-dance.jpg" alt="Classical Indian Dance" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_015.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-05-dance.jpg</div>
+                <div class="file-label">Classical Indian Dance</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 59 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-05-dance.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-06-biology.jpg" alt="Biology Botanical Specimens" loading="lazy" onerror="this.src='/public/images/biology-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-06-biology.jpg</div>
+                <div class="file-label">Biology Botanical Specimens</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 177 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-06-biology.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-07-it.jpg" alt="Computer Lab Workstations" loading="lazy" onerror="this.src='/public/images/it-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-07-it.jpg</div>
+                <div class="file-label">Computer Lab Workstations</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 118 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-07-it.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-08-library.jpg" alt="Central Library Archive" loading="lazy" onerror="this.src='/public/images/lib.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-08-library.jpg</div>
+                <div class="file-label">Central Library Archive</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 247 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-08-library.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-09-sports.webp" alt="House Championship Podiums" loading="lazy" onerror="this.src='/public/images/banner-8.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-09-sports.webp</div>
+                <div class="file-label">House Championship Podiums</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-09-sports.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-10-science.jpg" alt="Science & Innovation Fair" loading="lazy" onerror="this.src='/public/images/chinmaya-web-science.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-10-science.jpg</div>
+                <div class="file-label">Science & Innovation Fair</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-10-science.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-11-pooja.webp" alt="Guru Paduka Pooja Assembly" loading="lazy" onerror="this.src='/public/images/guru-paduka-pooja.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-11-pooja.webp</div>
+                <div class="file-label">Guru Paduka Pooja Assembly</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 261 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-11-pooja.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-12-tour.jpg" alt="Educational Field Excursion" loading="lazy" onerror="this.src='/public/images/tour.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-12-tour.jpg</div>
+                <div class="file-label">Educational Field Excursion</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 53 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-12-tour.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-13-building.jpeg" alt="Academic Campus Wings" loading="lazy" onerror="this.src='/public/images/about2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-13-building.jpeg</div>
+                <div class="file-label">Academic Campus Wings</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 192 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-13-building.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-14-values.jpeg" alt="Moral & Value Education" loading="lazy" onerror="this.src='/public/images/banner-4.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-14-values.jpeg</div>
+                <div class="file-label">Moral & Value Education</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 51 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-14-values.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-15-leadership.jpg" alt="Principal Smt. Dimple Mistry" loading="lazy" onerror="this.src='/public/images/chinmaya/leadership/principal_dimple_mistry.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-15-leadership.jpg</div>
+                <div class="file-label">Principal Smt. Dimple Mistry</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 230 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-15-leadership.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/marquee_gallery/stream-16-assembly.jpeg" alt="Morning Prayer Gathering" loading="lazy" onerror="this.src='/public/images/1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-16-assembly.jpeg</div>
+                <div class="file-label">Morning Prayer Gathering</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/marquee_gallery/stream-16-assembly.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>We Value Pillars (4 images)</span>
+          <span class="folder-path">public/images/pages/home/horizontal_values/</span>
+        </div>
+        <p class="section-desc">The 4 core values (Curiosity, Integrity, Excellence, Vitality) and marquee columns.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/horizontal_values/val-01-curiosity.jpg" alt="Value 01: Curiosity (STEM Lab)" loading="lazy" onerror="this.src='/public/images/CHEM1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">val-01-curiosity.jpg</div>
+                <div class="file-label">Value 01: Curiosity (STEM Lab)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 55 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/horizontal_values/val-01-curiosity.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/horizontal_values/val-02-integrity.webp" alt="Value 02: Integrity (Vedic Values)" loading="lazy" onerror="this.src='/public/images/guru-paduka-pooja.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">val-02-integrity.webp</div>
+                <div class="file-label">Value 02: Integrity (Vedic Values)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 261 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/horizontal_values/val-02-integrity.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/horizontal_values/val-03-excellence.webp" alt="Value 03: Excellence (100% AISSE)" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_001.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">val-03-excellence.webp</div>
+                <div class="file-label">Value 03: Excellence (100% AISSE)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 70 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/horizontal_values/val-03-excellence.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/home/horizontal_values/val-04-vitality.webp" alt="Value 04: Vitality (Sports & Athletics)" loading="lazy" onerror="this.src='/public/images/banner-8.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">val-04-vitality.webp</div>
+                <div class="file-label">Value 04: Vitality (Sports & Athletics)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/home/horizontal_values/val-04-vitality.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-about" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">About Us (/about/*)</h2>
+        <span class="page-badge">public/images/pages/about/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>School History & 3D Visual Stream (21 images)</span>
+          <span class="folder-path">public/images/pages/about/history/</span>
+        </div>
+        <p class="section-desc">Archival genesis, milestones, and the 24-photo non-mirrored 3D stream corridor.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/history-hero.jpeg" alt="School Architectural Profile" loading="lazy" onerror="this.src='/public/images/about2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">history-hero.jpeg</div>
+                <div class="file-label">School Architectural Profile</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 192 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/history-hero.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/campus-building.jpg" alt="Main Campus Building" loading="lazy" onerror="this.src='/public/images/about2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">campus-building.jpg</div>
+                <div class="file-label">Main Campus Building</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 192 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/campus-building.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/swami-inspiration.jpeg" alt="Founder Inspiration" loading="lazy" onerror="this.src='/public/images/swami.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">swami-inspiration.jpeg</div>
+                <div class="file-label">Founder Inspiration</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 229 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/swami-inspiration.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-01-biology.jpg" alt="Stream: Biology Laboratory" loading="lazy" onerror="this.src='/public/images/biology-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-01-biology.jpg</div>
+                <div class="file-label">Stream: Biology Laboratory</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 177 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-01-biology.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-02-library.jpg" alt="Stream: Knowledge Library" loading="lazy" onerror="this.src='/public/images/lib.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-02-library.jpg</div>
+                <div class="file-label">Stream: Knowledge Library</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 247 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-02-library.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-03-it.jpg" alt="Stream: Computer Coding Center" loading="lazy" onerror="this.src='/public/images/it-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-03-it.jpg</div>
+                <div class="file-label">Stream: Computer Coding Center</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 118 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-03-it.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-04-physics.jpg" alt="Stream: Physics Laboratory" loading="lazy" onerror="this.src='/public/images/phys.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-04-physics.jpg</div>
+                <div class="file-label">Stream: Physics Laboratory</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 207 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-04-physics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-05-chemistry.jpg" alt="Stream: Chemistry Analytical Lab" loading="lazy" onerror="this.src='/public/images/CHEM1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-05-chemistry.jpg</div>
+                <div class="file-label">Stream: Chemistry Analytical Lab</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 55 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-05-chemistry.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-06-pooja.webp" alt="Stream: Spiritual Pooja Assembly" loading="lazy" onerror="this.src='/public/images/guru-paduka-pooja.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-06-pooja.webp</div>
+                <div class="file-label">Stream: Spiritual Pooja Assembly</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 261 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-06-pooja.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-07-sports.jpg" alt="Stream: Athletics Championship" loading="lazy" onerror="this.src='/public/images/chinmaya/sports/sports_athletic_meet_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-07-sports.jpg</div>
+                <div class="file-label">Stream: Athletics Championship</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 92 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-07-sports.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-08-cultural.jpg" alt="Stream: Cultural Folk Dance" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-08-cultural.jpg</div>
+                <div class="file-label">Stream: Cultural Folk Dance</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-08-cultural.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-09-smartclass.jpg" alt="Stream: Interactive Smart Class" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_003.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-09-smartclass.jpg</div>
+                <div class="file-label">Stream: Interactive Smart Class</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 82 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-09-smartclass.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-10-optics.jpg" alt="Stream: Optics Experimentation" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_007.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-10-optics.jpg</div>
+                <div class="file-label">Stream: Optics Experimentation</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-10-optics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-11-reading.jpg" alt="Stream: Reading Cubicles" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_010.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-11-reading.jpg</div>
+                <div class="file-label">Stream: Reading Cubicles</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 76 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-11-reading.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-12-seminar.jpg" alt="Stream: Student Debating Seminar" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_028.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-12-seminar.jpg</div>
+                <div class="file-label">Stream: Student Debating Seminar</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-12-seminar.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-13-exams.jpg" alt="Stream: Board Examination Focus" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_030.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-13-exams.jpg</div>
+                <div class="file-label">Stream: Board Examination Focus</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 78 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-13-exams.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-14-robotics.jpg" alt="Stream: STEM Hardware Robotics" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_050.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-14-robotics.jpg</div>
+                <div class="file-label">Stream: STEM Hardware Robotics</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 54 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-14-robotics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-15-dance.jpg" alt="Stream: Classical Youth Dance" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_015.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-15-dance.jpg</div>
+                <div class="file-label">Stream: Classical Youth Dance</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 59 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-15-dance.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-16-choir.jpg" alt="Stream: Devotional Choral Choir" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_040.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-16-choir.jpg</div>
+                <div class="file-label">Stream: Devotional Choral Choir</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 80 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-16-choir.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-17-principal.jpg" alt="Stream: Principal Leadership" loading="lazy" onerror="this.src='/public/images/chinmaya/leadership/principal_dimple_mistry.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-17-principal.jpg</div>
+                <div class="file-label">Stream: Principal Leadership</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 230 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-17-principal.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/history/stream-18-quadrangle.jpg" alt="Stream: Campus Quadrangle" loading="lazy" onerror="this.src='/public/images/chinmaya/campus/campus_facilities_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-18-quadrangle.jpg</div>
+                <div class="file-label">Stream: Campus Quadrangle</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 104 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/history/stream-18-quadrangle.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Vision & Mission (3 images)</span>
+          <span class="folder-path">public/images/pages/about/mission_vision/</span>
+        </div>
+        <p class="section-desc">Vision statement, value education ethos, and Gurudev's noble direction.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mission_vision/swami-vision.jpeg" alt="Swami Chinmayananda Vision Portrait" loading="lazy" onerror="this.src='/public/images/swami.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">swami-vision.jpeg</div>
+                <div class="file-label">Swami Chinmayananda Vision Portrait</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 229 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mission_vision/swami-vision.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mission_vision/swami-portrait.jpg" alt="Gurudev Formal Portrait" loading="lazy" onerror="this.src='/public/images/swami_chinmayananda_portrait.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">swami-portrait.jpg</div>
+                <div class="file-label">Gurudev Formal Portrait</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 648 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mission_vision/swami-portrait.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mission_vision/holistic-pedagogy.jpeg" alt="Holistic Classroom Learning" loading="lazy" onerror="this.src='/public/images/banner-4.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">holistic-pedagogy.jpeg</div>
+                <div class="file-label">Holistic Classroom Learning</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 51 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mission_vision/holistic-pedagogy.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Board of Management (2 images)</span>
+          <span class="folder-path">public/images/pages/about/management/</span>
+        </div>
+        <p class="section-desc">Governance, executive boardroom, and leadership suite.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/management/executive-boardroom.png" alt="Executive Boardroom Suite" loading="lazy" onerror="this.src='/public/images/board-conference-room.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">executive-boardroom.png</div>
+                <div class="file-label">Executive Boardroom Suite</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1872 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/management/executive-boardroom.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/management/principal-dimple-mistry.jpg" alt="Principal Smt. Dimple Mistry" loading="lazy" onerror="this.src='/public/images/chinmaya/leadership/principal_dimple_mistry.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">principal-dimple-mistry.jpg</div>
+                <div class="file-label">Principal Smt. Dimple Mistry</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 230 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/management/principal-dimple-mistry.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Spiritual Founder (Pujya Gurudev) (3 images)</span>
+          <span class="folder-path">public/images/pages/about/swami_chinmayananda/</span>
+        </div>
+        <p class="section-desc">Portraits, teachings, and Himalayan spiritual heritage.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/swami_chinmayananda/gurudev-square.webp" alt="Gurudev Swami Chinmayananda (Square)" loading="lazy" onerror="this.src='/public/images/swami_chinmayananda_square.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">gurudev-square.webp</div>
+                <div class="file-label">Gurudev Swami Chinmayananda (Square)</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 194 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/swami_chinmayananda/gurudev-square.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/swami_chinmayananda/gurudev-portrait.jpg" alt="Swami Chinmayananda Full Portrait" loading="lazy" onerror="this.src='/public/images/swami_chinmayananda_portrait.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">gurudev-portrait.jpg</div>
+                <div class="file-label">Swami Chinmayananda Full Portrait</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 648 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/swami_chinmayananda/gurudev-portrait.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/swami_chinmayananda/gurudev-himalaya.webp" alt="Gurudev in the Himalayas" loading="lazy" onerror="this.src='/public/images/swami_himalaya_square.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">gurudev-himalaya.webp</div>
+                <div class="file-label">Gurudev in the Himalayas</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 177 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/swami_chinmayananda/gurudev-himalaya.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Mandatory Public Disclosures (5 images)</span>
+          <span class="folder-path">public/images/pages/about/mandatory_information/</span>
+        </div>
+        <p class="section-desc">Official CBSE certificates, land, building safety, sanitation, and affiliation letters.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mandatory_information/affiliation-letter.jpg" alt="CBSE Composite Affiliation Document" loading="lazy" onerror="this.src='/public/images/affliation.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">affiliation-letter.jpg</div>
+                <div class="file-label">CBSE Composite Affiliation Document</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 283 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mandatory_information/affiliation-letter.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mandatory_information/fire-safety.jpeg" alt="Fire Safety Certificate" loading="lazy" onerror="this.src='/public/images/FIRE SAFETY.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">fire-safety.jpeg</div>
+                <div class="file-label">Fire Safety Certificate</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 185 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mandatory_information/fire-safety.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mandatory_information/building-safety.png" alt="Building Safety Certificate" loading="lazy" onerror="this.src='/public/images/building-safety-certificate.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">building-safety.png</div>
+                <div class="file-label">Building Safety Certificate</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 70 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mandatory_information/building-safety.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mandatory_information/rte-recognition.png" alt="RTE Recognition Document" loading="lazy" onerror="this.src='/public/images/recognition-certificate-under-rte.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">rte-recognition.png</div>
+                <div class="file-label">RTE Recognition Document</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 78 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mandatory_information/rte-recognition.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/about/mandatory_information/trust-registration.png" alt="Trust Registration Document" loading="lazy" onerror="this.src='/public/images/trust-registration-document.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">trust-registration.png</div>
+                <div class="file-label">Trust Registration Document</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 57 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/about/mandatory_information/trust-registration.png</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-academics" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">Academics (/academics/*)</h2>
+        <span class="page-badge">public/images/pages/academics/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>CBSE Scholastic Framework Overview (3 images)</span>
+          <span class="folder-path">public/images/pages/academics/curriculum/</span>
+        </div>
+        <p class="section-desc">Nursery to Senior Secondary (Science, Commerce, Arts) foundational visuals.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/curriculum/classroom-learning.webp" alt="Primary Scholastic Classroom" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_001.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">classroom-learning.webp</div>
+                <div class="file-label">Primary Scholastic Classroom</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 70 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/curriculum/classroom-learning.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/curriculum/smart-board.jpg" alt="Smart Board Interactive Pedagogy" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_003.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">smart-board.jpg</div>
+                <div class="file-label">Smart Board Interactive Pedagogy</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 82 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/curriculum/smart-board.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/curriculum/stem-research.jpg" alt="STEM Prototyping & Circuits" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_050.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stem-research.jpg</div>
+                <div class="file-label">STEM Prototyping & Circuits</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 54 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/curriculum/stem-research.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Curriculum 3D Sphere (48 Unique Photos - Zero Duplicacy) (48 images)</span>
+          <span class="folder-path">public/images/pages/academics/sphere_3d/</span>
+        </div>
+        <p class="section-desc">Complete 48-photo interactive virtual 3D sphere showcasing all academic disciplines, practical labs, sports, arts, and spiritual heritage.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-01.jpeg" alt="Sphere Node 01: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-01.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-01.jpeg</div>
+                <div class="file-label">Sphere Node 01: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 207 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-01.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-02.jpeg" alt="Sphere Node 02: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-02.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-02.jpeg</div>
+                <div class="file-label">Sphere Node 02: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 55 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-02.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-03.jpg" alt="Sphere Node 03: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-03.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-03.jpg</div>
+                <div class="file-label">Sphere Node 03: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 177 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-03.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-04.jpg" alt="Sphere Node 04: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-04.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-04.jpg</div>
+                <div class="file-label">Sphere Node 04: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 118 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-04.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-05.jpg" alt="Sphere Node 05: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-05.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-05.jpg</div>
+                <div class="file-label">Sphere Node 05: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 247 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-05.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-06.jpg" alt="Sphere Node 06: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-06.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-06.jpg</div>
+                <div class="file-label">Sphere Node 06: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-06.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-07.jpg" alt="Sphere Node 07: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-07.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-07.jpg</div>
+                <div class="file-label">Sphere Node 07: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 96 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-07.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-08.jpg" alt="Sphere Node 08: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-08.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-08.jpg</div>
+                <div class="file-label">Sphere Node 08: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 56 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-08.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-09.jpg" alt="Sphere Node 09: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-09.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-09.jpg</div>
+                <div class="file-label">Sphere Node 09: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 82 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-09.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-10.jpg" alt="Sphere Node 10: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-10.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-10.jpg</div>
+                <div class="file-label">Sphere Node 10: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-10.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-11.jpg" alt="Sphere Node 11: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-11.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-11.jpg</div>
+                <div class="file-label">Sphere Node 11: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 48 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-11.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-12.jpg" alt="Sphere Node 12: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-12.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-12.jpg</div>
+                <div class="file-label">Sphere Node 12: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 83 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-12.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-13.jpg" alt="Sphere Node 13: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-13.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-13.jpg</div>
+                <div class="file-label">Sphere Node 13: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-13.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-14.jpg" alt="Sphere Node 14: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-14.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-14.jpg</div>
+                <div class="file-label">Sphere Node 14: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 66 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-14.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-15.jpg" alt="Sphere Node 15: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-15.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-15.jpg</div>
+                <div class="file-label">Sphere Node 15: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 70 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-15.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-16.jpg" alt="Sphere Node 16: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-16.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-16.jpg</div>
+                <div class="file-label">Sphere Node 16: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 76 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-16.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-17.jpg" alt="Sphere Node 17: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-17.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-17.jpg</div>
+                <div class="file-label">Sphere Node 17: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 66 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-17.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-18.jpg" alt="Sphere Node 18: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-18.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-18.jpg</div>
+                <div class="file-label">Sphere Node 18: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-18.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-19.jpg" alt="Sphere Node 19: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-19.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-19.jpg</div>
+                <div class="file-label">Sphere Node 19: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 80 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-19.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-20.jpg" alt="Sphere Node 20: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-20.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-20.jpg</div>
+                <div class="file-label">Sphere Node 20: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 70 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-20.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-21.jpg" alt="Sphere Node 21: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-21.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-21.jpg</div>
+                <div class="file-label">Sphere Node 21: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 79 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-21.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-22.jpg" alt="Sphere Node 22: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-22.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-22.jpg</div>
+                <div class="file-label">Sphere Node 22: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 94 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-22.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-23.jpg" alt="Sphere Node 23: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-23.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-23.jpg</div>
+                <div class="file-label">Sphere Node 23: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 81 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-23.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-24.jpg" alt="Sphere Node 24: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-24.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-24.jpg</div>
+                <div class="file-label">Sphere Node 24: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-24.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-25.jpg" alt="Sphere Node 25: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-25.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-25.jpg</div>
+                <div class="file-label">Sphere Node 25: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 88 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-25.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-26.jpg" alt="Sphere Node 26: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-26.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-26.jpg</div>
+                <div class="file-label">Sphere Node 26: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 89 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-26.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-27.jpg" alt="Sphere Node 27: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-27.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-27.jpg</div>
+                <div class="file-label">Sphere Node 27: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 92 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-27.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-28.jpg" alt="Sphere Node 28: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-28.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-28.jpg</div>
+                <div class="file-label">Sphere Node 28: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 85 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-28.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-29.jpg" alt="Sphere Node 29: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-29.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-29.jpg</div>
+                <div class="file-label">Sphere Node 29: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 101 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-29.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-30.jpg" alt="Sphere Node 30: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-30.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-30.jpg</div>
+                <div class="file-label">Sphere Node 30: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 121 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-30.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-31.jpg" alt="Sphere Node 31: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-31.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-31.jpg</div>
+                <div class="file-label">Sphere Node 31: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 112 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-31.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-32.jpg" alt="Sphere Node 32: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-32.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-32.jpg</div>
+                <div class="file-label">Sphere Node 32: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 59 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-32.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-33.jpg" alt="Sphere Node 33: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-33.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-33.jpg</div>
+                <div class="file-label">Sphere Node 33: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 120 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-33.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-34.jpg" alt="Sphere Node 34: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-34.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-34.jpg</div>
+                <div class="file-label">Sphere Node 34: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 98 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-34.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-35.webp" alt="Sphere Node 35: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-35.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-35.webp</div>
+                <div class="file-label">Sphere Node 35: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-35.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-36.webp" alt="Sphere Node 36: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-36.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-36.webp</div>
+                <div class="file-label">Sphere Node 36: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 44 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-36.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-37.jpg" alt="Sphere Node 37: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-37.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-37.jpg</div>
+                <div class="file-label">Sphere Node 37: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-37.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-38.jpg" alt="Sphere Node 38: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-38.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-38.jpg</div>
+                <div class="file-label">Sphere Node 38: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 60 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-38.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-39.jpg" alt="Sphere Node 39: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-39.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-39.jpg</div>
+                <div class="file-label">Sphere Node 39: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 68 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-39.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-40.jpg" alt="Sphere Node 40: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-40.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-40.jpg</div>
+                <div class="file-label">Sphere Node 40: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 64 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-40.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-41.jpg" alt="Sphere Node 41: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-41.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-41.jpg</div>
+                <div class="file-label">Sphere Node 41: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 69 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-41.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-42.webp" alt="Sphere Node 42: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-42.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-42.webp</div>
+                <div class="file-label">Sphere Node 42: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 261 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-42.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-43.webp" alt="Sphere Node 43: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-43.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-43.webp</div>
+                <div class="file-label">Sphere Node 43: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1152 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-43.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-44.jpeg" alt="Sphere Node 44: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-44.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-44.jpeg</div>
+                <div class="file-label">Sphere Node 44: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 51 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-44.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-45.jpg" alt="Sphere Node 45: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-45.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-45.jpg</div>
+                <div class="file-label">Sphere Node 45: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 104 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-45.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-46.jpg" alt="Sphere Node 46: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-46.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-46.jpg</div>
+                <div class="file-label">Sphere Node 46: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 98 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-46.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-47.jpg" alt="Sphere Node 47: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-47.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-47.jpg</div>
+                <div class="file-label">Sphere Node 47: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 230 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-47.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/sphere_3d/sphere-48.webp" alt="Sphere Node 48: Academic & Campus Milestone" loading="lazy" onerror="this.src='/public/images/pages/academics/curriculum/sphere_images/sphere-48.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sphere-48.webp</div>
+                <div class="file-label">Sphere Node 48: Academic & Campus Milestone</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 194 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/sphere_3d/sphere-48.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Co-Curricular & House Activities (6 images)</span>
+          <span class="folder-path">public/images/pages/academics/co_curricular/</span>
+        </div>
+        <p class="section-desc">Performing arts, music, dance, elocution, athletics, and cultural competitions.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/co_curricular/annual-athletics.webp" alt="Annual Sports Meet Podiums" loading="lazy" onerror="this.src='/public/images/banner-8.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">annual-athletics.webp</div>
+                <div class="file-label">Annual Sports Meet Podiums</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/co_curricular/annual-athletics.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/co_curricular/cultural-fest.jpeg" alt="Values & Heritage Celebrations" loading="lazy" onerror="this.src='/public/images/banner-4.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">cultural-fest.jpeg</div>
+                <div class="file-label">Values & Heritage Celebrations</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 51 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/co_curricular/cultural-fest.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/co_curricular/annual-theatre.webp" alt="Annual Day Theatrical Stage" loading="lazy" onerror="this.src='/public/images/banner-9.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">annual-theatre.webp</div>
+                <div class="file-label">Annual Day Theatrical Stage</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1152 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/co_curricular/annual-theatre.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/co_curricular/nature-excursion.webp" alt="Educational Tour & Excursion" loading="lazy" onerror="this.src='/public/images/tour.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">nature-excursion.webp</div>
+                <div class="file-label">Educational Tour & Excursion</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 44 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/co_curricular/nature-excursion.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/co_curricular/track-sprint.jpg" alt="Track Athletics Meet" loading="lazy" onerror="this.src='/public/images/chinmaya/sports/sports_athletic_meet_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">track-sprint.jpg</div>
+                <div class="file-label">Track Athletics Meet</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 92 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/co_curricular/track-sprint.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/co_curricular/folk-dance.jpg" alt="Classical & Folk Dance Group" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">folk-dance.jpg</div>
+                <div class="file-label">Classical & Folk Dance Group</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/co_curricular/folk-dance.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Laboratories & Infrastructure (5 images)</span>
+          <span class="folder-path">public/images/pages/academics/laboratories/</span>
+        </div>
+        <p class="section-desc">Experimental science laboratories, robotics center, and central knowledge library.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/laboratories/physics-lab.jpg" alt="Physics Mechanics & Optics Lab" loading="lazy" onerror="this.src='/public/images/phys.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">physics-lab.jpg</div>
+                <div class="file-label">Physics Mechanics & Optics Lab</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 207 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/laboratories/physics-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/laboratories/chemistry-lab.jpg" alt="Chemistry Reagent & Titration Lab" loading="lazy" onerror="this.src='/public/images/CHEM1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">chemistry-lab.jpg</div>
+                <div class="file-label">Chemistry Reagent & Titration Lab</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 55 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/laboratories/chemistry-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/laboratories/biology-lab.jpg" alt="Biology Compound Microscopy Lab" loading="lazy" onerror="this.src='/public/images/biology-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">biology-lab.jpg</div>
+                <div class="file-label">Biology Compound Microscopy Lab</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 177 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/laboratories/biology-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/laboratories/it-lab.jpg" alt="Computer Science & IT Coding Center" loading="lazy" onerror="this.src='/public/images/it-lab.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">it-lab.jpg</div>
+                <div class="file-label">Computer Science & IT Coding Center</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 118 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/laboratories/it-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/laboratories/library.jpg" alt="Central Reference Knowledge Library" loading="lazy" onerror="this.src='/public/images/lib.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">library.jpg</div>
+                <div class="file-label">Central Reference Knowledge Library</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 247 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/laboratories/library.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Faculty & Academic Mentorship (3 images)</span>
+          <span class="folder-path">public/images/pages/academics/faculty/</span>
+        </div>
+        <p class="section-desc">Educators, leadership, and teaching staff.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/faculty/principal.webp" alt="Principal Smt. Dimple Mistry" loading="lazy" onerror="this.src='/public/images/chinmaya/leadership/principal_dimple_mistry.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">principal.webp</div>
+                <div class="file-label">Principal Smt. Dimple Mistry</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 150 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/faculty/principal.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/faculty/teaching-staff.png" alt="Teaching Staff Faculty" loading="lazy" onerror="this.src='/public/images/teaching-staff.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">teaching-staff.png</div>
+                <div class="file-label">Teaching Staff Faculty</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 2 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/faculty/teaching-staff.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/academics/faculty/non-teaching-staff.png" alt="Administrative & Support Staff" loading="lazy" onerror="this.src='/public/images/non-teaching-staff.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">non-teaching-staff.png</div>
+                <div class="file-label">Administrative & Support Staff</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 2 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/academics/faculty/non-teaching-staff.png</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-admissions" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">Admissions (/admissions/*)</h2>
+        <span class="page-badge">public/images/pages/admissions/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>Admission Guidelines & Process (3 images)</span>
+          <span class="folder-path">public/images/pages/admissions/guidelines/</span>
+        </div>
+        <p class="section-desc">Admissions information, campus walkthrough, and eligibility standards.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/admissions/guidelines/admissions-hero.jpg" alt="Admissions Campus Overview" loading="lazy" onerror="this.src='/public/images/banner-1.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">admissions-hero.jpg</div>
+                <div class="file-label">Admissions Campus Overview</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/admissions/guidelines/admissions-hero.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/admissions/guidelines/classroom-walkthrough.webp" alt="Classroom Learning Environment" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_001.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">classroom-walkthrough.webp</div>
+                <div class="file-label">Classroom Learning Environment</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 70 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/admissions/guidelines/classroom-walkthrough.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/admissions/guidelines/registration-desk.png" alt="Admissions Desk Information" loading="lazy" onerror="this.src='/public/images/admission-form-placeholder.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">registration-desk.png</div>
+                <div class="file-label">Admissions Desk Information</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 71 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/admissions/guidelines/registration-desk.png</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Fee Structure (1 images)</span>
+          <span class="folder-path">public/images/pages/admissions/fee_structure/</span>
+        </div>
+        <p class="section-desc">Official fee schedule and administrative breakdown.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/admissions/fee_structure/fees-schedule.jpg" alt="Annual Fee Structure Document" loading="lazy" onerror="this.src='/public/images/fees-structure.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">fees-schedule.jpg</div>
+                <div class="file-label">Annual Fee Structure Document</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 210 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/admissions/fee_structure/fees-schedule.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Academic Calendar & School Diary (2 images)</span>
+          <span class="folder-path">public/images/pages/admissions/calendar/</span>
+        </div>
+        <p class="section-desc">Term schedule, examination windows, and interactive 3D school diary cover.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/admissions/calendar/school-diary-3d-cover.png" alt="Official 3D School Diary Cover" loading="lazy" onerror="this.src='/public/images/school-diary-cover.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">school-diary-3d-cover.png</div>
+                <div class="file-label">Official 3D School Diary Cover</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 349 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/admissions/calendar/school-diary-3d-cover.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/admissions/calendar/academic-calendar.png" alt="Annual Academic Schedule" loading="lazy" onerror="this.src='/public/images/academic-calendar.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">academic-calendar.png</div>
+                <div class="file-label">Annual Academic Schedule</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 175 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/admissions/calendar/academic-calendar.png</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-features" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">Unique Features (/features/*)</h2>
+        <span class="page-badge">public/images/pages/features/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>Spiritual Culture & Vedic Traditions (4 images)</span>
+          <span class="folder-path">public/images/pages/features/spiritual_activities/</span>
+        </div>
+        <p class="section-desc">Guru Paduka Pooja, Gita chanting, morning shlokas, and cultural values.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/spiritual_activities/paduka-pooja.webp" alt="Guru Paduka Pooja Sacred Ceremony" loading="lazy" onerror="this.src='/public/images/guru-paduka-pooja.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">paduka-pooja.webp</div>
+                <div class="file-label">Guru Paduka Pooja Sacred Ceremony</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 261 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/spiritual_activities/paduka-pooja.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/spiritual_activities/morning-assembly.jpeg" alt="Morning Prayer & Vedic Chanting" loading="lazy" onerror="this.src='/public/images/1.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">morning-assembly.jpeg</div>
+                <div class="file-label">Morning Prayer & Vedic Chanting</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/spiritual_activities/morning-assembly.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/spiritual_activities/puja-ceremony.png" alt="Sacred Pooja Ceremony" loading="lazy" onerror="this.src='/public/images/puja-ceremony-cutout.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">puja-ceremony.png</div>
+                <div class="file-label">Sacred Pooja Ceremony</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 2209 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/spiritual_activities/puja-ceremony.png</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/spiritual_activities/gurudev-vision.webp" alt="Param Pujya Gurudev Vision" loading="lazy" onerror="this.src='/public/images/swami_chinmayananda_square.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">gurudev-vision.webp</div>
+                <div class="file-label">Param Pujya Gurudev Vision</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 194 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/spiritual_activities/gurudev-vision.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Career Guidance & Aptitude Seminars (2 images)</span>
+          <span class="folder-path">public/images/pages/features/career_counselling/</span>
+        </div>
+        <p class="section-desc">Higher secondary stream workshops, entrance exam guidance, and career seminars.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/career_counselling/stream-seminar.jpg" alt="Higher Secondary Stream Seminar" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_028.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stream-seminar.jpg</div>
+                <div class="file-label">Higher Secondary Stream Seminar</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/career_counselling/stream-seminar.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/career_counselling/exam-preparation.jpg" alt="Competitive Entrance Preparation" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_030.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">exam-preparation.jpg</div>
+                <div class="file-label">Competitive Entrance Preparation</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 78 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/career_counselling/exam-preparation.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Central Reference Library (2 images)</span>
+          <span class="folder-path">public/images/pages/features/library/</span>
+        </div>
+        <p class="section-desc">Repository of 10,000+ volumes, CBSE study materials, and quiet study areas.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/library/central-library.jpg" alt="Central Knowledge Repository" loading="lazy" onerror="this.src='/public/images/lib.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">central-library.jpg</div>
+                <div class="file-label">Central Knowledge Repository</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 247 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/library/central-library.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/features/library/reading-lounge.jpg" alt="Quiet Reference Cubicles" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_010.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">reading-lounge.jpg</div>
+                <div class="file-label">Quiet Reference Cubicles</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 76 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/features/library/reading-lounge.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-news_events" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">News & Events (/news/*)</h2>
+        <span class="page-badge">public/images/pages/news_events/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>School Events & Milestones (3 images)</span>
+          <span class="folder-path">public/images/pages/news_events/latest_updates/</span>
+        </div>
+        <p class="section-desc">Annual Day festivities, Science Fair, and inter-house athletics.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/news_events/latest_updates/annual-day.webp" alt="Annual Day Grand Finale" loading="lazy" onerror="this.src='/public/images/banner-9.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">annual-day.webp</div>
+                <div class="file-label">Annual Day Grand Finale</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1152 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/news_events/latest_updates/annual-day.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/news_events/latest_updates/sports-championship.webp" alt="Annual Sports Meet Championship" loading="lazy" onerror="this.src='/public/images/banner-8.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">sports-championship.webp</div>
+                <div class="file-label">Annual Sports Meet Championship</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/news_events/latest_updates/sports-championship.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/news_events/latest_updates/science-fair.jpg" alt="Science & Innovation Fair" loading="lazy" onerror="this.src='/public/images/chinmaya-web-science.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">science-fair.jpg</div>
+                <div class="file-label">Science & Innovation Fair</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 420 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/news_events/latest_updates/science-fair.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Festivals & Celebrations (2 images)</span>
+          <span class="folder-path">public/images/pages/news_events/festivals/</span>
+        </div>
+        <p class="section-desc">Gurudev Jayanti, Sanskrit Diwas, and national festival celebrations.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/news_events/festivals/cultural-celebration.jpg" alt="Cultural Heritage Performance" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">cultural-celebration.jpg</div>
+                <div class="file-label">Cultural Heritage Performance</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/news_events/festivals/cultural-celebration.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/news_events/festivals/jal-pakhwada-poster.jpeg" alt="Jal Pakhwada Environmental Campaign" loading="lazy" onerror="this.src='/public/images/jal-pakhwada-poster.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">jal-pakhwada-poster.jpeg</div>
+                <div class="file-label">Jal Pakhwada Environmental Campaign</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 108 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/news_events/festivals/jal-pakhwada-poster.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-gallery" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">Photo Gallery (/gallery)</h2>
+        <span class="page-badge">public/images/pages/gallery/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>Academics & Science Practicals (4 images)</span>
+          <span class="folder-path">public/images/pages/gallery/academics/</span>
+        </div>
+        <p class="section-desc">Classroom learning, robotics workshops, and experimental laboratories.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/academics/classroom-01.jpg" alt="Microscopy & Life Sciences" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">classroom-01.jpg</div>
+                <div class="file-label">Microscopy & Life Sciences</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 96 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/academics/classroom-01.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/academics/classroom-02.jpg" alt="Interactive Smart Board" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_003.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">classroom-02.jpg</div>
+                <div class="file-label">Interactive Smart Board</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 82 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/academics/classroom-02.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/academics/optics-lab.jpg" alt="Optics Physics Workbench" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_007.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">optics-lab.jpg</div>
+                <div class="file-label">Optics Physics Workbench</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 86 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/academics/optics-lab.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/academics/stem-robotics.jpg" alt="STEM Prototyping Workshop" loading="lazy" onerror="this.src='/public/images/chinmaya/academics/classroom_learning_050.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">stem-robotics.jpg</div>
+                <div class="file-label">STEM Prototyping Workshop</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 54 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/academics/stem-robotics.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Sports & House Tournaments (4 images)</span>
+          <span class="folder-path">public/images/pages/gallery/sports/</span>
+        </div>
+        <p class="section-desc">Athletics track meet, relay races, march past, and trophy presentations.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/sports/athletic-meet.jpg" alt="Track Athletics Sprints" loading="lazy" onerror="this.src='/public/images/chinmaya/sports/sports_athletic_meet_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">athletic-meet.jpg</div>
+                <div class="file-label">Track Athletics Sprints</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 92 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/sports/athletic-meet.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/sports/relay-race.jpg" alt="Baton Relay Championship" loading="lazy" onerror="this.src='/public/images/chinmaya/sports/sports_athletic_meet_002.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">relay-race.jpg</div>
+                <div class="file-label">Baton Relay Championship</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 85 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/sports/relay-race.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/sports/march-past.jpg" alt="House March Past Parade" loading="lazy" onerror="this.src='/public/images/chinmaya/sports/sports_athletic_meet_003.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">march-past.jpg</div>
+                <div class="file-label">House March Past Parade</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 101 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/sports/march-past.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/sports/victory-podium.webp" alt="House Trophy Presentations" loading="lazy" onerror="this.src='/public/images/banner-8.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">victory-podium.webp</div>
+                <div class="file-label">House Trophy Presentations</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1278 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/sports/victory-podium.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Cultural & Devotional Celebrations (3 images)</span>
+          <span class="folder-path">public/images/pages/gallery/cultural/</span>
+        </div>
+        <p class="section-desc">Classical dance, annual day theatre, choir, and Guru Paduka Pooja.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/cultural/classical-dance.jpg" alt="Classical Bharatanatyam Dance" loading="lazy" onerror="this.src='/public/images/chinmaya/cultural/cultural_celebration_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">classical-dance.jpg</div>
+                <div class="file-label">Classical Bharatanatyam Dance</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 67 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/cultural/classical-dance.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/cultural/theatre-drama.webp" alt="Annual Day Theatrical Drama" loading="lazy" onerror="this.src='/public/images/banner-9.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">theatre-drama.webp</div>
+                <div class="file-label">Annual Day Theatrical Drama</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 1152 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/cultural/theatre-drama.webp</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/cultural/guru-paduka-pooja.webp" alt="Guru Paduka Pooja Sacred Assembly" loading="lazy" onerror="this.src='/public/images/guru-paduka-pooja.webp'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">guru-paduka-pooja.webp</div>
+                <div class="file-label">Guru Paduka Pooja Sacred Assembly</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 261 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/cultural/guru-paduka-pooja.webp</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="section-box">
+        <div class="section-title">
+          <span>Campus & Architecture (3 images)</span>
+          <span class="folder-path">public/images/pages/gallery/campus/</span>
+        </div>
+        <p class="section-desc">Sprawling educational grounds, library, and modern infrastructure.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/campus/academic-wings.jpeg" alt="Main Academic Building Wings" loading="lazy" onerror="this.src='/public/images/about2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">academic-wings.jpeg</div>
+                <div class="file-label">Main Academic Building Wings</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 192 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/campus/academic-wings.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/campus/landscaped-quadrangle.jpg" alt="Lush Green Quadrangle" loading="lazy" onerror="this.src='/public/images/chinmaya/campus/campus_facilities_001.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">landscaped-quadrangle.jpg</div>
+                <div class="file-label">Lush Green Quadrangle</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 104 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/campus/landscaped-quadrangle.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/gallery/campus/central-library.jpg" alt="Central Knowledge Library" loading="lazy" onerror="this.src='/public/images/lib.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">central-library.jpg</div>
+                <div class="file-label">Central Knowledge Library</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 247 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/gallery/campus/central-library.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    <div id="page-contact" class="page-section-block">
+      <div class="page-header">
+        <h2 class="page-title">Contact & Administration (/contact)</h2>
+        <span class="page-badge">public/images/pages/contact/</span>
+      </div>
+    
+      <div class="section-box">
+        <div class="section-title">
+          <span>Campus Location & Front Desk (3 images)</span>
+          <span class="folder-path">public/images/pages/contact/location/</span>
+        </div>
+        <p class="section-desc">MIDC Boisar campus, administrative entrance, and virtual assistance.</p>
+        <div class="grid">
+      
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/contact/location/campus-facade.jpg" alt="Campus Entry & Reception" loading="lazy" onerror="this.src='/public/images/contact.jpg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">campus-facade.jpg</div>
+                <div class="file-label">Campus Entry & Reception</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 311 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/contact/location/campus-facade.jpg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/contact/location/administrative-office.jpeg" alt="Administrative Building" loading="lazy" onerror="this.src='/public/images/about2.jpeg'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">administrative-office.jpeg</div>
+                <div class="file-label">Administrative Building</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 192 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/contact/location/administrative-office.jpeg</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="/images/pages/contact/location/bot-avatar.png" alt="Admissions Assistant Avatar" loading="lazy" onerror="this.src='/public/images/bot-avatar.png'">
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="file-name">bot-avatar.png</div>
+                <div class="file-label">Admissions Assistant Avatar</div>
+              </div>
+              <div>
+                <div class="file-meta">
+                  <span>Size: 564 KB</span>
+                  <span>Unique</span>
+                </div>
+                <div class="file-path">images/pages/contact/location/bot-avatar.png</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+  </div>
+</body>
+</html>

@@ -7,8 +7,7 @@ import 'dotenv/config';
 
 function apiDevPlugin(): Plugin {
   const createApiMiddleware = (server: { middlewares: { use: (fn: any) => void } }) => {
-    const DEFAULT_RESEND_KEY = Buffer.from('cmVfVVphTDJxdEVfRDlyY0tBTlVQTUhSSEJWY01ZNENBUHJU', 'base64').toString('utf-8');
-    const resendApiKey = process.env.RESEND_API_KEY || DEFAULT_RESEND_KEY;
+    const resendApiKey = process.env.RESEND_API_KEY;
     const resend = resendApiKey ? new Resend(resendApiKey) : null;
     const recipientEmail = process.env.ADMISSION_EMAIL || process.env.CONTACT_EMAIL || 'cvmedia1995@gmail.com';
     const senderEmail = process.env.RESEND_FROM_EMAIL || 'Chinmaya Vidyalaya Tarapur <onboarding@resend.dev>';
@@ -79,16 +78,6 @@ function apiDevPlugin(): Plugin {
                   subject: `[Contact Enquiry] ${subject} - ${fullName}`,
                   text: `New Contact Enquiry\n\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nSubject: ${subject}\n\nMessage:\n${message}`,
                 });
-                if (sendRes.error && (sendRes.error as any).message?.includes('blinkbeyond1@gmail.com')) {
-                  console.warn('[Vite Dev Resend Sandbox] Delivering to registered test owner blinkbeyond1@gmail.com');
-                  sendRes = await resend.emails.send({
-                    from: senderEmail,
-                    to: ['blinkbeyond1@gmail.com'],
-                    replyTo: email,
-                    subject: `[Contact Enquiry -> cvmedia1995@gmail.com] ${subject} - ${fullName}`,
-                    text: `[Intended Recipient: ${recipientEmail}]\n\nNew Contact Enquiry\n\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nSubject: ${subject}\n\nMessage:\n${message}`,
-                  });
-                }
                 if (sendRes.error) {
                   console.error('[Vite Dev Resend Error]', sendRes.error);
                   res.statusCode = 500;
@@ -169,16 +158,6 @@ function apiDevPlugin(): Plugin {
                   subject: `[Admission Enquiry 2026-27] ${grade} - ${studentName}`,
                   text: `New Admission Enquiry\n\nStudent: ${studentName}\nGrade: ${grade}\nParent: ${parentName}\nPhone: ${phone}\nEmail: ${email || 'Not provided'}\n\nMessage/Query:\n${message || 'None'}`,
                 });
-                if (sendRes.error && (sendRes.error as any).message?.includes('blinkbeyond1@gmail.com')) {
-                  console.warn('[Vite Dev Resend Sandbox] Delivering to registered test owner blinkbeyond1@gmail.com');
-                  sendRes = await resend.emails.send({
-                    from: senderEmail,
-                    to: ['blinkbeyond1@gmail.com'],
-                    replyTo: email || undefined,
-                    subject: `[Admission Enquiry -> cvmedia1995@gmail.com] ${grade} - ${studentName}`,
-                    text: `[Intended Recipient: ${recipientEmail}]\n\nNew Admission Enquiry\n\nStudent: ${studentName}\nGrade: ${grade}\nParent: ${parentName}\nPhone: ${phone}\nEmail: ${email || 'Not provided'}\n\nMessage/Query:\n${message || 'None'}`,
-                  });
-                }
                 if (sendRes.error) {
                   console.error('[Vite Dev Resend Error]', sendRes.error);
                   res.statusCode = 500;

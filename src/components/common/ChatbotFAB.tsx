@@ -285,7 +285,7 @@ export const ChatbotFAB: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3 font-sans">
+    <div className="fixed bottom-[74px] sm:bottom-6 right-3 sm:right-6 z-50 flex flex-col items-end gap-2.5 sm:gap-3 font-sans">
       
       {/* Chat Panel */}
       <AnimatePresence>
@@ -308,8 +308,8 @@ export const ChatbotFAB: React.FC = () => {
                 chatBodyRef.current.scrollTop += e.deltaY;
               }
             }}
-            className="w-[calc(100vw-32px)] sm:w-[380px] max-w-[420px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col overscroll-contain"
-            style={{ maxHeight: 'min(580px, calc(100vh - 170px))', overscrollBehavior: 'contain' }}
+            className="w-[calc(100vw-24px)] sm:w-[380px] max-w-[420px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col overscroll-contain"
+            style={{ maxHeight: 'min(580px, calc(100vh - 160px))', overscrollBehavior: 'contain' }}
           >
             {/* Chat Header */}
             <div className="bg-[#0B1D30] text-white px-4 sm:px-5 py-3.5 flex items-center justify-between border-b border-[#182C44] shrink-0">
@@ -545,7 +545,7 @@ export const ChatbotFAB: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className={`relative w-14 h-14 rounded-2xl shadow-xl flex items-center justify-center transition-colors duration-300 ${
+        className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center transition-colors duration-300 ${
           isOpen
             ? 'bg-[#0B1D30] shadow-lg'
             : 'bg-[#DF711B] hover:bg-[#C45B0E] shadow-xl chatbot-breathe'
@@ -561,7 +561,7 @@ export const ChatbotFAB: React.FC = () => {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.div>
           ) : (
             <motion.div
@@ -571,7 +571,7 @@ export const ChatbotFAB: React.FC = () => {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="w-6 h-6 text-white" />
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.div>
           )}
         </AnimatePresence>

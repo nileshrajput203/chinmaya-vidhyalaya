@@ -13,123 +13,173 @@ import {
 import { OFFICIAL_NOTICES } from '../../data/notices';
 
 export const NoticeEventBoard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('notices');
+  const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('events');
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
   
   const upcomingEvents = [
     {
-      id: 'ev-1',
-      title: 'Pujya Gurudev Jayanti & Annual Balvihar Assembly',
-      date: 'May 08, 2026',
-      month: 'May 2026',
-      time: '08:30 AM IST',
-      venue: 'School Main Prayer Auditorium',
-      tag: 'Spiritual Heritage',
-      desc: 'Reverent morning assembly, Paduka Pooja, and Chinmaya Yuva Kendra student presentations.'
-    },
-    {
-      id: 'ev-1b',
-      title: 'Faculty Development & CVP Value Orientation Workshop',
-      date: 'May 22, 2026',
-      month: 'May 2026',
-      time: '09:30 AM IST',
-      venue: 'AV Seminar Hall',
-      tag: 'Academic Rigour',
-      desc: 'Annual pedagogical training on value-integrated lesson plans and experiential learning modules.'
-    },
-    {
-      id: 'ev-2a',
-      title: 'School Reopening & Commencement of Academic Session 2026-27',
-      date: 'June 15, 2026',
-      month: 'June 2026',
-      time: '07:30 AM IST',
-      venue: 'Central Assembly Ground',
-      tag: 'Academic Calendar',
-      desc: 'Welcoming students from Nursery to Class XII across Arts, Commerce, and Science streams.'
-    },
-    {
-      id: 'ev-2',
-      title: 'Annual Inter-House Gita Chanting Competition',
-      date: 'June 20, 2026',
-      month: 'June 2026',
-      time: '10:00 AM IST',
-      venue: 'Sanskrit & Value Education Wing',
-      tag: 'Vedic Arts',
-      desc: 'Recitation of Srimad Bhagavad Gita Chapter 12 by junior and senior house representatives.'
-    },
-    {
-      id: 'ev-2c',
-      title: 'International Day of Yoga Demonstration & Mass Asanas',
-      date: 'June 21, 2026',
-      month: 'June 2026',
-      time: '07:00 AM IST',
-      venue: 'School Sports Ground',
-      tag: 'Physical Fitness',
-      desc: 'Synchronized Surya Namaskar, Pranayama sessions, and holistic well-being discourses.'
-    },
-    {
-      id: 'ev-3',
-      title: 'Monsoon Tree Plantation & Jal Pakhwada Rally',
-      date: 'July 15, 2026',
-      month: 'July 2026',
-      time: '07:45 AM IST',
-      venue: 'Campus Green Belt & Boisar Area',
-      tag: 'Civic Responsibility',
-      desc: 'Eco-club initiative planting native saplings and student rallies on rainwater preservation.'
-    },
-    {
-      id: 'ev-3b',
-      title: 'Guru Purnima Celebrations & Paduka Vandana',
-      date: 'July 29, 2026',
-      month: 'July 2026',
-      time: '08:30 AM IST',
-      venue: 'School Prayer Auditorium',
-      tag: 'Spiritual Heritage',
-      desc: 'Traditional tributes to teachers and spiritual masters with devotional Stotram chanting.'
-    },
-    {
-      id: 'ev-4a',
-      title: '80th Independence Day Flag Hoisting & Patriotic Cultural Assembly',
-      date: 'August 15, 2026',
-      month: 'August 2026',
-      time: '08:00 AM IST',
-      venue: 'Central Assembly Quadrangle',
-      tag: 'Patriotic Zeal',
-      desc: 'Ceremonial parade, national anthem, patriotic dance-drama, and recognition of student achievers.'
-    },
-    {
-      id: 'ev-4',
-      title: 'Science & Analytical STEM Exhibition 2026',
-      date: 'August 22, 2026',
-      month: 'August 2026',
+      id: 'ev-oct-1',
+      title: 'Inter-House Fancy Dress & Declamation Competition',
+      date: 'October 17, 2026',
+      month: 'October 2026',
       time: '09:00 AM IST',
-      venue: 'Physics, Chemistry, Biology & IT Laboratories',
-      tag: 'Scholastic Discovery',
-      desc: 'Live working models, robotics showcases, and chemical analytical exhibits presented by Classes VI to XII.'
+      venue: 'Primary Wing & AV Seminar Hall',
+      tag: 'CCA Cultural',
+      desc: 'Annual CCA presentation featuring Ramayana character dramatization for junior classes and oratorical declamation for seniors.'
     },
     {
-      id: 'ev-5a',
-      title: 'Teachers\' Day Celebrations (Guru Vandana)',
-      date: 'September 05, 2026',
-      month: 'September 2026',
-      time: '09:30 AM IST',
-      venue: 'Main Auditorium',
-      tag: 'Teacher Reverence',
-      desc: 'Senior students honour faculty members with cultural skits, mementos, and expression of gratitude.'
+      id: 'ev-oct-2',
+      title: 'Vijaya Dashami & Dussehra Special Observance',
+      date: 'October 20, 2026',
+      month: 'October 2026',
+      time: '08:30 AM IST',
+      venue: 'Central Assembly Ground',
+      tag: 'Cultural Festival',
+      desc: 'Commemorating the triumph of virtue with special morning assembly discourse, Vedic prayers, and festive greetings.'
     },
     {
-      id: 'ev-5b',
-      title: 'Periodic Assessment - I (Classes I to XII)',
-      date: 'September 18, 2026',
-      month: 'September 2026',
+      id: 'ev-oct-3',
+      title: 'Periodic Assessment - II & Term Evaluations (Classes I to XII)',
+      date: 'October 26, 2026',
+      month: 'October 2026',
       time: '08:00 AM IST',
       venue: 'Examination Halls',
       tag: 'Assessments',
-      desc: 'First comprehensive periodic evaluation for foundational, middle, and senior secondary stages.'
+      desc: 'Commencement of Second Periodical Assessment for Std X & XII and Evaluation-2 across Primary and Secondary wings.'
+    },
+    {
+      id: 'ev-oct-4',
+      title: 'Annual Inter-House Gita Chanting Competition (Std I to XII)',
+      date: 'October 31, 2026',
+      month: 'October 2026',
+      time: '09:30 AM IST',
+      venue: 'Sanskrit & Value Education Wing',
+      tag: 'Vedic Heritage',
+      desc: 'Comprehensive inter-house recitation and spiritual memorization competition covering designated verses from Srimad Bhagavad Gita.'
+    },
+    {
+      id: 'ev-nov-1',
+      title: 'Diwali Vacation Break & Deepotsav Celebrations',
+      date: 'November 05, 2026',
+      month: 'November 2026',
+      time: '10:00 AM IST',
+      venue: 'School Campus & Prayer Hall',
+      tag: 'Vacation & Festival',
+      desc: 'Campus Deepotsav lamp lighting ceremony; Diwali holiday break commences for all classes (School reopens on November 20, 2026).'
+    },
+    {
+      id: 'ev-nov-2',
+      title: 'Children\'s Day & Bal Mela Celebrations',
+      date: 'November 14, 2026',
+      month: 'November 2026',
+      time: '09:00 AM IST',
+      venue: 'School Sports Ground',
+      tag: 'Student Life',
+      desc: 'Festive tributes and special recreational games organized by faculty members to commemorate National Children\'s Day.'
+    },
+    {
+      id: 'ev-nov-3',
+      title: 'Guru Nanak Dev Ji Jayanti Observance',
+      date: 'November 24, 2026',
+      month: 'November 2026',
+      time: '08:30 AM IST',
+      venue: 'Main Auditorium',
+      tag: 'Spiritual Heritage',
+      desc: 'Special morning assembly honoring the universal teachings of selfless service, compassion, and divine unity.'
+    },
+    {
+      id: 'ev-nov-4',
+      title: 'Periodic Assessment - II (Classes III to IX)',
+      date: 'November 25, 2026',
+      month: 'November 2026',
+      time: '08:00 AM IST',
+      venue: 'Examination Halls',
+      tag: 'Assessments',
+      desc: 'Second periodical assessment series for students of Standards III to IX evaluating mid-session scholastic progress.'
+    },
+    {
+      id: 'ev-dec-1',
+      title: 'Inter-House English Elocution Competition (Std I to XII)',
+      date: 'December 05, 2026',
+      month: 'December 2026',
+      time: '09:30 AM IST',
+      venue: 'AV Seminar Hall',
+      tag: 'Literary Arts',
+      desc: 'Student orators demonstrate rhetorical clarity, persuasive speaking, and articulate presentation on contemporary themes.'
+    },
+    {
+      id: 'ev-dec-2',
+      title: 'Gita Jayanti, Tapovan Jayanti & Chinmaya Samarpan Diwas',
+      date: 'December 19, 2026',
+      month: 'December 2026',
+      time: '08:30 AM IST',
+      venue: 'School Main Prayer Auditorium',
+      tag: 'Spiritual Heritage',
+      desc: 'Special Paduka pooja, Sanskrit Shloka recitation, monoact, and commemorative tributes honoring Param Pujya Swami Tapovan Maharaj.'
+    },
+    {
+      id: 'ev-dec-3',
+      title: 'Winter Break & Year-End Recess',
+      date: 'December 25, 2026',
+      month: 'December 2026',
+      time: '08:00 AM IST',
+      venue: 'School Campus',
+      tag: 'Academic Calendar',
+      desc: 'Winter vacation commences from December 25, 2026 to January 01, 2027. School reopens on Saturday, January 02, 2027.'
+    },
+    {
+      id: 'ev-jan-1',
+      title: 'Model Pre-Board Examinations & Unit Test - II',
+      date: 'January 03, 2027',
+      month: 'January 2027',
+      time: '08:00 AM IST',
+      venue: 'Senior Wing Examination Halls',
+      tag: 'Assessments',
+      desc: 'Rigorous model pre-board tests for CBSE Board examinees (Std X & XII) and Unit Test 2 for Standard XI.'
+    },
+    {
+      id: 'ev-jan-2',
+      title: 'National Youth Day (Swami Vivekananda Jayanti)',
+      date: 'January 12, 2027',
+      month: 'January 2027',
+      time: '08:30 AM IST',
+      venue: 'Central Assembly Quadrangle',
+      tag: 'National Pride',
+      desc: 'Commemorating Swami Vivekananda\'s clarion call to youth with oratorical presentations and values orientation.'
+    },
+    {
+      id: 'ev-jan-3',
+      title: '78th Republic Day Ceremonial Parade & Cultural Pageant',
+      date: 'January 26, 2027',
+      month: 'January 2027',
+      time: '08:00 AM IST',
+      venue: 'Central Sports Ground',
+      tag: 'Patriotic Zeal',
+      desc: 'National Tri-colour flag unfurling, NCC troop march past, patriotic brass band display, and felicitation of student achievers.'
+    },
+    {
+      id: 'ev-mar-1',
+      title: 'Maha Shivaratri Celebrations & Bhajan Sandhya',
+      date: 'March 06, 2027',
+      month: 'March 2027',
+      time: '09:00 AM IST',
+      venue: 'School Prayer Auditorium',
+      tag: 'Spiritual Heritage',
+      desc: 'Sacred Rudrabhisheka chanting, devotional stotrams, and cultural reflections on inner awakening.'
+    },
+    {
+      id: 'ev-mar-2',
+      title: 'Annual Term-End Examinations & Evaluation - III',
+      date: 'March 15, 2027',
+      month: 'March 2027',
+      time: '08:00 AM IST',
+      venue: 'All Examination Wings',
+      tag: 'Assessments',
+      desc: 'Final comprehensive annual academic assessments for Nursery through Standard IX & XI for the 2026-27 session.'
     }
   ];
 
-  const availableMonths = ['all', 'May 2026', 'June 2026', 'July 2026', 'August 2026', 'September 2026'];
+  const availableMonths = ['all', 'October 2026', 'November 2026', 'December 2026', 'January 2027', 'March 2027'];
   const filteredEvents = selectedMonth === 'all' 
     ? upcomingEvents 
     : upcomingEvents.filter(ev => ev.month === selectedMonth);
@@ -164,10 +214,10 @@ export const NoticeEventBoard: React.FC = () => {
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none border-b border-[#D5CEC2]">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none border-b border-[#D5CEC2] -mx-4 px-4 sm:mx-0 sm:px-0">
           <button
             onClick={() => setActiveTab('notices')}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border-b-2 ${
+            className={`shrink-0 whitespace-nowrap flex items-center gap-2 px-3 sm:px-4 py-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border-b-2 cursor-pointer ${
               activeTab === 'notices'
                 ? 'border-[#DF711B] text-[#DF711B] bg-white/70'
                 : 'border-transparent text-[#555555] hover:text-[#181818]'
@@ -179,7 +229,7 @@ export const NoticeEventBoard: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('events')}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border-b-2 ${
+            className={`shrink-0 whitespace-nowrap flex items-center gap-2 px-3 sm:px-4 py-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border-b-2 cursor-pointer ${
               activeTab === 'events'
                 ? 'border-[#DF711B] text-[#DF711B] bg-white/70'
                 : 'border-transparent text-[#555555] hover:text-[#181818]'
@@ -191,7 +241,7 @@ export const NoticeEventBoard: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('academic')}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border-b-2 ${
+            className={`shrink-0 whitespace-nowrap flex items-center gap-2 px-3 sm:px-4 py-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all border-b-2 cursor-pointer ${
               activeTab === 'academic'
                 ? 'border-[#DF711B] text-[#DF711B] bg-white/70'
                 : 'border-transparent text-[#555555] hover:text-[#181818]'
@@ -204,51 +254,57 @@ export const NoticeEventBoard: React.FC = () => {
 
         {/* Tab Content Display */}
         {activeTab === 'notices' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {OFFICIAL_NOTICES.map((notice) => (
-              <div 
-                key={notice.id}
-                className="bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs"
-              >
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 ${
-                      notice.isImportant 
-                        ? 'bg-[#FFF0E6] text-[#DF711B] border border-[#DF711B]/30' 
-                        : 'bg-slate-100 text-[#555555]'
-                    }`}>
-                      {notice.category}
-                    </span>
-                    <span className="text-[10px] font-mono text-[#777777]">{notice.date}</span>
+          OFFICIAL_NOTICES.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {OFFICIAL_NOTICES.map((notice) => (
+                <div 
+                  key={notice.id}
+                  className="bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 ${
+                        notice.isImportant 
+                          ? 'bg-[#FFF0E6] text-[#DF711B] border border-[#DF711B]/30' 
+                          : 'bg-slate-100 text-[#555555]'
+                      }`}>
+                        {notice.category}
+                      </span>
+                      <span className="text-[10px] font-mono text-[#777777]">{notice.date}</span>
+                    </div>
+
+                    <h4 className="font-display font-bold text-sm text-[#181818] leading-snug line-clamp-2">
+                      {notice.title}
+                    </h4>
+
+                    <p className="text-xs text-[#555555] leading-relaxed line-clamp-3 font-normal">
+                      {notice.summary}
+                    </p>
                   </div>
 
-                  <h4 className="font-display font-bold text-sm text-[#181818] leading-snug line-clamp-2">
-                    {notice.title}
-                  </h4>
-
-                  <p className="text-xs text-[#555555] leading-relaxed line-clamp-3 font-normal">
-                    {notice.summary}
-                  </p>
+                  <div className="pt-2.5 border-t border-slate-200 flex items-center justify-between">
+                    {notice.fileUrl ? (
+                      <a
+                        href={notice.fileUrl}
+                        download
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DF711B] hover:text-[#c45b0e] transition-colors"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        <span>Download PDF</span>
+                      </a>
+                    ) : (
+                      <span className="text-[10px] font-mono text-[#888888]">Institutional Circular</span>
+                    )}
+                    <span className="text-[10px] font-mono text-[#888888]">CBSE Board</span>
+                  </div>
                 </div>
-
-                <div className="pt-2.5 border-t border-slate-200 flex items-center justify-between">
-                  {notice.fileUrl ? (
-                    <a
-                      href={notice.fileUrl}
-                      download
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DF711B] hover:text-[#c45b0e] transition-colors"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      <span>Download PDF</span>
-                    </a>
-                  ) : (
-                    <span className="text-[10px] font-mono text-[#888888]">Institutional Circular</span>
-                  )}
-                  <span className="text-[10px] font-mono text-[#888888]">CBSE Board</span>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white border border-[#D5CEC2] p-8 text-center text-[#777777] font-mono text-xs">
+              No active circulars at this moment. New circulars will be published soon.
+            </div>
+          )
         )}
 
         {activeTab === 'events' && (

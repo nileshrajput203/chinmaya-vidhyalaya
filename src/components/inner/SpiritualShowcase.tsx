@@ -53,7 +53,7 @@ export const SpiritualShowcase: React.FC = () => {
           <div className="group bg-white rounded-2xl border border-[#E7E2D8] overflow-hidden shadow-sm hover:shadow-md transition-all">
             <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
               <img
-                src="/images/banner-4.jpeg"
+                src="/images/banner-7.jpeg"
                 alt="Cultural assemblies and Bhagavad Gita Chanting"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

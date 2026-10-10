@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Target, CheckCircle2, ZoomIn, X } from 'lucide-react';
+import { Eye, Target, CheckCircle2, ZoomIn, X } from 'lucide-react';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 import { useInView, motion, AnimatePresence } from 'motion/react';
@@ -58,7 +58,7 @@ const KOSHAS: Kosha[] = [
     sheath: 'Mental-Emotional Sheath',
     color: '#B45309',
     badgeBg: 'bg-orange-100 text-orange-900 border-orange-300',
-    image: '/images/about-banner.jpeg',
+    image: '/images/banner-1.webp',
     imageTag: 'Music Studio & Expressive Arts',
     imageCaption: 'Mental-Emotional Harmony: Classical music, expressive performing arts, and annual cultural celebrations uniting students.',
     schoolPractice:
@@ -247,7 +247,7 @@ export const VisionMissionShowcase: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-2xl bg-[#DF711B] text-white flex items-center justify-center font-bold shadow-sm">
-                  <span className="font-cinzel text-lg">01</span>
+                  <Eye className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#DF711B] block">

@@ -4,7 +4,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Plus } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
-import { SCHOOL_IMAGES } from '../../data/images';
+import { 
+  HOME_VALUES_TILES, 
+  PANEL_B_MOVING_GALLERY_COL1, 
+  PANEL_B_MOVING_GALLERY_COL2 
+} from '../../data/images';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,58 +57,9 @@ export const HorizontalPanelGallery: React.FC = () => {
     window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' });
   };
 
-  const valuesData = [
-    {
-      num: '01',
-      title: 'CURIOSITY',
-      desc: 'Embrace lifelong learning & inquiry',
-      image: SCHOOL_IMAGES.SCIENCE_LAB,
-      link: '/academics/curriculum',
-    },
-    {
-      num: '02',
-      title: 'INTEGRITY',
-      desc: 'Rooted in timeless Vedic character',
-      image: '/images/guru-paduka-pooja.webp',
-      link: '/about/philosophy',
-    },
-    {
-      num: '03',
-      title: 'EXCELLENCE',
-      desc: '100% AISSE board distinction standard',
-      image: SCHOOL_IMAGES.CLASSROOM_LEARNING,
-      link: '/about/history',
-    },
-    {
-      num: '04',
-      title: 'VITALITY',
-      desc: 'Sportsmanship, athletics & vigor',
-      image: SCHOOL_IMAGES.SPORTS_DAY,
-      link: '/academics/co-curricular',
-    },
-  ];
-
-  const col1Photos = [
-    { src: SCHOOL_IMAGES.CAMPUS_BUILDING, title: 'Main Campus Building' },
-    { src: SCHOOL_IMAGES.SCIENCE_LAB, title: 'STEM & Science Lab' },
-    { src: '/images/chinmaya/sports/sports_athletic_meet_001.jpg', title: 'Track Championship' },
-    { src: '/images/tour.webp', title: 'Educational Excursion' },
-    { src: SCHOOL_IMAGES.PHYSICS_LAB, title: 'Physics Laboratory' },
-    { src: SCHOOL_IMAGES.LIBRARY_STUDY, title: 'Central Library' },
-    { src: SCHOOL_IMAGES.SPORTS_DAY, title: 'Annual Sports Meet' },
-    { src: '/images/chinmaya-web-science.webp', title: 'Science Exhibition' },
-  ];
-
-  const col2Photos = [
-    { src: SCHOOL_IMAGES.IT_LAB, title: 'Computer & Coding Lab' },
-    { src: SCHOOL_IMAGES.BIOLOGY_LAB, title: 'Biology & Life Sciences' },
-    { src: '/images/banner-9.webp', title: 'Cultural Fest Stage' },
-    { src: '/images/guru-paduka-pooja.webp', title: 'Guru Paduka Pooja' },
-    { src: SCHOOL_IMAGES.CLASSROOM_LEARNING, title: 'Smart Interactive Classes' },
-    { src: '/images/chinmaya/cultural/cultural_celebration_015.jpg', title: 'Performing Arts' },
-    { src: '/images/chinmaya/cultural/cultural_celebration_040.jpg', title: 'Youth Choir' },
-    { src: '/images/chinmaya/leadership/faculty_member_01.jpg', title: 'Faculty & Mentors' },
-  ];
+  const valuesData = HOME_VALUES_TILES;
+  const col1Photos = PANEL_B_MOVING_GALLERY_COL1;
+  const col2Photos = PANEL_B_MOVING_GALLERY_COL2;
 
   return (
     <div 
@@ -160,14 +115,14 @@ export const HorizontalPanelGallery: React.FC = () => {
           {/* ============================================================
               PANEL A — "START STATE" (WE VALUE GRID)
               ============================================================ */}
-          <section className="panel panel--values w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col justify-center px-[6%] lg:px-[8%] py-16 lg:py-10 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border relative">
+          <section className="panel panel--values w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col justify-center px-[6%] lg:px-[8%] py-10 sm:py-14 lg:py-10 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border relative">
             {/* Top-left Big Headline & Hand-Drawn Pencil Scroll Cue */}
             <div className="mb-6 lg:mb-8 shrink-0 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <span className="block text-[11px] font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold mb-2">
                   CORE FOUNDATION • CVP ETHOS
                 </span>
-                <h2 className="font-display text-[44px] sm:text-[54px] lg:text-[60px] xl:text-[64px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
+                <h2 className="font-display text-[32px] xs:text-[40px] sm:text-[54px] lg:text-[60px] xl:text-[64px] font-black text-[#181818] tracking-tight leading-none uppercase m-0">
                   WE VALUE
                 </h2>
               </div>
@@ -214,11 +169,17 @@ export const HorizontalPanelGallery: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Near-Square Photo (hard square corners, no border-radius) */}
-                  <div className="w-full aspect-square bg-[#F0ECE1] overflow-hidden border border-[#181818]/10 shadow-xs relative">
+                  {/* Near-Square Photo (responsive on mobile) */}
+                  <div className="w-full aspect-[16/10] sm:aspect-square bg-[#F0ECE1] overflow-hidden border border-[#181818]/10 shadow-xs relative">
                     <img 
                       src={item.image} 
                       alt={item.title} 
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.includes('/images/pages/home/horizontal_values/val-01-curiosity.webp')) {
+                          target.src = '/images/pages/home/horizontal_values/val-01-curiosity.webp';
+                        }
+                      }}
                       className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out" 
                     />
                     <div className="absolute inset-0 bg-[#DF711B]/5 group-hover:opacity-0 transition-opacity" />
@@ -258,7 +219,7 @@ export const HorizontalPanelGallery: React.FC = () => {
           <section className="panel panel--award w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col lg:flex-row items-stretch border-b lg:border-b-0 box-border relative overflow-hidden">
             
             {/* ZONE A — LEFT (~26% width): Studio Backdrop & Cutout Composite Image */}
-            <div className="w-full h-[560px] sm:h-[600px] lg:h-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] bg-white">
+            <div className="w-full h-[340px] sm:h-[440px] lg:h-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] bg-white">
               <img 
                 src="/images/panel_b_achiever_design.png" 
                 alt="Chinmaya Vidyalaya Student Achiever Studio Design" 
@@ -276,7 +237,7 @@ export const HorizontalPanelGallery: React.FC = () => {
                 </div>
 
                 {/* Big Display Headline */}
-                <h2 className="font-display text-[32px] sm:text-[42px] lg:text-[46px] xl:text-[54px] font-black text-[#181818] tracking-tight leading-[1.05] uppercase m-0">
+                <h2 className="font-display text-[24px] xs:text-[30px] sm:text-[42px] lg:text-[46px] xl:text-[54px] font-black text-[#181818] tracking-tight leading-[1.05] uppercase m-0">
                   PALGHAR DISTRICT'S BEST CBSE SCHOOL
                 </h2>
 
@@ -305,10 +266,10 @@ export const HorizontalPanelGallery: React.FC = () => {
                   </div>
                   <div>
                     <span className="font-display text-[22px] lg:text-[28px] font-black text-[#DF711B] leading-none block">
-                      1:25
+                      1600+
                     </span>
                     <span className="text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
-                      Mentor Ratio
+                      Students on Roll
                     </span>
                   </div>
                 </div>
@@ -337,7 +298,7 @@ export const HorizontalPanelGallery: React.FC = () => {
             </div>
 
             {/* ZONE C — RIGHT (~34-36% width): VERTICAL MOVING UPWARD IMAGE GALLERY */}
-            <div className="w-full lg:w-[34%] xl:w-[36%] h-[480px] lg:h-full bg-white relative overflow-hidden flex gap-3.5 p-3 sm:p-4 box-border">
+            <div className="w-full lg:w-[34%] xl:w-[36%] h-[360px] sm:h-[440px] lg:h-full bg-white relative overflow-hidden flex gap-3.5 p-3 sm:p-4 box-border">
               
               {/* Column 1 (Scrolls UP continuously) */}
               <div className="w-1/2 h-full relative overflow-hidden">
@@ -352,6 +313,12 @@ export const HorizontalPanelGallery: React.FC = () => {
                         alt={photo.title} 
                         loading="lazy"
                         decoding="async"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.src.includes('/images/banner-1.webp')) {
+                            target.src = '/images/banner-1.webp';
+                          }
+                        }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
                       />
                     </div>
@@ -372,6 +339,12 @@ export const HorizontalPanelGallery: React.FC = () => {
                         alt={photo.title} 
                         loading="lazy"
                         decoding="async"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.src.includes('/images/banner-1.webp')) {
+                            target.src = '/images/banner-1.webp';
+                          }
+                        }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
                       />
                     </div>

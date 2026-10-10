@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar } from 'lucide-react';
+import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formService } from '../../services/formService';
 import { useToast } from '../../context/ToastContext';
+import { OFFICIAL_NOTICES } from '../../data/notices';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,83 +13,16 @@ interface HeroScrollytellingFilmProps {
   onOpenAdmissions: () => void;
 }
 
-// All 236 frames from ezgif-frame-001.jpg to ezgif-frame-236.jpg in /heronew/herovideo/
-const START_FRAME = 1;
-const END_FRAME = 236;
-const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 236 frames
-
-// One smooth natural scroll stroke executes all 236 frames (approx 850px total scroll distance)
-const SCROLL_PX_PER_FRAME = 3.6;
-const TOTAL_SCROLLABLE_PX = Math.round((TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME);
-
-// Helper to construct zero-padded frame URLs in heronew/herovideo
-const getFrameSrc = (index: number): string => {
-  const frameNum = Math.min(Math.max(START_FRAME, START_FRAME + index), END_FRAME);
-  return `/heronew/herovideo/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
-};
-
-const HERO_NOTICES = [
-  {
-    tag: 'Admissions 2026–27',
-    tagColor: 'bg-orange-50 text-[#DF711B] border-orange-200/90',
-    borderColor: 'border-l-[#DF711B]',
-    subTag: 'Nursery to XII',
-    subTagColor: 'text-slate-500 font-mono',
-    title: 'Admissions Open: Nursery to Std XII (Arts, Commerce, Science)',
-    titleColor: 'group-hover/card:text-[#DF711B]',
-    description: 'Pre-Primary, Primary, and Senior Secondary admissions open across all three streams. Complete prospectus and guidance available.',
-    linkText: 'Admission Guidelines',
-    linkTextColor: 'text-[#DF711B]',
-    to: '/admissions/guidelines',
-  },
-  {
-    tag: 'CBSE Distinction',
-    tagColor: 'bg-emerald-50 text-emerald-700 border-emerald-200/90',
-    borderColor: 'border-l-emerald-500',
-    subTag: '100% AISSE',
-    subTagColor: 'text-slate-500 font-mono',
-    title: '100% First Class CBSE Class X Board Results',
-    titleColor: 'group-hover/card:text-emerald-700',
-    description: 'Unbroken tradition of academic excellence with multiple students securing top merits in the CBSE Board examinations.',
-    linkText: 'Read Results Archive',
-    linkTextColor: 'text-emerald-700',
-    to: '/news',
-  },
-  {
-    tag: 'Ecology & CVP',
-    tagColor: 'bg-amber-50 text-amber-800 border-amber-200/90',
-    borderColor: 'border-l-amber-500',
-    subTag: 'Jal Pakhwada',
-    subTagColor: 'text-slate-500 font-mono',
-    title: 'Jal Pakhwada Water Conservation Campaign',
-    titleColor: 'group-hover/card:text-amber-800',
-    description: 'Student-led community seminars, tree plantation drives, and creative painting exhibitions promoting rainwater harvesting.',
-    linkText: 'View Event Highlights',
-    linkTextColor: 'text-amber-800',
-    to: '/news',
-  },
-  {
-    tag: 'Campus Office',
-    tagColor: 'bg-sky-50 text-sky-700 border-sky-200/90',
-    borderColor: 'border-l-sky-500',
-    subTag: 'Parent Visits',
-    subTagColor: 'text-slate-500 font-mono',
-    title: 'Parent Meeting & Campus Visit Guidelines',
-    titleColor: 'group-hover/card:text-sky-700',
-    description: 'Campus visits are welcomed for prospective families. Existing parents are requested to contact the administrative office.',
-    linkText: 'Campus Timings & Office',
-    linkTextColor: 'text-sky-700',
-    to: '/contact',
-  },
-];
+// Scroll stroke distance for full video scrub (approx 950px total scroll distance)
+const TOTAL_SCROLLABLE_PX = 950;
 
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
   const { showSuccess } = useToast();
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Desktop guard: only active on screens >= 1024px to ensure mobile never loads or plays sequential frames
+  // Desktop guard: only active on screens >= 1024px to ensure mobile never loads or plays heavy hero video
   const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
 
   useEffect(() => {
@@ -99,251 +33,70 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Cached frame images
-  const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(TOTAL_FRAMES).fill(null));
-  const currentFrameRef = useRef<number>(0);
-  const targetFrameRef = useRef<number>(0);
-  const lastDrawnFrameRef = useRef<number>(-1);
+  // Video duration state (default 10s matching lv_0_20260922153757.mp4)
+  const durationRef = useRef<number>(10);
+  const targetTimeRef = useRef<number>(0);
+  const currentTimeRef = useRef<number>(0);
+  const isSeekingRef = useRef<boolean>(false);
 
   // Component scroll progress state (0.0 to 1.0)
   const [scrollProgress, setScrollProgress] = useState<number>(0);
 
-  // Draw frame with sub-frame continuous blending for liquid-smooth 60/120fps motion
-  const drawFrame = useCallback((floatFrame: number) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d', { alpha: false });
-    if (!ctx) return;
-
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    if (width === 0 || height === 0) return;
-
-    const isMobile = window.innerWidth < 768;
-    // Scale canvas buffer: cap at 1.0 on mobile to prevent GPU lag, max 1.5 on desktop
-    const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
-    const targetW = Math.round(width * dpr);
-    const targetH = Math.round(height * dpr);
-    if (canvas.width !== targetW || canvas.height !== targetH) {
-      canvas.width = targetW;
-      canvas.height = targetH;
-    }
-
-    const cw = canvas.width;
-    const ch = canvas.height;
-    if (cw === 0 || ch === 0) return;
-
-    const clamped = Math.min(Math.max(0, floatFrame), TOTAL_FRAMES - 1);
-    const baseIdx = Math.floor(clamped);
-    const nextIdx = Math.min(baseIdx + 1, TOTAL_FRAMES - 1);
-    const blendAlpha = clamped - baseIdx;
-
-    // Find requested base frame or closest loaded fallback
-    let baseImg = imagesRef.current[baseIdx];
-    if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) {
-      for (let i = baseIdx; i >= 0; i--) {
-        if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
-          baseImg = imagesRef.current[i];
-          break;
-        }
-      }
-      if (!baseImg) {
-        for (let i = baseIdx + 1; i < TOTAL_FRAMES; i++) {
-          if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
-            baseImg = imagesRef.current[i];
-            break;
-          }
-        }
-      }
-    }
-
-    if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) return;
-
-    // High quality bicubic filtering on desktop, fast on mobile
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = isMobile ? 'medium' : 'high';
-
-    // Calculate cover dimensions preserving aspect ratio, centered
-    const imgAspect = baseImg.naturalWidth / baseImg.naturalHeight;
-    const canvasAspect = cw / ch;
-    let drawWidth = cw;
-    let drawHeight = ch;
-    let offsetX = 0;
-    let offsetY = 0;
-
-    if (canvasAspect > imgAspect) {
-      drawHeight = cw / imgAspect;
-      offsetY = (ch - drawHeight) / 2;
-    } else {
-      drawWidth = ch * imgAspect;
-      offsetX = (cw - drawWidth) / 2;
-    }
-
-    // 1. Draw base frame
-    ctx.globalAlpha = 1.0;
-    ctx.drawImage(baseImg, offsetX, offsetY, drawWidth, drawHeight);
-
-    // 2. Sub-frame blend with next frame only on desktop (avoids mobile stutter)
-    if (!isMobile && blendAlpha > 0.03 && nextIdx !== baseIdx) {
-      const nextImg = imagesRef.current[nextIdx];
-      if (nextImg && nextImg.complete && nextImg.naturalWidth > 0) {
-        const nextAspect = nextImg.naturalWidth / nextImg.naturalHeight;
-        let nDrawWidth = cw;
-        let nDrawHeight = ch;
-        let nOffsetX = 0;
-        let nOffsetY = 0;
-
-        if (canvasAspect > nextAspect) {
-          nDrawHeight = cw / nextAspect;
-          nOffsetY = (ch - nDrawHeight) / 2;
-        } else {
-          nDrawWidth = ch * nextAspect;
-          nOffsetX = (cw - nDrawWidth) / 2;
-        }
-
-        ctx.globalAlpha = blendAlpha;
-        ctx.drawImage(nextImg, nOffsetX, nOffsetY, nDrawWidth, nDrawHeight);
-        ctx.globalAlpha = 1.0;
-      }
-    }
-  }, []);
-
-  // Aggressive multi-threaded progressive preloader ensuring zero missed frames
+  // Initialize video metadata and ensure first frame is painted
   useEffect(() => {
     if (!isDesktop) return;
-    let isCancelled = false;
-    const loadedSet = new Set<number>();
+    const video = videoRef.current;
+    if (!video) return;
 
-    const fetchFrame = (index: number): Promise<void> => {
-      if (isCancelled || imagesRef.current[index] || loadedSet.has(index)) {
-        return Promise.resolve();
+    const handleLoadedMetadata = () => {
+      if (video.duration && !isNaN(video.duration)) {
+        durationRef.current = video.duration;
       }
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.decoding = 'async';
-        img.onload = () => {
-          if (isCancelled) return resolve();
-          loadedSet.add(index);
-          imagesRef.current[index] = img;
-          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
-            drawFrame(currentFrameRef.current);
-          }
-          resolve();
-        };
-        img.onerror = () => {
-          resolve();
-        };
-        img.src = getFrameSrc(index);
-        if (img.complete && img.naturalWidth > 0) {
-          loadedSet.add(index);
-          imagesRef.current[index] = img;
-          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
-            drawFrame(currentFrameRef.current);
-          }
-          resolve();
-        }
-      });
+      // Paint first frame
+      try {
+        video.currentTime = 0.001;
+      } catch (_) {}
     };
 
-    // Adaptive preloader: detects connection speed and mobile constraints
-    const navConn = (navigator as any)?.connection;
-    const isSlowConnection = navConn?.saveData || navConn?.effectiveType === '2g' || navConn?.effectiveType === '3g';
-    const isMobileDevice = typeof window !== 'undefined' && window.innerWidth < 768;
-
-    const loadInitialSequence = async () => {
-      // Step 1: Preload immediate start frames
-      const initialBatch = isSlowConnection || isMobileDevice ? 12 : 25;
-      const initialPromises: Promise<void>[] = [];
-      for (let i = 0; i < Math.min(initialBatch, TOTAL_FRAMES); i++) {
-        initialPromises.push(fetchFrame(i));
-      }
-      await Promise.all(initialPromises);
-      if (isCancelled) return;
-      drawFrame(0);
-
-      // Step 2: On mobile or constrained networks, prioritize keyframes with stride 3
-      // This immediately gives full scrubbing coverage across the entire 850px scroll with zero lag
-      if (isSlowConnection || isMobileDevice) {
-        const keyframeIndices: number[] = [];
-        for (let i = initialBatch; i < TOTAL_FRAMES; i += 3) {
-          keyframeIndices.push(i);
-        }
-        
-        // Load keyframes first with gentle concurrency (3 concurrent)
-        const KEYFRAME_CONCURRENCY = 3;
-        let kIndex = 0;
-        const keyframeWorker = async () => {
-          while (kIndex < keyframeIndices.length && !isCancelled) {
-            const idx = keyframeIndices[kIndex++];
-            await fetchFrame(idx);
-          }
-        };
-        await Promise.all(Array.from({ length: KEYFRAME_CONCURRENCY }, () => keyframeWorker()));
-        if (isCancelled) return;
-
-        // Step 3: Backfill all remaining in-between frames in background idle time
-        const backfillIndices: number[] = [];
-        for (let i = initialBatch; i < TOTAL_FRAMES; i++) {
-          if (!loadedSet.has(i)) backfillIndices.push(i);
-        }
-        let bIndex = 0;
-        const backfillWorker = async () => {
-          while (bIndex < backfillIndices.length && !isCancelled) {
-            const idx = backfillIndices[bIndex++];
-            await fetchFrame(idx);
-          }
-        };
-        await Promise.all(Array.from({ length: 2 }, () => backfillWorker()));
-      } else {
-        // Desktop / Fast connection: standard fast batch pool (batches of 6)
-        const remainingIndices: number[] = [];
-        for (let i = initialBatch; i < TOTAL_FRAMES; i++) {
-          remainingIndices.push(i);
-        }
-
-        const CONCURRENCY = 6;
-        let currentIndex = 0;
-
-        const worker = async () => {
-          while (currentIndex < remainingIndices.length && !isCancelled) {
-            const idx = remainingIndices[currentIndex++];
-            await fetchFrame(idx);
-          }
-        };
-
-        const workers = Array.from({ length: CONCURRENCY }, () => worker());
-        await Promise.all(workers);
-      }
+    const handleSeeked = () => {
+      isSeekingRef.current = false;
     };
 
-    loadInitialSequence();
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('seeked', handleSeeked);
+
+    if (video.readyState >= 1) {
+      handleLoadedMetadata();
+    }
 
     return () => {
-      isCancelled = true;
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('seeked', handleSeeked);
     };
-  }, [drawFrame]);
+  }, [isDesktop]);
 
-  // Handle Window Resize
-  useEffect(() => {
-    const handleResize = () => {
-      drawFrame(currentFrameRef.current);
-    };
-    window.addEventListener('resize', handleResize, { passive: true });
-    return () => window.removeEventListener('resize', handleResize);
-  }, [drawFrame]);
-
-  // Silky smooth physics interpolation loop
+  // Silky smooth physics interpolation loop for video seeking
   useEffect(() => {
     if (!isDesktop) return;
     let animId: number;
 
     const renderLoop = () => {
-      const diff = targetFrameRef.current - currentFrameRef.current;
-      if (Math.abs(diff) > 0.001) {
-        currentFrameRef.current += diff * 0.22;
-        if (Math.abs(currentFrameRef.current - lastDrawnFrameRef.current) > 0.01) {
-          lastDrawnFrameRef.current = currentFrameRef.current;
-          drawFrame(currentFrameRef.current);
+      const video = videoRef.current;
+      if (video && video.duration && !isNaN(video.duration)) {
+        const diff = targetTimeRef.current - currentTimeRef.current;
+        if (Math.abs(diff) > 0.005) {
+          // Responsive fluid lerp
+          currentTimeRef.current += diff * 0.35;
+          const seekTime = Math.min(Math.max(0, currentTimeRef.current), video.duration - 0.01);
+
+          if (!isSeekingRef.current) {
+            isSeekingRef.current = true;
+            if ('fastSeek' in video && typeof (video as any).fastSeek === 'function') {
+              (video as any).fastSeek(seekTime);
+            } else {
+              video.currentTime = seekTime;
+            }
+          }
         }
       }
       animId = requestAnimationFrame(renderLoop);
@@ -351,7 +104,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     animId = requestAnimationFrame(renderLoop);
     return () => cancelAnimationFrame(animId);
-  }, [isDesktop, drawFrame]);
+  }, [isDesktop]);
 
   // Pin stickyRef to viewport using GSAP ScrollTrigger
   useEffect(() => {
@@ -371,7 +124,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       onUpdate: (self) => {
         const progress = Math.min(1, Math.max(0, self.progress));
         setScrollProgress(progress);
-        targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
+        targetTimeRef.current = progress * durationRef.current;
       },
     });
 
@@ -386,7 +139,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       const rawProgress = -rect.top / scrollableDistance;
       const progress = Math.min(Math.max(0, rawProgress), 1);
       setScrollProgress(progress);
-      targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
+      targetTimeRef.current = progress * durationRef.current;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -395,7 +148,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       st.kill();
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isDesktop]);
 
   // Admission enquiry form state
   const [formData, setFormData] = useState({
@@ -453,16 +206,16 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // The form appears as the scroll begins (~22%) and REMAINS VISIBLE until the end of the scroll
+  // Cards appear at 20% scroll and remain visible until the end
   const getHeroOverlayVisibility = () => {
     const p = scrollProgress;
-    const start = 0.18;
-    const fullIn = 0.32;
+    const start = 0.20;
+    const fullIn = 0.35;
 
     if (p < start) {
-      return { 
-        opacity: 0, 
-        transform: 'translateY(20px)', 
+      return {
+        opacity: 0,
+        transform: 'translateY(24px)',
         pointerEvents: 'none' as const,
         display: 'none' as const,
       };
@@ -470,7 +223,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     const t = Math.min(1, Math.max(0, (p - start) / (fullIn - start)));
     const opacity = t;
-    const translateY = (1 - t) * 16;
+    const translateY = (1 - t) * 18;
 
     return {
       opacity,
@@ -494,8 +247,8 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       style={{ height: `calc(100vh + ${TOTAL_SCROLLABLE_PX}px)` }}
     >
       {/* ----------------------------------------------------
-          STICKY FULL-SCREEN CINEMATIC CANVAS VIEWPORT
-          Unpins at the exact moment all frames are completed
+          STICKY FULL-SCREEN CINEMATIC VIDEO VIEWPORT
+          Unpins at the exact moment video scrub is completed
          ---------------------------------------------------- */}
       <div 
         ref={stickyRef}
@@ -503,28 +256,35 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       >
         {/* Instant Poster Image */}
         <img
-          src={getFrameSrc(0)}
+          src="/heronew/herovideo/ezgif-frame-001.jpg"
           alt="Chinmaya Vidyalaya Campus"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
 
-        {/* Render Canvas */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full z-[1] will-change-transform block"
-        />
+        {/* Scroll-Driven Scrubbing Video */}
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          preload="auto"
+          poster="/heronew/herovideo/ezgif-frame-001.jpg"
+          className="absolute inset-0 w-full h-full object-cover z-[1] pointer-events-none"
+        >
+          <source src="/heronew/hero-scrub.mp4" type="video/mp4" />
+          <source src="/heronew/hero-video.mp4" type="video/mp4" />
+        </video>
 
         {/* ----------------------------------------------------
             ADMISSION FORM + WHAT'S NEW NOTICE BOARD (DESKTOP HERO OVERLAY)
-            Stays visible till the end in one smooth scroll
+            Visible from start to end in one seamless scroll view
            ---------------------------------------------------- */}
-        <div className="flex absolute inset-0 z-20 pointer-events-none items-center justify-center overflow-y-auto px-4 py-6">
+        <div className="flex absolute inset-0 z-20 pointer-events-none items-center justify-center px-4 py-4 sm:py-6">
           <div className="w-full max-w-5xl mx-auto box-border" style={getHeroOverlayVisibility()}>
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
               
               {/* Left Column: Admission Enquiry Form (7 cols on lg) */}
-              <div className="lg:col-span-7 bg-white/95 backdrop-blur-md text-[#181C20] p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col">
+              <div className="lg:col-span-7 bg-white/95 backdrop-blur-md text-[#181C20] p-4 sm:p-5 shadow-[0_25px_60px_rgba(0,0,0,0.6)] border border-[#DF711B]/25 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col">
                 {/* Decorative Top Accent Bar */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
@@ -649,32 +409,42 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                       <select
                         value={formData.grade}
                         onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                        className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all cursor-pointer font-sans shadow-sm"
+                        className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm cursor-pointer"
                       >
-                        <option value="Nursery">Nursery</option>
-                        <option value="Junior KG">Junior KG</option>
-                        <option value="Senior KG">Senior KG</option>
-                        <option value="Class 1">Class 1</option>
-                        <option value="Class 2">Class 2</option>
-                        <option value="Class 3">Class 3</option>
-                        <option value="Class 4">Class 4</option>
-                        <option value="Class 5">Class 5</option>
-                        <option value="Class 6">Class 6</option>
-                        <option value="Class 7">Class 7</option>
-                        <option value="Class 8">Class 8</option>
-                        <option value="Class 9">Class 9</option>
-                        <option value="Class 10">Class 10</option>
-                        <option value="Class 11 Arts">Class 11 (Arts Stream)</option>
-                        <option value="Class 11 Commerce">Class 11 (Commerce Stream)</option>
-                        <option value="Class 11 Science">Class 11 (Science Stream)</option>
-                        <option value="Class 12 Arts">Class 12 (Arts Stream)</option>
-                        <option value="Class 12 Commerce">Class 12 (Commerce Stream)</option>
-                        <option value="Class 12 Science">Class 12 (Science Stream)</option>
+                        <optgroup label="Foundational Stage">
+                          <option value="Nursery">Nursery</option>
+                          <option value="Junior KG">Junior KG</option>
+                          <option value="Senior KG">Senior KG</option>
+                          <option value="Class 1">Class 1</option>
+                          <option value="Class 2">Class 2</option>
+                        </optgroup>
+                        <optgroup label="Preparatory Stage">
+                          <option value="Class 3">Class 3</option>
+                          <option value="Class 4">Class 4</option>
+                          <option value="Class 5">Class 5</option>
+                        </optgroup>
+                        <optgroup label="Middle Stage">
+                          <option value="Class 6">Class 6</option>
+                          <option value="Class 7">Class 7</option>
+                          <option value="Class 8">Class 8</option>
+                        </optgroup>
+                        <optgroup label="Secondary Stage">
+                          <option value="Class 9">Class 9</option>
+                          <option value="Class 10">Class 10</option>
+                        </optgroup>
+                        <optgroup label="Senior Secondary (Class 11 & 12)">
+                          <option value="Class 11 - Science">Class 11 - Science</option>
+                          <option value="Class 11 - Commerce">Class 11 - Commerce</option>
+                          <option value="Class 11 - Arts">Class 11 - Arts</option>
+                          <option value="Class 12 - Science">Class 12 - Science</option>
+                          <option value="Class 12 - Commerce">Class 12 - Commerce</option>
+                          <option value="Class 12 - Arts">Class 12 - Arts</option>
+                        </optgroup>
                       </select>
                     </div>
 
-                    {/* Action Group */}
-                    <div className="pt-1.5 space-y-2.5">
+                    {/* Submit Button & Helpline */}
+                    <div className="space-y-2 pt-1">
                       <button
                         type="submit"
                         disabled={isSubmitting}
@@ -703,90 +473,84 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 )}
               </div>
 
-              {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) — White Box Feel with Outlines */}
+              {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) — Compact, No Blank Spaces */}
               <div 
-                data-lenis-prevent="true"
-                className="lg:col-span-5 bg-white/95 backdrop-blur-md text-[#181C20] p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-slate-200 pointer-events-auto rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-4"
+                className="lg:col-span-5 bg-white/95 backdrop-blur-md text-[#181C20] p-3.5 sm:p-4 shadow-[0_20px_45px_rgba(0,0,0,0.2)] border border-slate-200 pointer-events-auto rounded-2xl relative overflow-hidden flex flex-col space-y-2.5"
               >
                 {/* Decorative Top Accent Bar */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#DF711B] via-[#FFB740] to-[#DF711B]" />
                 
                 {/* Header */}
-                <div className="border-b border-slate-200 pb-3">
+                <div className="border-b border-slate-200 pb-2">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
                       <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
                         WHAT'S NEW
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200 font-semibold">
+                    <span className="text-[9px] font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200 font-semibold">
                       Live Updates
                     </span>
                   </div>
-                  <h4 className="font-cinzel text-base sm:text-lg font-black text-[#0B1D30] tracking-wide mt-2">
+                  <h4 className="font-cinzel text-sm sm:text-base font-black text-[#0B1D30] tracking-wide mt-1">
                     Latest Dispatches & Notices
                   </h4>
-                  <p className="text-[11px] text-slate-500 font-sans mt-0.5">
+                  <p className="text-[10px] text-slate-500 font-sans mt-0.5">
                     Official announcements, board distinctions, and campus dispatches
                   </p>
                 </div>
 
-                {/* Notices Feed Container — Continuous auto swimming up ticker with pause-on-hover */}
-                <div 
-                  data-lenis-prevent="true"
-                  onWheel={(e) => e.stopPropagation()}
-                  className="relative h-64 sm:h-[19rem] overflow-hidden group select-none"
-                >
-                  {/* Subtle top & bottom fade gradient masks for smooth edge transitions */}
-                  <div className="pointer-events-none absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
-                  <div className="pointer-events-none absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
-
-                  {/* Infinite Continuous Upward Track (Auto Swimming Up) */}
-                  <div className="animate-ticker-up space-y-2.5">
-                    {[...HERO_NOTICES, ...HERO_NOTICES].map((notice, idx) => (
+                {/* Notices Feed Container — Dynamic with clean status when no active notices */}
+                {OFFICIAL_NOTICES.length > 0 ? (
+                  <div className="space-y-1.5">
+                    {OFFICIAL_NOTICES.map((notice) => (
                       <Link 
-                        key={idx}
-                        to={notice.to} 
-                        className={`block p-3.5 rounded-2xl bg-white hover:bg-slate-50/90 border border-slate-200 shadow-2xs hover:shadow-md ${notice.borderColor} transition-all duration-200 group/card border-l-4`}
+                        key={notice.id}
+                        to="/notice" 
+                        className="block px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200/90 shadow-2xs hover:shadow-xs border-l-[#DF711B] border-l-[3.5px] transition-all duration-200 group/card"
                       >
-                        <div className="flex items-center justify-between gap-2 mb-1.5">
-                          <span className={`px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded-full border ${notice.tagColor}`}>
-                            {notice.tag}
-                          </span>
-                          <span className={`text-[10px] font-mono font-medium ${notice.subTagColor}`}>{notice.subTag}</span>
-                        </div>
-                        <h5 className={`font-cinzel text-xs sm:text-[13px] font-bold text-[#0B1D30] ${notice.titleColor} transition-colors leading-snug`}>
-                          {notice.title}
-                        </h5>
-                        <p className="text-[11.5px] text-slate-600 mt-1 leading-relaxed font-sans font-normal">
-                          {notice.description}
-                        </p>
-                        <div className={`mt-2 flex items-center gap-1 text-[10px] font-mono font-bold ${notice.linkTextColor} group-hover/card:translate-x-1 transition-transform`}>
-                          <span>{notice.linkText}</span>
-                          <ArrowRight className="w-3 h-3" />
+                        <div className="flex items-center justify-between gap-2">
+                          <h5 className="font-sans font-semibold text-xs text-[#0B1D30] group-hover/card:text-[#DF711B] transition-colors leading-snug line-clamp-1">
+                            {notice.title}
+                          </h5>
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/card:text-[#DF711B] group-hover/card:translate-x-0.5 transition-all shrink-0" />
                         </div>
                       </Link>
                     ))}
                   </div>
-                </div>
+                ) : (
+                  <div className="py-7 px-4 rounded-xl bg-slate-50/80 border border-slate-200/80 text-center flex flex-col items-center justify-center space-y-2">
+                    <div className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 shadow-2xs">
+                      <Bell className="w-4 h-4 text-[#DF711B]/70" />
+                    </div>
+                    <div className="space-y-0.5">
+                      <h5 className="font-sans font-bold text-xs text-[#0B1D30]">
+                        No Active Circulars at Present
+                      </h5>
+                      <p className="text-[10.5px] text-slate-500 font-sans max-w-xs leading-relaxed">
+                        All official notices are up to date. New circulars and campus dispatches will appear here when published.
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {/* Footer Buttons */}
-                <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
+                <div className="pt-2 border-t border-slate-200 flex items-center justify-between gap-2">
                   <Link
                     to="/admissions/calendar"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-slate-700 hover:text-[#DF711B] transition-colors group"
+                    className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-slate-700 hover:text-[#DF711B] transition-colors group"
                   >
                     <Calendar className="w-3.5 h-3.5 text-[#DF711B] group-hover:scale-110 transition-transform" />
                     <span>Academic Calendar ›</span>
                   </Link>
 
                   <Link
-                    to="/news"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-xl text-xs font-bold font-sans uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95 group"
+                    to="/notice"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-lg text-[11px] font-bold font-sans uppercase tracking-wider transition-all shadow-sm hover:scale-105 active:scale-95 group"
                   >
-                    <span>Full Bulletin</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 transition-transform" />
+                    <span>Notice Board</span>
+                    <ArrowRight className="w-3 h-3 text-white group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
 

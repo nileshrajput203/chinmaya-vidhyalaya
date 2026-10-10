@@ -33,7 +33,6 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/features",
     children: [
       { label: "Co-Curricular & Sports", href: "/academics/co-curricular", description: "Athletics, tournaments, yoga, music, and performing arts" },
-      { label: "Spiritual Assemblies", href: "/features/spiritual-activities", description: "Daily Guru Paduka Pooja, Balvihar, and Gita chanting" },
       { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz and ASSET diagnostic testing" },
       { label: "Central Library", href: "/features/library", description: "Thousands of reference titles, journals, and dedicated reading spaces" }
     ]

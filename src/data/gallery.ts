@@ -4,13 +4,13 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
   // Curated Key School Visuals
   {
     id: "gal-lead-principal",
-    title: "Principal Leadership & Academic Direction",
+    title: "School Campus & Academic Wings",
     category: "campus",
-    event: "Leadership",
+    event: "Campus",
     academicYear: "2026-27",
     date: "September 2026",
-    imageUrl: "/images/chinmaya/leadership/principal_dimple_mistry.jpg",
-    caption: "Smt. Dimple Mistry, Principal, guiding academic distinction and Vedic values."
+    imageUrl: "/images/banner-1.jpg",
+    caption: "Chinmaya Vidyalaya Tarapur campus grounds and scholastic wings at Boisar."
   },
   {
     id: "gal-1",
@@ -41,26 +41,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "May 2024",
     imageUrl: "/images/guru-paduka-pooja.webp",
     caption: "Solemn prayer gathering, paduka abhishekam, and bhajans invoking divine grace."
-  },
-  {
-    id: "gal-4",
-    title: "Science & Innovation Lab Practicals",
-    category: "academics",
-    event: "Science & Labs",
-    academicYear: "2024-25",
-    date: "August 2024",
-    imageUrl: "/images/CHEM1.jpeg",
-    caption: "Students engaged in advanced titration and analytical experiments inside the chemistry laboratory."
-  },
-  {
-    id: "gal-5",
-    title: "Inter-School Cultural Fest & Folk Performances",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2024-25",
-    date: "October 2024",
-    imageUrl: "/images/banner-4.jpeg",
-    caption: "Traditional Maharashtrian Lezim and classical dance presentations celebrating heritage."
   },
 
   // Analyzed and Organized Chinmaya School Photo Archives (316 Photographs)
@@ -264,6 +244,10 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_009.jpg",
     caption: "Cultural Stage & Festive Celebration 009 at Chinmaya Vidyalaya, Tarapur."
   },
+];
+
+// Excluded for now (remaining photo archives preserved for future use)
+export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
   {
     id: "chinmaya-cultural-cultural_celebration_010",
     title: "Cultural Stage & Festive Celebration 010",
@@ -2985,14 +2969,14 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Campus Infrastructure & Grounds 008 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-leadership-principal_dimple_mistry",
-    title: "Principal Smt. Dimple Mistry",
+    id: "chinmaya-faculty-mentorship",
+    title: "Faculty Mentorship & Smart Classrooms",
     category: "campus",
-    event: "Leadership",
+    event: "Academics",
     academicYear: "2026-27",
     date: "2026-09-28",
-    imageUrl: "/images/chinmaya/leadership/principal_dimple_mistry.jpg",
-    caption: "Principal Smt. Dimple Mistry at Chinmaya Vidyalaya, Tarapur."
+    imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg",
+    caption: "Faculty mentorship and smart classroom instruction at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-campus-campus_facilities_009",

@@ -53,9 +53,9 @@ const PILLARS_DATA: PillarDetail[] = [
     ],
     photos: [
       {
-        src: '/images/CHEM1.jpeg',
-        caption: 'Intellectual Depth: Hands-on Chemistry & STEM Lab Experiments at Boisar Campus',
-        locationMeta: 'Senior Chemistry Wing • Station 4'
+        src: '/images/pages/home/bento/tile-12-faculty-mentor.jpg',
+        caption: 'Integrated Development: Interactive Smart Classroom Learning & Faculty Mentorship',
+        locationMeta: 'Smart Classroom Wing • Interactive Teaching'
       }
     ],
     tags: ['Physical Vitality', 'Advanced STEM Labs', 'Athletics & Sports', 'ASSET Skill Analytics']
@@ -125,12 +125,12 @@ const PILLARS_DATA: PillarDetail[] = [
     ],
     photos: [
       {
-        src: '/images/jal-pakhwada-poster.jpeg',
-        caption: 'Civic Responsibility: Student Jal Pakhwada Water Conservation & Environmental Awareness Drive',
-        locationMeta: 'Community Outreach • Palghar District'
+        src: '/images/pages/home/pillars/pillar-03-patriotism.png',
+        caption: 'Civic Responsibility: Student Swachhata Seva, Tree Plantation & Community Outreach Drives',
+        locationMeta: 'Community Seva • Tarapur District'
       }
     ],
-    tags: ['National Anthem', 'Jal Pakhwada Water Drive', 'Cleanliness Campaigns', 'Hero Commemorations']
+    tags: ['National Anthem', 'Swachhata Seva Drives', 'Cleanliness Campaigns', 'Hero Commemorations']
   },
   {
     number: '04',
@@ -161,9 +161,9 @@ const PILLARS_DATA: PillarDetail[] = [
     ],
     photos: [
       {
-        src: '/images/tour.jpg',
-        caption: 'Outdoor Wisdom: Guided Nature Expeditions & Botanical Field Study for Ecological Sensitivity',
-        locationMeta: 'Experiential Field Trip • Maharashtra Heritage'
+        src: '/images/pages/home/pillars/pillar-04-universal.webp',
+        caption: 'Universal Outlook: Vasudhaiva Kutumbakam — Scholastic Excellence & Global Harmony',
+        locationMeta: 'Classroom Learning • Scholastic Wing'
       }
     ],
     tags: ['Vasudhaiva Kutumbakam', 'Nature Expeditions', 'Green Innovation', 'Universal Peace']
@@ -216,7 +216,7 @@ export const FourPillarsShowcase: React.FC = () => {
                       <img
                         src={pillar.photos[0].src}
                         alt={pillar.photos[0].caption}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                       />
                     </div>
                   </div>

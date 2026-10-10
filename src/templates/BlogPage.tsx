@@ -2,11 +2,11 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { 
   BookOpen, Search, Calendar, Clock, ArrowRight, 
-  Sparkles, Tag, Share2, Check, X, Bookmark, Quote, 
+  Tag, Share2, Check, X, Bookmark, Quote, 
   ThumbsUp, Lightbulb
 } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
-import { BLOG_POSTS, BLOG_CATEGORIES } from '../data/blog';
+import { BLOG_POSTS } from '../data/blog';
 import { BlogPost, BlogCategoryFilter } from '../types/blog';
 import { useToast } from '../context/ToastContext';
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
@@ -19,21 +19,20 @@ export const BlogPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<BlogCategoryFilter>('All');
   const [activeArticle, setActiveArticle] = useState<BlogPost | null>(null);
   const [isCopied, setIsCopied] = useState(false);
-  const [emailInput, setEmailInput] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
   const [savedPosts, setSavedPosts] = useState<string[]>([]);
   const [likedPosts, setLikedPosts] = useState<string[]>([]);
+
+  // Dynamically derive available categories from blog posts
+  const availableCategories = useMemo(() => {
+    const cats = Array.from(new Set(BLOG_POSTS.map((p) => p.category).filter(Boolean)));
+    return cats.length > 1 ? ['All', ...cats] : [];
+  }, []);
 
   // Sync category or slug from URL query
   useEffect(() => {
     const categoryParam = searchParams.get('category');
     if (categoryParam) {
-      const matched = BLOG_CATEGORIES.find(
-        (c) => c.toLowerCase() === categoryParam.toLowerCase() || categoryParam.toLowerCase().includes(c.toLowerCase())
-      );
-      if (matched) {
-        setSelectedCategory(matched as BlogCategoryFilter);
-      }
+      setSelectedCategory(categoryParam);
     }
 
     const postSlug = searchParams.get('post');
@@ -105,14 +104,6 @@ export const BlogPage: React.FC = () => {
     );
   };
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!emailInput || !emailInput.includes('@')) return;
-    setIsSubscribed(true);
-    showSuccess('Subscribed!', 'You will receive monthly educational digests.');
-    setEmailInput('');
-  };
-
   return (
     <div className="bg-white min-h-screen">
 
@@ -123,56 +114,60 @@ export const BlogPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         {/* ====================================================
-            CONTROLS: SEARCH & CATEGORY PILLS
+            CONTROLS: SEARCH & CATEGORY PILLS (Only shown if posts exist)
            ==================================================== */}
-        <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E7E2D8] shadow-sm space-y-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Search Input */}
-            <div className="relative w-full md:max-w-md">
-              <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search articles, topics, author, or tags..."
-                className="w-full pl-11 pr-10 py-3 bg-white border border-[#E7E2D8] focus:border-[#DF711B] rounded-2xl text-xs sm:text-sm text-slate-800 focus:outline-none transition-all placeholder:text-slate-400"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
+        {BLOG_POSTS.length > 0 && (
+          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E7E2D8] shadow-sm space-y-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {/* Search Input */}
+              <div className="relative w-full md:max-w-md">
+                <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search articles, topics, author, or tags..."
+                  className="w-full pl-11 pr-10 py-3 bg-white border border-[#E7E2D8] focus:border-[#DF711B] rounded-2xl text-xs sm:text-sm text-slate-800 focus:outline-none transition-all placeholder:text-slate-400"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+
+              {/* Results count indicator */}
+              <div className="text-xs font-mono text-slate-500 whitespace-nowrap self-end md:self-center">
+                Showing <span className="font-bold text-[#0B1E34]">{filteredPosts.length}</span> {filteredPosts.length === 1 ? 'Article' : 'Articles'}
+              </div>
             </div>
 
-            {/* Results count indicator */}
-            <div className="text-xs font-mono text-slate-500 whitespace-nowrap self-end md:self-center">
-              Showing <span className="font-bold text-[#0B1E34]">{filteredPosts.length}</span> {filteredPosts.length === 1 ? 'Article' : 'Articles'}
-            </div>
+            {/* Dynamic Category Filter Pills */}
+            {availableCategories.length > 1 && (
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+                {availableCategories.map((cat) => {
+                  const isSelected = selectedCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer border ${
+                        isSelected
+                          ? 'bg-[#0B1E34] text-white border-[#0B1E34] shadow-md scale-105'
+                          : 'bg-white text-slate-700 border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#DF711B]'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            {BLOG_CATEGORIES.map((cat) => {
-              const isSelected = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer border ${
-                    isSelected
-                      ? 'bg-[#0B1E34] text-white border-[#0B1E34] shadow-md scale-105'
-                      : 'bg-white text-slate-700 border-[#E7E2D8] hover:border-[#DF711B] hover:text-[#DF711B]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        )}
 
         {/* ====================================================
             POSTS GRID
@@ -313,49 +308,6 @@ export const BlogPage: React.FC = () => {
           </div>
         )}
 
-        {/* ====================================================
-            NEWSLETTER / DIGEST SUBSCRIPTION BOX
-           ==================================================== */}
-        <div className="rounded-3xl bg-gradient-to-r from-[#0B1E34] via-[#102A45] to-[#0B1E34] text-white p-8 sm:p-12 shadow-xl border border-white/10 relative overflow-hidden">
-          <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-widest border border-[#DF711B]/40">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Chinmaya Vidyalaya Educational Digest</span>
-            </div>
-            
-            <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold tracking-wide text-white">
-              Cultivate Wisdom in Your Inbox
-            </h3>
-
-            <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-              Subscribe to receive our monthly thought pieces on parenting, student well-being, experiential STEM updates, and timeless Chinmaya Vision Program philosophy.
-            </p>
-
-            {isSubscribed ? (
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold">
-                <Check className="w-4 h-4" />
-                <span>Thank you! You are now subscribed to our academic insights digest.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  placeholder="Enter your email address..."
-                  required
-                  className="w-full px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-xs sm:text-sm focus:outline-none focus:border-[#DF711B] backdrop-blur-xs"
-                />
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-200 whitespace-nowrap cursor-pointer shrink-0"
-                >
-                  Subscribe
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
       </div>
 
       {/* ====================================================

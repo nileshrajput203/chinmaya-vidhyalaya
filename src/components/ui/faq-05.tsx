@@ -54,17 +54,16 @@ const Faq05: React.FC<Faq05Props> = ({
             <p className="text-sm sm:text-base text-[#555555] font-sans leading-relaxed m-0">
               {description}
             </p>
+          </div>
 
-            {/* Thinking Student Cutout */}
-            <div className="flex justify-center pt-2">
-              <img 
-                src="/images/faq-student-thinking.png" 
-                alt="Student thinking about questions" 
-                className="w-28 sm:w-36 md:w-40 h-auto object-contain drop-shadow-md"
-                draggable={false}
-              />
-            </div>
-
+          {/* Thinking Student Cutout - Prominent, balanced size */}
+          <div className="flex-1 flex justify-center items-center py-4 my-auto">
+            <img 
+              src="/images/faq-student-thinking.png" 
+              alt="Student thinking about questions" 
+              className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 max-w-full max-h-[360px] h-auto object-contain drop-shadow-xl hover:scale-105 transition-transform duration-300 select-none"
+              draggable={false}
+            />
           </div>
 
           <div className="pt-2 border-t border-[#E7E2D8]/80 flex flex-col gap-2">
@@ -96,9 +95,7 @@ const Faq05: React.FC<Faq05Props> = ({
           className="flex flex-col justify-start p-6 sm:p-8 md:col-span-7 bg-white"
         >
           <div 
-            data-lenis-prevent
-            onWheel={(e) => e.stopPropagation()}
-            className="max-h-[460px] md:max-h-[520px] overflow-y-auto overscroll-contain pr-3 sm:pr-4 space-y-1 scrollbar-thin scrollbar-thumb-[#DF711B]/30 hover:scrollbar-thumb-[#DF711B]/60 scrollbar-track-transparent"
+            className="pr-3 sm:pr-4 space-y-1"
           >
             <Accordion type="single" collapsible defaultValue={defaultValue} className="w-full">
               {items.map((item) => {

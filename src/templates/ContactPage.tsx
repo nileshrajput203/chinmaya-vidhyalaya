@@ -94,7 +94,7 @@ export const ContactPage: React.FC = () => {
         {/* Panoramic Banner Background */}
         <div className="relative w-full h-[260px] sm:h-[300px] lg:h-[340px] overflow-hidden bg-slate-900">
           <img
-            src="/images/about-banner.jpeg"
+            src="/images/banner-1.webp"
             alt="Chinmaya Vidyalaya Students and Campus Life"
             className="w-full h-full object-cover object-center opacity-85 filter contrast-105"
           />
@@ -117,7 +117,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Giant Title with Golden Accent Underline */}
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-condensed uppercase tracking-tight text-white m-0">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight text-white m-0">
                 Contact Us
               </h1>
               {/* Amber/Gold underline bar matching reference design */}

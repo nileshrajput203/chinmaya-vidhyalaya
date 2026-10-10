@@ -517,69 +517,73 @@ export const CurriculumShowcase: React.FC = () => {
               </h4>
 
               <div className="border border-[#E7E2D8] rounded-2xl overflow-hidden shadow-xs">
-                <div className="grid grid-cols-12 bg-[#181C20] text-white p-3.5 text-xs font-bold font-mono uppercase tracking-wider">
-                  <div className="col-span-2">Subject Code</div>
-                  <div className="col-span-4">Subject Title</div>
-                  <div className="col-span-3">Theory (Board)</div>
-                  <div className="col-span-3">Internal Assessment</div>
-                </div>
-
-                <div className="divide-y divide-[#E7E2D8] text-xs font-sans">
-                  
-                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
-                    <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 184</div>
-                    <div className="col-span-4 font-bold text-slate-900">
-                      English Language & Literature
+                <div className="overflow-x-auto">
+                  <div className="min-w-[540px]">
+                    <div className="grid grid-cols-12 bg-[#181C20] text-white p-3.5 text-xs font-bold font-mono uppercase tracking-wider">
+                      <div className="col-span-2">Subject Code</div>
+                      <div className="col-span-4">Subject Title</div>
+                      <div className="col-span-3">Theory (Board)</div>
+                      <div className="col-span-3">Internal Assessment</div>
                     </div>
-                    <div className="col-span-3 text-slate-700">80 Marks (Annual Exam)</div>
-                    <div className="col-span-3 font-semibold text-emerald-700">20 Marks (ASL + Project)</div>
-                  </div>
 
-                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
-                    <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 002 / 122</div>
-                    <div className="col-span-4 font-bold text-slate-900">
-                      Hindi Course-A / Sanskrit
+                    <div className="divide-y divide-[#E7E2D8] text-xs font-sans">
+                    
+                      <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
+                        <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 184</div>
+                        <div className="col-span-4 font-bold text-slate-900">
+                          English Language & Literature
+                        </div>
+                        <div className="col-span-3 text-slate-700">80 Marks (Annual Exam)</div>
+                        <div className="col-span-3 font-semibold text-emerald-700">20 Marks (ASL + Project)</div>
+                      </div>
+
+                      <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
+                        <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 002 / 122</div>
+                        <div className="col-span-4 font-bold text-slate-900">
+                          Hindi Course-A / Sanskrit
+                        </div>
+                        <div className="col-span-3 text-slate-700">80 Marks (Annual Exam)</div>
+                        <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Speaking/Listening)</div>
+                      </div>
+
+                      <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
+                        <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 041 / 241</div>
+                        <div className="col-span-4 font-bold text-slate-900">
+                          Mathematics (Standard / Basic)
+                        </div>
+                        <div className="col-span-3 text-slate-700">80 Marks (Theory Paper)</div>
+                        <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Lab Activities + Tests)</div>
+                      </div>
+
+                      <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
+                        <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 086</div>
+                        <div className="col-span-4 font-bold text-slate-900">
+                          Science (Physics, Chemistry, Biology)
+                        </div>
+                        <div className="col-span-3 text-slate-700">80 Marks (Theory Paper)</div>
+                        <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Lab Practicals + Records)</div>
+                      </div>
+
+                      <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
+                        <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 087</div>
+                        <div className="col-span-4 font-bold text-slate-900">
+                          Social Science (Hist, Pol Sci, Geo, Eco)
+                        </div>
+                        <div className="col-span-3 text-slate-700">80 Marks (Theory Paper)</div>
+                        <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Map Work + Projects)</div>
+                      </div>
+
+                      <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
+                        <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 402 / 417</div>
+                        <div className="col-span-4 font-bold text-slate-900">
+                          Skill Subject: IT / Artificial Intelligence
+                        </div>
+                        <div className="col-span-3 text-slate-700">50 Marks (Theory)</div>
+                        <div className="col-span-3 font-semibold text-emerald-700">50 Marks (Practical Lab Exam)</div>
+                      </div>
+
                     </div>
-                    <div className="col-span-3 text-slate-700">80 Marks (Annual Exam)</div>
-                    <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Speaking/Listening)</div>
                   </div>
-
-                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
-                    <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 041 / 241</div>
-                    <div className="col-span-4 font-bold text-slate-900">
-                      Mathematics (Standard / Basic)
-                    </div>
-                    <div className="col-span-3 text-slate-700">80 Marks (Theory Paper)</div>
-                    <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Lab Activities + Tests)</div>
-                  </div>
-
-                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
-                    <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 086</div>
-                    <div className="col-span-4 font-bold text-slate-900">
-                      Science (Physics, Chemistry, Biology)
-                    </div>
-                    <div className="col-span-3 text-slate-700">80 Marks (Theory Paper)</div>
-                    <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Lab Practicals + Records)</div>
-                  </div>
-
-                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
-                    <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 087</div>
-                    <div className="col-span-4 font-bold text-slate-900">
-                      Social Science (Hist, Pol Sci, Geo, Eco)
-                    </div>
-                    <div className="col-span-3 text-slate-700">80 Marks (Theory Paper)</div>
-                    <div className="col-span-3 font-semibold text-emerald-700">20 Marks (Map Work + Projects)</div>
-                  </div>
-
-                  <div className="grid grid-cols-12 p-3.5 bg-white hover:bg-slate-50 items-center">
-                    <div className="col-span-2 font-mono font-bold text-[#DF711B]">Code 402 / 417</div>
-                    <div className="col-span-4 font-bold text-slate-900">
-                      Skill Subject: IT / Artificial Intelligence
-                    </div>
-                    <div className="col-span-3 text-slate-700">50 Marks (Theory)</div>
-                    <div className="col-span-3 font-semibold text-emerald-700">50 Marks (Practical Lab Exam)</div>
-                  </div>
-
                 </div>
               </div>
             </div>

@@ -1,0 +1,1606 @@
+{
+  "home": {
+    "title": "Home Page (/)",
+    "route": "/",
+    "description": "Main landing page showcasing hero video, expanding mosaic, bento grid, 4 pillars, CBSE laboratories, and principal spotlight.",
+    "directory": "public/images/pages/home/",
+    "sections": {
+      "hero": {
+        "title": "Hero & Campus Identity",
+        "description": "Campus identity visuals, video poster, and official school emblems.",
+        "directory": "public/images/pages/home/hero/",
+        "images": [
+          {
+            "filename": "video-poster.webp",
+            "label": "Campus Life Scrollytelling Poster (WebP)",
+            "originalSource": "public/images/campus-video-poster.webp",
+            "sizeBytes": 346662,
+            "relativePath": "images/pages/home/hero/video-poster.webp"
+          },
+          {
+            "filename": "video-poster.jpg",
+            "label": "Campus Life Scrollytelling Poster (JPEG)",
+            "originalSource": "public/images/campus-video-poster.jpg",
+            "sizeBytes": 640898,
+            "relativePath": "images/pages/home/hero/video-poster.jpg"
+          },
+          {
+            "filename": "campus-building.jpg",
+            "label": "School Architectural Wing",
+            "originalSource": "public/images/about2.jpeg",
+            "sizeBytes": 196307,
+            "relativePath": "images/pages/home/hero/campus-building.jpg"
+          },
+          {
+            "filename": "school-logo.webp",
+            "label": "Chinmaya Vidyalaya Emblem",
+            "originalSource": "public/images/Chinmaya_Logo.webp",
+            "sizeBytes": 51666,
+            "relativePath": "images/pages/home/hero/school-logo.webp"
+          },
+          {
+            "filename": "banner-01.jpg",
+            "label": "Campus Banner Slide 1",
+            "originalSource": "public/1.jpeg",
+            "sizeBytes": 430071,
+            "relativePath": "images/pages/home/hero/banner-01.jpg"
+          },
+          {
+            "filename": "banner-02.jpg",
+            "label": "Campus Banner Slide 2",
+            "originalSource": "public/2.jpeg",
+            "sizeBytes": 418725,
+            "relativePath": "images/pages/home/hero/banner-02.jpg"
+          }
+        ]
+      },
+      "mosaic": {
+        "title": "Scroll-Expanding Video Mosaic",
+        "description": "4 surrounding corner photo tiles that expand around the sticky center campus video.",
+        "directory": "public/images/pages/home/mosaic/",
+        "images": [
+          {
+            "filename": "top-left.jpg",
+            "label": "Top Left: Physics Optics Laser Workbench",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_007.jpg",
+            "sizeBytes": 88324,
+            "relativePath": "images/pages/home/mosaic/top-left.jpg"
+          },
+          {
+            "filename": "bottom-left.jpg",
+            "label": "Bottom Left: Central Knowledge Reading Lounge",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_010.jpg",
+            "sizeBytes": 77313,
+            "relativePath": "images/pages/home/mosaic/bottom-left.jpg"
+          },
+          {
+            "filename": "top-right.jpg",
+            "label": "Top Right: Interactive Classroom Learning",
+            "originalSource": "public/images/school_events/School_Event_2026-09-28_015.jpg",
+            "sizeBytes": 97073,
+            "relativePath": "images/pages/home/mosaic/top-right.jpg"
+          },
+          {
+            "filename": "bottom-right.jpg",
+            "label": "Bottom Right: Scholastic Academic Focus",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_040.jpg",
+            "sizeBytes": 97728,
+            "relativePath": "images/pages/home/mosaic/bottom-right.jpg"
+          },
+          {
+            "filename": "video-poster.webp",
+            "label": "Center Video Poster",
+            "originalSource": "public/images/campus-video-poster.webp",
+            "sizeBytes": 346662,
+            "relativePath": "images/pages/home/mosaic/video-poster.webp"
+          }
+        ]
+      },
+      "bento": {
+        "title": "Experience Bento Grid",
+        "description": "11 distinct photo tiles showcasing hands-on learning, labs, arts, and leadership.",
+        "directory": "public/images/pages/home/bento/",
+        "images": [
+          {
+            "filename": "tile-01-academics.jpg",
+            "label": "Tile 01: Compound Microscopy & Research",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_001.jpg",
+            "sizeBytes": 98021,
+            "relativePath": "images/pages/home/bento/tile-01-academics.jpg"
+          },
+          {
+            "filename": "tile-03-optics-lab.jpg",
+            "label": "Tile 03: Physics Optics Experimentation",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_007.jpg",
+            "sizeBytes": 88324,
+            "relativePath": "images/pages/home/bento/tile-03-optics-lab.jpg"
+          },
+          {
+            "filename": "tile-04-smart-class.jpg",
+            "label": "Tile 04: Smart Interactive Board Classroom",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_003.jpg",
+            "sizeBytes": 83974,
+            "relativePath": "images/pages/home/bento/tile-04-smart-class.jpg"
+          },
+          {
+            "filename": "tile-05-library.jpg",
+            "label": "Tile 05: Central Library & Reading Cubicles",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_010.jpg",
+            "sizeBytes": 77313,
+            "relativePath": "images/pages/home/bento/tile-05-library.jpg"
+          },
+          {
+            "filename": "tile-06-olympiad.jpg",
+            "label": "Tile 06: Mathematics & Science Olympiad",
+            "originalSource": "public/images/school_events/School_Event_2026-09-27_041.jpg",
+            "sizeBytes": 90711,
+            "relativePath": "images/pages/home/bento/tile-06-olympiad.jpg"
+          },
+          {
+            "filename": "tile-07-seminar.jpg",
+            "label": "Tile 07: Scholastic Seminars & Debates",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_028.jpg",
+            "sizeBytes": 88234,
+            "relativePath": "images/pages/home/bento/tile-07-seminar.jpg"
+          },
+          {
+            "filename": "tile-08-cultural.jpg",
+            "label": "Tile 08: Classical Cultural Heritage",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_001.jpg",
+            "sizeBytes": 68982,
+            "relativePath": "images/pages/home/bento/tile-08-cultural.jpg"
+          },
+          {
+            "filename": "tile-09-exam-focus.jpg",
+            "label": "Tile 09: Examination Hall Concentration",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_030.jpg",
+            "sizeBytes": 79935,
+            "relativePath": "images/pages/home/bento/tile-09-exam-focus.jpg"
+          },
+          {
+            "filename": "tile-10-stem-robotics.jpg",
+            "label": "Tile 10: STEM Robotics & Prototyping",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_050.jpg",
+            "sizeBytes": 55549,
+            "relativePath": "images/pages/home/bento/tile-10-stem-robotics.jpg"
+          },
+          {
+            "filename": "tile-11-it-lab.jpg",
+            "label": "Tile 11: IT Coding Stations & Systems",
+            "originalSource": "public/images/school_events/School_Event_2026-09-27_082.jpg",
+            "sizeBytes": 63012,
+            "relativePath": "images/pages/home/bento/tile-11-it-lab.jpg"
+          },
+          {
+            "filename": "tile-12-faculty-mentor.jpg",
+            "label": "Tile 12: Principal Mentorship & Direction",
+            "originalSource": "public/images/chinmaya/leadership/principal_dimple_mistry.jpg",
+            "sizeBytes": 235174,
+            "relativePath": "images/pages/home/bento/tile-12-faculty-mentor.jpg"
+          }
+        ]
+      },
+      "pillars": {
+        "title": "Chinmaya Vision Programme (4 Pillars)",
+        "description": "Visual representations of the 4 CVP foundational pillars.",
+        "directory": "public/images/pages/home/pillars/",
+        "images": [
+          {
+            "filename": "pillar-01-integrated.png",
+            "label": "Pillar 01: Integrated Development (Yoga & Fitness)",
+            "originalSource": "public/images/yoga-student.png",
+            "sizeBytes": 2250000,
+            "relativePath": "images/pages/home/pillars/pillar-01-integrated.png"
+          },
+          {
+            "filename": "pillar-02-culture.png",
+            "label": "Pillar 02: Indian Culture (Heritage & Traditions)",
+            "originalSource": "public/images/puja-ceremony-cutout.png",
+            "sizeBytes": 2261628,
+            "relativePath": "images/pages/home/pillars/pillar-02-culture.png"
+          },
+          {
+            "filename": "pillar-03-patriotism.png",
+            "label": "Pillar 03: Patriotism & Civic Duty (Seva)",
+            "originalSource": "public/images/smiling-volunteer.png",
+            "sizeBytes": 2440965,
+            "relativePath": "images/pages/home/pillars/pillar-03-patriotism.png"
+          },
+          {
+            "filename": "pillar-04-universal.webp",
+            "label": "Pillar 04: Universal Outlook (Global Perspective)",
+            "originalSource": "public/images/banner-8.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/home/pillars/pillar-04-universal.webp"
+          }
+        ]
+      },
+      "laboratories": {
+        "title": "CBSE Science & Tech Laboratories",
+        "description": "The 4 central experimental laboratories on the Home page.",
+        "directory": "public/images/pages/home/laboratories/",
+        "images": [
+          {
+            "filename": "physics-lab.jpg",
+            "label": "Physics Laboratory",
+            "originalSource": "public/images/phys.jpeg",
+            "sizeBytes": 212362,
+            "relativePath": "images/pages/home/laboratories/physics-lab.jpg"
+          },
+          {
+            "filename": "chemistry-lab.jpg",
+            "label": "Chemistry Laboratory",
+            "originalSource": "public/images/CHEM1.jpeg",
+            "sizeBytes": 56592,
+            "relativePath": "images/pages/home/laboratories/chemistry-lab.jpg"
+          },
+          {
+            "filename": "biology-lab.jpg",
+            "label": "Biology Laboratory",
+            "originalSource": "public/images/biology-lab.jpg",
+            "sizeBytes": 181277,
+            "relativePath": "images/pages/home/laboratories/biology-lab.jpg"
+          },
+          {
+            "filename": "it-lab.jpg",
+            "label": "IT & Computer Science Laboratory",
+            "originalSource": "public/images/it-lab.jpg",
+            "sizeBytes": 120471,
+            "relativePath": "images/pages/home/laboratories/it-lab.jpg"
+          }
+        ]
+      },
+      "leadership": {
+        "title": "Leadership & Spiritual Direction",
+        "description": "Principal Smt. Dimple Mistry, Gurudev Swami Chinmayananda, and boardroom.",
+        "directory": "public/images/pages/home/leadership/",
+        "images": [
+          {
+            "filename": "principal-square.webp",
+            "label": "Principal Smt. Dimple Mistry (Square WebP)",
+            "originalSource": "public/images/principal_dimple_mistry_square.webp",
+            "sizeBytes": 94792,
+            "relativePath": "images/pages/home/leadership/principal-square.webp"
+          },
+          {
+            "filename": "principal-square.jpg",
+            "label": "Principal Smt. Dimple Mistry (Square JPEG)",
+            "originalSource": "public/images/principal_dimple_mistry_square.jpg",
+            "sizeBytes": 124404,
+            "relativePath": "images/pages/home/leadership/principal-square.jpg"
+          },
+          {
+            "filename": "conference-room.png",
+            "label": "Executive Boardroom Suite",
+            "originalSource": "public/images/board-conference-room.png",
+            "sizeBytes": 1917135,
+            "relativePath": "images/pages/home/leadership/conference-room.png"
+          },
+          {
+            "filename": "swami-chinmayananda.webp",
+            "label": "Pujya Gurudev Swami Chinmayananda",
+            "originalSource": "public/images/swami_chinmayananda_square.webp",
+            "sizeBytes": 198594,
+            "relativePath": "images/pages/home/leadership/swami-chinmayananda.webp"
+          }
+        ]
+      },
+      "marquee_gallery": {
+        "title": "Marquee Gallery Stream",
+        "description": "16 distinct school photographs flowing along the S-curve into the 3D gallery folder.",
+        "directory": "public/images/pages/home/marquee_gallery/",
+        "images": [
+          {
+            "filename": "stream-01-campus.jpg",
+            "label": "Main Campus Facade",
+            "originalSource": "public/images/banner-1.jpg",
+            "sizeBytes": 429580,
+            "relativePath": "images/pages/home/marquee_gallery/stream-01-campus.jpg"
+          },
+          {
+            "filename": "stream-02-athletics.jpg",
+            "label": "Athletic Meet Track Sprints",
+            "originalSource": "public/images/chinmaya/sports/sports_athletic_meet_001.jpg",
+            "sizeBytes": 94213,
+            "relativePath": "images/pages/home/marquee_gallery/stream-02-athletics.jpg"
+          },
+          {
+            "filename": "stream-03-physics.jpg",
+            "label": "Physics Mechanics Bench",
+            "originalSource": "public/images/phys.jpeg",
+            "sizeBytes": 212362,
+            "relativePath": "images/pages/home/marquee_gallery/stream-03-physics.jpg"
+          },
+          {
+            "filename": "stream-04-chemistry.jpg",
+            "label": "Chemistry Titration Practical",
+            "originalSource": "public/images/CHEM1.jpeg",
+            "sizeBytes": 56592,
+            "relativePath": "images/pages/home/marquee_gallery/stream-04-chemistry.jpg"
+          },
+          {
+            "filename": "stream-05-dance.jpg",
+            "label": "Classical Indian Dance",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_015.jpg",
+            "sizeBytes": 60629,
+            "relativePath": "images/pages/home/marquee_gallery/stream-05-dance.jpg"
+          },
+          {
+            "filename": "stream-06-biology.jpg",
+            "label": "Biology Botanical Specimens",
+            "originalSource": "public/images/biology-lab.jpg",
+            "sizeBytes": 181277,
+            "relativePath": "images/pages/home/marquee_gallery/stream-06-biology.jpg"
+          },
+          {
+            "filename": "stream-07-it.jpg",
+            "label": "Computer Lab Workstations",
+            "originalSource": "public/images/it-lab.jpg",
+            "sizeBytes": 120471,
+            "relativePath": "images/pages/home/marquee_gallery/stream-07-it.jpg"
+          },
+          {
+            "filename": "stream-08-library.jpg",
+            "label": "Central Library Archive",
+            "originalSource": "public/images/lib.jpg",
+            "sizeBytes": 252897,
+            "relativePath": "images/pages/home/marquee_gallery/stream-08-library.jpg"
+          },
+          {
+            "filename": "stream-09-sports.webp",
+            "label": "House Championship Podiums",
+            "originalSource": "public/images/banner-8.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/home/marquee_gallery/stream-09-sports.webp"
+          },
+          {
+            "filename": "stream-10-science.jpg",
+            "label": "Science & Innovation Fair",
+            "originalSource": "public/images/chinmaya-web-science.jpg",
+            "sizeBytes": 429580,
+            "relativePath": "images/pages/home/marquee_gallery/stream-10-science.jpg"
+          },
+          {
+            "filename": "stream-11-pooja.webp",
+            "label": "Guru Paduka Pooja Assembly",
+            "originalSource": "public/images/guru-paduka-pooja.webp",
+            "sizeBytes": 266922,
+            "relativePath": "images/pages/home/marquee_gallery/stream-11-pooja.webp"
+          },
+          {
+            "filename": "stream-12-tour.jpg",
+            "label": "Educational Field Excursion",
+            "originalSource": "public/images/tour.jpg",
+            "sizeBytes": 54098,
+            "relativePath": "images/pages/home/marquee_gallery/stream-12-tour.jpg"
+          },
+          {
+            "filename": "stream-13-building.jpeg",
+            "label": "Academic Campus Wings",
+            "originalSource": "public/images/about2.jpeg",
+            "sizeBytes": 196307,
+            "relativePath": "images/pages/home/marquee_gallery/stream-13-building.jpeg"
+          },
+          {
+            "filename": "stream-14-values.jpeg",
+            "label": "Moral & Value Education",
+            "originalSource": "public/images/banner-4.jpeg",
+            "sizeBytes": 51774,
+            "relativePath": "images/pages/home/marquee_gallery/stream-14-values.jpeg"
+          },
+          {
+            "filename": "stream-15-leadership.jpg",
+            "label": "Principal Smt. Dimple Mistry",
+            "originalSource": "public/images/chinmaya/leadership/principal_dimple_mistry.jpg",
+            "sizeBytes": 235174,
+            "relativePath": "images/pages/home/marquee_gallery/stream-15-leadership.jpg"
+          },
+          {
+            "filename": "stream-16-assembly.jpeg",
+            "label": "Morning Prayer Gathering",
+            "originalSource": "public/images/1.jpeg",
+            "sizeBytes": 430071,
+            "relativePath": "images/pages/home/marquee_gallery/stream-16-assembly.jpeg"
+          }
+        ]
+      },
+      "horizontal_values": {
+        "title": "We Value Pillars",
+        "description": "The 4 core values (Curiosity, Integrity, Excellence, Vitality) and marquee columns.",
+        "directory": "public/images/pages/home/horizontal_values/",
+        "images": [
+          {
+            "filename": "val-01-curiosity.jpg",
+            "label": "Value 01: Curiosity (STEM Lab)",
+            "originalSource": "public/images/CHEM1.jpeg",
+            "sizeBytes": 56592,
+            "relativePath": "images/pages/home/horizontal_values/val-01-curiosity.jpg"
+          },
+          {
+            "filename": "val-02-integrity.webp",
+            "label": "Value 02: Integrity (Vedic Values)",
+            "originalSource": "public/images/guru-paduka-pooja.webp",
+            "sizeBytes": 266922,
+            "relativePath": "images/pages/home/horizontal_values/val-02-integrity.webp"
+          },
+          {
+            "filename": "val-03-excellence.webp",
+            "label": "Value 03: Excellence (100% AISSE)",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_001.webp",
+            "sizeBytes": 71274,
+            "relativePath": "images/pages/home/horizontal_values/val-03-excellence.webp"
+          },
+          {
+            "filename": "val-04-vitality.webp",
+            "label": "Value 04: Vitality (Sports & Athletics)",
+            "originalSource": "public/images/banner-8.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/home/horizontal_values/val-04-vitality.webp"
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "About Us (/about/*)",
+    "route": "/about",
+    "description": "Institutional history, vision & mission, management committee, Swami Chinmayananda heritage, and CBSE disclosures.",
+    "directory": "public/images/pages/about/",
+    "sections": {
+      "history": {
+        "title": "School History & 3D Visual Stream",
+        "description": "Archival genesis, milestones, and the 24-photo non-mirrored 3D stream corridor.",
+        "directory": "public/images/pages/about/history/",
+        "images": [
+          {
+            "filename": "history-hero.jpeg",
+            "label": "School Architectural Profile",
+            "originalSource": "public/images/about2.jpeg",
+            "sizeBytes": 196307,
+            "relativePath": "images/pages/about/history/history-hero.jpeg"
+          },
+          {
+            "filename": "campus-building.jpg",
+            "label": "Main Campus Building",
+            "originalSource": "public/images/about2.jpeg",
+            "sizeBytes": 196307,
+            "relativePath": "images/pages/about/history/campus-building.jpg"
+          },
+          {
+            "filename": "swami-inspiration.jpeg",
+            "label": "Founder Inspiration",
+            "originalSource": "public/images/swami.jpeg",
+            "sizeBytes": 234020,
+            "relativePath": "images/pages/about/history/swami-inspiration.jpeg"
+          },
+          {
+            "filename": "stream-01-biology.jpg",
+            "label": "Stream: Biology Laboratory",
+            "originalSource": "public/images/biology-lab.jpg",
+            "sizeBytes": 181277,
+            "relativePath": "images/pages/about/history/stream-01-biology.jpg"
+          },
+          {
+            "filename": "stream-02-library.jpg",
+            "label": "Stream: Knowledge Library",
+            "originalSource": "public/images/lib.jpg",
+            "sizeBytes": 252897,
+            "relativePath": "images/pages/about/history/stream-02-library.jpg"
+          },
+          {
+            "filename": "stream-03-it.jpg",
+            "label": "Stream: Computer Coding Center",
+            "originalSource": "public/images/it-lab.jpg",
+            "sizeBytes": 120471,
+            "relativePath": "images/pages/about/history/stream-03-it.jpg"
+          },
+          {
+            "filename": "stream-04-physics.jpg",
+            "label": "Stream: Physics Laboratory",
+            "originalSource": "public/images/phys.jpeg",
+            "sizeBytes": 212362,
+            "relativePath": "images/pages/about/history/stream-04-physics.jpg"
+          },
+          {
+            "filename": "stream-05-chemistry.jpg",
+            "label": "Stream: Chemistry Analytical Lab",
+            "originalSource": "public/images/CHEM1.jpeg",
+            "sizeBytes": 56592,
+            "relativePath": "images/pages/about/history/stream-05-chemistry.jpg"
+          },
+          {
+            "filename": "stream-06-pooja.webp",
+            "label": "Stream: Spiritual Pooja Assembly",
+            "originalSource": "public/images/guru-paduka-pooja.webp",
+            "sizeBytes": 266922,
+            "relativePath": "images/pages/about/history/stream-06-pooja.webp"
+          },
+          {
+            "filename": "stream-07-sports.jpg",
+            "label": "Stream: Athletics Championship",
+            "originalSource": "public/images/chinmaya/sports/sports_athletic_meet_001.jpg",
+            "sizeBytes": 94213,
+            "relativePath": "images/pages/about/history/stream-07-sports.jpg"
+          },
+          {
+            "filename": "stream-08-cultural.jpg",
+            "label": "Stream: Cultural Folk Dance",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_001.jpg",
+            "sizeBytes": 68982,
+            "relativePath": "images/pages/about/history/stream-08-cultural.jpg"
+          },
+          {
+            "filename": "stream-09-smartclass.jpg",
+            "label": "Stream: Interactive Smart Class",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_003.jpg",
+            "sizeBytes": 83974,
+            "relativePath": "images/pages/about/history/stream-09-smartclass.jpg"
+          },
+          {
+            "filename": "stream-10-optics.jpg",
+            "label": "Stream: Optics Experimentation",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_007.jpg",
+            "sizeBytes": 88324,
+            "relativePath": "images/pages/about/history/stream-10-optics.jpg"
+          },
+          {
+            "filename": "stream-11-reading.jpg",
+            "label": "Stream: Reading Cubicles",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_010.jpg",
+            "sizeBytes": 77313,
+            "relativePath": "images/pages/about/history/stream-11-reading.jpg"
+          },
+          {
+            "filename": "stream-12-seminar.jpg",
+            "label": "Stream: Student Debating Seminar",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_028.jpg",
+            "sizeBytes": 88234,
+            "relativePath": "images/pages/about/history/stream-12-seminar.jpg"
+          },
+          {
+            "filename": "stream-13-exams.jpg",
+            "label": "Stream: Board Examination Focus",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_030.jpg",
+            "sizeBytes": 79935,
+            "relativePath": "images/pages/about/history/stream-13-exams.jpg"
+          },
+          {
+            "filename": "stream-14-robotics.jpg",
+            "label": "Stream: STEM Hardware Robotics",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_050.jpg",
+            "sizeBytes": 55549,
+            "relativePath": "images/pages/about/history/stream-14-robotics.jpg"
+          },
+          {
+            "filename": "stream-15-dance.jpg",
+            "label": "Stream: Classical Youth Dance",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_015.jpg",
+            "sizeBytes": 60629,
+            "relativePath": "images/pages/about/history/stream-15-dance.jpg"
+          },
+          {
+            "filename": "stream-16-choir.jpg",
+            "label": "Stream: Devotional Choral Choir",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_040.jpg",
+            "sizeBytes": 82198,
+            "relativePath": "images/pages/about/history/stream-16-choir.jpg"
+          },
+          {
+            "filename": "stream-17-principal.jpg",
+            "label": "Stream: Principal Leadership",
+            "originalSource": "public/images/chinmaya/leadership/principal_dimple_mistry.jpg",
+            "sizeBytes": 235174,
+            "relativePath": "images/pages/about/history/stream-17-principal.jpg"
+          },
+          {
+            "filename": "stream-18-quadrangle.jpg",
+            "label": "Stream: Campus Quadrangle",
+            "originalSource": "public/images/chinmaya/campus/campus_facilities_001.jpg",
+            "sizeBytes": 106489,
+            "relativePath": "images/pages/about/history/stream-18-quadrangle.jpg"
+          }
+        ]
+      },
+      "mission_vision": {
+        "title": "Vision & Mission",
+        "description": "Vision statement, value education ethos, and Gurudev's noble direction.",
+        "directory": "public/images/pages/about/mission_vision/",
+        "images": [
+          {
+            "filename": "swami-vision.jpeg",
+            "label": "Swami Chinmayananda Vision Portrait",
+            "originalSource": "public/images/swami.jpeg",
+            "sizeBytes": 234020,
+            "relativePath": "images/pages/about/mission_vision/swami-vision.jpeg"
+          },
+          {
+            "filename": "swami-portrait.jpg",
+            "label": "Gurudev Formal Portrait",
+            "originalSource": "public/images/swami_chinmayananda_portrait.jpg",
+            "sizeBytes": 663233,
+            "relativePath": "images/pages/about/mission_vision/swami-portrait.jpg"
+          },
+          {
+            "filename": "holistic-pedagogy.jpeg",
+            "label": "Holistic Classroom Learning",
+            "originalSource": "public/images/banner-4.jpeg",
+            "sizeBytes": 51774,
+            "relativePath": "images/pages/about/mission_vision/holistic-pedagogy.jpeg"
+          }
+        ]
+      },
+      "management": {
+        "title": "Board of Management",
+        "description": "Governance, executive boardroom, and leadership suite.",
+        "directory": "public/images/pages/about/management/",
+        "images": [
+          {
+            "filename": "executive-boardroom.png",
+            "label": "Executive Boardroom Suite",
+            "originalSource": "public/images/board-conference-room.png",
+            "sizeBytes": 1917135,
+            "relativePath": "images/pages/about/management/executive-boardroom.png"
+          },
+          {
+            "filename": "principal-dimple-mistry.jpg",
+            "label": "Principal Smt. Dimple Mistry",
+            "originalSource": "public/images/chinmaya/leadership/principal_dimple_mistry.jpg",
+            "sizeBytes": 235174,
+            "relativePath": "images/pages/about/management/principal-dimple-mistry.jpg"
+          }
+        ]
+      },
+      "swami_chinmayananda": {
+        "title": "Spiritual Founder (Pujya Gurudev)",
+        "description": "Portraits, teachings, and Himalayan spiritual heritage.",
+        "directory": "public/images/pages/about/swami_chinmayananda/",
+        "images": [
+          {
+            "filename": "gurudev-square.webp",
+            "label": "Gurudev Swami Chinmayananda (Square)",
+            "originalSource": "public/images/swami_chinmayananda_square.webp",
+            "sizeBytes": 198594,
+            "relativePath": "images/pages/about/swami_chinmayananda/gurudev-square.webp"
+          },
+          {
+            "filename": "gurudev-portrait.jpg",
+            "label": "Swami Chinmayananda Full Portrait",
+            "originalSource": "public/images/swami_chinmayananda_portrait.jpg",
+            "sizeBytes": 663233,
+            "relativePath": "images/pages/about/swami_chinmayananda/gurudev-portrait.jpg"
+          },
+          {
+            "filename": "gurudev-himalaya.webp",
+            "label": "Gurudev in the Himalayas",
+            "originalSource": "public/images/swami_himalaya_square.webp",
+            "sizeBytes": 180794,
+            "relativePath": "images/pages/about/swami_chinmayananda/gurudev-himalaya.webp"
+          }
+        ]
+      },
+      "mandatory_information": {
+        "title": "Mandatory Public Disclosures",
+        "description": "Official CBSE certificates, land, building safety, sanitation, and affiliation letters.",
+        "directory": "public/images/pages/about/mandatory_information/",
+        "images": [
+          {
+            "filename": "affiliation-letter.jpg",
+            "label": "CBSE Composite Affiliation Document",
+            "originalSource": "public/images/affliation.jpg",
+            "sizeBytes": 289344,
+            "relativePath": "images/pages/about/mandatory_information/affiliation-letter.jpg"
+          },
+          {
+            "filename": "fire-safety.jpeg",
+            "label": "Fire Safety Certificate",
+            "originalSource": "public/images/FIRE SAFETY.jpeg",
+            "sizeBytes": 189220,
+            "relativePath": "images/pages/about/mandatory_information/fire-safety.jpeg"
+          },
+          {
+            "filename": "building-safety.png",
+            "label": "Building Safety Certificate",
+            "originalSource": "public/images/building-safety-certificate.png",
+            "sizeBytes": 71592,
+            "relativePath": "images/pages/about/mandatory_information/building-safety.png"
+          },
+          {
+            "filename": "rte-recognition.png",
+            "label": "RTE Recognition Document",
+            "originalSource": "public/images/recognition-certificate-under-rte.png",
+            "sizeBytes": 79793,
+            "relativePath": "images/pages/about/mandatory_information/rte-recognition.png"
+          },
+          {
+            "filename": "trust-registration.png",
+            "label": "Trust Registration Document",
+            "originalSource": "public/images/trust-registration-document.png",
+            "sizeBytes": 58596,
+            "relativePath": "images/pages/about/mandatory_information/trust-registration.png"
+          }
+        ]
+      }
+    }
+  },
+  "academics": {
+    "title": "Academics (/academics/*)",
+    "route": "/academics",
+    "description": "Scholastic curriculum from Nursery to Std XII, laboratories, faculty, co-curricular arts, and 3D curriculum sphere.",
+    "directory": "public/images/pages/academics/",
+    "sections": {
+      "curriculum": {
+        "title": "CBSE Scholastic Framework Overview",
+        "description": "Nursery to Senior Secondary (Science, Commerce, Arts) foundational visuals.",
+        "directory": "public/images/pages/academics/curriculum/",
+        "images": [
+          {
+            "filename": "classroom-learning.webp",
+            "label": "Primary Scholastic Classroom",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_001.webp",
+            "sizeBytes": 71274,
+            "relativePath": "images/pages/academics/curriculum/classroom-learning.webp"
+          },
+          {
+            "filename": "smart-board.jpg",
+            "label": "Smart Board Interactive Pedagogy",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_003.jpg",
+            "sizeBytes": 83974,
+            "relativePath": "images/pages/academics/curriculum/smart-board.jpg"
+          },
+          {
+            "filename": "stem-research.jpg",
+            "label": "STEM Prototyping & Circuits",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_050.jpg",
+            "sizeBytes": 55549,
+            "relativePath": "images/pages/academics/curriculum/stem-research.jpg"
+          }
+        ]
+      },
+      "sphere_3d": {
+        "title": "Curriculum 3D Sphere (48 Unique Photos - Zero Duplicacy)",
+        "description": "Complete 48-photo interactive virtual 3D sphere showcasing all academic disciplines, practical labs, sports, arts, and spiritual heritage.",
+        "directory": "public/images/pages/academics/sphere_3d/",
+        "images": [
+          {
+            "filename": "sphere-01.jpeg",
+            "label": "Sphere Node 01: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-01.jpeg",
+            "sizeBytes": 212362,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-01.jpeg"
+          },
+          {
+            "filename": "sphere-02.jpeg",
+            "label": "Sphere Node 02: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-02.jpeg",
+            "sizeBytes": 56592,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-02.jpeg"
+          },
+          {
+            "filename": "sphere-03.jpg",
+            "label": "Sphere Node 03: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-03.jpg",
+            "sizeBytes": 181277,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-03.jpg"
+          },
+          {
+            "filename": "sphere-04.jpg",
+            "label": "Sphere Node 04: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-04.jpg",
+            "sizeBytes": 120471,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-04.jpg"
+          },
+          {
+            "filename": "sphere-05.jpg",
+            "label": "Sphere Node 05: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-05.jpg",
+            "sizeBytes": 252897,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-05.jpg"
+          },
+          {
+            "filename": "sphere-06.jpg",
+            "label": "Sphere Node 06: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-06.jpg",
+            "sizeBytes": 429580,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-06.jpg"
+          },
+          {
+            "filename": "sphere-07.jpg",
+            "label": "Sphere Node 07: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-07.jpg",
+            "sizeBytes": 98021,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-07.jpg"
+          },
+          {
+            "filename": "sphere-08.jpg",
+            "label": "Sphere Node 08: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-08.jpg",
+            "sizeBytes": 56887,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-08.jpg"
+          },
+          {
+            "filename": "sphere-09.jpg",
+            "label": "Sphere Node 09: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-09.jpg",
+            "sizeBytes": 83974,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-09.jpg"
+          },
+          {
+            "filename": "sphere-10.jpg",
+            "label": "Sphere Node 10: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-10.jpg",
+            "sizeBytes": 69021,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-10.jpg"
+          },
+          {
+            "filename": "sphere-11.jpg",
+            "label": "Sphere Node 11: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-11.jpg",
+            "sizeBytes": 48644,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-11.jpg"
+          },
+          {
+            "filename": "sphere-12.jpg",
+            "label": "Sphere Node 12: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-12.jpg",
+            "sizeBytes": 85325,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-12.jpg"
+          },
+          {
+            "filename": "sphere-13.jpg",
+            "label": "Sphere Node 13: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-13.jpg",
+            "sizeBytes": 88324,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-13.jpg"
+          },
+          {
+            "filename": "sphere-14.jpg",
+            "label": "Sphere Node 14: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-14.jpg",
+            "sizeBytes": 67356,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-14.jpg"
+          },
+          {
+            "filename": "sphere-15.jpg",
+            "label": "Sphere Node 15: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-15.jpg",
+            "sizeBytes": 71554,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-15.jpg"
+          },
+          {
+            "filename": "sphere-16.jpg",
+            "label": "Sphere Node 16: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-16.jpg",
+            "sizeBytes": 77313,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-16.jpg"
+          },
+          {
+            "filename": "sphere-17.jpg",
+            "label": "Sphere Node 17: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-17.jpg",
+            "sizeBytes": 67264,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-17.jpg"
+          },
+          {
+            "filename": "sphere-18.jpg",
+            "label": "Sphere Node 18: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-18.jpg",
+            "sizeBytes": 68238,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-18.jpg"
+          },
+          {
+            "filename": "sphere-19.jpg",
+            "label": "Sphere Node 19: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-19.jpg",
+            "sizeBytes": 81850,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-19.jpg"
+          },
+          {
+            "filename": "sphere-20.jpg",
+            "label": "Sphere Node 20: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-20.jpg",
+            "sizeBytes": 71373,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-20.jpg"
+          },
+          {
+            "filename": "sphere-21.jpg",
+            "label": "Sphere Node 21: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-21.jpg",
+            "sizeBytes": 80870,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-21.jpg"
+          },
+          {
+            "filename": "sphere-22.jpg",
+            "label": "Sphere Node 22: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-22.jpg",
+            "sizeBytes": 96303,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-22.jpg"
+          },
+          {
+            "filename": "sphere-23.jpg",
+            "label": "Sphere Node 23: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-23.jpg",
+            "sizeBytes": 82528,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-23.jpg"
+          },
+          {
+            "filename": "sphere-24.jpg",
+            "label": "Sphere Node 24: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-24.jpg",
+            "sizeBytes": 87570,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-24.jpg"
+          },
+          {
+            "filename": "sphere-25.jpg",
+            "label": "Sphere Node 25: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-25.jpg",
+            "sizeBytes": 90258,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-25.jpg"
+          },
+          {
+            "filename": "sphere-26.jpg",
+            "label": "Sphere Node 26: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-26.jpg",
+            "sizeBytes": 91386,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-26.jpg"
+          },
+          {
+            "filename": "sphere-27.jpg",
+            "label": "Sphere Node 27: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-27.jpg",
+            "sizeBytes": 94213,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-27.jpg"
+          },
+          {
+            "filename": "sphere-28.jpg",
+            "label": "Sphere Node 28: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-28.jpg",
+            "sizeBytes": 87286,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-28.jpg"
+          },
+          {
+            "filename": "sphere-29.jpg",
+            "label": "Sphere Node 29: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-29.jpg",
+            "sizeBytes": 103067,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-29.jpg"
+          },
+          {
+            "filename": "sphere-30.jpg",
+            "label": "Sphere Node 30: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-30.jpg",
+            "sizeBytes": 123862,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-30.jpg"
+          },
+          {
+            "filename": "sphere-31.jpg",
+            "label": "Sphere Node 31: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-31.jpg",
+            "sizeBytes": 114442,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-31.jpg"
+          },
+          {
+            "filename": "sphere-32.jpg",
+            "label": "Sphere Node 32: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-32.jpg",
+            "sizeBytes": 60372,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-32.jpg"
+          },
+          {
+            "filename": "sphere-33.jpg",
+            "label": "Sphere Node 33: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-33.jpg",
+            "sizeBytes": 122746,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-33.jpg"
+          },
+          {
+            "filename": "sphere-34.jpg",
+            "label": "Sphere Node 34: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-34.jpg",
+            "sizeBytes": 100111,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-34.jpg"
+          },
+          {
+            "filename": "sphere-35.webp",
+            "label": "Sphere Node 35: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-35.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-35.webp"
+          },
+          {
+            "filename": "sphere-36.webp",
+            "label": "Sphere Node 36: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-36.webp",
+            "sizeBytes": 45236,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-36.webp"
+          },
+          {
+            "filename": "sphere-37.jpg",
+            "label": "Sphere Node 37: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-37.jpg",
+            "sizeBytes": 68982,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-37.jpg"
+          },
+          {
+            "filename": "sphere-38.jpg",
+            "label": "Sphere Node 38: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-38.jpg",
+            "sizeBytes": 61913,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-38.jpg"
+          },
+          {
+            "filename": "sphere-39.jpg",
+            "label": "Sphere Node 39: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-39.jpg",
+            "sizeBytes": 69757,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-39.jpg"
+          },
+          {
+            "filename": "sphere-40.jpg",
+            "label": "Sphere Node 40: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-40.jpg",
+            "sizeBytes": 65746,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-40.jpg"
+          },
+          {
+            "filename": "sphere-41.jpg",
+            "label": "Sphere Node 41: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-41.jpg",
+            "sizeBytes": 70410,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-41.jpg"
+          },
+          {
+            "filename": "sphere-42.webp",
+            "label": "Sphere Node 42: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-42.webp",
+            "sizeBytes": 266922,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-42.webp"
+          },
+          {
+            "filename": "sphere-43.webp",
+            "label": "Sphere Node 43: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-43.webp",
+            "sizeBytes": 1179214,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-43.webp"
+          },
+          {
+            "filename": "sphere-44.jpeg",
+            "label": "Sphere Node 44: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-44.jpeg",
+            "sizeBytes": 51774,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-44.jpeg"
+          },
+          {
+            "filename": "sphere-45.jpg",
+            "label": "Sphere Node 45: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-45.jpg",
+            "sizeBytes": 106489,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-45.jpg"
+          },
+          {
+            "filename": "sphere-46.jpg",
+            "label": "Sphere Node 46: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-46.jpg",
+            "sizeBytes": 100033,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-46.jpg"
+          },
+          {
+            "filename": "sphere-47.jpg",
+            "label": "Sphere Node 47: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-47.jpg",
+            "sizeBytes": 235174,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-47.jpg"
+          },
+          {
+            "filename": "sphere-48.webp",
+            "label": "Sphere Node 48: Academic & Campus Milestone",
+            "originalSource": "public/images/pages/academics/curriculum/sphere_images/sphere-48.webp",
+            "sizeBytes": 198594,
+            "relativePath": "images/pages/academics/sphere_3d/sphere-48.webp"
+          }
+        ]
+      },
+      "co_curricular": {
+        "title": "Co-Curricular & House Activities",
+        "description": "Performing arts, music, dance, elocution, athletics, and cultural competitions.",
+        "directory": "public/images/pages/academics/co_curricular/",
+        "images": [
+          {
+            "filename": "annual-athletics.webp",
+            "label": "Annual Sports Meet Podiums",
+            "originalSource": "public/images/banner-8.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/academics/co_curricular/annual-athletics.webp"
+          },
+          {
+            "filename": "cultural-fest.jpeg",
+            "label": "Values & Heritage Celebrations",
+            "originalSource": "public/images/banner-4.jpeg",
+            "sizeBytes": 51774,
+            "relativePath": "images/pages/academics/co_curricular/cultural-fest.jpeg"
+          },
+          {
+            "filename": "annual-theatre.webp",
+            "label": "Annual Day Theatrical Stage",
+            "originalSource": "public/images/banner-9.webp",
+            "sizeBytes": 1179214,
+            "relativePath": "images/pages/academics/co_curricular/annual-theatre.webp"
+          },
+          {
+            "filename": "nature-excursion.webp",
+            "label": "Educational Tour & Excursion",
+            "originalSource": "public/images/tour.webp",
+            "sizeBytes": 45236,
+            "relativePath": "images/pages/academics/co_curricular/nature-excursion.webp"
+          },
+          {
+            "filename": "track-sprint.jpg",
+            "label": "Track Athletics Meet",
+            "originalSource": "public/images/chinmaya/sports/sports_athletic_meet_001.jpg",
+            "sizeBytes": 94213,
+            "relativePath": "images/pages/academics/co_curricular/track-sprint.jpg"
+          },
+          {
+            "filename": "folk-dance.jpg",
+            "label": "Classical & Folk Dance Group",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_001.jpg",
+            "sizeBytes": 68982,
+            "relativePath": "images/pages/academics/co_curricular/folk-dance.jpg"
+          }
+        ]
+      },
+      "laboratories": {
+        "title": "Laboratories & Infrastructure",
+        "description": "Experimental science laboratories, robotics center, and central knowledge library.",
+        "directory": "public/images/pages/academics/laboratories/",
+        "images": [
+          {
+            "filename": "physics-lab.jpg",
+            "label": "Physics Mechanics & Optics Lab",
+            "originalSource": "public/images/phys.jpeg",
+            "sizeBytes": 212362,
+            "relativePath": "images/pages/academics/laboratories/physics-lab.jpg"
+          },
+          {
+            "filename": "chemistry-lab.jpg",
+            "label": "Chemistry Reagent & Titration Lab",
+            "originalSource": "public/images/CHEM1.jpeg",
+            "sizeBytes": 56592,
+            "relativePath": "images/pages/academics/laboratories/chemistry-lab.jpg"
+          },
+          {
+            "filename": "biology-lab.jpg",
+            "label": "Biology Compound Microscopy Lab",
+            "originalSource": "public/images/biology-lab.jpg",
+            "sizeBytes": 181277,
+            "relativePath": "images/pages/academics/laboratories/biology-lab.jpg"
+          },
+          {
+            "filename": "it-lab.jpg",
+            "label": "Computer Science & IT Coding Center",
+            "originalSource": "public/images/it-lab.jpg",
+            "sizeBytes": 120471,
+            "relativePath": "images/pages/academics/laboratories/it-lab.jpg"
+          },
+          {
+            "filename": "library.jpg",
+            "label": "Central Reference Knowledge Library",
+            "originalSource": "public/images/lib.jpg",
+            "sizeBytes": 252897,
+            "relativePath": "images/pages/academics/laboratories/library.jpg"
+          }
+        ]
+      },
+      "faculty": {
+        "title": "Faculty & Academic Mentorship",
+        "description": "Educators, leadership, and teaching staff.",
+        "directory": "public/images/pages/academics/faculty/",
+        "images": [
+          {
+            "filename": "principal.webp",
+            "label": "Principal Smt. Dimple Mistry",
+            "originalSource": "public/images/chinmaya/leadership/principal_dimple_mistry.webp",
+            "sizeBytes": 153752,
+            "relativePath": "images/pages/academics/faculty/principal.webp"
+          },
+          {
+            "filename": "teaching-staff.png",
+            "label": "Teaching Staff Faculty",
+            "originalSource": "public/images/teaching-staff.png",
+            "sizeBytes": 1916,
+            "relativePath": "images/pages/academics/faculty/teaching-staff.png"
+          },
+          {
+            "filename": "non-teaching-staff.png",
+            "label": "Administrative & Support Staff",
+            "originalSource": "public/images/non-teaching-staff.png",
+            "sizeBytes": 1723,
+            "relativePath": "images/pages/academics/faculty/non-teaching-staff.png"
+          }
+        ]
+      }
+    }
+  },
+  "admissions": {
+    "title": "Admissions (/admissions/*)",
+    "route": "/admissions",
+    "description": "Admission guidelines, fee structure, academic calendar with 3D diary, and registration forms.",
+    "directory": "public/images/pages/admissions/",
+    "sections": {
+      "guidelines": {
+        "title": "Admission Guidelines & Process",
+        "description": "Admissions information, campus walkthrough, and eligibility standards.",
+        "directory": "public/images/pages/admissions/guidelines/",
+        "images": [
+          {
+            "filename": "admissions-hero.jpg",
+            "label": "Admissions Campus Overview",
+            "originalSource": "public/images/banner-1.jpg",
+            "sizeBytes": 429580,
+            "relativePath": "images/pages/admissions/guidelines/admissions-hero.jpg"
+          },
+          {
+            "filename": "classroom-walkthrough.webp",
+            "label": "Classroom Learning Environment",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_001.webp",
+            "sizeBytes": 71274,
+            "relativePath": "images/pages/admissions/guidelines/classroom-walkthrough.webp"
+          },
+          {
+            "filename": "registration-desk.png",
+            "label": "Admissions Desk Information",
+            "originalSource": "public/images/admission-form-placeholder.png",
+            "sizeBytes": 73147,
+            "relativePath": "images/pages/admissions/guidelines/registration-desk.png"
+          }
+        ]
+      },
+      "fee_structure": {
+        "title": "Fee Structure",
+        "description": "Official fee schedule and administrative breakdown.",
+        "directory": "public/images/pages/admissions/fee_structure/",
+        "images": [
+          {
+            "filename": "fees-schedule.jpg",
+            "label": "Annual Fee Structure Document",
+            "originalSource": "public/images/fees-structure.jpg",
+            "sizeBytes": 215514,
+            "relativePath": "images/pages/admissions/fee_structure/fees-schedule.jpg"
+          }
+        ]
+      },
+      "calendar": {
+        "title": "Academic Calendar & School Diary",
+        "description": "Term schedule, examination windows, and interactive 3D school diary cover.",
+        "directory": "public/images/pages/admissions/calendar/",
+        "images": [
+          {
+            "filename": "school-diary-3d-cover.png",
+            "label": "Official 3D School Diary Cover",
+            "originalSource": "public/images/school-diary-cover.png",
+            "sizeBytes": 356988,
+            "relativePath": "images/pages/admissions/calendar/school-diary-3d-cover.png"
+          },
+          {
+            "filename": "academic-calendar.png",
+            "label": "Annual Academic Schedule",
+            "originalSource": "public/images/academic-calendar.png",
+            "sizeBytes": 179106,
+            "relativePath": "images/pages/admissions/calendar/academic-calendar.png"
+          }
+        ]
+      }
+    }
+  },
+  "features": {
+    "title": "Unique Features (/features/*)",
+    "route": "/features",
+    "description": "Chinmaya spiritual traditions, career counselling seminars, 4 pillars, and central library.",
+    "directory": "public/images/pages/features/",
+    "sections": {
+      "spiritual_activities": {
+        "title": "Spiritual Culture & Vedic Traditions",
+        "description": "Guru Paduka Pooja, Gita chanting, morning shlokas, and cultural values.",
+        "directory": "public/images/pages/features/spiritual_activities/",
+        "images": [
+          {
+            "filename": "paduka-pooja.webp",
+            "label": "Guru Paduka Pooja Sacred Ceremony",
+            "originalSource": "public/images/guru-paduka-pooja.webp",
+            "sizeBytes": 266922,
+            "relativePath": "images/pages/features/spiritual_activities/paduka-pooja.webp"
+          },
+          {
+            "filename": "morning-assembly.jpeg",
+            "label": "Morning Prayer & Vedic Chanting",
+            "originalSource": "public/images/1.jpeg",
+            "sizeBytes": 430071,
+            "relativePath": "images/pages/features/spiritual_activities/morning-assembly.jpeg"
+          },
+          {
+            "filename": "puja-ceremony.png",
+            "label": "Sacred Pooja Ceremony",
+            "originalSource": "public/images/puja-ceremony-cutout.png",
+            "sizeBytes": 2261628,
+            "relativePath": "images/pages/features/spiritual_activities/puja-ceremony.png"
+          },
+          {
+            "filename": "gurudev-vision.webp",
+            "label": "Param Pujya Gurudev Vision",
+            "originalSource": "public/images/swami_chinmayananda_square.webp",
+            "sizeBytes": 198594,
+            "relativePath": "images/pages/features/spiritual_activities/gurudev-vision.webp"
+          }
+        ]
+      },
+      "career_counselling": {
+        "title": "Career Guidance & Aptitude Seminars",
+        "description": "Higher secondary stream workshops, entrance exam guidance, and career seminars.",
+        "directory": "public/images/pages/features/career_counselling/",
+        "images": [
+          {
+            "filename": "stream-seminar.jpg",
+            "label": "Higher Secondary Stream Seminar",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_028.jpg",
+            "sizeBytes": 88234,
+            "relativePath": "images/pages/features/career_counselling/stream-seminar.jpg"
+          },
+          {
+            "filename": "exam-preparation.jpg",
+            "label": "Competitive Entrance Preparation",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_030.jpg",
+            "sizeBytes": 79935,
+            "relativePath": "images/pages/features/career_counselling/exam-preparation.jpg"
+          }
+        ]
+      },
+      "library": {
+        "title": "Central Reference Library",
+        "description": "Repository of 10,000+ volumes, CBSE study materials, and quiet study areas.",
+        "directory": "public/images/pages/features/library/",
+        "images": [
+          {
+            "filename": "central-library.jpg",
+            "label": "Central Knowledge Repository",
+            "originalSource": "public/images/lib.jpg",
+            "sizeBytes": 252897,
+            "relativePath": "images/pages/features/library/central-library.jpg"
+          },
+          {
+            "filename": "reading-lounge.jpg",
+            "label": "Quiet Reference Cubicles",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_010.jpg",
+            "sizeBytes": 77313,
+            "relativePath": "images/pages/features/library/reading-lounge.jpg"
+          }
+        ]
+      }
+    }
+  },
+  "news_events": {
+    "title": "News & Events (/news/*)",
+    "route": "/news",
+    "description": "School circulars, Annual Day, Sports Meet, and cultural festivals.",
+    "directory": "public/images/pages/news_events/",
+    "sections": {
+      "latest_updates": {
+        "title": "School Events & Milestones",
+        "description": "Annual Day festivities, Science Fair, and inter-house athletics.",
+        "directory": "public/images/pages/news_events/latest_updates/",
+        "images": [
+          {
+            "filename": "annual-day.webp",
+            "label": "Annual Day Grand Finale",
+            "originalSource": "public/images/banner-9.webp",
+            "sizeBytes": 1179214,
+            "relativePath": "images/pages/news_events/latest_updates/annual-day.webp"
+          },
+          {
+            "filename": "sports-championship.webp",
+            "label": "Annual Sports Meet Championship",
+            "originalSource": "public/images/banner-8.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/news_events/latest_updates/sports-championship.webp"
+          },
+          {
+            "filename": "science-fair.jpg",
+            "label": "Science & Innovation Fair",
+            "originalSource": "public/images/chinmaya-web-science.jpg",
+            "sizeBytes": 429580,
+            "relativePath": "images/pages/news_events/latest_updates/science-fair.jpg"
+          }
+        ]
+      },
+      "festivals": {
+        "title": "Festivals & Celebrations",
+        "description": "Gurudev Jayanti, Sanskrit Diwas, and national festival celebrations.",
+        "directory": "public/images/pages/news_events/festivals/",
+        "images": [
+          {
+            "filename": "cultural-celebration.jpg",
+            "label": "Cultural Heritage Performance",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_001.jpg",
+            "sizeBytes": 68982,
+            "relativePath": "images/pages/news_events/festivals/cultural-celebration.jpg"
+          },
+          {
+            "filename": "jal-pakhwada-poster.jpeg",
+            "label": "Jal Pakhwada Environmental Campaign",
+            "originalSource": "public/images/jal-pakhwada-poster.jpeg",
+            "sizeBytes": 110394,
+            "relativePath": "images/pages/news_events/festivals/jal-pakhwada-poster.jpeg"
+          }
+        ]
+      }
+    }
+  },
+  "gallery": {
+    "title": "Photo Gallery (/gallery)",
+    "route": "/gallery",
+    "description": "Curated collections of academics, athletics, cultural events, leadership, and campus grounds.",
+    "directory": "public/images/pages/gallery/",
+    "sections": {
+      "academics": {
+        "title": "Academics & Science Practicals",
+        "description": "Classroom learning, robotics workshops, and experimental laboratories.",
+        "directory": "public/images/pages/gallery/academics/",
+        "images": [
+          {
+            "filename": "classroom-01.jpg",
+            "label": "Microscopy & Life Sciences",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_001.jpg",
+            "sizeBytes": 98021,
+            "relativePath": "images/pages/gallery/academics/classroom-01.jpg"
+          },
+          {
+            "filename": "classroom-02.jpg",
+            "label": "Interactive Smart Board",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_003.jpg",
+            "sizeBytes": 83974,
+            "relativePath": "images/pages/gallery/academics/classroom-02.jpg"
+          },
+          {
+            "filename": "optics-lab.jpg",
+            "label": "Optics Physics Workbench",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_007.jpg",
+            "sizeBytes": 88324,
+            "relativePath": "images/pages/gallery/academics/optics-lab.jpg"
+          },
+          {
+            "filename": "stem-robotics.jpg",
+            "label": "STEM Prototyping Workshop",
+            "originalSource": "public/images/chinmaya/academics/classroom_learning_050.jpg",
+            "sizeBytes": 55549,
+            "relativePath": "images/pages/gallery/academics/stem-robotics.jpg"
+          }
+        ]
+      },
+      "sports": {
+        "title": "Sports & House Tournaments",
+        "description": "Athletics track meet, relay races, march past, and trophy presentations.",
+        "directory": "public/images/pages/gallery/sports/",
+        "images": [
+          {
+            "filename": "athletic-meet.jpg",
+            "label": "Track Athletics Sprints",
+            "originalSource": "public/images/chinmaya/sports/sports_athletic_meet_001.jpg",
+            "sizeBytes": 94213,
+            "relativePath": "images/pages/gallery/sports/athletic-meet.jpg"
+          },
+          {
+            "filename": "relay-race.jpg",
+            "label": "Baton Relay Championship",
+            "originalSource": "public/images/chinmaya/sports/sports_athletic_meet_002.jpg",
+            "sizeBytes": 87286,
+            "relativePath": "images/pages/gallery/sports/relay-race.jpg"
+          },
+          {
+            "filename": "march-past.jpg",
+            "label": "House March Past Parade",
+            "originalSource": "public/images/chinmaya/sports/sports_athletic_meet_003.jpg",
+            "sizeBytes": 103067,
+            "relativePath": "images/pages/gallery/sports/march-past.jpg"
+          },
+          {
+            "filename": "victory-podium.webp",
+            "label": "House Trophy Presentations",
+            "originalSource": "public/images/banner-8.webp",
+            "sizeBytes": 1308902,
+            "relativePath": "images/pages/gallery/sports/victory-podium.webp"
+          }
+        ]
+      },
+      "cultural": {
+        "title": "Cultural & Devotional Celebrations",
+        "description": "Classical dance, annual day theatre, choir, and Guru Paduka Pooja.",
+        "directory": "public/images/pages/gallery/cultural/",
+        "images": [
+          {
+            "filename": "classical-dance.jpg",
+            "label": "Classical Bharatanatyam Dance",
+            "originalSource": "public/images/chinmaya/cultural/cultural_celebration_001.jpg",
+            "sizeBytes": 68982,
+            "relativePath": "images/pages/gallery/cultural/classical-dance.jpg"
+          },
+          {
+            "filename": "theatre-drama.webp",
+            "label": "Annual Day Theatrical Drama",
+            "originalSource": "public/images/banner-9.webp",
+            "sizeBytes": 1179214,
+            "relativePath": "images/pages/gallery/cultural/theatre-drama.webp"
+          },
+          {
+            "filename": "guru-paduka-pooja.webp",
+            "label": "Guru Paduka Pooja Sacred Assembly",
+            "originalSource": "public/images/guru-paduka-pooja.webp",
+            "sizeBytes": 266922,
+            "relativePath": "images/pages/gallery/cultural/guru-paduka-pooja.webp"
+          }
+        ]
+      },
+      "campus": {
+        "title": "Campus & Architecture",
+        "description": "Sprawling educational grounds, library, and modern infrastructure.",
+        "directory": "public/images/pages/gallery/campus/",
+        "images": [
+          {
+            "filename": "academic-wings.jpeg",
+            "label": "Main Academic Building Wings",
+            "originalSource": "public/images/about2.jpeg",
+            "sizeBytes": 196307,
+            "relativePath": "images/pages/gallery/campus/academic-wings.jpeg"
+          },
+          {
+            "filename": "landscaped-quadrangle.jpg",
+            "label": "Lush Green Quadrangle",
+            "originalSource": "public/images/chinmaya/campus/campus_facilities_001.jpg",
+            "sizeBytes": 106489,
+            "relativePath": "images/pages/gallery/campus/landscaped-quadrangle.jpg"
+          },
+          {
+            "filename": "central-library.jpg",
+            "label": "Central Knowledge Library",
+            "originalSource": "public/images/lib.jpg",
+            "sizeBytes": 252897,
+            "relativePath": "images/pages/gallery/campus/central-library.jpg"
+          }
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact & Administration (/contact)",
+    "route": "/contact",
+    "description": "Campus location, administrative reception, and inquiry desk.",
+    "directory": "public/images/pages/contact/",
+    "sections": {
+      "location": {
+        "title": "Campus Location & Front Desk",
+        "description": "MIDC Boisar campus, administrative entrance, and virtual assistance.",
+        "directory": "public/images/pages/contact/location/",
+        "images": [
+          {
+            "filename": "campus-facade.jpg",
+            "label": "Campus Entry & Reception",
+            "originalSource": "public/images/contact.jpg",
+            "sizeBytes": 318056,
+            "relativePath": "images/pages/contact/location/campus-facade.jpg"
+          },
+          {
+            "filename": "administrative-office.jpeg",
+            "label": "Administrative Building",
+            "originalSource": "public/images/about2.jpeg",
+            "sizeBytes": 196307,
+            "relativePath": "images/pages/contact/location/administrative-office.jpeg"
+          },
+          {
+            "filename": "bot-avatar.png",
+            "label": "Admissions Assistant Avatar",
+            "originalSource": "public/images/bot-avatar.png",
+            "sizeBytes": 577390,
+            "relativePath": "images/pages/contact/location/bot-avatar.png"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -44,6 +44,12 @@ export const Footer: React.FC = () => {
               >
                 <img 
                   src="/images/Chinmaya_Logo.webp" 
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.endsWith('.png')) {
+                      target.src = '/images/Chinmaya_Logo.png';
+                    }
+                  }}
                   alt="Chinmaya Vidyalaya Logo" 
                   className="h-14 sm:h-16 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform" 
                 />
@@ -181,7 +187,6 @@ export const Footer: React.FC = () => {
                 <ul className="space-y-2 text-xs">
                   {[
                     { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
-                    { label: "Spiritual Assemblies & Pooja", href: "/features/spiritual-activities" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
                     { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
@@ -292,7 +297,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* BOTTOM SUB-FOOTER BAR */}
-      <div className="bg-[#101215] border-t border-slate-800/90 py-6 px-4 sm:px-8 pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-6">
+      <div className="bg-[#101215] border-t border-slate-800/90 py-6 px-4 sm:px-8 pb-[calc(5.5rem+env(safe-area-inset-bottom))] lg:pb-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-sans">
           
           {/* Left: Social Icons & Developer Credit */}

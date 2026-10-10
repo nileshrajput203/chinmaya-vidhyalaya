@@ -197,11 +197,11 @@ export function ImageStreamHero({
           className="absolute inset-0"
           style={{ transformStyle: "preserve-3d" }}
         >
-          {[right, left].map((name) =>
+          {[right, left].map((name, railIdx) =>
             Array.from({ length: cards }, (_, i) => {
-              // Both rails walk the same sequence, so the left side mirrors
-              // the right at every depth.
-              const img = images[i % Math.max(images.length, 1)];
+              // Distribute images so left and right rails receive distinct images without mirroring duplicates
+              const imgIndex = (railIdx * cards + i) % Math.max(images.length, 1);
+              const img = images[imgIndex];
               return (
                 <div
                   key={`${name}-${i}`}

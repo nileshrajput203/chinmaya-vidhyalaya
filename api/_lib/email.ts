@@ -1,9 +1,6 @@
 import { Resend } from 'resend';
 
-const DEFAULT_RESEND_KEY = Buffer.from('cmVfVVphTDJxdEVfRDlyY0tBTlVQTUhSSEJWY01ZNENBUHJU', 'base64').toString('utf-8');
-
-export const RESEND_API_KEY =
-  process.env.RESEND_API_KEY || DEFAULT_RESEND_KEY;
+export const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 export const RECIPIENT_EMAIL =
   process.env.ADMISSION_EMAIL ||
@@ -102,19 +99,6 @@ export async function sendContactNotification(data: {
     text,
   });
 
-  // If Resend free tier restricts to registered account email (blinkbeyond1@gmail.com)
-  if (sendResponse.error && (sendResponse.error as any).message?.includes('blinkbeyond1@gmail.com')) {
-    console.warn('[Resend Sandbox] Domain unverified; delivering to registered account owner blinkbeyond1@gmail.com');
-    sendResponse = await resend.emails.send({
-      from: SENDER_EMAIL,
-      to: ['blinkbeyond1@gmail.com'],
-      replyTo: data.email,
-      subject: `[Contact Enquiry -> cvmedia1995@gmail.com] ${data.subject || 'New Message'} - ${data.fullName}`,
-      html: `<div style="background:#fff3cd;padding:10px;border-radius:6px;margin-bottom:15px;color:#856404;font-size:12px;"><strong>Resend Test Notice:</strong> Intended recipient was <code>${RECIPIENT_EMAIL}</code>. Delivered to your verified email because your domain is not yet verified on resend.com/domains.</div>` + html,
-      text: `[Intended Recipient: ${RECIPIENT_EMAIL}]\n\n` + text,
-    });
-  }
-
   if (sendResponse.error) {
     throw new Error(sendResponse.error.message);
   }
@@ -206,19 +190,6 @@ export async function sendAdmissionNotification(data: {
     html,
     text,
   });
-
-  // If Resend free tier restricts to registered account email (blinkbeyond1@gmail.com)
-  if (sendResponse.error && (sendResponse.error as any).message?.includes('blinkbeyond1@gmail.com')) {
-    console.warn('[Resend Sandbox] Domain unverified; delivering to registered account owner blinkbeyond1@gmail.com');
-    sendResponse = await resend.emails.send({
-      from: SENDER_EMAIL,
-      to: ['blinkbeyond1@gmail.com'],
-      replyTo: data.email || undefined,
-      subject: `[Admission Enquiry -> cvmedia1995@gmail.com] ${data.gradeApplyingFor} - ${data.studentName}`,
-      html: `<div style="background:#fff3cd;padding:10px;border-radius:6px;margin-bottom:15px;color:#856404;font-size:12px;"><strong>Resend Test Notice:</strong> Intended recipient was <code>${RECIPIENT_EMAIL}</code>. Delivered to your verified email because your domain is not yet verified on resend.com/domains.</div>` + html,
-      text: `[Intended Recipient: ${RECIPIENT_EMAIL}]\n\n` + text,
-    });
-  }
 
   if (sendResponse.error) {
     throw new Error(sendResponse.error.message);

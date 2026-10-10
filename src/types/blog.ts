@@ -17,7 +17,7 @@ export interface BlogPost {
     text: string;
     source: string;
   };
-  category: 'Chinmaya Heritage' | 'Academic Pedagogy' | 'Student Wellness' | 'STEM & Innovation' | 'Campus Life' | 'Parenting Guides';
+  category: string;
   tags: string[];
   author: BlogAuthor;
   publishDate: string;
@@ -26,4 +26,4 @@ export interface BlogPost {
   featured?: boolean;
 }
 
-export type BlogCategoryFilter = 'All' | 'Chinmaya Heritage' | 'Academic Pedagogy' | 'Student Wellness' | 'STEM & Innovation' | 'Campus Life' | 'Parenting Guides';
+export type BlogCategoryFilter = string;

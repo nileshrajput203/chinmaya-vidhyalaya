@@ -9,43 +9,40 @@ import {
   Linkedin, 
   GraduationCap, 
   FileText,
-  ArrowUpRight,
-  ImageIcon,
+  ChevronLeft,
   ChevronRight
 } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
 
-const GALLERY_MOMENTS = [
+const SITEMAP_PILLARS = [
   {
-    title: "Annual Day Cultural Spectacle",
-    tag: "Celebrations",
-    date: "Dec 2024",
-    image: "/images/banner-9.webp"
+    id: 'pillar-1',
+    num: '01',
+    title: 'Integrated Development',
+    subtitle: 'Body, Mind & Intellect in Harmony',
+    image: '/images/pages/home/pillars/pillar-01-integrated.png',
   },
   {
-    title: "Inter-House Athletic Championship",
-    tag: "Sports Meet",
-    date: "Jan 2025",
-    image: "/images/banner-8.webp"
+    id: 'pillar-2',
+    num: '02',
+    title: 'Indian Culture & Heritage',
+    subtitle: 'Vedic Ethos & Timeless Values',
+    image: '/images/pages/home/pillars/pillar-02-culture.png',
   },
   {
-    title: "Guru Paduka Pooja & Devotional Assembly",
-    tag: "Spiritual CVP",
-    date: "May 2024",
-    image: "/images/guru-paduka-pooja.webp"
+    id: 'pillar-3',
+    num: '03',
+    title: 'Patriotism & Civic Duty',
+    subtitle: 'Nation Building & Selfless Service',
+    image: '/images/pages/home/pillars/pillar-03-patriotism.png',
   },
   {
-    title: "Experiential Chemistry Workstations",
-    tag: "Science Fest",
-    date: "Nov 2024",
-    image: "/images/CHEM1.jpeg"
+    id: 'pillar-4',
+    num: '04',
+    title: 'Universal Outlook',
+    subtitle: 'Vasudhaiva Kutumbakam • One World',
+    image: '/images/pages/home/pillars/pillar-04-universal.webp',
   },
-  {
-    title: "Physics Mechanics & Optical Labs",
-    tag: "STEM Innovation",
-    date: "Oct 2024",
-    image: "/images/phys.jpeg"
-  }
 ];
 
 interface MegaOverlayMenuProps {
@@ -60,16 +57,28 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
   onOpenAdmissionDrawer,
 }) => {
   const location = useLocation();
-  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
-  const [isGalleryPaused, setIsGalleryPaused] = useState(false);
+  const [activePillarIdx, setActivePillarIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (!isOpen || isGalleryPaused) return;
-    const timer = window.setInterval(() => {
-      setActiveGalleryIndex((prev) => (prev + 1) % GALLERY_MOMENTS.length);
-    }, 3800);
-    return () => window.clearInterval(timer);
-  }, [isOpen, isGalleryPaused]);
+    if (!isOpen || isPaused) return;
+
+    const timer = setInterval(() => {
+      setActivePillarIdx((prev) => (prev + 1) % SITEMAP_PILLARS.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [isOpen, isPaused]);
+
+  const handlePrevPillar = () => {
+    setActivePillarIdx((prev) => (prev - 1 + SITEMAP_PILLARS.length) % SITEMAP_PILLARS.length);
+  };
+
+  const handleNextPillar = () => {
+    setActivePillarIdx((prev) => (prev + 1) % SITEMAP_PILLARS.length);
+  };
+
+  const currentPillar = SITEMAP_PILLARS[activePillarIdx];
 
   useEffect(() => {
     if (!isOpen) return;
@@ -278,99 +287,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                   ))}
                 </ul>
               </div>
-
-              {/* 21ST.DEV STYLE INTERACTIVE CAMPUS GALLERY PREVIEW CARD */}
-              <div 
-                className="pt-1"
-                onMouseEnter={() => setIsGalleryPaused(true)}
-                onMouseLeave={() => setIsGalleryPaused(false)}
-              >
-                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                  <h3 className="font-heading font-black text-amber-400 text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                    <span>CAMPUS GALLERY</span>
-                  </h3>
-                  <Link
-                    to="/gallery"
-                    onClick={onClose}
-                    className="text-[11px] font-mono text-slate-400 hover:text-amber-400 flex items-center gap-1 transition-colors group/view"
-                  >
-                    <span>View All</span>
-                    <ArrowUpRight className="w-3 h-3 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5 transition-transform" />
-                  </Link>
-                </div>
-
-                {/* 21st.dev Interactive Image Card */}
-                <div className="mt-3 relative group/card rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900/90 shadow-xl transition-all duration-300 hover:border-amber-500/50 hover:shadow-amber-500/10 hover:shadow-2xl">
-                  {/* Image Display */}
-                  <Link 
-                    to="/gallery" 
-                    onClick={onClose}
-                    className="relative block aspect-[16/10] overflow-hidden"
-                  >
-                    <AnimatePresence mode="wait">
-                      <motion.img
-                        key={activeGalleryIndex}
-                        src={GALLERY_MOMENTS[activeGalleryIndex].image}
-                        alt={GALLERY_MOMENTS[activeGalleryIndex].title}
-                        initial={{ opacity: 0, scale: 1.06 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.96 }}
-                        transition={{ duration: 0.4, ease: 'easeOut' }}
-                        className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
-                      />
-                    </AnimatePresence>
-
-                    {/* Gradient Overlay Scrim */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#14161A] via-[#14161A]/40 to-transparent" />
-
-                    {/* Bottom Caption & Pagination Controls */}
-                    <div className="absolute bottom-2.5 inset-x-2.5 flex items-end justify-between gap-2">
-                      <div className="min-w-0 flex-1">
-                        <p className="text-white text-xs font-bold leading-tight drop-shadow truncate">
-                          {GALLERY_MOMENTS[activeGalleryIndex].title}
-                        </p>
-                        <p className="text-[10px] text-slate-300 font-mono mt-0.5 drop-shadow truncate">
-                          {GALLERY_MOMENTS[activeGalleryIndex].date}
-                        </p>
-                      </div>
-
-                      {/* Pill pagination dots */}
-                      <div className="flex items-center gap-1 shrink-0 pb-0.5">
-                        {GALLERY_MOMENTS.map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              setActiveGalleryIndex(idx);
-                            }}
-                            className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                              activeGalleryIndex === idx
-                                ? 'w-4 bg-amber-400'
-                                : 'w-1.5 bg-white/40 hover:bg-white/80'
-                            }`}
-                            aria-label={`View slide ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </Link>
-
-                  {/* Bottom Action Footer */}
-                  <Link
-                    to="/gallery"
-                    onClick={onClose}
-                    className="flex items-center justify-between px-3.5 py-2 bg-slate-900/90 hover:bg-amber-500/10 border-t border-slate-800 text-[11px] text-slate-300 hover:text-amber-400 transition-colors font-medium"
-                  >
-                    <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider">
-                      <ImageIcon className="w-3.5 h-3.5 text-amber-400" />
-                      Explore 50+ Visual Archives
-                    </span>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover/card:translate-x-1 group-hover/card:text-amber-400 transition-all" />
-                  </Link>
-                </div>
-              </div>
             </div>
 
             {/* COLUMN 3: STUDENT LIFE & CONNECT */}
@@ -382,7 +298,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                 <ul className="mt-4 space-y-2 text-xs sm:text-sm">
                   {[
                     { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
-                    { label: "Spiritual Assemblies & Pooja", href: "/features/spiritual-activities" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
                     { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
@@ -431,17 +346,99 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
 
           </div>
 
-          {/* RIGHT SIDE CUTOUT IMAGE OF STUDENTS (4 cols on lg) */}
-          <div className="hidden lg:flex lg:col-span-4 justify-end relative h-full items-end">
-            <div className="relative max-w-sm w-full">
-              {/* Soft gold glow behind students */}
+          {/* RIGHT SIDE: 4 PILLARS ROTATING CAROUSEL (ONE IMAGE AT A TIME) */}
+          <div className="hidden lg:flex lg:col-span-4 justify-end relative h-full items-center">
+            <div 
+              className="relative max-w-sm w-full bg-slate-900/60 border border-slate-700/60 rounded-3xl p-5 backdrop-blur-md shadow-2xl flex flex-col items-center"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              {/* Soft gold ambient glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
               
-              <img 
-                src="/images/menu_students_cutout.png" 
-                alt="Chinmaya Vidyalaya Students" 
-                className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)] mix-blend-lighten pointer-events-none relative z-10"
-              />
+              {/* Pillar Header / Tag */}
+              <div className="w-full flex items-center justify-between border-b border-slate-800 pb-3 mb-3 z-10">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold block">
+                    CVP Framework
+                  </span>
+                  <h4 className="text-sm font-cinzel font-bold text-white tracking-wide">
+                    {currentPillar.title}
+                  </h4>
+                </div>
+                <span className="text-xs font-mono font-bold text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-slate-700">
+                  {currentPillar.num} / 04
+                </span>
+              </div>
+
+              {/* Carousel Image Container with AnimatePresence */}
+              <div className="relative w-full h-64 rounded-2xl overflow-hidden flex items-center justify-center bg-black/40 border border-slate-800/80 p-3 z-10">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentPillar.id}
+                    initial={{ opacity: 0, scale: 0.92 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.92 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <img 
+                      src={currentPillar.image} 
+                      alt={currentPillar.title} 
+                      className={`max-w-full max-h-full object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)] ${
+                        currentPillar.id === 'pillar-4' ? 'rounded-xl' : ''
+                      }`}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Left / Right chevron navigation buttons */}
+                <button
+                  type="button"
+                  onClick={handlePrevPillar}
+                  aria-label="Previous pillar image"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer opacity-70 hover:opacity-100 z-20"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNextPillar}
+                  aria-label="Next pillar image"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer opacity-70 hover:opacity-100 z-20"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Subtitle & Dot Indicators */}
+              <div className="w-full pt-3 flex items-center justify-between z-10">
+                <Link
+                  to="/features/4-pillars"
+                  onClick={onClose}
+                  className="text-xs text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 group transition-colors"
+                >
+                  <span>Explore 4 Pillars</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                </Link>
+
+                {/* Dots */}
+                <div className="flex items-center gap-1.5">
+                  {SITEMAP_PILLARS.map((p, idx) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => setActivePillarIdx(idx)}
+                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                        activePillarIdx === idx 
+                          ? 'w-6 bg-amber-400' 
+                          : 'w-2 bg-slate-700 hover:bg-slate-500'
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 

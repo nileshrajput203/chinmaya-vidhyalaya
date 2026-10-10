@@ -58,7 +58,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
   return (
     <AnimatePresence>
       <div 
-        className="fixed inset-0 z-50 lg:hidden flex"
+        className="fixed inset-0 z-[100] lg:hidden flex"
         data-lenis-prevent="true"
       >
         {/* Backdrop */}
