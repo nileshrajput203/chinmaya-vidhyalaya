@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, FileText, Download, Send, CheckCircle2, Phone, GraduationCap, Eye } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
@@ -6,6 +6,7 @@ import { DocumentViewerModal } from '../documents/DocumentViewerModal';
 import { SchoolDocument } from '../../types/documents';
 import { formService } from '../../services/formService';
 import { useToast } from '../../context/ToastContext';
+import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
 
 interface QuickAdmissionDrawerProps {
   isOpen: boolean;
@@ -21,25 +22,8 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
   const [submitSuccessMessage, setSubmitSuccessMessage] = useState<string | null>(null);
   const [viewingDoc, setViewingDoc] = useState<SchoolDocument | null>(null);
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    const lenis = (window as any).__lenis;
-    if (lenis) {
-      lenis.stop();
-    }
-
-    return () => {
-      document.body.style.overflow = originalOverflow;
-      const l = (window as any).__lenis;
-      if (l) {
-        l.start();
-      }
-    };
-  }, [isOpen]);
+  // Lock background scroll ref-counted
+  useBodyScrollLock(isOpen);
 
   const [formData, setFormData] = useState({
     parentName: '',
