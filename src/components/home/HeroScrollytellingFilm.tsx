@@ -265,6 +265,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
   // Track scroll progress (0.0 to 1.0) for synchronized animations
   const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const lastReportedProgressRef = useRef<number>(0);
 
   // Scroll synchronization
   useEffect(() => {
@@ -279,12 +280,17 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = Math.min(1, Math.max(0, self.progress));
-        setScrollProgress(progress);
 
         // Accurate video scrub: plays in full (frame 0 to 235) across 0% to 60% scroll
         const rawVideoProgress = progress / 0.60;
         const videoProgress = Math.min(1, Math.max(0, rawVideoProgress));
         targetFrameRef.current = videoProgress * (TOTAL_FRAMES - 1);
+
+        // Throttle React state re-renders to 1% intervals to eliminate all CPU lag & frame drops
+        if (Math.abs(progress - lastReportedProgressRef.current) >= 0.008 || progress === 0 || progress === 1) {
+          lastReportedProgressRef.current = progress;
+          setScrollProgress(progress);
+        }
       },
     });
 
@@ -298,12 +304,17 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
       const rawProgress = -rect.top / scrollableDistance;
       const progress = Math.min(Math.max(0, rawProgress), 1);
-      setScrollProgress(progress);
 
       // Accurate video scrub: plays in full (frame 0 to 235) across 0% to 60% scroll
       const rawVideoProgress = progress / 0.60;
       const videoProgress = Math.min(1, Math.max(0, rawVideoProgress));
       targetFrameRef.current = videoProgress * (TOTAL_FRAMES - 1);
+
+      // Throttle React state re-renders to 1% intervals to eliminate all CPU lag & frame drops
+      if (Math.abs(progress - lastReportedProgressRef.current) >= 0.008 || progress === 0 || progress === 1) {
+        lastReportedProgressRef.current = progress;
+        setScrollProgress(progress);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
