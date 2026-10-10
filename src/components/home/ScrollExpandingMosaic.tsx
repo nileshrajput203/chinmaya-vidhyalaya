@@ -190,8 +190,6 @@ export const ScrollExpandingMosaic: React.FC = () => {
                   className="w-full h-full object-contain relative z-10"
                 >
                   <source src="/videos/campus-life-1080p.mp4" type="video/mp4" />
-                  <source src="/videos/campus-life.mp4" type="video/mp4" />
-                  <source src="/videos/IMG_5730.MOV" type="video/quicktime" />
                 </video>
               </div>
             </motion.div>
@@ -265,8 +263,6 @@ export const ScrollExpandingMosaic: React.FC = () => {
             className="w-full h-full object-cover"
           >
             <source src="/videos/campus-life-1080p.mp4" type="video/mp4" />
-            <source src="/videos/campus-life.mp4" type="video/mp4" />
-            <source src="/videos/IMG_5730.MOV" type="video/quicktime" />
           </video>
         </div>
 

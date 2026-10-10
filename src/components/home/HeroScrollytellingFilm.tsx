@@ -96,6 +96,10 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
             } else {
               video.currentTime = seekTime;
             }
+            // Fallback safety release so a missed seeked event never deadlocks the scrub loop
+            setTimeout(() => {
+              isSeekingRef.current = false;
+            }, 100);
           }
         }
       }
@@ -271,7 +275,6 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
           className="absolute inset-0 w-full h-full object-cover z-[1] pointer-events-none"
         >
           <source src="/heronew/hero-scrub.mp4" type="video/mp4" />
-          <source src="/heronew/hero-video.mp4" type="video/mp4" />
         </video>
 
         {/* ----------------------------------------------------
