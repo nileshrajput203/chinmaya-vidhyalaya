@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar, Bell } from 'lucide-react';
@@ -13,16 +13,28 @@ interface HeroScrollytellingFilmProps {
   onOpenAdmissions: () => void;
 }
 
-// Scroll stroke distance for full video scrub (approx 950px total scroll distance)
-const TOTAL_SCROLLABLE_PX = 950;
+// All 236 frames from ezgif-frame-001.jpg to ezgif-frame-236.jpg in /heronew/herovideo/
+const START_FRAME = 1;
+const END_FRAME = 236;
+const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 236 frames
+
+// One smooth natural scroll stroke executes all 236 frames (approx 850px total scroll distance)
+const SCROLL_PX_PER_FRAME = 3.6;
+const TOTAL_SCROLLABLE_PX = Math.round((TOTAL_FRAMES - 1) * SCROLL_PX_PER_FRAME);
+
+// Helper to construct zero-padded frame URLs in heronew/herovideo
+const getFrameSrc = (index: number): string => {
+  const frameNum = Math.min(Math.max(START_FRAME, START_FRAME + index), END_FRAME);
+  return `/heronew/herovideo/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
+};
 
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
   const { showSuccess } = useToast();
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Desktop guard: only active on screens >= 1024px to ensure mobile never loads or plays heavy hero video
+  // Desktop guard: only active on screens >= 1024px
   const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
 
   useEffect(() => {
@@ -33,76 +45,216 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Video duration state (default 10s matching lv_0_20260922153757.mp4)
-  const durationRef = useRef<number>(10);
-  const targetTimeRef = useRef<number>(0);
-  const currentTimeRef = useRef<number>(0);
-  const isSeekingRef = useRef<boolean>(false);
+  // Cached frame images
+  const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(TOTAL_FRAMES).fill(null));
+  const currentFrameRef = useRef<number>(0);
+  const targetFrameRef = useRef<number>(0);
+  const lastDrawnFrameRef = useRef<number>(-1);
 
+  // Draw frame with sub-frame continuous blending for liquid-smooth 60/120fps motion
+  const drawFrame = useCallback((floatFrame: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d', { alpha: false });
+    if (!ctx) return;
 
-  // Initialize video metadata and ensure first frame is painted
-  useEffect(() => {
-    if (!isDesktop) return;
-    const video = videoRef.current;
-    if (!video) return;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    if (width === 0 || height === 0) return;
 
-    const handleLoadedMetadata = () => {
-      if (video.duration && !isNaN(video.duration)) {
-        durationRef.current = video.duration;
-      }
-      // Paint first frame
-      try {
-        video.currentTime = 0.001;
-      } catch (_) {}
-    };
-
-    const handleSeeked = () => {
-      isSeekingRef.current = false;
-    };
-
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-    video.addEventListener('canplay', handleLoadedMetadata);
-    video.addEventListener('seeked', handleSeeked);
-
-    if (video.readyState >= 1) {
-      handleLoadedMetadata();
-    } else {
-      video.load();
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const targetW = Math.round(width * dpr);
+    const targetH = Math.round(height * dpr);
+    if (canvas.width !== targetW || canvas.height !== targetH) {
+      canvas.width = targetW;
+      canvas.height = targetH;
     }
 
-    return () => {
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      video.removeEventListener('canplay', handleLoadedMetadata);
-      video.removeEventListener('seeked', handleSeeked);
-    };
-  }, [isDesktop]);
+    const cw = canvas.width;
+    const ch = canvas.height;
+    if (cw === 0 || ch === 0) return;
 
-  // Silky smooth physics interpolation loop for video seeking
+    const clamped = Math.min(Math.max(0, floatFrame), TOTAL_FRAMES - 1);
+    const baseIdx = Math.floor(clamped);
+    const nextIdx = Math.min(baseIdx + 1, TOTAL_FRAMES - 1);
+    const blendAlpha = clamped - baseIdx;
+
+    // Find requested base frame or closest loaded fallback
+    let baseImg = imagesRef.current[baseIdx];
+    if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) {
+      for (let i = baseIdx; i >= 0; i--) {
+        if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
+          baseImg = imagesRef.current[i];
+          break;
+        }
+      }
+      if (!baseImg) {
+        for (let i = baseIdx + 1; i < TOTAL_FRAMES; i++) {
+          if (imagesRef.current[i]?.complete && imagesRef.current[i]!.naturalWidth > 0) {
+            baseImg = imagesRef.current[i];
+            break;
+          }
+        }
+      }
+    }
+
+    if (!baseImg || !baseImg.complete || baseImg.naturalWidth === 0) return;
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
+    // Calculate cover dimensions preserving aspect ratio, centered
+    const imgAspect = baseImg.naturalWidth / baseImg.naturalHeight;
+    const canvasAspect = cw / ch;
+    let drawWidth = cw;
+    let drawHeight = ch;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (canvasAspect > imgAspect) {
+      drawHeight = cw / imgAspect;
+      offsetY = (ch - drawHeight) / 2;
+    } else {
+      drawWidth = ch * imgAspect;
+      offsetX = (cw - drawWidth) / 2;
+    }
+
+    // 1. Draw base frame
+    ctx.globalAlpha = 1.0;
+    ctx.drawImage(baseImg, offsetX, offsetY, drawWidth, drawHeight);
+
+    // 2. Sub-frame blend with next frame
+    if (blendAlpha > 0.03 && nextIdx !== baseIdx) {
+      const nextImg = imagesRef.current[nextIdx];
+      if (nextImg && nextImg.complete && nextImg.naturalWidth > 0) {
+        const nextAspect = nextImg.naturalWidth / nextImg.naturalHeight;
+        let nDrawWidth = cw;
+        let nDrawHeight = ch;
+        let nOffsetX = 0;
+        let nOffsetY = 0;
+
+        if (canvasAspect > nextAspect) {
+          nDrawHeight = cw / nextAspect;
+          nOffsetY = (ch - nDrawHeight) / 2;
+        } else {
+          nDrawWidth = ch * nextAspect;
+          nOffsetX = (cw - nDrawWidth) / 2;
+        }
+
+        ctx.globalAlpha = blendAlpha;
+        ctx.drawImage(nextImg, nOffsetX, nOffsetY, nDrawWidth, nDrawHeight);
+        ctx.globalAlpha = 1.0;
+      }
+    }
+  }, []);
+
+  // Progressive frame preloader
+  useEffect(() => {
+    if (!isDesktop) return;
+    let isCancelled = false;
+    const loadedSet = new Set<number>();
+
+    const fetchFrame = (index: number): Promise<void> => {
+      if (isCancelled || imagesRef.current[index] || loadedSet.has(index)) {
+        return Promise.resolve();
+      }
+
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.decoding = 'async';
+        img.onload = () => {
+          if (isCancelled) return resolve();
+          loadedSet.add(index);
+          imagesRef.current[index] = img;
+          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
+            drawFrame(currentFrameRef.current);
+          }
+          resolve();
+        };
+        img.onerror = () => {
+          resolve();
+        };
+        img.src = getFrameSrc(index);
+        if (img.complete && img.naturalWidth > 0) {
+          loadedSet.add(index);
+          imagesRef.current[index] = img;
+          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
+            drawFrame(currentFrameRef.current);
+          }
+          resolve();
+        }
+      });
+    };
+
+    const loadInitialSequence = async () => {
+      // Step 1: Preload immediate start frames
+      const initialPromises: Promise<void>[] = [];
+      for (let i = 0; i < Math.min(20, TOTAL_FRAMES); i++) {
+        initialPromises.push(fetchFrame(i));
+      }
+      await Promise.all(initialPromises);
+      if (isCancelled) return;
+      drawFrame(0);
+
+      // Step 2: Load keyframes every 3rd frame for immediate scrubbing
+      const keyframeIndices: number[] = [];
+      for (let i = 20; i < TOTAL_FRAMES; i += 3) {
+        keyframeIndices.push(i);
+      }
+      let kIndex = 0;
+      const keyframeWorker = async () => {
+        while (kIndex < keyframeIndices.length && !isCancelled) {
+          const idx = keyframeIndices[kIndex++];
+          await fetchFrame(idx);
+        }
+      };
+      await Promise.all(Array.from({ length: 4 }, () => keyframeWorker()));
+      if (isCancelled) return;
+
+      // Step 3: Backfill remaining in-between frames
+      const backfillIndices: number[] = [];
+      for (let i = 20; i < TOTAL_FRAMES; i++) {
+        if (!loadedSet.has(i)) backfillIndices.push(i);
+      }
+      let bIndex = 0;
+      const backfillWorker = async () => {
+        while (bIndex < backfillIndices.length && !isCancelled) {
+          const idx = backfillIndices[bIndex++];
+          await fetchFrame(idx);
+        }
+      };
+      await Promise.all(Array.from({ length: 4 }, () => backfillWorker()));
+    };
+
+    loadInitialSequence();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [isDesktop, drawFrame]);
+
+  // Handle Window Resize
+  useEffect(() => {
+    if (!isDesktop) return;
+    const handleResize = () => {
+      drawFrame(currentFrameRef.current);
+    };
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isDesktop, drawFrame]);
+
+  // Silky smooth physics interpolation loop
   useEffect(() => {
     if (!isDesktop) return;
     let animId: number;
 
     const renderLoop = () => {
-      const video = videoRef.current;
-      if (video && video.duration && !isNaN(video.duration)) {
-        const diff = targetTimeRef.current - currentTimeRef.current;
-        if (Math.abs(diff) > 0.005) {
-          // Responsive fluid lerp
-          currentTimeRef.current += diff * 0.35;
-          const seekTime = Math.min(Math.max(0, currentTimeRef.current), video.duration - 0.01);
-
-          if (!isSeekingRef.current) {
-            isSeekingRef.current = true;
-            if ('fastSeek' in video && typeof (video as any).fastSeek === 'function') {
-              (video as any).fastSeek(seekTime);
-            } else {
-              video.currentTime = seekTime;
-            }
-            // Fallback safety release so a missed seeked event never deadlocks the scrub loop
-            setTimeout(() => {
-              isSeekingRef.current = false;
-            }, 100);
-          }
+      const diff = targetFrameRef.current - currentFrameRef.current;
+      if (Math.abs(diff) > 0.001) {
+        currentFrameRef.current += diff * 0.25;
+        if (Math.abs(currentFrameRef.current - lastDrawnFrameRef.current) > 0.01) {
+          lastDrawnFrameRef.current = currentFrameRef.current;
+          drawFrame(currentFrameRef.current);
         }
       }
       animId = requestAnimationFrame(renderLoop);
@@ -110,14 +262,13 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     animId = requestAnimationFrame(renderLoop);
     return () => cancelAnimationFrame(animId);
-  }, [isDesktop]);
+  }, [isDesktop, drawFrame]);
 
-  // Pin stickyRef to viewport using GSAP ScrollTrigger
+  // Scroll synchronization
   useEffect(() => {
     if (!isDesktop) return;
     const container = containerRef.current;
-    const stickyEl = stickyRef.current;
-    if (!container || !stickyEl) return;
+    if (!container) return;
 
     const st = ScrollTrigger.create({
       trigger: container,
@@ -126,7 +277,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = Math.min(1, Math.max(0, self.progress));
-        targetTimeRef.current = progress * durationRef.current;
+        targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
       },
     });
 
@@ -140,7 +291,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
       const rawProgress = -rect.top / scrollableDistance;
       const progress = Math.min(Math.max(0, rawProgress), 1);
-      targetTimeRef.current = progress * durationRef.current;
+      targetFrameRef.current = progress * (TOTAL_FRAMES - 1);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -244,18 +395,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
 
-        {/* Scroll-Driven Scrubbing Video */}
-        <video
-          ref={videoRef}
-          src="/heronew/hero-scrub.mp4"
-          muted
-          playsInline
-          preload="auto"
-          poster="/heronew/herovideo/ezgif-frame-001.jpg"
+        {/* Liquid-Smooth Canvas Scrollytelling Film */}
+        <canvas
+          ref={canvasRef}
           className="absolute inset-0 w-full h-full object-cover z-[1] pointer-events-none"
-        >
-          <source src="/heronew/hero-scrub.mp4" type="video/mp4" />
-        </video>
+        />
 
         {/* ----------------------------------------------------
             ADMISSION FORM + WHAT'S NEW NOTICE BOARD (DESKTOP HERO OVERLAY)
