@@ -381,11 +381,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // Admission enquiry form + notice board appear at exactly 25% scroll (0.25)
+  // Admission enquiry form + notice board appear early on scroll (starts at 5% scroll, fully in by 15%)
   const getHeroOverlayVisibility = () => {
     const p = scrollProgress;
-    const FORM_START = 0.25; // Appears at 25% scroll
-    const FORM_FULL = 0.35;  // Smoothly reaches full opacity by 35% scroll
+    const FORM_START = 0.05; // Appears early at 5% scroll
+    const FORM_FULL = 0.15;  // Smoothly reaches full opacity by 15% scroll
 
     if (p < FORM_START) {
       return {
@@ -407,41 +407,6 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       pointerEvents: opacity > 0.4 ? ('auto' as const) : ('none' as const),
       display: 'block' as const,
       transition: 'opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-    };
-  };
-
-  // Cinematic Intro presentation visible at 0% to 25% scroll
-  const getIntroVisibility = () => {
-    const p = scrollProgress;
-    const FADE_START = 0.12;
-    const FADE_END = 0.24;
-
-    if (p >= FADE_END) {
-      return {
-        opacity: 0,
-        display: 'none' as const,
-        pointerEvents: 'none' as const,
-      };
-    }
-
-    if (p <= FADE_START) {
-      return {
-        opacity: 1,
-        transform: 'translateY(0px)',
-        display: 'flex' as const,
-        pointerEvents: 'none' as const,
-      };
-    }
-
-    const t = 1 - (p - FADE_START) / (FADE_END - FADE_START);
-    const translateY = (1 - t) * -20;
-
-    return {
-      opacity: Math.max(0, Math.min(1, t)),
-      transform: `translateY(${translateY.toFixed(1)}px)`,
-      display: 'flex' as const,
-      pointerEvents: 'none' as const,
-      transition: 'opacity 0.15s ease-out, transform 0.15s ease-out',
     };
   };
 
@@ -478,47 +443,9 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
           className="absolute inset-0 w-full h-full object-cover z-[1] pointer-events-none"
         />
 
-        {/* Cinematic Contrast Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-[2] pointer-events-none" />
-
-        {/* ----------------------------------------------------
-            CINEMATIC INTRO BANNER (DESKTOP HERO 0% TO 25% SCROLL)
-            Showcases the campus video and school identity before form appears
-           ---------------------------------------------------- */}
-        <div 
-          className="flex flex-col absolute inset-0 z-10 pointer-events-none items-center justify-center px-6 text-center select-none"
-          style={getIntroVisibility()}
-        >
-          {/* Glowing Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-[#DF711B]/40 text-white text-xs font-mono tracking-widest uppercase mb-4 shadow-[0_8px_25px_rgba(0,0,0,0.5)]">
-            <span className="w-2 h-2 rounded-full bg-[#DF711B] animate-pulse" />
-            <span className="text-[#FFB740] font-bold">ADMISSIONS OPEN 2026–27</span>
-            <span className="text-white/40">•</span>
-            <span className="text-slate-200">CBSE #1130058</span>
-          </div>
-
-          {/* Majestic Hero Title */}
-          <h1 className="font-cinzel text-5xl xl:text-6xl font-black text-white tracking-wide uppercase drop-shadow-[0_8px_32px_rgba(0,0,0,0.9)] max-w-4xl leading-tight">
-            Chinmaya Vidyalaya
-          </h1>
-          <p className="mt-3 text-sm xl:text-base font-sans text-slate-200 max-w-xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] leading-relaxed">
-            P-201, Vidyanagar, Boisar • 36 Years of Academic Distinction & Vedantic Values
-          </p>
-
-          {/* Interactive Scroll Prompt Indicator */}
-          <div className="mt-10 flex flex-col items-center gap-2 text-white/80">
-            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#FFB740] font-bold drop-shadow">
-              Scroll to explore campus & admissions
-            </span>
-            <div className="w-5 h-9 rounded-full border-2 border-white/40 flex items-start justify-center p-1 shadow-lg">
-              <div className="w-1.5 h-2.5 rounded-full bg-[#DF711B] animate-bounce" />
-            </div>
-          </div>
-        </div>
-
         {/* ----------------------------------------------------
             ADMISSION FORM + WHAT'S NEW NOTICE BOARD (DESKTOP HERO OVERLAY)
-            Appears at 25% scroll and remains visible through the section
+            Appears early on scroll and remains visible through the section
            ---------------------------------------------------- */}
         <div className="flex absolute inset-0 z-20 pointer-events-none items-center justify-center px-4 py-4 sm:py-6">
           <div className="w-full max-w-5xl mx-auto box-border" style={getHeroOverlayVisibility()}>
