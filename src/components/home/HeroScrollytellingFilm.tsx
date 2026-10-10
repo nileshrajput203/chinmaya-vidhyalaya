@@ -18,13 +18,13 @@ const START_FRAME = 1;
 const END_FRAME = 236;
 const TOTAL_FRAMES = END_FRAME - START_FRAME + 1; // 236 frames
 
-// Total scroll distance: 0% to 60% scrub plays all 236 frames (840px), remaining 40% holds completed scene and enables form interaction
-const TOTAL_SCROLLABLE_PX = 1400;
+// 1-scroll distance: video plays full in 0% to 60% (~450px), remaining 40% transitions smoothly into next section
+const TOTAL_SCROLLABLE_PX = 750;
 
-// Helper to construct zero-padded frame URLs in heronew/herovideo
+// Helper to construct zero-padded WebP frame URLs in heronew/frames_webp
 const getFrameSrc = (index: number): string => {
   const frameNum = Math.min(Math.max(START_FRAME, START_FRAME + index), END_FRAME);
-  return `/heronew/herovideo/ezgif-frame-${String(frameNum).padStart(3, '0')}.jpg`;
+  return `/heronew/frames_webp/frame-${String(frameNum).padStart(3, '0')}.webp`;
 };
 
 export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ onOpenAdmissions }) => {
@@ -147,7 +147,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   }, []);
 
-  // Progressive frame preloader
+  // Instant skeleton + progressive frame preloader
   useEffect(() => {
     if (!isDesktop) return;
     let isCancelled = false;
@@ -165,7 +165,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
           if (isCancelled) return resolve();
           loadedSet.add(index);
           imagesRef.current[index] = img;
-          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
+          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.5) {
             drawFrame(currentFrameRef.current);
           }
           resolve();
@@ -177,7 +177,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         if (img.complete && img.naturalWidth > 0) {
           loadedSet.add(index);
           imagesRef.current[index] = img;
-          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.2) {
+          if (index === 0 || Math.abs(index - currentFrameRef.current) < 1.5) {
             drawFrame(currentFrameRef.current);
           }
           resolve();
@@ -186,19 +186,36 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     };
 
     const loadInitialSequence = async () => {
-      // Step 1: Preload immediate start frames
-      const initialPromises: Promise<void>[] = [];
-      for (let i = 0; i < Math.min(20, TOTAL_FRAMES); i++) {
-        initialPromises.push(fetchFrame(i));
-      }
-      await Promise.all(initialPromises);
+      // Step 1: Preload frame 0 immediately & draw to canvas without waiting
+      await fetchFrame(0);
       if (isCancelled) return;
       drawFrame(0);
 
-      // Step 2: Load keyframes every 3rd frame for immediate scrubbing
+      // Step 2: Instant 16-frame uniform skeleton (~1.5 MB WebP) across entire timeline
+      // Ensures user can scrub immediately with zero freezes or delays!
+      const skeletonIndices: number[] = [];
+      const skeletonStep = Math.max(1, Math.floor(TOTAL_FRAMES / 16));
+      for (let i = 0; i < TOTAL_FRAMES; i += skeletonStep) {
+        if (i !== 0) skeletonIndices.push(i);
+      }
+      if (!skeletonIndices.includes(TOTAL_FRAMES - 1)) {
+        skeletonIndices.push(TOTAL_FRAMES - 1);
+      }
+
+      let sIndex = 0;
+      const skeletonWorker = async () => {
+        while (sIndex < skeletonIndices.length && !isCancelled) {
+          const idx = skeletonIndices[sIndex++];
+          await fetchFrame(idx);
+        }
+      };
+      await Promise.all(Array.from({ length: 4 }, () => skeletonWorker()));
+      if (isCancelled) return;
+
+      // Step 3: Load intermediate keyframes (every 4th frame)
       const keyframeIndices: number[] = [];
-      for (let i = 20; i < TOTAL_FRAMES; i += 3) {
-        keyframeIndices.push(i);
+      for (let i = 0; i < TOTAL_FRAMES; i += 4) {
+        if (!loadedSet.has(i)) keyframeIndices.push(i);
       }
       let kIndex = 0;
       const keyframeWorker = async () => {
@@ -210,19 +227,19 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       await Promise.all(Array.from({ length: 4 }, () => keyframeWorker()));
       if (isCancelled) return;
 
-      // Step 3: Backfill remaining in-between frames
-      const backfillIndices: number[] = [];
-      for (let i = 20; i < TOTAL_FRAMES; i++) {
-        if (!loadedSet.has(i)) backfillIndices.push(i);
+      // Step 4: Stream remaining in-between frames in background
+      const remainingIndices: number[] = [];
+      for (let i = 0; i < TOTAL_FRAMES; i++) {
+        if (!loadedSet.has(i)) remainingIndices.push(i);
       }
-      let bIndex = 0;
-      const backfillWorker = async () => {
-        while (bIndex < backfillIndices.length && !isCancelled) {
-          const idx = backfillIndices[bIndex++];
+      let rIndex = 0;
+      const remainingWorker = async () => {
+        while (rIndex < remainingIndices.length && !isCancelled) {
+          const idx = remainingIndices[rIndex++];
           await fetchFrame(idx);
         }
       };
-      await Promise.all(Array.from({ length: 4 }, () => backfillWorker()));
+      await Promise.all(Array.from({ length: 3 }, () => remainingWorker()));
     };
 
     loadInitialSequence();
@@ -242,7 +259,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     return () => window.removeEventListener('resize', handleResize);
   }, [isDesktop, drawFrame]);
 
-  // Silky smooth physics interpolation loop
+  // Silky smooth, highly responsive physics interpolation loop (0ms input latency)
   useEffect(() => {
     if (!isDesktop) return;
     let animId: number;
@@ -250,7 +267,8 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     const renderLoop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
       if (Math.abs(diff) > 0.001) {
-        currentFrameRef.current += diff * 0.25;
+        // High responsive lerp (0.45) for instant reaction to mouse wheel / trackpad
+        currentFrameRef.current += diff * 0.45;
         if (Math.abs(currentFrameRef.current - lastDrawnFrameRef.current) > 0.01) {
           lastDrawnFrameRef.current = currentFrameRef.current;
           drawFrame(currentFrameRef.current);
@@ -381,11 +399,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // Admission enquiry form + notice board appear early on scroll (starts at 5% scroll, fully in by 15%)
+  // Admission enquiry form + notice board appear early on scroll (starts at 4% scroll, fully in by 12%)
   const getHeroOverlayVisibility = () => {
     const p = scrollProgress;
-    const FORM_START = 0.05; // Appears early at 5% scroll
-    const FORM_FULL = 0.15;  // Smoothly reaches full opacity by 15% scroll
+    const FORM_START = 0.04; // Appears early at 4% scroll
+    const FORM_FULL = 0.12;  // Smoothly reaches full opacity by 12% scroll
 
     if (p < FORM_START) {
       return {
@@ -432,7 +450,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       >
         {/* Instant Poster Image */}
         <img
-          src="/heronew/herovideo/ezgif-frame-001.jpg"
+          src="/heronew/frames_webp/frame-001.webp"
           alt="Chinmaya Vidyalaya Campus"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
