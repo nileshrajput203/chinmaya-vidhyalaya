@@ -39,17 +39,6 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
           </span>
         </div>
 
-        {/* Corner Watermark Brand */}
-        <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-10">
-          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10">
-            <img 
-              src="/images/Chinmaya_Logo.webp" 
-              alt="Chinmaya Crest" 
-              className="h-4.5 sm:h-5 w-auto object-contain" 
-            />
-            <span className="text-[8.5px] sm:text-[9px] font-cinzel font-bold text-white tracking-widest">CV TARAPUR</span>
-          </div>
-        </div>
 
         {/* Hero Impact Typography Overlay (Aligned to Bottom-Left) */}
         <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-5 pb-3 sm:pb-4 z-10 flex flex-col justify-end">

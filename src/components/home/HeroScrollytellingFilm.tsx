@@ -39,8 +39,6 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   const currentTimeRef = useRef<number>(0);
   const isSeekingRef = useRef<boolean>(false);
 
-  // Component scroll progress state (0.0 to 1.0)
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
 
   // Initialize video metadata and ensure first frame is painted
   useEffect(() => {
@@ -63,14 +61,18 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     };
 
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('canplay', handleLoadedMetadata);
     video.addEventListener('seeked', handleSeeked);
 
     if (video.readyState >= 1) {
       handleLoadedMetadata();
+    } else {
+      video.load();
     }
 
     return () => {
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('canplay', handleLoadedMetadata);
       video.removeEventListener('seeked', handleSeeked);
     };
   }, [isDesktop]);
@@ -121,13 +123,9 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       trigger: container,
       start: 'top top',
       end: 'bottom bottom',
-      pin: stickyEl,
-      pinSpacing: false,
-      anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = Math.min(1, Math.max(0, self.progress));
-        setScrollProgress(progress);
         targetTimeRef.current = progress * durationRef.current;
       },
     });
@@ -142,7 +140,6 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
       const rawProgress = -rect.top / scrollableDistance;
       const progress = Math.min(Math.max(0, rawProgress), 1);
-      setScrollProgress(progress);
       targetTimeRef.current = progress * durationRef.current;
     };
 
@@ -210,31 +207,13 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // Cards appear at 20% scroll and remain visible until the end
+  // Cards visible seamlessly in hero
   const getHeroOverlayVisibility = () => {
-    const p = scrollProgress;
-    const start = 0.20;
-    const fullIn = 0.35;
-
-    if (p < start) {
-      return {
-        opacity: 0,
-        transform: 'translateY(24px)',
-        pointerEvents: 'none' as const,
-        display: 'none' as const,
-      };
-    }
-
-    const t = Math.min(1, Math.max(0, (p - start) / (fullIn - start)));
-    const opacity = t;
-    const translateY = (1 - t) * 18;
-
     return {
-      opacity,
-      transform: `translateY(${translateY.toFixed(1)}px)`,
-      pointerEvents: opacity > 0.3 ? ('auto' as const) : ('none' as const),
+      opacity: 1,
+      transform: 'translateY(0px)',
+      pointerEvents: 'auto' as const,
       display: 'block' as const,
-      transition: 'opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
     };
   };
 
@@ -268,6 +247,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         {/* Scroll-Driven Scrubbing Video */}
         <video
           ref={videoRef}
+          src="/heronew/hero-scrub.mp4"
           muted
           playsInline
           preload="auto"
