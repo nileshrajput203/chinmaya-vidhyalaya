@@ -1,5 +1,22 @@
 import { ContactEnquiry, AdmissionEnquiry, FormSubmitResult } from '../types/forms';
 
+async function parseResponsePayload(response: Response): Promise<{
+  data: any;
+  rawText: string;
+}> {
+  try {
+    const rawText = await response.text();
+    try {
+      const data = JSON.parse(rawText);
+      return { data, rawText };
+    } catch {
+      return { data: {}, rawText };
+    }
+  } catch {
+    return { data: {}, rawText: '' };
+  }
+}
+
 export const formService = {
   async submitContact(data: Partial<ContactEnquiry>): Promise<FormSubmitResult> {
     try {
@@ -11,7 +28,7 @@ export const formService = {
         body: JSON.stringify(data),
       });
 
-      const resData = await response.json().catch(() => ({}));
+      const { data: resData, rawText } = await parseResponsePayload(response);
 
       if (response.ok && resData.success !== false) {
         return {
@@ -20,10 +37,16 @@ export const formService = {
         };
       }
 
+      const errorMsg =
+        resData.error ||
+        resData.message ||
+        (rawText && rawText.length < 150 && !rawText.includes('<html') && !rawText.includes('<!DOCTYPE') ? rawText : '') ||
+        `Message delivery failed (Server HTTP ${response.status}). Please try again or call the office.`;
+
       return {
         success: false,
-        message: resData.error || 'Failed to send message. Please verify your information and try again.',
-        error: resData.error || `Request failed with status ${response.status}`,
+        message: errorMsg,
+        error: errorMsg,
       };
     } catch (err: any) {
       console.error('[FormService submitContact error]:', err);
@@ -37,22 +60,37 @@ export const formService = {
 
   async submitAdmission(data: AdmissionEnquiry): Promise<FormSubmitResult> {
     try {
-      const response = await fetch('/api/admissions/enquiry', {
+      const payload = JSON.stringify({
+        parentName: data.parentName,
+        studentName: data.studentName,
+        gradeApplyingFor: data.gradeApplyingFor || data.grade || 'Not Specified',
+        phone: data.phone,
+        email: data.email,
+        message: data.message || data.notes,
+      });
+
+      let response = await fetch('/api/admissions/enquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          parentName: data.parentName,
-          studentName: data.studentName,
-          gradeApplyingFor: data.gradeApplyingFor || data.grade || 'Not Specified',
-          phone: data.phone,
-          email: data.email,
-          message: data.message || data.notes,
-        }),
+        body: payload,
       });
 
-      const resData = await response.json().catch(() => ({}));
+      // If /api/admissions/enquiry returns 404, fallback to /api/admission
+      if (!response.ok && response.status === 404) {
+        const fallback = await fetch('/api/admission', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+        }).catch(() => null);
+
+        if (fallback && fallback.ok) {
+          response = fallback;
+        }
+      }
+
+      const { data: resData, rawText } = await parseResponsePayload(response);
 
       if (response.ok && resData.success !== false) {
         return {
@@ -61,10 +99,16 @@ export const formService = {
         };
       }
 
+      const errorMsg =
+        resData.error ||
+        resData.message ||
+        (rawText && rawText.length < 150 && !rawText.includes('<html') && !rawText.includes('<!DOCTYPE') ? rawText : '') ||
+        `Admission submission failed (Server HTTP ${response.status}). Please verify your details or contact the admissions counter.`;
+
       return {
         success: false,
-        message: resData.error || 'Failed to submit admission enquiry. Please check your information and try again.',
-        error: resData.error || `Request failed with status ${response.status}`,
+        message: errorMsg,
+        error: errorMsg,
       };
     } catch (err: any) {
       console.error('[FormService submitAdmission error]:', err);
