@@ -51,6 +51,10 @@ export const router = createBrowserRouter([
       /* ACADEMICS ROUTES */
       { path: 'academics', element: <ContentPage {...ACADEMIC_SECTIONS['curriculum']} categoryLabel="Academics" /> },
       { path: 'academics/curriculum', element: <ContentPage {...ACADEMIC_SECTIONS['curriculum']} categoryLabel="Academics" /> },
+      { path: 'curriculum', element: <Navigate to="/academics/curriculum" replace /> },
+      { path: 'curriculums', element: <Navigate to="/academics/curriculum" replace /> },
+      { path: 'syllabus', element: <Navigate to="/academics/curriculum" replace /> },
+      { path: 'syllabi', element: <Navigate to="/academics/curriculum" replace /> },
       { path: 'academics/co-curricular', element: <ContentPage {...ACADEMIC_SECTIONS['co-curricular']} categoryLabel="Academics" /> },
       { path: 'academics/faculty', element: <Navigate to="/academics/curriculum" replace /> },
       { path: 'academics/teaching-strategy', element: <Navigate to="/academics/curriculum" replace /> },

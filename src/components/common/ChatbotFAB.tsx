@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   MessageCircle, X, Send, Phone, 
   RotateCcw, ExternalLink, Download 
 } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
+import { OFFICIAL_FAQS } from '../../data/faq';
 
 interface Message {
   id: string;
@@ -15,45 +17,50 @@ interface Message {
     label: string;
     url?: string;
     download?: boolean;
+    isModalTrigger?: boolean;
     onClick?: () => void;
   }>;
 }
 
-const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ label: string; url?: string; download?: boolean }> }> = {
+const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> }> = {
   'admission': {
-    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to IX.\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon–Sat: 8:30 AM – 3:30 PM.",
+    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon–Sat: 8:30 AM – 3:30 PM.",
     actions: [
+      { label: 'Request Admission Callback', isModalTrigger: true },
       { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
-      { label: 'Standard 1-10 Papers', url: '/downloads/sample-papers' }
+      { label: 'Admission Guidelines', url: '/admissions/guidelines' }
     ]
   },
   'fee': {
-    answer: "Chinmaya Vidyalaya Tarapur follows a transparent, CBSE-regulated fee structure:\n\n• Term-wise / quarterly flexible payment installments.\n• Admission / Prospectus form fee: ₹500.\n• Tuition and development fees are structured according to Pre-Primary, Primary, Middle, and Secondary sections.\n• Detailed fee schedules for each standard can be collected directly from the school accounts desk or confirmed via phone.",
+    answer: "Chinmaya Vidyalaya Tarapur follows a transparent, CBSE-regulated fee structure with term-wise installments:\n\n• Term 1 (June) & Term 2 (November) flexible installments.\n• Admission / Prospectus form fee: ₹500.\n• Tuition and development fees are structured according to Pre-Primary, Primary, Middle, and Secondary sections.\n• Detailed fee schedules for each standard can be collected directly from the school accounts desk or confirmed via phone.",
     actions: [
-      { label: 'Call Accounts: 9322054713', url: 'tel:9322054713' },
-      { label: 'Contact Office', url: '/contact' }
+      { label: '🧮 Interactive Fee Estimator', url: '/admissions/guidelines' },
+      { label: 'Annual Fee Schedule', url: '/admissions/fee-structure' },
+      { label: 'Call Accounts: 9322054713', url: 'tel:9322054713' }
     ]
   },
   'campus': {
     answer: "Chinmaya Vidyalaya Tarapur Campus Details:\n\n• Address: P-201 MIDC Area, Saravali, Boisar / Tarapur, District Palghar, Maharashtra - 401501.\n• Campus Features: Modern STEM Laboratories (Physics, Chemistry, Biology), Robotics, Central Digital Library, Sports Playground, Daily Yoga & Meditation Courtyard.\n• School Timings:\n  - Pre-Primary: 8:30 AM – 12:30 PM\n  - Primary & Secondary: 7:45 AM – 2:00 PM\n• Office Visiting Hours: Mon to Sat, 8:30 AM – 3:30 PM.",
     actions: [
       { label: 'Call Campus Office', url: 'tel:9322054713' },
-      { label: 'View Contact Page', url: '/contact' }
+      { label: 'View Facilities', url: '/about/infrastructure' },
+      { label: 'Contact Details', url: '/contact' }
     ]
   },
   'forms': {
     answer: "You can download all official documents and application forms directly:\n\n• Nursery & Kindergarten Admission Form (PDF)\n• CBSE SARAS Mandatory Public Disclosures\n• Classes I to V Evaluation III Question Papers\n• Classes VI to X CBSE Sample Papers & Revision Modules\n• Transfer Certificate (TC) Request Format",
     actions: [
       { label: 'Nursery Admission Form (PDF)', url: '/images/nursery.pdf', download: true },
-      { label: 'Browse All Documents', url: '/downloads/documents' },
-      { label: 'Mandatory Disclosures', url: '/about/mandatory-information' }
+      { label: 'CBSE Sample Papers', url: '/downloads/sample-papers' },
+      { label: 'Browse All Documents', url: '/downloads/documents' }
     ]
   },
   'curriculum': {
-    answer: "Academic Excellence & Pedagogy:\n\n• Affiliation: Central Board of Secondary Education (CBSE), New Delhi (Affiliation No. 1130058, School Code: 30040).\n• Chinmaya Vision Programme (CVP):\n  1. Integrated Development (Sharirik, Bauddhik & Manasik Vikas)\n  2. Indian Culture & Heritage (Bhartiya Sanskriti)\n  3. Patriotism & Civic Responsibility (Rashtra Prem)\n  4. Universal Outlook (Vasudhaiva Kutumbakam)\n• High academic record with 100% first-class pass results in CBSE Class X Board examinations.",
+    answer: "Academic Framework & CBSE Scholastic Curriculum:\n\n• Affiliation: Central Board of Secondary Education (CBSE), New Delhi (Affiliation No. 1130058, School Code: 30040, U-DISE: 27361116004).\n• Academic Stages:\n  1. Foundational Stage (Nursery & KG): Play-way learning, phonics, joyful numeracy.\n  2. Primary Stage (Classes I to V): Activity-oriented discovery and bilingual reading.\n  3. Middle Stage (Classes VI to VIII): Specialized sciences, trilingual formula (English, Hindi, Sanskrit/Marathi) & coding.\n  4. Secondary Stage (Classes IX & X): NCERT/CBSE curriculum for AISSE board exams with consistent 100% first-class pass results.\n  5. Senior Secondary (Classes XI & XII): Science, Commerce, and Humanities/Arts streams.\n• Value Core: Chinmaya Vision Programme (CVP) with 4 Pillars.",
     actions: [
       { label: 'Explore Curriculum', url: '/academics/curriculum' },
-      { label: 'Our Philosophy (CVP)', url: '/about/philosophy' }
+      { label: 'Senior Streams (XI & XII)', url: '/academics/curriculum' },
+      { label: 'Download Sample Papers', url: '/downloads/sample-papers' }
     ]
   },
   'contact': {
@@ -78,16 +85,19 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
   }
 };
 
-import { OFFICIAL_FAQS } from '../../data/faq';
+const STOP_WORDS = new Set([
+  'the', 'and', 'for', 'are', 'is', 'what', 'where', 'how', 'which', 'who', 
+  'when', 'why', 'can', 'one', 'school', 'vidyalaya', 'tarapur', 'chinmaya', 
+  'does', 'have', 'all', 'any', 'about', 'with', 'from', 'our'
+]);
 
 function getBotResponse(userText: string): { 
   answer: string; 
   actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> 
 } {
   const query = userText.toLowerCase().trim();
-  const tokens = query.split(/\s+/).filter(t => t.length > 2);
 
-  // Check if user specifically requested admission guidance modal
+  // 1. Admission Guidance Desk Modal Request
   if (query.includes('guidance') || query.includes('call back') || query.includes('callback') || query.includes('counsellor') || query.includes('counselor') || query.includes('form modal')) {
     return {
       answer: "I can open our Admission Guidance Desk right now! You can submit your mobile number and child's standard for an immediate callback from our academic coordinator.",
@@ -98,20 +108,181 @@ function getBotResponse(userText: string): {
     };
   }
 
-  // Score against OFFICIAL_FAQS
+  // 2. Transfer Certificates & Mandatory Disclosures (specific check so general "cbse" does not hijack)
+  if (
+    query.includes('transfer certificate') || 
+    query.includes(' tc ') || 
+    query.endsWith(' tc') || 
+    query.startsWith('tc ') || 
+    query === 'tc' ||
+    query.includes('mandatory disclosure') || 
+    query.includes('public disclosure') || 
+    query.includes('disclosures') ||
+    query.includes('saras') || 
+    query.includes('building safety') || 
+    query.includes('fire clearance') || 
+    query.includes('drinking water certificate')
+  ) {
+    return {
+      answer: "Where can one access Transfer Certificates (TC) and CBSE Mandatory Disclosures?\n\nUnder CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020–21 and 2023 records) are available for online viewing under the 'About Us > Mandatory Information & TC' section.",
+      actions: [
+        { label: 'View Mandatory Disclosures', url: '/about/mandatory-information' },
+        { label: 'Transfer Certificates (TC)', url: '/downloads/transfer-certificates' }
+      ]
+    };
+  }
+
+  // 3. CBSE & Curriculum / Academics / Syllabi / Subjects / Stages / Streams
+  if (
+    query.includes('curriculum') || 
+    query.includes('syllabus') || 
+    query.includes('syllabi') || 
+    query.includes('academic') || 
+    query.includes('stream') || 
+    query.includes('subject') || 
+    query.includes('course') || 
+    query.includes('class 10') || 
+    query.includes('class 12') || 
+    query.includes('std 10') || 
+    query.includes('std 12') ||
+    query.includes('board exam') ||
+    query.includes('pedagogy') ||
+    query.includes('cbse')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['curriculum'];
+  }
+
+  // 4. Admission Enquiry & Application
+  if (
+    query.includes('admiss') || 
+    query.includes('apply') || 
+    query.includes('seat') || 
+    query.includes('join') || 
+    query.includes('nursery') || 
+    query.includes('std 1') || 
+    query.includes('class 1') || 
+    query.includes('enquiry') || 
+    query.includes('register') || 
+    query.includes('registration')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['admission'];
+  }
+
+  // 5. Fee Structure & Calculator
+  if (
+    query.includes('fee') || 
+    query.includes('cost') || 
+    query.includes('charge') || 
+    query.includes('payment') || 
+    query.includes('installment') || 
+    query.includes('calculator')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['fee'];
+  }
+
+  // 6. Download Forms & Question Papers
+  if (
+    query.includes('form') || 
+    query.includes('download') || 
+    query.includes('paper') || 
+    query.includes('sample') || 
+    query.includes('pdf') || 
+    query.includes('question') ||
+    query.includes('evaluation')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['forms'];
+  }
+
+  // 7. Campus & Timings
+  if (
+    query.includes('campus') || 
+    query.includes('timing') || 
+    query.includes('hour') || 
+    query.includes('where') || 
+    query.includes('location') || 
+    query.includes('address') || 
+    query.includes('visit')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['campus'];
+  }
+
+  // 8. Contact & Helplines
+  if (
+    query.includes('contact') || 
+    query.includes('phone') || 
+    query.includes('call') || 
+    query.includes('email') || 
+    query.includes('number') || 
+    query.includes('principal') || 
+    query.includes('office') ||
+    query.includes('front desk')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['contact'];
+  }
+
+  // 9. Facilities & Labs & Sports
+  if (
+    query.includes('facility') || 
+    query.includes('facilities') || 
+    query.includes('lab') || 
+    query.includes('library') || 
+    query.includes('sport') || 
+    query.includes('ground') || 
+    query.includes('yoga')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['facilities'];
+  }
+
+  // 10. Bus & Transportation
+  if (
+    query.includes('bus') || 
+    query.includes('transport') || 
+    query.includes('van') || 
+    query.includes('commute') || 
+    query.includes('pick')
+  ) {
+    return FAQ_KNOWLEDGE_BASE['transport'];
+  }
+
+  // 11. 4 Pillars / CVP / Philosophy / Spiritual
+  if (
+    query.includes('pillar') || 
+    query.includes('cvp') || 
+    query.includes('philosophy') || 
+    query.includes('vision programme') || 
+    query.includes('gurudev') || 
+    query.includes('spiritual') || 
+    query.includes('pooja') || 
+    query.includes('bhajan') || 
+    query.includes('gita chanting')
+  ) {
+    return {
+      answer: "The Chinmaya Vision Programme (CVP) integrates 4 Core Pillars:\n\n1. Integrated Development: Physical fitness through yoga, emotional balance, intellectual agility, and spiritual grounding.\n2. Indian Culture & Heritage: Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations.\n3. Patriotism: Active citizenship, national pride, environmental awareness (Jal Pakhwada).\n4. Universal Outlook: Vasudhaiva Kutumbakam — the world as one family.",
+      actions: [
+        { label: 'Explore 4 Pillars', url: '/features/four-pillars' },
+        { label: 'Our Philosophy (CVP)', url: '/about/philosophy' }
+      ]
+    };
+  }
+
+  // 12. Score against OFFICIAL_FAQS for other questions
+  const tokens = query.split(/\s+/).filter(t => t.length > 2 && !STOP_WORDS.has(t));
   let bestFaqMatch: { faq: typeof OFFICIAL_FAQS[0]; score: number } | null = null;
-  for (const faq of OFFICIAL_FAQS) {
-    const qLower = faq.question.toLowerCase();
-    const aLower = faq.answer.toLowerCase();
-    let score = 0;
+  
+  if (tokens.length > 0) {
+    for (const faq of OFFICIAL_FAQS) {
+      const qLower = faq.question.toLowerCase();
+      const aLower = faq.answer.toLowerCase();
+      let score = 0;
 
-    for (const token of tokens) {
-      if (qLower.includes(token)) score += 3;
-      if (aLower.includes(token)) score += 1;
-    }
+      for (const token of tokens) {
+        if (qLower.includes(token)) score += 3;
+        if (aLower.includes(token)) score += 1;
+      }
 
-    if (score > 0 && (!bestFaqMatch || score > bestFaqMatch.score)) {
-      bestFaqMatch = { faq, score };
+      if (score > 0 && (!bestFaqMatch || score > bestFaqMatch.score)) {
+        bestFaqMatch = { faq, score };
+      }
     }
   }
 
@@ -128,7 +299,7 @@ function getBotResponse(userText: string): {
     } else if (matchedFaq.category === 'cvp') {
       actions.push({ label: 'Explore 4 Pillars', url: '/features/four-pillars' });
     } else {
-      actions.push({ label: 'Academics & Curriculum', url: '/academics/curriculum' });
+      actions.push({ label: 'Explore Curriculum', url: '/academics/curriculum' });
     }
 
     return {
@@ -137,57 +308,19 @@ function getBotResponse(userText: string): {
     };
   }
 
-  // Keyword rules fallback
-  if (query.includes('fee') || query.includes('cost') || query.includes('charge') || query.includes('payment') || query.includes('installment') || query.includes('calculator')) {
-    return {
-      answer: "Chinmaya Vidyalaya Tarapur offers a transparent, CBSE-regulated fee structure with term-wise installments.\n\n• Term 1 (June) & Term 2 (November) flexible installments\n• Lab and IT charges apply for Classes XI & XII Science/Commerce\n• Bus transport fees vary based on Boisar / MIDC / BARC route zones.\n\nYou can calculate exact fees for your child's standard using our Interactive Fee Estimator!",
-      actions: [
-        { label: '🧮 Interactive Fee Estimator', url: '/admissions/guidelines' },
-        { label: 'Call Accounts: 9322054713', url: 'tel:9322054713' }
-      ]
-    };
-  }
-  if (query.includes('admiss') || query.includes('apply') || query.includes('seat') || query.includes('join') || query.includes('nursery') || query.includes('std 1') || query.includes('class 1')) {
-    return {
-      ...FAQ_KNOWLEDGE_BASE['admission'],
-      actions: [
-        { label: 'Request Admission Callback', isModalTrigger: true },
-        { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
-        { label: 'Admission Guidelines', url: '/admissions/guidelines' }
-      ]
-    };
-  }
-  if (query.includes('form') || query.includes('download') || query.includes('paper') || query.includes('pdf') || query.includes('sample') || query.includes('tc') || query.includes('certificate')) {
-    return FAQ_KNOWLEDGE_BASE['forms'];
-  }
-  if (query.includes('campus') || query.includes('timing') || query.includes('hour') || query.includes('where') || query.includes('location') || query.includes('address') || query.includes('visit')) {
-    return FAQ_KNOWLEDGE_BASE['campus'];
-  }
-  if (query.includes('cbse') || query.includes('curriculum') || query.includes('cvp') || query.includes('syllabus') || query.includes('board') || query.includes('study') || query.includes('subject')) {
-    return FAQ_KNOWLEDGE_BASE['curriculum'];
-  }
-  if (query.includes('contact') || query.includes('phone') || query.includes('call') || query.includes('email') || query.includes('number') || query.includes('principal') || query.includes('office')) {
-    return FAQ_KNOWLEDGE_BASE['contact'];
-  }
-  if (query.includes('facility') || query.includes('lab') || query.includes('library') || query.includes('sport') || query.includes('ground') || query.includes('yoga')) {
-    return FAQ_KNOWLEDGE_BASE['facilities'];
-  }
-  if (query.includes('bus') || query.includes('transport') || query.includes('van') || query.includes('commute') || query.includes('pick')) {
-    return FAQ_KNOWLEDGE_BASE['transport'];
-  }
-
   // Default intelligent fallback
   return {
-    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130095 / 1130058.\n• Timings: Mon–Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request a callback.",
+    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130058 • School Code: 30040.\n• Timings: Mon–Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request an admission callback.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
       { label: 'Fee Estimator', url: '/admissions/guidelines' },
-      { label: 'Download Forms', url: '/downloads/documents' }
+      { label: 'Explore Curriculum', url: '/academics/curriculum' }
     ]
   };
 }
 
 export const ChatbotFAB: React.FC = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -414,18 +547,40 @@ export const ChatbotFAB: React.FC = () => {
                         }
 
                         if (btn.url) {
+                          const isExternal = btn.url.startsWith('http') || btn.url.startsWith('tel:') || btn.url.startsWith('mailto:');
+                          const isDownloadable = Boolean(btn.download) || btn.url.endsWith('.pdf');
+
+                          if (isExternal || isDownloadable) {
+                            return (
+                              <a
+                                key={idx}
+                                href={btn.url}
+                                download={btn.download}
+                                target={isExternal || isDownloadable ? '_blank' : undefined}
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-white hover:bg-[#DF711B] text-[#181818] hover:text-white border border-[#D5CEC2] rounded-lg text-[11px] font-medium transition-all shadow-2xs"
+                              >
+                                {btn.download ? <Download className="w-3 h-3" /> : <ExternalLink className="w-3 h-3" />}
+                                <span>{btn.label}</span>
+                              </a>
+                            );
+                          }
+
                           return (
-                            <a
+                            <button
                               key={idx}
-                              href={btn.url}
-                              download={btn.download}
-                              target={btn.url.startsWith('http') || btn.url.endsWith('.pdf') ? '_blank' : undefined}
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-white hover:bg-[#DF711B] text-[#181818] hover:text-white border border-[#D5CEC2] rounded-lg text-[11px] font-medium transition-all shadow-2xs"
+                              type="button"
+                              onClick={() => {
+                                navigate(btn.url!);
+                                if (window.innerWidth < 640) {
+                                  setIsOpen(false);
+                                }
+                              }}
+                              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-white hover:bg-[#DF711B] text-[#181818] hover:text-white border border-[#D5CEC2] rounded-lg text-[11px] font-medium transition-all shadow-2xs cursor-pointer text-left"
                             >
-                              {btn.download ? <Download className="w-3 h-3" /> : <ExternalLink className="w-3 h-3" />}
+                              <ExternalLink className="w-3 h-3" />
                               <span>{btn.label}</span>
-                            </a>
+                            </button>
                           );
                         }
 

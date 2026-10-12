@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   BookOpen, 
@@ -30,6 +30,16 @@ type StageKey = 'primary' | 'middle' | 'secondary' | 'senior' | 'foundational';
 export const CurriculumShowcase: React.FC = () => {
   const [activeStage, setActiveStage] = useState<StageKey>('secondary');
   const [seniorStream, setSeniorStream] = useState<'science' | 'commerce' | 'humanities'>('science');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div className="space-y-12">
@@ -99,32 +109,18 @@ export const CurriculumShowcase: React.FC = () => {
         </div>
       </div>
 
-      {/* INTERACTIVE 3D CURRICULUM & SUBJECTS SPHERE (No container, no text) */}
+      {/* INTERACTIVE 3D CURRICULUM & SUBJECTS SPHERE */}
       <div className="w-full flex items-center justify-center py-4 overflow-hidden">
-        <div className="hidden sm:block">
-          <SphereImageGrid
-            images={CURRICULUM_SPHERE_IMAGES}
-            containerSize={580}
-            sphereRadius={210}
-            dragSensitivity={0.8}
-            autoRotate={true}
-            autoRotateSpeed={0.25}
-            baseImageScale={0.15}
-            hoverScale={1.3}
-          />
-        </div>
-        <div className="sm:hidden block">
-          <SphereImageGrid
-            images={CURRICULUM_SPHERE_IMAGES}
-            containerSize={340}
-            sphereRadius={130}
-            dragSensitivity={0.9}
-            autoRotate={true}
-            autoRotateSpeed={0.3}
-            baseImageScale={0.17}
-            hoverScale={1.25}
-          />
-        </div>
+        <SphereImageGrid
+          images={CURRICULUM_SPHERE_IMAGES}
+          containerSize={isMobile ? 320 : 580}
+          sphereRadius={isMobile ? 125 : 210}
+          dragSensitivity={isMobile ? 0.9 : 0.8}
+          autoRotate={true}
+          autoRotateSpeed={isMobile ? 0.3 : 0.25}
+          baseImageScale={isMobile ? 0.17 : 0.15}
+          hoverScale={isMobile ? 1.25 : 1.3}
+        />
       </div>
 
       {/* 2. STAGE-WISE INTERACTIVE CURRICULUM SELECTOR */}

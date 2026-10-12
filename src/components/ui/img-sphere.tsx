@@ -407,8 +407,8 @@ export const SphereImageGrid: React.FC<SphereImageGridProps> = ({
   }, []);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
     const touch = e.touches[0];
+    if (!touch) return;
     setIsDragging(true);
     setVelocity({ x: 0, y: 0 });
     lastMousePos.current = { x: touch.clientX, y: touch.clientY };
@@ -416,9 +416,12 @@ export const SphereImageGrid: React.FC<SphereImageGridProps> = ({
 
   const handleTouchMove = useCallback((e: TouchEvent) => {
     if (!isDragging) return;
-    e.preventDefault();
+    if (e.cancelable) {
+      e.preventDefault();
+    }
 
     const touch = e.touches[0];
+    if (!touch) return;
     const deltaX = touch.clientX - lastMousePos.current.x;
     const deltaY = touch.clientY - lastMousePos.current.y;
 

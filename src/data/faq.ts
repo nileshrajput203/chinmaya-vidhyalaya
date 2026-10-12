@@ -92,5 +92,11 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     category: 'admissions',
     question: 'What is the procedure for parent meetings with teachers and administration?',
     answer: 'Parent meetings are strictly differentiated: (1) Existing Students: Parents of enrolled students must submit a written letter or application to the school office requesting an appointment with educators or the Principal. (2) New Parents: Prospective parents seeking admissions guidance may visit the campus administrative desk directly or book a campus tour during working hours.'
+  },
+  {
+    id: 'faq-14',
+    category: 'academics',
+    question: 'What is the CBSE scholastic curriculum, syllabus structure, and stage-wise academic framework?',
+    answer: 'Chinmaya Vidyalaya Tarapur follows the NCERT & CBSE scholastic curriculum from Nursery to Class XII (Affiliation No: 1130058). Our academic continuum encompasses: 1) Foundational Stage (Nursery & KG with play-way phonics & value learning), 2) Primary Stage (Classes I–V with activity-based experiential learning), 3) Middle Stage (Classes VI–VIII with disciplinary sciences, trilingual mastery in English, Hindi, Sanskrit/Marathi, and computer programming), 4) Secondary Stage (Classes IX–X AISSE preparation with unbroken 100% first-class pass record), and 5) Senior Secondary Stage (Classes XI–XII offering Science, Commerce, and Humanities streams).'
   }
 ];
