@@ -239,7 +239,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                         <a
                           href={link.href}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="text-slate-300 hover:text-amber-400 hover:translate-x-1 transition-all duration-150 inline-block py-0.5 font-medium"
                         >
                           {link.label}
