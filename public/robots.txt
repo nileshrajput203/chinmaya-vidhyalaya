@@ -1,5 +1,20 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+Allow: /heronew/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://chinmayatarapur.edu.in/sitemap.xml
+

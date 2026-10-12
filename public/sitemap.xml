@@ -4,183 +4,203 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Core Pages -->
+  <!-- Core Institution & Admissions -->
   <url>
     <loc>https://chinmayatarapur.edu.in/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/admissions/guidelines</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://chinmayatarapur.edu.in/about/mandatory-information</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://chinmayatarapur.edu.in/admissions/fee-structure</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://chinmayatarapur.edu.in/academics/curriculum</loc>
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://chinmayatarapur.edu.in/admissions/calendar</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://chinmayatarapur.edu.in/academics/faculty</loc>
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://chinmayatarapur.edu.in/admissions/forms</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/about/mandatory-information</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Academics & Curriculum -->
+  <url>
+    <loc>https://chinmayatarapur.edu.in/academics/curriculum</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/academics/infrastructure</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/academics/co-curricular</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
-  <!-- About Section -->
+  <!-- About Us & Heritage -->
   <url>
     <loc>https://chinmayatarapur.edu.in/about/history</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/about/mission-vision</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/about/management</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/about/swami-chinmayananda</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/about/philosophy</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- Features & Chinmaya Vision Programme -->
+  <!-- Distinctive Features & Chinmaya Vision Programme -->
   <url>
     <loc>https://chinmayatarapur.edu.in/features/four-pillars</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/features/spiritual-activities</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://chinmayatarapur.edu.in/features/holistic-development</loc>
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://chinmayatarapur.edu.in/features/career-counselling</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/features/education-tours</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/features/library</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- News, Media & Events -->
-  <url>
-    <loc>https://chinmayatarapur.edu.in/news</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/news/circulars</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/gallery</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/blog</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/faq</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
 
   <!-- Downloads & Resources -->
   <url>
     <loc>https://chinmayatarapur.edu.in/downloads</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/downloads/admissions</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/downloads/sample-papers</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://chinmayatarapur.edu.in/downloads/transfer-certificates</loc>
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://chinmayatarapur.edu.in/downloads/evaluation-papers</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/downloads/transfer-certificates</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/downloads/documents</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
-  <!-- Community & Institutional -->
+  <!-- News, Media & Gallery -->
+  <url>
+    <loc>https://chinmayatarapur.edu.in/news</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/news/circulars</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/gallery</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/blog</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://chinmayatarapur.edu.in/faq</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Contact & Community -->
+  <url>
+    <loc>https://chinmayatarapur.edu.in/contact</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/alumni</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinmayatarapur.edu.in/careers</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://chinmayatarapur.edu.in/contact</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.75</priority>
   </url>
 </urlset>

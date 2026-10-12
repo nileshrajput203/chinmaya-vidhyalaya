@@ -7,12 +7,14 @@ import { SmoothScrollProvider } from '../components/common/SmoothScrollProvider'
 import { ScrollToTop } from '../components/common/ScrollToTop';
 import { ChatbotFAB } from '../components/common/ChatbotFAB';
 import { AdmissionGuidanceModal } from '../components/common/AdmissionGuidanceModal';
+import { SEOHead } from '../components/common/SEOHead';
 
 export const MainLayout: React.FC = () => {
   const [preloaderDone, setPreloaderDone] = useState(false);
 
   return (
     <SmoothScrollProvider>
+      <SEOHead />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-white text-[#181C20] selection:bg-[#DF711B] selection:text-white">
         <Preloader onComplete={() => setPreloaderDone(true)} />
