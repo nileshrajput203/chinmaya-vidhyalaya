@@ -8,13 +8,16 @@ import {
   ArrowRight, 
   Award, 
   Clock, 
-  MapPin
+  MapPin,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { OFFICIAL_NOTICES } from '../../data/notices';
 
 export const NoticeEventBoard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('events');
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
+  const [showAllEventsMobile, setShowAllEventsMobile] = useState<boolean>(false);
   
   const upcomingEvents = [
     {
@@ -317,7 +320,10 @@ export const NoticeEventBoard: React.FC = () => {
               {availableMonths.map((m) => (
                 <button
                   key={m}
-                  onClick={() => setSelectedMonth(m)}
+                  onClick={() => {
+                    setSelectedMonth(m);
+                    setShowAllEventsMobile(false);
+                  }}
                   className={`px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider rounded-full transition-all cursor-pointer ${
                     selectedMonth === m
                       ? 'bg-[#DF711B] text-white shadow-xs'
@@ -330,10 +336,12 @@ export const NoticeEventBoard: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {filteredEvents.map((ev) => (
+              {filteredEvents.map((ev, idx) => (
                 <div 
                   key={ev.id}
-                  className="bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs"
+                  className={`bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs ${
+                    idx >= 3 && !showAllEventsMobile ? 'hidden md:flex' : 'flex'
+                  }`}
                 >
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
@@ -378,6 +386,28 @@ export const NoticeEventBoard: React.FC = () => {
               </div>
             ))}
           </div>
+
+          {filteredEvents.length > 3 && (
+            <div className="block md:hidden pt-2 text-center">
+              <button
+                type="button"
+                onClick={() => setShowAllEventsMobile(!showAllEventsMobile)}
+                className="w-full py-3 px-4 bg-white hover:bg-[#FAF3E8] border-2 border-[#DF711B] text-[#DF711B] font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
+              >
+                <span>
+                  {showAllEventsMobile 
+                    ? 'Show Less Events' 
+                    : `See More Events (${filteredEvents.length - 3} more)`
+                  }
+                </span>
+                {showAllEventsMobile ? (
+                  <ChevronUp className="w-4 h-4 text-[#DF711B]" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-[#DF711B]" />
+                )}
+              </button>
+            </div>
+          )}
         </div>
         )}
 
