@@ -159,7 +159,8 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     role: "Member (Principal)",
     occupation: "Educationist",
 
-    email: "cv.principal@chinmayamission.com"
+    email: "cv.principal@chinmayamission.com",
+    image: "/images/board-of-management/principal_dimple_mistry_square.webp"
   }
 ];
 

@@ -252,7 +252,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                       alt={current.pillarTitle}
                       className={`h-full w-auto max-h-full max-w-full opacity-100 filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] pointer-events-none transition-all duration-300 ${
                         current.num === '02'
-                          ? 'object-contain object-center scale-115 sm:scale-125'
+                          ? 'object-contain object-center scale-100 sm:scale-105'
                           : 'object-contain object-bottom'
                       }`}
                     />

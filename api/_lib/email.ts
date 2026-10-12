@@ -1,15 +1,17 @@
 import { Resend } from 'resend';
 
-export const RESEND_API_KEY = process.env.RESEND_API_KEY;
+export const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim();
 
-export const RECIPIENT_EMAIL =
+export const RECIPIENT_EMAIL = (
   process.env.ADMISSION_EMAIL ||
   process.env.CONTACT_EMAIL ||
-  'cvmedia1995@gmail.com';
+  'cvmedia1995@gmail.com'
+).trim().replace(/^["']|["']$/g, '');
 
-export const SENDER_EMAIL =
+export const SENDER_EMAIL = (
   process.env.RESEND_FROM_EMAIL ||
-  'Chinmaya Vidyalaya Tarapur <onboarding@resend.dev>';
+  'Chinmaya Vidyalaya Tarapur <onboarding@resend.dev>'
+).trim().replace(/^["']|["']$/g, '');
 
 export const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 
