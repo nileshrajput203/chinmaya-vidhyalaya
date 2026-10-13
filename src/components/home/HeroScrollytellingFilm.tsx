@@ -24,6 +24,9 @@ const TOTAL_SCROLLABLE_PX = 750;
 // Helper to construct zero-padded WebP frame URLs in heronew/frames_webp
 const getFrameSrc = (index: number): string => {
   const frameNum = Math.min(Math.max(START_FRAME, START_FRAME + index), END_FRAME);
+  if (frameNum === 1) {
+    return '/heronew/frames_webp/frame-001-flyer.webp';
+  }
   return `/heronew/frames_webp/frame-${String(frameNum).padStart(3, '0')}.webp`;
 };
 
@@ -450,7 +453,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       >
         {/* Instant Poster Image */}
         <img
-          src="/heronew/frames_webp/frame-001.webp"
+          src="/heronew/frames_webp/frame-001-flyer.webp"
           alt="Chinmaya Vidyalaya Campus"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
