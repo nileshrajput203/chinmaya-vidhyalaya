@@ -300,33 +300,36 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                   </h4>
                 </div>
 
-                {/* Core Guiding Vision Statement */}
-                <blockquote
-                  style={{ color: 'var(--color-text)' }}
-                  className="font-sans text-sm sm:text-base leading-relaxed italic border-l-2 border-[var(--color-primary)] pl-3.5 text-slate-700 font-normal"
-                >
-                  "{current.visionStatement}"
-                </blockquote>
+                {/* Written Narrative (Vision Statement, Pedagogical Explanation & Key Points) - Hidden on Mobile View */}
+                <div className="hidden lg:block space-y-4">
+                  {/* Core Guiding Vision Statement */}
+                  <blockquote
+                    style={{ color: 'var(--color-text)' }}
+                    className="font-sans text-sm sm:text-base leading-relaxed italic border-l-2 border-[var(--color-primary)] pl-3.5 text-slate-700 font-normal"
+                  >
+                    "{current.visionStatement}"
+                  </blockquote>
 
-                {/* Pedagogical Explanation */}
-                <p
-                  style={{ color: 'var(--color-text)' }}
-                  className="font-sans text-xs sm:text-sm leading-relaxed text-slate-600 font-normal"
-                >
-                  {current.explanation}
-                </p>
+                  {/* Pedagogical Explanation */}
+                  <p
+                    style={{ color: 'var(--color-text)' }}
+                    className="font-sans text-xs sm:text-sm leading-relaxed text-slate-600 font-normal"
+                  >
+                    {current.explanation}
+                  </p>
 
-                {/* Key Points list */}
-                <div className="space-y-2 pt-1 border-t border-[var(--color-border)]">
-                  {current.keyPoints.map((pt, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700">
-                      <CheckCircle2
-                        style={{ color: 'var(--color-primary)' }}
-                        className="w-4 h-4 shrink-0 mt-0.5"
-                      />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+                  {/* Key Points list */}
+                  <div className="space-y-2 pt-1 border-t border-[var(--color-border)]">
+                    {current.keyPoints.map((pt, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700">
+                        <CheckCircle2
+                          style={{ color: 'var(--color-primary)' }}
+                          className="w-4 h-4 shrink-0 mt-0.5"
+                        />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Discover Pillar Action Button */}
