@@ -12,7 +12,7 @@ export const SpiritualShowcase: React.FC = () => {
         className="bg-gradient-to-br from-[#FFF9F2] via-[#FAF3E8] to-[#F5ECE0] border-2 border-[#DF711B]/40 rounded-3xl p-6 sm:p-10 shadow-card space-y-6 relative overflow-hidden"
       >
         <div className="space-y-3 max-w-3xl">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <BadgePill label="Spiritual Anchoring & Cultural Ethos" variant="saffron" pulse icon={<Flame className="w-3.5 h-3.5" />} />
             <span className="text-xs font-mono text-slate-500">Chinmaya Mission Tradition</span>
           </div>

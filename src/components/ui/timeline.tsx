@@ -218,9 +218,12 @@ export default function Timeline({
   useGSAP(() => {
     const section = sectionRef.current;
     const wholeSlider = wholeSliderRef.current;
-    const lineContainer = lineContainerRef.current;
+    const lineContainer = lineContainerRef.current;    if (!section || !wholeSlider || !lineContainer) return;
 
-    if (!section || !wholeSlider || !lineContainer) return;
+    // Skip horizontal scrub pin on mobile screens (< 768px) where native vertical timeline is active
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      return;
+    }
 
     const isMobile = window.innerWidth < 600;
     const slidePercent = isMobile ? -66 : -72;
@@ -288,24 +291,12 @@ export default function Timeline({
     );
 
     // C. Calculate ACCURATE milestone positions from layout geometry.
-    //    The track consists of: [image 26vw] [gap 5vw] [lineContainer fills rest].
-    //    Top row: [title column 18vw] then items at gap-x-[26vw] with w-[26vw] each.
-    //    Bottom row: [period column 18vw] then ml-[13vw] then items at gap-x-[26vw].
-    //    Each stem is at the left edge of its item div.
-    //    We compute the ratio of each stem's X position within the lineContainer width.
     const topCount = topJourneyData.length;
     const bottomCount = bottomJourneyData.length;
 
-    // Approximate the lineContainer total content width in vw units:
-    // Top row: 18 (title) + topCount * 26 (item widths) + (topCount - 1) * 26 (gaps) = 18 + topCount*52 - 26
-    // But items are absolutely positioned within the flex, so the stem left edge of item i is at:
-    //   topStemX(i) = 18 + i * (26 + 26)   [title width + i * (item width + gap)]
-    // For bottom row, stems start further right:
-    //   bottomStemX(i) = 18 + 13 + i * (26 + 26)   [title + ml offset + i * (item width + gap)]
-    // The total visual width of the lineContainer track is roughly:
     const topLastStem = 18 + (topCount - 1) * 52;
     const bottomLastStem = 18 + 13 + (bottomCount - 1) * 52;
-    const trackExtent = Math.max(topLastStem, bottomLastStem) + 26; // Add one more item width
+    const trackExtent = Math.max(topLastStem, bottomLastStem) + 26;
 
     // D. For each milestone, compute its arrival ratio and schedule animations
     allJourneyItems.forEach((item) => {
@@ -320,10 +311,7 @@ export default function Timeline({
         stemX = 18 + 13 + idx * 52;
       }
 
-      // Ratio along the track where this stem sits (0 → 1)
       const ratio = Math.max(0.05, Math.min(0.95, stemX / trackExtent));
-
-      // The exact playhead time when the horizontal line tip reaches this stem:
       const arrivalTime = ratio * lineTravelDuration;
 
       // 1. Stem grows from the horizontal line
@@ -356,7 +344,13 @@ export default function Timeline({
     });
 
     const handleResize = () => {
-      ScrollTrigger.refresh();
+      if (window.innerWidth < 768) {
+        ScrollTrigger.getAll().forEach((t) => {
+          if (t.trigger === section) t.kill();
+        });
+      } else {
+        ScrollTrigger.refresh();
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -372,145 +366,230 @@ export default function Timeline({
   }, { dependencies: [reducedMotion, topJourneyData, bottomJourneyData], scope: sectionRef });
 
   return (
-    <section
-      ref={sectionRef}
-      id="journey"
-      className="h-[280vw] max-[600px]:h-[450vh] w-full relative"
-      style={sectionStyle}
-    >
-      <div className="h-screen w-full sticky top-0 overflow-hidden flex items-center max-[600px]:items-start max-[600px]:pt-[8vh]">
-        <div
-          ref={wholeSliderRef}
-          className="mr-[2vw] flex h-[34vw] w-[260vw] items-center gap-[5vw] px-[5vw] max-[600px]:h-[80vh] max-[600px]:w-[850vw] max-[600px]:px-[7vw]"
-        >
-          {/* Leading Campus Image */}
-          <div className="h-full w-[26vw] overflow-hidden rounded-[1.2vw] max-[600px]:h-[60vw] max-[600px]:w-[80vw] max-[600px]:rounded-[4vw] shadow-md border border-slate-200/60 shrink-0">
+    <>
+      {/* ============================================================
+          MOBILE VERTICAL TIMELINE (Native 60fps, Touch-Friendly, Never Cut Off)
+          ============================================================ */}
+      <section className="md:hidden w-full py-10 px-4 sm:px-6 bg-white" style={sectionStyle}>
+        <div className="max-w-xl mx-auto space-y-6">
+          {/* Header */}
+          <div className="space-y-2">
+            <span 
+              className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold tracking-wider uppercase"
+              style={{ color: activeColor, backgroundColor: `${activeColor}15` }}
+            >
+              {periodLabel}
+            </span>
+            <h2 className="font-cinzel text-2xl sm:text-3xl font-extrabold tracking-tight" style={{ color: textColor }}>
+              {title}
+            </h2>
+            <p className="text-xs sm:text-sm font-normal" style={mutedTextStyle}>
+              Milestones that forged our legacy of holistic educational excellence.
+            </p>
+          </div>
+
+          {/* Campus Lead Photo */}
+          <div className="relative rounded-2xl overflow-hidden border border-[#E7E2D8] shadow-sm aspect-[16/9]">
             <img
               src={imageUrl}
               alt={imageAlt}
-              draggable={false}
-              className="h-full w-full object-cover"
+              className="w-full h-full object-cover"
+              loading="lazy"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent pointer-events-none" />
+            <span className="absolute bottom-3 left-3 text-[11px] font-mono text-white/95 font-semibold bg-black/45 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/20">
+              {imageAlt}
+            </span>
           </div>
 
-          {/* Timeline Track Container */}
-          <div ref={lineContainerRef} className="relative h-full w-full">
-            {/* The Horizontal Line with Traveling Tip Dot */}
-            <div className="w-full absolute left-0 top-[50%] -translate-y-1/2 flex items-center h-fit pointer-events-none z-10">
-              <div
-                className="size-[0.85vw] max-[600px]:size-[2.2vw] rounded-full shrink-0"
-                style={activeStyle}
-              />
-              <div
-                className="h-[2px] w-[0%] rounded-full journey-line shrink-0"
-                style={activeStyle}
-              />
-              <div
-                className="size-[0.85vw] max-[600px]:size-[2.2vw] rounded-full shrink-0 -ml-[0.425vw] max-[600px]:-ml-[1.1vw]"
-                style={activeStyle}
+          {/* Vertical Timeline Items List */}
+          <div className="relative pl-6 sm:pl-8 space-y-6 pt-3">
+            {/* Continuous Vertical Timeline Line */}
+            <div 
+              className="absolute left-2.5 sm:left-3.5 top-3 bottom-3 w-[2px] rounded-full"
+              style={{ backgroundColor: `${activeColor}40` }}
+            />
+
+            {allJourneyItems.map((item, idx) => (
+              <div key={`mobile-item-${item.id}`} className="relative group">
+                {/* Node Dot on the Vertical Line */}
+                <div 
+                  className="absolute -left-6 sm:-left-8 top-1.5 size-3.5 rounded-full border-2 border-white shadow-xs z-10 flex items-center justify-center"
+                  style={{ backgroundColor: activeColor }}
+                >
+                  <div className="size-1 bg-white rounded-full" />
+                </div>
+
+                {/* Milestone Card */}
+                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#E7E2D8] shadow-xs hover:border-[#DF711B]/40 transition-all space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span 
+                      className="font-mono text-xs font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-md"
+                      style={{ 
+                        color: activeColor,
+                        backgroundColor: `${activeColor}15`
+                      }}
+                    >
+                      {item.year} {item.month}
+                    </span>
+                    <span className="text-[10px] font-mono font-semibold" style={mutedTextStyle}>
+                      {idx + 1} of {allJourneyItems.length}
+                    </span>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                    {item.content}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          DESKTOP HORIZONTAL SCRUB TIMELINE (Visible on md: and larger)
+          ============================================================ */}
+      <section
+        ref={sectionRef}
+        id="journey"
+        className="hidden md:block h-[280vw] w-full relative"
+        style={sectionStyle}
+      >
+        <div className="h-screen w-full sticky top-0 overflow-hidden flex items-center">
+          <div
+            ref={wholeSliderRef}
+            className="mr-[2vw] flex h-[34vw] w-[260vw] items-center gap-[5vw] px-[5vw]"
+          >
+            {/* Leading Campus Image */}
+            <div className="h-full w-[26vw] overflow-hidden rounded-[1.2vw] shadow-md border border-slate-200/60 shrink-0">
+              <img
+                src={imageUrl}
+                alt={imageAlt}
+                draggable={false}
+                className="h-full w-full object-cover"
               />
             </div>
 
-            {/* TOP ROW MILESTONES */}
-            <div className="flex h-1/2 w-full items-end justify-start">
-              <div className="h-full w-[18vw] max-[600px]:w-[50vw] flex flex-col justify-end pb-[4.3vw] shrink-0">
-                <h2
-                  className="w-[85%] font-sans font-semibold text-[2.5vw] leading-[1.08] tracking-tight max-[600px]:text-[7vw]"
-                  style={{ color: textColor }}
-                >
-                  {title}
-                </h2>
+            {/* Timeline Track Container */}
+            <div ref={lineContainerRef} className="relative h-full w-full">
+              {/* The Horizontal Line with Traveling Tip Dot */}
+              <div className="w-full absolute left-0 top-[50%] -translate-y-1/2 flex items-center h-fit pointer-events-none z-10">
+                <div
+                  className="size-[0.85vw] rounded-full shrink-0"
+                  style={activeStyle}
+                />
+                <div
+                  className="h-[2px] w-[0%] rounded-full journey-line shrink-0"
+                  style={activeStyle}
+                />
+                <div
+                  className="size-[0.85vw] rounded-full shrink-0 -ml-[0.425vw]"
+                  style={activeStyle}
+                />
               </div>
 
-              <div className="flex h-full gap-x-[26vw] max-[600px]:gap-x-[45vw]">
-                {topJourneyData.map((item) => (
-                  <div
-                    key={`top-${item.id}`}
-                    className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-end pb-[1.8vw] max-[600px]:w-[70vw] max-[600px]:px-[6vw] shrink-0"
+              {/* TOP ROW MILESTONES */}
+              <div className="flex h-1/2 w-full items-end justify-start">
+                <div className="h-full w-[18vw] flex flex-col justify-end pb-[4.3vw] shrink-0">
+                  <h2
+                    className="w-[85%] font-sans font-semibold text-[2.5vw] leading-[1.08] tracking-tight"
+                    style={{ color: textColor }}
                   >
-                    {/* Stem & Dot */}
-                    <div className="w-full absolute left-0 bottom-0 top-0 pointer-events-none">
-                      <div
-                        className={`size-[0.9vw] max-[600px]:size-[2.5vw] -translate-x-1/2 absolute top-0 left-0 rounded-full jd-${item.id}`}
-                        style={activeStyle}
-                      />
-                      <div
-                        className={`w-[2px] absolute left-0 top-[0.45vw] max-[600px]:top-[1.25vw] bottom-0 -translate-x-1/2 origin-bottom jl-${item.id}`}
-                        style={activeStyle}
-                      />
+                    {title}
+                  </h2>
+                </div>
+
+                <div className="flex h-full gap-x-[26vw]">
+                  {topJourneyData.map((item) => (
+                    <div
+                      key={`top-${item.id}`}
+                      className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-end pb-[1.8vw] shrink-0"
+                    >
+                      {/* Stem & Dot */}
+                      <div className="w-full absolute left-0 bottom-0 top-0 pointer-events-none">
+                        <div
+                          className={`size-[0.9vw] -translate-x-1/2 absolute top-0 left-0 rounded-full jd-${item.id}`}
+                          style={activeStyle}
+                        />
+                        <div
+                          className={`w-[2px] absolute left-0 top-[0.45vw] bottom-0 -translate-x-1/2 origin-bottom jl-${item.id}`}
+                          style={activeStyle}
+                        />
+                      </div>
+
+                      {/* Milestone Text */}
+                      <div className="space-y-[0.5vw] pb-[0.8vw]">
+                        <h4
+                          className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none tracking-tight uppercase`}
+                          style={{ color: textColor }}
+                        >
+                          {item.year} {item.month}
+                        </h4>
+                        <p
+                          className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] font-normal`}
+                          style={mutedTextStyle}
+                        >
+                          {item.content}
+                        </p>
+                      </div>
                     </div>
-
-                    {/* Milestone Text */}
-                    <div className="space-y-[0.5vw] pb-[0.8vw] max-[600px]:space-y-[1.5vw]">
-                      <h4
-                        className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none max-[600px]:text-[5.5vw] tracking-tight uppercase`}
-                        style={{ color: textColor }}
-                      >
-                        {item.year} {item.month}
-                      </h4>
-                      <p
-                        className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
-                        style={mutedTextStyle}
-                      >
-                        {item.content}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* BOTTOM ROW MILESTONES */}
-            <div className="flex h-1/2 w-full items-start justify-start">
-              <div className="h-full w-[18vw] max-[600px]:w-[50vw] pt-[4.3vw] shrink-0">
-                <p
-                  className="font-mono text-[1.3vw] leading-none max-[600px]:text-[3.8vw] tracking-wider font-medium"
-                  style={mutedTextStyle}
-                >
-                  {periodLabel}
-                </p>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex h-full gap-x-[26vw] ml-[13vw] max-[600px]:gap-x-[45vw] max-[600px]:ml-[22vw]">
-                {bottomJourneyData.map((item) => (
-                  <div
-                    key={`bottom-${item.id}`}
-                    className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-start pt-[1.8vw] max-[600px]:w-[70vw] max-[600px]:px-[6vw] shrink-0"
+              {/* BOTTOM ROW MILESTONES */}
+              <div className="flex h-1/2 w-full items-start justify-start">
+                <div className="h-full w-[18vw] pt-[4.3vw] shrink-0">
+                  <p
+                    className="font-mono text-[1.3vw] leading-none tracking-wider font-medium"
+                    style={mutedTextStyle}
                   >
-                    {/* Stem & Dot */}
-                    <div className="w-full absolute left-0 top-0 bottom-0 pointer-events-none">
-                      <div
-                        className={`w-[2px] absolute left-0 top-0 bottom-[0.45vw] max-[600px]:bottom-[1.25vw] -translate-x-1/2 origin-top jl-${item.id}`}
-                        style={activeStyle}
-                      />
-                      <div
-                        className={`size-[0.9vw] max-[600px]:size-[2.5vw] -translate-x-1/2 absolute bottom-0 left-0 rounded-full jd-${item.id}`}
-                        style={activeStyle}
-                      />
-                    </div>
+                    {periodLabel}
+                  </p>
+                </div>
 
-                    {/* Milestone Text */}
-                    <div className="space-y-[0.5vw] pt-[0.8vw] max-[600px]:space-y-[1.5vw]">
-                      <h4
-                        className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none max-[600px]:text-[5.5vw] tracking-tight uppercase`}
-                        style={{ color: textColor }}
-                      >
-                        {item.year} {item.month}
-                      </h4>
-                      <p
-                        className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] max-[600px]:w-[90%] max-[600px]:text-[3.8vw] font-normal`}
-                        style={mutedTextStyle}
-                      >
-                        {item.content}
-                      </p>
+                <div className="flex h-full gap-x-[26vw] ml-[13vw]">
+                  {bottomJourneyData.map((item) => (
+                    <div
+                      key={`bottom-${item.id}`}
+                      className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-start pt-[1.8vw] shrink-0"
+                    >
+                      {/* Stem & Dot */}
+                      <div className="w-full absolute left-0 top-0 bottom-0 pointer-events-none">
+                        <div
+                          className={`w-[2px] absolute left-0 top-0 bottom-[0.45vw] -translate-x-1/2 origin-top jl-${item.id}`}
+                          style={activeStyle}
+                        />
+                        <div
+                          className={`size-[0.9vw] -translate-x-1/2 absolute bottom-0 left-0 rounded-full jd-${item.id}`}
+                          style={activeStyle}
+                        />
+                      </div>
+
+                      {/* Milestone Text */}
+                      <div className="space-y-[0.5vw] pt-[0.8vw]">
+                        <h4
+                          className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none tracking-tight uppercase`}
+                          style={{ color: textColor }}
+                        >
+                          {item.year} {item.month}
+                        </h4>
+                        <p
+                          className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] font-normal`}
+                          style={mutedTextStyle}
+                        >
+                          {item.content}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

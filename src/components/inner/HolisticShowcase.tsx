@@ -141,7 +141,7 @@ export const HolisticShowcase: React.FC = () => {
       >
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-2 max-w-2xl">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <BadgePill label="4-Fold Individual Transformation" variant="saffron" pulse />
               <span className="text-xs font-mono text-slate-500">Chinmaya Vision Programme</span>
             </div>

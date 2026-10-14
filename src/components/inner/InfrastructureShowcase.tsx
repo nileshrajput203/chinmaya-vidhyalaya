@@ -439,7 +439,7 @@ export const InfrastructureShowcase: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <BadgePill
                   label="Campus Tour & Infrastructure Directory"
                   variant="saffron"

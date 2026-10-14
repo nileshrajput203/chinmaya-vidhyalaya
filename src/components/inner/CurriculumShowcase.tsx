@@ -180,7 +180,7 @@ export const CurriculumShowcase: React.FC = () => {
             
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#E7E2D8] pb-6">
               <div className="space-y-2">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <BadgePill label="Ages 3 to 6 Years" variant="emerald" />
                   <span className="text-xs font-mono font-bold text-slate-500">Play-Way & Activity Methodology</span>
                 </div>
@@ -255,7 +255,7 @@ export const CurriculumShowcase: React.FC = () => {
             
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#E7E2D8] pb-6">
               <div className="space-y-2">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <BadgePill label="Classes I to V" variant="saffron" />
                   <span className="text-xs font-mono font-bold text-slate-500">Preparatory Foundation</span>
                 </div>
@@ -367,7 +367,7 @@ export const CurriculumShowcase: React.FC = () => {
             
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#E7E2D8] pb-6">
               <div className="space-y-2">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <BadgePill label="Classes VI to VIII" variant="navy" />
                   <span className="text-xs font-mono font-bold text-slate-500">Trilingual & Experimental Sciences</span>
                 </div>

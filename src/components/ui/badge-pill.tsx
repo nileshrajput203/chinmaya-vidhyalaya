@@ -33,20 +33,20 @@ export const BadgePill: React.FC<BadgePillProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase border shadow-2xs ${variantStyles[variant]} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase border shadow-2xs whitespace-nowrap shrink-0 max-w-full ${variantStyles[variant]} ${className}`}
     >
       {pulse && (
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 shrink-0">
           <span
             className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${pulseColors[variant]}`}
           />
           <span
-            className={`relative inline-flex rounded-full h-2 w-2 ${pulseColors[variant]}`}
+            className={`relative inline-flex rounded-full h-2 w-2 shrink-0 ${pulseColors[variant]}`}
           />
         </span>
       )}
       {icon && <span className="shrink-0">{icon}</span>}
-      <span>{label}</span>
+      <span className="truncate">{label}</span>
     </span>
   );
 };

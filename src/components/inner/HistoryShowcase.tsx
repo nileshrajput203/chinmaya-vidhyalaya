@@ -85,10 +85,10 @@ export const HistoryShowcase: React.FC = () => {
       <InView>
         <SpotlightCard
           spotlightColor="rgba(223, 113, 27, 0.08)"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-[#E7E2D8] rounded-3xl p-8 sm:p-12 shadow-card"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-[#E7E2D8] rounded-3xl p-5 sm:p-8 lg:p-12 shadow-card"
         >
           <div className="lg:col-span-7 space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <BadgePill
                 label="Over Three Decades of Educational Service"
                 variant="saffron"
@@ -99,7 +99,7 @@ export const HistoryShowcase: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="font-cinzel text-3xl sm:text-4xl text-[#181C20] font-extrabold leading-tight">
+            <h2 className="font-cinzel text-2xl sm:text-3xl lg:text-4xl text-[#181C20] font-extrabold leading-tight">
               Three Decades of Educational & Cultural Excellence
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
@@ -167,7 +167,7 @@ export const HistoryShowcase: React.FC = () => {
       {/* ====================================================
           STANDALONE FULL-WIDTH PINNED TIMELINE (OUTSIDE CONTAINER)
          ==================================================== */}
-      <section className="w-full pt-8 pb-4 text-center">
+      <section className="w-full pt-8 pb-4 text-center hidden md:block">
         <div className="max-w-3xl mx-auto px-4">
           <div className="flex items-center justify-center gap-2 text-xs font-mono text-[#DF711B] animate-bounce">
             <span>Scroll down to scrub through the milestones</span>
