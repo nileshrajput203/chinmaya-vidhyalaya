@@ -5,14 +5,12 @@ import {
   X, 
   Facebook, 
   Instagram, 
-  Youtube, 
-  Linkedin, 
   GraduationCap, 
   FileText,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
-import { OFFICIAL_SCHOOL_INFO } from '../../../data/school';
+import { OFFICIAL_SCHOOL_INFO, OFFICIAL_SOCIAL_LINKS } from '../../../data/school';
 
 const SITEMAP_PILLARS = [
   {
@@ -448,17 +446,23 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 py-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0">
           
           <div className="flex items-center gap-3">
-            <a href="#" className="w-9 h-9 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
+            <a 
+              href={OFFICIAL_SOCIAL_LINKS.facebook} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Facebook"
+              className="w-9 h-9 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all"
+            >
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
+            <a 
+              href={OFFICIAL_SOCIAL_LINKS.instagram} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Instagram"
+              className="w-9 h-9 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all"
+            >
               <Instagram className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-9 h-9 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
-              <Youtube className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-9 h-9 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
-              <Linkedin className="w-4 h-4" />
             </a>
           </div>
 

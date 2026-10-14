@@ -4,12 +4,10 @@ import {
   Award, 
   Facebook,
   Instagram,
-  Youtube,
-  Linkedin,
   MapPin,
   Phone
 } from 'lucide-react';
-import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
+import { OFFICIAL_SCHOOL_INFO, OFFICIAL_SOCIAL_LINKS } from '../../data/school';
 
 export const Footer: React.FC = () => {
   const [activeAccreditation, setActiveAccreditation] = useState(0);
@@ -303,17 +301,23 @@ export const Footer: React.FC = () => {
           {/* Left: Social Icons & Developer Credit */}
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
-              <a href="#" className="w-8 h-8 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
+              <a 
+                href={OFFICIAL_SOCIAL_LINKS.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook"
+                className="w-8 h-8 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all"
+              >
                 <Facebook className="w-3.5 h-3.5" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
+              <a 
+                href={OFFICIAL_SOCIAL_LINKS.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all"
+              >
                 <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
-                <Youtube className="w-3.5 h-3.5" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full border border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all">
-                <Linkedin className="w-3.5 h-3.5" />
               </a>
             </div>
             <span className="text-slate-600 hidden sm:inline">|</span>

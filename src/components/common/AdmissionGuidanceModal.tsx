@@ -184,7 +184,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
       <AnimatePresence>
         {isOpen && (
           <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 select-none overflow-y-auto overscroll-contain"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-2.5 sm:p-4 md:p-6 overflow-y-auto overscroll-contain"
             data-lenis-prevent="true"
             onWheel={(e) => e.stopPropagation()}
           >
@@ -200,11 +200,11 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
 
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 15 }}
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.94, y: 15 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.55)] border border-[#E7E2D8] overflow-hidden z-10 my-auto overscroll-contain"
+            className="relative w-full max-w-4xl max-h-[92dvh] sm:max-h-[90vh] bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.55)] border border-[#E7E2D8] overflow-y-auto md:overflow-hidden z-10 my-auto overscroll-contain flex flex-col md:grid md:grid-cols-12"
             data-lenis-prevent="true"
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
@@ -212,257 +212,263 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
             {/* Top Close Button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-white/90 hover:bg-[#181818] hover:text-white border border-[#E5E0D5] flex items-center justify-center text-[#555555] transition-all duration-200 shadow-sm cursor-pointer"
+              className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 hover:bg-[#181818] hover:text-white border border-[#E5E0D5] flex items-center justify-center text-[#555555] transition-all duration-200 shadow-sm cursor-pointer"
               aria-label="Close popup"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 min-h-[500px]">
-              
-              {/* ============================================================
-                  LEFT COLUMN: EDITORIAL VISUAL & TRUST PILLARS
-                  ============================================================ */}
-              <div className="md:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 overflow-hidden min-h-[360px] md:min-h-full">
-                {/* Clear Background Image with minimal edge vignettes */}
-                <div className="absolute inset-0 z-0">
-                  <img
-                    src="/images/chinmaya/academics/classroom_learning_001.jpg"
-                    alt="Chinmaya Vidyalaya Academics"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  {/* Subtle top/bottom gradient only so badges are readable, leaving center image 100% clear */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
-                </div>
+            {/* ============================================================
+                LEFT COLUMN: EDITORIAL VISUAL & TRUST PILLARS
+                ============================================================ */}
+            <div className="md:col-span-5 relative flex flex-col justify-between p-3.5 sm:p-5 md:p-6 overflow-hidden h-24 sm:h-32 md:h-auto md:min-h-[520px] shrink-0">
+              {/* Clear Background Image with minimal edge vignettes */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src="/images/chinmaya/academics/classroom_learning_001.jpg"
+                  alt="Chinmaya Vidyalaya Academics"
+                  className="w-full h-full object-cover object-center"
+                />
+                {/* Subtle top/bottom gradient only so badges are readable, leaving center image clear */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 pointer-events-none" />
+              </div>
 
-                {/* Top: School Badge */}
-                <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                    <GraduationCap className="w-4 h-4 text-[#FFD285]" />
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#FFD285] font-bold">
-                      Admissions Open 2026-27
-                    </span>
-                  </div>
-                </div>
-
-                {/* Bottom: Verified Trust Pillars Frosted Glass Panel */}
-                <div className="relative z-10 mt-auto bg-black/55 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/15 space-y-2.5 shadow-lg">
-                  <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-400/30">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                    </div>
-                    <span>Safe, Caring & Value-Based Campus</span>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
-                    <div className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-300/30">
-                      <Award className="w-3.5 h-3.5" />
-                    </div>
-                    <span>Consistent 100% CBSE Board Results</span>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
-                    <div className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center shrink-0 border border-sky-300/30">
-                      <HeartHandshake className="w-3.5 h-3.5" />
-                    </div>
-                    <span>Friendly Guidance & Campus Visits Welcome</span>
-                  </div>
-
-                  <div className="pt-1 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-[#FFD285]">
-                      CBSE Affiliation No. 1130095
-                    </span>
-                    <span className="text-[10px] font-mono text-white/60">
-                      School Code: 30018
-                    </span>
-                  </div>
+              {/* Top: School Badge */}
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-black/45 border border-white/20 backdrop-blur-md shadow-sm">
+                  <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFD285]" />
+                  <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#FFD285] font-bold">
+                    Admissions Open 2026-27
+                  </span>
                 </div>
               </div>
 
-              {/* ============================================================
-                  RIGHT COLUMN: ADMISSION GUIDANCE FORM
-                  ============================================================ */}
-              <div className="md:col-span-7 bg-[#FFFFFF] p-6 sm:p-8 md:p-9 flex flex-col justify-center">
-                {!isSubmitted ? (
-                  <div className="space-y-5">
-                    {/* Header Badge & Title */}
-                    <div>
-                      <div className="inline-block px-3 py-1 bg-orange-50 text-[#DF711B] text-[11px] font-semibold rounded-full mb-2.5 border border-orange-200/80">
-                        We're here to help you make the right choice for your child.
-                      </div>
+              {/* Mobile Compact Trust Strip */}
+              <div className="relative z-10 mt-auto md:hidden flex flex-wrap items-center gap-1.5 text-[9px] sm:text-[10px] text-white/95 font-medium">
+                <span className="inline-flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/15">
+                  <ShieldCheck className="w-3 h-3 text-emerald-400" /> Safe Campus
+                </span>
+                <span className="inline-flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/15">
+                  <Award className="w-3 h-3 text-amber-300" /> 100% CBSE Results
+                </span>
+              </div>
 
-                      <div className="border-l-4 border-[#DF711B] pl-3">
-                        <h2 className="text-xl sm:text-2xl font-cinzel font-black text-[#0B1D30] tracking-tight uppercase m-0">
-                          Get Personalised Admission Guidance
-                        </h2>
-                      </div>
+              {/* Desktop Full Verified Trust Pillars Frosted Glass Panel */}
+              <div className="relative z-10 mt-auto hidden md:block bg-black/55 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/15 space-y-2.5 shadow-lg">
+                <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
+                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-400/30">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                  </div>
+                  <span>Safe, Caring & Value-Based Campus</span>
+                </div>
 
-                      <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
-                        Share your details below and our admissions experts will get in touch with you to guide you personally.
-                      </p>
+                <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
+                  <div className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-300/30">
+                    <Award className="w-3.5 h-3.5" />
+                  </div>
+                  <span>Consistent 100% CBSE Board Results</span>
+                </div>
+
+                <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium">
+                  <div className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center shrink-0 border border-sky-300/30">
+                    <HeartHandshake className="w-3.5 h-3.5" />
+                  </div>
+                  <span>Friendly Guidance & Campus Visits Welcome</span>
+                </div>
+
+                <div className="pt-1 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-[10px] font-mono text-[#FFD285]">
+                    CBSE Affiliation No. 1130095
+                  </span>
+                  <span className="text-[10px] font-mono text-white/60">
+                    School Code: 30018
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* ============================================================
+                RIGHT COLUMN: ADMISSION GUIDANCE FORM
+                ============================================================ */}
+            <div className="md:col-span-7 bg-[#FFFFFF] p-4 sm:p-6 md:p-8 flex flex-col justify-center overflow-y-auto grow">
+              {!isSubmitted ? (
+                <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                  {/* Header Badge & Title */}
+                  <div>
+                    <div className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-orange-50 text-[#DF711B] text-[10px] sm:text-[11px] font-semibold rounded-full mb-1.5 sm:mb-2 border border-orange-200/80 leading-tight">
+                      We're here to help you make the right choice for your child.
                     </div>
 
-                    {/* Error Banner */}
-                    {errorMessage && (
-                      <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
-                        {errorMessage}
-                      </div>
-                    )}
+                    <div className="border-l-3 sm:border-l-4 border-[#DF711B] pl-2.5 sm:pl-3">
+                      <h2 className="text-base sm:text-xl md:text-2xl font-cinzel font-black text-[#0B1D30] tracking-tight uppercase m-0 leading-tight">
+                        Get Personalised Admission Guidance
+                      </h2>
+                    </div>
 
-                    {/* Interactive Form */}
-                    <form onSubmit={handleSubmit} className="space-y-3.5">
-                      {/* Parent Full Name */}
-                      <div>
+                    <p className="text-[11px] sm:text-xs md:text-sm text-slate-600 mt-1 sm:mt-1.5 leading-relaxed">
+                      Share your details below and our admissions experts will get in touch with you to guide you personally.
+                    </p>
+                  </div>
+
+                  {/* Error Banner */}
+                  {errorMessage && (
+                    <div className="p-2.5 sm:p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  {/* Interactive Form */}
+                  <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3.5">
+                    {/* Parent Full Name */}
+                    <div>
+                      <input
+                        type="text"
+                        required
+                        value={formData.parentName}
+                        onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
+                        placeholder="Parent's full name *"
+                        className="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-base sm:text-sm text-[#181818] placeholder-slate-400 outline-none transition-all shadow-inner"
+                      />
+                    </div>
+
+                    {/* Phone Number + Email Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-12 gap-2.5 sm:gap-3">
+                      {/* Phone with Country Code Badge */}
+                      <div className="sm:col-span-6 flex items-center border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#DF711B] bg-white transition-all">
+                        <span className="px-3 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-slate-600 bg-slate-100 border-r border-slate-200 select-none">
+                          +91
+                        </span>
                         <input
-                          type="text"
+                          type="tel"
                           required
-                          value={formData.parentName}
-                          onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                          placeholder="Parent's full name *"
-                          className="w-full px-4 py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-sm text-[#181818] placeholder-slate-400 outline-none transition-all shadow-inner"
+                          maxLength={10}
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/[^0-9]/g, '') })}
+                          placeholder="Mobile number *"
+                          className="w-full px-3 py-2.5 sm:py-3 bg-transparent text-base sm:text-sm text-[#181818] placeholder-[#999999] outline-none"
                         />
                       </div>
 
-                      {/* Phone Number + Email Row */}
-                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-3">
-                        {/* Phone with Country Code Badge */}
-                        <div className="sm:col-span-6 flex items-center border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#DF711B] bg-white transition-all">
-                          <span className="px-3.5 py-3 text-xs sm:text-sm font-bold text-slate-600 bg-slate-100 border-r border-slate-200 select-none">
-                            +91
-                          </span>
-                          <input
-                            type="tel"
-                            required
-                            maxLength={10}
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/[^0-9]/g, '') })}
-                            placeholder="Mobile number *"
-                            className="w-full px-3 py-3 bg-transparent text-sm text-[#181818] placeholder-[#999999] outline-none"
-                          />
-                        </div>
-
-                        {/* Email Address */}
-                        <div className="sm:col-span-6">
-                          <input
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="Email address (optional)"
-                            className="w-full px-4 py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-sm text-[#181818] placeholder-slate-400 outline-none transition-all"
-                          />
-                        </div>
+                      {/* Email Address */}
+                      <div className="sm:col-span-6">
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="Email address (optional)"
+                          className="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-base sm:text-sm text-[#181818] placeholder-slate-400 outline-none transition-all"
+                        />
                       </div>
-
-                      {/* Grade & Campus Dropdowns Row */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {/* Select Grade */}
-                        <div>
-                          <label className="block text-[10px] font-mono uppercase text-[#777777] font-semibold mb-1">
-                            Admission Seeking For *
-                          </label>
-                          <select
-                            value={formData.grade}
-                            onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                            className="w-full px-3 py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
-                          >
-                            <option value="Nursery / Pre-Primary">Nursery / Pre-Primary</option>
-                            <option value="LKG / UKG">LKG / UKG (Kindergarten)</option>
-                            <option value="Class I - V (Primary)">Class I - V (Primary)</option>
-                            <option value="Class VI - VIII (Middle)">Class VI - VIII (Middle)</option>
-                            <option value="Class IX - X (Secondary)">Class IX - X (Secondary)</option>
-                            <option value="Class XI - XII Science">Class XI - XII (Science Stream)</option>
-                            <option value="Class XI - XII Commerce">Class XI - XII (Commerce Stream)</option>
-                            <option value="Class XI - XII Arts">Class XI - XII (Arts Stream)</option>
-                          </select>
-                        </div>
-
-                        {/* Select Campus / Preference */}
-                        <div>
-                          <label className="block text-[10px] font-mono uppercase text-[#777777] font-semibold mb-1">
-                            Preferred Campus / City *
-                          </label>
-                          <select
-                            value={formData.streamOrCampus}
-                            onChange={(e) => setFormData({ ...formData, streamOrCampus: e.target.value })}
-                            className="w-full px-3 py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-xs sm:text-sm text-[#181818] outline-none cursor-pointer"
-                          >
-                            <option value="Main Campus (Boisar, Tarapur)">Main Campus (Boisar, Tarapur)</option>
-                            <option value="Book Campus Tour First">Book Campus Tour First</option>
-                            <option value="General Fee & Curriculum Inquiry">General Fee & Curriculum Inquiry</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      {/* Primary CTA Button — Website Brand Colors */}
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full py-3.5 px-6 rounded-xl bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 mt-2 active:scale-[0.99]"
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                            <span>Connecting with Admissions Desk...</span>
-                          </>
-                        ) : (
-                          <>
-                            <span>Request a Call Back</span>
-                            <PhoneCall className="w-4 h-4 text-white" />
-                          </>
-                        )}
-                      </button>
-
-                      {/* Reassurance Footer Text */}
-                      <p className="text-[11px] text-[#777777] text-center leading-normal pt-1">
-                        We'll contact you shortly to answer your questions and help you with admissions.
-                      </p>
-                    </form>
-                  </div>
-                ) : (
-                  /* ============================================================
-                      SUCCESS CONFIRMATION VIEW
-                      ============================================================ */
-                  <div className="py-8 px-4 text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-200 shadow-inner">
-                      <CheckCircle2 className="w-8 h-8" />
                     </div>
 
-                    <div className="space-y-1">
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-700 font-bold block">
-                        ENQUIRY RECEIVED SUCCESSFULLY
-                      </span>
-                      <h3 className="text-2xl font-display font-black text-[#181818] uppercase tracking-tight">
-                        Thank You, {formData.parentName}!
-                      </h3>
+                    {/* Grade & Campus Dropdowns Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                      {/* Select Grade */}
+                      <div>
+                        <label className="block text-[10px] font-mono uppercase text-[#777777] font-semibold mb-1">
+                          Admission Seeking For *
+                        </label>
+                        <select
+                          value={formData.grade}
+                          onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
+                          className="w-full px-3 py-2 sm:py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-base sm:text-sm text-[#181818] outline-none cursor-pointer"
+                        >
+                          <option value="Nursery / Pre-Primary">Nursery / Pre-Primary</option>
+                          <option value="LKG / UKG">LKG / UKG (Kindergarten)</option>
+                          <option value="Class I - V (Primary)">Class I - V (Primary)</option>
+                          <option value="Class VI - VIII (Middle)">Class VI - VIII (Middle)</option>
+                          <option value="Class IX - X (Secondary)">Class IX - X (Secondary)</option>
+                          <option value="Class XI - XII Science">Class XI - XII (Science Stream)</option>
+                          <option value="Class XI - XII Commerce">Class XI - XII (Commerce Stream)</option>
+                          <option value="Class XI - XII Arts">Class XI - XII (Arts Stream)</option>
+                        </select>
+                      </div>
+
+                      {/* Select Campus / Preference */}
+                      <div>
+                        <label className="block text-[10px] font-mono uppercase text-[#777777] font-semibold mb-1">
+                          Preferred Campus / Inquiry *
+                        </label>
+                        <select
+                          value={formData.streamOrCampus}
+                          onChange={(e) => setFormData({ ...formData, streamOrCampus: e.target.value })}
+                          className="w-full px-3 py-2 sm:py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-base sm:text-sm text-[#181818] outline-none cursor-pointer"
+                        >
+                          <option value="Main Campus (Boisar, Tarapur)">Main Campus (Boisar, Tarapur)</option>
+                          <option value="Book Campus Tour First">Book Campus Tour First</option>
+                          <option value="General Fee & Curriculum Inquiry">General Fee & Curriculum Inquiry</option>
+                        </select>
+                      </div>
                     </div>
 
-                    <p className="text-sm text-[#555555] max-w-md mx-auto leading-relaxed">
-                      Our Chinmaya Vidyalaya Admissions Team has received your request for <strong>{formData.grade}</strong>. A dedicated academic counselor will call you at <strong>+91 {formData.phone}</strong> within 24 hours.
+                    {/* Primary CTA Button — Website Brand Colors */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-3 sm:py-3.5 px-6 rounded-xl bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 mt-1 active:scale-[0.99]"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <span>Connecting with Admissions Desk...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Request a Call Back</span>
+                          <PhoneCall className="w-4 h-4 text-white" />
+                        </>
+                      )}
+                    </button>
+
+                    {/* Reassurance Footer Text */}
+                    <p className="text-[10px] sm:text-[11px] text-[#777777] text-center leading-normal pt-0.5">
+                      We'll contact you shortly to answer your questions and help you with admissions.
                     </p>
+                  </form>
+                </div>
+              ) : (
+                /* ============================================================
+                    SUCCESS CONFIRMATION VIEW
+                    ============================================================ */
+                <div className="py-6 sm:py-8 px-3 sm:px-4 text-center space-y-3 sm:space-y-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-200 shadow-inner">
+                    <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" />
+                  </div>
 
-                    <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl max-w-sm mx-auto text-left space-y-1 text-xs text-[#555555]">
-                      <div className="flex justify-between font-mono">
-                        <span>Direct Admission Desk:</span>
-                        <span className="font-bold text-[#181818]">+91 7775872266</span>
-                      </div>
-                      <div className="flex justify-between font-mono">
-                        <span>Office Hours:</span>
-                        <span>Mon–Sat (8:30 AM – 3:30 PM)</span>
-                      </div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-emerald-700 font-bold block">
+                      ENQUIRY RECEIVED SUCCESSFULLY
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-display font-black text-[#181818] uppercase tracking-tight">
+                      Thank You, {formData.parentName}!
+                    </h3>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#555555] max-w-md mx-auto leading-relaxed">
+                    Our Chinmaya Vidyalaya Admissions Team has received your request for <strong>{formData.grade}</strong>. A dedicated academic counselor will call you at <strong>+91 {formData.phone}</strong> within 24 hours.
+                  </p>
+
+                  <div className="p-3 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl max-w-sm mx-auto text-left space-y-1 text-xs text-[#555555]">
+                    <div className="flex justify-between font-mono">
+                      <span>Direct Admission Desk:</span>
+                      <span className="font-bold text-[#181818]">+91 7775872266</span>
                     </div>
-
-                    <div className="pt-2">
-                      <button
-                        onClick={handleClose}
-                        className="px-6 py-2.5 bg-[#181818] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
-                      >
-                        Back to Website
-                      </button>
+                    <div className="flex justify-between font-mono">
+                      <span>Office Hours:</span>
+                      <span>Mon–Sat (8:30 AM – 3:30 PM)</span>
                     </div>
                   </div>
-                )}
-              </div>
 
+                  <div className="pt-2">
+                    <button
+                      onClick={handleClose}
+                      className="px-6 py-2.5 bg-[#181818] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
+                    >
+                      Back to Website
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>

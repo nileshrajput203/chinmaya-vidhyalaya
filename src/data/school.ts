@@ -38,6 +38,11 @@ export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
   founder: "Param Pujya Swami Chinmayanandaji"
 };
 
+export const OFFICIAL_SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/chin_mayavidyalaya?srtk=eW05em91dDR5aW1x&utm_source=qr",
+  facebook: "https://www.facebook.com/share/1Di6Be9wUg/?mibextid=wwXIfr"
+};
+
 export const OFFICIAL_PRINCIPAL_INFO: PrincipalInfo = {
   name: "Smt. Dimple Mistry",
   designation: "Principal",
