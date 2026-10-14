@@ -160,7 +160,7 @@ export const ContactPage: React.FC = () => {
                       Give Us a Call
                     </h3>
                     <p className="font-mono text-xs text-slate-500 mt-0.5">
-                      Mon – Sat, 7:30 AM – 3:30 PM
+                      Mon - Sat, 7:30 AM - 3:30 PM
                     </p>
                   </div>
                   <div className="space-y-1 font-mono text-xs font-bold text-[#181C20] pt-1">

@@ -162,7 +162,7 @@ export const AdmissionFeeCalculator: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-wider">
             <Calculator className="w-3.5 h-3.5" />
-            <span>Admissions 2026–27 Planning Tool</span>
+            <span>Admissions 2026-27 Planning Tool</span>
           </div>
           <h2 className="font-cinzel text-3xl sm:text-4xl font-black text-[#0B1D30] tracking-tight">
             Interactive Fee & Eligibility Estimator

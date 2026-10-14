@@ -28,7 +28,7 @@ export interface ScrollImageTunnelProps {
   /** Scroll distance dedicated to each photo (taller = slower reveal). Default `"200vh"`. */
   stepHeight?: string;
   /**
-   * Scrollable ancestor to track instead of the page — pass this when pinning
+   * Scrollable ancestor to track instead of the page - pass this when pinning
    * inside a bounded panel (e.g. a preview container) rather than the window.
    */
   container?: React.RefObject<HTMLElement | null>;
@@ -58,8 +58,8 @@ function TunnelFrame({
     [0, 1],
   );
   // Each photo starts as a small point in the middle of the frame and scales
-  // up until it fully covers it. Never blurred: it starts punchy — oversaturated,
-  // overcontrasted, "unclear" the way an overdeveloped print is unclear — and
+  // up until it fully covers it. Never blurred: it starts punchy - oversaturated,
+  // overcontrasted, "unclear" the way an overdeveloped print is unclear - and
   // settles into the true, correctly graded image as it finishes growing.
   const scale = useTransform(local, [0, 0.8], [0.05, 1]);
   const y = useTransform(local, [0, 0.75], [40, 0]);
@@ -74,7 +74,7 @@ function TunnelFrame({
       className="absolute inset-0 flex items-center justify-center p-4"
     >
       {/* Flexbox handles centering so it never fights with the scale/y
-          transform below — motion owns the transform property once a
+          transform below - motion owns the transform property once a
           motion value drives it, so a translate-based centering class on
           the same element would get silently clobbered. */}
       <motion.div

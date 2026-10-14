@@ -23,7 +23,7 @@ export default function TimelineDemo(props: Partial<typeof settings>) {
           Three Decades, One Journey of Excellence.
         </h1>
         <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-          Scroll through the timeline — the section pins, the track slides sideways, and each
+          Scroll through the timeline - the section pins, the track slides sideways, and each
           milestone draws its stem and reveals its story.
         </p>
         <span className="mt-2 animate-bounce text-muted-foreground">&darr;</span>
@@ -32,7 +32,7 @@ export default function TimelineDemo(props: Partial<typeof settings>) {
       {/* Realistic usage: custom copy, branded accent, tuned reveal speed. */}
       <Timeline
         title="School Storyline"
-        periodLabel="1993 — 2026"
+        periodLabel="1993 - 2026"
         backgroundColor={s.backgroundColor}
         textColor={s.textColor}
         mutedTextColor={s.mutedTextColor}

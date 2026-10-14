@@ -1,7 +1,7 @@
 import { InfiniteLoopGallery, type InfiniteGalleryItem } from '../ui/infinite-loop-gallery';
 
 /* ────────────────────────────────────────────────────────
-   Activity List Data — Official, Relevant Standard Emojis
+   Activity List Data - Official, Relevant Standard Emojis
    ──────────────────────────────────────────────────────── */
 
 interface Activity {
@@ -32,7 +32,7 @@ const ACTIVITIES: Activity[] = [
 ];
 
 /* ────────────────────────────────────────────────────────
-   Gallery Image Data — Real, Verified School Photos
+   Gallery Image Data - Real, Verified School Photos
    ──────────────────────────────────────────────────────── */
 
 const row1GalleryImages: InfiniteGalleryItem[] = [
@@ -189,14 +189,14 @@ export const CoCurricularShowcase: React.FC = () => {
   return (
     <div className="space-y-12">
 
-      {/* ─── SECTION 1: Activity List — Unique Animated Grid ─── */}
+      {/* ─── SECTION 1: Activity List - Unique Animated Grid ─── */}
       <div className="space-y-6">
         <div className="space-y-2 text-center">
           <h2 className="font-cinzel text-2xl sm:text-4xl font-extrabold text-[#181C20] pt-2">
             Co-Curricular
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-            From performing arts to competitive sports, creative workshops to student governance — explore the full range of co-curricular programmes available to our students.
+            From performing arts to competitive sports, creative workshops to student governance - explore the full range of co-curricular programmes available to our students.
           </p>
         </div>
 

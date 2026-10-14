@@ -102,7 +102,7 @@ export const HomePage: React.FC = () => {
     <div ref={homeWrapperRef} className="bg-white text-[#181C20] overflow-x-clip selection:bg-[#DF711B] selection:text-white font-sans">
       
       {/* ----------------------------------------------------
-          SECTION 01 — HERO SECTION
+          SECTION 01 - HERO SECTION
           Desktop (>= 1024px): Master Scrollytelling Film
           Mobile (< 1024px): School Campus Hero & 2x2 Stats Grid (Navkar-inspired)
          ---------------------------------------------------- */}
@@ -115,7 +115,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* ----------------------------------------------------
-          SECTION 02 — SCROLL-JACKED HORIZONTAL PANEL GALLERY
+          SECTION 02 - SCROLL-JACKED HORIZONTAL PANEL GALLERY
           Panel A: "WE VALUE" 4-Column Grid
           Panel B: "PALGHAR DISTRICT'S BEST CBSE SCHOOL" Studio Cutout
           Panel C: Campus Architectural Gallery Preview
@@ -123,12 +123,12 @@ export const HomePage: React.FC = () => {
       <HorizontalPanelGallery />
 
       {/* ----------------------------------------------------
-          SECTION 2.5 — BANNER CAROUSEL (1.jpeg & 2.jpeg)
+          SECTION 2.5 - BANNER CAROUSEL (1.jpeg & 2.jpeg)
          ---------------------------------------------------- */}
       <BannerCarousel />
 
       {/* ----------------------------------------------------
-          SECTION 2.6 — BANNER IMAGE 2
+          SECTION 2.6 - BANNER IMAGE 2
          ---------------------------------------------------- */}
       <section className="w-full bg-white relative overflow-hidden">
         <img 
@@ -139,7 +139,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 03 — PRINCIPAL LEADERSHIP & DISTINCTION SPOTLIGHT
+          SECTION 03 - PRINCIPAL LEADERSHIP & DISTINCTION SPOTLIGHT
          ---------------------------------------------------- */}
       <section className="py-10 sm:py-14 lg:py-8 lg:h-screen flex items-center bg-white overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -242,12 +242,12 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* ----------------------------------------------------
-          SECTION 04 — FOUNDATIONAL MATRIX: CHINMAYA VISION PROGRAM (CVP)
+          SECTION 04 - FOUNDATIONAL MATRIX: CHINMAYA VISION PROGRAM (CVP)
          ---------------------------------------------------- */}
       <ChinmayaVisionPillarsShowcase />
 
       {/* ----------------------------------------------------
-          SECTION 05 — EXPLORE OUR LABORATORIES & SANCTUARIES
+          SECTION 05 - EXPLORE OUR LABORATORIES & SANCTUARIES
          ---------------------------------------------------- */}
       <section className="py-14 sm:py-20 bg-white relative overflow-hidden">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
@@ -359,17 +359,17 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 05.5 — LIVE NOTICE & EVENT BOARD
+          SECTION 05.5 - LIVE NOTICE & EVENT BOARD
          ---------------------------------------------------- */}
       <NoticeEventBoard />
 
       {/* ----------------------------------------------------
-          SECTION 05.6 — SCROLL-EXPANDING MEDIA MOSAIC
+          SECTION 05.6 - SCROLL-EXPANDING MEDIA MOSAIC
          ---------------------------------------------------- */}
       <ScrollExpandingMosaic />
 
       {/* ----------------------------------------------------
-          SECTION 05.65 — SIGN BANNER
+          SECTION 05.65 - SIGN BANNER
          ---------------------------------------------------- */}
       <section className="w-full bg-white relative overflow-hidden" aria-label="Campus Sign Banner">
         <img 
@@ -381,7 +381,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 05.7 — EXPERIENCE TABBED BENTO GRID
+          SECTION 05.7 - EXPERIENCE TABBED BENTO GRID
          ---------------------------------------------------- */}
       <ExperienceBentoGrid />
 
@@ -414,7 +414,7 @@ export const HomePage: React.FC = () => {
       </AnimatePresence>
 
       {/* ----------------------------------------------------
-          SECTION 07.5 — GUIDING VOICES CAROUSEL
+          SECTION 07.5 - GUIDING VOICES CAROUSEL
          ---------------------------------------------------- */}
       <section className="py-6 sm:py-8 bg-white relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
@@ -456,7 +456,7 @@ export const HomePage: React.FC = () => {
 
                   <div className="space-y-0.5">
                     <p className="text-sm sm:text-base text-[#181818] font-bold font-mono m-0">
-                      — {currentQuote.author}
+ - {currentQuote.author}
                     </p>
                     <p className="text-[11px] sm:text-xs text-[#777777] font-normal uppercase tracking-wider font-mono m-0">
                       {currentQuote.role}
@@ -487,7 +487,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ----------------------------------------------------
-          SECTION 07.8 — FROM OUR BLOG & EDUCATIONAL INSIGHTS
+          SECTION 07.8 - FROM OUR BLOG & EDUCATIONAL INSIGHTS
          ---------------------------------------------------- */}
       {BLOG_POSTS.length > 0 && (
         <section className="py-12 sm:py-16 bg-white relative overflow-hidden border-t border-slate-200">
@@ -573,7 +573,7 @@ export const HomePage: React.FC = () => {
 
 
       {/* ----------------------------------------------------
-          SECTION 08 — MASTER FINAL CONVERSION BANNER (ADMISSIONS)
+          SECTION 08 - MASTER FINAL CONVERSION BANNER (ADMISSIONS)
          ---------------------------------------------------- */}
       <section className="py-14 sm:py-20 md:py-28 bg-gradient-to-br from-[#DF711B] via-[#C45B0E] to-[#9C3E08] text-white relative overflow-hidden shadow-2xl">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-7 relative z-10">

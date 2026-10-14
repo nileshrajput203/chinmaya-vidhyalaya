@@ -113,7 +113,7 @@ export const HorizontalPanelGallery: React.FC = () => {
           className="track flex flex-col lg:flex-row flex-nowrap w-full lg:w-[200vw] will-change-transform"
         >
           {/* ============================================================
-              PANEL A — "START STATE" (WE VALUE GRID)
+              PANEL A -"START STATE" (WE VALUE GRID)
               ============================================================ */}
           <section className="panel panel--values w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col justify-center px-[6%] lg:px-[8%] py-10 sm:py-14 lg:py-10 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] box-border relative">
             {/* Top-left Big Headline & Hand-Drawn Pencil Scroll Cue */}
@@ -214,11 +214,11 @@ export const HorizontalPanelGallery: React.FC = () => {
           </section>
 
           {/* ============================================================
-              PANEL B — "END STATE" (ACHIEVEMENT + VERTICAL MOVING GALLERY)
+              PANEL B -"END STATE" (ACHIEVEMENT + VERTICAL MOVING GALLERY)
               ============================================================ */}
           <section className="panel panel--award w-full lg:w-screen lg:h-screen shrink-0 bg-[#FFFFFF] flex flex-col lg:flex-row items-stretch border-b lg:border-b-0 box-border relative overflow-hidden">
             
-            {/* ZONE A — LEFT (~26% width): Studio Backdrop & Cutout Composite Image */}
+            {/* ZONE A - LEFT (~26% width): Studio Backdrop & Cutout Composite Image */}
             <div className="w-full h-[340px] sm:h-[440px] lg:h-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] bg-white">
               <img 
                 src="/images/panel_b_achiever_design.png" 
@@ -227,7 +227,7 @@ export const HorizontalPanelGallery: React.FC = () => {
               />
             </div>
 
-            {/* ZONE B — MIDDLE (~40% width): Typography, Stats & Text-Link Rule CTA */}
+            {/* ZONE B - MIDDLE (~40% width): Typography, Stats & Text-Link Rule CTA */}
             <div className="w-full lg:w-[40%] xl:w-[39%] flex flex-col justify-center px-6 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 box-border border-b lg:border-b-0 lg:border-r border-[#E5E5E5]">
               <div className="max-w-[560px] space-y-5">
                 
@@ -297,7 +297,7 @@ export const HorizontalPanelGallery: React.FC = () => {
               </div>
             </div>
 
-            {/* ZONE C — RIGHT (~34-36% width): VERTICAL MOVING UPWARD IMAGE GALLERY */}
+            {/* ZONE C - RIGHT (~34-36% width): VERTICAL MOVING UPWARD IMAGE GALLERY */}
             <div className="w-full lg:w-[34%] xl:w-[36%] h-[360px] sm:h-[440px] lg:h-full bg-white relative overflow-hidden flex gap-3.5 p-3 sm:p-4 box-border">
               
               {/* Column 1 (Scrolls UP continuously) */}

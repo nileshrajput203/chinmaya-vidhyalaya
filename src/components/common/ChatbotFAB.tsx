@@ -24,7 +24,7 @@ interface Message {
 
 const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> }> = {
   'admission': {
-    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon–Sat: 8:30 AM – 3:30 PM.",
+    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon-Sat: 8:30 AM - 3:30 PM.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
       { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
@@ -40,7 +40,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     ]
   },
   'campus': {
-    answer: "Chinmaya Vidyalaya Tarapur Campus Details:\n\n• Address: P-201 MIDC Area, Saravali, Boisar / Tarapur, District Palghar, Maharashtra - 401501.\n• Campus Features: Modern STEM Laboratories (Physics, Chemistry, Biology), Robotics, Central Digital Library, Sports Playground, Daily Yoga & Meditation Courtyard.\n• School Timings:\n  - Pre-Primary: 8:30 AM – 12:30 PM\n  - Primary & Secondary: 7:45 AM – 2:00 PM\n• Office Visiting Hours: Mon to Sat, 8:30 AM – 3:30 PM.",
+    answer: "Chinmaya Vidyalaya Tarapur Campus Details:\n\n• Address: P-201 MIDC Area, Saravali, Boisar / Tarapur, District Palghar, Maharashtra - 401501.\n• Campus Features: Modern STEM Laboratories (Physics, Chemistry, Biology), Robotics, Central Digital Library, Sports Playground, Daily Yoga & Meditation Courtyard.\n• School Timings:\n  - Pre-Primary: 8:30 AM - 12:30 PM\n  - Primary & Secondary: 7:45 AM - 2:00 PM\n• Office Visiting Hours: Mon to Sat, 8:30 AM - 3:30 PM.",
     actions: [
       { label: 'Call Campus Office', url: 'tel:9322054713' },
       { label: 'View Facilities', url: '/about/infrastructure' },
@@ -64,7 +64,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     ]
   },
   'contact': {
-    answer: "Direct Contact Information:\n\n• Campus Front Desk: +91 9322054713 / +91 9823517700\n• Principal Desk: +91 7775872266\n• General Email: cvtarapur@chinmayamission.com\n• Principal Email: cv.principal@chinmayamission.com\n• Location: P-201 MIDC Area, Saravali, Boisar, Maharashtra 401501\n• Office Timings: Mon – Sat, 8:30 AM – 3:30 PM",
+    answer: "Direct Contact Information:\n\n• Campus Front Desk: +91 9322054713 / +91 9823517700\n• Principal Desk: +91 7775872266\n• General Email: cvtarapur@chinmayamission.com\n• Principal Email: cv.principal@chinmayamission.com\n• Location: P-201 MIDC Area, Saravali, Boisar, Maharashtra 401501\n• Office Timings: Mon - Sat, 8:30 AM - 3:30 PM",
     actions: [
       { label: 'Call Now: 9322054713', url: 'tel:9322054713' },
       { label: 'Visit Contact Page', url: '/contact' }
@@ -124,7 +124,7 @@ function getBotResponse(userText: string): {
     query.includes('drinking water certificate')
   ) {
     return {
-      answer: "Where can one access Transfer Certificates (TC) and CBSE Mandatory Disclosures?\n\nUnder CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020–21 and 2023 records) are available for online viewing under the 'About Us > Mandatory Information & TC' section.",
+      answer: "Where can one access Transfer Certificates (TC) and CBSE Mandatory Disclosures?\n\nUnder CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020-21 and 2023 records) are available for online viewing under the 'About Us > Mandatory Information & TC' section.",
       actions: [
         { label: 'View Mandatory Disclosures', url: '/about/mandatory-information' },
         { label: 'Transfer Certificates (TC)', url: '/downloads/transfer-certificates' }
@@ -257,7 +257,7 @@ function getBotResponse(userText: string): {
     query.includes('gita chanting')
   ) {
     return {
-      answer: "The Chinmaya Vision Programme (CVP) integrates 4 Core Pillars:\n\n1. Integrated Development: Physical fitness through yoga, emotional balance, intellectual agility, and spiritual grounding.\n2. Indian Culture & Heritage: Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations.\n3. Patriotism: Active citizenship, national pride, environmental awareness (Jal Pakhwada).\n4. Universal Outlook: Vasudhaiva Kutumbakam — the world as one family.",
+      answer: "The Chinmaya Vision Programme (CVP) integrates 4 Core Pillars:\n\n1. Integrated Development: Physical fitness through yoga, emotional balance, intellectual agility, and spiritual grounding.\n2. Indian Culture & Heritage: Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations.\n3. Patriotism: Active citizenship, national pride, environmental awareness (Jal Pakhwada).\n4. Universal Outlook: Vasudhaiva Kutumbakam - the world as one family.",
       actions: [
         { label: 'Explore 4 Pillars', url: '/features/four-pillars' },
         { label: 'Our Philosophy (CVP)', url: '/about/philosophy' }
@@ -310,7 +310,7 @@ function getBotResponse(userText: string): {
 
   // Default intelligent fallback
   return {
-    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130058 • School Code: 30040.\n• Timings: Mon–Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request an admission callback.",
+    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130058 • School Code: 30040.\n• Timings: Mon-Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request an admission callback.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
       { label: 'Fee Estimator', url: '/admissions/guidelines' },

@@ -25,7 +25,7 @@ export interface Book3dProps {
 export const Book3d: React.FC<Book3dProps> = ({
   coverImage = '/images/school-diary-cover.png',
   title = 'Chinmaya Vidyalaya School Diary',
-  subtitle = 'Academic Year 2024–25 / 2026–27',
+  subtitle = 'Academic Year 2024-25 / 2026-27',
   width = 320,
   height = 460,
   depth = 34,

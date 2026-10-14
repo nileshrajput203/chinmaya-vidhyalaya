@@ -22,7 +22,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
     name: '',
     phone: '',
     grade: 'Primary (Std I to V)',
-    slot: 'Morning (9:00 AM – 12:00 PM)',
+    slot: 'Morning (9:00 AM - 12:00 PM)',
     isBooked: false,
   });
 
@@ -42,7 +42,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
          ==================================================== */}
       <div className="space-y-2">
         <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#DF711B] block">
-          Academic Year 2026–2027 • CBSE Affiliation No. 1130058
+          Academic Year 2026-2027 • CBSE Affiliation No. 1130058
         </span>
         <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#181C20] tracking-tight">
           Enrollment & Admission Guidelines
@@ -156,7 +156,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-[#0B1E34] hover:text-[#DF711B] border border-[#E7E2D8] rounded-xl text-xs font-mono font-semibold transition-all shadow-xs"
               >
                 <Download className="w-3.5 h-3.5 text-[#DF711B]" />
-                <span>Std I–IX PDF</span>
+                <span>Std I-IX PDF</span>
               </a>
             </div>
           </div>
@@ -236,7 +236,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Step 2: Interactive Review:</strong> Friendly parent interaction; diagnostic check for Std I–IX.</span>
+                <span><strong>Step 2: Interactive Review:</strong> Friendly parent interaction; diagnostic check for Std I-IX.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -374,9 +374,9 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                     onChange={(e) => setCallbackState({ ...callbackState, slot: e.target.value })}
                     className="w-full px-3 py-2 border border-[#E7E2D8] rounded-xl text-xs bg-white focus:outline-none focus:border-[#DF711B]"
                   >
-                    <option>Morning (9:00 AM – 12:00 PM)</option>
-                    <option>Afternoon (1:00 PM – 3:30 PM)</option>
-                    <option>Evening (4:00 PM – 6:00 PM)</option>
+                    <option>Morning (9:00 AM - 12:00 PM)</option>
+                    <option>Afternoon (1:00 PM - 3:30 PM)</option>
+                    <option>Evening (4:00 PM - 6:00 PM)</option>
                   </select>
                 </div>
                 <button

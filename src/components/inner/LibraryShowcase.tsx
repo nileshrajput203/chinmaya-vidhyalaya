@@ -47,7 +47,7 @@ export const LibraryShowcase: React.FC = () => {
             <div className="flex flex-wrap items-center gap-2">
               <BadgePill variant="amber" label="Knowledge Repository & Archives" icon="book" />
               <span className="text-xs font-mono text-slate-500 bg-white px-2.5 py-1 rounded-md border border-[#E7E2D8]">
-                Open Monday to Saturday • 8:00 AM – 3:30 PM
+                Open Monday to Saturday • 8:00 AM - 3:30 PM
               </span>
             </div>
 

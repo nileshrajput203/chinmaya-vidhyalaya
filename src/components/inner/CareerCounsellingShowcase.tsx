@@ -29,7 +29,7 @@ const PATHWAY_STEPS: PathwayStep[] = [
   {
     step: "01",
     title: "Foundational Learning Diagnostics",
-    badge: "Classes III – VIII",
+    badge: "Classes III - VIII",
     description: "Gentle diagnostic screening identifying cognitive strengths, learning patterns, and foundational literacy and numeracy competencies.",
     ctaText: "Diagnostic Framework",
     icon: ({ className }) => <BookOpen className={className} />,
@@ -484,7 +484,7 @@ export const CareerCounsellingShowcase: React.FC = () => {
             </div>
             <div className="flex items-center gap-2">
               <HelpCircle className="w-4 h-4 text-emerald-600" />
-              <span>Mon to Sat: 8:30 AM – 3:30 PM</span>
+              <span>Mon to Sat: 8:30 AM - 3:30 PM</span>
             </div>
           </div>
         </div>

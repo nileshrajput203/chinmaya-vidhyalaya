@@ -87,7 +87,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
               </a>
               <div className="flex items-center gap-1 text-[10px] text-slate-500">
                 <Clock className="w-2.5 h-2.5 text-slate-400" />
-                <span>Mon–Sat: 8 AM–4 PM</span>
+                <span>Mon-Sat: 8 AM-4 PM</span>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           >
             <div className="flex flex-col items-start text-left">
               <span className="text-[11px] font-bold uppercase tracking-wider leading-none">
-                Admissions 2026–27
+                Admissions 2026-27
               </span>
               <span className="text-[9px] text-amber-200/90 font-mono tracking-wide leading-none mt-0.5">
                 Nursery to Class XII

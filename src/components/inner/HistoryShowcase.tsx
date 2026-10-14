@@ -31,7 +31,7 @@ const CHINMAYA_TOP_MILESTONES: JourneyItem[] = [
     id: "1995-inauguration",
     year: "1995",
     month: "June",
-    content: "Formally inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji — the very first Chinmaya Vidyalaya established across the Maharashtra–Gujarat–Goa region.",
+    content: "Formally inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji - the very first Chinmaya Vidyalaya established across the Maharashtra-Gujarat-Goa region.",
   },
   {
     id: "2004-aisse",
@@ -103,7 +103,7 @@ export const HistoryShowcase: React.FC = () => {
               Three Decades of Educational & Cultural Excellence
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Chinmaya Vidyalaya Tarapur was established to integrate Swami Chinmayananda’s holistic educational vision with modern scholastic rigor in the industrial hub of Boisar. Holding the distinction of being the first school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone, the institution nurtures over 1,600 learners with strong academic grounding and timeless values.
+              Chinmaya Vidyalaya Tarapur was established to integrate Swami Chinmayananda’s holistic educational vision with modern scholastic rigor in the industrial hub of Boisar. Holding the distinction of being the first school established by Chinmaya Mission in the Maharashtra-Gujarat-Goa zone, the institution nurtures over 1,600 learners with strong academic grounding and timeless values.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
               <div className="bg-white p-3.5 rounded-xl border border-[#E7E2D8] text-center shadow-2xs">
@@ -180,7 +180,7 @@ export const HistoryShowcase: React.FC = () => {
       <div className="w-full">
         <Timeline
           title="Campus Journey"
-          periodLabel="1993 — 2026"
+          periodLabel="1993 - 2026"
           textColor="#181C20"
           mutedTextColor="#555555"
           activeColor="#DF711B"

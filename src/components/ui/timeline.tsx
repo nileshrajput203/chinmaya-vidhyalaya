@@ -175,7 +175,7 @@ const defaultBottomJourneyData: JourneyItem[] = [
 
 export default function Timeline({
   title = "Product Storyline",
-  periodLabel = "2020 — 2026",
+  periodLabel = "2020 - 2026",
   textColor = "var(--color-foreground, #0f172a)",
   mutedTextColor = "var(--color-muted-foreground, #64748b)",
   activeColor = "#ff5f00",
@@ -228,7 +228,7 @@ export default function Timeline({
     const isMobile = window.innerWidth < 600;
     const slidePercent = isMobile ? -66 : -72;
     const totalDuration = 100;
-    // The line finishes drawing at 82% of total scrub — giving 18% "dwell" time
+    // The line finishes drawing at 82% of total scrub - giving 18% "dwell" time
     // where everything stays pinned and visible before unpinning.
     const lineTravelDuration = 82;
 

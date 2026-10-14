@@ -68,7 +68,7 @@ export const CurriculumShowcase: React.FC = () => {
               CBSE Scholastic Curriculum & Syllabi
             </h1>
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans font-normal">
-              A balanced, future-ready academic framework aligned with the National Education Policy (NEP 2020) and Central Board of Secondary Education (CBSE) guidelines—infused with the timeless moral ethos of the Chinmaya Vision Programme.
+              A balanced, future-ready academic framework aligned with the National Education Policy (NEP 2020) and Central Board of Secondary Education (CBSE) guidelines - infused with the timeless moral ethos of the Chinmaya Vision Programme.
             </p>
           </div>
 

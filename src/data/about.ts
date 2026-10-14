@@ -12,14 +12,14 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
   history: {
     slug: "history",
     title: "School History",
-    subtitle: "A school with a difference – started with 72 students and 4 teachers",
-    swamijiQuote: "Children are not vessels to be filled, but lamps to be lit. — Pujya Gurudev Swami Chinmayananda",
+    subtitle: "A school with a difference - started with 72 students and 4 teachers",
+    swamijiQuote: "Children are not vessels to be filled, but lamps to be lit. - Pujya Gurudev Swami Chinmayananda",
     image: "/images/swami.jpeg",
     content: [
       "Chinmaya Vidyalaya is affiliated to the CBSE Delhi Board. A school with a difference, it was envisaged in 1993 by dedicated devotees of the Tarapur Chinmaya Mission Centre, inspired by Param Pujya Swami Chinmayanandaji.",
       "The construction of the first phase commenced in 1994 in the sacred presence of Param Pujya Swami Tejomayanandaji. The Vidyalaya was formally inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji.",
-      "Starting with a modest batch of 72 students and four teachers, the institution holds the distinction of being the first school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone. Today, the school has blossomed into a premier institution with approximately 1600 students on roll.",
-      "The Vidyalaya was granted CBSE Affiliation in 2003 (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004). The very first batch of Standard X appeared for the All India Secondary School Examination (AISSE) in 2004–2005, maintaining a tradition of distinguished academic excellence.",
+      "Starting with a modest batch of 72 students and four teachers, the institution holds the distinction of being the first school established by Chinmaya Mission in the Maharashtra-Gujarat-Goa zone. Today, the school has blossomed into a premier institution with approximately 1600 students on roll.",
+      "The Vidyalaya was granted CBSE Affiliation in 2003 (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004). The very first batch of Standard X appeared for the All India Secondary School Examination (AISSE) in 2004-2005, maintaining a tradition of distinguished academic excellence.",
       "Located in Boisar, about 100 km north of Mumbai on the Western Railway, the school is an undertaking of Central Chinmaya Mission Trust, Mumbai, with the Local Managing Committee guiding its day-to-day administration."
     ],
     bulletPoints: [
@@ -30,8 +30,8 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
       "Inaugurated on 18 June 1995 by H.H. Swami Purushottamanandaji",
       "Starting Enrollment (1995): 72 students and 4 teachers",
       "Current Enrollment: Approximately 1600 students on roll",
-      "First school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone",
-      "CBSE Affiliation granted in 2003; First Batch of Std X (AISSE) in 2004–2005",
+      "First school established by Chinmaya Mission in the Maharashtra-Gujarat-Goa zone",
+      "CBSE Affiliation granted in 2003; First Batch of Std X (AISSE) in 2004-2005",
       "Location: P-201, MIDC Area, Vidyanagar, Saravali, Boisar 401501, Dist: Palghar, Maharashtra",
       "Distinguished Tradition: Over three decades of holistic educational service in Boisar"
     ]
@@ -40,7 +40,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     slug: "mission-vision",
     title: "School Vision & Mission",
     subtitle: "To empower a community of learners who dare to dream, take risks and develop new realities",
-    swamijiQuote: "To be human is to be aware. To be noble is to care. — Swami Chinmayananda",
+    swamijiQuote: "To be human is to be aware. To be noble is to care. - Swami Chinmayananda",
     image: "/images/swami.jpeg",
     content: [
       "Vision: To empower a community of learners who dare to dream, take risks and develop new realities.",
@@ -100,10 +100,10 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     subtitle: "Official CBSE disclosure certificates, affiliation documents, and Transfer Certificate records",
     content: [
       "In strict compliance with CBSE directives, SARAS portal guidelines, and transparency mandates, Chinmaya Vidyalaya publishes all statutory documents, safety certificates, and Transfer Certificates (TC) for public inspection.",
-      "All statutory certificates—including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, SMC, PTA, and official Transfer Certificates (TC annual registers for 2020–21 and 2023)—are available in verified view-only format."
+      "All statutory certificates - including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, SMC, PTA, and official Transfer Certificates (TC annual registers for 2020-21 and 2023) - are available in verified view-only format."
     ],
     bulletPoints: [
-      "Official Transfer Certificates (TC): View certified archive registers (2020–21 and 2023)",
+      "Official Transfer Certificates (TC): View certified archive registers (2020-21 and 2023)",
       "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
       "State Government NOC & RTE Recognition Certificate",
       "Building Stability and Fire Safety Clearance Certificates",
@@ -123,16 +123,16 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     ],
     bulletPoints: [
       "Managing Trust: Central Chinmaya Mission Trust, Mumbai (Local Managing Committee)",
-      "1. Sri. T.B. Thakur — Chairman (Industrialist | thakur@tpr.grengg.com)",
-      "2. Shri Shriram Bhalerao — Trustee, CCMT (Industrialist | bhaleraosg@labindia.com)",
-      "3. Atul Karanjkar — Zonal Director (atul.karanjkar@chinmayaeducationcell.org)",
-      "4. Dr. Parag Kulkarni — Vice Chairman (Doctor | paragkulkarni1960@gmail.com)",
-      "5. Dr. Shivshankar — Secretary (Doctor | drshankar.shiv@gmail.com)",
-      "6. Dr. (Smt.) Shobha Sankhe — Member (Doctor | 2005shobha@gmail.com)",
-      "7. Dr. Ratnakar Mane — Member (Doctor | drratnakarmane@gmail.com)",
-      "8. Sri. B.K. Poddar — Member (Industrialist | cvtarapur@rediffmail.com)",
-      "9. Dr. Dathatreya Nayak — Member (Doctor | ddnayak30@gmail.com)",
-      "10. Smt. Dimple Mistry — Member (Principal) (Educationist | cv.principal@chinmayamission.com)"
+      "1. Sri. T.B. Thakur - Chairman (Industrialist | thakur@tpr.grengg.com)",
+      "2. Shri Shriram Bhalerao - Trustee, CCMT (Industrialist | bhaleraosg@labindia.com)",
+      "3. Atul Karanjkar - Zonal Director (atul.karanjkar@chinmayaeducationcell.org)",
+      "4. Dr. Parag Kulkarni - Vice Chairman (Doctor | paragkulkarni1960@gmail.com)",
+      "5. Dr. Shivshankar - Secretary (Doctor | drshankar.shiv@gmail.com)",
+      "6. Dr. (Smt.) Shobha Sankhe - Member (Doctor | 2005shobha@gmail.com)",
+      "7. Dr. Ratnakar Mane - Member (Doctor | drratnakarmane@gmail.com)",
+      "8. Sri. B.K. Poddar - Member (Industrialist | cvtarapur@rediffmail.com)",
+      "9. Dr. Dathatreya Nayak - Member (Doctor | ddnayak30@gmail.com)",
+      "10. Smt. Dimple Mistry - Member (Principal) (Educationist | cv.principal@chinmayamission.com)"
     ]
   },
   "swami-chinmayananda": {
@@ -142,11 +142,11 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     swamijiQuote: "Children are not vessels to be filled, but lamps to be lit. To illuminate a child's heart is to illuminate the future of the nation.",
     image: "/images/swami.jpeg",
     content: [
-      "Pujya Gurudev Swami Chinmayananda Saraswati (8 May 1916 – 3 August 1993) was one of modern India's most extraordinary spiritual renaissance leaders, philosopher-saints, and educational visionaries. Born Balakrishna Menon (Balan) in Ernakulam, Kerala, he was an ardent patriot who participated actively in the Quit India Movement of 1942 and endured British imprisonment.",
+      "Pujya Gurudev Swami Chinmayananda Saraswati (8 May 1916 - 3 August 1993) was one of modern India's most extraordinary spiritual renaissance leaders, philosopher-saints, and educational visionaries. Born Balakrishna Menon (Balan) in Ernakulam, Kerala, he was an ardent patriot who participated actively in the Quit India Movement of 1942 and endured British imprisonment.",
       "As a fierce, sharp-witted investigative journalist writing for 'The National Herald', he traveled to the Himalayas in 1947 intent on uncovering what he presumed was religious dogma. Instead, upon meeting Sri Swami Sivananda Saraswati at Ananda Kutir, Rishikesh, his analytical intellect was conquered by profound spiritual realization. On Mahashivaratri (25 February 1949), he was initiated into the holy order of Sannyasa and bestowed with the sacred monastic name Swami Chinmayananda ('One who revels in pure Consciousness').",
       "Sent to the austere heights of Uttarkashi to study the Prasthanatraya (Upanishads, Bhagavad Gita, and Brahma Sutras) under the revered ascetic master Swami Tapovan Maharaj, Gurudev spent eight rigorous years in intense contemplation. Desiring to liberate timeless Vedantic wisdom from mountain hermitages and deliver it directly to the common people, Gurudev conducted his historic first Geeta Jnana Yajna in Pune on 31 December 1951.",
       "In 1953, devotees formally instituted the Central Chinmaya Mission Trust (CCMT) headquartered in Mumbai (Sandeepany Sadhanalaya, Powai). Over 42 years of tireless global work, Gurudev addressed millions across 576 Jnana Yajnas, authoring over 95 authoritative books and founding over 100 Chinmaya Vidyalayas across India.",
-      "Recognizing that cultural regeneration begins with youth, Gurudev crafted the revolutionary Chinmaya Vision Programme (CVP)—a four-pillar pedagogical system synthesizing academic distinction, Indian cultural rootedness, patriotic citizenship, and a universal compassionate outlook. In 1993, inspired by Gurudev's grace, devotees in Tarapur established Chinmaya Vidyalaya, which stands today as a lighthouse of holistic learning in Boisar."
+      "Recognizing that cultural regeneration begins with youth, Gurudev crafted the revolutionary Chinmaya Vision Programme (CVP) - a four-pillar pedagogical system synthesizing academic distinction, Indian cultural rootedness, patriotic citizenship, and a universal compassionate outlook. In 1993, inspired by Gurudev's grace, devotees in Tarapur established Chinmaya Vidyalaya, which stands today as a lighthouse of holistic learning in Boisar."
     ],
     bulletPoints: [
       "Born: Balakrishna Menon on 8 May 1916 in Ernakulam, Kerala | Departed: 3 August 1993 (Mahasamadhi in San Diego, California)",

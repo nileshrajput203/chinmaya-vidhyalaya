@@ -121,7 +121,7 @@ const FACILITIES: FacilityItem[] = [
     description:
       'Advanced life sciences facility equipped with compound microscopes, botanical herbariums, and anatomical models.',
     curriculumDetails:
-      'Aligned to CBSE Class IX–XII: temporary mount preparation, onion root-tip mitosis, potato osmometer, and enzyme salivary amylase action.',
+      'Aligned to CBSE Class IX-XII: temporary mount preparation, onion root-tip mitosis, potato osmometer, and enzyme salivary amylase action.',
     safetyProtocols: [
       'Hygienic bio-specimen formalin containers sealed to OSHA standards',
       'Safe microtome sectioning with protective safety razors under faculty supervision',
@@ -453,7 +453,7 @@ export const InfrastructureShowcase: React.FC = () => {
                 State-of-the-Art Learning & Laboratory Infrastructure
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                Chinmaya Vidyalaya Tarapur provides world-class educational spaces that empower experiential learning. Explore our certified Physics, Chemistry, Biology, and IT Innovation laboratories—each equipped with dedicated apparatus, continuous safety ventilation, and individual student workstations.
+                Chinmaya Vidyalaya Tarapur provides world-class educational spaces that empower experiential learning. Explore our certified Physics, Chemistry, Biology, and IT Innovation laboratories - each equipped with dedicated apparatus, continuous safety ventilation, and individual student workstations.
               </p>
             </div>
             

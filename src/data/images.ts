@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * CHINMAYA VIDYALAYA TARAPUR — CENTRAL IMAGE ASSET CONFIGURATION
+ * CHINMAYA VIDYALAYA TARAPUR - CENTRAL IMAGE ASSET CONFIGURATION
  * ============================================================================
  * 
  * 📁 WHERE ARE THE IMAGES STORED?

@@ -23,18 +23,18 @@ export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
   },
   managingTrust: "Central Chinmaya Mission Trust, Mumbai (Local Managing Committee handles day-to-day management)",
   localCommittee: "Local Managing Committee handles day-to-day management",
-  envisagedYear: "1993 — planned by devotees of Tarapur Chinmaya Mission Centre, inspired by Swami Chinmayanandaji",
-  constructionBeganYear: "1994 — first phase, in the presence of Param Pujya Swami Tejomayanandaji",
+  envisagedYear: "1993 - planned by devotees of Tarapur Chinmaya Mission Centre, inspired by Swami Chinmayanandaji",
+  constructionBeganYear: "1994 - first phase, in the presence of Param Pujya Swami Tejomayanandaji",
   inauguratedDate: "18 June 1995, by H.H. Swami Purushottamanandaji",
   inauguratedBy: "H.H. Swami Purushottamanandaji",
   foundingEnrollment: "72 students and 4 teachers (1995)",
   currentEnrollment: "Approx. 1600 students on roll",
   cbseAffiliationYear: "2003",
-  firstAisseBatch: "2004–2005",
-  regionalStanding: "First school established by Chinmaya Mission in the Maharashtra–Gujarat–Goa zone",
+  firstAisseBatch: "2004-2005",
+  regionalStanding: "First school established by Chinmaya Mission in the Maharashtra-Gujarat-Goa zone",
   locationDetails: "Boisar, about 100 km north of Mumbai on the Western Railway",
   visionStatement: "To empower a community of learners who dare to dream, take risks and develop new realities",
-  educationApproach: "Chinmaya Vision Programme — integrates Value Education with academics for personality development",
+  educationApproach: "Chinmaya Vision Programme - integrates Value Education with academics for personality development",
   founder: "Param Pujya Swami Chinmayanandaji"
 };
 

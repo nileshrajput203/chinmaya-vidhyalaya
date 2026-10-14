@@ -478,7 +478,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                     <span>+91 9322054713 / 9823517700</span>
                   </a>
                   <span>•</span>
-                  <span>Mon – Sat: 8:30 AM – 3:30 PM</span>
+                  <span>Mon - Sat: 8:30 AM - 3:30 PM</span>
                 </div>
               </div>
 

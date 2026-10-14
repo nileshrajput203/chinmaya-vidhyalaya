@@ -23,7 +23,7 @@ export const SchoolCalendarPage: React.FC = () => {
       <Breadcrumb
         items={[
           { label: 'Admissions', href: '/admissions/guidelines' },
-          { label: 'Academic Calendar 2026–27' },
+          { label: 'Academic Calendar 2026-27' },
         ]}
       />
 
@@ -34,13 +34,13 @@ export const SchoolCalendarPage: React.FC = () => {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-2">
-                <BadgePill label="Academic Year 2026–2027" variant="saffron" />
+                <BadgePill label="Academic Year 2026-2027" variant="saffron" />
                 <span className="text-xs font-mono font-semibold text-slate-500">
                   Term Schedule • Examinations • Vacations • Festivals
                 </span>
               </div>
               <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#181C20] tracking-tight">
-                School Academic Calendar 2026–27
+                School Academic Calendar 2026-27
               </h1>
               <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
                 Official calendar showing working days, assessment cycles, vacation windows, and cultural observances. Browse all 96 pages of the official Chinmaya Vidyalaya School Diary and Almanac directly in your browser.
@@ -125,9 +125,9 @@ export const SchoolCalendarPage: React.FC = () => {
                   <span>Vacation Windows</span>
                 </div>
                 <ul className="space-y-1.5 text-slate-600 text-[11px]">
-                  <li><strong>Summer Break:</strong> May 1, 2026 – June 9, 2026</li>
-                  <li><strong>Diwali Vacation:</strong> October 28, 2026 – November 10, 2026</li>
-                  <li><strong>Winter Break:</strong> December 24, 2026 – January 2, 2027</li>
+                  <li><strong>Summer Break:</strong> May 1, 2026 - June 9, 2026</li>
+                  <li><strong>Diwali Vacation:</strong> October 28, 2026 - November 10, 2026</li>
+                  <li><strong>Winter Break:</strong> December 24, 2026 - January 2, 2027</li>
                 </ul>
               </div>
             </div>
@@ -210,8 +210,8 @@ export const SchoolCalendarPage: React.FC = () => {
 
             <div className="p-3 bg-white border border-[#E7E2D8] rounded-xl text-xs space-y-1 text-slate-600">
               <span className="font-bold text-slate-800 block">School Office Working Hours:</span>
-              <p className="text-[11px]">Monday to Friday: 8:00 AM – 3:30 PM</p>
-              <p className="text-[11px]">Saturday: 8:00 AM – 1:00 PM</p>
+              <p className="text-[11px]">Monday to Friday: 8:00 AM - 3:30 PM</p>
+              <p className="text-[11px]">Saturday: 8:00 AM - 1:00 PM</p>
             </div>
 
             <div className="pt-2 border-t border-[#E7E2D8]">

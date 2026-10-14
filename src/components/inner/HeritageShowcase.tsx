@@ -20,7 +20,7 @@ export const HeritageShowcase: React.FC = () => {
               <div className="flex flex-wrap items-center gap-2">
                 <BadgePill variant="amber" label="Spiritual Master & Visionary Founder" pulse />
                 <span className="text-xs font-mono font-bold text-[#DF711B] bg-white px-2.5 py-1 rounded-md border border-[#DF711B]/30">
-                  8 May 1916 – 3 August 1993
+                  8 May 1916 - 3 August 1993
                 </span>
               </div>
 
@@ -40,7 +40,7 @@ export const HeritageShowcase: React.FC = () => {
                 onClick={() => setLightbox({
                   src: '/images/swami.jpeg',
                   title: 'Pujya Gurudev Swami Chinmayananda',
-                  caption: 'Param Pujya Swami Chinmayananda Saraswati (1916–1993) — Master of Advaita Vedanta and founder of Chinmaya Mission.'
+                  caption: 'Param Pujya Swami Chinmayananda Saraswati (1916-1993) - Master of Advaita Vedanta and founder of Chinmaya Mission.'
                 })}
                 className="rounded-2xl overflow-hidden border-2 border-[#DF711B] shadow-xl group bg-white cursor-pointer"
               >

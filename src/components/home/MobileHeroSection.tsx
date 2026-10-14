@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, GraduationCap, MapPin } from 'lucide-react';
+import { ArrowRight, GraduationCap, MapPin } from 'lucide-react';
 
 interface MobileHeroSectionProps {
   onOpenAdmissions: () => void;
@@ -33,8 +33,7 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
 
         {/* Top Floating Badge */}
         <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-10">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:py-1 rounded-full bg-black/60 backdrop-blur-md text-[#FFB740] border border-amber-400/30 text-[9px] sm:text-[10px] font-mono font-bold tracking-wider uppercase">
-            <Sparkles className="w-3 h-3 text-[#FFB740]" />
+          <span className="inline-flex items-center px-2.5 py-0.5 sm:py-1 rounded-full bg-black/60 backdrop-blur-md text-[#FFB740] border border-amber-400/30 text-[9px] sm:text-[10px] font-mono font-bold tracking-wider uppercase">
             CBSE #1130058 • Estd. 1995
           </span>
         </div>
@@ -110,7 +109,7 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
             className="w-full py-3 px-4 bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-xs xs:text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-98 cursor-pointer"
           >
             <GraduationCap className="w-4 h-4 text-amber-200" />
-            <span>Apply for Admissions 2026–27</span>
+            <span>Apply for Admissions 2026-27</span>
             <ArrowRight className="w-4 h-4 text-amber-200" />
           </button>
 

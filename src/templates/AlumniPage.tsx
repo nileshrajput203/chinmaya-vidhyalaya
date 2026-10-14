@@ -69,7 +69,7 @@ const ALUMNI_REVIEWS: AlumniReview[] = [
     batch: 'Class of 2016',
     cutoutImage: '/images/banner-1.jpg',
     review:
-      'The third pillar of CVP—Patriotism and Civic Duty—truly inspired my path into public administration. From student house governance to tree plantation drives in Palghar district, we were taught that real accomplishment lies in societal progress. That noble grounding continues to guide every policy decision I make in public service.',
+      'The third pillar of CVP - Patriotism and Civic Duty - truly inspired my path into public administration. From student house governance to tree plantation drives in Palghar district, we were taught that real accomplishment lies in societal progress. That noble grounding continues to guide every policy decision I make in public service.',
     bookTitle: 'PATRIOTISM & CIVIC DUTY'
   },
   {
@@ -385,7 +385,7 @@ export const AlumniPage: React.FC = () => {
                   "Keep Smiling! Whatever you do, do it with love, dedication, and joy. You are the ambassadors of Chinmaya values in the world."
                 </blockquote>
                 <span className="text-[10px] font-mono text-slate-400 block pt-1">
-                  — Param Pujya Swami Chinmayananda
+ - Param Pujya Swami Chinmayananda
                 </span>
               </div>
             </div>
@@ -430,7 +430,7 @@ export const AlumniPage: React.FC = () => {
                   {/* Attribution line */}
                   <div className="pt-2">
                     <p className="font-sans text-sm sm:text-base text-slate-800 font-semibold">
-                      – {currentReview.name} ({currentReview.batch})
+ - {currentReview.name} ({currentReview.batch})
                     </p>
                   </div>
                 </motion.div>

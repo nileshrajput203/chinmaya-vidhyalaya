@@ -20,7 +20,7 @@ export const SpiritualShowcase: React.FC = () => {
             Nurturing Moral Clarity, Devotion & Inner Poise
           </h2>
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-            At Chinmaya Vidyalaya Tarapur, spiritual education is neither ritualistic nor dogmatic—it is the systematic cultivation of mental tranquility, noble values, reverence for life, and ethical strength. Every morning begins with universal Vedic prayers, mindfulness, and the sacred Guru Paduka Pooja.
+            At Chinmaya Vidyalaya Tarapur, spiritual education is neither ritualistic nor dogmatic - it is the systematic cultivation of mental tranquility, noble values, reverence for life, and ethical strength. Every morning begins with universal Vedic prayers, mindfulness, and the sacred Guru Paduka Pooja.
           </p>
         </div>
 

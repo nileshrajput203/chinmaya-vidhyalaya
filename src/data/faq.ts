@@ -31,7 +31,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-3',
     category: 'cvp',
     question: 'What are the 4 Pillars of the Chinmaya Vision Programme (CVP)?',
-    answer: 'Formulated under the guidance of Pujya Gurudev Swami Chinmayananda, CVP integrates four core pillars: 1) Integrated Development (Physical fitness through yoga, emotional balance, intellectual agility, and spiritual grounding), 2) Indian Culture & Heritage (Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations), 3) Patriotism (Active citizenship, national pride, environmental awareness like Jal Pakhwada), and 4) Universal Outlook (Vasudhaiva Kutumbakam—the world as one family, global empathy, and ecological compassion).'
+    answer: 'Formulated under the guidance of Pujya Gurudev Swami Chinmayananda, CVP integrates four core pillars: 1) Integrated Development (Physical fitness through yoga, emotional balance, intellectual agility, and spiritual grounding), 2) Indian Culture & Heritage (Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations), 3) Patriotism (Active citizenship, national pride, environmental awareness like Jal Pakhwada), and 4) Universal Outlook (Vasudhaiva Kutumbakam - the world as one family, global empathy, and ecological compassion).'
   },
   {
     id: 'faq-4',
@@ -43,7 +43,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-5',
     category: 'academics',
     question: 'What board is Chinmaya Vidyalaya affiliated with, and what is its board exam performance?',
-    answer: 'Chinmaya Vidyalaya is affiliated with the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004). The Vidyalaya holds an unbroken record of 100% pass results in the Class X AISSE Board Examinations, with a high proportion of students securing First Class and Distinctions since its first batch appeared in 2004–2005.'
+    answer: 'Chinmaya Vidyalaya is affiliated with the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058, School Code: 30040, U-DISE: 27361116004). The Vidyalaya holds an unbroken record of 100% pass results in the Class X AISSE Board Examinations, with a high proportion of students securing First Class and Distinctions since its first batch appeared in 2004-2005.'
   },
   {
     id: 'faq-6',
@@ -55,7 +55,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-7',
     category: 'disclosures',
     question: 'Where can one access Transfer Certificates (TC) and CBSE Mandatory Disclosures?',
-    answer: 'Under CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020–21 and 2023 records) are available for online viewing under the "About Us > Mandatory Information & TC" section.'
+    answer: 'Under CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020-21 and 2023 records) are available for online viewing under the "About Us > Mandatory Information & TC" section.'
   },
   {
     id: 'faq-8',
@@ -79,7 +79,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-11',
     category: 'facilities',
     question: 'How do I schedule a school visit or contact the administration?',
-    answer: 'School visits are available exclusively for new prospective parents seeking admission and wishing to inspect campus facilities. New parents can schedule a visit by submitting an enquiry on our Contact page or by calling our school office at 9322054713 (Mon–Sat: 8:30 AM to 3:30 PM).'
+    answer: 'School visits are available exclusively for new prospective parents seeking admission and wishing to inspect campus facilities. New parents can schedule a visit by submitting an enquiry on our Contact page or by calling our school office at 9322054713 (Mon-Sat: 8:30 AM to 3:30 PM).'
   },
   {
     id: 'faq-12',
@@ -97,6 +97,6 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-14',
     category: 'academics',
     question: 'What is the CBSE scholastic curriculum, syllabus structure, and stage-wise academic framework?',
-    answer: 'Chinmaya Vidyalaya Tarapur follows the NCERT & CBSE scholastic curriculum from Nursery to Class XII (Affiliation No: 1130058). Our academic continuum encompasses: 1) Foundational Stage (Nursery & KG with play-way phonics & value learning), 2) Primary Stage (Classes I–V with activity-based experiential learning), 3) Middle Stage (Classes VI–VIII with disciplinary sciences, trilingual mastery in English, Hindi, Sanskrit/Marathi, and computer programming), 4) Secondary Stage (Classes IX–X AISSE preparation with unbroken 100% first-class pass record), and 5) Senior Secondary Stage (Classes XI–XII offering Science, Commerce, and Humanities streams).'
+    answer: 'Chinmaya Vidyalaya Tarapur follows the NCERT & CBSE scholastic curriculum from Nursery to Class XII (Affiliation No: 1130058). Our academic continuum encompasses: 1) Foundational Stage (Nursery & KG with play-way phonics & value learning), 2) Primary Stage (Classes I-V with activity-based experiential learning), 3) Middle Stage (Classes VI-VIII with disciplinary sciences, trilingual mastery in English, Hindi, Sanskrit/Marathi, and computer programming), 4) Secondary Stage (Classes IX-X AISSE preparation with unbroken 100% first-class pass record), and 5) Senior Secondary Stage (Classes XI-XII offering Science, Commerce, and Humanities streams).'
   }
 ];

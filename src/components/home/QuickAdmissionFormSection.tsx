@@ -162,7 +162,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
               <div className="flex items-center gap-2 mb-1">
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#DF711B]/10 text-[#DF711B] text-[10px] font-mono font-bold uppercase tracking-wider rounded-sm">
                   <Sparkles className="w-3 h-3 text-[#DF711B]" />
-                  Session 2026–27 Open
+                  Session 2026-27 Open
                 </span>
                 <span className="text-[11px] font-mono text-[#888888] uppercase tracking-wider">
                   CBSE Affiliated • Boisar

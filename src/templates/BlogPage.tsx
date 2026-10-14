@@ -427,7 +427,7 @@ export const BlogPage: React.FC = () => {
                       "{activeArticle.quote.text}"
                     </p>
                     <p className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
-                      — {activeArticle.quote.source}
+ - {activeArticle.quote.source}
                     </p>
                   </div>
                 </div>

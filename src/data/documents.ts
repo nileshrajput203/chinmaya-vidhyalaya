@@ -114,7 +114,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     fileUrl: "/images/FEE STRUCTURE 26-27.pdf",
     fileSize: "30 KB",
     uploadDate: "2026-04-01",
-    description: "Approved fee schedule for academic session 2026–2027.",
+    description: "Approved fee schedule for academic session 2026-2027.",
     downloadable: false
   },
   {
@@ -125,7 +125,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     fileUrl: "/images/Chinmaya ACADEMIC Calendar 2026-27.pdf",
     fileSize: "19.5 MB",
     uploadDate: "2026-04-01",
-    description: "Comprehensive annual academic and co-curricular schedule for 2026–2027.",
+    description: "Comprehensive annual academic and co-curricular schedule for 2026-2027.",
     downloadable: false
   },
   {
@@ -146,29 +146,29 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     fileUrl: "/images/PTA 26-27.pdf",
     fileSize: "459 KB",
     uploadDate: "2026-04-01",
-    description: "Executive body of Parents Teachers Association (2026–2027).",
+    description: "Executive body of Parents Teachers Association (2026-2027).",
     downloadable: false
   },
   {
     id: "doc-board-result-x",
-    title: "Standard 10th Board Examination Results (2023–2026)",
+    title: "Standard 10th Board Examination Results (2023-2026)",
     category: "mandatory-information",
     academicYear: "2023-2026",
     fileUrl: "/images/Std.X result 23-26.pdf",
     fileSize: "111 KB",
     uploadDate: "2026-04-01",
-    description: "Three-year CBSE Class X (AISSE) Board Examination performance data (2023–2026).",
+    description: "Three-year CBSE Class X (AISSE) Board Examination performance data (2023-2026).",
     downloadable: false
   },
   {
     id: "doc-board-result-xii",
-    title: "Standard 12th Board Examination Results (2023–2026)",
+    title: "Standard 12th Board Examination Results (2023-2026)",
     category: "mandatory-information",
     academicYear: "2023-2026",
     fileUrl: "/images/Std.XII result 23-26.pdf",
     fileSize: "319 KB",
     uploadDate: "2026-04-01",
-    description: "Three-year CBSE Class XII (AISSCE) Board Examination performance data (2023–2026).",
+    description: "Three-year CBSE Class XII (AISSCE) Board Examination performance data (2023-2026).",
     downloadable: false
   },
   {
@@ -228,7 +228,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
   },
   {
     id: "doc-tc-2020-21",
-    title: "Transfer Certificates (TC) 2020–21 Official Archive",
+    title: "Transfer Certificates (TC) 2020-21 Official Archive",
     category: "mandatory-information",
     academicYear: "2020-2021",
     fileUrl: "/images/TC-2021.pdf",
@@ -311,7 +311,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
   },
 
   // -------------------------------------------------------------
-  // SAMPLE PAPERS — TERM 1 / PERIODIC ASSESSMENTS (DOWNLOADABLE)
+  // SAMPLE PAPERS - TERM 1 / PERIODIC ASSESSMENTS (DOWNLOADABLE)
   // -------------------------------------------------------------
   {
     id: "doc-paper-std-1",
@@ -425,7 +425,7 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
   },
 
   // -------------------------------------------------------------
-  // SAMPLE PAPERS — TERM 2 / EVALUATION III QUESTION PAPERS (DOWNLOADABLE)
+  // SAMPLE PAPERS - TERM 2 / EVALUATION III QUESTION PAPERS (DOWNLOADABLE)
   // -------------------------------------------------------------
   {
     id: "doc-eval-1",

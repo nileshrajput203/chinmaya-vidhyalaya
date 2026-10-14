@@ -401,7 +401,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                       </div>
                     </div>
 
-                    {/* Primary CTA Button — Website Brand Colors */}
+                    {/* Primary CTA Button - Website Brand Colors */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -455,7 +455,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                     </div>
                     <div className="flex justify-between font-mono">
                       <span>Office Hours:</span>
-                      <span>Mon–Sat (8:30 AM – 3:30 PM)</span>
+                      <span>Mon-Sat (8:30 AM - 3:30 PM)</span>
                     </div>
                   </div>
 
@@ -488,7 +488,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
             ? 'p-2 w-11 h-11 justify-center bg-[#DF711B] hover:bg-[#C45B0E] border-2 border-white/60 text-white hover:scale-110 shadow-lg'
             : 'gap-2.5 px-4 py-2.5 bg-white/95 hover:bg-[#181818] text-[#181818] hover:text-white border border-[#DF711B]/40 hover:border-[#DF711B]'
         }`}
-        title="Admission Guidance — Request a Call Back"
+        title="Admission Guidance - Request a Call Back"
         aria-label="Request Admission Guidance Call"
       >
         <div

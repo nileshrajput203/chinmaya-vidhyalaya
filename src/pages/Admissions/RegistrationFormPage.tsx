@@ -132,7 +132,7 @@ export const RegistrationFormPage: React.FC = () => {
   }>({
     name: '',
     phone: '',
-    preferredTime: 'Morning (9:00 AM – 12:00 PM)',
+    preferredTime: 'Morning (9:00 AM - 12:00 PM)',
     issueTopic: 'Registration Form Assistance',
     submitted: false,
   });
@@ -232,7 +232,7 @@ export const RegistrationFormPage: React.FC = () => {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-2">
-                <BadgePill label="Academic Year 2026–2027" variant="amber" />
+                <BadgePill label="Academic Year 2026-2027" variant="amber" />
                 <span className="text-xs font-mono font-semibold text-slate-500">
                   CBSE Affiliation No. 1130058 • School Code: 30034
                 </span>
@@ -800,12 +800,12 @@ export const RegistrationFormPage: React.FC = () => {
                 </div>
                 <div className="space-y-1 text-slate-600 text-[11px]">
                   <div className="flex justify-between">
-                    <span>Monday – Friday:</span>
-                    <span className="font-semibold text-slate-800">9:00 AM – 1:30 PM, 2:00 PM – 4:00 PM</span>
+                    <span>Monday - Friday:</span>
+                    <span className="font-semibold text-slate-800">9:00 AM - 1:30 PM, 2:00 PM - 4:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday:</span>
-                    <span className="font-semibold text-slate-800">9:00 AM – 12:30 PM</span>
+                    <span className="font-semibold text-slate-800">9:00 AM - 12:30 PM</span>
                   </div>
                   <div className="flex justify-between text-slate-400">
                     <span>Sunday & Public Holidays:</span>
@@ -862,8 +862,8 @@ export const RegistrationFormPage: React.FC = () => {
                       onChange={e => setCallbackRequest(prev => ({ ...prev, preferredTime: e.target.value }))}
                       className="w-full px-3 py-2 text-xs bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B] text-slate-700"
                     >
-                      <option value="Morning (9:00 AM – 12:00 PM)">Morning (9:00 AM – 12:00 PM)</option>
-                      <option value="Afternoon (1:00 PM – 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
+                      <option value="Morning (9:00 AM - 12:00 PM)">Morning (9:00 AM - 12:00 PM)</option>
+                      <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
                       <option value="Immediate / Earliest">Immediate / Earliest Desk Window</option>
                     </select>
                     <button

@@ -29,7 +29,7 @@ const CVP_PILLARS: PillarData[] = [
     image: '/images/pages/home/pillars/pillar-01-integrated.png',
     isCutout: true,
     visionStatement:
-      'True education nurtures the entire being—harmonizing physical vitality, an analytical intellect, and emotional equilibrium to build purposeful leaders.',
+      'True education nurtures the entire being - harmonizing physical vitality, an analytical intellect, and emotional equilibrium to build purposeful leaders.',
     explanation:
       'The first pillar of the Chinmaya Vision Programme harmonizes the multidimensional growth of every child. Through morning yoga, sports, experiential science labs, and mindful self-reflection, students cultivate physical vigor, critical thinking, and inner poise.',
     targetUrl: '/about/four-pillars',
@@ -50,7 +50,7 @@ const CVP_PILLARS: PillarData[] = [
     image: '/images/pages/home/pillars/pillar-02-culture.png',
     isCutout: true,
     visionStatement:
-      'Rooted in ancient wisdom, our heritage is a living moral compass—instilling reverence, cultural pride, and righteous character in every young mind.',
+      'Rooted in ancient wisdom, our heritage is a living moral compass - instilling reverence, cultural pride, and righteous character in every young mind.',
     explanation:
       'The second pillar anchors students in India’s timeless cultural ethos. Through daily morning prayers, Sanskrit chanting, value-based discussions, and celebrations of traditional festivals, students develop deep respect for elders, humility, and unshakeable ethical grounding.',
     targetUrl: '/features/spiritual-activities',
@@ -92,7 +92,7 @@ const CVP_PILLARS: PillarData[] = [
     image: '/images/sections/four_pillars/pillar-04-universal.webp?v=20261009',
     isCutout: false,
     visionStatement:
-      'Vasudhaiva Kutumbakam—the whole world is one family. Education must transcend narrow boundaries to foster universal brotherhood and planetary empathy.',
+      'Vasudhaiva Kutumbakam - the whole world is one family. Education must transcend narrow boundaries to foster universal brotherhood and planetary empathy.',
     explanation:
       'The fourth pillar broadens student awareness beyond geographic and cultural borders. By combining rigorous CBSE curricula with a universal Vedantic outlook, students learn to appreciate global cultures, champion environmental sustainability, and lead with empathy.',
     targetUrl: '/features/4-pillars#pillar-4',

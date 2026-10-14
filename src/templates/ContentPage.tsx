@@ -326,14 +326,14 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                                   {m.designation}
                                 </span>
                               </td>
-                              <td className="py-3 px-4 text-slate-600">{m.occupation || "—"}</td>
+                              <td className="py-3 px-4 text-slate-600">{m.occupation || "-"}</td>
                               <td className="py-3 px-4 font-mono">
                                 {m.phone ? (
                                   <a href={`tel:${m.phone}`} className="hover:text-[#DF711B] transition-colors underline">
                                     {m.phone}
                                   </a>
                                 ) : (
-                                  <span className="text-slate-400">—</span>
+                                  <span className="text-slate-400">-</span>
                                 )}
                               </td>
                               <td className="py-3 px-4 font-mono">
@@ -342,7 +342,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                                     {m.email}
                                   </a>
                                 ) : (
-                                  <span className="text-slate-400">—</span>
+                                  <span className="text-slate-400">-</span>
                                 )}
                               </td>
                             </tr>
@@ -573,8 +573,8 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 {[
                   { 
                     id: 'doc-tc-2020-21', 
-                    title: 'Transfer Certificates (TC) 2020–21 Archive', 
-                    year: '2020–2021', 
+                    title: 'Transfer Certificates (TC) 2020-21 Archive', 
+                    year: '2020-2021', 
                     file: '/images/TC-2021.pdf', 
                     size: '14.8 MB',
                     desc: 'Combined official archive register of student Transfer Certificates issued during the 2020 and 2021 academic sessions.'

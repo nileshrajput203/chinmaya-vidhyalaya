@@ -51,7 +51,7 @@ export const InfiniteLoopGallery: React.FC<InfiniteLoopGalleryProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedItem]);
 
-  // Pure clean image card — NO text overlay, NO badges, NO vignette inside card
+  // Pure clean image card - NO text overlay, NO badges, NO vignette inside card
   const renderCard = (item: InfiniteGalleryItem, index: number) => {
     return (
       <div

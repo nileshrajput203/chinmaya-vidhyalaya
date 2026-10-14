@@ -32,7 +32,7 @@ export const InstitutionTopBar: React.FC = () => {
               Notice:
             </span>
             <span className="text-slate-200 text-[9.5px] sm:text-[11px] truncate max-w-xs">
-              Admissions Open 2026–27 (Nursery to Std XII)
+              Admissions Open 2026-27 (Nursery to Std XII)
             </span>
           </div>
         </div>

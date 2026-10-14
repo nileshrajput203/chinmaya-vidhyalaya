@@ -489,7 +489,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1 mb-1">
                         <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
-                          ADMISSIONS 2026–27
+                          ADMISSIONS 2026-27
                         </span>
                         <span className="text-[9.5px] font-mono text-[#0B1E34] font-bold bg-white border border-slate-200 px-2 py-0.5 rounded-full shrink-0">
                           CBSE #1130058
@@ -663,7 +663,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                 )}
               </div>
 
-              {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) — Compact, No Blank Spaces */}
+              {/* Right Column: What's New / Latest Updates Notice Board (5 cols on lg) - Compact, No Blank Spaces */}
               <div 
                 className="lg:col-span-5 bg-white/95 backdrop-blur-md text-[#181C20] p-3.5 sm:p-4 shadow-[0_20px_45px_rgba(0,0,0,0.2)] border border-slate-200 pointer-events-auto rounded-2xl relative overflow-hidden flex flex-col space-y-2.5"
               >
@@ -691,7 +691,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                   </p>
                 </div>
 
-                {/* Notices Feed Container — Dynamic with clean status when no active notices */}
+                {/* Notices Feed Container - Dynamic with clean status when no active notices */}
                 {OFFICIAL_NOTICES.length > 0 ? (
                   <div className="space-y-1.5">
                     {OFFICIAL_NOTICES.map((notice) => (

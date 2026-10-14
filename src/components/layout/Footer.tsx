@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
                 </div>
               </Link>
               <p className="text-xs text-slate-400 italic font-serif max-w-xs leading-relaxed">
-                "Keep Smiling — Knowledge, Vision & Character"
+                "Keep Smiling - Knowledge, Vision & Character"
               </p>
             </div>
 
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
                     { label: "Admission Guidelines", href: "/admissions/guidelines" },
                     { label: "Registration Forms", href: "/downloads/admissions" },
                     { label: "Annual Fee Structure", href: "/admissions/fee-structure" },
-                    { label: "School Calendar 2026–27", href: "/admissions/calendar" },
+                    { label: "School Calendar 2026-27", href: "/admissions/calendar" },
                   ] as { label: string; href: string; external?: boolean }[]).map((link) => (
                     <li key={link.label}>
                       {link.external ? (
@@ -251,7 +251,7 @@ export const Footer: React.FC = () => {
                     Office & Helpline
                   </span>
                   <p className="text-slate-300 mt-0.5">
-                    Phone: +91 93220 54713 • Mon–Sat: 8:00 AM – 4:00 PM
+                    Phone: +91 93220 54713 • Mon-Sat: 8:00 AM - 4:00 PM
                   </p>
                   <p className="text-slate-400 text-[10px]">
                     Email: {OFFICIAL_SCHOOL_INFO.contact.email[0]}

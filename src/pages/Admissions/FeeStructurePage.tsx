@@ -42,7 +42,7 @@ export const FeeStructurePage: React.FC = () => {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-2">
-                <BadgePill label="Academic Year 2026–2027" variant="saffron" />
+                <BadgePill label="Academic Year 2026-2027" variant="saffron" />
                 <span className="text-xs font-mono font-semibold text-slate-500">
                   Approved by School Managing Committee & PTA
                 </span>
@@ -88,7 +88,7 @@ export const FeeStructurePage: React.FC = () => {
             <div className="flex items-center gap-2">
               <FileText className="w-4 h-4 text-[#DF711B]" />
               <span className="text-xs font-bold text-[#181C20]">
-                Official Fee Chart 2026–2027
+                Official Fee Chart 2026-2027
               </span>
               <span className="text-[10px] font-mono bg-white px-2 py-0.5 rounded border border-[#E7E2D8] text-slate-500">
                 Zoom: {zoomLevel}%
@@ -182,8 +182,8 @@ export const FeeStructurePage: React.FC = () => {
               </p>
               <div className="p-3.5 bg-white/10 border border-white/15 rounded-xl text-xs space-y-1 text-slate-200">
                 <span className="font-bold text-amber-200 block text-xs">Fee Counter Hours:</span>
-                <p className="text-[11px] text-slate-300">Monday to Friday: 9:00 AM – 1:00 PM</p>
-                <p className="text-[11px] text-slate-300">Saturday: 9:00 AM – 12:00 Noon</p>
+                <p className="text-[11px] text-slate-300">Monday to Friday: 9:00 AM - 1:00 PM</p>
+                <p className="text-[11px] text-slate-300">Saturday: 9:00 AM - 12:00 Noon</p>
               </div>
             </div>
 
@@ -256,7 +256,7 @@ export const FeeStructurePage: React.FC = () => {
             <div className="flex items-center gap-3">
               <FileText className="w-5 h-5 text-[#DF711B]" />
               <span className="font-bold text-sm sm:text-base">
-                Chinmaya Vidyalaya Tarapur • Annual Fee Structure 2026–2027
+                Chinmaya Vidyalaya Tarapur • Annual Fee Structure 2026-2027
               </span>
             </div>
             <div className="flex items-center gap-2">

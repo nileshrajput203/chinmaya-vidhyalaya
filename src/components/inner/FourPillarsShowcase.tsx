@@ -28,7 +28,7 @@ const PILLARS_DATA: PillarDetail[] = [
     number: '01',
     sanskritName: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
     englishTitle: 'Integrated Development',
-    corePurpose: 'Educating the whole child in complete balance — physical vitality, emotional poise, sharp intellect, and inner spiritual strength.',
+    corePurpose: 'Educating the whole child in complete balance - physical vitality, emotional poise, sharp intellect, and inner spiritual strength.',
     dailyPractices: [
       {
         dimension: 'Body • Sharirik',
@@ -48,7 +48,7 @@ const PILLARS_DATA: PillarDetail[] = [
       {
         dimension: 'Diagnostic • Manthan',
         title: 'ASSET Diagnostic Assessments',
-        desc: 'Skill analytics (Std III–IX) to personalize each student’s growth.'
+        desc: 'Skill analytics (Std III-IX) to personalize each student’s growth.'
       }
     ],
     photos: [
@@ -162,7 +162,7 @@ const PILLARS_DATA: PillarDetail[] = [
     photos: [
       {
         src: '/images/pages/home/pillars/pillar-04-universal.webp',
-        caption: 'Universal Outlook: Vasudhaiva Kutumbakam — Scholastic Excellence & Global Harmony',
+        caption: 'Universal Outlook: Vasudhaiva Kutumbakam - Scholastic Excellence & Global Harmony',
         locationMeta: 'Classroom Learning • Scholastic Wing'
       }
     ],
@@ -346,7 +346,7 @@ export const FourPillarsShowcase: React.FC = () => {
             To know more about Chinmaya Mission
           </h4>
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl font-normal leading-relaxed">
-            Discover the global spiritual and educational movement founded by Pujya Gurudev Swami Chinmayananda—uniting Advaita Vedanta philosophy, youth leadership, and humanitarian seva worldwide.
+            Discover the global spiritual and educational movement founded by Pujya Gurudev Swami Chinmayananda - uniting Advaita Vedanta philosophy, youth leadership, and humanitarian seva worldwide.
           </p>
         </div>
         <a
@@ -354,9 +354,9 @@ export const FourPillarsShowcase: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3.5 rounded-xl bg-[#0B1E34] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all flex items-center gap-2.5 shrink-0 group"
-          title="Chinmaya Mission – Advaita Vedanta, Inspiration & Global Seva"
+          title="Chinmaya Mission - Advaita Vedanta, Inspiration & Global Seva"
         >
-          <span>Chinmaya Mission – Advaita Vedanta, Inspiration & Global Seva</span>
+          <span>Chinmaya Mission - Advaita Vedanta, Inspiration & Global Seva</span>
           <ExternalLink className="w-4 h-4 text-[#DF711B] group-hover:text-white transition-colors" />
         </a>
       </div>

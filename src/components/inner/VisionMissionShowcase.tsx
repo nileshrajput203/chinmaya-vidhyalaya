@@ -268,7 +268,7 @@ export const VisionMissionShowcase: React.FC = () => {
               onClick={() => setLightboxImage({
                 src: '/images/phys.jpeg',
                 title: 'Scientific Temper & Inquisitive Learning',
-                caption: 'Students conducting experimental scientific inquiry in the senior laboratory — daring to dream and developing new realities.'
+                caption: 'Students conducting experimental scientific inquiry in the senior laboratory - daring to dream and developing new realities.'
               })}
               className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-xs group cursor-pointer"
             >
@@ -293,7 +293,7 @@ export const VisionMissionShowcase: React.FC = () => {
             </blockquote>
 
             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
-              We envision graduates who are self-reliant, intellectually bold, emotionally poised, and morally steadfast—equipped with modern CBSE scientific competencies and rooted in cultural integrity, ready to lead and uplift society in an ever-evolving world.
+              We envision graduates who are self-reliant, intellectually bold, emotionally poised, and morally steadfast - equipped with modern CBSE scientific competencies and rooted in cultural integrity, ready to lead and uplift society in an ever-evolving world.
             </p>
           </div>
 
@@ -459,7 +459,7 @@ export const VisionMissionShowcase: React.FC = () => {
               </div>
 
               <p className="text-xs text-orange-50/90 font-sans leading-tight">
-                {activeKosha.sheath} — Tap photo to view high-resolution archival evidence:
+                {activeKosha.sheath} - Tap photo to view high-resolution archival evidence:
               </p>
 
               {/* Dynamic Photo Container with smooth crossfade */}
