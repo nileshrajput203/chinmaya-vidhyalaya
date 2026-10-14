@@ -159,40 +159,7 @@ export const AlumniPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Metrics Ribbon */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
-              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
-                First Batch
-              </span>
-              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">2004–05</div>
-              <p className="text-[11px] text-slate-500 font-sans">Inaugural AISSE Class X</p>
-            </div>
 
-            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
-              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
-                Graduates
-              </span>
-              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">2,500+</div>
-              <p className="text-[11px] text-slate-500 font-sans">Alumni Worldwide</p>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
-              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
-                Board Record
-              </span>
-              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">100%</div>
-              <p className="text-[11px] text-slate-500 font-sans">First-Class Tradition</p>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-none shadow-xs text-center space-y-1">
-              <span style={{ color: 'var(--color-primary)' }} className="text-[11px] font-mono font-bold uppercase tracking-wider block">
-                Global Reach
-              </span>
-              <div className="font-display text-2xl sm:text-3xl font-black text-[#181C20]">15+ Countries</div>
-              <p className="text-[11px] text-slate-500 font-sans">Professionals & Researchers</p>
-            </div>
-          </div>
 
           {/* Form and Office Contact Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
