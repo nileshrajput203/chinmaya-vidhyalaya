@@ -40,7 +40,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           <div className="space-y-0.5 min-w-0">
             {/* Governing Trust Eyebrow */}
             <div className="flex items-center gap-2">
-              <span className="text-[8.5px] sm:text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block truncate">
+              <span className="text-[7.5px] xs:text-[8.5px] sm:text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block whitespace-normal sm:truncate leading-tight">
                 Central Chinmaya Mission Trust, Mumbai
               </span>
               <span className="hidden md:inline-block w-1 h-1 rounded-full bg-[#DF711B]/40" />
@@ -50,13 +50,13 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
             </div>
 
             {/* School Name in Regal Typography */}
-            <h1 className="font-cinzel font-black text-base xs:text-lg sm:text-2xl lg:text-[28px] text-[#0C1E34] tracking-tight leading-none uppercase group-hover:text-[#DF711B] transition-colors truncate">
+            <h1 className="font-cinzel font-black text-[13px] xs:text-[15px] sm:text-2xl lg:text-[28px] text-[#0C1E34] tracking-tight leading-tight uppercase group-hover:text-[#DF711B] transition-colors whitespace-normal sm:truncate">
               {OFFICIAL_SCHOOL_INFO.name}
             </h1>
 
             {/* Sub-identity & Authentic Motto */}
-            <div className="flex items-center flex-wrap gap-x-1.5 sm:gap-x-2 text-[11px] sm:text-[13px] text-slate-600">
-              <span className="font-sans italic font-semibold text-[#DF711B] truncate max-w-[180px] sm:max-w-none">
+            <div className="flex items-center flex-wrap gap-x-1.5 sm:gap-x-2 text-[10px] xs:text-[11px] sm:text-[13px] text-slate-600">
+              <span className="font-sans italic font-semibold text-[#DF711B] whitespace-normal sm:truncate">
                 "{OFFICIAL_SCHOOL_INFO.tagline}"
               </span>
               <span className="hidden sm:inline text-slate-300">•</span>
