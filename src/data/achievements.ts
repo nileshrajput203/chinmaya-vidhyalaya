@@ -3,7 +3,7 @@ import { Achievement } from '../types/school';
 export const OFFICIAL_ACHIEVEMENTS: Achievement[] = [
   {
     id: "ach-1",
-    title: "100% Pass Result in CBSE Class X & XII Board Exams",
+    title: "Academic Excellence in CBSE Board Examinations",
     category: "academics",
     date: "2025-05-15",
     description: "Students achieved top marks across Science and Commerce streams with multiple centum scores."

@@ -73,15 +73,7 @@ export const CurriculumShowcase: React.FC = () => {
           </div>
 
           {/* Quick Stats Grid with High Contrast */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/15">
-            <div className="bg-white/5 backdrop-blur-md p-3.5 rounded-2xl border border-white/10">
-              <span className="text-[10px] font-mono uppercase text-amber-300 font-bold block">
-                Board Track Record
-              </span>
-              <span className="text-xl sm:text-2xl font-black text-white font-mono">100%</span>
-              <span className="text-[11px] text-slate-300 block">Class X & XII Pass Rate</span>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
             <div className="bg-white/5 backdrop-blur-md p-3.5 rounded-2xl border border-white/10">
               <span className="text-[10px] font-mono uppercase text-amber-300 font-bold block">
                 Languages Taught
