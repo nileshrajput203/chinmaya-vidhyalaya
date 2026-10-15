@@ -9,7 +9,6 @@ const CAMPUS_VIDEO = {
 export const ScrollExpandingMosaic: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const blurVideoRef = useRef<HTMLVideoElement>(null);
   const shouldReduceMotion = useReducedMotion();
 
   // Scroll progress for the sticky expansion track (0 -> 1)
@@ -34,28 +33,6 @@ export const ScrollExpandingMosaic: React.FC = () => {
   const rightColX = useTransform(scrollYProgress, [0.05, 0.7], [0, 120]);
   const rightColOpacity = useTransform(scrollYProgress, [0.05, 0.6], [1, 0]);
 
-  // Sync blurred background video with primary foreground video
-  useEffect(() => {
-    if (videoRef.current && blurVideoRef.current) {
-      blurVideoRef.current.currentTime = videoRef.current.currentTime;
-    }
-  }, []);
-
-  const handleTimeUpdate = () => {
-    if (videoRef.current && blurVideoRef.current) {
-      const diff = Math.abs(videoRef.current.currentTime - blurVideoRef.current.currentTime);
-      if (diff > 0.3) {
-        blurVideoRef.current.currentTime = videoRef.current.currentTime;
-      }
-    }
-  };
-
-  const handlePlay = () => {
-    if (blurVideoRef.current && blurVideoRef.current.paused) {
-      blurVideoRef.current.play().catch(() => {});
-    }
-  };
-
   // IntersectionObserver to pause video playback when off-screen
   useEffect(() => {
     const el = containerRef.current;
@@ -66,10 +43,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             videoRef.current?.play().catch(() => {});
-            blurVideoRef.current?.play().catch(() => {});
           } else {
             videoRef.current?.pause();
-            blurVideoRef.current?.pause();
           }
         });
       },
@@ -161,16 +136,11 @@ export const ScrollExpandingMosaic: React.FC = () => {
             >
               {/* Blurred-fill background layer */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <video
-                  ref={blurVideoRef}
-                  src={CAMPUS_VIDEO.src}
-                  poster={CAMPUS_VIDEO.poster}
-                  muted
-                  playsInline
-                  autoPlay={!shouldReduceMotion}
-                  loop
-                  preload="metadata"
-                  className="w-full h-full object-cover filter blur-[24px] scale-125 opacity-75"
+                <img
+                  src={CAMPUS_VIDEO.poster}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-full object-cover filter blur-[24px] scale-125 opacity-70"
                 />
               </div>
 
@@ -185,8 +155,6 @@ export const ScrollExpandingMosaic: React.FC = () => {
                   autoPlay={!shouldReduceMotion}
                   loop
                   preload="metadata"
-                  onTimeUpdate={handleTimeUpdate}
-                  onPlay={handlePlay}
                   className="w-full h-full object-contain relative z-10"
                 >
                   <source src="/videos/campus-life-1080p.mp4" type="video/mp4" />

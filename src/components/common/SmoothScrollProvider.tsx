@@ -18,15 +18,18 @@ export const SmoothScrollProvider: React.FC<{ children: React.ReactNode }> = ({ 
     }
 
     const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouch) {
+      // Allow mobile and touch devices to use native 120Hz hardware scrolling without lag
+      return;
+    }
 
     const lenis = new Lenis({
-      duration: isTouch ? 0.5 : 0.8,
+      duration: 0.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1,
       syncTouch: false,
     });
 

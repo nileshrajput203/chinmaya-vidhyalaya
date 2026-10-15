@@ -52,6 +52,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   const currentFrameRef = useRef<number>(0);
   const targetFrameRef = useRef<number>(0);
   const lastDrawnFrameRef = useRef<number>(-1);
+  const requestRenderRef = useRef<(() => void) | null>(null);
 
   // Draw frame with sub-frame continuous blending for liquid-smooth 60/120fps motion
   const drawFrame = useCallback((floatFrame: number) => {
@@ -262,10 +263,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     return () => window.removeEventListener('resize', handleResize);
   }, [isDesktop, drawFrame]);
 
-  // Silky smooth, highly responsive physics interpolation loop (0ms input latency)
+  // Physics interpolation loop (sleeps when idle, 0ms input latency on scroll)
   useEffect(() => {
     if (!isDesktop) return;
-    let animId: number;
+    let animId: number = 0;
+    let isRunning = false;
 
     const renderLoop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
@@ -276,12 +278,31 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
           lastDrawnFrameRef.current = currentFrameRef.current;
           drawFrame(currentFrameRef.current);
         }
+        animId = requestAnimationFrame(renderLoop);
+      } else {
+        currentFrameRef.current = targetFrameRef.current;
+        if (Math.abs(currentFrameRef.current - lastDrawnFrameRef.current) > 0.005) {
+          lastDrawnFrameRef.current = currentFrameRef.current;
+          drawFrame(currentFrameRef.current);
+        }
+        isRunning = false;
       }
-      animId = requestAnimationFrame(renderLoop);
     };
 
-    animId = requestAnimationFrame(renderLoop);
-    return () => cancelAnimationFrame(animId);
+    const triggerRender = () => {
+      if (!isRunning) {
+        isRunning = true;
+        animId = requestAnimationFrame(renderLoop);
+      }
+    };
+
+    requestRenderRef.current = triggerRender;
+    triggerRender();
+
+    return () => {
+      cancelAnimationFrame(animId);
+      requestRenderRef.current = null;
+    };
   }, [isDesktop, drawFrame]);
 
   // Track scroll progress (0.0 to 1.0) for synchronized animations
@@ -306,6 +327,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         const rawVideoProgress = progress / 0.60;
         const videoProgress = Math.min(1, Math.max(0, rawVideoProgress));
         targetFrameRef.current = videoProgress * (TOTAL_FRAMES - 1);
+        requestRenderRef.current?.();
 
         // Throttle React state re-renders to 1% intervals to eliminate all CPU lag & frame drops
         if (Math.abs(progress - lastReportedProgressRef.current) >= 0.008 || progress === 0 || progress === 1) {
@@ -330,6 +352,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       const rawVideoProgress = progress / 0.60;
       const videoProgress = Math.min(1, Math.max(0, rawVideoProgress));
       targetFrameRef.current = videoProgress * (TOTAL_FRAMES - 1);
+      requestRenderRef.current?.();
 
       // Throttle React state re-renders to 1% intervals to eliminate all CPU lag & frame drops
       if (Math.abs(progress - lastReportedProgressRef.current) >= 0.008 || progress === 0 || progress === 1) {

@@ -96,6 +96,15 @@ export const HomePage: React.FC = () => {
     return () => clearInterval(timer);
   }, [isQuoteHovered]);
 
+  // Desktop detection for responsive component mounting
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const currentQuote = SHUFFLED_QUOTES[activeQuote];
 
   return (
@@ -107,11 +116,11 @@ export const HomePage: React.FC = () => {
           Mobile (< 1024px): School Campus Hero & 2x2 Stats Grid (Navkar-inspired)
          ---------------------------------------------------- */}
       <div className="hidden lg:block">
-        <HeroScrollytellingFilm onOpenAdmissions={() => setIsAdmissionDrawerOpen(true)} />
+        {isDesktop && <HeroScrollytellingFilm onOpenAdmissions={() => setIsAdmissionDrawerOpen(true)} />}
       </div>
 
       <div className="block lg:hidden">
-        <MobileHeroSection onOpenAdmissions={() => setIsAdmissionDrawerOpen(true)} />
+        {!isDesktop && <MobileHeroSection onOpenAdmissions={() => setIsAdmissionDrawerOpen(true)} />}
       </div>
 
       {/* ----------------------------------------------------
