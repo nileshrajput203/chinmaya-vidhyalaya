@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -6,42 +6,9 @@ import {
   Facebook, 
   Instagram, 
   GraduationCap, 
-  FileText,
-  ChevronLeft,
-  ChevronRight
+  FileText
 } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO, OFFICIAL_SOCIAL_LINKS } from '../../../data/school';
-
-const SITEMAP_PILLARS = [
-  {
-    id: 'pillar-1',
-    num: '01',
-    title: 'Integrated Development',
-    subtitle: 'Body, Mind & Intellect in Harmony',
-    image: '/images/pages/home/pillars/pillar-01-integrated.png',
-  },
-  {
-    id: 'pillar-2',
-    num: '02',
-    title: 'Indian Culture & Heritage',
-    subtitle: 'Vedic Ethos & Timeless Values',
-    image: '/images/pages/home/pillars/pillar-02-culture.png',
-  },
-  {
-    id: 'pillar-3',
-    num: '03',
-    title: 'Patriotism & Civic Duty',
-    subtitle: 'Nation Building & Selfless Service',
-    image: '/images/pages/home/pillars/pillar-03-patriotism.png',
-  },
-  {
-    id: 'pillar-4',
-    num: '04',
-    title: 'Universal Outlook',
-    subtitle: 'Vasudhaiva Kutumbakam • One World',
-    image: '/images/pages/home/pillars/pillar-04-universal.webp',
-  },
-];
 
 interface MegaOverlayMenuProps {
   isOpen: boolean;
@@ -55,28 +22,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
   onOpenAdmissionDrawer,
 }) => {
   const location = useLocation();
-  const [activePillarIdx, setActivePillarIdx] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen || isPaused) return;
-
-    const timer = setInterval(() => {
-      setActivePillarIdx((prev) => (prev + 1) % SITEMAP_PILLARS.length);
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, [isOpen, isPaused]);
-
-  const handlePrevPillar = () => {
-    setActivePillarIdx((prev) => (prev - 1 + SITEMAP_PILLARS.length) % SITEMAP_PILLARS.length);
-  };
-
-  const handleNextPillar = () => {
-    setActivePillarIdx((prev) => (prev + 1) % SITEMAP_PILLARS.length);
-  };
-
-  const currentPillar = SITEMAP_PILLARS[activePillarIdx];
 
   useEffect(() => {
     if (!isOpen) return;
@@ -344,100 +289,13 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
 
           </div>
 
-          {/* RIGHT SIDE: 4 PILLARS ROTATING CAROUSEL (ONE IMAGE AT A TIME) */}
+          {/* RIGHT SIDE: 4TH PILLAR IMAGE ONLY */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative h-full items-center">
-            <div 
-              className="relative max-w-sm w-full bg-slate-900/60 border border-slate-700/60 rounded-3xl p-5 backdrop-blur-md shadow-2xl flex flex-col items-center"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-            >
-              {/* Soft gold ambient glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-              
-              {/* Pillar Header / Tag */}
-              <div className="w-full flex items-center justify-between border-b border-slate-800 pb-3 mb-3 z-10">
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold block">
-                    CVP Framework
-                  </span>
-                  <h4 className="text-sm font-cinzel font-bold text-white tracking-wide">
-                    {currentPillar.title}
-                  </h4>
-                </div>
-                <span className="text-xs font-mono font-bold text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-slate-700">
-                  {currentPillar.num} / 04
-                </span>
-              </div>
-
-              {/* Carousel Image Container with AnimatePresence */}
-              <div className="relative w-full h-64 rounded-2xl overflow-hidden flex items-center justify-center bg-black/40 border border-slate-800/80 p-3 z-10">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentPillar.id}
-                    initial={{ opacity: 0, scale: 0.92 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.92 }}
-                    transition={{ duration: 0.35, ease: 'easeOut' }}
-                    className="w-full h-full flex items-center justify-center"
-                  >
-                    <img 
-                      src={currentPillar.image} 
-                      alt={currentPillar.title} 
-                      className={`max-w-full max-h-full object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)] ${
-                        currentPillar.id === 'pillar-4' ? 'rounded-xl' : ''
-                      }`}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Left / Right chevron navigation buttons */}
-                <button
-                  type="button"
-                  onClick={handlePrevPillar}
-                  aria-label="Previous pillar image"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer opacity-70 hover:opacity-100 z-20"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNextPillar}
-                  aria-label="Next pillar image"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer opacity-70 hover:opacity-100 z-20"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-
-              {/* Subtitle & Dot Indicators */}
-              <div className="w-full pt-3 flex items-center justify-between z-10">
-                <Link
-                  to="/features/4-pillars"
-                  onClick={onClose}
-                  className="text-xs text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 group transition-colors"
-                >
-                  <span>Explore 4 Pillars</span>
-                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
-                </Link>
-
-                {/* Dots */}
-                <div className="flex items-center gap-1.5">
-                  {SITEMAP_PILLARS.map((p, idx) => (
-                    <button
-                      key={p.id}
-                      type="button"
-                      onClick={() => setActivePillarIdx(idx)}
-                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                        activePillarIdx === idx 
-                          ? 'w-6 bg-amber-400' 
-                          : 'w-2 bg-slate-700 hover:bg-slate-500'
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <img 
+              src="/images/pages/home/pillars/pillar-04-universal.webp" 
+              alt="Universal Outlook" 
+              className="max-w-sm w-full h-auto object-cover rounded-2xl shadow-2xl"
+            />
           </div>
 
         </div>
