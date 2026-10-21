@@ -15,7 +15,7 @@ import MarqueeAlongSvgPathDemo from '@/components/ui/marquee-demo';
 import { HorizontalPanelGallery } from '../../components/home/HorizontalPanelGallery';
 import { NoticeEventBoard } from '../../components/home/NoticeEventBoard';
 import { ScrollExpandingMosaic } from '../../components/home/ScrollExpandingMosaic';
-import { ExperienceBentoGrid } from '../../components/home/ExperienceBentoGrid';
+
 import { ChinmayaVisionPillarsShowcase } from '../../components/home/ChinmayaVisionPillarsShowcase';
 import { HeroScrollytellingFilm } from '../../components/home/HeroScrollytellingFilm';
 import { MobileHeroSection } from '../../components/home/MobileHeroSection';
@@ -388,10 +388,7 @@ export const HomePage: React.FC = () => {
         />
       </section>
 
-      {/* ----------------------------------------------------
-          SECTION 05.7 - EXPERIENCE TABBED BENTO GRID
-         ---------------------------------------------------- */}
-      <ExperienceBentoGrid />
+
 
       {/* Lightbox Modal */}
       <AnimatePresence>
