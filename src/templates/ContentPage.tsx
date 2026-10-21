@@ -298,59 +298,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     ))}
                   </div>
 
-                  {/* Official Board Register Table */}
-                  <div className="space-y-4 pt-6 border-t border-[#E7E2D8]">
-                    <h4 className="font-cinzel font-bold text-xl text-[#181C20]">
-                      Official Register: Board of Management Details
-                    </h4>
-                    
-                    <div className="overflow-x-auto rounded-2xl border border-[#E7E2D8] shadow-sm">
-                      <table className="w-full text-left border-collapse text-xs">
-                        <thead>
-                          <tr className="bg-white border-b border-[#E7E2D8] font-cinzel font-bold text-[#181C20]">
-                            <th className="py-3 px-4">Sr. No.</th>
-                            <th className="py-3 px-4">Name</th>
-                            <th className="py-3 px-4">Designation</th>
-                            <th className="py-3 px-4">Occupation</th>
-                            <th className="py-3 px-4">Mobile</th>
-                            <th className="py-3 px-4">Email</th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-[#E7E2D8] bg-white font-sans text-slate-700">
-                          {OFFICIAL_BOARD_OF_MANAGEMENT.map((m) => (
-                            <tr key={m.id} className="hover:bg-white/60 transition-colors">
-                              <td className="py-3 px-4 font-mono font-bold text-[#DF711B]">{m.srNo}</td>
-                              <td className="py-3 px-4 font-semibold text-[#181C20]">{m.name}</td>
-                              <td className="py-3 px-4">
-                                <span className="px-2 py-0.5 rounded-full bg-[#FAF3E8] text-[#DF711B] font-mono font-semibold text-[11px]">
-                                  {m.designation}
-                                </span>
-                              </td>
-                              <td className="py-3 px-4 text-slate-600">{m.occupation || "-"}</td>
-                              <td className="py-3 px-4 font-mono">
-                                {m.phone ? (
-                                  <a href={`tel:${m.phone}`} className="hover:text-[#DF711B] transition-colors underline">
-                                    {m.phone}
-                                  </a>
-                                ) : (
-                                  <span className="text-slate-400">-</span>
-                                )}
-                              </td>
-                              <td className="py-3 px-4 font-mono">
-                                {m.email ? (
-                                  <a href={`mailto:${m.email}`} className="hover:text-[#DF711B] transition-colors underline">
-                                    {m.email}
-                                  </a>
-                                ) : (
-                                  <span className="text-slate-400">-</span>
-                                )}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+
                 </section>
               )}
 
