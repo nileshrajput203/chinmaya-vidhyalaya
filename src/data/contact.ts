@@ -6,7 +6,8 @@ export const CONTACT_DETAILS = {
   udiseNo: "27361116004",
   website: "https://cvtarapur.com",
   phones: [
-    { label: "School Office & Admissions", number: "9322054713" }
+    { label: "School Office & Admissions", number: "9322054713" },
+    { label: "Alternate Office", number: "9823517700" }
   ],
   emails: [
     { label: "General Inquiries", email: "cv.info@chinmayamission.com" },
@@ -16,7 +17,6 @@ export const CONTACT_DETAILS = {
   principal: {
     name: "Smt. Dimple Mistry",
     designation: "Principal & Member of the Board of Management",
-    phone: "7775872266",
     email: "cv.principal@chinmayamission.com"
   },
   locationMap: {

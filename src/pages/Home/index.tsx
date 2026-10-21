@@ -187,7 +187,6 @@ export const HomePage: React.FC = () => {
                       </p>
                     </div>
                     <div className="pt-2 border-t border-[#E7E2D8] space-y-0.5 text-[11px] font-mono text-[#555555]">
-                      <div>Tel: <a href="tel:7775872266" className="text-[#DF711B] hover:underline font-bold">7775872266</a></div>
                       <div>Email: <a href="mailto:cv.principal@chinmayamission.com" className="text-[#DF711B] hover:underline font-bold">cv.principal@chinmayamission.com</a></div>
                     </div>
                   </div>

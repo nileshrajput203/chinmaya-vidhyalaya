@@ -66,18 +66,15 @@ export const GoogleMapSection: React.FC<GoogleMapSectionProps> = ({
                   Phone
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <a
-                    href={`tel:${CONTACT_DETAILS.phones[0].number}`}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/5 hover:bg-[#DF711B]/20 border border-white/10 hover:border-[#DF711B]/40 text-white hover:text-[#DF711B] text-xs font-mono font-medium transition-all"
-                  >
-                    +91 {CONTACT_DETAILS.phones[0].number}
-                  </a>
-                  <a
-                    href={`tel:${CONTACT_DETAILS.principal.phone}`}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/5 hover:bg-[#DF711B]/20 border border-white/10 hover:border-[#DF711B]/40 text-white hover:text-[#DF711B] text-xs font-mono font-medium transition-all"
-                  >
-                    +91 {CONTACT_DETAILS.principal.phone}
-                  </a>
+                  {CONTACT_DETAILS.phones.map((phone) => (
+                    <a
+                      key={phone.number}
+                      href={`tel:${phone.number}`}
+                      className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/5 hover:bg-[#DF711B]/20 border border-white/10 hover:border-[#DF711B]/40 text-white hover:text-[#DF711B] text-xs font-mono font-medium transition-all"
+                    >
+                      +91 {phone.number}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
