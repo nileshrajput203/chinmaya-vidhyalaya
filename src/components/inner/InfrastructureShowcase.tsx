@@ -602,14 +602,13 @@ export const InfrastructureShowcase: React.FC = () => {
                 <div className="p-6 pt-0 bg-white">
                   <div className="border-t border-[#E7E2D8] pt-4 flex items-center justify-between text-xs font-mono text-slate-500">
                     <span>CBSE Compliant Laboratory</span>
-                    <button
-                      type="button"
-                      onClick={() => window.dispatchEvent(new CustomEvent('open-admission-modal'))}
-                      className="text-[#DF711B] font-bold hover:underline inline-flex items-center gap-1 cursor-pointer"
+                    <Link
+                      to="/admissions/guidelines"
+                      className="text-[#DF711B] hover:text-[#C45B0E] font-bold hover:underline inline-flex items-center gap-1 transition-colors"
                     >
                       <span>Inquire About Admissions</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </SpotlightCard>

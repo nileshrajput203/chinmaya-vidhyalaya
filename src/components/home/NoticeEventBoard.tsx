@@ -17,7 +17,27 @@ import { OFFICIAL_NOTICES } from '../../data/notices';
 export const NoticeEventBoard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('events');
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
-  const [showAllEventsMobile, setShowAllEventsMobile] = useState<boolean>(false);
+
+  const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
+  const [expandedEventIds, setExpandedEventIds] = useState<Set<string>>(new Set());
+
+  const toggleExpandEvent = (id: string) => {
+    setExpandedEventIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const isEventPast = (dateStr: string): boolean => {
+    const eventDate = new Date(dateStr);
+    eventDate.setHours(23, 59, 59, 999);
+    return eventDate.getTime() < Date.now();
+  };
   
   const upcomingEvents = [
     {
@@ -183,9 +203,13 @@ export const NoticeEventBoard: React.FC = () => {
   ];
 
   const availableMonths = ['all', 'October 2026', 'November 2026', 'December 2026', 'January 2027', 'March 2027'];
-  const filteredEvents = selectedMonth === 'all' 
-    ? upcomingEvents 
-    : upcomingEvents.filter(ev => ev.month === selectedMonth);
+  
+
+
+  const filteredEvents = upcomingEvents.filter((ev) => {
+    const matchesMonth = selectedMonth === 'all' || ev.month === selectedMonth;
+    return matchesMonth;
+  });
 
   return (
     <section className="py-12 lg:py-16 bg-white text-[#181C20] relative overflow-hidden font-sans">
@@ -239,7 +263,7 @@ export const NoticeEventBoard: React.FC = () => {
             }`}
           >
             <Calendar className="w-3.5 h-3.5" />
-            <span>Upcoming Events ({upcomingEvents.length})</span>
+            <span>Events Calendar ({upcomingEvents.length})</span>
           </button>
 
           <button
@@ -312,103 +336,140 @@ export const NoticeEventBoard: React.FC = () => {
 
         {activeTab === 'events' && (
           <div className="space-y-4">
-            {/* Month Filter Bar */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
-              <span className="text-[11px] font-mono text-[#777777] uppercase tracking-wider mr-1 hidden sm:inline">
-                Month:
-              </span>
-              {availableMonths.map((m) => (
-                <button
-                  key={m}
-                  onClick={() => {
-                    setSelectedMonth(m);
-                    setShowAllEventsMobile(false);
-                  }}
-                  className={`px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider rounded-full transition-all cursor-pointer ${
-                    selectedMonth === m
-                      ? 'bg-[#DF711B] text-white shadow-xs'
-                      : 'bg-white border border-[#D5CEC2] text-[#555555] hover:border-[#DF711B] hover:text-[#181818]'
-                  }`}
-                >
-                  {m === 'all' ? 'All Months' : m}
-                </button>
-              ))}
+            {/* Filter Bar: Status & Month Controls */}
+            <div className="flex items-center justify-start gap-3 pb-3 border-b border-slate-200">
+              {/* Month Filter */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+                <span className="text-[11px] font-mono text-[#777777] uppercase tracking-wider mr-1 hidden sm:inline">
+                  Month:
+                </span>
+                {availableMonths.map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    onClick={() => {
+                      setSelectedMonth(m);
+                      setShowAllEvents(false);
+                    }}
+                    className={`px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider rounded-full transition-all cursor-pointer shrink-0 ${
+                      selectedMonth === m
+                        ? 'bg-[#DF711B] text-white shadow-xs'
+                        : 'bg-white border border-[#D5CEC2] text-[#555555] hover:border-[#DF711B] hover:text-[#181818]'
+                    }`}
+                  >
+                    {m === 'all' ? 'All Months' : m}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {filteredEvents.map((ev, idx) => (
-                <div 
-                  key={ev.id}
-                  className={`bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs ${
-                    idx >= 3 && !showAllEventsMobile ? 'hidden md:flex' : 'flex'
-                  }`}
-                >
-                <div className="space-y-2.5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-mono font-bold text-[#DF711B] bg-[#FFF0E6] border border-[#DF711B]/30 px-2 py-0.5 uppercase tracking-wider">
-                      {ev.tag}
-                    </span>
-                    <div className="flex items-center gap-1 text-[10px] font-mono text-[#777777]">
-                      <Clock className="w-3 h-3 text-[#DF711B]" />
-                      <span>{ev.time}</span>
-                    </div>
-                  </div>
+            {filteredEvents.length === 0 ? (
+              <div className="bg-white border border-[#D5CEC2] p-8 text-center text-[#777777] font-mono text-xs">
+                No events found matching the selected filter criteria.
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {(showAllEvents ? filteredEvents : filteredEvents.slice(0, 4)).map((ev) => {
+                  const isPast = isEventPast(ev.date);
+                  const isExpanded = expandedEventIds.has(ev.id);
 
-                  <div className="flex items-start gap-3">
-                    <div className="bg-[#181818] text-white p-2 text-center shrink-0 w-14 border border-[#181818]">
-                      <span className="block text-[10px] font-mono uppercase text-amber-300">
-                        {ev.date.split(' ')[0]}
-                      </span>
-                      <span className="block font-display font-black text-lg leading-tight">
-                        {ev.date.split(' ')[1].replace(',', '')}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-display font-bold text-sm text-[#181818] leading-tight line-clamp-2">
-                        {ev.title}
-                      </h4>
-                      <div className="flex items-center gap-1 text-[10px] text-[#777777] font-mono mt-1">
-                        <MapPin className="w-3 h-3 text-[#DF711B] shrink-0" />
-                        <span className="line-clamp-1">{ev.venue}</span>
+                  return (
+                    <div 
+                      key={ev.id}
+                      className={`bg-white border border-[#D5CEC2] p-4 flex flex-col justify-between space-y-3 hover:border-[#DF711B] transition-all shadow-xs ${
+                        isPast ? 'bg-[#FAF8F5]/80' : ''
+                      }`}
+                    >
+                      <div className="space-y-2.5">
+                        <div className="flex items-center justify-between gap-1">
+                          <span className="text-[8.5px] font-mono font-bold text-[#DF711B] bg-[#FFF0E6] border border-[#DF711B]/30 px-1.5 py-0.5 uppercase tracking-wider">
+                            {ev.tag}
+                          </span>
+                          <span className={`text-[8.5px] font-mono font-bold px-1.5 py-0.5 uppercase tracking-wider flex items-center gap-1 rounded-xs ${
+                            isPast 
+                              ? 'bg-slate-100 text-slate-600 border border-slate-300' 
+                              : 'bg-emerald-50 text-emerald-700 border border-emerald-300'
+                          }`}>
+                            <span className={`w-1.5 h-1.5 rounded-full ${isPast ? 'bg-slate-400' : 'bg-emerald-500 animate-pulse'}`} />
+                            <span>{isPast ? 'Concluded' : 'Upcoming'}</span>
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <div className={`text-white p-2 text-center shrink-0 w-14 border ${
+                            isPast ? 'bg-slate-700 border-slate-700' : 'bg-[#181818] border-[#181818]'
+                          }`}>
+                            <span className="block text-[10px] font-mono uppercase text-amber-300">
+                              {ev.date.split(' ')[0]}
+                            </span>
+                            <span className="block font-display font-black text-lg leading-tight">
+                              {ev.date.split(' ')[1].replace(',', '')}
+                            </span>
+                          </div>
+                          <div>
+                            <h4 className="font-display font-bold text-sm text-[#181818] leading-tight line-clamp-2">
+                              {ev.title}
+                            </h4>
+                            <div className="flex items-center gap-1 text-[10px] text-[#777777] font-mono mt-1">
+                              <MapPin className="w-3 h-3 text-[#DF711B] shrink-0" />
+                              <span className="line-clamp-1">{ev.venue}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {isExpanded && (
+                          <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-700 bg-amber-50/80 px-2 py-1 border border-amber-200/60 rounded-xs">
+                            <Clock className="w-3.5 h-3.5 text-[#DF711B] shrink-0" />
+                            <span>Schedule: <strong className="text-slate-900">{ev.time}</strong></span>
+                          </div>
+                        )}
+
+                        <p className={`text-xs text-[#555555] leading-relaxed font-normal transition-all ${
+                          isExpanded ? '' : 'line-clamp-2'
+                        }`}>
+                          {ev.desc}
+                        </p>
+                      </div>
+
+                      <div className="pt-2 border-t border-slate-200 flex items-center justify-end text-xs">
+                        <button
+                          type="button"
+                          onClick={() => toggleExpandEvent(ev.id)}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-[#DF711B] hover:text-[#C45B0E] hover:underline cursor-pointer transition-colors ml-auto"
+                          aria-label={isExpanded ? `Show less for ${ev.title}` : `Read more for ${ev.title}`}
+                        >
+                          <span>{isExpanded ? 'Read Less ‹' : 'Read More ›'}</span>
+                        </button>
                       </div>
                     </div>
-                  </div>
-
-                  <p className="text-xs text-[#555555] leading-relaxed line-clamp-2 font-normal">
-                    {ev.desc}
-                  </p>
-                </div>
-
-                <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
-                  <span className="text-[10px] font-mono text-[#777777]">{ev.date}</span>
-                  <span className="text-xs font-bold text-[#DF711B]">Official Event ›</span>
-                </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
+            )}
 
-          {filteredEvents.length > 3 && (
-            <div className="block md:hidden pt-2 text-center">
-              <button
-                type="button"
-                onClick={() => setShowAllEventsMobile(!showAllEventsMobile)}
-                className="w-full py-3 px-4 bg-white hover:bg-[#FAF3E8] border-2 border-[#DF711B] text-[#DF711B] font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
-              >
-                <span>
-                  {showAllEventsMobile 
-                    ? 'Show Less Events' 
-                    : `See More Events (${filteredEvents.length - 3} more)`
-                  }
-                </span>
-                {showAllEventsMobile ? (
-                  <ChevronUp className="w-4 h-4 text-[#DF711B]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-[#DF711B]" />
-                )}
-              </button>
-            </div>
-          )}
-        </div>
+            {/* Desktop & Mobile View More / View Fewer Toggle */}
+            {filteredEvents.length > 4 && (
+              <div className="pt-3 text-center">
+                <button
+                  type="button"
+                  onClick={() => setShowAllEvents(!showAllEvents)}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 bg-white hover:bg-[#FAF3E8] border-2 border-[#DF711B] text-[#DF711B] hover:text-[#C45B0E] font-display font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-xs transition-all cursor-pointer active:scale-[0.98]"
+                >
+                  <span>
+                    {showAllEvents 
+                      ? 'View Fewer Events' 
+                      : `View More Events (${filteredEvents.length - 4} more)`
+                    }
+                  </span>
+                  {showAllEvents ? (
+                    <ChevronUp className="w-4 h-4 text-[#DF711B]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-[#DF711B]" />
+                  )}
+                </button>
+              </div>
+            )}
+          </div>
         )}
 
         {activeTab === 'academic' && (

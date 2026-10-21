@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { 
   BookOpen, 
   Award, 
@@ -25,12 +25,41 @@ import { BadgePill } from '../ui/badge-pill';
 import { SphereImageGrid } from '../ui/img-sphere';
 import { CURRICULUM_SPHERE_IMAGES } from '../ui/img-sphere-demo';
 
-type StageKey = 'primary' | 'middle' | 'secondary' | 'senior' | 'foundational';
+type StageKey = 'foundational' | 'primary' | 'middle' | 'secondary' | 'senior';
+
+const VALID_STAGES: StageKey[] = ['foundational', 'primary', 'middle', 'secondary', 'senior'];
 
 export const CurriculumShowcase: React.FC = () => {
-  const [activeStage, setActiveStage] = useState<StageKey>('secondary');
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+
+  const getInitialStage = (): StageKey => {
+    const stageQuery = searchParams.get('stage') as StageKey | null;
+    if (stageQuery && VALID_STAGES.includes(stageQuery)) {
+      return stageQuery;
+    }
+    const hash = location.hash.replace('#', '') as StageKey;
+    if (hash && VALID_STAGES.includes(hash)) {
+      return hash;
+    }
+    return 'foundational';
+  };
+
+  const [activeStage, setActiveStage] = useState<StageKey>(getInitialStage);
   const [seniorStream, setSeniorStream] = useState<'science' | 'commerce' | 'humanities'>('science');
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const stageQuery = searchParams.get('stage') as StageKey | null;
+    if (stageQuery && VALID_STAGES.includes(stageQuery)) {
+      setActiveStage(stageQuery);
+    } else {
+      const hash = location.hash.replace('#', '') as StageKey;
+      if (hash && VALID_STAGES.includes(hash)) {
+        setActiveStage(hash);
+      }
+    }
+  }, [searchParams, location.hash]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -116,7 +145,7 @@ export const CurriculumShowcase: React.FC = () => {
       </div>
 
       {/* 2. STAGE-WISE INTERACTIVE CURRICULUM SELECTOR */}
-      <div className="space-y-6">
+      <div id="stages" className="space-y-6 scroll-mt-28">
         
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E7E2D8] pb-4">
           <div>

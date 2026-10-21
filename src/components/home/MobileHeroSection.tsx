@@ -54,7 +54,7 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
             </h1>
 
             <p className="text-[11px] xs:text-xs text-slate-200 font-sans leading-relaxed drop-shadow line-clamp-2 pt-0.5">
-              36 Years of Academic Distinction & Vedantic Values • Nursery to Std XII (Arts, Commerce, Science)
+              31 Years of Schooling & Vedantic Values • Nursery to Std XII (Arts, Commerce, Science)
             </p>
           </div>
         </div>
@@ -66,13 +66,13 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
       <div className="px-3.5 pt-3 pb-3.5 sm:px-6 sm:pt-4 sm:pb-4 bg-white">
         <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-lg mx-auto">
           
-          {/* Card 1: Years of Legacy */}
+          {/* Card 1: Years of Schooling */}
           <div className="bg-[#FAF8F5] p-2.5 sm:p-3.5 rounded-xl border border-[#E7E2D8] shadow-[0_2px_10px_rgba(0,0,0,0.02)] text-center flex flex-col items-center justify-center transition-all hover:border-[#DF711B]/40">
             <span className="font-display font-black text-lg xs:text-xl sm:text-2xl text-[#181C20] tracking-tight leading-none">
-              35+
+              31+
             </span>
             <p className="text-[9.5px] xs:text-[10px] sm:text-xs text-[#666666] font-medium mt-1 leading-tight">
-              Years Legacy
+              Years Schooling
             </p>
           </div>
 

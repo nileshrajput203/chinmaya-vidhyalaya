@@ -79,7 +79,7 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
   },
   '/about/history': {
     title: 'Our Heritage & School History | Chinmaya Vidyalaya Tarapur',
-    description: 'Established in 1995 under Central Chinmaya Mission Trust, Mumbai. Explore thirty years of educational distinction and noble character formation in Boisar-Tarapur.',
+    description: 'Established in 1995 under Central Chinmaya Mission Trust, Mumbai. Explore 31 years of educational distinction and noble character formation in Boisar-Tarapur.',
     keywords: 'school history, 1995 foundation, Chinmaya Vidyalaya heritage, Boisar history',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }, { name: 'History', path: '/about/history' }],
   },

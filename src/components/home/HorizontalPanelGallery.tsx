@@ -258,10 +258,10 @@ export const HorizontalPanelGallery: React.FC = () => {
                   </div>
                   <div>
                     <span className="font-display text-[22px] lg:text-[28px] font-black text-[#DF711B] leading-none block">
-                      30+
+                      31+
                     </span>
                     <span className="text-[10px] font-mono text-[#777777] uppercase tracking-wider block mt-1">
-                      Years Legacy
+                      Years Schooling
                     </span>
                   </div>
                   <div>
