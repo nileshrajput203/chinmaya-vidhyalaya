@@ -186,26 +186,13 @@ export const HorizontalPanelGallery: React.FC = () => {
                   </div>
 
                   {/* Text Details Below Photo */}
-                  <div className="pt-3.5 space-y-1.5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="font-display text-[22px] lg:text-[24px] xl:text-[26px] font-black text-[#DF711B] uppercase tracking-tight leading-tight m-0">
-                        {item.title}
-                      </h3>
-                      <p className="text-[14px] lg:text-[15px] text-[#555555] font-normal leading-snug mt-1 line-clamp-2">
-                        {item.desc}
-                      </p>
-                    </div>
-
-                    {/* Small Solid-Black Rectangular Button with "›" glyph */}
-                    <div className="pt-3">
-                      <Link
-                        to={item.link}
-                        className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#181818] hover:bg-[#DF711B] text-[#FFFFFF] font-sans font-bold text-[11px] xl:text-[12px] uppercase tracking-wider transition-colors select-none"
-                      >
-                        <span className="text-[#FFB740] font-bold text-sm">›</span>
-                        <span>LEARN MORE</span>
-                      </Link>
-                    </div>
+                  <div className="pt-3.5 space-y-1.5">
+                    <h3 className="font-display text-[22px] lg:text-[24px] xl:text-[26px] font-black text-[#DF711B] uppercase tracking-tight leading-tight m-0">
+                      {item.title}
+                    </h3>
+                    <p className="text-[14px] lg:text-[15px] text-[#555555] font-normal leading-snug mt-1">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
