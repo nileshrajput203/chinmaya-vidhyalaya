@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Plus } from 'lucide-react';
 import { OFFICIAL_SCHOOL_INFO } from '../../data/school';
 import { 
   HOME_VALUES_TILES, 
@@ -261,25 +259,7 @@ export const HorizontalPanelGallery: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Text-Link CTA followed by thin horizontal rule ending in "+" icon */}
-                <div className="pt-2">
-                  <Link 
-                    to="/about/history" 
-                    className="group flex items-center justify-between gap-4 text-[#DF711B] hover:text-[#181818] transition-colors"
-                  >
-                    <span className="font-display text-[14px] lg:text-[15px] font-black uppercase tracking-wider shrink-0">
-                      READ MORE
-                    </span>
-                    
-                    {/* Thin Horizontal Rule */}
-                    <div className="flex-1 h-[1px] bg-[#DF711B]/30 group-hover:bg-[#181818] transition-colors" />
 
-                    {/* Small "+" Icon flush right */}
-                    <div className="w-6 h-6 rounded-full border border-[#DF711B]/40 group-hover:border-[#181818] flex items-center justify-center shrink-0 transition-transform group-hover:rotate-90">
-                      <Plus className="w-3.5 h-3.5 text-[#DF711B] group-hover:text-[#181818]" />
-                    </div>
-                  </Link>
-                </div>
 
               </div>
             </div>
