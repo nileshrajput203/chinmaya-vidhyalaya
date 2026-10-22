@@ -298,11 +298,11 @@ export const NewsListingPage: React.FC = () => {
                           </div>
 
                           <div className="flex items-start gap-3">
-                            <div className="bg-[#181818] text-white p-2 text-center shrink-0 w-14">
-                              <span className="block text-[10px] font-mono uppercase text-amber-300">
-                                {ev.date.split(' ')[0]}
+                            <div className="bg-[#181818] text-white py-2 px-1 text-center shrink-0 w-16 rounded-xl flex flex-col items-center justify-center border border-[#181818] shadow-xs">
+                              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-amber-300 leading-tight">
+                                {ev.date.split(' ')[0].slice(0, 3)}
                               </span>
-                              <span className="block font-display font-black text-lg leading-tight">
+                              <span className="block font-display font-black text-xl text-white leading-tight mt-0.5">
                                 {ev.date.split(' ')[1].replace(',', '')}
                               </span>
                             </div>
