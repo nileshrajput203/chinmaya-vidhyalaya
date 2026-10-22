@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   ArrowRight, CheckCircle2,
-  Calendar, Phone, HelpCircle,
   BookOpen, Brain, Compass, GraduationCap
 } from 'lucide-react';
 import gsap from 'gsap';
@@ -86,13 +85,7 @@ const PATHWAY_STEPS: PathwayStep[] = [
 
 export const CareerCounsellingShowcase: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
-  const [consultationBooked, setConsultationBooked] = useState(false);
-  const [formData, setFormData] = useState({
-    parentName: '',
-    studentName: '',
-    currentGrade: '',
-    contactNumber: '',
-  });
+  
 
   const sectionRef = useRef<HTMLElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
@@ -229,14 +222,7 @@ export const CareerCounsellingShowcase: React.FC = () => {
     }
   }, [activeStep]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.currentGrade) {
-      alert('Please select a grade.');
-      return;
-    }
-    setConsultationBooked(true);
-  };
+  
 
   return (
     <div className="space-y-16">
@@ -465,99 +451,6 @@ export const CareerCounsellingShowcase: React.FC = () => {
               History, Political Science, Psychology, Sociology, and English Literature. Tailored for Law (CLAT), Civil Services (UPSC), Journalism, and Design.
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* ─── BOOK A CAREER GUIDANCE DESK WINDOW ─── */}
-      <div className="bg-white border border-[#E7E2D8] p-8 sm:p-10 rounded-3xl shadow-sm flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div className="space-y-3 max-w-xl">
-          <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
-            <Calendar className="w-4 h-4" />
-            <span>Parent-Student Counselling Desk</span>
-          </div>
-          <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#0B1E34]">
-            Speak with a School Counsellor
-          </h3>
-          <p className="text-sm text-slate-600 leading-relaxed font-normal">
-            Have questions about stream eligibility, student aptitude screening, or senior secondary subject combinations? Schedule a 20-minute consultation window with our campus school counselling faculty at Boisar campus.
-          </p>
-          <div className="flex items-center gap-6 pt-2 text-xs text-slate-500">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#DF711B]" />
-              <span>Campus Desk: 02525-271775</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-emerald-600" />
-              <span>Mon to Sat: 8:30 AM - 3:30 PM</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Callback Form */}
-        <div className="w-full lg:w-96 bg-white p-6 rounded-2xl border border-[#E7E2D8]">
-          {consultationBooked ? (
-            <div className="text-center py-6 space-y-3">
-              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-6 h-6" />
-              </div>
-              <h4 className="font-cinzel font-bold text-base text-[#181C20]">
-                Counselling Slot Requested!
-              </h4>
-              <p className="text-xs text-slate-600">
-                Our academic counselor will contact you at <strong>{formData.contactNumber}</strong> during the next available desk session.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <h4 className="font-cinzel font-bold text-sm text-[#181C20]">
-                Request Guidance Callback
-              </h4>
-              <input
-                type="text"
-                required
-                placeholder="Parent's Name"
-                value={formData.parentName}
-                onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                className="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-[#DF711B]"
-              />
-              <input
-                type="text"
-                required
-                placeholder="Student's Name"
-                value={formData.studentName}
-                onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                className="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-[#DF711B]"
-              />
-              <div className="grid grid-cols-2 gap-2">
-                <select
-                  value={formData.currentGrade}
-                  onChange={(e) => setFormData({ ...formData, currentGrade: e.target.value })}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-[#DF711B]"
-                >
-                  <option value="">Select Grade</option>
-                  <option value="Class 8">Class 8</option>
-                  <option value="Class 9">Class 9</option>
-                  <option value="Class 10">Class 10</option>
-                  <option value="Class 11">Class 11</option>
-                  <option value="Class 12">Class 12</option>
-                </select>
-                <input
-                  type="tel"
-                  required
-                  placeholder="Mobile No."
-                  value={formData.contactNumber}
-                  onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-[#DF711B]"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-2.5 rounded-xl bg-[#DF711B] hover:bg-[#C55E10] text-white font-semibold text-xs transition-colors shadow-sm cursor-pointer"
-              >
-                Confirm Guidance Session
-              </button>
-            </form>
-          )}
         </div>
       </div>
 
