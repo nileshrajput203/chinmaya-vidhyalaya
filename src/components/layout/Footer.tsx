@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   Award, 
   Facebook,
@@ -10,7 +10,11 @@ import {
 import { OFFICIAL_SCHOOL_INFO, OFFICIAL_SOCIAL_LINKS } from '../../data/school';
 
 export const Footer: React.FC = () => {
+  const { pathname } = useLocation();
   const [activeAccreditation, setActiveAccreditation] = useState(0);
+
+  // Returns true when the current URL matches this footer link
+  const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
 
   const accreditations = [
     { title: "CBSE AFFILIATION", desc: "Central Board of Secondary Education, New Delhi", code: `Affiliation No: ${OFFICIAL_SCHOOL_INFO.affiliationNo}` },
@@ -106,7 +110,14 @@ export const Footer: React.FC = () => {
                     { label: "4 Pillars of CVP", href: "/about/philosophy" },
                   ].map((link) => (
                     <li key={link.label}>
-                      <Link to={link.href} className="text-slate-300 hover:text-amber-400 hover:translate-x-0.5 transition-all block py-0.5 font-medium">
+                      <Link
+                        to={link.href}
+                        className={`transition-all block py-0.5 font-medium hover:translate-x-0.5 ${
+                          isActive(link.href)
+                            ? 'text-amber-400 font-bold pl-2 border-l-2 border-[#DF711B] bg-amber-400/5 rounded-r [text-shadow:0_0_10px_rgba(251,191,36,0.7)]'
+                            : 'text-slate-300 hover:text-amber-400'
+                        }`}
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -131,7 +142,14 @@ export const Footer: React.FC = () => {
                     { label: "CBSE Sample Papers", href: "/downloads/sample-papers" },
                   ].map((link) => (
                     <li key={link.label}>
-                      <Link to={link.href} className="text-slate-300 hover:text-amber-400 hover:translate-x-0.5 transition-all block py-0.5 font-medium">
+                      <Link
+                        to={link.href}
+                        className={`transition-all block py-0.5 font-medium hover:translate-x-0.5 ${
+                          isActive(link.href)
+                            ? 'text-amber-400 font-bold pl-2 border-l-2 border-[#DF711B] bg-amber-400/5 rounded-r [text-shadow:0_0_10px_rgba(251,191,36,0.7)]'
+                            : 'text-slate-300 hover:text-amber-400'
+                        }`}
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -162,7 +180,14 @@ export const Footer: React.FC = () => {
                           {link.label}
                         </a>
                       ) : (
-                        <Link to={link.href} className="text-slate-300 hover:text-amber-400 hover:translate-x-0.5 transition-all block py-0.5 font-medium">
+                        <Link
+                          to={link.href}
+                          className={`transition-all block py-0.5 font-medium hover:translate-x-0.5 ${
+                            isActive(link.href)
+                              ? 'text-amber-400 font-bold pl-2 border-l-2 border-[#DF711B] bg-amber-400/5 rounded-r [text-shadow:0_0_10px_rgba(251,191,36,0.7)]'
+                              : 'text-slate-300 hover:text-amber-400'
+                          }`}
+                        >
                           {link.label}
                         </Link>
                       )}
@@ -188,7 +213,14 @@ export const Footer: React.FC = () => {
                     { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
                     <li key={link.label}>
-                      <Link to={link.href} className="text-slate-300 hover:text-amber-400 hover:translate-x-0.5 transition-all block py-0.5 font-medium">
+                      <Link
+                        to={link.href}
+                        className={`transition-all block py-0.5 font-medium hover:translate-x-0.5 ${
+                          isActive(link.href)
+                            ? 'text-amber-400 font-bold pl-2 border-l-2 border-[#DF711B] bg-amber-400/5 rounded-r [text-shadow:0_0_10px_rgba(251,191,36,0.7)]'
+                            : 'text-slate-300 hover:text-amber-400'
+                        }`}
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -216,7 +248,14 @@ export const Footer: React.FC = () => {
                     { label: "Contact Campus Office", href: "/contact" },
                   ].map((link) => (
                     <li key={link.label}>
-                      <Link to={link.href} className="text-slate-300 hover:text-amber-400 hover:translate-x-0.5 transition-all block py-0.5 font-medium">
+                      <Link
+                        to={link.href}
+                        className={`transition-all block py-0.5 font-medium hover:translate-x-0.5 ${
+                          isActive(link.href)
+                            ? 'text-amber-400 font-bold pl-2 border-l-2 border-[#DF711B] bg-amber-400/5 rounded-r [text-shadow:0_0_10px_rgba(251,191,36,0.7)]'
+                            : 'text-slate-300 hover:text-amber-400'
+                        }`}
+                      >
                         {link.label}
                       </Link>
                     </li>
