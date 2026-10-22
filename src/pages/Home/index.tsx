@@ -137,13 +137,13 @@ export const HomePage: React.FC = () => {
       <BannerCarousel />
 
       {/* ----------------------------------------------------
-          SECTION 2.6 - BANNER IMAGE 2
+          SECTION 2.6 - SPORTS BANNER
          ---------------------------------------------------- */}
-      <section className="w-full bg-white relative overflow-hidden">
+      <section className="w-full bg-white relative overflow-hidden" aria-label="Campus Sports Banner">
         <img 
-          src="/file_00000000129882308ffa3f6b1a6bab51.png" 
-          alt="Banner Image" 
-          className="w-full h-auto object-cover block"
+          src="/sports-banner.png?v=20261022" 
+          alt="Chinmaya Vidyalaya Sports Banner - The Game Unites Us" 
+          className="w-full h-auto object-contain block"
         />
       </section>
 

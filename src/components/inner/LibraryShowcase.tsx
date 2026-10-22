@@ -107,24 +107,45 @@ export const LibraryShowcase: React.FC = () => {
 
       {/* ─── LIBRARY PHOTO GALLERY ─── */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ARCHIVE_IMAGES.map((img, idx) => (
-          <div
-            key={idx}
-            className={`group relative overflow-hidden rounded-3xl border border-[#E7E2D8] bg-white shadow-card transition-all duration-300 hover:shadow-xl self-start ${
-              idx === 0 ? 'md:col-span-2 lg:col-span-2' : ''
-            }`}
-          >
-            <div className={`relative w-full overflow-hidden bg-slate-100 ${idx === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-            </div>
+        {ARCHIVE_IMAGES.map((img, idx) => {
+          const isFirst = idx === 0;
+          const isSecond = idx === 1;
 
-          </div>
-        ))}
+          return (
+            <div
+              key={idx}
+              className={`group relative overflow-hidden rounded-3xl border border-[#E7E2D8] bg-white shadow-card transition-all duration-300 hover:shadow-xl flex flex-col justify-between h-full ${
+                isFirst ? 'md:col-span-2 lg:col-span-2' : ''
+              }`}
+            >
+              <div
+                className={`relative w-full overflow-hidden bg-slate-100 ${
+                  isFirst
+                    ? 'aspect-[16/10] sm:aspect-[16/9] lg:h-[320px]'
+                    : isSecond
+                    ? 'aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:flex-1 lg:min-h-0'
+                    : 'aspect-[4/3]'
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute top-3.5 left-3.5 bg-[#0B1E34]/85 backdrop-blur-xs text-white text-[11px] font-mono uppercase tracking-wider font-semibold px-3 py-1 rounded-lg shadow-sm">
+                  {img.category}
+                </div>
+              </div>
+
+              <div className="p-4 sm:p-5 bg-white border-t border-[#E7E2D8]">
+                <h4 className="font-cinzel font-bold text-sm sm:text-base text-[#181C20] line-clamp-1 group-hover:text-[#DF711B] transition-colors">
+                  {img.title}
+                </h4>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Library Code of Conduct & Operational Protocols */}

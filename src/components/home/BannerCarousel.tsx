@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const BANNER_SLIDES = [
-  { id: 1, src: '/1.jpeg', alt: 'Chinmaya Vidyalaya Commerce & Arts Toppers Banner' },
+  { id: 1, src: '/1.jpeg?v=20261022_arts_commerce', alt: 'Chinmaya Vidyalaya 12th Toppers 2026 - Arts and Commerce' },
   { id: 2, src: '/2.jpeg?v=20261022', alt: 'Chinmaya Vidyalaya 12th Toppers 2026 - Science' },
 ];
 
