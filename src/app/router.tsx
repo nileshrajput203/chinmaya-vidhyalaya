@@ -39,9 +39,8 @@ export const router = createBrowserRouter([
         path: 'about/mandatory-information', 
         element: <DocumentListingPage initialCategory="mandatory-information" pageTitle="Important Disclosures & Transfer Certificates" pageSubtitle="Official CBSE affiliation, land, building safety, sanitation certificates, and Transfer Certificates (TC)" /> 
       },
-      { path: 'about/important-disclosures', element: <Navigate to="/about/mandatory-information" replace /> },
-      { path: 'about/swami-chinmayananda', element: <ContentPage {...ABOUT_SECTIONS['swami-chinmayananda']} categoryLabel="About Us" /> },
-      { path: 'about/heritage', element: <ContentPage {...ABOUT_SECTIONS['swami-chinmayananda']} categoryLabel="About Us" /> },
+      { path: 'about/swami-chinmayananda', element: <Navigate to="/about" replace /> },
+      { path: 'about/heritage', element: <Navigate to="/about" replace /> },
       { path: 'about/philosophy', element: <ContentPage {...ABOUT_SECTIONS['philosophy']} categoryLabel="About Us" /> },
       { path: 'about/4-pillars', element: <ContentPage {...ABOUT_SECTIONS['philosophy']} categoryLabel="About Us" /> },
       { path: 'about/four-pillars', element: <Navigate to="/about/philosophy" replace /> },

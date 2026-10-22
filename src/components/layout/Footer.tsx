@@ -103,7 +103,6 @@ export const Footer: React.FC = () => {
                     { label: "School Vision & Mission", href: "/about/mission-vision" },
                     { label: "Board of Management", href: "/about/management" },
                     { label: "Important Disclosures", href: "/about/mandatory-information" },
-                    { label: "About the Heritage", href: "/about/heritage" },
                     { label: "4 Pillars of CVP", href: "/about/philosophy" },
                   ].map((link) => (
                     <li key={link.label}>

@@ -57,7 +57,6 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
       { label: "School Vision & Mission", href: "/about/mission-vision", description: "Guiding principles and core aspirations for holistic education" },
       { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees, and administrative leadership" },
       { label: "Important Disclosures", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates, affiliation, and TC records" },
-      { label: "About the Heritage", href: "/about/heritage", description: "Life, spiritual awakening, and eternal vision of Pujya Gurudev Swami Chinmayananda" },
       { label: "4 Pillars of CVP", href: "/about/philosophy", description: "The four foundational pillars of the Chinmaya Vision Program" }
     ]
   },
