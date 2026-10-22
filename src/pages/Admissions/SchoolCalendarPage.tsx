@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Download, 
   Calendar as CalendarIcon, 
@@ -8,7 +7,6 @@ import {
   Sparkles,
   BookOpen,
   Award,
-  ChevronRight,
   Layers
 } from 'lucide-react';
 import { Breadcrumb } from '../../components/common/Breadcrumb';
@@ -212,16 +210,6 @@ export const SchoolCalendarPage: React.FC = () => {
               <span className="font-bold text-slate-800 block">School Office Working Hours:</span>
               <p className="text-[11px]">Monday to Friday: 8:00 AM - 3:30 PM</p>
               <p className="text-[11px]">Saturday: 8:00 AM - 1:00 PM</p>
-            </div>
-
-            <div className="pt-2 border-t border-[#E7E2D8]">
-              <Link
-                to="/admissions/fee-structure"
-                className="w-full py-2.5 bg-[#181C20] hover:bg-[#DF711B] text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 text-center"
-              >
-                <span>View Annual Fee Structure</span>
-                <ChevronRight className="w-4 h-4" />
-              </Link>
             </div>
           </div>
 
