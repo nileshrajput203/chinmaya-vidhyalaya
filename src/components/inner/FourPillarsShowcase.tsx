@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, ArrowRight, ExternalLink } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SpotlightCard } from '../ui/spotlight-card';
 
@@ -335,31 +335,6 @@ export const FourPillarsShowcase: React.FC = () => {
           </Link>
         </div>
       </SpotlightCard>
-
-      {/* 4. Chinmaya Mission Global Redirect Banner */}
-      <div className="bg-white border border-[#E7E2D8] rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="space-y-1.5 text-center md:text-left">
-          <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#DF711B] block">
-            Central Chinmaya Mission Trust
-          </span>
-          <h4 className="font-cinzel font-bold text-xl sm:text-2xl text-[#181C20]">
-            To know more about Chinmaya Mission
-          </h4>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl font-normal leading-relaxed">
-            Discover the global spiritual and educational movement founded by Pujya Gurudev Swami Chinmayananda - uniting Advaita Vedanta philosophy, youth leadership, and humanitarian seva worldwide.
-          </p>
-        </div>
-        <a
-          href="https://www.chinmayamission.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-3.5 rounded-xl bg-[#0B1E34] hover:bg-[#DF711B] text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all flex items-center gap-2.5 shrink-0 group"
-          title="Chinmaya Mission - Advaita Vedanta, Inspiration & Global Seva"
-        >
-          <span>Chinmaya Mission - Advaita Vedanta, Inspiration & Global Seva</span>
-          <ExternalLink className="w-4 h-4 text-[#DF711B] group-hover:text-white transition-colors" />
-        </a>
-      </div>
     </div>
   );
 };
