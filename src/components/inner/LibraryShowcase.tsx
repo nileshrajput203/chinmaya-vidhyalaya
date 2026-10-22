@@ -110,7 +110,7 @@ export const LibraryShowcase: React.FC = () => {
         {ARCHIVE_IMAGES.map((img, idx) => (
           <div
             key={idx}
-            className={`group relative overflow-hidden rounded-3xl border border-[#E7E2D8] bg-white shadow-card transition-all duration-300 hover:shadow-xl ${
+            className={`group relative overflow-hidden rounded-3xl border border-[#E7E2D8] bg-white shadow-card transition-all duration-300 hover:shadow-xl self-start ${
               idx === 0 ? 'md:col-span-2 lg:col-span-2' : ''
             }`}
           >
