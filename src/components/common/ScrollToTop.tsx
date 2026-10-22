@@ -41,21 +41,42 @@ export const ScrollToTop = () => {
   }, []);
 
   useEffect(() => {
-    // If navigating to a hash anchor, scroll to anchor, else scroll to top
+    // ALWAYS scroll to top first on any route change (even with hash).
+    // This prevents the user from seeing the bottom of the page while
+    // waiting for the target section to render.
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.stop();
+      lenis.scrollTo(0, { immediate: true });
+      lenis.start();
+    }
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+
+    // If navigating to a hash anchor, scroll to the target section
     if (hash) {
       let attempts = 0;
-      const maxAttempts = 15;
+      const maxAttempts = 30;
       let timerId: ReturnType<typeof setTimeout>;
+      const allTimers: ReturnType<typeof setTimeout>[] = [];
 
+      // Compute the exact pixel position and jump there immediately.
+      // Using a numeric value avoids Lenis animation drift caused by
+      // layout shifts when images load after the scroll starts.
       const scrollToHashElement = () => {
         try {
           const element = document.querySelector(hash);
           if (element) {
-            const lenis = (window as any).__lenis;
-            if (lenis) {
-              lenis.scrollTo(element, { offset: -90, immediate: false });
+            const rect = element.getBoundingClientRect();
+            const currentScroll = window.scrollY || document.documentElement.scrollTop;
+            const targetY = Math.max(0, rect.top + currentScroll - 100);
+
+            const l = (window as any).__lenis;
+            if (l) {
+              l.scrollTo(targetY, { immediate: true });
             } else {
-              element.scrollIntoView({ behavior: 'smooth' });
+              window.scrollTo({ top: targetY, behavior: 'instant' as ScrollBehavior });
             }
             return true;
           }
@@ -66,32 +87,30 @@ export const ScrollToTop = () => {
       };
 
       const tryScroll = () => {
-        if (scrollToHashElement()) return;
+        if (scrollToHashElement()) {
+          // Re-adjust after short delays to compensate for images loading
+          // and causing layout shifts that change the element's position
+          const delays = [200, 500, 1000, 2000];
+          delays.forEach((delay) => {
+            const t = setTimeout(() => scrollToHashElement(), delay);
+            allTimers.push(t);
+          });
+          return;
+        }
         attempts++;
         if (attempts < maxAttempts) {
           timerId = setTimeout(tryScroll, 100);
         }
       };
 
-      tryScroll();
-      return () => clearTimeout(timerId);
+      // Small initial delay to let React render the target component
+      timerId = setTimeout(tryScroll, 50);
+
+      return () => {
+        clearTimeout(timerId);
+        allTimers.forEach((t) => clearTimeout(t));
+      };
     }
-
-    // Always reset to top (0, 0) on new route/section click
-
-    // Stop any in-progress Lenis animation first (prevents it overriding the reset)
-    const lenis = (window as any).__lenis;
-    if (lenis) {
-      lenis.stop();
-      lenis.scrollTo(0, { immediate: true });
-      lenis.start();
-    }
-
-    // Belt-and-suspenders: hard-reset scroll on both the document root and window
-    // (needed on touch devices where Lenis is not active)
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0; // for Safari
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
   }, [pathname, search, hash]);
 
   return (
