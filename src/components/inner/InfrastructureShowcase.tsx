@@ -346,7 +346,7 @@ const FacilityCardCarousel: React.FC<{
             type="button"
             onClick={handlePrev}
             aria-label="Previous photo"
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer z-10"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 shadow-md cursor-pointer z-10 hover:scale-105 active:scale-95"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
@@ -354,7 +354,7 @@ const FacilityCardCarousel: React.FC<{
             type="button"
             onClick={handleNext}
             aria-label="Next photo"
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 opacity-0 group-hover/carousel:opacity-100 shadow-md cursor-pointer z-10"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#DF711B] text-white flex items-center justify-center transition-all duration-200 border border-white/20 shadow-md cursor-pointer z-10 hover:scale-105 active:scale-95"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
