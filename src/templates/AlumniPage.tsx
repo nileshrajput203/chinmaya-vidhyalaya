@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { 
   GraduationCap, 
   Send, CheckCircle2, 
   Mail, Phone, MapPin, 
-  ArrowLeft, ArrowRight, ArrowUpRight
+  ArrowUpRight
 } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { useToast } from '../context/ToastContext';
@@ -22,15 +21,6 @@ interface AlumniFormData {
   message: string;
 }
 
-interface AlumniReview {
-  id: string;
-  name: string;
-  role: string;
-  batch: string;
-  cutoutImage: string;
-  review: string;
-  bookTitle?: string;
-}
 
 interface AlumniEventBlog {
   id: string;
@@ -41,48 +31,6 @@ interface AlumniEventBlog {
   link?: string;
 }
 
-const ALUMNI_REVIEWS: AlumniReview[] = [
-  {
-    id: 'rev-1',
-    name: 'Dr. Ananya P. Kulkarni',
-    role: 'Physician Researcher & Alumna',
-    batch: 'Class of 2012',
-    cutoutImage: '/images/1.jpeg',
-    review:
-      'Chinmaya Vidyalaya was a phenomenal environment in which to learn. The curriculum and the Chinmaya Vision Programme ignited critical thinking and empowered me to articulate and share thoughts in large medical and research settings. I’m grateful for the deep moral and ethical insights provided by our teachers and the opportunity to grow with clarity and compassion. My experience as an alumna has more than doubled my appreciation for the school as I see new generations of students blossom here.',
-    bookTitle: 'CBSE SCHOLASTIC EXCELLENCE'
-  },
-  {
-    id: 'rev-2',
-    name: 'Rohan V. Sharma',
-    role: 'Lead Systems Architect & Tech Innovator',
-    batch: 'Class of 2008',
-    cutoutImage: '/images/student_question_cutout.png',
-    review:
-      'The morning assemblies, Gita chanting, and rational scientific inquiry instilled during my foundational years at Tarapur continue to be my strongest anchor in executive leadership and cloud architecture. Chinmaya Vidyalaya doesn’t just teach academic subjects; it builds resilient character, analytical discipline, and a profound sense of purpose that stays with you across the globe.',
-    bookTitle: 'SYSTEMS & ANALYTICS'
-  },
-  {
-    id: 'rev-3',
-    name: 'Prateek Deshmukh',
-    role: 'Civil Services Officer & Public Administrator',
-    batch: 'Class of 2016',
-    cutoutImage: '/images/banner-1.jpg',
-    review:
-      'The third pillar of CVP - Patriotism and Civic Duty - truly inspired my path into public administration. From student house governance to tree plantation drives in Palghar district, we were taught that real accomplishment lies in societal progress. That noble grounding continues to guide every policy decision I make in public service.',
-    bookTitle: 'PATRIOTISM & CIVIC DUTY'
-  },
-  {
-    id: 'rev-4',
-    name: 'Kriti Sengupta',
-    role: 'Fintech Product Lead & Alumna',
-    batch: 'Class of 2015',
-    cutoutImage: '/images/2.jpeg',
-    review:
-      'From inter-house debate championships in Boisar to presenting in international fintech boardrooms, the eloquence, moral fortitude, and self-confidence nurtured by our educators laid the foundation for every milestone. Chinmaya Vidyalaya gave me a family that spans continents.',
-    bookTitle: 'GLOBAL LEADERSHIP'
-  }
-];
 
 // Temporary empty array; add new alumni events & news here when updated
 const ALUMNI_EVENTS_NEWS: AlumniEventBlog[] = [];
@@ -103,17 +51,6 @@ export const AlumniPage: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [currentReviewIdx, setCurrentReviewIdx] = useState(0);
-
-  const prevReview = () => {
-    setCurrentReviewIdx((prev) => (prev - 1 + ALUMNI_REVIEWS.length) % ALUMNI_REVIEWS.length);
-  };
-
-  const nextReview = () => {
-    setCurrentReviewIdx((prev) => (prev + 1) % ALUMNI_REVIEWS.length);
-  };
-
-  const currentReview = ALUMNI_REVIEWS[currentReviewIdx];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -386,74 +323,6 @@ export const AlumniPage: React.FC = () => {
                 </blockquote>
                 <span className="text-[10px] font-mono text-slate-400 block pt-1">
  - Param Pujya Swami Chinmayananda
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* ==================================================================
-            MIDDLE SECTION: ALUMNI REVIEWS (Matching 1st Image Format)
-            ================================================================== */}
-        <div className="relative py-12 lg:py-16 border-t border-b border-slate-200">
-          
-          {/* Giant Background Word "REVIEWS" */}
-          <div className="absolute top-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden z-0">
-            <span
-              style={{ color: 'var(--color-primary)' }}
-              className="font-display text-[64px] sm:text-[100px] lg:text-[140px] font-black uppercase tracking-tight leading-none opacity-90"
-            >
-              REVIEWS
-            </span>
-          </div>
-
-          {/* Foreground Review Content Layout */}
-          <div className="relative z-10 flex flex-col items-center pt-16 sm:pt-20 lg:pt-24 max-w-3xl mx-auto">
-            
-            {/* Review Paragraph & Attribution */}
-            <div className="flex flex-col justify-center space-y-6 px-2 sm:px-4">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentReview.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.28, ease: 'easeOut' }}
-                  className="space-y-5"
-                >
-                  {/* Detailed Review Quote text */}
-                  <p className="font-sans text-base sm:text-lg lg:text-[19px] leading-[1.65] text-[#181C20] font-normal">
-                    {currentReview.review}
-                  </p>
-
-                  {/* Attribution line */}
-                  <div className="pt-2">
-                    <p className="font-sans text-sm sm:text-base text-slate-800 font-semibold">
- - {currentReview.name} ({currentReview.batch})
-                    </p>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Review Carousel Controls */}
-              <div className="flex items-center gap-3 pt-3">
-                <button
-                  onClick={prevReview}
-                  aria-label="Previous Review"
-                  className="w-11 h-11 rounded-full border border-slate-200 bg-white text-[#181C20] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={nextReview}
-                  aria-label="Next Review"
-                  className="w-11 h-11 rounded-full border border-slate-200 bg-white text-[#181C20] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-                <span className="font-mono text-xs tracking-widest text-slate-500 font-bold pl-2">
-                  0{currentReviewIdx + 1} / 0{ALUMNI_REVIEWS.length}
                 </span>
               </div>
             </div>
