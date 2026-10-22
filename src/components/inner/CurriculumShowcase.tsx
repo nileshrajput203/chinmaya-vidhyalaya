@@ -22,8 +22,6 @@ import {
   Info
 } from 'lucide-react';
 import { BadgePill } from '../ui/badge-pill';
-import { SphereImageGrid } from '../ui/img-sphere';
-import { CURRICULUM_SPHERE_IMAGES } from '../ui/img-sphere-demo';
 
 type StageKey = 'foundational' | 'primary' | 'middle' | 'secondary' | 'senior';
 
@@ -47,7 +45,6 @@ export const CurriculumShowcase: React.FC = () => {
 
   const [activeStage, setActiveStage] = useState<StageKey>(getInitialStage);
   const [seniorStream, setSeniorStream] = useState<'science' | 'commerce' | 'humanities'>('science');
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const stageQuery = searchParams.get('stage') as StageKey | null;
@@ -60,15 +57,6 @@ export const CurriculumShowcase: React.FC = () => {
       }
     }
   }, [searchParams, location.hash]);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <div className="space-y-12">
@@ -128,20 +116,6 @@ export const CurriculumShowcase: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* INTERACTIVE 3D CURRICULUM & SUBJECTS SPHERE */}
-      <div className="w-full flex items-center justify-center py-4 overflow-hidden">
-        <SphereImageGrid
-          images={CURRICULUM_SPHERE_IMAGES}
-          containerSize={isMobile ? 320 : 580}
-          sphereRadius={isMobile ? 125 : 210}
-          dragSensitivity={isMobile ? 0.9 : 0.8}
-          autoRotate={true}
-          autoRotateSpeed={isMobile ? 0.3 : 0.25}
-          baseImageScale={isMobile ? 0.17 : 0.15}
-          hoverScale={isMobile ? 1.25 : 1.3}
-        />
       </div>
 
       {/* 2. STAGE-WISE INTERACTIVE CURRICULUM SELECTOR */}
