@@ -403,46 +403,57 @@ export default function Timeline({
           </div>
 
           {/* Vertical Timeline Items List */}
-          <div className="relative pl-6 sm:pl-8 space-y-6 pt-3">
-            {/* Continuous Vertical Timeline Line */}
-            <div 
-              className="absolute left-2.5 sm:left-3.5 top-3 bottom-3 w-[2px] rounded-full"
-              style={{ backgroundColor: `${activeColor}40` }}
-            />
+          <div className="relative pt-2">
+            {allJourneyItems.map((item, idx) => {
+              const isFirst = idx === 0;
+              const isLast = idx === allJourneyItems.length - 1;
 
-            {allJourneyItems.map((item, idx) => (
-              <div key={`mobile-item-${item.id}`} className="relative group">
-                {/* Node Dot on the Vertical Line */}
-                <div 
-                  className="absolute -left-6 sm:-left-8 top-1.5 size-3.5 rounded-full border-2 border-white shadow-xs z-10 flex items-center justify-center"
-                  style={{ backgroundColor: activeColor }}
-                >
-                  <div className="size-1 bg-white rounded-full" />
-                </div>
+              return (
+                <div key={`mobile-item-${item.id}`} className="relative pb-6 last:pb-0 group">
+                  {/* Continuous Vertical Timeline Line Segment - Perfectly co-axial with the dot */}
+                  <div 
+                    className={`absolute left-[13px] sm:left-[15px] -translate-x-1/2 w-[2px] pointer-events-none ${
+                      isFirst
+                        ? 'top-[26px] bottom-0'
+                        : isLast
+                        ? 'top-0 h-[26px]'
+                        : 'top-0 bottom-0'
+                    }`}
+                    style={{ backgroundColor: `${activeColor}40` }}
+                  />
 
-                {/* Milestone Card */}
-                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#E7E2D8] shadow-xs hover:border-[#DF711B]/40 transition-all space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span 
-                      className="font-mono text-xs font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-md"
-                      style={{ 
-                        color: activeColor,
-                        backgroundColor: `${activeColor}15`
-                      }}
-                    >
-                      {item.year} {item.month}
-                    </span>
-                    <span className="text-[10px] font-mono font-semibold" style={mutedTextStyle}>
-                      {idx + 1} of {allJourneyItems.length}
-                    </span>
+                  {/* Node Dot on the Vertical Line - Exactly centered on the line and aligned with the date badge */}
+                  <div 
+                    className="absolute left-[13px] sm:left-[15px] top-[26px] -translate-x-1/2 -translate-y-1/2 size-4 rounded-full border-2 border-white shadow-xs z-10 flex items-center justify-center ring-2 ring-[#DF711B]/20"
+                    style={{ backgroundColor: activeColor }}
+                  >
+                    <div className="size-1.5 bg-white rounded-full shadow-2xs" />
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                    {item.content}
-                  </p>
+                  {/* Milestone Card */}
+                  <div className="ml-8 sm:ml-10 bg-white rounded-2xl p-4 sm:p-5 border border-[#E7E2D8] shadow-xs hover:border-[#DF711B]/40 transition-all space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span 
+                        className="font-mono text-xs font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-md inline-flex items-center"
+                        style={{ 
+                          color: activeColor,
+                          backgroundColor: `${activeColor}15`
+                        }}
+                      >
+                        {item.year} {item.month}
+                      </span>
+                      <span className="text-[10px] font-mono font-semibold" style={mutedTextStyle}>
+                        {idx + 1} of {allJourneyItems.length}
+                      </span>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                      {item.content}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
