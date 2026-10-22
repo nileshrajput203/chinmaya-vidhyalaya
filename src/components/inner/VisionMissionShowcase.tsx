@@ -28,9 +28,9 @@ const KOSHAS: Kosha[] = [
     sheath: 'Physical Sheath',
     color: '#DF711B',
     badgeBg: 'bg-amber-100 text-amber-900 border-amber-300',
-    image: '/images/banner-1.jpg',
+    image: '/images/vision-mission/annamaya-kosha.jpeg',
     imageTag: 'Athletics & Physical Conditioning',
-    imageCaption: 'Physical Vitality: Daily Surya Namaskar, morning PT drills, and inter-house football & cricket on campus athletic grounds.',
+    imageCaption: 'Physical Vitality: Daily outdoor athletics, football practice, and physical stamina building on our sprawling campus athletic grounds.',
     schoolPractice:
       'Rigorous physical conditioning, sports training, nutritional hygiene, and daily physical exercises on our sprawling campus athletic grounds.',
     dailyRoutine: 'Morning PT drill, inter-house football & cricket, martial arts, and pure RO drinking water monitoring.',
@@ -43,9 +43,9 @@ const KOSHAS: Kosha[] = [
     sheath: 'Vital Energy Sheath',
     color: '#059669',
     badgeBg: 'bg-emerald-100 text-emerald-900 border-emerald-300',
-    image: '/images/banner-8.webp',
-    imageTag: 'Athletic Ground & Campus Vitality',
-    imageCaption: 'Vital Energy: Sprawling green campus grounds for morning fitness, athletics, and vital energy balance.',
+    image: '/images/vision-mission/pranamaya-kosha.png',
+    imageTag: 'Mass Yoga & Vital Breath Harmony',
+    imageCaption: 'Vital Energy: Whole-school morning assembly yoga, Anulom Vilom & Bhramari pranayama under open skies on campus grounds.',
     schoolPractice:
       'Pranayama breathing techniques, breath synchronization, and vital energy balancing to steady youthful nervousness and enhance concentration.',
     dailyRoutine: 'Guided Anulom Vilom and Bhramari Pranayama during morning assembly, breath awareness before exams.',
@@ -58,9 +58,9 @@ const KOSHAS: Kosha[] = [
     sheath: 'Mental-Emotional Sheath',
     color: '#B45309',
     badgeBg: 'bg-orange-100 text-orange-900 border-orange-300',
-    image: '/images/banner-1.webp',
-    imageTag: 'Music Studio & Expressive Arts',
-    imageCaption: 'Mental-Emotional Harmony: Classical music, expressive performing arts, and annual cultural celebrations uniting students.',
+    image: '/images/vision-mission/manomaya-kosha.jpeg',
+    imageTag: 'Expressive Poise & Caring Mentorship',
+    imageCaption: 'Mental-Emotional Harmony: Caring mentorship, creative craft expression, and compassionate emotional bonding in smart classrooms.',
     schoolPractice:
       'Emotional poise, aesthetic arts, classical music, drama, empathy exercises, and peer bonding within supportive house families.',
     dailyRoutine: 'Group singing of uplifting bhajans, cultural drama festivals, expressive art periods, and peer conflict resolution.',
@@ -73,9 +73,9 @@ const KOSHAS: Kosha[] = [
     sheath: 'Intellectual Sheath',
     color: '#0B1E34',
     badgeBg: 'bg-blue-100 text-blue-900 border-blue-300',
-    image: '/images/phys.jpeg',
-    imageTag: 'Hands-on STEM Lab Verification',
-    imageCaption: 'Intellectual Depth: Hands-on laboratory experiments, ASSET diagnostic thinking, and fearless analytical problem-solving.',
+    image: '/images/vision-mission/vijnanamaya-kosha.jpeg',
+    imageTag: 'Hands-on Science Inquiry & Specimen Analysis',
+    imageCaption: 'Intellectual Depth: Hands-on biological specimen inquiry, laboratory journals, and scientific analysis in the life sciences lab.',
     schoolPractice:
       'Inquiry-based STEM laboratories, ASSET diagnostic thinking analytics, scientific reasoning, and philosophical debate.',
     dailyRoutine: 'Hands-on laboratory verification, mathematical puzzle solving, ASSET testing, and debate competitions.',
@@ -266,16 +266,16 @@ export const VisionMissionShowcase: React.FC = () => {
             {/* School Photograph for Vision */}
             <div 
               onClick={() => setLightboxImage({
-                src: '/images/phys.jpeg',
-                title: 'Scientific Temper & Inquisitive Learning',
-                caption: 'Students conducting experimental scientific inquiry in the senior laboratory - daring to dream and developing new realities.'
+                src: '/images/vision-mission/our-vision.jpeg',
+                title: 'Empirical Inquiry & Hands-on Chemistry Titration',
+                caption: 'Faculty demonstration and senior students conducting volumetric titration in the senior chemistry laboratory.'
               })}
               className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-xs group cursor-pointer"
             >
               <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                 <img
-                  src="/images/phys.jpeg"
-                  alt="Students conducting scientific inquiry in laboratory"
+                  src="/images/vision-mission/our-vision.jpeg"
+                  alt="Chemistry faculty demonstrating volumetric titration to senior students"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
@@ -283,7 +283,7 @@ export const VisionMissionShowcase: React.FC = () => {
                 </div>
               </div>
               <div className="p-2.5 bg-white text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
-                Hands-on STEM Lab • Nurturing Inquisitive Minds &rarr;
+                Hands-on Chemistry Lab • Titration Demonstration &rarr;
               </div>
             </div>
 
@@ -340,16 +340,16 @@ export const VisionMissionShowcase: React.FC = () => {
             {/* School Photograph for Mission */}
             <div 
               onClick={() => setLightboxImage({
-                src: '/images/guru-paduka-pooja.webp',
-                title: 'Cultural Ethos & Sacred Value Education',
-                caption: 'Students and teachers participating in Guru Paduka Pooja and traditional prayers rooted in the vision of Swami Chinmayananda.'
+                src: '/images/vision-mission/our-mission.jpeg',
+                title: 'Mindful Classroom Alignment & Holistic Morning Routine',
+                caption: 'Teacher leading primary students in mindful morning stretching and breath alignment in front of interactive smart boards.'
               })}
               className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-xs group cursor-pointer"
             >
               <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                 <img
-                  src="/images/guru-paduka-pooja.webp"
-                  alt="Guru Paduka Pooja and cultural traditions at Chinmaya Vidyalaya"
+                  src="/images/vision-mission/our-mission.jpeg"
+                  alt="Teacher leading students in morning stretching and mindfulness in classroom"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
@@ -357,7 +357,7 @@ export const VisionMissionShowcase: React.FC = () => {
                 </div>
               </div>
               <div className="p-2.5 bg-white text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
-                Cultural Ethos • Sacred Traditions & Moral Grounding &rarr;
+                Holistic Classroom • Mindful Physical Alignment &rarr;
               </div>
             </div>
 
