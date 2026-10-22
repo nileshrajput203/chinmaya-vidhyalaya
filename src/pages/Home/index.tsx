@@ -38,7 +38,7 @@ const GUIDING_QUOTES = [
     quote: '"Happiness depends on what you can give, not on what you can get."',
     author: 'Pujya Gurudev Swami Chinmayananda',
     role: 'Founder of Chinmaya Mission',
-    image: '/images/swami_chinmayananda_square.webp',
+    image: '/images/swamiji.webp',
     label: 'ON HAPPINESS',
   },
   {
@@ -46,7 +46,7 @@ const GUIDING_QUOTES = [
     quote: '"Stand up, be bold, be strong. Take the whole responsibility on your own shoulders, and know that you are the creator of your own destiny."',
     author: 'Pujya Gurudev Swami Chinmayananda',
     role: 'Founder of Chinmaya Mission',
-    image: '/images/swami_chinmayananda_square.webp',
+    image: '/images/swami.jpeg',
     label: 'ON COURAGE & CHARACTER',
   },
 ];
@@ -92,7 +92,7 @@ export const HomePage: React.FC = () => {
     if (isQuoteHovered) return;
     const timer = setInterval(() => {
       setActiveQuote((prev) => (prev + 1) % SHUFFLED_QUOTES.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [isQuoteHovered]);
 

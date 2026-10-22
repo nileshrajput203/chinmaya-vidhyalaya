@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Bell, 
@@ -20,6 +20,7 @@ export const NoticeEventBoard: React.FC = () => {
 
   const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
   const [expandedEventIds, setExpandedEventIds] = useState<Set<string>>(new Set());
+  const viewFewerBtnRef = useRef<HTMLButtonElement>(null);
 
   const toggleExpandEvent = (id: string) => {
     setExpandedEventIds((prev) => {
@@ -451,13 +452,38 @@ export const NoticeEventBoard: React.FC = () => {
             {filteredEvents.length > 4 && (
               <div className="pt-3 text-center">
                 <button
+                  ref={viewFewerBtnRef}
                   type="button"
-                  onClick={() => setShowAllEvents(!showAllEvents)}
+                  onClick={() => {
+                    if (showAllEvents && viewFewerBtnRef.current) {
+                      // Capture button's viewport position BEFORE the grid shrinks
+                      const btnTop = viewFewerBtnRef.current.getBoundingClientRect().top;
+                      setShowAllEvents(false);
+                      // Wait two frames for React to finish re-rendering the collapsed grid,
+                      // then compensate the scroll so the button stays at the same Y position
+                      requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                          if (viewFewerBtnRef.current) {
+                            const newBtnTop = viewFewerBtnRef.current.getBoundingClientRect().top;
+                            const delta = newBtnTop - btnTop;
+                            if (Math.abs(delta) > 1) {
+                              window.scrollBy({ top: delta, behavior: 'instant' });
+                              if ((window as any).__lenis) {
+                                (window as any).__lenis.scrollTo(window.scrollY, { immediate: true });
+                              }
+                            }
+                          }
+                        });
+                      });
+                    } else {
+                      setShowAllEvents(true);
+                    }
+                  }}
                   className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 bg-white hover:bg-[#FAF3E8] border-2 border-[#DF711B] text-[#DF711B] hover:text-[#C45B0E] font-display font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-xs transition-all cursor-pointer active:scale-[0.98]"
                 >
                   <span>
-                    {showAllEvents 
-                      ? 'View Fewer Events' 
+                    {showAllEvents
+                      ? 'View Fewer Events'
                       : `View More Events (${filteredEvents.length - 4} more)`
                     }
                   </span>
