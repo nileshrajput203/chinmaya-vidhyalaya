@@ -140,6 +140,7 @@ export const Footer: React.FC = () => {
                     { label: "CBSE Curriculum & Syllabi", href: "/academics/curriculum" },
                     { label: "Infrastructure & Labs", href: "/academics/infrastructure" },
                     { label: "CBSE Sample Papers", href: "/downloads/sample-papers" },
+                    { label: "School Calendar 2026-27", href: "/admissions/calendar" },
                   ].map((link) => (
                     <li key={link.label}>
                       <Link
@@ -172,7 +173,6 @@ export const Footer: React.FC = () => {
                     { label: "Admission Guidelines", href: "/admissions/guidelines" },
                     { label: "Registration Forms", href: "/downloads/admissions" },
                     { label: "Annual Fee Structure", href: "/admissions/fee-structure" },
-                    { label: "School Calendar 2026-27", href: "/admissions/calendar" },
                   ] as { label: string; href: string; external?: boolean }[]).map((link) => (
                     <li key={link.label}>
                       {link.external ? (
