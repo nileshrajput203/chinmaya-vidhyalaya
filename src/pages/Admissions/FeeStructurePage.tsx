@@ -9,21 +9,27 @@ import {
   PhoneCall, 
   Mail, 
   ShieldCheck,
-  FileText
+  FileText,
+  RotateCw
 } from 'lucide-react';
 import { Breadcrumb } from '../../components/common/Breadcrumb';
 import { BadgePill } from '../../components/ui/badge-pill';
 
 export const FeeStructurePage: React.FC = () => {
-  // Image zoom and fullscreen state
+  // Image zoom, rotation, and fullscreen state
   const [zoomLevel, setZoomLevel] = useState<number>(100);
+  const [rotation, setRotation] = useState<number>(0);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   
   const displayImage = '/images/fees-structure.webp';
 
   const handleZoomIn = () => setZoomLevel((prev) => Math.min(prev + 25, 250));
   const handleZoomOut = () => setZoomLevel((prev) => Math.max(prev - 25, 50));
-  const handleResetZoom = () => setZoomLevel(100);
+  const handleResetZoom = () => {
+    setZoomLevel(100);
+    setRotation(0);
+  };
+  const handleRotate = () => setRotation((prev) => (prev + 90) % 360);
 
   return (
     <div className="min-h-screen bg-white text-[#181C20] pb-24">
@@ -128,6 +134,16 @@ export const FeeStructurePage: React.FC = () => {
               <div className="h-4 w-px bg-slate-200 mx-0.5" />
               <button
                 type="button"
+                onClick={handleRotate}
+                className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 transition-all"
+                title="Rotate 90°"
+                aria-label="Rotate 90°"
+              >
+                <RotateCw className="w-4 h-4" />
+              </button>
+              <div className="h-4 w-px bg-slate-200 mx-0.5" />
+              <button
+                type="button"
                 onClick={() => setIsFullscreen(true)}
                 className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-700 transition-all"
                 title="View Fullscreen"
@@ -141,8 +157,8 @@ export const FeeStructurePage: React.FC = () => {
           {/* Interactive Document Image Container */}
           <div className="p-4 sm:p-8 bg-[#F4F1EA]/60 flex items-center justify-center overflow-auto min-h-[500px] max-h-[85vh]">
             <div 
-              className="transition-transform duration-200 ease-out origin-top flex items-center justify-center shadow-lg rounded-2xl bg-white p-2 border border-[#E7E2D8]"
-              style={{ transform: `scale(${zoomLevel / 100})` }}
+              className="transition-transform duration-200 ease-out origin-center flex items-center justify-center shadow-lg rounded-2xl bg-white p-2 border border-[#E7E2D8]"
+              style={{ transform: `scale(${zoomLevel / 100}) rotate(${rotation}deg)` }}
             >
               <img
                 src={displayImage}
@@ -276,6 +292,15 @@ export const FeeStructurePage: React.FC = () => {
               </button>
               <button
                 type="button"
+                onClick={handleRotate}
+                className="px-2.5 py-1.5 bg-white/10 hover:bg-white/20 rounded-lg text-xs flex items-center gap-1.5"
+                title="Rotate 90°"
+              >
+                <RotateCw className="w-3.5 h-3.5" />
+                <span>Rotate</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => setIsFullscreen(false)}
                 className="px-4 py-1.5 bg-red-600 hover:bg-red-700 rounded-lg text-xs font-bold ml-2"
               >
@@ -288,8 +313,8 @@ export const FeeStructurePage: React.FC = () => {
             <img
               src={displayImage}
               alt="Chinmaya Vidyalaya Annual Fee Structure 2026-2027 Fullscreen"
-              className="max-h-[90vh] max-w-[95vw] object-contain rounded-xl shadow-2xl"
-              style={{ transform: `scale(${zoomLevel / 100})` }}
+              className="max-h-[90vh] max-w-[95vw] object-contain rounded-xl shadow-2xl transition-transform duration-200"
+              style={{ transform: `scale(${zoomLevel / 100}) rotate(${rotation}deg)` }}
             />
           </div>
         </div>
