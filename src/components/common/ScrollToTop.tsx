@@ -16,6 +16,10 @@ export const ScrollToTop = () => {
   useEffect(() => {
     // If navigating to a hash anchor, scroll to anchor, else scroll to top
     if (hash) {
+      let attempts = 0;
+      const maxAttempts = 15;
+      let timerId: ReturnType<typeof setTimeout>;
+
       const scrollToHashElement = () => {
         try {
           const element = document.querySelector(hash);
@@ -34,11 +38,16 @@ export const ScrollToTop = () => {
         return false;
       };
 
-      if (!scrollToHashElement()) {
-        const timeoutId = setTimeout(scrollToHashElement, 150);
-        return () => clearTimeout(timeoutId);
-      }
-      return;
+      const tryScroll = () => {
+        if (scrollToHashElement()) return;
+        attempts++;
+        if (attempts < maxAttempts) {
+          timerId = setTimeout(tryScroll, 100);
+        }
+      };
+
+      tryScroll();
+      return () => clearTimeout(timerId);
     }
 
     // Always reset to top (0, 0) on new route/section click

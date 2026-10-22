@@ -195,8 +195,12 @@ export const FourPillarsShowcase: React.FC = () => {
             <div
               key={pillar.number}
               id={`pillar-${pillar.number}`}
-              className="relative scroll-mt-24"
+              className="relative scroll-mt-24 sm:scroll-mt-28"
             >
+              {/* Flexible deep-link anchor targets (#pillar-2, #pillar-culture, #culture, etc.) */}
+              <span id={`pillar-${parseInt(pillar.number, 10)}`} className="absolute -top-24 sm:-top-28 pointer-events-none" />
+              <span id={pillar.number === '01' ? 'pillar-integrated' : pillar.number === '02' ? 'pillar-culture' : pillar.number === '03' ? 'pillar-patriotism' : 'pillar-universal'} className="absolute -top-24 sm:-top-28 pointer-events-none" />
+              <span id={pillar.number === '01' ? 'integrated' : pillar.number === '02' ? 'culture' : pillar.number === '03' ? 'patriotism' : 'universal'} className="absolute -top-24 sm:-top-28 pointer-events-none" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                 
                 {/* Visual / Image Column with Overlapping Number */}

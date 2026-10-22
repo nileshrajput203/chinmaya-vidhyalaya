@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export interface PillarData {
   num: string;
@@ -32,7 +32,7 @@ const CVP_PILLARS: PillarData[] = [
       'True education nurtures the entire being - harmonizing physical vitality, an analytical intellect, and emotional equilibrium to build purposeful leaders.',
     explanation:
       'The first pillar of the Chinmaya Vision Programme harmonizes the multidimensional growth of every child. Through morning yoga, sports, experiential science labs, and mindful self-reflection, students cultivate physical vigor, critical thinking, and inner poise.',
-    targetUrl: '/about/four-pillars',
+    targetUrl: '/about/philosophy#pillar-01',
     keyPoints: [
       'Daily Surya Namaskar, Pranayama & holistic wellness regimen',
       'Inquiry-driven STEM laboratories & analytical problem-solving',
@@ -53,7 +53,7 @@ const CVP_PILLARS: PillarData[] = [
       'Rooted in ancient wisdom, our heritage is a living moral compass - instilling reverence, cultural pride, and righteous character in every young mind.',
     explanation:
       'The second pillar anchors students in India’s timeless cultural ethos. Through daily morning prayers, Sanskrit chanting, value-based discussions, and celebrations of traditional festivals, students develop deep respect for elders, humility, and unshakeable ethical grounding.',
-    targetUrl: '/features/spiritual-activities',
+    targetUrl: '/about/philosophy#pillar-02',
     keyPoints: [
       'Daily morning prayer assembly, shloka chanting & value education',
       'Annual Bhagavad Gita chanting competitions & cultural forums',
@@ -74,7 +74,7 @@ const CVP_PILLARS: PillarData[] = [
       'Patriotism is translated into action through dedicated community seva, civic awareness, and selfless service to the motherland and society.',
     explanation:
       'The third pillar nurtures responsible, empathetic citizens committed to national progress. Through democratic house governance, tree plantation drives, and local community outreach across Tarapur, learners internalize that the highest honor is serving society with dedication.',
-    targetUrl: '/features/4-pillars#pillar-3',
+    targetUrl: '/about/philosophy#pillar-03',
     keyPoints: [
       'Elected Student Council & democratic leadership development',
       'Jal Pakhwada, green plantation drives & eco-club sustainability',
@@ -95,7 +95,7 @@ const CVP_PILLARS: PillarData[] = [
       'Vasudhaiva Kutumbakam - the whole world is one family. Education must transcend narrow boundaries to foster universal brotherhood and planetary empathy.',
     explanation:
       'The fourth pillar broadens student awareness beyond geographic and cultural borders. By combining rigorous CBSE curricula with a universal Vedantic outlook, students learn to appreciate global cultures, champion environmental sustainability, and lead with empathy.',
-    targetUrl: '/features/4-pillars#pillar-4',
+    targetUrl: '/about/philosophy#pillar-04',
     keyPoints: [
       'Universal prayer framework honoring global peace & goodwill',
       'Globally benchmarked CBSE academic standards & critical thinking',
@@ -107,6 +107,7 @@ const CVP_PILLARS: PillarData[] = [
 
 export const ChinmayaVisionPillarsShowcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const prevPillar = () => {
     setCurrentIndex((prev) => (prev - 1 + CVP_PILLARS.length) % CVP_PILLARS.length);
@@ -149,7 +150,14 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
               return (
                 <button
                   key={p.num}
-                  onClick={() => setCurrentIndex(idx)}
+                  onClick={() => {
+                    if (isActive) {
+                      navigate(p.targetUrl);
+                    } else {
+                      setCurrentIndex(idx);
+                    }
+                  }}
+                  title={isActive ? `Explore ${p.tabLabel} pillar on 4 Pillars of CVP page` : `View ${p.tabLabel} details`}
                   style={{
                     backgroundColor: isActive ? 'var(--color-dark)' : 'var(--color-bg)',
                     color: isActive ? 'var(--color-dark-text)' : 'var(--color-text)',
@@ -198,7 +206,9 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                   style={{ color: 'var(--color-primary)' }}
                   className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-[1.05] m-0 whitespace-pre-line"
                 >
-                  {current.shortTitle}
+                  <Link to={current.targetUrl} className="hover:opacity-90 transition-opacity">
+                    {current.shortTitle}
+                  </Link>
                 </h3>
                 <span
                   style={{ color: 'var(--color-text)' }}
@@ -245,27 +255,33 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                   transition={{ duration: 0.35, ease: 'easeOut' }}
                   className="w-full h-full flex items-center justify-center"
                 >
-                  {current.isCutout ? (
-                    /* Transparent cutouts: 100% opacity, sitting directly on section bg */
-                    <img
-                      src={current.image}
-                      alt={current.pillarTitle}
-                      className={`h-full w-auto max-h-full max-w-full opacity-100 filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] pointer-events-none transition-all duration-300 ${
-                        current.num === '02'
-                          ? 'object-contain object-center scale-100 sm:scale-105'
-                          : 'object-contain object-bottom'
-                      }`}
-                    />
-                  ) : (
-                    /* Other Pillars: Clean, 100% opacity photographic card */
-                    <div className="w-full h-full rounded-none overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+                  <Link
+                    to={current.targetUrl}
+                    title={`Explore ${current.pillarTitle}`}
+                    className="w-full h-full flex items-center justify-center cursor-pointer group"
+                  >
+                    {current.isCutout ? (
+                      /* Transparent cutouts: 100% opacity, sitting directly on section bg */
                       <img
                         src={current.image}
                         alt={current.pillarTitle}
-                        className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 hover:scale-105"
+                        className={`h-full w-auto max-h-full max-w-full opacity-100 filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover:scale-105 ${
+                          current.num === '02'
+                            ? 'object-contain object-center scale-100 sm:scale-105'
+                            : 'object-contain object-bottom'
+                        }`}
                       />
-                    </div>
-                  )}
+                    ) : (
+                      /* Other Pillars: Clean, 100% opacity photographic card */
+                      <div className="w-full h-full rounded-none overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+                        <img
+                          src={current.image}
+                          alt={current.pillarTitle}
+                          className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+                  </Link>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -296,7 +312,9 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                     style={{ color: 'var(--color-text)' }}
                     className="text-xl sm:text-2xl font-display font-black uppercase tracking-tight mt-0.5"
                   >
-                    {current.pillarTitle}
+                    <Link to={current.targetUrl} className="hover:text-[var(--color-primary)] transition-colors">
+                      {current.pillarTitle}
+                    </Link>
                   </h4>
                 </div>
 
