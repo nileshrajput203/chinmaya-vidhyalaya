@@ -30,7 +30,7 @@ export const CareersPage: React.FC = () => {
     name: '',
     email: '',
     phone: '',
-    position: 'PGT / TGT Mathematics & Science',
+    position: '',
     qualification: '',
     experience: '',
     message: ''
@@ -91,6 +91,10 @@ export const CareersPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.position) {
+      alert('Please select a position applied for.');
+      return;
+    }
     setIsSubmitted(true);
     showSuccess(
       'Application Submitted Successfully!',
@@ -330,6 +334,7 @@ export const CareersPage: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
                     className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   >
+                    <option value="">Select Position Applied For</option>
                     {jobOpenings.map(job => (
                       <option key={job.id} value={job.title}>{job.title}</option>
                     ))}

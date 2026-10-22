@@ -97,7 +97,7 @@ export const AlumniPage: React.FC = () => {
     currentCity: '',
     profession: '',
     organization: '',
-    willingToMentor: true,
+    willingToMentor: false,
     message: ''
   });
 

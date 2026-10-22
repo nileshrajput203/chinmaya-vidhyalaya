@@ -30,20 +30,20 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
   const [quickData, setQuickData] = useState({
     parentName: '',
     phone: '',
-    grade: 'Class 1',
-    callbackTime: 'Morning (9 AM - 12 PM)',
+    grade: '',
+    callbackTime: '',
   });
 
   // Detailed form state
   const [detailedData, setDetailedData] = useState({
     studentName: '',
     parentName: '',
-    grade: 'Class 1',
+    grade: '',
     dob: '',
-    gender: 'Male',
+    gender: '',
     phone: '',
     email: '',
-    cityArea: 'Boisar / Tarapur',
+    cityArea: '',
     prevSchool: '',
   });
 
@@ -304,6 +304,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                           onChange={(e) => setQuickData({ ...quickData, grade: e.target.value })}
                           className="w-full pl-9 pr-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B] transition-all cursor-pointer appearance-none"
                         >
+                          <option value="">Select Class / Grade</option>
                           {GRADE_OPTIONS.map((g) => (
                             <option key={g} value={g}>{g}</option>
                           ))}
@@ -322,6 +323,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         onChange={(e) => setQuickData({ ...quickData, callbackTime: e.target.value })}
                         className="py-1 px-2 text-[11px] bg-white border border-slate-200 rounded text-[#333333] focus:outline-none focus:border-[#DF711B]"
                       >
+                        <option value="">Select Callback Slot</option>
                         <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
                         <option value="Afternoon (12 PM - 3 PM)">Afternoon (12 PM - 3 PM)</option>
                         <option value="Evening (3 PM - 6 PM)">Evening (3 PM - 6 PM)</option>
@@ -396,6 +398,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         onChange={(e) => setDetailedData({ ...detailedData, grade: e.target.value })}
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] cursor-pointer"
                       >
+                        <option value="">Select Grade</option>
                         {GRADE_OPTIONS.map((g) => (
                           <option key={g} value={g}>{g}</option>
                         ))}

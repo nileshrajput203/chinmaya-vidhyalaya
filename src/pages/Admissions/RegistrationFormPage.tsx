@@ -27,7 +27,7 @@ interface RegistrationData {
   // Student particulars
   studentName: string;
   dob: string;
-  gender: 'Male' | 'Female' | 'Other';
+  gender: 'Male' | 'Female' | 'Other' | '';
   gradeSeeking: string;
   stream: string;
   bloodGroup: string;
@@ -51,7 +51,7 @@ interface RegistrationData {
   previousSchool: string;
   previousGrade: string;
   previousBoard: string;
-  hasTC: 'Yes' | 'In Progress' | 'Not Applicable';
+  hasTC: 'Yes' | 'In Progress' | 'Not Applicable' | '';
 
   // Medical & Remarks
   medicalNotes: string;
@@ -64,10 +64,10 @@ interface RegistrationData {
 const INITIAL_REGISTRATION_DATA: RegistrationData = {
   studentName: '',
   dob: '',
-  gender: 'Male',
-  gradeSeeking: 'Nursery',
-  stream: 'Science',
-  bloodGroup: 'B+',
+  gender: '',
+  gradeSeeking: '',
+  stream: '',
+  bloodGroup: '',
   motherTongue: '',
   aadhaarNumber: '',
 
@@ -80,13 +80,13 @@ const INITIAL_REGISTRATION_DATA: RegistrationData = {
   primaryPhone: '',
   email: '',
   residentialAddress: '',
-  city: 'Boisar',
-  pincode: '401501',
+  city: '',
+  pincode: '',
 
   previousSchool: '',
   previousGrade: '',
-  previousBoard: 'CBSE',
-  hasTC: 'In Progress',
+  previousBoard: '',
+  hasTC: '',
 
   medicalNotes: '',
   emergencyContact: '',
@@ -132,7 +132,7 @@ export const RegistrationFormPage: React.FC = () => {
   }>({
     name: '',
     phone: '',
-    preferredTime: 'Morning (9:00 AM - 12:00 PM)',
+    preferredTime: '',
     issueTopic: 'Registration Form Assistance',
     submitted: false,
   });
@@ -169,6 +169,12 @@ export const RegistrationFormPage: React.FC = () => {
     }
     if (!formData.dob) {
       newErrors.dob = 'Date of birth is required.';
+    }
+    if (!formData.gender) {
+      newErrors.gender = 'Gender is required.';
+    }
+    if (!formData.gradeSeeking) {
+      newErrors.gradeSeeking = 'Please select a grade/class.';
     }
     if (!formData.fatherName.trim() && !formData.motherName.trim()) {
       newErrors.parentName = "Please enter either Father's or Mother's name.";
@@ -408,12 +414,16 @@ export const RegistrationFormPage: React.FC = () => {
                         name="gender"
                         value={formData.gender}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
+                        className={`w-full px-4 py-2.5 text-sm bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all ${
+                          errors.gender ? 'border-red-500 bg-red-50/20' : 'border-[#E7E2D8]'
+                        }`}
                       >
+                        <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                       </select>
+                      {errors.gender && <p className="text-xs text-red-500 mt-1">{errors.gender}</p>}
                     </div>
 
                     <div>
@@ -424,8 +434,11 @@ export const RegistrationFormPage: React.FC = () => {
                         name="gradeSeeking"
                         value={formData.gradeSeeking}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium"
+                        className={`w-full px-4 py-2.5 text-sm bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium ${
+                          errors.gradeSeeking ? 'border-red-500 bg-red-50/20' : 'border-[#E7E2D8]'
+                        }`}
                       >
+                        <option value="">Select Class / Grade</option>
                         <option value="Nursery">Nursery (Age 3+)</option>
                         <option value="Junior KG">Junior KG (Age 4+)</option>
                         <option value="Senior KG">Senior KG (Age 5+)</option>
@@ -441,6 +454,7 @@ export const RegistrationFormPage: React.FC = () => {
                         <option value="Std XI">Std XI (Senior Secondary)</option>
                         <option value="Std XII">Std XII (Senior Secondary)</option>
                       </select>
+                      {errors.gradeSeeking && <p className="text-xs text-red-500 mt-1">{errors.gradeSeeking}</p>}
                     </div>
 
                     {isSeniorSecondary ? (
@@ -454,6 +468,7 @@ export const RegistrationFormPage: React.FC = () => {
                           onChange={handleInputChange}
                           className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all font-medium text-[#DF711B]"
                         >
+                          <option value="">Select Stream</option>
                           <option value="Science">Science (Physics, Chem, Bio/Maths, Comp)</option>
                           <option value="Commerce">Commerce (Accountancy, Business Studies, Economics)</option>
                           <option value="Humanities">Humanities / Arts</option>
@@ -470,6 +485,7 @@ export const RegistrationFormPage: React.FC = () => {
                           onChange={handleInputChange}
                           className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                         >
+                          <option value="">Select Blood Group</option>
                           <option value="A+">A+</option>
                           <option value="A-">A-</option>
                           <option value="B+">B+</option>
@@ -665,6 +681,7 @@ export const RegistrationFormPage: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full px-4 py-2.5 text-sm bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#DF711B]/20 transition-all"
                       >
+                        <option value="">Select TC Status</option>
                         <option value="Yes">TC In Hand</option>
                         <option value="In Progress">TC Applied / Awaited</option>
                         <option value="Not Applicable">Not Applicable (Fresh Nursery Entry)</option>
@@ -862,6 +879,7 @@ export const RegistrationFormPage: React.FC = () => {
                       onChange={e => setCallbackRequest(prev => ({ ...prev, preferredTime: e.target.value }))}
                       className="w-full px-3 py-2 text-xs bg-white border border-[#E7E2D8] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#DF711B] text-slate-700"
                     >
+                      <option value="">Select Preferred Time</option>
                       <option value="Morning (9:00 AM - 12:00 PM)">Morning (9:00 AM - 12:00 PM)</option>
                       <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
                       <option value="Immediate / Earliest">Immediate / Earliest Desk Window</option>

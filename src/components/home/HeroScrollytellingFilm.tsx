@@ -374,7 +374,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     studentName: '',
     parentName: '',
     phone: '',
-    grade: 'Class 1',
+    grade: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -393,6 +393,11 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
     if (!nameRegex.test(formData.parentName.trim()) || formData.parentName.trim().length < 2) {
       setSubmitError("Please enter a valid parent or guardian name containing only letters.");
+      return;
+    }
+
+    if (!formData.grade) {
+      setSubmitError("Please select a grade/class.");
       return;
     }
 
@@ -590,7 +595,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         type="button"
                         onClick={() => {
                           setIsSubmitted(false);
-                          setFormData({ studentName: '', parentName: '', phone: '', grade: 'Class 1' });
+                          setFormData({ studentName: '', parentName: '', phone: '', grade: '' });
                         }}
                         className="px-4 py-2.5 bg-white border border-[#E7E2D8] hover:bg-[#F5F2EB] text-[#181C20] font-sans font-semibold text-xs rounded-xl transition-all cursor-pointer"
                       >
@@ -662,6 +667,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                         className="w-full px-3.5 py-2 text-xs bg-white border border-[#D5CEC2] text-[#181C20] rounded-xl focus:border-[#DF711B] focus:ring-2 focus:ring-[#DF711B]/20 focus:outline-none transition-all shadow-sm cursor-pointer"
                       >
+                        <option value="">Select Grade / Class</option>
                         <optgroup label="Foundational Stage">
                           <option value="Nursery">Nursery</option>
                           <option value="Junior KG">Junior KG</option>

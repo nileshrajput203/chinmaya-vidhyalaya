@@ -28,7 +28,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
   const [formData, setFormData] = useState({
     parentName: '',
     studentName: '',
-    grade: 'Nursery',
+    grade: '',
     phone: '',
     email: '',
     message: ''
@@ -47,6 +47,11 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
 
     if (!nameRegex.test(formData.studentName.trim()) || formData.studentName.trim().length < 2) {
       setSubmitError('Please enter a valid student name containing only letters.');
+      return;
+    }
+
+    if (!formData.grade) {
+      setSubmitError('Please select a class / grade applying for.');
       return;
     }
 
@@ -305,6 +310,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                               onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                               className="w-full p-2.5 bg-white border border-[#E7E2D8] rounded-lg focus:outline-none focus:border-[#DF711B]"
                             >
+                              <option value="">Select Grade / Class</option>
                               <option value="Nursery">Nursery</option>
                               <option value="Junior KG">Junior KG</option>
                               <option value="Senior KG">Senior KG</option>

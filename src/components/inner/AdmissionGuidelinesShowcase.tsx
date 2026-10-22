@@ -21,8 +21,8 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
   }>({
     name: '',
     phone: '',
-    grade: 'Primary (Std I to V)',
-    slot: 'Morning (9:00 AM - 12:00 PM)',
+    grade: '',
+    slot: '',
     isBooked: false,
   });
 
@@ -356,6 +356,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                     onChange={(e) => setCallbackState({ ...callbackState, grade: e.target.value })}
                     className="w-full px-3 py-2 border border-[#E7E2D8] rounded-xl text-xs bg-white focus:outline-none focus:border-[#DF711B]"
                   >
+                    <option value="">Select Grade</option>
                     <option>Pre-Primary (Nursery, LKG, UKG)</option>
                     <option>Primary (Std I to V)</option>
                     <option>Middle (Std VI to VIII)</option>
@@ -374,6 +375,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                     onChange={(e) => setCallbackState({ ...callbackState, slot: e.target.value })}
                     className="w-full px-3 py-2 border border-[#E7E2D8] rounded-xl text-xs bg-white focus:outline-none focus:border-[#DF711B]"
                   >
+                    <option value="">Select Time Slot</option>
                     <option>Morning (9:00 AM - 12:00 PM)</option>
                     <option>Afternoon (1:00 PM - 3:30 PM)</option>
                     <option>Evening (4:00 PM - 6:00 PM)</option>

@@ -90,7 +90,7 @@ export const CareerCounsellingShowcase: React.FC = () => {
   const [formData, setFormData] = useState({
     parentName: '',
     studentName: '',
-    currentGrade: 'Class 10',
+    currentGrade: '',
     contactNumber: '',
   });
 
@@ -231,6 +231,10 @@ export const CareerCounsellingShowcase: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.currentGrade) {
+      alert('Please select a grade.');
+      return;
+    }
     setConsultationBooked(true);
   };
 
@@ -530,6 +534,7 @@ export const CareerCounsellingShowcase: React.FC = () => {
                   onChange={(e) => setFormData({ ...formData, currentGrade: e.target.value })}
                   className="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-[#DF711B]"
                 >
+                  <option value="">Select Grade</option>
                   <option value="Class 8">Class 8</option>
                   <option value="Class 9">Class 9</option>
                   <option value="Class 10">Class 10</option>

@@ -30,8 +30,8 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
     parentName: '',
     phone: '',
     email: '',
-    grade: 'Class I - V (Primary)',
-    streamOrCampus: 'Main Campus (Boisar, Tarapur)',
+    grade: '',
+    streamOrCampus: '',
   });
 
   const handleClose = () => {
@@ -152,6 +152,11 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
     const cleanPhone = formData.phone.replace(/[^0-9]/g, '');
     if (cleanPhone.length < 10) {
       setErrorMessage('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    if (!formData.grade) {
+      setErrorMessage('Please select an admission class / grade.');
       return;
     }
 
@@ -373,6 +378,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                           className="w-full px-3 py-2 sm:py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-base sm:text-sm text-[#181818] outline-none cursor-pointer"
                         >
+                          <option value="">Select Grade / Class</option>
                           <option value="Nursery / Pre-Primary">Nursery / Pre-Primary</option>
                           <option value="LKG / UKG">LKG / UKG (Kindergarten)</option>
                           <option value="Class I - V (Primary)">Class I - V (Primary)</option>
@@ -394,6 +400,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           onChange={(e) => setFormData({ ...formData, streamOrCampus: e.target.value })}
                           className="w-full px-3 py-2 sm:py-2.5 bg-white border border-slate-200 focus:border-[#DF711B] rounded-lg text-base sm:text-sm text-[#181818] outline-none cursor-pointer"
                         >
+                          <option value="">Select Campus / Inquiry</option>
                           <option value="Main Campus (Boisar, Tarapur)">Main Campus (Boisar, Tarapur)</option>
                           <option value="Book Campus Tour First">Book Campus Tour First</option>
                           <option value="General Fee & Curriculum Inquiry">General Fee & Curriculum Inquiry</option>
