@@ -7,10 +7,37 @@ export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsVisible(window.scrollY > 520);
+    const onScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      setIsVisible(scrollY > 300);
+    };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    // Also attach to Lenis if active
+    let interval: ReturnType<typeof setInterval> | null = null;
+    const lenis = (window as any).__lenis;
+    if (lenis && typeof lenis.on === 'function') {
+      lenis.on('scroll', onScroll);
+    } else {
+      interval = setInterval(() => {
+        const l = (window as any).__lenis;
+        if (l && typeof l.on === 'function') {
+          l.on('scroll', onScroll);
+          if (interval) clearInterval(interval);
+        }
+      }, 500);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      const l = (window as any).__lenis;
+      if (l && typeof l.off === 'function') {
+        l.off('scroll', onScroll);
+      }
+      if (interval) clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
@@ -74,17 +101,20 @@ export const ScrollToTop = () => {
       title="Back to top"
       onClick={() => {
         const lenis = (window as any).__lenis;
-        if (lenis) {
-          lenis.scrollTo(0, { immediate: false });
+        if (lenis && typeof lenis.scrollTo === 'function') {
+          lenis.scrollTo(0, { immediate: false, duration: 1.2 });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       }}
-      className={`fixed right-3 sm:right-6 bottom-[130px] sm:bottom-24 lg:bottom-8 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#DF711B] text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-[#C45B0E] hover:-translate-y-1 ${
+      className={`fixed right-3 sm:right-6 bottom-[130px] sm:bottom-24 lg:bottom-24 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#DF711B] text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-[#C45B0E] hover:-translate-y-1 hover:scale-105 active:scale-95 group cursor-pointer ${
         isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-3 opacity-0 pointer-events-none'
       }`}
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-5 h-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
+      <span className="hidden lg:group-hover:block absolute right-full mr-2.5 px-2.5 py-1 text-[11px] font-mono font-bold text-white bg-[#0B1E34] rounded-lg whitespace-nowrap shadow-md pointer-events-none">
+        Back to top
+      </span>
     </button>
   );
 };
