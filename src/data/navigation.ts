@@ -11,8 +11,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     children: [
       { label: "Admission Guidelines", href: "/admissions/guidelines", description: "Eligibility criteria, age norms, and application process" },
       { label: "Registration Forms", href: "/downloads/admissions", description: "Download Nursery, KG, and Std I-XII application forms" },
-      { label: "Annual Fee Structure", href: "/admissions/fee-structure", description: "Approved annual fee schedule and installment details" },
-      { label: "School Calendar 2026-27", href: "/admissions/calendar", description: "Term dates, vacations, and examination schedule" }
+      { label: "Annual Fee Structure", href: "/admissions/fee-structure", description: "Approved annual fee schedule and installment details" }
     ]
   },
   {
@@ -21,6 +20,7 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     children: [
       { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Coverage from Nursery to Std XII (Arts, Commerce, Science) scholastic subjects" },
       { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry, Biology, IT labs, library, and spacious classrooms" },
+      { label: "School Calendar 2026-27", href: "/admissions/calendar", description: "Term dates, vacations, and examination schedule" },
       { label: "CBSE Sample Papers", href: "/downloads/sample-papers", description: "Sample question papers and evaluation revision modules" }
     ]
   },

@@ -58,6 +58,8 @@ export const router = createBrowserRouter([
       { path: 'academics/faculty', element: <Navigate to="/academics/curriculum" replace /> },
       { path: 'academics/teaching-strategy', element: <Navigate to="/academics/curriculum" replace /> },
       { path: 'academics/infrastructure', element: <ContentPage {...ACADEMIC_SECTIONS['infrastructure']} categoryLabel="Academics" /> },
+      { path: 'academics/calendar', element: <SchoolCalendarPage /> },
+      { path: 'academics/school-calendar', element: <Navigate to="/academics/calendar" replace /> },
 
       /* ADMISSIONS ROUTES */
       { path: 'admissions', element: <ContentPage {...ABOUT_SECTIONS['enrollment']} categoryLabel="Admissions" /> },

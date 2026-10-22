@@ -174,7 +174,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                     { label: "Admission Guidelines", href: "/admissions/guidelines" },
                     { label: "Registration Forms", href: "/downloads/admissions" },
                     { label: "Annual Fee Structure", href: "/admissions/fee-structure" },
-                    { label: "School Calendar 2026-27", href: "/admissions/calendar" },
                   ] as { label: string; href: string; external?: boolean }[]).map((link) => (
                     <li key={link.label}>
                       {link.external ? (
@@ -213,6 +212,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                   {[
                     { label: "CBSE Curriculum & Syllabi", href: "/academics/curriculum" },
                     { label: "Infrastructure & Science Labs", href: "/academics/infrastructure" },
+                    { label: "School Calendar 2026-27", href: "/admissions/calendar" },
                     { label: "CBSE Sample Papers", href: "/downloads/sample-papers" },
                   ].map((link) => (
                     <li key={link.label}>

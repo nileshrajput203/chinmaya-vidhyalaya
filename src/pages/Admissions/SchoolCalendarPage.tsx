@@ -20,8 +20,8 @@ export const SchoolCalendarPage: React.FC = () => {
       {/* Breadcrumb Navigation */}
       <Breadcrumb
         items={[
-          { label: 'Admissions', href: '/admissions/guidelines' },
-          { label: 'Academic Calendar 2026-27' },
+          { label: 'Academics', href: '/academics/curriculum' },
+          { label: 'School Calendar 2026-27' },
         ]}
       />
 
