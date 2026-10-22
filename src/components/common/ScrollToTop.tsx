@@ -42,16 +42,20 @@ export const ScrollToTop = () => {
     }
 
     // Always reset to top (0, 0) on new route/section click
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'instant' as ScrollBehavior
-    });
 
-    // Also reset Lenis smooth scroller if active
-    if ((window as any).__lenis) {
-      (window as any).__lenis.scrollTo(0, { immediate: true });
+    // Stop any in-progress Lenis animation first (prevents it overriding the reset)
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.stop();
+      lenis.scrollTo(0, { immediate: true });
+      lenis.start();
     }
+
+    // Belt-and-suspenders: hard-reset scroll on both the document root and window
+    // (needed on touch devices where Lenis is not active)
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0; // for Safari
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
   }, [pathname, search, hash]);
 
   return (
