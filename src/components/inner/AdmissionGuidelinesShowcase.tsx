@@ -262,7 +262,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
       {/* ====================================================
           3. IN CASE OF ISSUE / BOOK A CALL OPTION
          ==================================================== */}
-      <div className="bg-gradient-to-br from-[#0B1D30] to-[#182C44] text-white rounded-3xl p-8 sm:p-10 border border-[#233B59] shadow-xl space-y-6">
+      <div className="bg-[#0B1D30] text-white rounded-3xl p-8 sm:p-10 border border-[#233B59] shadow-xl space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 border border-[#DF711B]/40 text-[#DF711B] text-xs font-mono font-bold">

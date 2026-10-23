@@ -177,7 +177,7 @@ export const FeeStructurePage: React.FC = () => {
         </div>
 
         {/* Accounts Office Desk Card - Deep Navy Theme */}
-        <div className="bg-gradient-to-br from-[#0B1E34] via-[#0F2744] to-[#162F52] text-white border border-[#28466E] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
+        <div className="bg-[#0B1E34] text-white border border-[#28466E] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-4">
               <div className="flex items-center gap-2">

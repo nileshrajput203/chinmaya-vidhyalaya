@@ -1,7 +1,6 @@
 import React from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SpotlightCard } from '../ui/spotlight-card';
 
 interface DailyPractice {
   dimension: string;
@@ -308,9 +307,8 @@ export const FourPillarsShowcase: React.FC = () => {
       </div>
 
       {/* 3. Footer Admissions & Campus Visit Callout */}
-      <SpotlightCard
-        spotlightColor="rgba(255, 255, 255, 0.1)"
-        className="bg-gradient-to-r from-[#DF711B] to-[#C8652D] text-white p-6 sm:p-10 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6"
+      <div
+        className="bg-[#DF711B] text-white p-6 sm:p-10 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6"
       >
         <div className="space-y-2 text-center md:text-left">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-200 block">
@@ -338,7 +336,7 @@ export const FourPillarsShowcase: React.FC = () => {
             <span>Visit Campus</span>
           </Link>
         </div>
-      </SpotlightCard>
+      </div>
     </div>
   );
 };

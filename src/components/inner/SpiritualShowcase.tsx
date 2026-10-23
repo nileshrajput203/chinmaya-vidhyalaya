@@ -9,7 +9,7 @@ export const SpiritualShowcase: React.FC = () => {
       {/* Hero Spiritual Narrative */}
       <SpotlightCard
         spotlightColor="rgba(223, 113, 27, 0.1)"
-        className="bg-gradient-to-br from-[#FFF9F2] via-[#FAF3E8] to-[#F5ECE0] border-2 border-[#DF711B]/40 rounded-3xl p-6 sm:p-10 shadow-card space-y-6 relative overflow-hidden"
+        className="bg-[#FAF8F5] border-2 border-[#DF711B]/40 rounded-3xl p-6 sm:p-10 shadow-card space-y-6 relative overflow-hidden"
       >
         <div className="space-y-3 max-w-3xl">
           <div className="flex flex-wrap items-center gap-2">

@@ -14,7 +14,7 @@ export const HeritageShowcase: React.FC = () => {
     <div className="w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-12">
         {/* Hero Master Tribute Banner */}
-        <SpotlightCard className="bg-gradient-to-br from-[#FFF9F2] via-[#FAF3E8] to-[#F5ECE0] border-2 border-[#DF711B]/40 rounded-3xl p-8 sm:p-12 shadow-card space-y-8 relative overflow-hidden">
+        <SpotlightCard className="bg-[#FAF8F5] border-2 border-[#DF711B]/40 rounded-3xl p-8 sm:p-12 shadow-card space-y-8 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <div className="flex flex-wrap items-center gap-2">

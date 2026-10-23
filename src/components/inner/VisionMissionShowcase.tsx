@@ -426,7 +426,7 @@ export const VisionMissionShowcase: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative pt-8 sm:pt-10">
           {/* Sticky Left Column: Image & Rotating Title Showcase (Desktop) */}
           <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-20 space-y-4">
-            <div className="bg-gradient-to-br from-[#E6731B] via-[#DF711B] to-[#C75A0A] text-white p-5 rounded-3xl border border-[#DF711B]/40 shadow-xl shadow-orange-950/20 space-y-3.5">
+            <div className="bg-[#DF711B] text-white p-5 rounded-3xl border border-[#DF711B]/40 shadow-xl shadow-orange-950/20 space-y-3.5">
               <div className="flex items-center justify-between border-b border-white/20 pb-2.5">
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-amber-200 font-extrabold">

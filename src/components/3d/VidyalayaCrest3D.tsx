@@ -134,7 +134,7 @@ export const VidyalayaCrest3D: React.FC<{ className?: string }> = ({ className =
 
   if (hasWebGlError) {
     return (
-      <div className={`relative flex items-center justify-center p-8 bg-gradient-to-br from-[#0B1D30] to-[#162A45] rounded-3xl border border-[#DF711B]/30 shadow-2xl ${className}`}>
+      <div className={`relative flex items-center justify-center p-8 bg-[#0B1D30] rounded-3xl border border-[#DF711B]/30 shadow-2xl ${className}`}>
         <div className="text-center space-y-4">
           <div className="w-24 h-24 rounded-full bg-[#DF711B]/20 border border-[#DF711B]/40 flex items-center justify-center mx-auto text-[#FFB740]">
             <Shield className="w-12 h-12" />

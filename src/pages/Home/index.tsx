@@ -580,7 +580,7 @@ export const HomePage: React.FC = () => {
       {/* ----------------------------------------------------
           SECTION 08 - MASTER FINAL CONVERSION BANNER (ADMISSIONS)
          ---------------------------------------------------- */}
-      <section className="py-14 sm:py-20 md:py-28 bg-gradient-to-br from-[#DF711B] via-[#C45B0E] to-[#9C3E08] text-white relative overflow-hidden shadow-2xl">
+      <section className="py-14 sm:py-20 md:py-28 bg-[#DF711B] text-white relative overflow-hidden shadow-2xl">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-7 relative z-10">
           
           <div className="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 text-[10px] sm:text-[11px] font-mono tracking-widest text-[#FFB740] uppercase font-bold border border-white/20 rounded-full">

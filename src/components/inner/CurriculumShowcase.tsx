@@ -62,10 +62,7 @@ export const CurriculumShowcase: React.FC = () => {
     <div className="space-y-12">
       
       {/* 1. HERO INSTITUTIONAL CREDENTIAL SPOTLIGHT */}
-      <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B1E34] via-[#112845] to-[#181C20] text-white p-5 sm:p-8 lg:p-12 border border-[#E7E2D8]/20 shadow-2xl">
-        {/* Subtle Background Glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#DF711B]/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0B1E34] text-white p-5 sm:p-8 lg:p-12 border border-[#E7E2D8]/20 shadow-2xl">
 
         <div className="relative z-10 space-y-4 sm:space-y-6">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">

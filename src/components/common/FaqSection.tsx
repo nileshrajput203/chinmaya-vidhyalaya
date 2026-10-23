@@ -459,7 +459,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
           
           {/* Shifted Left Helpdesk Container */}
           <div className="flex-1 w-full p-1 sm:p-1.5 rounded-3xl bg-[#0B1D30]/10 border border-[#DF711B]/30 shadow-2xl">
-            <div className="bg-gradient-to-br from-[#0B1D30] to-[#162E4A] text-white p-6 sm:p-8 md:p-9 rounded-[calc(1.5rem-0.375rem)] flex flex-col xl:flex-row items-center justify-between gap-6">
+            <div className="bg-[#0B1D30] text-white p-6 sm:p-8 md:p-9 rounded-[calc(1.5rem-0.375rem)] flex flex-col xl:flex-row items-center justify-between gap-6">
               
               <div className="space-y-3 text-center xl:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DF711B]/20 text-[#DF711B] text-xs font-mono font-bold uppercase tracking-widest border border-[#DF711B]/40">

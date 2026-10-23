@@ -420,7 +420,7 @@ export const BlogPage: React.FC = () => {
 
               {/* Quote Highlight Box */}
               {activeArticle.quote && (
-                <div className="p-6 rounded-2xl bg-gradient-to-r from-[#FFF7DF] to-[#FAF3E8] border-l-4 border-[#DF711B] flex items-start gap-4">
+                <div className="p-6 rounded-2xl bg-[#FFF7DF] border-l-4 border-[#DF711B] flex items-start gap-4">
                   <Quote className="w-8 h-8 text-[#DF711B] shrink-0 mt-1" />
                   <div className="space-y-2">
                     <p className="font-cinzel text-base sm:text-lg font-bold text-[#0B1E34] italic">

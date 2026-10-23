@@ -399,7 +399,7 @@ export const CareerCounsellingShowcase: React.FC = () => {
       </section>
 
       {/* ─── STREAM SELECTION AT A GLANCE (CLASS XI & XII) ─── */}
-      <div className="bg-gradient-to-br from-[#0B1E34] to-[#173050] text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-6">
+      <div className="bg-[#0B1E34] text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-6 border border-[#1b3452]">
         <div className="max-w-2xl space-y-2">
           <span className="text-xs font-mono uppercase tracking-widest text-[#DF711B] font-bold">
             Senior Secondary Alignment
