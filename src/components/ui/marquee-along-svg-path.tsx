@@ -379,7 +379,6 @@ const MarqueeAlongSvgPath = ({
         style={{ contain: "layout style" }}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width={width}
           height={height}
           viewBox={viewBox}

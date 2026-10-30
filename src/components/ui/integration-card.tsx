@@ -83,7 +83,6 @@ interface IntegrationItem {
 const FigmaLogo = ({ className }: { className?: string }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 19 28"
       fill="none"
       className={className}
@@ -99,7 +98,6 @@ const FigmaLogo = ({ className }: { className?: string }) => {
 const ClaudeLogo = ({ className }: { className?: string }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 28 28"
       fill="none"
       className={className}
@@ -122,7 +120,6 @@ const ClaudeLogo = ({ className }: { className?: string }) => {
 const ShadcnLogo = ({ className }: { className?: string }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 26 26"
       fill="none"
       className={className}
@@ -144,7 +141,6 @@ const ShadcnLogo = ({ className }: { className?: string }) => {
 const ReactLogo = ({ className }: { className?: string }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 28 28"
       fill="none"
       className={className}
@@ -164,7 +160,6 @@ const ReactLogo = ({ className }: { className?: string }) => {
 const MotionLogo = ({ className }: { className?: string }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 28 28"
       fill="none"
       className={className}
@@ -187,7 +182,6 @@ const MotionLogo = ({ className }: { className?: string }) => {
 const TailwindLogo = ({ className }: { className?: string }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 28 28"
       fill="none"
       className={className}
@@ -309,8 +303,7 @@ export function Integration() {
         className="pointer-events-none absolute inset-0 h-full w-full"
         viewBox="0 0 564 410"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+        >
         {integrations.map((integration) => (
           <AnimatedPath
             key={integration.id}
