@@ -37,11 +37,11 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Physics Laboratory',
     gallery: [
-      { src: '/images/pages/academics/laboratories/physics/physics-lab-infra-1.jpg', caption: 'Physics Lab Infrastructure: Workbenches, Equipment Cabinets & Chalkboard Station' },
-      { src: '/images/pages/academics/laboratories/physics/physics-lab-2.jpg', caption: 'Students Performing Optical Bench & Sonometer Experiments at Individual Stations' },
-      { src: '/images/pages/academics/laboratories/physics/physics-lab-3.jpg', caption: 'Hands-on Practicals: Senior Students with Travelling Microscope & Vernier Calipers' },
-      { src: '/images/pages/academics/laboratories/physics/physics-lab-4.jpg', caption: 'Full-Class Physics Practical Session: 40+ Students Across Workstations' },
-      { src: '/images/pages/academics/laboratories/physics/physics-lab-5.jpg', caption: 'Faculty-Guided Demonstration: Optical Bench Calibration & Ray Optics Setup' }
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-infra-1.jpg?v=2', caption: 'Physics Lab Infrastructure: Workbenches, Equipment Cabinets & Chalkboard Station' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-2.jpg?v=2', caption: 'Students Performing Optical Bench & Sonometer Experiments at Individual Stations' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-3.jpg?v=2', caption: 'Hands-on Practicals: Senior Students with Travelling Microscope & Vernier Calipers' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-4.jpg?v=2', caption: 'Full-Class Physics Practical Session: 40+ Students Across Workstations' },
+      { src: '/images/pages/academics/laboratories/physics/physics-lab-5.jpg?v=2', caption: 'Faculty-Guided Demonstration: Optical Bench Calibration & Ray Optics Setup' }
     ],
     badge: 'CBSE Senior STEM Lab',
     tagline: 'Precision Optics, Mechanics, Sound & Electromagnetic Investigation',
@@ -71,14 +71,14 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Chemistry Laboratory',
     gallery: [
-      { src: '/images/pages/academics/laboratories/chemistry/chem-1.jpg', caption: 'Chemistry Lab Overview: Fully Equipped Workstations & Reagent Shelves' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-dsc.jpg', caption: 'Students Performing Volumetric Titration with Burettes' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-2.jpg', caption: 'Hands-On Practical: Salt Analysis & Chemical Testing' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-3.jpg', caption: 'Collaborative Lab Session: Students at Titration Benches' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-4.jpg', caption: 'Student Conducting Precise Burette Readings' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-5.jpg', caption: 'Teacher Demonstrating Analytical Techniques to Students' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-6.jpg', caption: 'Student Performing Flask & Reagent Experiment' },
-      { src: '/images/pages/academics/laboratories/chemistry/chem-7.jpg', caption: 'Students Working with Conical Flasks & Bunsen Burners' }
+      { src: '/images/pages/academics/laboratories/chemistry/chem-1.jpg?v=2', caption: 'Chemistry Lab Overview: Fully Equipped Workstations & Reagent Shelves' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-dsc.jpg?v=2', caption: 'Students Performing Volumetric Titration with Burettes' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-2.jpg?v=2', caption: 'Hands-On Practical: Salt Analysis & Chemical Testing' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-3.jpg?v=2', caption: 'Collaborative Lab Session: Students at Titration Benches' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-4.jpg?v=2', caption: 'Student Conducting Precise Burette Readings' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-5.jpg?v=2', caption: 'Teacher Demonstrating Analytical Techniques to Students' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-6.jpg?v=2', caption: 'Student Performing Flask & Reagent Experiment' },
+      { src: '/images/pages/academics/laboratories/chemistry/chem-7.jpg?v=2', caption: 'Students Working with Conical Flasks & Bunsen Burners' }
     ],
     badge: 'CBSE Senior STEM Lab',
     tagline: 'Analytical Titration, Reagents, Kinetics & Qualitative Analysis',
@@ -109,12 +109,12 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Biology Laboratory',
     gallery: [
-      { src: '/images/pages/academics/laboratories/biology/bio-6.jpg', caption: 'Student Observing Specimen Slide Under High-Power Compound Microscope' },
-      { src: '/images/pages/academics/laboratories/biology/bio-2.jpg', caption: 'Senior Student Examining Human Skeletal Model & Recording Observations' },
-      { src: '/images/pages/academics/laboratories/biology/bio-1.jpg', caption: 'Digital Interactive Smart Board, Faculty Station & Anatomical Charts' },
-      { src: '/images/pages/academics/laboratories/biology/bio-3.jpg', caption: 'Specimen Storage Cabinets with Reagents, Stains & Laboratory Glassware' },
-      { src: '/images/pages/academics/laboratories/biology/bio-5.jpg', caption: '3D Human Torso Anatomical Dissection Model in Showcase' },
-      { src: '/images/pages/academics/laboratories/biology/bio-4.jpg', caption: 'Full-Scale Articulated Human Skeleton with Anatomical Reference Key' }
+      { src: '/images/pages/academics/laboratories/biology/bio-6.jpg?v=2', caption: 'Student Observing Specimen Slide Under High-Power Compound Microscope' },
+      { src: '/images/pages/academics/laboratories/biology/bio-2.jpg?v=2', caption: 'Senior Student Examining Human Skeletal Model & Recording Observations' },
+      { src: '/images/pages/academics/laboratories/biology/bio-1.jpg?v=2', caption: 'Digital Interactive Smart Board, Faculty Station & Anatomical Charts' },
+      { src: '/images/pages/academics/laboratories/biology/bio-3.jpg?v=2', caption: 'Specimen Storage Cabinets with Reagents, Stains & Laboratory Glassware' },
+      { src: '/images/pages/academics/laboratories/biology/bio-5.jpg?v=2', caption: '3D Human Torso Anatomical Dissection Model in Showcase' },
+      { src: '/images/pages/academics/laboratories/biology/bio-4.jpg?v=2', caption: 'Full-Scale Articulated Human Skeleton with Anatomical Reference Key' }
     ],
     badge: 'Life Sciences Lab',
     tagline: 'Microscopic Observation, Cytology & Anatomical Specimen Study',
@@ -144,12 +144,12 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Computer & IT Innovation Lab',
     gallery: [
-      { src: '/images/pages/academics/laboratories/it/it-6.jpg', caption: 'Interactive IT & Coding Practical: High-Density Computer Workstations with Projection Feed' },
-      { src: '/images/pages/academics/laboratories/it/it-3.jpg', caption: 'Teacher Mentoring & Hands-on Coding Session: Students at Individual Terminals' },
-      { src: '/images/pages/academics/laboratories/it/it-4.jpg', caption: 'Focused Programming Practice: Students Developing Python & Web Scripts' },
-      { src: '/images/pages/academics/laboratories/it/it-5.jpg', caption: 'Digital Innovation Session: Interactive Smart Screen & Collaborative Workspace' },
-      { src: '/images/pages/academics/laboratories/it/it-1.jpg', caption: 'Computer & IT Lab Infrastructure: Multi-Row Workstations with Ergonomic Seating' },
-      { src: '/images/pages/academics/laboratories/it/it-2.jpg', caption: 'Modular Central Aisle Architecture: Networked Systems with High-Speed Connectivity' }
+      { src: '/images/pages/academics/laboratories/it/it-6.jpg?v=2', caption: 'Interactive IT & Coding Practical: High-Density Computer Workstations with Projection Feed' },
+      { src: '/images/pages/academics/laboratories/it/it-3.jpg?v=2', caption: 'Teacher Mentoring & Hands-on Coding Session: Students at Individual Terminals' },
+      { src: '/images/pages/academics/laboratories/it/it-4.jpg?v=2', caption: 'Focused Programming Practice: Students Developing Python & Web Scripts' },
+      { src: '/images/pages/academics/laboratories/it/it-5.jpg?v=2', caption: 'Digital Innovation Session: Interactive Smart Screen & Collaborative Workspace' },
+      { src: '/images/pages/academics/laboratories/it/it-1.jpg?v=2', caption: 'Computer & IT Lab Infrastructure: Multi-Row Workstations with Ergonomic Seating' },
+      { src: '/images/pages/academics/laboratories/it/it-2.jpg?v=2', caption: 'Modular Central Aisle Architecture: Networked Systems with High-Speed Connectivity' }
     ],
     badge: 'Digital Innovation',
     tagline: 'Networked Computing, Python/Java Coding & Multimedia',
@@ -179,11 +179,11 @@ const FACILITIES: FacilityItem[] = [
     category: 'academic',
     name: 'Central School Library',
     gallery: [
-      { src: '/images/pages/academics/library/lib-1.jpg', caption: 'Central Reading Hall: Spacious Study Desks, Ergonomic Seating & Audio-Visual Setup' },
-      { src: '/images/pages/academics/library/lib-2.jpg', caption: 'Scholastic Periodicals & Magazines: National Geographic Kids, Science Journals & Reference Racks' },
-      { src: '/images/pages/academics/library/lib-3.jpg', caption: 'Quiet Research & Self-Study: Students Immersed in Reference Texts and Note-Taking' },
-      { src: '/images/pages/academics/library/lib-4.jpg', caption: 'Collaborative Learning Environment: Senior Students Engaged in Scholastic Group Reading' },
-      { src: '/images/pages/academics/library/lib-5.jpg', caption: 'Open-Access Book Stacks: Student Exploring Categorized Literature & Reference Archives' }
+      { src: '/images/pages/academics/library/lib-1.jpg?v=2', caption: 'Central Reading Hall: Spacious Study Desks, Ergonomic Seating & Audio-Visual Setup' },
+      { src: '/images/pages/academics/library/lib-2.jpg?v=2', caption: 'Scholastic Periodicals & Magazines: National Geographic Kids, Science Journals & Reference Racks' },
+      { src: '/images/pages/academics/library/lib-3.jpg?v=2', caption: 'Quiet Research & Self-Study: Students Immersed in Reference Texts and Note-Taking' },
+      { src: '/images/pages/academics/library/lib-4.jpg?v=2', caption: 'Collaborative Learning Environment: Senior Students Engaged in Scholastic Group Reading' },
+      { src: '/images/pages/academics/library/lib-5.jpg?v=2', caption: 'Open-Access Book Stacks: Student Exploring Categorized Literature & Reference Archives' }
     ],
     badge: 'Knowledge Hub',
     tagline: 'Over 10,000+ Scholastic Volumes & Serene Reading Lounge',
@@ -210,9 +210,9 @@ const FACILITIES: FacilityItem[] = [
     category: 'sports',
     name: 'Athletic Arena & Sports Fields',
     gallery: [
-      { src: '/images/pages/academics/sports/sports-1.jpg', caption: 'Outdoor Basketball & Sports Court: Marked Playing Surface & High-Hoop Backboards' },
-      { src: '/images/pages/academics/sports/sports-2.jpg', caption: 'Open Campus Arena: Multi-Sport Court Overlooking School Grounds & Greenery' },
-      { src: '/images/pages/academics/sports/sports-3.jpg', caption: 'Expansive Athletic Grass Turf: Outdoor Field & Assembly Grounds with Stage Pavilion' }
+      { src: '/images/pages/academics/sports/sports-1.jpg?v=2', caption: 'Outdoor Basketball & Sports Court: Marked Playing Surface & High-Hoop Backboards' },
+      { src: '/images/pages/academics/sports/sports-2.jpg?v=2', caption: 'Open Campus Arena: Multi-Sport Court Overlooking School Grounds & Greenery' },
+      { src: '/images/pages/academics/sports/sports-3.jpg?v=2', caption: 'Expansive Athletic Grass Turf: Outdoor Field & Assembly Grounds with Stage Pavilion' }
     ],
     badge: 'Physical Conditioning',
     tagline: 'Expansive Campus Grounds for Track, Field & Team Leagues',
@@ -239,10 +239,10 @@ const FACILITIES: FacilityItem[] = [
     category: 'academic',
     name: 'Spacious Ventilated Classrooms',
     gallery: [
-      { src: '/images/pages/academics/classrooms/classroom-1.jpg', caption: 'Spacious Multi-Purpose Examination & Lecture Hall with Modular Desks' },
-      { src: '/images/pages/academics/classrooms/classroom-2.jpg', caption: 'Naturally Lit & Ventilated Classrooms with Active Student-Teacher Mentorship' },
-      { src: '/images/pages/academics/classrooms/classroom-3.jpg', caption: 'Smart Digital Classrooms Equipped with Interactive Flat Panel Displays' },
-      { src: '/images/pages/academics/classrooms/classroom-4.jpg', caption: 'Vibrant Primary Classrooms with Child-Centric Ergonomics & Creative Activity Corners' }
+      { src: '/images/pages/academics/classrooms/classroom-1.jpg?v=2', caption: 'Spacious Multi-Purpose Examination & Lecture Hall with Modular Desks' },
+      { src: '/images/pages/academics/classrooms/classroom-2.jpg?v=2', caption: 'Naturally Lit & Ventilated Classrooms with Active Student-Teacher Mentorship' },
+      { src: '/images/pages/academics/classrooms/classroom-3.jpg?v=2', caption: 'Smart Digital Classrooms Equipped with Interactive Flat Panel Displays' },
+      { src: '/images/pages/academics/classrooms/classroom-4.jpg?v=2', caption: 'Vibrant Primary Classrooms with Child-Centric Ergonomics & Creative Activity Corners' }
     ],
     badge: 'Learning Spaces',
     tagline: 'High-Ceiling Classrooms with Capacity for Over 40 Students',
@@ -269,8 +269,8 @@ const FACILITIES: FacilityItem[] = [
     category: 'campus',
     name: 'Cultural Assembly Arena & Stage',
     gallery: [
-      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-1.jpg', caption: 'Elevated Performance Stage & Cultural Auditorium with Pujya Gurudev Altar' },
-      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-2.jpg', caption: 'Central Courtyard Morning Assembly Arena with Sacred Saraswati Shrine' }
+      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-1.jpg?v=2', caption: 'Elevated Performance Stage & Cultural Auditorium with Pujya Gurudev Altar' },
+      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-2.jpg?v=2', caption: 'Central Courtyard Morning Assembly Arena with Sacred Saraswati Shrine' }
     ],
     badge: 'Cultural Ethos',
     tagline: 'Morning Assembly, Gita Chanting & Annual Day Celebrations',
