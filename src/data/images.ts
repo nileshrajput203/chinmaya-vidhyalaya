@@ -56,8 +56,8 @@ export const SCHOOL_IMAGES = {
   // Leadership & Mentors
   PRINCIPAL: "/images/chinmaya/leadership/principal_dimple_mistry.webp",
   SWAMIJI: "/images/swamiji.webp",
-  TEACHING_STAFF: "/images/chinmaya/leadership/faculty_member_01.jpg",
-  NON_TEACHING_STAFF: "/images/chinmaya/leadership/faculty_member_01.jpg",
+  TEACHING_STAFF: "/images/board-conference-room.webp",
+  NON_TEACHING_STAFF: "/images/board-conference-room.webp",
 };
 
 // ----------------------------------------------------------------------------
@@ -116,7 +116,7 @@ export const PANEL_B_MOVING_GALLERY_COL2 = [
   { src: "/images/chinmaya/academics/classroom_learning_001.webp", title: "Smart Interactive Classes" },
   { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg", title: "Performing Arts" },
   { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg", title: "Youth Choir" },
-  { src: "/images/chinmaya/leadership/faculty_member_01.jpg", title: "Faculty & Mentors" },
+  { src: "/images/board-conference-room.webp", title: "Faculty & Mentors" },
 ];
 
 // ----------------------------------------------------------------------------

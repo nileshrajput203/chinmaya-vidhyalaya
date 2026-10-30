@@ -2919,56 +2919,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Campus Infrastructure & Grounds 003 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-campus-campus_facilities_004",
-    title: "Campus Infrastructure & Grounds 004",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_004.jpg",
-    caption: "Campus Infrastructure & Grounds 004 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_005",
-    title: "Campus Infrastructure & Grounds 005",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_005.jpg",
-    caption: "Campus Infrastructure & Grounds 005 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_006",
-    title: "Campus Infrastructure & Grounds 006",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_006.jpg",
-    caption: "Campus Infrastructure & Grounds 006 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_007",
-    title: "Campus Infrastructure & Grounds 007",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_007.jpg",
-    caption: "Campus Infrastructure & Grounds 007 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_008",
-    title: "Campus Infrastructure & Grounds 008",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_008.jpg",
-    caption: "Campus Infrastructure & Grounds 008 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-faculty-mentorship",
     title: "Faculty Mentorship & Smart Classrooms",
     category: "campus",
@@ -2977,56 +2927,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg",
     caption: "Faculty mentorship and smart classroom instruction at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_009",
-    title: "Campus Infrastructure & Grounds 009",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_009.jpg",
-    caption: "Campus Infrastructure & Grounds 009 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_010",
-    title: "Campus Infrastructure & Grounds 010",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_010.jpg",
-    caption: "Campus Infrastructure & Grounds 010 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_011",
-    title: "Campus Infrastructure & Grounds 011",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_011.jpg",
-    caption: "Campus Infrastructure & Grounds 011 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_012",
-    title: "Campus Infrastructure & Grounds 012",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_012.jpg",
-    caption: "Campus Infrastructure & Grounds 012 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_013",
-    title: "Campus Infrastructure & Grounds 013",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_013.jpg",
-    caption: "Campus Infrastructure & Grounds 013 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-leadership-faculty_member_01",

@@ -66,7 +66,9 @@ export const InfiniteLoopGallery: React.FC<InfiniteLoopGalleryProps> = ({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
             const target = e.currentTarget;
-            target.style.display = 'none';
+            if (!target.src.includes('/images/banner-1.jpg')) {
+              target.src = '/images/banner-1.jpg';
+            }
           }}
         />
       </div>
