@@ -88,7 +88,7 @@ const row1GalleryImages: InfiniteGalleryItem[] = [
     title: 'Sprint Finish Decider',
     category: 'Athletics',
     desc: 'Thrilling photo-finish moment cheered on by faculty, students, and parents.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_016.webp',
+    url: '/images/chinmaya/sports/sports_athletic_meet_011.webp',
   },
   {
     id: 'row1-9',

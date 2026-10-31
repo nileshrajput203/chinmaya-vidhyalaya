@@ -1,7 +1,6 @@
 import { GalleryItem } from '../types/gallery';
 
 export const OFFICIAL_GALLERY: GalleryItem[] = [
-  // Curated Key School Visuals
   {
     id: "gal-lead-principal",
     title: "School Campus & Academic Wings",
@@ -42,8 +41,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     imageUrl: "/images/guru-paduka-pooja.webp?v=2",
     caption: "Solemn prayer gathering, paduka abhishekam, and bhajans invoking divine grace."
   },
-
-  // Analyzed and Organized Chinmaya School Photo Archives (316 Photographs)
   {
     id: "chinmaya-academics-classroom_learning_001",
     title: "Classroom Interactive Learning 001",
@@ -95,16 +92,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Classroom Interactive Learning 005 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_006",
-    title: "Classroom Interactive Learning 006",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_006.jpg?v=2",
-    caption: "Classroom Interactive Learning 006 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_007",
     title: "Classroom Interactive Learning 007",
     category: "academics",
@@ -115,26 +102,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Classroom Interactive Learning 007 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_008",
-    title: "Classroom Interactive Learning 008",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_008.jpg?v=2",
-    caption: "Classroom Interactive Learning 008 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_009",
-    title: "Classroom Interactive Learning 009",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_009.jpg?v=2",
-    caption: "Classroom Interactive Learning 009 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_010",
     title: "Classroom Interactive Learning 010",
     category: "academics",
@@ -143,16 +110,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2",
     caption: "Classroom Interactive Learning 010 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_011",
-    title: "Classroom Interactive Learning 011",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_011.jpg?v=2",
-    caption: "Classroom Interactive Learning 011 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_001",
@@ -244,10 +201,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_009.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 009 at Chinmaya Vidyalaya, Tarapur."
   },
-];
-
-// Excluded for now (remaining photo archives preserved for future use)
-export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
   {
     id: "chinmaya-cultural-cultural_celebration_010",
     title: "Cultural Stage & Festive Celebration 010",
@@ -299,26 +252,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 013 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_014",
-    title: "Classroom Interactive Learning 014",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_014.jpg?v=2",
-    caption: "Classroom Interactive Learning 014 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_015",
-    title: "Classroom Interactive Learning 015",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_015.jpg?v=2",
-    caption: "Classroom Interactive Learning 015 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_016",
     title: "Classroom Interactive Learning 016",
     category: "academics",
@@ -327,16 +260,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_016.jpg?v=2",
     caption: "Classroom Interactive Learning 016 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_017",
-    title: "Classroom Interactive Learning 017",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_017.jpg?v=2",
-    caption: "Classroom Interactive Learning 017 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-academics-classroom_learning_018",
@@ -349,66 +272,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 018 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_019",
-    title: "Classroom Interactive Learning 019",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_019.jpg?v=2",
-    caption: "Classroom Interactive Learning 019 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_020",
-    title: "Classroom Interactive Learning 020",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_020.jpg?v=2",
-    caption: "Classroom Interactive Learning 020 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_021",
-    title: "Classroom Interactive Learning 021",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_021.jpg?v=2",
-    caption: "Classroom Interactive Learning 021 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_022",
-    title: "Classroom Interactive Learning 022",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_022.jpg?v=2",
-    caption: "Classroom Interactive Learning 022 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_023",
-    title: "Classroom Interactive Learning 023",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_023.jpg?v=2",
-    caption: "Classroom Interactive Learning 023 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_024",
-    title: "Classroom Interactive Learning 024",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_024.jpg?v=2",
-    caption: "Classroom Interactive Learning 024 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_025",
     title: "Classroom Interactive Learning 025",
     category: "academics",
@@ -417,46 +280,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_025.jpg?v=2",
     caption: "Classroom Interactive Learning 025 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_026",
-    title: "Classroom Interactive Learning 026",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_026.jpg?v=2",
-    caption: "Classroom Interactive Learning 026 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_027",
-    title: "Classroom Interactive Learning 027",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_027.jpg?v=2",
-    caption: "Classroom Interactive Learning 027 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_028",
-    title: "Classroom Interactive Learning 028",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_028.jpg?v=2",
-    caption: "Classroom Interactive Learning 028 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_029",
-    title: "Classroom Interactive Learning 029",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_029.jpg?v=2",
-    caption: "Classroom Interactive Learning 029 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-academics-classroom_learning_030",
@@ -479,16 +302,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 031 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_032",
-    title: "Classroom Interactive Learning 032",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_032.jpg?v=2",
-    caption: "Classroom Interactive Learning 032 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_033",
     title: "Classroom Interactive Learning 033",
     category: "academics",
@@ -509,16 +322,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 034 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_035",
-    title: "Classroom Interactive Learning 035",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_035.jpg?v=2",
-    caption: "Classroom Interactive Learning 035 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_036",
     title: "Classroom Interactive Learning 036",
     category: "academics",
@@ -527,86 +330,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_036.jpg?v=2",
     caption: "Classroom Interactive Learning 036 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_037",
-    title: "Classroom Interactive Learning 037",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_037.jpg?v=2",
-    caption: "Classroom Interactive Learning 037 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_038",
-    title: "Classroom Interactive Learning 038",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_038.jpg?v=2",
-    caption: "Classroom Interactive Learning 038 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_039",
-    title: "Classroom Interactive Learning 039",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_039.jpg?v=2",
-    caption: "Classroom Interactive Learning 039 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_040",
-    title: "Classroom Interactive Learning 040",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_040.jpg?v=2",
-    caption: "Classroom Interactive Learning 040 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_041",
-    title: "Classroom Interactive Learning 041",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_041.jpg?v=2",
-    caption: "Classroom Interactive Learning 041 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_042",
-    title: "Classroom Interactive Learning 042",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_042.jpg?v=2",
-    caption: "Classroom Interactive Learning 042 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_043",
-    title: "Classroom Interactive Learning 043",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_043.jpg?v=2",
-    caption: "Classroom Interactive Learning 043 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_044",
-    title: "Classroom Interactive Learning 044",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_044.jpg?v=2",
-    caption: "Classroom Interactive Learning 044 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-academics-classroom_learning_045",
@@ -629,426 +352,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 046 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_047",
-    title: "Classroom Interactive Learning 047",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_047.jpg?v=2",
-    caption: "Classroom Interactive Learning 047 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_048",
-    title: "Classroom Interactive Learning 048",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_048.jpg?v=2",
-    caption: "Classroom Interactive Learning 048 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_049",
-    title: "Classroom Interactive Learning 049",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_049.jpg?v=2",
-    caption: "Classroom Interactive Learning 049 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_050",
-    title: "Classroom Interactive Learning 050",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_050.jpg?v=2",
-    caption: "Classroom Interactive Learning 050 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_051",
-    title: "Classroom Interactive Learning 051",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_051.jpg?v=2",
-    caption: "Classroom Interactive Learning 051 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_052",
-    title: "Classroom Interactive Learning 052",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_052.jpg?v=2",
-    caption: "Classroom Interactive Learning 052 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_053",
-    title: "Classroom Interactive Learning 053",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_053.jpg?v=2",
-    caption: "Classroom Interactive Learning 053 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_054",
-    title: "Classroom Interactive Learning 054",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_054.jpg?v=2",
-    caption: "Classroom Interactive Learning 054 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_055",
-    title: "Classroom Interactive Learning 055",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_055.jpg?v=2",
-    caption: "Classroom Interactive Learning 055 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_056",
-    title: "Classroom Interactive Learning 056",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_056.jpg?v=2",
-    caption: "Classroom Interactive Learning 056 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_057",
-    title: "Classroom Interactive Learning 057",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_057.jpg?v=2",
-    caption: "Classroom Interactive Learning 057 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_058",
-    title: "Classroom Interactive Learning 058",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_058.jpg?v=2",
-    caption: "Classroom Interactive Learning 058 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_059",
-    title: "Classroom Interactive Learning 059",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_059.jpg?v=2",
-    caption: "Classroom Interactive Learning 059 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_060",
-    title: "Classroom Interactive Learning 060",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_060.jpg?v=2",
-    caption: "Classroom Interactive Learning 060 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_061",
-    title: "Classroom Interactive Learning 061",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_061.jpg?v=2",
-    caption: "Classroom Interactive Learning 061 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_062",
-    title: "Classroom Interactive Learning 062",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_062.jpg?v=2",
-    caption: "Classroom Interactive Learning 062 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_063",
-    title: "Classroom Interactive Learning 063",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_063.jpg?v=2",
-    caption: "Classroom Interactive Learning 063 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_064",
-    title: "Classroom Interactive Learning 064",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_064.jpg?v=2",
-    caption: "Classroom Interactive Learning 064 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_065",
-    title: "Classroom Interactive Learning 065",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_065.jpg?v=2",
-    caption: "Classroom Interactive Learning 065 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_066",
-    title: "Classroom Interactive Learning 066",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_066.jpg?v=2",
-    caption: "Classroom Interactive Learning 066 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_067",
-    title: "Classroom Interactive Learning 067",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_067.jpg?v=2",
-    caption: "Classroom Interactive Learning 067 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_068",
-    title: "Classroom Interactive Learning 068",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_068.jpg?v=2",
-    caption: "Classroom Interactive Learning 068 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_069",
-    title: "Classroom Interactive Learning 069",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_069.jpg?v=2",
-    caption: "Classroom Interactive Learning 069 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_070",
-    title: "Classroom Interactive Learning 070",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_070.jpg?v=2",
-    caption: "Classroom Interactive Learning 070 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_071",
-    title: "Classroom Interactive Learning 071",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_071.jpg?v=2",
-    caption: "Classroom Interactive Learning 071 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_072",
-    title: "Classroom Interactive Learning 072",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_072.jpg?v=2",
-    caption: "Classroom Interactive Learning 072 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_073",
-    title: "Classroom Interactive Learning 073",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_073.jpg?v=2",
-    caption: "Classroom Interactive Learning 073 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_074",
-    title: "Classroom Interactive Learning 074",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_074.jpg?v=2",
-    caption: "Classroom Interactive Learning 074 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_075",
-    title: "Classroom Interactive Learning 075",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_075.jpg?v=2",
-    caption: "Classroom Interactive Learning 075 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_076",
-    title: "Classroom Interactive Learning 076",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_076.jpg?v=2",
-    caption: "Classroom Interactive Learning 076 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_077",
-    title: "Classroom Interactive Learning 077",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_077.jpg?v=2",
-    caption: "Classroom Interactive Learning 077 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_078",
-    title: "Classroom Interactive Learning 078",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_078.jpg?v=2",
-    caption: "Classroom Interactive Learning 078 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_079",
-    title: "Classroom Interactive Learning 079",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_079.jpg?v=2",
-    caption: "Classroom Interactive Learning 079 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_080",
-    title: "Classroom Interactive Learning 080",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_080.jpg?v=2",
-    caption: "Classroom Interactive Learning 080 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_081",
-    title: "Classroom Interactive Learning 081",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_081.jpg?v=2",
-    caption: "Classroom Interactive Learning 081 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_082",
-    title: "Classroom Interactive Learning 082",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_082.jpg?v=2",
-    caption: "Classroom Interactive Learning 082 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_083",
-    title: "Classroom Interactive Learning 083",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_083.jpg?v=2",
-    caption: "Classroom Interactive Learning 083 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_084",
-    title: "Classroom Interactive Learning 084",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_084.jpg?v=2",
-    caption: "Classroom Interactive Learning 084 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_085",
-    title: "Classroom Interactive Learning 085",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_085.jpg?v=2",
-    caption: "Classroom Interactive Learning 085 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_086",
-    title: "Classroom Interactive Learning 086",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_086.jpg?v=2",
-    caption: "Classroom Interactive Learning 086 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_087",
-    title: "Classroom Interactive Learning 087",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_087.jpg?v=2",
-    caption: "Classroom Interactive Learning 087 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_088",
-    title: "Classroom Interactive Learning 088",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_088.jpg?v=2",
-    caption: "Classroom Interactive Learning 088 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_089",
     title: "Classroom Interactive Learning 089",
     category: "academics",
@@ -1069,16 +372,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 090 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_091",
-    title: "Classroom Interactive Learning 091",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_091.jpg?v=2",
-    caption: "Classroom Interactive Learning 091 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_092",
     title: "Classroom Interactive Learning 092",
     category: "academics",
@@ -1087,26 +380,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_092.jpg?v=2",
     caption: "Classroom Interactive Learning 092 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_093",
-    title: "Classroom Interactive Learning 093",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_093.jpg?v=2",
-    caption: "Classroom Interactive Learning 093 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_094",
-    title: "Classroom Interactive Learning 094",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_094.jpg?v=2",
-    caption: "Classroom Interactive Learning 094 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-academics-classroom_learning_095",
@@ -1129,26 +402,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 096 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_097",
-    title: "Classroom Interactive Learning 097",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_097.jpg?v=2",
-    caption: "Classroom Interactive Learning 097 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_098",
-    title: "Classroom Interactive Learning 098",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_098.jpg?v=2",
-    caption: "Classroom Interactive Learning 098 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_099",
     title: "Classroom Interactive Learning 099",
     category: "academics",
@@ -1159,16 +412,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 099 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_100",
-    title: "Classroom Interactive Learning 100",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_100.jpg?v=2",
-    caption: "Classroom Interactive Learning 100 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_101",
     title: "Classroom Interactive Learning 101",
     category: "academics",
@@ -1177,46 +420,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_101.jpg?v=2",
     caption: "Classroom Interactive Learning 101 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_102",
-    title: "Classroom Interactive Learning 102",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_102.jpg?v=2",
-    caption: "Classroom Interactive Learning 102 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_103",
-    title: "Classroom Interactive Learning 103",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_103.jpg?v=2",
-    caption: "Classroom Interactive Learning 103 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_104",
-    title: "Classroom Interactive Learning 104",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_104.jpg?v=2",
-    caption: "Classroom Interactive Learning 104 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_105",
-    title: "Classroom Interactive Learning 105",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_105.jpg?v=2",
-    caption: "Classroom Interactive Learning 105 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-academics-classroom_learning_106",
@@ -1239,26 +442,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Classroom Interactive Learning 107 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_108",
-    title: "Classroom Interactive Learning 108",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_108.jpg?v=2",
-    caption: "Classroom Interactive Learning 108 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_109",
-    title: "Classroom Interactive Learning 109",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_109.jpg?v=2",
-    caption: "Classroom Interactive Learning 109 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-academics-classroom_learning_110",
     title: "Classroom Interactive Learning 110",
     category: "academics",
@@ -1267,36 +450,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_110.jpg?v=2",
     caption: "Classroom Interactive Learning 110 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_111",
-    title: "Classroom Interactive Learning 111",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_111.jpg?v=2",
-    caption: "Classroom Interactive Learning 111 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_112",
-    title: "Classroom Interactive Learning 112",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_112.jpg?v=2",
-    caption: "Classroom Interactive Learning 112 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_113",
-    title: "Classroom Interactive Learning 113",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_113.jpg?v=2",
-    caption: "Classroom Interactive Learning 113 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_012",
@@ -2839,56 +1992,6 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     caption: "Sports Championship & Athletics 014 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-sports-sports_athletic_meet_015",
-    title: "Sports Championship & Athletics 015",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_015.jpg?v=2",
-    caption: "Sports Championship & Athletics 015 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_016",
-    title: "Sports Championship & Athletics 016",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_016.jpg?v=2",
-    caption: "Sports Championship & Athletics 016 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_017",
-    title: "Sports Championship & Athletics 017",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_017.jpg?v=2",
-    caption: "Sports Championship & Athletics 017 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_018",
-    title: "Sports Championship & Athletics 018",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_018.jpg?v=2",
-    caption: "Sports Championship & Athletics 018 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_019",
-    title: "Sports Championship & Athletics 019",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_019.jpg?v=2",
-    caption: "Sports Championship & Athletics 019 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-campus-campus_facilities_001",
     title: "Campus Infrastructure & Grounds 001",
     category: "campus",
@@ -2927,202 +2030,5 @@ export const OFFICIAL_GALLERY_EXCLUDED: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2",
     caption: "Faculty mentorship and smart classroom instruction at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_01",
-    title: "Faculty & Teaching Staff 01",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_01.jpg?v=2",
-    caption: "Faculty & Teaching Staff 01 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_02",
-    title: "Faculty & Teaching Staff 02",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_02.jpg?v=2",
-    caption: "Faculty & Teaching Staff 02 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_03",
-    title: "Faculty & Teaching Staff 03",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_03.jpg?v=2",
-    caption: "Faculty & Teaching Staff 03 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_04",
-    title: "Faculty & Teaching Staff 04",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_04.jpg?v=2",
-    caption: "Faculty & Teaching Staff 04 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_05",
-    title: "Faculty & Teaching Staff 05",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_05.jpg?v=2",
-    caption: "Faculty & Teaching Staff 05 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_06",
-    title: "Faculty & Teaching Staff 06",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_06.jpg?v=2",
-    caption: "Faculty & Teaching Staff 06 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_07",
-    title: "Faculty & Teaching Staff 07",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_07.jpg?v=2",
-    caption: "Faculty & Teaching Staff 07 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_08",
-    title: "Faculty & Teaching Staff 08",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_08.jpg?v=2",
-    caption: "Faculty & Teaching Staff 08 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_09",
-    title: "Faculty & Teaching Staff 09",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_09.jpg?v=2",
-    caption: "Faculty & Teaching Staff 09 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_10",
-    title: "Faculty & Teaching Staff 10",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_10.jpg?v=2",
-    caption: "Faculty & Teaching Staff 10 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_11",
-    title: "Faculty & Teaching Staff 11",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_11.jpg?v=2",
-    caption: "Faculty & Teaching Staff 11 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_12",
-    title: "Faculty & Teaching Staff 12",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_12.jpg?v=2",
-    caption: "Faculty & Teaching Staff 12 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_13",
-    title: "Faculty & Teaching Staff 13",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_13.jpg?v=2",
-    caption: "Faculty & Teaching Staff 13 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_14",
-    title: "Faculty & Teaching Staff 14",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_14.jpg?v=2",
-    caption: "Faculty & Teaching Staff 14 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_15",
-    title: "Faculty & Teaching Staff 15",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_15.jpg?v=2",
-    caption: "Faculty & Teaching Staff 15 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_16",
-    title: "Faculty & Teaching Staff 16",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_16.jpg?v=2",
-    caption: "Faculty & Teaching Staff 16 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_17",
-    title: "Faculty & Teaching Staff 17",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_17.jpg?v=2",
-    caption: "Faculty & Teaching Staff 17 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-leadership-faculty_member_18",
-    title: "Faculty & Teaching Staff 18",
-    category: "campus",
-    event: "Faculty",
-    academicYear: "2026-27",
-    date: "2026-09-29",
-    imageUrl: "/images/chinmaya/leadership/faculty_member_18.jpg?v=2",
-    caption: "Faculty & Teaching Staff 18 at Chinmaya Vidyalaya, Tarapur."
   }
-];
-
-export const GALLERY_YEARS = ['All Years', '2026-27', '2024-25', '2023-24', '2022-23'];
-
-export const GALLERY_EVENTS = [
-  'All Events',
-  'Leadership',
-  'Faculty',
-  'Classroom Life',
-  'Science & Labs',
-  'Cultural Fest',
-  'Creative Arts',
-  'Sports Meet',
-  'Annual Day',
-  'Guru Paduka Pooja',
-  'Educational Tours',
-  'Campus Life'
 ];
