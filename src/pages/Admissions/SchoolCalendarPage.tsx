@@ -192,14 +192,14 @@ export const SchoolCalendarPage: React.FC = () => {
               </a>
 
               <a
-                href="mailto:cvtarapur@chinmayamission.com?subject=Academic%20Calendar%20Inquiry%202026-27"
+                href="mailto:cv.info@chinmayamission.com?subject=Academic%20Calendar%20Inquiry%202026-27"
                 className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all"
               >
                 <div className="flex items-center gap-2.5 overflow-hidden">
                   <Mail className="w-4 h-4 text-[#DF711B] shrink-0" />
                   <div className="truncate">
                     <span className="text-[10px] text-slate-400 block font-mono">Official Email</span>
-                    <span className="font-bold truncate block">cvtarapur@chinmayamission.com</span>
+                    <span className="font-bold truncate block">cv.info@chinmayamission.com</span>
                   </div>
                 </div>
                 <span className="text-[11px] font-semibold text-[#DF711B] shrink-0">Email</span>

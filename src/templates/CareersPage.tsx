@@ -258,7 +258,7 @@ export const CareersPage: React.FC = () => {
               Submit Expression of Interest
             </h3>
             <p className="text-xs text-[#555555] mt-1">
-              Interested candidates can submit their preliminary details below or email their CV directly to <strong className="text-[#181818]">chinmayatarapur@gmail.com</strong>.
+              Interested candidates can submit their preliminary details below or email their CV directly to <strong className="text-[#181818]">cv.info@chinmayamission.com</strong>.
             </p>
           </div>
 

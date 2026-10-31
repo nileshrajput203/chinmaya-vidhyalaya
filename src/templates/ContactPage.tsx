@@ -192,13 +192,13 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div className="space-y-1 font-mono text-xs font-bold text-[#181C20] pt-1">
                     <div>
-                      <a href="mailto:cvtarapur@gmail.com" className="hover:text-[var(--color-primary)] underline">
-                        cvtarapur@gmail.com
+                      <a href="mailto:cv.info@chinmayamission.com" className="hover:text-[var(--color-primary)] underline">
+                        cv.info@chinmayamission.com
                       </a>
                     </div>
                     <div>
-                      <a href="mailto:principal@chinmayatarapur.edu.in" className="hover:text-[var(--color-primary)] underline text-slate-600">
-                        principal@chinmayatarapur.edu.in
+                      <a href="mailto:cv.principal@chinmayamission.com" className="hover:text-[var(--color-primary)] underline text-slate-600">
+                        cv.principal@chinmayamission.com
                       </a>
                     </div>
                   </div>
@@ -211,11 +211,11 @@ export const ContactPage: React.FC = () => {
                 <p>
                   To apply for teaching faculty or administrative positions, please submit your CV to:{' '}
                   <a
-                    href="mailto:careers@chinmayatarapur.edu.in"
+                    href="mailto:cv.info@chinmayamission.com"
                     style={{ color: 'var(--color-primary)' }}
                     className="font-bold underline"
                   >
-                    careers@chinmayatarapur.edu.in
+                    cv.info@chinmayamission.com
                   </a>
                 </p>
                 <p>

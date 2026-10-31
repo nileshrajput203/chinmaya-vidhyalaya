@@ -17,7 +17,7 @@ export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
   },
   contact: {
     phone: ["9322054713"],
-    email: ["cv.info@chinmayamission.com", "cvtarapur@chinmayamission.com"],
+    email: ["cv.info@chinmayamission.com", "cv.principal@chinmayamission.com"],
     officeHours: "Monday to Saturday: 8:00 AM - 4:00 PM",
     website: "https://cvtarapur.com"
   },

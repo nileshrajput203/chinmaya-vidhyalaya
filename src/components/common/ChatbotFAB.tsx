@@ -64,7 +64,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     ]
   },
   'contact': {
-    answer: "Direct Contact Information:\n\n• Campus Front Desk: +91 9322054713 / +91 9823517700\n• General Email: cvtarapur@chinmayamission.com\n• Principal Email: cv.principal@chinmayamission.com\n• Location: P-201 MIDC Area, Saravali, Boisar, Maharashtra 401501\n• Office Timings: Mon - Sat, 8:30 AM - 3:30 PM",
+    answer: "Direct Contact Information:\n\n• Campus Front Desk: +91 9322054713 / +91 9823517700\n• General Email: cv.info@chinmayamission.com\n• Principal Email: cv.principal@chinmayamission.com\n• Location: P-201 MIDC Area, Saravali, Boisar, Maharashtra 401501\n• Office Timings: Mon - Sat, 8:30 AM - 3:30 PM",
     actions: [
       { label: 'Call Now: 9322054713', url: 'tel:9322054713' },
       { label: 'Visit Contact Page', url: '/contact' }

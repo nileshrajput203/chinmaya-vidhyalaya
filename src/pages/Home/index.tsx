@@ -624,7 +624,7 @@ export const HomePage: React.FC = () => {
             <span className="hidden sm:inline">•</span>
             <span>Tel: 9322054713 / 9823517700</span>
             <span className="hidden sm:inline">•</span>
-            <span>cvtarapur@chinmayamission.com</span>
+            <span>cv.info@chinmayamission.com</span>
           </div>
         </div>
       </section>

@@ -287,11 +287,11 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                 <span>Call Directly: 9322054713</span>
               </a>
               <a
-                href="mailto:cvtarapur@chinmayamission.com"
+                href="mailto:cv.info@chinmayamission.com"
                 className="flex items-center gap-2.5 p-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-amber-200 transition-colors"
               >
                 <Mail className="w-4 h-4 text-[#DF711B]" />
-                <span>cvtarapur@chinmayamission.com</span>
+                <span>cv.info@chinmayamission.com</span>
               </a>
             </div>
           </div>

@@ -795,14 +795,14 @@ export const RegistrationFormPage: React.FC = () => {
                 </a>
 
                 <a
-                  href="mailto:cvtarapur@chinmayamission.com?subject=Admissions%20Registration%20Help%20Desk%20Query"
+                  href="mailto:cv.info@chinmayamission.com?subject=Admissions%20Registration%20Help%20Desk%20Query"
                   className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all text-xs"
                 >
                   <div className="flex items-center gap-2.5">
                     <Mail className="w-4 h-4 text-[#DF711B]" />
                     <div className="overflow-hidden">
                       <span className="text-[10px] text-slate-400 block font-mono">Help Desk Email</span>
-                      <span className="font-bold truncate block">cvtarapur@chinmayamission.com</span>
+                      <span className="font-bold truncate block">cv.info@chinmayamission.com</span>
                     </div>
                   </div>
                   <span className="text-[11px] font-semibold text-[#DF711B] shrink-0">Email</span>
