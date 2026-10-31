@@ -1,3 +1,4 @@
+import { UPCOMING_EVENTS } from '../data/events';
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Calendar, Bell, Download, Search, Sparkles, MapPin } from 'lucide-react';
@@ -36,98 +37,7 @@ export const NewsListingPage: React.FC = () => {
     loadData();
   }, []);
 
-  const upcomingEvents = [
-    {
-      id: 'ev-oct-1',
-      title: 'Inter-House Fancy Dress & Declamation Competition',
-      date: 'October 17, 2026',
-      time: '09:00 AM IST',
-      venue: 'Primary Wing & AV Seminar Hall',
-      tag: 'CCA Cultural',
-      summary: 'Annual CCA presentation featuring Ramayana character dramatization for junior classes and oratorical declamation for seniors.'
-    },
-    {
-      id: 'ev-oct-3',
-      title: 'Periodic Assessment - II & Term Evaluations (Classes I to XII)',
-      date: 'October 26, 2026',
-      time: '08:00 AM IST',
-      venue: 'Examination Halls',
-      tag: 'Assessments',
-      summary: 'Commencement of Second Periodical Assessment for Std X & XII and Evaluation-2 across Primary and Secondary wings.'
-    },
-    {
-      id: 'ev-oct-4',
-      title: 'Annual Inter-House Gita Chanting Competition (Std I to XII)',
-      date: 'October 31, 2026',
-      time: '09:30 AM IST',
-      venue: 'Sanskrit & Value Education Wing',
-      tag: 'Vedic Heritage',
-      summary: 'Comprehensive inter-house recitation and spiritual memorization competition covering designated verses from Srimad Bhagavad Gita.'
-    },
-    {
-      id: 'ev-nov-1',
-      title: 'Diwali Vacation Break & Deepotsav Celebrations',
-      date: 'November 05, 2026',
-      time: '10:00 AM IST',
-      venue: 'School Campus & Prayer Hall',
-      tag: 'Vacation & Festival',
-      summary: 'Campus Deepotsav lamp lighting ceremony; Diwali holiday break commences for all classes (School reopens on November 20, 2026).'
-    },
-    {
-      id: 'ev-nov-4',
-      title: 'Periodic Assessment - II (Classes III to IX)',
-      date: 'November 25, 2026',
-      time: '08:00 AM IST',
-      venue: 'Examination Halls',
-      tag: 'Assessments',
-      summary: 'Second periodical assessment series for students of Standards III to IX evaluating mid-session scholastic progress.'
-    },
-    {
-      id: 'ev-dec-1',
-      title: 'Inter-House English Elocution Competition (Std I to XII)',
-      date: 'December 05, 2026',
-      time: '09:30 AM IST',
-      venue: 'AV Seminar Hall',
-      tag: 'Literary Arts',
-      summary: 'Student orators demonstrate rhetorical clarity, persuasive speaking, and articulate presentation on contemporary themes.'
-    },
-    {
-      id: 'ev-dec-2',
-      title: 'Gita Jayanti, Tapovan Jayanti & Chinmaya Samarpan Diwas',
-      date: 'December 19, 2026',
-      time: '08:30 AM IST',
-      venue: 'School Main Prayer Auditorium',
-      tag: 'Spiritual Heritage',
-      summary: 'Special Paduka pooja, Sanskrit Shloka recitation, monoact, and commemorative tributes honoring Param Pujya Swami Tapovan Maharaj.'
-    },
-    {
-      id: 'ev-jan-1',
-      title: 'Model Pre-Board Examinations & Unit Test - II',
-      date: 'January 03, 2027',
-      time: '08:00 AM IST',
-      venue: 'Senior Wing Examination Halls',
-      tag: 'Assessments',
-      summary: 'Rigorous model pre-board tests for CBSE Board examinees (Std X & XII) and Unit Test 2 for Standard XI.'
-    },
-    {
-      id: 'ev-jan-3',
-      title: '78th Republic Day Ceremonial Parade & Cultural Pageant',
-      date: 'January 26, 2027',
-      time: '08:00 AM IST',
-      venue: 'Central Sports Ground',
-      tag: 'Patriotic Zeal',
-      summary: 'National Tri-colour flag unfurling, NCC troop march past, patriotic brass band display, and felicitation of student achievers.'
-    },
-    {
-      id: 'ev-mar-2',
-      title: 'Annual Term-End Examinations & Evaluation - III',
-      date: 'March 15, 2027',
-      time: '08:00 AM IST',
-      venue: 'All Examination Wings',
-      tag: 'Assessments',
-      summary: 'Final comprehensive annual academic assessments for Nursery through Standard IX & XI for the 2026-27 session.'
-    }
-  ];
+  const upcomingEvents = UPCOMING_EVENTS;
 
   // Filtered lists based on search and tab
   const filteredNotices = notices.filter(n => 
