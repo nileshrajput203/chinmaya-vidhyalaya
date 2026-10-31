@@ -42,44 +42,14 @@ export const NoticeEventBoard: React.FC = () => {
   
   const upcomingEvents = [
     {
-      id: 'ev-oct-1',
-      title: 'Inter-House Fancy Dress & Declamation Competition',
-      date: 'October 17, 2026',
-      month: 'October 2026',
-      time: '09:00 AM IST',
-      venue: 'Primary Wing & AV Seminar Hall',
-      tag: 'CCA Cultural',
-      desc: 'Annual CCA presentation featuring Ramayana character dramatization for junior classes and oratorical declamation for seniors.'
-    },
-    {
-      id: 'ev-oct-2',
-      title: 'Vijaya Dashami & Dussehra Special Observance',
-      date: 'October 20, 2026',
-      month: 'October 2026',
-      time: '08:30 AM IST',
-      venue: 'Central Assembly Ground',
-      tag: 'Cultural Festival',
-      desc: 'Commemorating the triumph of virtue with special morning assembly discourse, Vedic prayers, and festive greetings.'
-    },
-    {
-      id: 'ev-oct-3',
-      title: 'Periodic Assessment - II & Term Evaluations (Classes I to XII)',
-      date: 'October 26, 2026',
-      month: 'October 2026',
+      id: 'ev-nov-0',
+      title: 'Commencement of National Education & CVP Value Month',
+      date: 'November 01, 2026',
+      month: 'November 2026',
       time: '08:00 AM IST',
-      venue: 'Examination Halls',
-      tag: 'Assessments',
-      desc: 'Commencement of Second Periodical Assessment for Std X & XII and Evaluation-2 across Primary and Secondary wings.'
-    },
-    {
-      id: 'ev-oct-4',
-      title: 'Annual Inter-House Gita Chanting Competition (Std I to XII)',
-      date: 'October 31, 2026',
-      month: 'October 2026',
-      time: '09:30 AM IST',
-      venue: 'Sanskrit & Value Education Wing',
-      tag: 'Vedic Heritage',
-      desc: 'Comprehensive inter-house recitation and spiritual memorization competition covering designated verses from Srimad Bhagavad Gita.'
+      venue: 'School Campus & Morning Assembly Quadrangle',
+      tag: 'Chinmaya Vision',
+      desc: 'Inauguration of November scholastic curriculum focus, Chinmaya Vision Programme (CVP) character development modules, and inter-house project submissions.'
     },
     {
       id: 'ev-nov-1',
@@ -182,6 +152,26 @@ export const NoticeEventBoard: React.FC = () => {
       desc: 'National Tri-colour flag unfurling, NCC troop march past, patriotic brass band display, and felicitation of student achievers.'
     },
     {
+      id: 'ev-feb-1',
+      title: 'Annual Sports Day & Athletic Meet Championship',
+      date: 'February 06, 2027',
+      month: 'February 2027',
+      time: '08:30 AM IST',
+      venue: 'Central Campus Athletic Ground',
+      tag: 'Sports & Athletics',
+      desc: 'Grand track and field championships, inter-house march-past, gymnastic displays, and athletic award ceremonies.'
+    },
+    {
+      id: 'ev-feb-2',
+      title: 'CBSE Board Examination Commencement (Std X & XII)',
+      date: 'February 15, 2027',
+      month: 'February 2027',
+      time: '09:00 AM IST',
+      venue: 'Senior Wing Exam Centers',
+      tag: 'Assessments',
+      desc: 'Commencement of All India Secondary School Examination (AISSE) and Senior School Certificate Examination (AISSCE).'
+    },
+    {
       id: 'ev-mar-1',
       title: 'Maha Shivaratri Celebrations & Bhajan Sandhya',
       date: 'March 06, 2027',
@@ -203,7 +193,7 @@ export const NoticeEventBoard: React.FC = () => {
     }
   ];
 
-  const availableMonths = ['all', 'October 2026', 'November 2026', 'December 2026', 'January 2027', 'March 2027'];
+  const availableMonths = ['all', 'November 2026', 'December 2026', 'January 2027', 'February 2027', 'March 2027'];
   
 
 
