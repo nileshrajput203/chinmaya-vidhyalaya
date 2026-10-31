@@ -55,7 +55,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-7',
     category: 'disclosures',
     question: 'Where can one access Transfer Certificates (TC) and CBSE Mandatory Disclosures?',
-    answer: 'Under CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020-21 and 2023 records) are available for online viewing under the "About Us > Mandatory Information & TC" section.'
+    answer: 'Under CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020, 2021, and 2023 records) are available for online viewing under the "About Us > Mandatory Information & TC" section.'
   },
   {
     id: 'faq-8',

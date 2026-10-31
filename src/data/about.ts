@@ -100,10 +100,10 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     subtitle: "Official CBSE disclosure certificates, affiliation documents, and Transfer Certificate records",
     content: [
       "In strict compliance with CBSE directives, SARAS portal guidelines, and transparency mandates, Chinmaya Vidyalaya publishes all statutory documents, safety certificates, and Transfer Certificates (TC) for public inspection.",
-      "All statutory certificates - including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, SMC, PTA, and official Transfer Certificates (TC annual registers for 2020-21 and 2023) - are available in verified view-only format."
+      "All statutory certificates - including building safety, fire clearance, potable water & sanitation, society registration, NOC, RTE recognition, SMC, PTA, and official Transfer Certificates (TC annual registers for 2020, 2021, and 2023) - are available in verified view-only format."
     ],
     bulletPoints: [
-      "Official Transfer Certificates (TC): View certified archive registers (2020-21 and 2023)",
+      "Official Transfer Certificates (TC): View certified archive registers (2020, 2021, and 2023)",
       "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",
       "State Government NOC & RTE Recognition Certificate",
       "Building Stability and Fire Safety Clearance Certificates",

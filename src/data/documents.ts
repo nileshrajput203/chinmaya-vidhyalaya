@@ -227,14 +227,25 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
     downloadable: false
   },
   {
-    id: "doc-tc-2020-21",
-    title: "Transfer Certificates (TC) 2020-21 Official Archive",
+    id: "doc-tc-2021",
+    title: "Transfer Certificates (TC) 2021 Official Archive",
     category: "mandatory-information",
-    academicYear: "2020-2021",
+    academicYear: "2021",
     fileUrl: "/images/TC-2021.pdf",
     fileSize: "14.8 MB",
     uploadDate: "2024-04-01",
-    description: "Official combined record of issued Transfer Certificates for the academic years 2020 and 2021.",
+    description: "Official record of issued Transfer Certificates for the academic year 2021.",
+    downloadable: false
+  },
+  {
+    id: "doc-tc-2020",
+    title: "Transfer Certificates (TC) 2020 Official Archive",
+    category: "mandatory-information",
+    academicYear: "2020",
+    fileUrl: "/images/TC-2020.pdf",
+    fileSize: "54.2 MB",
+    uploadDate: "2024-04-01",
+    description: "Official record of issued Transfer Certificates for the academic year 2020.",
     downloadable: false
   },
 

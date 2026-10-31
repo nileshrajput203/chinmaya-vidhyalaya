@@ -517,16 +517,8 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {[
-                  { 
-                    id: 'doc-tc-2020-21', 
-                    title: 'Transfer Certificates (TC) 2020-21 Archive', 
-                    year: '2020-2021', 
-                    file: '/images/TC-2021.pdf', 
-                    size: '14.8 MB',
-                    desc: 'Combined official archive register of student Transfer Certificates issued during the 2020 and 2021 academic sessions.'
-                  },
                   { 
                     id: 'doc-tc-2023', 
                     title: 'Transfer Certificates (TC) 2023 Archive', 
@@ -534,6 +526,22 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     file: '/images/TC-2023.pdf', 
                     size: '44.8 MB',
                     desc: 'Official archive register of student Transfer Certificates issued during the 2023 academic session in verified view-only format.'
+                  },
+                  { 
+                    id: 'doc-tc-2021', 
+                    title: 'Transfer Certificates (TC) 2021 Archive', 
+                    year: '2021', 
+                    file: '/images/TC-2021.pdf', 
+                    size: '14.8 MB',
+                    desc: 'Official archive register of student Transfer Certificates issued during the 2021 academic session in verified view-only format.'
+                  },
+                  { 
+                    id: 'doc-tc-2020', 
+                    title: 'Transfer Certificates (TC) 2020 Archive', 
+                    year: '2020', 
+                    file: '/images/TC-2020.pdf', 
+                    size: '54.2 MB',
+                    desc: 'Official archive register of student Transfer Certificates issued during the 2020 academic session in verified view-only format.'
                   },
                 ].map((tc) => (
                   <div key={tc.id} className="bg-white border border-[#E7E2D8] p-5 rounded-2xl space-y-3 flex flex-col justify-between hover:border-[#DF711B] transition-all">
