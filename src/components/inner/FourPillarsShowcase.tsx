@@ -32,7 +32,7 @@ const PILLARS_DATA: PillarDetail[] = [
       {
         dimension: 'Body • Sharirik',
         title: 'Morning Surya Namaskar & Yoga',
-        desc: 'Daily pranayama and stretching drills for physical stamina and agility.'
+        desc: 'Guided pranayama, yoga, and stretching sessions fostering physical stamina and agility.'
       },
       {
         dimension: 'Intellect • Bauddhik',
@@ -47,7 +47,7 @@ const PILLARS_DATA: PillarDetail[] = [
       {
         dimension: 'Diagnostic • Manthan',
         title: 'ASSET Diagnostic Assessments',
-        desc: 'Skill analytics (Std III-IX) to personalize each student’s growth.'
+        desc: 'Periodic skill assessments (Std III-IX) evaluating conceptual clarity and guiding student growth.'
       }
     ],
     photos: [
@@ -67,8 +67,8 @@ const PILLARS_DATA: PillarDetail[] = [
     dailyPractices: [
       {
         dimension: 'Reverence • Parampara',
-        title: 'Daily Guru Paduka Pooja',
-        desc: 'Assemblies open with lamp lighting, Paduka Pooja, and Vedic chants.'
+        title: 'Guru Paduka Pooja & Sacred Traditions',
+        desc: 'Assemblies open with prayer and lamp lighting, with solemn Paduka Pooja on special occasions.'
       },
       {
         dimension: 'Scripture • Swadhyaya',
@@ -90,7 +90,7 @@ const PILLARS_DATA: PillarDetail[] = [
       {
         src: '/images/guru-paduka-pooja.webp',
         caption: 'Sacred Tradition: Solemn Morning Guru Paduka Pooja & Shloka Chanting Ceremony',
-        locationMeta: 'Central Prayer Altar • Daily Assembly'
+        locationMeta: 'Central Prayer Altar • Sacred Assembly'
       }
     ],
     tags: ['Guru Paduka Pooja', 'Bhagavad Gita Recitation', 'Balvihar Values', 'Vedic Festivals']
@@ -109,12 +109,12 @@ const PILLARS_DATA: PillarDetail[] = [
       {
         dimension: 'Conservation • Jal Seva',
         title: 'Jal Pakhwada Water Drives',
-        desc: 'Student-led community awareness rallies and rainwater conservation.'
+        desc: 'Fortnightly environmental rallies and student-led water conservation initiatives.'
       },
       {
         dimension: 'Civic Action • Swachhata',
         title: 'Boisar Cleanliness Drives',
-        desc: 'Hands-on environmental sanitation, tree planting, and civic outreach.'
+        desc: 'Periodic Swachhata environmental sanitation drives, tree planting, and community outreach.'
       },
       {
         dimension: 'Inspiration • Veergatha',
@@ -140,12 +140,12 @@ const PILLARS_DATA: PillarDetail[] = [
       {
         dimension: 'Ecology • Prakriti',
         title: 'Outdoor Nature Expeditions',
-        desc: 'Botanical field excursions cultivating deep ecological empathy.'
+        desc: 'Curricular nature walks and botanical excursions cultivating ecological awareness.'
       },
       {
         dimension: 'Innovation • Urja',
         title: 'Green Sustainability Fairs',
-        desc: 'Student models for clean energy, zero waste, and planet solutions.'
+        desc: 'Exhibition projects and student models for clean energy and environmental solutions.'
       },
       {
         dimension: 'Peace • Shanti',
@@ -181,7 +181,7 @@ export const FourPillarsShowcase: React.FC = () => {
           How Our School Follows the 4 Pillars
         </h2>
         <p className="text-sm sm:text-base text-slate-600 font-normal max-w-xl mx-auto">
-          Explore how each foundational value translates into daily morning routines, laboratory learning, and student leadership at Boisar Campus.
+          Explore how each foundational value translates into campus assemblies, value education, experiential learning, and student leadership at Boisar Campus.
         </p>
       </div>
 
@@ -259,7 +259,7 @@ export const FourPillarsShowcase: React.FC = () => {
                     <div className="space-y-2.5 pt-1">
                       <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
                         <CheckCircle2 className="w-4 h-4 text-[#DF711B]" />
-                        <span>Daily Practice on Campus:</span>
+                        <span>Campus Practices & Initiatives:</span>
                       </span>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

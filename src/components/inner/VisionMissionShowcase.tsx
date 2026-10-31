@@ -90,7 +90,7 @@ const KOSHAS: Kosha[] = [
     badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
     image: '/images/guru-paduka-pooja.webp',
     imageTag: 'Guru Paduka Pooja & Sacred Ethos',
-    imageCaption: 'Spiritual Bliss: Daily Guru Paduka Pooja, Vedic chanting, and character development rooted in selfless service (Seva).',
+    imageCaption: 'Spiritual Bliss: Solemn Guru Paduka Pooja, Vedic chanting, and character development rooted in selfless service (Seva).',
     schoolPractice:
       'Guru Paduka Pooja, Bhagavad Gita chanting, value education through Balvihar, and joy discovered in selfless service (Seva).',
     dailyRoutine: 'Daily Chinmaya family prayer at 7:45 AM, chapterwise Gita chanting competitions, and community outreach drives.',
@@ -182,10 +182,10 @@ const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
         </p>
       </div>
 
-      {/* Daily Boisar Realization */}
+      {/* Boisar Campus Realization */}
       <div className="bg-white p-4 rounded-2xl border border-[#E7E2D8] space-y-1 shadow-2xs">
         <span className="text-[11px] font-mono font-bold uppercase text-[#DF711B] block">
-          Daily Boisar Campus Realization:
+          Boisar Campus Implementation & Initiatives:
         </span>
         <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
           {kosha.dailyRoutine}

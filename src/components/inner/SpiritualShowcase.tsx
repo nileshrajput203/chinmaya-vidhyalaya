@@ -20,7 +20,7 @@ export const SpiritualShowcase: React.FC = () => {
             Nurturing Moral Clarity, Devotion & Inner Poise
           </h2>
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-            At Chinmaya Vidyalaya Tarapur, spiritual education is neither ritualistic nor dogmatic - it is the systematic cultivation of mental tranquility, noble values, reverence for life, and ethical strength. Every morning begins with universal Vedic prayers, mindfulness, and the sacred Guru Paduka Pooja.
+            At Chinmaya Vidyalaya Tarapur, spiritual education is neither ritualistic nor dogmatic - it is the systematic cultivation of mental tranquility, noble values, reverence for life, and ethical strength. Every morning begins with universal Vedic prayers and mindfulness, with solemn Guru Paduka Pooja performed on auspicious occasions and term milestones.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export const SpiritualShowcase: React.FC = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 bg-[#0B1E34]/85 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider">
-                Daily Sacred Tradition
+                Sacred Tradition
               </div>
               <div className="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-sm text-white/90 px-2 py-0.5 rounded text-[10px] font-mono">
                 Central Altar • 7:45 AM
@@ -42,7 +42,7 @@ export const SpiritualShowcase: React.FC = () => {
             </div>
             <div className="p-4 bg-white">
               <h4 className="font-cinzel font-bold text-base text-[#181C20]">
-                Daily Guru Paduka Pooja Ceremony
+                Guru Paduka Pooja & Devotional Assemblies
               </h4>
               <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                 Students and educators gather in reverence to offer flowers, ignite the sacred lamp, and invoke Gurudev’s blessings for wisdom and selfless action.

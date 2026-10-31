@@ -97,7 +97,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     imageCaption: 'Spiritual Depth: Solemn Guru Paduka Pooja & Shloka Recitation',
     locationMeta: 'Central Altar • Morning Assembly',
     description:
-      'Awakening moral sensitivity, universal brotherhood, and selfless dedication (Seva). Rooted in daily Guru Paduka Pooja, Bhagavad Gita chanting, Balvihar moral stories, and quiet mindful breathing.',
+      'Awakening moral sensitivity, universal brotherhood, and selfless dedication (Seva). Rooted in solemn Guru Paduka Pooja, Bhagavad Gita chanting, Balvihar moral stories, and quiet mindful breathing.',
     activities: [
       'Daily morning prayer assemblies with Sanskrit shlokas and meditation',
       'Annual Chinmaya Mission Inter-School Gita Chanting Competition',
@@ -268,7 +268,7 @@ export const HolisticShowcase: React.FC = () => {
               <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2.5">
                 <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#DF711B] flex items-center gap-1.5">
                   <Icon className="w-3.5 h-3.5" />
-                  <span>Daily School Implementation:</span>
+                  <span>Campus Implementation & Activities:</span>
                 </span>
                 <ul className="space-y-2">
                   {current.activities.map((act, aIdx) => (
