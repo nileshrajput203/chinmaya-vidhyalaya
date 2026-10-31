@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar, Bell, ChevronsDown, ArrowDown } from 'lucide-react';
+import { Send, CheckCircle2, Phone, ArrowRight, AlertCircle, FileText, Calendar, Bell, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formService } from '../../services/formService';
 import { useToast } from '../../context/ToastContext';
@@ -445,16 +445,15 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
     }
   };
 
-  // Guided navigation indicator appears after the user's first scroll (>= 4% scroll)
+  // Minimal scroll indicator remains visible through the hero section until near the end
   const getGuidedNavVisibility = () => {
     const p = scrollProgress;
-    const SHOW_THRESHOLD = 0.04;
-    const HIDE_THRESHOLD = 0.95;
+    const HIDE_THRESHOLD = 0.94;
 
-    if (p < SHOW_THRESHOLD || p >= HIDE_THRESHOLD) {
+    if (p >= HIDE_THRESHOLD) {
       return {
         opacity: 0,
-        transform: 'translate(-50%, 16px) scale(0.96)',
+        transform: 'translate(-50%, 12px) scale(0.96)',
         pointerEvents: 'none' as const,
         visibility: 'hidden' as const,
       };
@@ -819,77 +818,54 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
         </div>
 
         {/* ----------------------------------------------------
-            GUIDED SCROLL NAVIGATION
-            Appears after the user's first scroll to guide them to scroll further into the next section
+            MINIMAL SCROLL TO EXPLORE CUE
+            Clean, elegant indicator that guides visitors to the next section
            ---------------------------------------------------- */}
         <div 
-          className="fixed sm:absolute bottom-3.5 sm:bottom-5 left-1/2 z-30 transition-all duration-300 ease-out"
+          className="fixed sm:absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 z-30 transition-all duration-300 ease-out"
           style={getGuidedNavVisibility()}
         >
           <style>{`
-            @keyframes guidedPulseGlow {
-              0%, 100% {
-                box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 0 16px rgba(223,113,27,0.25);
-              }
-              50% {
-                box-shadow: 0 14px 42px rgba(0,0,0,0.7), 0 0 28px rgba(223,113,27,0.45);
-              }
-            }
-            @keyframes guidedBounceChevron {
+            @keyframes subtleChevronBounce {
               0%, 100% {
                 transform: translateY(0);
               }
               50% {
-                transform: translateY(3.5px);
+                transform: translateY(3px);
               }
             }
-            .animate-guided-glow {
-              animation: guidedPulseGlow 2.8s ease-in-out infinite;
-            }
-            .animate-bounce-chevron {
-              animation: guidedBounceChevron 1.4s ease-in-out infinite;
+            .animate-subtle-bounce {
+              animation: subtleChevronBounce 2s ease-in-out infinite;
             }
           `}</style>
 
           <button
             type="button"
             onClick={handleScrollToNextSection}
-            className="group relative flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#071320]/95 hover:bg-[#0B1E34] backdrop-blur-xl border border-[#DF711B]/60 hover:border-[#DF711B] animate-guided-glow transition-all duration-300 cursor-pointer active:scale-98 select-none"
-            aria-label="Scroll further to view next section"
+            className="group flex items-center gap-3 sm:gap-4 px-2 py-1.5 cursor-pointer transition-all duration-300 active:scale-95 select-none focus:outline-none"
+            aria-label="Scroll to Explore next section"
           >
-            {/* Glowing Saffron Icon Badge */}
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-tr from-[#DF711B] via-[#E87820] to-[#FFB740] flex items-center justify-center text-white shadow-[0_0_14px_rgba(223,113,27,0.65)] group-hover:scale-110 transition-transform shrink-0">
-              <ChevronsDown className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2.6] animate-bounce-chevron" />
+            {/* Left Thin Horizontal Line */}
+            <span 
+              className="w-10 sm:w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-white/80 group-hover:via-[#DF711B]/60 group-hover:to-[#DF711B] transition-colors duration-300 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" 
+              aria-hidden="true"
+            />
+
+            {/* Circular Down-Chevron Icon */}
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/70 group-hover:border-[#DF711B] bg-black/35 backdrop-blur-[2px] flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.6)] group-hover:shadow-[0_0_12px_rgba(223,113,27,0.45)] transition-all duration-300">
+              <ChevronDown className="w-4 h-4 text-white stroke-[2.2] group-hover:text-[#FFB740] animate-subtle-bounce transition-colors" />
             </div>
 
-            {/* Guided Instructions Text */}
-            <div className="text-left">
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_rgba(52,211,153,0.9)]" />
-                <span className="font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.22em] text-[#FFB740]">
-                  SCROLL FURTHER TO EXPLORE
-                </span>
-              </div>
-              <span className="font-cinzel text-xs sm:text-[13px] font-bold text-white tracking-wide block leading-tight group-hover:text-amber-200 transition-colors">
-                Next: Values & Institutional Heritage
-              </span>
-            </div>
+            {/* Elegant Typography Label */}
+            <span className="font-sans text-xs sm:text-[13px] font-medium tracking-[0.06em] text-white/95 group-hover:text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] transition-colors whitespace-nowrap">
+              Scroll to Explore
+            </span>
 
-            {/* Quick Action Pill */}
-            <div className="hidden md:flex items-center gap-1 pl-2 sm:pl-3 border-l border-white/15">
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 group-hover:bg-[#DF711B] border border-white/15 group-hover:border-[#DF711B] text-[10px] font-mono font-bold text-slate-200 group-hover:text-white transition-all shadow-xs">
-                <span>View Next</span>
-                <ArrowDown className="w-3 h-3 group-hover:translate-y-0.5 transition-transform" />
-              </span>
-            </div>
-
-            {/* Bottom Progress Bar showing journey through Hero */}
-            <div className="absolute bottom-0 inset-x-5 h-[2px] bg-white/10 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-gradient-to-r from-[#DF711B] via-amber-300 to-[#DF711B] transition-all duration-150"
-                style={{ width: `${Math.min(100, Math.max(10, Math.round(scrollProgress * 100)))}%` }}
-              />
-            </div>
+            {/* Right Thin Horizontal Line */}
+            <span 
+              className="w-10 sm:w-16 md:w-24 h-[1px] bg-gradient-to-l from-transparent via-white/40 to-white/80 group-hover:via-[#DF711B]/60 group-hover:to-[#DF711B] transition-colors duration-300 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" 
+              aria-hidden="true"
+            />
           </button>
         </div>
 
