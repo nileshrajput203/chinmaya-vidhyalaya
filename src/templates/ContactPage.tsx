@@ -219,9 +219,9 @@ export const ContactPage: React.FC = () => {
                   </a>
                 </p>
                 <p>
-                  To download the institutional prospectus and fee schedule,{' '}
+                  To download the institutional prospectus and admission guidelines,{' '}
                   <Link
-                    to="/admissions/fee-structure"
+                    to="/admissions/guidelines"
                     style={{ color: 'var(--color-primary)' }}
                     className="font-bold underline"
                   >

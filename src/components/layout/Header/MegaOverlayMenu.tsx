@@ -173,7 +173,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                   {([
                     { label: "Admission Guidelines", href: "/admissions/guidelines" },
                     { label: "Registration Forms", href: "/downloads/admissions" },
-                    { label: "Annual Fee Structure", href: "/admissions/fee-structure" },
                   ] as { label: string; href: string; external?: boolean }[]).map((link) => (
                     <li key={link.label}>
                       {link.external ? (

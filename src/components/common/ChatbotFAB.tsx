@@ -35,7 +35,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     answer: "Chinmaya Vidyalaya Tarapur follows a transparent, CBSE-regulated fee structure with term-wise installments:\n\n• Term 1 (June) & Term 2 (November) flexible installments.\n• Admission / Prospectus form fee: ₹500.\n• Tuition and development fees are structured according to Pre-Primary, Primary, Middle, and Secondary sections.\n• Detailed fee schedules for each standard can be collected directly from the school accounts desk or confirmed via phone.",
     actions: [
       { label: '🧮 Interactive Fee Estimator', url: '/admissions/guidelines' },
-      { label: 'Annual Fee Schedule', url: '/admissions/fee-structure' },
+      { label: 'CBSE Mandatory Public Disclosures', url: '/about/mandatory-information' },
       { label: 'Call Accounts: 9322054713', url: 'tel:9322054713' }
     ]
   },

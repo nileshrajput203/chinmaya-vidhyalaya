@@ -53,12 +53,6 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
     keywords: 'admission guidelines, admission procedure, school application 2026, fee estimator Boisar',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Admissions', path: '/admissions' }, { name: 'Guidelines', path: '/admissions/guidelines' }],
   },
-  '/admissions/fee-structure': {
-    title: 'Annual Fee Structure & Installments 2026-27 | Chinmaya Vidyalaya Tarapur',
-    description: 'Transparent, CBSE-regulated fee schedule for Nursery, Primary, Middle, Secondary, and Senior Secondary classes at Chinmaya Vidyalaya Tarapur. Term-wise flexible installments.',
-    keywords: 'school fee structure Boisar, annual school fees Tarapur, CBSE school fees Palghar, fee installments',
-    breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Admissions', path: '/admissions' }, { name: 'Fee Structure', path: '/admissions/fee-structure' }],
-  },
   '/admissions/calendar': {
     title: 'Academic Calendar 2026-27 & School Schedule | Chinmaya Vidyalaya Tarapur',
     description: 'Academic calendar, term examinations, vacation schedules, national holidays, and celebration dates for the 2026-27 session at Chinmaya Vidyalaya Tarapur.',

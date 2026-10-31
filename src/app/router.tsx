@@ -13,7 +13,6 @@ import { CareersPage } from '../templates/CareersPage';
 import { AlumniPage } from '../templates/AlumniPage';
 import { BlogPage } from '../templates/BlogPage';
 import { RegistrationFormPage } from '../pages/Admissions/RegistrationFormPage';
-import { FeeStructurePage } from '../pages/Admissions/FeeStructurePage';
 import { SchoolCalendarPage } from '../pages/Admissions/SchoolCalendarPage';
 import TimelineDemo from '../components/ui/timeline-demo';
 import IntegrationDemo from '../components/ui/demo';
@@ -68,10 +67,10 @@ export const router = createBrowserRouter([
       { path: 'admissions/registration', element: <RegistrationFormPage /> },
       { path: 'admissions/registration-forms', element: <RegistrationFormPage /> },
       { path: 'registration-forms', element: <RegistrationFormPage /> },
-      { path: 'admissions/fee-structure', element: <FeeStructurePage /> },
-      { path: 'admissions/fees', element: <Navigate to="/admissions/fee-structure" replace /> },
-      { path: 'fee-structure', element: <Navigate to="/admissions/fee-structure" replace /> },
-      { path: 'fees', element: <Navigate to="/admissions/fee-structure" replace /> },
+      { path: 'admissions/fee-structure', element: <Navigate to="/about/mandatory-information" replace /> },
+      { path: 'admissions/fees', element: <Navigate to="/about/mandatory-information" replace /> },
+      { path: 'fee-structure', element: <Navigate to="/about/mandatory-information" replace /> },
+      { path: 'fees', element: <Navigate to="/about/mandatory-information" replace /> },
       { path: 'admissions/calendar', element: <SchoolCalendarPage /> },
       { path: 'admissions/academic-calendar', element: <Navigate to="/admissions/calendar" replace /> },
       { path: 'calendar', element: <Navigate to="/admissions/calendar" replace /> },

@@ -108,13 +108,13 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
   },
   {
     id: "doc-fee-structure",
-    title: "Official Fee Structure",
+    title: "Annual Fee Structure",
     category: "mandatory-information",
     academicYear: "2026-2027",
     fileUrl: "/images/FEE STRUCTURE 26-27.pdf",
     fileSize: "30 KB",
     uploadDate: "2026-04-01",
-    description: "Approved fee schedule for academic session 2026-2027.",
+    description: "Approved annual fee schedule and installment details for academic session 2026-2027.",
     downloadable: false
   },
   {
