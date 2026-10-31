@@ -19,7 +19,7 @@ const ACTIVITIES: Activity[] = [
   { name: 'Football', emoji: '⚽', color: '#22C55E', bgColor: 'bg-green-50' },
   { name: 'Public Speaking', emoji: '🎙️', color: '#8B5CF6', bgColor: 'bg-purple-50' },
   { name: 'Gita Chanting', emoji: '🕉️', color: '#EA580C', bgColor: 'bg-orange-50' },
-  { name: 'Robotics', emoji: '🤖', color: '#6366F1', bgColor: 'bg-indigo-50' },
+  { name: 'Coding', emoji: '💻', color: '#6366F1', bgColor: 'bg-indigo-50' },
   { name: 'Sports', emoji: '🏆', color: '#DF711B', bgColor: 'bg-orange-50' },
   { name: 'Library Programme', emoji: '📚', color: '#0891B2', bgColor: 'bg-teal-50' },
   { name: 'Student Council', emoji: '👥', color: '#0B1E34', bgColor: 'bg-slate-50' },
@@ -218,10 +218,7 @@ export const CoCurricularShowcase: React.FC = () => {
             return (
               <div
                 key={activity.name}
-                className={`${activity.bgColor} group relative border border-[#E7E2D8] rounded-2xl p-4 sm:p-5 hover:shadow-lg hover:border-[#DF711B]/40 transition-all duration-300 cursor-default hover:scale-[1.03]`}
-                style={{
-                  animationDelay: `${idx * 60}ms`,
-                }}
+                className={`${activity.bgColor} relative border border-[#E7E2D8] rounded-2xl p-4 sm:p-5 hover:border-[#DF711B]/40 transition-colors cursor-default`}
               >
                 {/* Floating Number Badge */}
                 <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-300">
@@ -230,7 +227,7 @@ export const CoCurricularShowcase: React.FC = () => {
 
                 {/* Official Standard Emoji */}
                 <div
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-3 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 text-2xl sm:text-3xl select-none"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-3 shadow-sm text-2xl sm:text-3xl select-none"
                   style={{ backgroundColor: activity.color + '18' }}
                 >
                   <span role="img" aria-label={activity.name}>{activity.emoji}</span>
@@ -240,12 +237,6 @@ export const CoCurricularShowcase: React.FC = () => {
                 <h4 className="font-cinzel font-bold text-sm sm:text-base text-[#181C20] leading-tight">
                   {activity.name}
                 </h4>
-
-                {/* Hover Accent Line */}
-                <div
-                  className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                  style={{ backgroundColor: activity.color }}
-                />
               </div>
             );
           })}
