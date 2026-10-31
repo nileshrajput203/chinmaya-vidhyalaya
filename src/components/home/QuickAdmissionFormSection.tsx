@@ -51,8 +51,13 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
 
   const handleQuickSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!quickData.parentName.trim() || !quickData.phone.trim()) {
-      setErrorMsg('Please fill in parent name and contact number.');
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!quickData.parentName.trim() || /\d/.test(quickData.parentName) || !nameRegex.test(quickData.parentName.trim()) || quickData.parentName.trim().length < 2) {
+      setErrorMsg('Please enter a valid parent or guardian name containing only letters (no numbers).');
+      return;
+    }
+    if (!quickData.phone.trim()) {
+      setErrorMsg('Please fill in contact number.');
       return;
     }
     if (quickData.phone.replace(/\D/g, '').length < 10) {
@@ -77,8 +82,17 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
 
   const handleDetailedSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!detailedData.studentName.trim() || !detailedData.parentName.trim() || !detailedData.phone.trim()) {
-      setErrorMsg('Please complete all required fields (Student, Parent, Phone).');
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!detailedData.studentName.trim() || /\d/.test(detailedData.studentName) || !nameRegex.test(detailedData.studentName.trim()) || detailedData.studentName.trim().length < 2) {
+      setErrorMsg('Please enter a valid student name containing only letters (no numbers).');
+      return;
+    }
+    if (!detailedData.parentName.trim() || /\d/.test(detailedData.parentName) || !nameRegex.test(detailedData.parentName.trim()) || detailedData.parentName.trim().length < 2) {
+      setErrorMsg('Please enter a valid parent or guardian name containing only letters (no numbers).');
+      return;
+    }
+    if (!detailedData.phone.trim()) {
+      setErrorMsg('Please fill in contact number.');
       return;
     }
     if (detailedData.phone.replace(/\D/g, '').length < 10) {
@@ -266,7 +280,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                           type="text"
                           required
                           value={quickData.parentName}
-                          onChange={(e) => setQuickData({ ...quickData, parentName: e.target.value })}
+                          onChange={(e) => setQuickData({ ...quickData, parentName: e.target.value.replace(/[0-9]/g, '') })}
                           placeholder="Enter parent or guardian full name"
                           className="w-full pl-9 pr-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B] transition-all"
                         />
@@ -367,7 +381,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         type="text"
                         required
                         value={detailedData.studentName}
-                        onChange={(e) => setDetailedData({ ...detailedData, studentName: e.target.value })}
+                        onChange={(e) => setDetailedData({ ...detailedData, studentName: e.target.value.replace(/[0-9]/g, '') })}
                         placeholder="Enter student's full name"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B]"
                       />
@@ -382,7 +396,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                         type="text"
                         required
                         value={detailedData.parentName}
-                        onChange={(e) => setDetailedData({ ...detailedData, parentName: e.target.value })}
+                        onChange={(e) => setDetailedData({ ...detailedData, parentName: e.target.value.replace(/[0-9]/g, '') })}
                         placeholder="Enter parent's full name"
                         className="w-full px-3 py-2 text-xs text-[#181818] bg-[#FBF9F6] border border-[#DDD7CD] rounded-md focus:outline-none focus:border-[#DF711B] focus:ring-1 focus:ring-[#DF711B]"
                       />

@@ -150,7 +150,11 @@ export const RegistrationFormPage: React.FC = () => {
       const checked = (e.target as HTMLInputElement).checked;
       setFormData(prev => ({ ...prev, [name]: checked }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      let finalValue = value;
+      if (name === 'studentName' || name === 'fatherName' || name === 'motherName') {
+        finalValue = value.replace(/[0-9]/g, '');
+      }
+      setFormData(prev => ({ ...prev, [name]: finalValue }));
     }
 
     if (errors[name]) {
@@ -164,8 +168,9 @@ export const RegistrationFormPage: React.FC = () => {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.studentName.trim()) {
-      newErrors.studentName = 'Student name is required.';
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!formData.studentName.trim() || /\d/.test(formData.studentName) || !nameRegex.test(formData.studentName.trim()) || formData.studentName.trim().length < 2) {
+      newErrors.studentName = 'Please enter a valid student name containing only letters (no numbers).';
     }
     if (!formData.dob) {
       newErrors.dob = 'Date of birth is required.';
@@ -178,6 +183,13 @@ export const RegistrationFormPage: React.FC = () => {
     }
     if (!formData.fatherName.trim() && !formData.motherName.trim()) {
       newErrors.parentName = "Please enter either Father's or Mother's name.";
+    } else {
+      if (formData.fatherName && (/\d/.test(formData.fatherName) || !nameRegex.test(formData.fatherName.trim()))) {
+        newErrors.parentName = "Father's name must contain only letters (no numbers).";
+      }
+      if (formData.motherName && (/\d/.test(formData.motherName) || !nameRegex.test(formData.motherName.trim()))) {
+        newErrors.parentName = "Mother's name must contain only letters (no numbers).";
+      }
     }
     if (!formData.primaryPhone.trim() || formData.primaryPhone.length < 10) {
       newErrors.primaryPhone = 'Please enter a valid 10-digit mobile number.';

@@ -26,38 +26,38 @@ const PILLARS_DATA: PillarDetail[] = [
   {
     number: '01',
     sanskritName: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
-    englishTitle: 'Integrated Development',
-    corePurpose: 'Educating the whole child in complete balance - physical vitality, emotional poise, sharp intellect, and inner spiritual strength.',
+    englishTitle: 'Integrated Learning',
+    corePurpose: 'Educating the whole child across all four foundational dimensions: Physical, Mental, Intellectual, and Spiritual development in complete balance.',
     dailyPractices: [
       {
-        dimension: 'Body • Sharirik',
-        title: 'Morning Surya Namaskar & Yoga',
-        desc: 'Guided pranayama, yoga, and stretching sessions fostering physical stamina and agility.'
+        dimension: 'Physical • Sharirik',
+        title: 'Physical Development',
+        desc: 'Morning Surya Namaskar, guided pranayama, yoga, and athletic training fostering physical stamina, motor skills, and agility.'
       },
       {
-        dimension: 'Intellect • Bauddhik',
-        title: 'Hands-on STEM Lab Experiments',
-        desc: 'Direct testing in physics, chemistry, biology, and computer labs.'
+        dimension: 'Mental • Manasik',
+        title: 'Mental Development',
+        desc: 'Nurturing emotional poise, self-discipline, resilience, empathy, and positive mental habits through mindful reflection.'
       },
       {
-        dimension: 'Vitality • Khel-Kood',
-        title: 'Inter-House Campus Athletics',
-        desc: 'Year-round football, cricket, volleyball, and track training.'
+        dimension: 'Intellectual • Bauddhik',
+        title: 'Intellectual Development',
+        desc: 'Hands-on STEM lab experiments, ASSET diagnostic assessments, and scholastic inquiry building sharp critical thinking.'
       },
       {
-        dimension: 'Diagnostic • Manthan',
-        title: 'ASSET Diagnostic Assessments',
-        desc: 'Periodic skill assessments (Std III-IX) evaluating conceptual clarity and guiding student growth.'
+        dimension: 'Spiritual • Adhyatmik',
+        title: 'Spiritual Development',
+        desc: 'Moral values, character ethics, inner peace, and awareness of one’s higher purpose and interconnectedness with creation.'
       }
     ],
     photos: [
       {
         src: '/images/pages/home/bento/tile-12-faculty-mentor.jpg',
-        caption: 'Integrated Development: Interactive Smart Classroom Learning & Faculty Mentorship',
+        caption: 'Integrated Learning: Physical, Mental, Intellectual & Spiritual Development in Practice',
         locationMeta: 'Smart Classroom Wing • Interactive Teaching'
       }
     ],
-    tags: ['Physical Vitality', 'Advanced STEM Labs', 'Athletics & Sports', 'ASSET Skill Analytics']
+    tags: ['Physical Development', 'Mental Poise', 'Intellectual Rigor', 'Spiritual Awakening']
   },
   {
     number: '02',
@@ -98,38 +98,38 @@ const PILLARS_DATA: PillarDetail[] = [
   {
     number: '03',
     sanskritName: 'Deshbhakti Evam Rashtra Seva',
-    englishTitle: 'Patriotism & Civic Duty',
-    corePurpose: 'Inspiring proud national citizenship, selfless community service, and active leadership in environmental conservation.',
+    englishTitle: 'Patriotism',
+    corePurpose: 'Inspiring genuine patriotism for the nation, with active civic duty, selfless community seva, and environmental stewardship as its vital expressions.',
     dailyPractices: [
+      {
+        dimension: 'Civic Duty • Nagarik Kartavya',
+        title: 'Active Civic Duty & Community Action',
+        desc: 'Practicing civic responsibility through Boisar cleanliness drives, civic awareness, and selfless neighborhood seva.'
+      },
       {
         dimension: 'National Pride • Rashtra',
         title: 'Anthem & Ceremonial March',
-        desc: 'Flag salutations, disciplined march past, and national day parades.'
+        desc: 'Flag salutations, disciplined march past, and national day parades honoring the motherland.'
       },
       {
         dimension: 'Conservation • Jal Seva',
         title: 'Jal Pakhwada Water Drives',
-        desc: 'Fortnightly environmental rallies and student-led water conservation initiatives.'
-      },
-      {
-        dimension: 'Civic Action • Swachhata',
-        title: 'Boisar Cleanliness Drives',
-        desc: 'Periodic Swachhata environmental sanitation drives, tree planting, and community outreach.'
+        desc: 'Fortnightly environmental rallies, tree planting, and water conservation as civic service to the country.'
       },
       {
         dimension: 'Inspiration • Veergatha',
         title: 'Tributes to National Heroes',
-        desc: 'Commemorations honoring armed forces, scientists, and martyrs.'
+        desc: 'Commemorations honoring armed forces, scientists, and martyrs to inspire dedicated national service.'
       }
     ],
     photos: [
       {
         src: '/images/pages/home/pillars/pillar-03-patriotism.png',
-        caption: 'Civic Responsibility: Student Swachhata Seva, Tree Plantation & Community Outreach Drives',
+        caption: 'Patriotism in Action: Active Civic Duty, Swachhata Seva & Community Outreach Drives',
         locationMeta: 'Community Seva • Tarapur District'
       }
     ],
-    tags: ['National Anthem', 'Swachhata Seva Drives', 'Cleanliness Campaigns', 'Hero Commemorations']
+    tags: ['National Patriotism', 'Active Civic Duty', 'Swachhata Seva Drives', 'Hero Commemorations']
   },
   {
     number: '04',

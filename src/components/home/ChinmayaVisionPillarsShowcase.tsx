@@ -21,11 +21,11 @@ export interface PillarData {
 const CVP_PILLARS: PillarData[] = [
   {
     num: '01',
-    tabLabel: 'Integrated',
-    shortTitle: 'INTEGRATED\nDEVELOPMENT',
-    pillarTitle: 'INTEGRATED PERSONALITY DEVELOPMENT',
-    subtitleTag: 'Body, Mind & Intellect in Harmony',
-    sanskrit: 'Sharirik, Bauddhik & Manasik Vikas',
+    tabLabel: 'Integrated Learning',
+    shortTitle: 'INTEGRATED\nLEARNING',
+    pillarTitle: 'PILLAR 1: INTEGRATED LEARNING',
+    subtitleTag: 'Physical, Mental, Intellectual & Spiritual Development',
+    sanskrit: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
     image: '/images/pages/home/pillars/pillar-01-integrated.png',
     isCutout: true,
     visionStatement:
@@ -34,10 +34,10 @@ const CVP_PILLARS: PillarData[] = [
       'The first pillar of the Chinmaya Vision Programme harmonizes the multidimensional growth of every child. Through morning yoga, sports, experiential science labs, and mindful self-reflection, students cultivate physical vigor, critical thinking, and inner poise.',
     targetUrl: '/about/philosophy#pillar-01',
     keyPoints: [
-      'Daily Surya Namaskar, Pranayama & holistic wellness regimen',
-      'Inquiry-driven STEM laboratories & analytical problem-solving',
-      'Faculty mentorship fostering emotional stability & focus',
-      'Inter-house sports meets, martial arts & track athletics'
+      'Physical Development (Sharirik): Morning Surya Namaskar, sports & athletics',
+      'Mental Development (Manasik): Emotional poise, empathy & inner stability',
+      'Intellectual Development (Bauddhik): Inquiry-driven STEM labs & critical thinking',
+      'Spiritual Development (Adhyatmik): Ethical values, meditation & moral clarity'
     ]
   },
   {
@@ -64,16 +64,16 @@ const CVP_PILLARS: PillarData[] = [
   {
     num: '03',
     tabLabel: 'Patriotism',
-    shortTitle: 'PATRIOTISM &\nCIVIC DUTY',
-    pillarTitle: 'PATRIOTISM & ACTIVE CITIZENSHIP',
-    subtitleTag: 'Nation Building & Selfless Service',
+    shortTitle: 'PATRIOTISM',
+    pillarTitle: 'PILLAR 3: PATRIOTISM & CIVIC DUTY',
+    subtitleTag: 'Civic Duty as an Active Expression of Patriotism',
     sanskrit: 'Rashtra Prem & Nagarik Kartavya',
     image: '/images/pages/home/pillars/pillar-03-patriotism.png',
     isCutout: true,
     visionStatement:
-      'Patriotism is translated into action through dedicated community seva, civic awareness, and selfless service to the motherland and society.',
+      'True patriotism is translated into dedicated action through civic duty, active community seva, and selfless service to the motherland.',
     explanation:
-      'The third pillar nurtures responsible, empathetic citizens committed to national progress. Through democratic house governance, tree plantation drives, and local community outreach across Tarapur, learners internalize that the highest honor is serving society with dedication.',
+      'The third pillar nurtures deep patriotism, where civic duty and active citizenship are an integral part of national dedication. Through local Swachhata drives, environmental initiatives, and community service across Boisar, students learn that genuine patriotism begins with responsible civic action.',
     targetUrl: '/about/philosophy#pillar-03',
     keyPoints: [
       'Elected Student Council & democratic leadership development',

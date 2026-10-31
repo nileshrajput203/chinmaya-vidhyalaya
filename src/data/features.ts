@@ -19,9 +19,9 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
       "Through regular value-education modules, daily prayers, and character-building discourses, CVP fosters a lifelong compass for moral discernment, integrity, and selfless service."
     ],
     bulletPoints: [
-      "Pillar 1 - Integrated Development: Balancing physical, mental, intellectual, and spiritual growth",
+      "Pillar 1 - Integrated Learning: Balancing physical, mental, intellectual, and spiritual growth in complete harmony",
       "Pillar 2 - Indian Culture & Heritage: Inculcating reverence for ancient wisdom, Vedic ethos, and family values",
-      "Pillar 3 - Patriotism & Civic Duty: Nurturing active citizenship, national pride, and environmental duty",
+      "Pillar 3 - Patriotism: Nurturing national pride, with active civic duty and environmental responsibility",
       "Pillar 4 - Universal Outlook: Fostering 'Vasudhaiva Kutumbakam' (The world is one family) and global empathy"
     ],
     highlights: [

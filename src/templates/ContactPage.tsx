@@ -11,11 +11,19 @@ import { useToast } from '../context/ToastContext';
 export const ContactPage: React.FC = () => {
   const { showSuccess } = useToast();
 
-  const [formFields, setFormFields] = useState({
+  const [formFields, setFormFields] = useState<{
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    department: 'admissions' | 'alumni' | 'teaching_staff' | 'general' | 'principal';
+    message: string;
+  }>({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
+    department: 'admissions',
     message: ''
   });
 
@@ -28,11 +36,16 @@ export const ContactPage: React.FC = () => {
     setValidationError(null);
     setSubmitStatus(null);
 
-    const fullName = `${formFields.firstName.trim()} ${formFields.lastName.trim()}`.trim();
-    if (!fullName || fullName.length < 2) {
-      setValidationError('Please enter your first and last name.');
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!formFields.firstName.trim() || /\d/.test(formFields.firstName) || !nameRegex.test(formFields.firstName.trim()) || formFields.firstName.trim().length < 2) {
+      setValidationError('Please enter a valid first name containing only letters (no numbers).');
       return;
     }
+    if (!formFields.lastName.trim() || /\d/.test(formFields.lastName) || !nameRegex.test(formFields.lastName.trim()) || formFields.lastName.trim().length < 2) {
+      setValidationError('Please enter a valid last name containing only letters (no numbers).');
+      return;
+    }
+    const fullName = `${formFields.firstName.trim()} ${formFields.lastName.trim()}`.trim();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formFields.email.trim())) {
@@ -49,12 +62,21 @@ export const ContactPage: React.FC = () => {
 
     setIsSubmitting(true);
 
+    const deptLabels: Record<string, string> = {
+      admissions: 'Student Admission Enquiry',
+      alumni: 'Alumni Network & Mentorship Inquiry',
+      teaching_staff: 'Teaching Faculty & Staff Application',
+      general: 'General Campus / Office Inquiry',
+      principal: 'Principal Office Escalation',
+    };
+
     const result = await formService.submitContact({
       fullName,
       email: formFields.email.trim(),
       phone: cleanedPhone,
-      subject: 'Prospect Parent / General Contact Enquiry',
-      message: formFields.message.trim() || 'Prospective student enquiry'
+      department: formFields.department,
+      subject: deptLabels[formFields.department] || 'General Inquiry',
+      message: formFields.message.trim() || 'General query'
     });
 
     setIsSubmitting(false);
@@ -73,6 +95,7 @@ export const ContactPage: React.FC = () => {
         lastName: '',
         email: '',
         phone: '',
+        department: 'admissions',
         message: ''
       });
     } else {
@@ -177,29 +200,52 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Write to Us Card */}
-                <div className="bg-white border border-slate-200 p-6 rounded-none shadow-xs flex flex-col items-center text-center space-y-3 transition-all hover:border-[var(--color-primary)] hover:shadow-md">
-                  <div className="w-14 h-14 rounded-full bg-[#FFB740]/20 text-[#DF711B] flex items-center justify-center shadow-xs">
-                    <Mail className="w-6 h-6 fill-[#FFB740] text-[#FFB740]" />
-                  </div>
-                  <div>
-                    <h3 className="font-sans font-bold text-base text-[#181C20]">
-                      Write to Us
-                    </h3>
-                    <p className="font-mono text-xs text-slate-500 mt-0.5">
-                      Official administrative desk
-                    </p>
-                  </div>
-                  <div className="space-y-1 font-mono text-xs font-bold text-[#181C20] pt-1">
-                    <div>
-                      <a href="mailto:cv.info@chinmayamission.com" className="hover:text-[var(--color-primary)] underline">
-                        cv.info@chinmayamission.com
-                      </a>
+                {/* Designated Department Emails Card */}
+                <div className="bg-white border border-slate-200 p-6 rounded-none shadow-xs flex flex-col text-left space-y-3 transition-all hover:border-[var(--color-primary)] hover:shadow-md">
+                  <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <div className="w-10 h-10 rounded-full bg-[#FFB740]/20 text-[#DF711B] flex items-center justify-center shrink-0 shadow-xs">
+                      <Mail className="w-5 h-5 text-[#DF711B]" />
                     </div>
                     <div>
-                      <a href="mailto:cv.principal@chinmayamission.com" className="hover:text-[var(--color-primary)] underline text-slate-600">
-                        cv.principal@chinmayamission.com
-                      </a>
+                      <h3 className="font-sans font-bold text-sm text-[#181C20]">
+                        Designated Inboxes
+                      </h3>
+                      <p className="font-mono text-[10px] text-slate-500 uppercase tracking-wider">
+                        Specify in Subject Line
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-sans">
+                    <div className="p-2 rounded bg-amber-50/60 border border-amber-200/60">
+                      <div className="font-bold text-[#DF711B] text-[11px] uppercase">🎯 For Admissions:</div>
+                      <div className="font-mono text-[11px] text-slate-800">
+                        <a href="mailto:cv.info@chinmayamission.com?subject=[Admissions 2026-27]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
+                      </div>
+                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Admissions 2026-27]</div>
+                    </div>
+
+                    <div className="p-2 rounded bg-indigo-50/60 border border-indigo-200/60">
+                      <div className="font-bold text-indigo-900 text-[11px] uppercase">🎓 For Alumni:</div>
+                      <div className="font-mono text-[11px] text-slate-800">
+                        <a href="mailto:cv.info@chinmayamission.com?subject=[Alumni Network]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
+                      </div>
+                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Alumni Network]</div>
+                    </div>
+
+                    <div className="p-2 rounded bg-blue-50/60 border border-blue-200/60">
+                      <div className="font-bold text-blue-900 text-[11px] uppercase">📋 For Teaching Staff:</div>
+                      <div className="font-mono text-[11px] text-slate-800">
+                        <a href="mailto:cv.info@chinmayamission.com?subject=[Faculty Recruitment]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
+                      </div>
+                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Faculty Recruitment]</div>
+                    </div>
+
+                    <div className="p-2 rounded bg-slate-50 border border-slate-200/60">
+                      <div className="font-bold text-slate-800 text-[11px] uppercase">🏛️ Principal Office:</div>
+                      <div className="font-mono text-[11px] text-slate-800">
+                        <a href="mailto:cv.principal@chinmayamission.com" className="hover:underline font-semibold">cv.principal@chinmayamission.com</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -275,6 +321,24 @@ export const ContactPage: React.FC = () => {
                 {/* The Contact Form */}
                 <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
                   
+                  {/* Designated Department Selector */}
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 font-mono">
+                      Target Department *
+                    </label>
+                    <select
+                      value={formFields.department}
+                      onChange={(e) => setFormFields({ ...formFields, department: e.target.value as any })}
+                      className="w-full px-3 py-2.5 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] font-sans font-medium"
+                    >
+                      <option value="admissions">🎯 Admissions Desk (Enrollment, Age Norms & Fees)</option>
+                      <option value="alumni">🎓 Alumni Network (Alumni Registry & Mentorship)</option>
+                      <option value="teaching_staff">📋 Teaching Staff & Careers (Faculty Applications)</option>
+                      <option value="general">🏢 General Administration (Campus, Transport & Office)</option>
+                      <option value="principal">🏛️ Principal Office (Academic & Board Matters)</option>
+                    </select>
+                  </div>
+
                   {/* First Name & Last Name (2 columns) */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
@@ -283,7 +347,7 @@ export const ContactPage: React.FC = () => {
                         required
                         placeholder="First Name*"
                         value={formFields.firstName}
-                        onChange={(e) => setFormFields({ ...formFields, firstName: e.target.value })}
+                        onChange={(e) => setFormFields({ ...formFields, firstName: e.target.value.replace(/[0-9]/g, '') })}
                         className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400"
                       />
                     </div>
@@ -293,7 +357,7 @@ export const ContactPage: React.FC = () => {
                         required
                         placeholder="Last Name*"
                         value={formFields.lastName}
-                        onChange={(e) => setFormFields({ ...formFields, lastName: e.target.value })}
+                        onChange={(e) => setFormFields({ ...formFields, lastName: e.target.value.replace(/[0-9]/g, '') })}
                         className="w-full px-3.5 py-3 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] placeholder:text-slate-400"
                       />
                     </div>

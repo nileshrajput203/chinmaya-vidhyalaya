@@ -144,8 +144,10 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
     setErrorMessage(null);
 
     // Validation
-    if (!formData.parentName.trim()) {
-      setErrorMessage("Please enter the parent or guardian's name.");
+    const nameTrimmed = formData.parentName.trim();
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!nameTrimmed || nameTrimmed.length < 2 || /\d/.test(nameTrimmed) || !nameRegex.test(nameTrimmed)) {
+      setErrorMessage("Please enter a valid parent or guardian name containing only letters (numbers and symbols are not allowed).");
       return;
     }
 
@@ -330,7 +332,9 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                         type="text"
                         required
                         value={formData.parentName}
-                        onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, parentName: e.target.value.replace(/[0-9]/g, '') })}
+                        pattern="^[a-zA-Z\s.'-]+$"
+                        title="Name must contain only letters"
                         placeholder="Parent's full name *"
                         className="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-200 focus:border-[#DF711B] focus:bg-white rounded-lg text-base sm:text-sm text-[#181818] placeholder-slate-400 outline-none transition-all shadow-inner"
                       />
@@ -458,7 +462,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                   <div className="p-3 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl max-w-sm mx-auto text-left space-y-1 text-xs text-[#555555]">
                     <div className="flex justify-between font-mono">
                       <span>Direct Admission Desk:</span>
-                      <span className="font-bold text-[#181818]">+91 7775872266</span>
+                      <span className="font-bold text-[#181818]">+91 9322054713</span>
                     </div>
                     <div className="flex justify-between font-mono">
                       <span>Office Hours:</span>
@@ -498,14 +502,48 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
         title="Admission Guidance - Request a Call Back"
         aria-label="Request Admission Guidance Call"
       >
-        <div
-          className={`rounded-full flex items-center justify-center shrink-0 transition-transform ${
-            isAtBottom
-              ? 'w-full h-full text-white group-hover:rotate-12'
-              : 'w-7 h-7 bg-[#DF711B] text-white group-hover:scale-110 shadow-sm'
-          }`}
-        >
-          <PhoneCall className={isAtBottom ? 'w-5 h-5 stroke-[2.2]' : 'w-3.5 h-3.5'} />
+        {/* Ringing Phone Icon with Acoustic Wave Pulse */}
+        <div className="relative flex items-center justify-center shrink-0">
+          {/* Subtle Concentric Soundwave Pulse */}
+          <motion.span
+            animate={{
+              scale: [1, 1.45, 1.75, 1],
+              opacity: [0.65, 0.35, 0, 0],
+            }}
+            transition={{
+              duration: 2.4,
+              repeat: Infinity,
+              times: [0, 0.22, 0.44, 1],
+              ease: 'easeOut',
+            }}
+            className="absolute inset-0 rounded-full bg-[#DF711B] pointer-events-none"
+          />
+
+          {/* Icon Badge */}
+          <div
+            className={`relative rounded-full flex items-center justify-center transition-transform ${
+              isAtBottom
+                ? 'w-full h-full text-white group-hover:rotate-12'
+                : 'w-7 h-7 bg-[#DF711B] text-white group-hover:scale-105 shadow-sm'
+            }`}
+          >
+            {/* Phone Ringing Wobble / Vibration */}
+            <motion.div
+              animate={{
+                rotate: [0, -18, 18, -18, 18, -12, 12, -6, 6, 0, 0, 0],
+                scale: [1, 1.12, 1.12, 1.12, 1.12, 1.08, 1.08, 1.04, 1.04, 1, 1, 1],
+              }}
+              transition={{
+                duration: 2.4,
+                repeat: Infinity,
+                times: [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.46, 0.7, 1],
+                ease: 'easeInOut',
+              }}
+              className="flex items-center justify-center origin-center"
+            >
+              <PhoneCall className={isAtBottom ? 'w-5 h-5 stroke-[2.2]' : 'w-3.5 h-3.5'} />
+            </motion.div>
+          </div>
         </div>
 
         <AnimatePresence mode="wait">

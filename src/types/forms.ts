@@ -3,6 +3,7 @@ export interface ContactEnquiry {
   email: string;
   phone: string;
   subject: string;
+  department?: 'admissions' | 'alumni' | 'teaching_staff' | 'general' | 'principal';
   message: string;
 }
 
@@ -15,6 +16,28 @@ export interface AdmissionEnquiry {
   phone: string;
   city?: string;
   notes?: string;
+  message?: string;
+}
+
+export interface AlumniEnquiry {
+  fullName: string;
+  batchYear: string;
+  email: string;
+  phone: string;
+  currentCity: string;
+  profession: string;
+  organization?: string;
+  willingToMentor?: boolean;
+  message?: string;
+}
+
+export interface CareerEnquiry {
+  name: string;
+  email: string;
+  phone: string;
+  position: string;
+  qualification: string;
+  experience: string;
   message?: string;
 }
 

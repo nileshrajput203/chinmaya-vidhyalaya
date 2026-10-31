@@ -8,6 +8,7 @@ import {
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { useToast } from '../context/ToastContext';
 import { OFFICIAL_SCHOOL_INFO } from '../data/school';
+import { formService } from '../services/formService';
 
 interface AlumniFormData {
   fullName: string;
@@ -52,18 +53,32 @@ export const AlumniPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!formData.fullName.trim() || /\d/.test(formData.fullName) || !nameRegex.test(formData.fullName.trim()) || formData.fullName.trim().length < 2) {
+      alert('Please enter a valid full name containing only letters (no numbers).');
+      return;
+    }
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const result = await formService.submitAlumni(formData);
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      showSuccess(
-        'Alumni Registration Submitted!',
-        'Thank you for reconnecting with Chinmaya Vidyalaya Tarapur. You are now part of our official Alumni Directory.'
-      );
-    }, 400);
+
+      if (result.success) {
+        setIsSubmitted(true);
+        showSuccess(
+          'Alumni Registration Submitted!',
+          'Thank you for reconnecting with Chinmaya Vidyalaya Tarapur. Your registration has been delivered to the Alumni Relations Desk.'
+        );
+      } else {
+        alert(result.message || 'Submission failed. Please check your network and try again.');
+      }
+    } catch {
+      setIsSubmitting(false);
+      alert('Unable to submit alumni registration. Please try again later.');
+    }
   };
 
   return (
@@ -144,7 +159,7 @@ export const AlumniPage: React.FC = () => {
                         type="text"
                         required
                         value={formData.fullName}
-                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value.replace(/[0-9]/g, '') })}
                         placeholder="Enter full name"
                         className="w-full px-3.5 py-2.5 text-xs bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors"
                       />

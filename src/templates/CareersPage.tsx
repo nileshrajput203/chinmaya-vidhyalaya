@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { useToast } from '../context/ToastContext';
+import { formService } from '../services/formService';
 
 interface JobOpening {
   id: string;
@@ -26,6 +27,7 @@ interface JobOpening {
 export const CareersPage: React.FC = () => {
   const { showSuccess } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -89,17 +91,36 @@ export const CareersPage: React.FC = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (!formData.name.trim() || /\d/.test(formData.name) || !nameRegex.test(formData.name.trim()) || formData.name.trim().length < 2) {
+      alert('Please enter a valid candidate name containing only letters (no numbers).');
+      return;
+    }
     if (!formData.position) {
       alert('Please select a position applied for.');
       return;
     }
-    setIsSubmitted(true);
-    showSuccess(
-      'Application Submitted Successfully!',
-      'Thank you for applying. The school academic committee will review your credentials and get back to you.'
-    );
+    setIsSubmitting(true);
+
+    try {
+      const result = await formService.submitCareer(formData);
+      setIsSubmitting(false);
+
+      if (result.success) {
+        setIsSubmitted(true);
+        showSuccess(
+          'Application Submitted Successfully!',
+          'Thank you for applying. Your application has been sent directly to our Teaching Staff & Faculty Recruitment Committee.'
+        );
+      } else {
+        alert(result.message || 'Submission failed. Please check your network and try again.');
+      }
+    } catch {
+      setIsSubmitting(false);
+      alert('Unable to submit application. Please try again later or email cv.info@chinmayamission.com directly.');
+    }
   };
 
   return (
@@ -289,7 +310,7 @@ export const CareersPage: React.FC = () => {
                     type="text"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value.replace(/[0-9]/g, '') })}
                     placeholder="Enter your full name"
                     className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D5CEC2] focus:border-[#DF711B] focus:outline-none"
                   />
@@ -392,10 +413,11 @@ export const CareersPage: React.FC = () => {
                 </p>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors shadow-sm"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors shadow-sm disabled:opacity-60"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  <span>Transmit Application</span>
+                  <span>{isSubmitting ? 'Transmitting...' : 'Transmit Application'}</span>
                 </button>
               </div>
             </form>

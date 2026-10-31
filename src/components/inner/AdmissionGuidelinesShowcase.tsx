@@ -29,8 +29,15 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
 
   const handleCallbackSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!callbackState.phone) {
-      alert('Please enter your phone number so our admissions team can reach you.');
+    const nameTrimmed = callbackState.name.trim();
+    const nameRegex = /^[a-zA-Z\s.'-]+$/;
+    if (nameTrimmed && (/\d/.test(nameTrimmed) || !nameRegex.test(nameTrimmed) || nameTrimmed.length < 2)) {
+      alert('Please enter a valid parent or guardian name containing only letters (no numbers).');
+      return;
+    }
+    const cleanPhone = callbackState.phone.replace(/[^0-9]/g, '');
+    if (!cleanPhone || cleanPhone.length < 10) {
+      alert('Please enter a valid 10-digit mobile number so our admissions team can reach you.');
       return;
     }
     setCallbackState((prev) => ({ ...prev, isBooked: true }));
@@ -359,7 +366,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                   <input
                     type="text"
                     value={callbackState.name}
-                    onChange={(e) => setCallbackState({ ...callbackState, name: e.target.value })}
+                    onChange={(e) => setCallbackState({ ...callbackState, name: e.target.value.replace(/[0-9]/g, '') })}
                     placeholder="Enter full name"
                     className="w-full px-3 py-2 border border-[#E7E2D8] rounded-xl text-xs focus:outline-none focus:border-[#DF711B]"
                   />

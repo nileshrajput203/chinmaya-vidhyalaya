@@ -1,4 +1,10 @@
-import { ContactEnquiry, AdmissionEnquiry, FormSubmitResult } from '../types/forms';
+import { 
+  ContactEnquiry, 
+  AdmissionEnquiry, 
+  AlumniEnquiry, 
+  CareerEnquiry, 
+  FormSubmitResult 
+} from '../types/forms';
 
 async function parseResponsePayload(response: Response): Promise<{
   data: any;
@@ -18,6 +24,9 @@ async function parseResponsePayload(response: Response): Promise<{
 }
 
 export const formService = {
+  /**
+   * Submit General Contact Enquiry (with department routing)
+   */
   async submitContact(data: Partial<ContactEnquiry>): Promise<FormSubmitResult> {
     try {
       const response = await fetch('/api/contact', {
@@ -33,7 +42,7 @@ export const formService = {
       if (response.ok && resData.success !== false) {
         return {
           success: true,
-          message: resData.message || 'Thank you! Your message has been sent successfully to the school office.',
+          message: resData.message || 'Thank you! Your message has been sent successfully to the designated department.',
         };
       }
 
@@ -58,6 +67,9 @@ export const formService = {
     }
   },
 
+  /**
+   * Submit Admission Enquiry (routed to Admissions Desk)
+   */
   async submitAdmission(data: AdmissionEnquiry): Promise<FormSubmitResult> {
     try {
       const payload = JSON.stringify({
@@ -118,5 +130,103 @@ export const formService = {
         error: err.message || 'Network error',
       };
     }
-  }
+  },
+
+  /**
+   * Submit Alumni Registration (routed to Alumni Relations)
+   */
+  async submitAlumni(data: AlumniEnquiry): Promise<FormSubmitResult> {
+    try {
+      const response = await fetch('/api/alumni', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const { data: resData, rawText } = await parseResponsePayload(response);
+
+      if (response.ok && resData.success !== false) {
+        return {
+          success: true,
+          message: resData.message || 'Alumni registration submitted successfully! Details sent to the Alumni Relations Desk.',
+        };
+      }
+
+      const errorMsg =
+        resData.error ||
+        resData.message ||
+        (rawText && rawText.length < 150 && !rawText.includes('<html') && !rawText.includes('<!DOCTYPE') ? rawText : '') ||
+        `Registration submission failed (Server HTTP ${response.status}). Please try again later.`;
+
+      return {
+        success: false,
+        message: errorMsg,
+        error: errorMsg,
+      };
+    } catch (err: any) {
+      console.error('[FormService submitAlumni error]:', err);
+      return {
+        success: false,
+        message: 'Could not connect to the server. Please check your network or try again later.',
+        error: err.message || 'Network error',
+      };
+    }
+  },
+
+  /**
+   * Submit Teaching Staff / Career Application (routed to Faculty Recruitment Committee)
+   */
+  async submitCareer(data: CareerEnquiry): Promise<FormSubmitResult> {
+    try {
+      let response = await fetch('/api/careers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok && response.status === 404) {
+        const fallback = await fetch('/api/career', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        }).catch(() => null);
+
+        if (fallback && fallback.ok) {
+          response = fallback;
+        }
+      }
+
+      const { data: resData, rawText } = await parseResponsePayload(response);
+
+      if (response.ok && resData.success !== false) {
+        return {
+          success: true,
+          message: resData.message || 'Application submitted successfully! Sent to our Faculty Recruitment Committee.',
+        };
+      }
+
+      const errorMsg =
+        resData.error ||
+        resData.message ||
+        (rawText && rawText.length < 150 && !rawText.includes('<html') && !rawText.includes('<!DOCTYPE') ? rawText : '') ||
+        `Application submission failed (Server HTTP ${response.status}). Please try again or email your CV directly.`;
+
+      return {
+        success: false,
+        message: errorMsg,
+        error: errorMsg,
+      };
+    } catch (err: any) {
+      console.error('[FormService submitCareer error]:', err);
+      return {
+        success: false,
+        message: 'Could not connect to the server. Please check your network or try again later.',
+        error: err.message || 'Network error',
+      };
+    }
+  },
 };

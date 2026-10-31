@@ -897,9 +897,9 @@ export const CurriculumShowcase: React.FC = () => {
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold shrink-0">
               <Compass className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-sm sm:text-base text-[#181C20]">CVP Cultural Integration</h4>
+            <h4 className="font-bold text-sm sm:text-base text-[#181C20]">CVP Value Integration</h4>
             <p className="text-xs text-slate-700 leading-relaxed">
-              Pujya Gurudev’s 4 pillars (Physical, Mental, Intellectual & Spiritual) ensure students develop ethical integrity, universal patriotism, and self-mastery.
+              Pujya Gurudev’s Chinmaya Vision Programme nurtures Pillar 1 Integrated Learning (Physical, Mental, Intellectual & Spiritual faculties) alongside cultural grounding, patriotism (civic duty), and universal outlook.
             </p>
           </div>
 

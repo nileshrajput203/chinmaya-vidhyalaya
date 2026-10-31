@@ -142,7 +142,7 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     role: "Member",
     occupation: "Industrialist",
 
-    email: "cvtarapur@rediffmail.com",
+    email: "cv.info@chinmayamission.com",
     image: "/images/board-of-management/sri-b-k-poddar.webp"
   },
   {

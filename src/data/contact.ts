@@ -10,9 +10,36 @@ export const CONTACT_DETAILS = {
     { label: "Alternate Office", number: "9823517700" }
   ],
   emails: [
-    { label: "General Inquiries", email: "cv.info@chinmayamission.com" },
-    { label: "Administration", email: "cvtarapur@chinmayamission.com" },
-    { label: "Principal Office", email: "cv.principal@chinmayamission.com" }
+    { 
+      label: "Admissions Desk", 
+      email: "cv.info@chinmayamission.com", 
+      subjectPrefix: "[Admissions 2026-27]",
+      description: "Student admission inquiries, eligibility, syllabus & fee assistance" 
+    },
+    { 
+      label: "Alumni Relations", 
+      email: "cv.info@chinmayamission.com", 
+      subjectPrefix: "[Alumni Network]",
+      description: "Alumni directory registration, student mentorship & reunion coordination" 
+    },
+    { 
+      label: "Teaching Staff & Careers", 
+      email: "cv.info@chinmayamission.com", 
+      subjectPrefix: "[Faculty Recruitment]",
+      description: "Teaching faculty applications, staff vacancies & academic CV submissions" 
+    },
+    { 
+      label: "General Administration", 
+      email: "cv.info@chinmayamission.com", 
+      subjectPrefix: "[General Inquiry]",
+      description: "Campus facilities, student transport, fees, and general school correspondence" 
+    },
+    { 
+      label: "Principal Office", 
+      email: "cv.principal@chinmayamission.com", 
+      subjectPrefix: "[Principal Office]",
+      description: "Official institutional correspondence, board governance, and academic escalations" 
+    }
   ],
   principal: {
     name: "Smt. Dimple Mistry",

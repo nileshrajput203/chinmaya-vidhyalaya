@@ -48,9 +48,9 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
       "Educational Approach: The Chinmaya Vision Programme (CVP) seamlessly integrates Value Education with academics for comprehensive personality development, inspiring noble citizenship."
     ],
     bulletPoints: [
-      "Integrated Development: Physical, Mental, Intellectual, and Spiritual faculties",
-      "Indian Culture: Inculcating reverence for heritage, moral values, and traditions",
-      "Patriotism: Developing civic responsibility and dedicated national commitment",
+      "Pillar 1 - Integrated Learning: Physical, Mental, Intellectual, and Spiritual faculties",
+      "Pillar 2 - Indian Culture: Inculcating reverence for heritage, moral values, and traditions",
+      "Pillar 3 - Patriotism: Developing active civic duty and dedicated national commitment",
       "Universal Outlook: Fostering empathy, environmental harmony, and global brotherhood",
       "Founder: Param Pujya Swami Chinmayanandaji"
     ]
@@ -63,14 +63,14 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     image: "/images/swami.jpeg",
     content: [
       "The Chinmaya Vision Program (CVP) is a concrete educational philosophy that transforms standard schooling into a noble life-building exercise.",
-      "It rests on four core pillars: Integrated Development, Indian Culture, Patriotism, and Universal Outlook.",
+      "It rests on four core pillars: Integrated Learning (encompassing Physical, Mental, Intellectual & Spiritual faculties), Indian Culture, Patriotism (with Civic Duty), and Universal Outlook.",
       "Through CVP, academic instruction is reinforced with daily Guru Paduka Pooja, Balvihar moral classes, Gita chanting, yoga, and meditation.",
       "Our learning spaces are thoughtfully constructed with a capacity to hold more than 40 students per section while preserving the warmth, individual attention, and values that define a Chinmaya Vidyalaya institution."
     ],
     bulletPoints: [
-      "Integrated Development: Physical fitness, emotional balance, intellectual sharpness, and spiritual awareness",
-      "Indian Culture: Immersion in ancient ethos, festival celebrations, and moral discernment",
-      "Patriotism: Active citizenship, respect for the national flag, anthem, and armed forces",
+      "Pillar 1 - Integrated Learning: Physical fitness, emotional balance (Mental), intellectual sharpness, and spiritual awareness",
+      "Pillar 2 - Indian Culture: Immersion in ancient ethos, festival celebrations, and moral discernment",
+      "Pillar 3 - Patriotism: National pride expressed through active civic duty, community seva, and respect for the armed forces",
       "Universal Outlook: Global harmony, ecological stewardship, and universal love",
       "Daily Guru Paduka Pooja, Balvihar moral values, and Gita chanting competitions"
     ]
@@ -131,7 +131,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
       "5. Dr. Shivshankar - Secretary (Doctor | drshankar.shiv@gmail.com)",
       "6. Dr. (Smt.) Shobha Sankhe - Member (Doctor | 2005shobha@gmail.com)",
       "7. Dr. Ratnakar Mane - Member (Doctor | drratnakarmane@gmail.com)",
-      "8. Sri. B.K. Poddar - Member (Industrialist | cvtarapur@rediffmail.com)",
+      "8. Sri. B.K. Poddar - Member (Industrialist | cv.info@chinmayamission.com)",
       "9. Dr. Dathatreya Nayak - Member (Doctor | ddnayak30@gmail.com)",
       "10. Smt. Dimple Mistry - Member (Principal) (Educationist | cv.principal@chinmayamission.com)"
     ]

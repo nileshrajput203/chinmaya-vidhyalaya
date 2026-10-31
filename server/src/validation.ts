@@ -35,11 +35,26 @@ export function isValidPhone(phone: unknown): boolean {
   return PHONE_REGEX.test(phone.trim()) && cleaned.length >= 10 && cleaned.length <= 15;
 }
 
+export const NAME_REGEX = /^[a-zA-Z\s.'-]+$/;
+
+export function isValidName(name: unknown): boolean {
+  if (typeof name !== 'string') return false;
+  const trimmed = name.trim();
+  return (
+    trimmed.length >= 2 &&
+    trimmed.length <= 80 &&
+    !/\d/.test(trimmed) &&
+    NAME_REGEX.test(trimmed) &&
+    (trimmed.match(/[a-zA-Z]/g) || []).length >= 2
+  );
+}
+
 export interface ValidatedContactInput {
   fullName: string;
   email: string;
   phone?: string;
   subject?: string;
+  department?: 'admissions' | 'alumni' | 'teaching_staff' | 'general' | 'principal';
   message: string;
 }
 
@@ -52,6 +67,28 @@ export interface ValidatedAdmissionInput {
   message?: string;
 }
 
+export interface ValidatedAlumniInput {
+  fullName: string;
+  batchYear: string;
+  email: string;
+  phone: string;
+  currentCity: string;
+  profession: string;
+  organization?: string;
+  willingToMentor?: boolean;
+  message?: string;
+}
+
+export interface ValidatedCareerInput {
+  name: string;
+  email: string;
+  phone: string;
+  position: string;
+  qualification: string;
+  experience: string;
+  message?: string;
+}
+
 export function validateContactPayload(body: any): { valid: true; data: ValidatedContactInput } | { valid: false; error: string } {
   if (!body || typeof body !== 'object') {
     return { valid: false, error: 'Request body must be a valid JSON object' };
@@ -61,10 +98,11 @@ export function validateContactPayload(body: any): { valid: true; data: Validate
   const email = (typeof body.email === 'string' ? body.email.trim() : '');
   const phone = body.phone ? sanitizeHeader(body.phone) : undefined;
   const subject = body.subject ? sanitizeHeader(body.subject) : undefined;
+  const department = body.department ? (sanitizeHeader(body.department) as any) : undefined;
   const message = sanitizeText(body.message);
 
-  if (!fullName || fullName.length < 2) {
-    return { valid: false, error: 'Please enter a valid full name (minimum 2 characters).' };
+  if (!isValidName(fullName)) {
+    return { valid: false, error: 'Please enter a valid full name containing only letters (numbers and symbols are not allowed).' };
   }
 
   if (!email || !isValidEmail(email)) {
@@ -81,7 +119,7 @@ export function validateContactPayload(body: any): { valid: true; data: Validate
 
   return {
     valid: true,
-    data: { fullName, email, phone, subject, message },
+    data: { fullName, email, phone, subject, department, message },
   };
 }
 
@@ -97,12 +135,12 @@ export function validateAdmissionPayload(body: any): { valid: true; data: Valida
   const email = body.email && typeof body.email === 'string' && body.email.trim().length > 0 ? body.email.trim() : undefined;
   const message = body.message ? sanitizeText(body.message) : undefined;
 
-  if (!parentName || parentName.length < 2) {
-    return { valid: false, error: 'Please enter the parent or guardian name.' };
+  if (!isValidName(parentName)) {
+    return { valid: false, error: 'Please enter a valid parent or guardian name containing only letters (numbers and symbols are not allowed).' };
   }
 
-  if (!studentName || studentName.length < 2) {
-    return { valid: false, error: 'Please enter the student name.' };
+  if (!isValidName(studentName)) {
+    return { valid: false, error: 'Please enter a valid student name containing only letters (numbers and symbols are not allowed).' };
   }
 
   if (!phone || !isValidPhone(phone)) {
@@ -116,5 +154,77 @@ export function validateAdmissionPayload(body: any): { valid: true; data: Valida
   return {
     valid: true,
     data: { parentName, studentName, gradeApplyingFor, phone, email, message },
+  };
+}
+
+export function validateAlumniPayload(body: any): { valid: true; data: ValidatedAlumniInput } | { valid: false; error: string } {
+  if (!body || typeof body !== 'object') {
+    return { valid: false, error: 'Request body must be a valid JSON object' };
+  }
+
+  const fullName = sanitizeHeader(body.fullName || body.name);
+  const batchYear = sanitizeHeader(body.batchYear || body.batch);
+  const email = typeof body.email === 'string' ? body.email.trim() : '';
+  const phone = typeof body.phone === 'string' ? sanitizeHeader(body.phone) : '';
+  const currentCity = sanitizeHeader(body.currentCity || body.city || 'Not Specified');
+  const profession = sanitizeHeader(body.profession || 'Not Specified');
+  const organization = body.organization ? sanitizeHeader(body.organization) : undefined;
+  const willingToMentor = Boolean(body.willingToMentor);
+  const message = body.message ? sanitizeText(body.message) : undefined;
+
+  if (!isValidName(fullName)) {
+    return { valid: false, error: 'Please enter a valid full name containing only letters (numbers and symbols are not allowed).' };
+  }
+
+  if (!batchYear) {
+    return { valid: false, error: 'Please enter or select your passing batch year.' };
+  }
+
+  if (!email || !isValidEmail(email)) {
+    return { valid: false, error: 'Please provide a valid email address.' };
+  }
+
+  if (!phone || !isValidPhone(phone)) {
+    return { valid: false, error: 'Please provide a valid 10-digit phone number.' };
+  }
+
+  return {
+    valid: true,
+    data: { fullName, batchYear, email, phone, currentCity, profession, organization, willingToMentor, message },
+  };
+}
+
+export function validateCareerPayload(body: any): { valid: true; data: ValidatedCareerInput } | { valid: false; error: string } {
+  if (!body || typeof body !== 'object') {
+    return { valid: false, error: 'Request body must be a valid JSON object' };
+  }
+
+  const name = sanitizeHeader(body.name || body.fullName);
+  const email = typeof body.email === 'string' ? body.email.trim() : '';
+  const phone = typeof body.phone === 'string' ? sanitizeHeader(body.phone) : '';
+  const position = sanitizeHeader(body.position || body.role || 'Teaching Faculty');
+  const qualification = sanitizeHeader(body.qualification || 'Not Specified');
+  const experience = sanitizeHeader(body.experience || 'Not Specified');
+  const message = body.message ? sanitizeText(body.message) : undefined;
+
+  if (!isValidName(name)) {
+    return { valid: false, error: 'Please enter a valid applicant name containing only letters (numbers and symbols are not allowed).' };
+  }
+
+  if (!position) {
+    return { valid: false, error: 'Please select or specify the position applied for.' };
+  }
+
+  if (!email || !isValidEmail(email)) {
+    return { valid: false, error: 'Please provide a valid email address.' };
+  }
+
+  if (!phone || !isValidPhone(phone)) {
+    return { valid: false, error: 'Please provide a valid 10-digit phone number.' };
+  }
+
+  return {
+    valid: true,
+    data: { name, email, phone, position, qualification, experience, message },
   };
 }

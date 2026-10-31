@@ -39,3 +39,8 @@ Thumbs.db
 school/
 .vercel
 .env*
+
+# Local server data
+server/data/*.json
+!server/data/.gitkeep
+
