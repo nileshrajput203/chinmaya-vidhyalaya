@@ -320,6 +320,8 @@ const FacilityCardCarousel: React.FC<{
       <img
         src={currentPhoto.src}
         alt={`${facility.name} - ${currentPhoto.caption}`}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover transition-transform duration-500 cursor-pointer hover:scale-105"
         onClick={() => onOpenLightbox(currentPhoto.src, currentPhoto.caption)}
       />
