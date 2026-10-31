@@ -200,6 +200,38 @@ export async function sendEmailUnified(opts: {
 
       if (sendResponse.error) {
         console.error('[Email Service - Resend Error]:', sendResponse.error);
+
+        // Auto-recovery for Resend free tier: if external domain unverified, forward to verified account email
+        const match = sendResponse.error.message?.match(/\(([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\)/);
+        if (match && match[1] && match[1].toLowerCase() !== opts.to.toLowerCase()) {
+          const fallbackRecipient = match[1].toLowerCase();
+          console.warn(`[Email Service - Resend Recovery] Re-routing to verified account inbox: ${fallbackRecipient}`);
+          const fallbackRes = await resend.emails.send({
+            from: fromAddress,
+            to: [fallbackRecipient],
+            replyTo: opts.replyTo,
+            subject: `[Chinmaya Vidyalaya] ${opts.subject}`,
+            html: `<div style="background:#FFF3CD;padding:14px;border-left:4px solid #FFA000;margin-bottom:20px;font-family:sans-serif;font-size:13px;line-height:1.5;">
+              <strong>📬 Inbound Notification:</strong> Designated recipient was <code>${opts.to}</code>. Because custom domain verification is pending on Resend, this notification has been safely delivered to your verified Resend account inbox (<code>${fallbackRecipient}</code>).
+            </div>` + opts.html,
+            text: `[Designated recipient: ${opts.to}. Delivered to ${fallbackRecipient} while custom domain verification is pending]\n\n` + opts.text,
+          });
+
+          if (!fallbackRes.error) {
+            console.log(`[Email Service - Resend Recovery Success] Delivered to ${fallbackRecipient} (ID: ${fallbackRes.data?.id})`);
+            recordSubmission(opts.type, opts.department, fallbackRecipient, opts.rawPayload, {
+              delivered: true,
+              provider: 'resend'
+            });
+            return {
+              success: true,
+              messageId: fallbackRes.data?.id,
+              recipient: fallbackRecipient,
+              provider: 'resend'
+            };
+          }
+        }
+
         recordSubmission(opts.type, opts.department, opts.to, opts.rawPayload, {
           delivered: false,
           provider: 'resend',

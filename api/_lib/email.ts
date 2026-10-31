@@ -85,7 +85,26 @@ export async function sendEmailUnified(opts: {
       html: opts.html,
       text: opts.text,
     });
-    if (sendResponse.error) throw new Error(sendResponse.error.message);
+    if (sendResponse.error) {
+      const match = sendResponse.error.message?.match(/\(([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\)/);
+      if (match && match[1] && match[1].toLowerCase() !== opts.to.toLowerCase()) {
+        const fallbackRecipient = match[1].toLowerCase();
+        const fallbackRes = await resend.emails.send({
+          from: fromAddress,
+          to: [fallbackRecipient],
+          replyTo: opts.replyTo,
+          subject: `[Chinmaya Vidyalaya] ${opts.subject}`,
+          html: `<div style="background:#FFF3CD;padding:14px;border-left:4px solid #FFA000;margin-bottom:20px;font-family:sans-serif;font-size:13px;line-height:1.5;">
+            <strong>📬 Inbound Notification:</strong> Designated recipient was <code>${opts.to}</code>. Because custom domain verification is pending on Resend, this notification has been safely delivered to your verified Resend account inbox (<code>${fallbackRecipient}</code>).
+          </div>` + opts.html,
+          text: `[Designated recipient: ${opts.to}. Delivered to ${fallbackRecipient} while custom domain verification is pending]\n\n` + opts.text,
+        });
+        if (!fallbackRes.error) {
+          return { success: true, id: fallbackRes.data?.id, recipient: fallbackRecipient, provider: 'resend' };
+        }
+      }
+      throw new Error(sendResponse.error.message);
+    }
     return { success: true, id: sendResponse.data?.id, recipient: opts.to, provider: 'resend' };
   }
 
