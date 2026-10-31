@@ -88,6 +88,7 @@ export const ABOUT_SECTIONS: Record<string, AboutSectionData> = {
     bulletPoints: [
       "Classroom Architecture: Spacious infrastructure with capacity exceeding 40 students",
       "Pedagogical Care: Individualized mentoring and low student-to-teacher ratio",
+      "Important Note: Registration forms to be submitted in school offline as well to go for further admission process",
       "Registration Forms for Nursery, KG & Std I-IX available online",
       "Documents Required: Birth Certificate, Previous School Progress Report, Transfer Certificate (TC)",
       "CBSE Affiliation No: 1130058 | School Code: 30040 | U-DISE: 27361116004",

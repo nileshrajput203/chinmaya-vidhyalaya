@@ -7,7 +7,8 @@ import {
   Download, 
   ShieldCheck, 
   Phone,
-  FileCheck
+  FileCheck,
+  AlertCircle
 } from 'lucide-react';
 
 export const AdmissionGuidelinesShowcase: React.FC = () => {
@@ -50,6 +51,31 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
         <p className="text-sm sm:text-base text-slate-600 font-normal max-w-2xl">
           Official eligibility criteria, mandatory verification checklist, and registration guidelines for Boisar campus.
         </p>
+      </div>
+
+      {/* ====================================================
+          IMPORTANT ADMISSION NOTICE CALLOUT
+         ==================================================== */}
+      <div className="bg-amber-50/95 border-l-4 border-[#DF711B] rounded-r-2xl p-4 sm:p-5 shadow-xs flex items-start gap-3.5">
+        <div className="w-10 h-10 rounded-xl bg-[#DF711B]/15 text-[#DF711B] flex items-center justify-center shrink-0 mt-0.5">
+          <AlertCircle className="w-5 h-5 stroke-[2.2]" />
+        </div>
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded-md bg-[#DF711B] text-white font-mono text-[10px] font-bold uppercase tracking-wide">
+              Important Note
+            </span>
+            <span className="text-xs font-bold text-[#181C20] uppercase tracking-wide">
+              Mandatory Offline Submission
+            </span>
+          </div>
+          <p className="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">
+            Registration forms to be submitted in school offline as well to go for further admission process.
+          </p>
+          <p className="text-xs text-slate-600 leading-relaxed font-normal">
+            Please submit the duly filled hardcopy registration form along with required self-attested documents at the school administration office counter during visiting hours (Mon to Sat, 8:30 AM – 3:30 PM).
+          </p>
+        </div>
       </div>
 
       {/* ====================================================
@@ -128,6 +154,10 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
               </span>
               <p className="text-xs text-slate-700 font-medium">
                 Download printable hardcopy application forms:
+              </p>
+              <p className="text-[11px] text-[#DF711B] font-bold mt-1 flex items-center gap-1.5">
+                <span>⚠️</span>
+                <span><strong>Important Note:</strong> Registration forms to be submitted in school offline as well to go for further admission process.</span>
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -232,7 +262,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
             <ul className="space-y-3 text-xs text-slate-700 font-sans">
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Step 1: Application:</strong> Download hardcopy PDF above or obtain form at school reception.</span>
+                <span><strong>Step 1: Application & Submission:</strong> Download hardcopy PDF above or obtain form at school reception. <strong>Important Note:</strong> Registration forms to be submitted in school offline as well to go for further admission process.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />

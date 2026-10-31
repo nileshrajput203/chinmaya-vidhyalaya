@@ -339,7 +339,7 @@ export const RegistrationFormPage: React.FC = () => {
                 <div className="p-4 bg-amber-50/70 border border-amber-200/80 rounded-2xl text-xs text-amber-900 flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong>Physical Form Submission Notice:</strong> Duly filled physical forms must be accompanied by an attested copy of the Birth Certificate, recent passport photos, and child Aadhaar card. Submit at the Admissions Counter, Chinmaya Vidyalaya Boisar.
+                    <strong>Important Note:</strong> Registration forms to be submitted in school offline as well to go for further admission process. Duly filled physical forms must be accompanied by an attested copy of the Birth Certificate, recent passport photos, and child Aadhaar card and submitted at the Admissions Counter, Chinmaya Vidyalaya Boisar.
                   </div>
                 </div>
               </div>
@@ -995,6 +995,7 @@ export const RegistrationFormPage: React.FC = () => {
               </span>
               <ul className="space-y-1.5 list-disc list-inside text-[11px] text-emerald-900/90">
                 <li>Keep this Application Reference ID (<strong>{submittedReceipt.appNo}</strong>) noted for all correspondence.</li>
+                <li className="text-amber-900 font-bold">Important Note: Registration forms to be submitted in school offline as well to go for further admission process.</li>
                 <li>Our Admissions Help Desk will contact you on <strong>{submittedReceipt.data.primaryPhone}</strong> to schedule document verification.</li>
                 <li>Please prepare original Birth Certificate, Transfer Certificate (if applicable), and passport-size photographs.</li>
               </ul>
