@@ -909,7 +909,7 @@ export const CurriculumShowcase: React.FC = () => {
             </div>
             <h4 className="font-bold text-sm sm:text-base text-[#181C20]">Remedial & Zero Period</h4>
             <p className="text-xs text-slate-700 leading-relaxed">
-              Special personalized doubt-clearing sessions for students requiring academic support, and Olympiad grooming for gifted learners.
+              Special personalized doubt-clearing sessions and academic mentoring for students requiring scholastic support and enrichment.
             </p>
           </div>
 

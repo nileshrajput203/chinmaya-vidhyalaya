@@ -66,7 +66,7 @@ const BENTO_TILES: BentoTile[] = [
     id: 'tile-6',
     type: 'photo',
     src: '/images/pages/home/bento/tile-06-olympiad.jpg',
-    alt: 'Mathematics Olympiad & Analytical Drill',
+    alt: 'Mathematics & Analytical Problem Solving',
     colSpanClass: 'col-span-1',
     rowSpanClass: 'row-span-1'
   },

@@ -44,7 +44,7 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
     bulletPoints: [
       "Physical Fitness: Daily morning yoga, expansive athletic fields, and inter-house sports leagues",
       "Emotional Poise: Compassionate teacher-student mentorship, peer counselling, and value education",
-      "Intellectual Agility: ASSET skill-based diagnostic testing, science olympiads, and debating forums",
+      "Intellectual Agility: ASSET skill-based diagnostic testing, science exhibitions, and debating forums",
       "Spiritual Anchoring: Daily prayer assemblies, mindful breathing, and ethical decision-making guidance"
     ],
     highlights: [

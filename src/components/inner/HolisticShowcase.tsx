@@ -76,7 +76,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     imageCaption: 'Cognitive Rigor: Hands-on Chemistry Experimentation & Analysis',
     locationMeta: 'Chemistry Laboratory • Station 2',
     description:
-      'Sharpening analytical cognition, critical inquiry, and conceptual problem-solving. Students conduct hands-on laboratory experiments, engage in ASSET diagnostic assessments, and participate in science olympiads.',
+      'Sharpening analytical cognition, critical inquiry, and conceptual problem-solving. Students conduct hands-on laboratory experiments, engage in ASSET diagnostic assessments, and participate in science exhibitions.',
     activities: [
       'Well-equipped Physics, Chemistry, Biology, and IT laboratories',
       'ASSET diagnostic assessments identifying conceptual strengths & gaps',
