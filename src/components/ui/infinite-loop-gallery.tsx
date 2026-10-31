@@ -57,7 +57,7 @@ export const InfiniteLoopGallery: React.FC<InfiniteLoopGalleryProps> = ({
       <div
         key={`${item.id}-${index}`}
         onClick={() => setSelectedItem(item)}
-        className="group relative flex-shrink-0 w-[290px] sm:w-[370px] lg:w-[430px] h-[190px] sm:h-[240px] lg:h-[270px] rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] select-none"
+        className="infinite-loop-card group relative flex-shrink-0 w-[290px] sm:w-[370px] lg:w-[430px] h-[190px] sm:h-[240px] lg:h-[270px] rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] select-none"
       >
         <img
           src={item.url}
@@ -66,8 +66,13 @@ export const InfiniteLoopGallery: React.FC<InfiniteLoopGalleryProps> = ({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
             const target = e.currentTarget;
-            if (!target.src.includes('/images/banner-1.jpg')) {
-              target.src = '/images/banner-1.jpg';
+            if (target.src.includes('.webp')) {
+              target.src = target.src.replace(/\.webp($|\?)/, '.jpg$1');
+              return;
+            }
+            const card = target.closest<HTMLElement>('.infinite-loop-card');
+            if (card) {
+              card.style.display = 'none';
             }
           }}
         />

@@ -222,16 +222,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 007 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-faculty-mentorship",
-    title: "Faculty Mentorship & Smart Classrooms",
-    category: "campus",
-    event: "Academics",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2",
-    caption: "Faculty mentorship and smart classroom instruction at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-cultural-cultural_celebration_008",
     title: "Cultural Stage & Festive Celebration 008",
     category: "celebrations",
@@ -2031,4 +2021,5 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     imageUrl: "/images/chinmaya/cultural/arts_and_creativity_029.jpg?v=2",
     caption: "Arts, Crafts & Project Exhibition 029 at Chinmaya Vidyalaya, Tarapur."
   },
+
 ];

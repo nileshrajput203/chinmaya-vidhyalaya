@@ -83,8 +83,13 @@ export default function MarqueeAlongSvgPathDemo() {
                 decoding="async"
                 onError={(e) => {
                   const target = e.currentTarget;
-                  if (target.src !== window.location.origin + "/images/banner-1.jpg") {
-                    target.src = "/images/banner-1.jpg";
+                  if (target.src.includes('.webp')) {
+                    target.src = target.src.replace(/\.webp($|\?)/, '.jpg$1');
+                    return;
+                  }
+                  const link = target.closest<HTMLElement>('a');
+                  if (link) {
+                    link.style.display = 'none';
                   }
                 }}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none select-none"
