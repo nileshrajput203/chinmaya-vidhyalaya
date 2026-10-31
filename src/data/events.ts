@@ -188,3 +188,4 @@ export const UPCOMING_EVENTS: SchoolEvent[] = [
     summary: 'Final comprehensive annual academic assessments for Nursery through Standard IX & XI for the 2026-27 session.'
   }
 ];
+

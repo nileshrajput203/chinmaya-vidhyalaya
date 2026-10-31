@@ -21,7 +21,6 @@
  * ============================================================================
  */
 
-import { OFFICIAL_GALLERY } from './gallery';
 
 // ----------------------------------------------------------------------------
 // 1. CORE SCHOOL & CAMPUS IMAGES
@@ -122,7 +121,26 @@ export const PANEL_B_MOVING_GALLERY_COL2 = [
 // ----------------------------------------------------------------------------
 // 4. RIBBON GALLERY IMAGES (Same 24 images as Photo Gallery)
 // ----------------------------------------------------------------------------
-export const RIBBON_GALLERY_IMAGES: string[] = OFFICIAL_GALLERY.map((item) => item.imageUrl);
+export const RIBBON_GALLERY_IMAGES: string[] = [
+  '/images/banner-1.jpg',
+  '/images/banner-8.webp',
+  '/images/phys.webp',
+  '/images/biology-lab.jpg',
+  '/images/pages/home/laboratories/it-lab.jpg',
+  '/images/lib.jpg',
+  '/images/banner-9.webp',
+  '/images/chinmaya-web-science.webp',
+  '/images/guru-paduka-pooja.webp',
+  '/images/chinmaya/academics/classroom_learning_001.jpg',
+  '/images/chinmaya/academics/classroom_learning_005.jpg',
+  '/images/chinmaya/sports/sports_athletic_meet_001.jpg',
+  '/images/chinmaya/cultural/cultural_celebration_006.jpg',
+  '/images/chinmaya/sports/sports_athletic_meet_003.jpg',
+  '/images/about2.jpeg',
+  '/images/chinmaya/cultural/cultural_celebration_015.jpg',
+  '/images/chinmaya/academics/science_stem_lab_01.webp',
+  '/images/chinmaya/cultural/cultural_celebration_040.jpg',
+];
 
 // ----------------------------------------------------------------------------
 // 5. CAMPUS STREAM ARCHIVE (3D Corridor in About/History page)
@@ -157,7 +175,21 @@ export const CAMPUS_STREAM_ARCHIVE = [
 // ----------------------------------------------------------------------------
 // 6. SVG MARQUEE GALLERY IMAGES (Animated looping stream into 3D folder - same 24 images as Photo Gallery)
 // ----------------------------------------------------------------------------
-export const MARQUEE_GALLERY_IMAGES = OFFICIAL_GALLERY.map((item) => ({
-  src: item.imageUrl,
-  alt: item.title || "Chinmaya Vidyalaya Campus",
-}));
+export const MARQUEE_GALLERY_IMAGES = [
+  { src: "/images/banner-1.jpg", alt: "Chinmaya Vidyalaya Main Campus" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg", alt: "Athletic Championship" },
+  { src: "/images/phys.webp", alt: "Physics Laboratory" },
+  { src: "/images/chinmaya/academics/science_stem_lab_01.webp", alt: "Chemistry & STEM Lab" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg", alt: "Cultural Performance" },
+  { src: "/images/biology-lab.jpg", alt: "Biology Laboratory" },
+  { src: "/images/pages/home/laboratories/it-lab.jpg", alt: "Computer & Robotics Lab" },
+  { src: "/images/lib.jpg", alt: "Central Library" },
+  { src: "/images/banner-8.webp", alt: "Annual Sports Day" },
+  { src: "/images/chinmaya-web-science.webp", alt: "Science & Innovation Fair" },
+  { src: "/images/guru-paduka-pooja.webp", alt: "Guru Paduka Pooja" },
+  { src: "/images/about2.jpeg", alt: "Academic Campus Wings" },
+  { src: "/images/chinmaya/leadership/principal_dimple_mistry.jpg", alt: "Principal & Leadership" },
+  { src: "/images/chinmaya/academics/classroom_learning_001.jpg", alt: "Interactive Digital Pedagogy" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_006.jpg", alt: "Classical Dance Recital" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_003.jpg", alt: "Inter-House March Past" },
+];
