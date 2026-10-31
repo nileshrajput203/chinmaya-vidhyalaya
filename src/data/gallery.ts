@@ -42,6 +42,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Solemn prayer gathering, paduka abhishekam, and bhajans invoking divine grace."
   },
   {
+    id: "chinmaya-sports-sports_athletic_meet_001",
+    title: "Sports Championship & Athletics 001",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2",
+    caption: "Sports Championship & Athletics 001 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-academics-classroom_learning_001",
     title: "Classroom Interactive Learning 001",
     category: "academics",
@@ -50,66 +60,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_001.jpg?v=2",
     caption: "Classroom Interactive Learning 001 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_002",
-    title: "Classroom Interactive Learning 002",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_002.jpg?v=2",
-    caption: "Classroom Interactive Learning 002 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_003",
-    title: "Classroom Interactive Learning 003",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2",
-    caption: "Classroom Interactive Learning 003 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_004",
-    title: "Classroom Interactive Learning 004",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_004.jpg?v=2",
-    caption: "Classroom Interactive Learning 004 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_005",
-    title: "Classroom Interactive Learning 005",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_005.jpg?v=2",
-    caption: "Classroom Interactive Learning 005 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_007",
-    title: "Classroom Interactive Learning 007",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_007.jpg?v=2",
-    caption: "Classroom Interactive Learning 007 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_010",
-    title: "Classroom Interactive Learning 010",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2",
-    caption: "Classroom Interactive Learning 010 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_001",
@@ -122,6 +72,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 001 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-campus-campus_facilities_001",
+    title: "Campus Infrastructure & Grounds 001",
+    category: "campus",
+    event: "Campus Life",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/campus/campus_facilities_001.jpg?v=2",
+    caption: "Campus Infrastructure & Grounds 001 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_002",
     title: "Cultural Stage & Festive Celebration 002",
     category: "celebrations",
@@ -130,6 +90,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_002.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 002 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_002",
+    title: "Sports Championship & Athletics 002",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_002.jpg?v=2",
+    caption: "Sports Championship & Athletics 002 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_002",
+    title: "Classroom Interactive Learning 002",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_002.jpg?v=2",
+    caption: "Classroom Interactive Learning 002 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_003",
@@ -142,6 +122,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 003 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-campus-campus_facilities_002",
+    title: "Campus Infrastructure & Grounds 002",
+    category: "campus",
+    event: "Campus Life",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/campus/campus_facilities_002.jpg?v=2",
+    caption: "Campus Infrastructure & Grounds 002 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_004",
     title: "Cultural Stage & Festive Celebration 004",
     category: "celebrations",
@@ -150,6 +140,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_004.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 004 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_003",
+    title: "Sports Championship & Athletics 003",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_003.jpg?v=2",
+    caption: "Sports Championship & Athletics 003 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_003",
+    title: "Classroom Interactive Learning 003",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2",
+    caption: "Classroom Interactive Learning 003 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_005",
@@ -162,6 +172,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 005 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-campus-campus_facilities_003",
+    title: "Campus Infrastructure & Grounds 003",
+    category: "campus",
+    event: "Campus Life",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/campus/campus_facilities_003.jpg?v=2",
+    caption: "Campus Infrastructure & Grounds 003 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_006",
     title: "Cultural Stage & Festive Celebration 006",
     category: "celebrations",
@@ -170,6 +190,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_006.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 006 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_004",
+    title: "Sports Championship & Athletics 004",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_004.jpg?v=2",
+    caption: "Sports Championship & Athletics 004 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_004",
+    title: "Classroom Interactive Learning 004",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_004.jpg?v=2",
+    caption: "Classroom Interactive Learning 004 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_007",
@@ -182,6 +222,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 007 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-faculty-mentorship",
+    title: "Faculty Mentorship & Smart Classrooms",
+    category: "campus",
+    event: "Academics",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2",
+    caption: "Faculty mentorship and smart classroom instruction at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_008",
     title: "Cultural Stage & Festive Celebration 008",
     category: "celebrations",
@@ -190,6 +240,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_008.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 008 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_005",
+    title: "Sports Championship & Athletics 005",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_005.jpg?v=2",
+    caption: "Sports Championship & Athletics 005 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_005",
+    title: "Classroom Interactive Learning 005",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_005.jpg?v=2",
+    caption: "Classroom Interactive Learning 005 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_009",
@@ -212,6 +282,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 010 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-sports-sports_athletic_meet_006",
+    title: "Sports Championship & Athletics 006",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_006.jpg?v=2",
+    caption: "Sports Championship & Athletics 006 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_007",
+    title: "Classroom Interactive Learning 007",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_007.jpg?v=2",
+    caption: "Classroom Interactive Learning 007 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_011",
     title: "Cultural Stage & Festive Celebration 011",
     category: "celebrations",
@@ -232,224 +322,24 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Arts, Crafts & Project Exhibition 001 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_012",
-    title: "Classroom Interactive Learning 012",
-    category: "academics",
-    event: "Classroom Life",
+    id: "chinmaya-sports-sports_athletic_meet_007",
+    title: "Sports Championship & Athletics 007",
+    category: "sports",
+    event: "Sports Meet",
     academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_012.jpg?v=2",
-    caption: "Classroom Interactive Learning 012 at Chinmaya Vidyalaya, Tarapur."
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_007.jpg?v=2",
+    caption: "Sports Championship & Athletics 007 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-academics-classroom_learning_013",
-    title: "Classroom Interactive Learning 013",
+    id: "chinmaya-academics-classroom_learning_010",
+    title: "Classroom Interactive Learning 010",
     category: "academics",
     event: "Classroom Life",
     academicYear: "2026-27",
     date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_013.jpg?v=2",
-    caption: "Classroom Interactive Learning 013 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_016",
-    title: "Classroom Interactive Learning 016",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_016.jpg?v=2",
-    caption: "Classroom Interactive Learning 016 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_018",
-    title: "Classroom Interactive Learning 018",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_018.jpg?v=2",
-    caption: "Classroom Interactive Learning 018 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_025",
-    title: "Classroom Interactive Learning 025",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_025.jpg?v=2",
-    caption: "Classroom Interactive Learning 025 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_030",
-    title: "Classroom Interactive Learning 030",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_030.jpg?v=2",
-    caption: "Classroom Interactive Learning 030 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_031",
-    title: "Classroom Interactive Learning 031",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_031.jpg?v=2",
-    caption: "Classroom Interactive Learning 031 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_033",
-    title: "Classroom Interactive Learning 033",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_033.jpg?v=2",
-    caption: "Classroom Interactive Learning 033 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_034",
-    title: "Classroom Interactive Learning 034",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_034.jpg?v=2",
-    caption: "Classroom Interactive Learning 034 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_036",
-    title: "Classroom Interactive Learning 036",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_036.jpg?v=2",
-    caption: "Classroom Interactive Learning 036 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_045",
-    title: "Classroom Interactive Learning 045",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_045.jpg?v=2",
-    caption: "Classroom Interactive Learning 045 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_046",
-    title: "Classroom Interactive Learning 046",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_046.jpg?v=2",
-    caption: "Classroom Interactive Learning 046 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_089",
-    title: "Classroom Interactive Learning 089",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_089.jpg?v=2",
-    caption: "Classroom Interactive Learning 089 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_090",
-    title: "Classroom Interactive Learning 090",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_090.jpg?v=2",
-    caption: "Classroom Interactive Learning 090 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_092",
-    title: "Classroom Interactive Learning 092",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_092.jpg?v=2",
-    caption: "Classroom Interactive Learning 092 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_095",
-    title: "Classroom Interactive Learning 095",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_095.jpg?v=2",
-    caption: "Classroom Interactive Learning 095 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_096",
-    title: "Classroom Interactive Learning 096",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_096.jpg?v=2",
-    caption: "Classroom Interactive Learning 096 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_099",
-    title: "Classroom Interactive Learning 099",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_099.jpg?v=2",
-    caption: "Classroom Interactive Learning 099 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_101",
-    title: "Classroom Interactive Learning 101",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_101.jpg?v=2",
-    caption: "Classroom Interactive Learning 101 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_106",
-    title: "Classroom Interactive Learning 106",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_106.jpg?v=2",
-    caption: "Classroom Interactive Learning 106 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_107",
-    title: "Classroom Interactive Learning 107",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_107.jpg?v=2",
-    caption: "Classroom Interactive Learning 107 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-academics-classroom_learning_110",
-    title: "Classroom Interactive Learning 110",
-    category: "academics",
-    event: "Classroom Life",
-    academicYear: "2026-27",
-    date: "2026-09-27",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_110.jpg?v=2",
-    caption: "Classroom Interactive Learning 110 at Chinmaya Vidyalaya, Tarapur."
+    imageUrl: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2",
+    caption: "Classroom Interactive Learning 010 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_012",
@@ -472,6 +362,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 013 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-sports-sports_athletic_meet_008",
+    title: "Sports Championship & Athletics 008",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_008.jpg?v=2",
+    caption: "Sports Championship & Athletics 008 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_012",
+    title: "Classroom Interactive Learning 012",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_012.jpg?v=2",
+    caption: "Classroom Interactive Learning 012 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_014",
     title: "Cultural Stage & Festive Celebration 014",
     category: "celebrations",
@@ -490,6 +400,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_015.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 015 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_009",
+    title: "Sports Championship & Athletics 009",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_009.jpg?v=2",
+    caption: "Sports Championship & Athletics 009 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_013",
+    title: "Classroom Interactive Learning 013",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_013.jpg?v=2",
+    caption: "Classroom Interactive Learning 013 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_016",
@@ -512,6 +442,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 017 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-sports-sports_athletic_meet_010",
+    title: "Sports Championship & Athletics 010",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_010.jpg?v=2",
+    caption: "Sports Championship & Athletics 010 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_016",
+    title: "Classroom Interactive Learning 016",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_016.jpg?v=2",
+    caption: "Classroom Interactive Learning 016 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_018",
     title: "Cultural Stage & Festive Celebration 018",
     category: "celebrations",
@@ -530,6 +480,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_019.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 019 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_011",
+    title: "Sports Championship & Athletics 011",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_011.jpg?v=2",
+    caption: "Sports Championship & Athletics 011 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_018",
+    title: "Classroom Interactive Learning 018",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_018.jpg?v=2",
+    caption: "Classroom Interactive Learning 018 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_020",
@@ -552,6 +522,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 021 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-sports-sports_athletic_meet_012",
+    title: "Sports Championship & Athletics 012",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_012.jpg?v=2",
+    caption: "Sports Championship & Athletics 012 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_025",
+    title: "Classroom Interactive Learning 025",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_025.jpg?v=2",
+    caption: "Classroom Interactive Learning 025 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_022",
     title: "Cultural Stage & Festive Celebration 022",
     category: "celebrations",
@@ -570,6 +560,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_023.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 023 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-sports-sports_athletic_meet_013",
+    title: "Sports Championship & Athletics 013",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_013.jpg?v=2",
+    caption: "Sports Championship & Athletics 013 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_030",
+    title: "Classroom Interactive Learning 030",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_030.jpg?v=2",
+    caption: "Classroom Interactive Learning 030 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_024",
@@ -592,6 +602,26 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 025 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-sports-sports_athletic_meet_014",
+    title: "Sports Championship & Athletics 014",
+    category: "sports",
+    event: "Sports Meet",
+    academicYear: "2026-27",
+    date: "2026-09-28",
+    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_014.jpg?v=2",
+    caption: "Sports Championship & Athletics 014 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_031",
+    title: "Classroom Interactive Learning 031",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_031.jpg?v=2",
+    caption: "Classroom Interactive Learning 031 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_026",
     title: "Cultural Stage & Festive Celebration 026",
     category: "celebrations",
@@ -610,6 +640,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_027.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 027 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_033",
+    title: "Classroom Interactive Learning 033",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_033.jpg?v=2",
+    caption: "Classroom Interactive Learning 033 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_028",
@@ -632,6 +672,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 029 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_034",
+    title: "Classroom Interactive Learning 034",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_034.jpg?v=2",
+    caption: "Classroom Interactive Learning 034 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_030",
     title: "Cultural Stage & Festive Celebration 030",
     category: "celebrations",
@@ -650,6 +700,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_031.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 031 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_036",
+    title: "Classroom Interactive Learning 036",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_036.jpg?v=2",
+    caption: "Classroom Interactive Learning 036 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_032",
@@ -672,6 +732,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 033 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_045",
+    title: "Classroom Interactive Learning 045",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_045.jpg?v=2",
+    caption: "Classroom Interactive Learning 045 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_034",
     title: "Cultural Stage & Festive Celebration 034",
     category: "celebrations",
@@ -690,6 +760,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_035.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 035 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_046",
+    title: "Classroom Interactive Learning 046",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_046.jpg?v=2",
+    caption: "Classroom Interactive Learning 046 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_036",
@@ -712,6 +792,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 037 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_089",
+    title: "Classroom Interactive Learning 089",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_089.jpg?v=2",
+    caption: "Classroom Interactive Learning 089 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_038",
     title: "Cultural Stage & Festive Celebration 038",
     category: "celebrations",
@@ -730,6 +820,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_039.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 039 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_090",
+    title: "Classroom Interactive Learning 090",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_090.jpg?v=2",
+    caption: "Classroom Interactive Learning 090 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_040",
@@ -752,6 +852,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 041 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_092",
+    title: "Classroom Interactive Learning 092",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_092.jpg?v=2",
+    caption: "Classroom Interactive Learning 092 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_042",
     title: "Cultural Stage & Festive Celebration 042",
     category: "celebrations",
@@ -770,6 +880,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_043.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 043 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_095",
+    title: "Classroom Interactive Learning 095",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_095.jpg?v=2",
+    caption: "Classroom Interactive Learning 095 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_044",
@@ -792,6 +912,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 045 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_096",
+    title: "Classroom Interactive Learning 096",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_096.jpg?v=2",
+    caption: "Classroom Interactive Learning 096 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_046",
     title: "Cultural Stage & Festive Celebration 046",
     category: "celebrations",
@@ -810,6 +940,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_047.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 047 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_099",
+    title: "Classroom Interactive Learning 099",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_099.jpg?v=2",
+    caption: "Classroom Interactive Learning 099 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_048",
@@ -832,6 +972,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 049 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_101",
+    title: "Classroom Interactive Learning 101",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_101.jpg?v=2",
+    caption: "Classroom Interactive Learning 101 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_050",
     title: "Cultural Stage & Festive Celebration 050",
     category: "celebrations",
@@ -850,6 +1000,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_051.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 051 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_106",
+    title: "Classroom Interactive Learning 106",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_106.jpg?v=2",
+    caption: "Classroom Interactive Learning 106 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_052",
@@ -872,6 +1032,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 053 at Chinmaya Vidyalaya, Tarapur."
   },
   {
+    id: "chinmaya-academics-classroom_learning_107",
+    title: "Classroom Interactive Learning 107",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_107.jpg?v=2",
+    caption: "Classroom Interactive Learning 107 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
     id: "chinmaya-cultural-cultural_celebration_054",
     title: "Cultural Stage & Festive Celebration 054",
     category: "celebrations",
@@ -890,6 +1060,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_055.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 055 at Chinmaya Vidyalaya, Tarapur."
+  },
+  {
+    id: "chinmaya-academics-classroom_learning_110",
+    title: "Classroom Interactive Learning 110",
+    category: "academics",
+    event: "Classroom Life",
+    academicYear: "2026-27",
+    date: "2026-09-27",
+    imageUrl: "/images/chinmaya/academics/classroom_learning_110.jpg?v=2",
+    caption: "Classroom Interactive Learning 110 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_056",
@@ -1851,184 +2031,4 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     imageUrl: "/images/chinmaya/cultural/arts_and_creativity_029.jpg?v=2",
     caption: "Arts, Crafts & Project Exhibition 029 at Chinmaya Vidyalaya, Tarapur."
   },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_001",
-    title: "Sports Championship & Athletics 001",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2",
-    caption: "Sports Championship & Athletics 001 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_002",
-    title: "Sports Championship & Athletics 002",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_002.jpg?v=2",
-    caption: "Sports Championship & Athletics 002 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_003",
-    title: "Sports Championship & Athletics 003",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_003.jpg?v=2",
-    caption: "Sports Championship & Athletics 003 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_004",
-    title: "Sports Championship & Athletics 004",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_004.jpg?v=2",
-    caption: "Sports Championship & Athletics 004 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_005",
-    title: "Sports Championship & Athletics 005",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_005.jpg?v=2",
-    caption: "Sports Championship & Athletics 005 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_006",
-    title: "Sports Championship & Athletics 006",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_006.jpg?v=2",
-    caption: "Sports Championship & Athletics 006 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_007",
-    title: "Sports Championship & Athletics 007",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_007.jpg?v=2",
-    caption: "Sports Championship & Athletics 007 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_008",
-    title: "Sports Championship & Athletics 008",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_008.jpg?v=2",
-    caption: "Sports Championship & Athletics 008 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_009",
-    title: "Sports Championship & Athletics 009",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_009.jpg?v=2",
-    caption: "Sports Championship & Athletics 009 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_010",
-    title: "Sports Championship & Athletics 010",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_010.jpg?v=2",
-    caption: "Sports Championship & Athletics 010 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_011",
-    title: "Sports Championship & Athletics 011",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_011.jpg?v=2",
-    caption: "Sports Championship & Athletics 011 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_012",
-    title: "Sports Championship & Athletics 012",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_012.jpg?v=2",
-    caption: "Sports Championship & Athletics 012 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_013",
-    title: "Sports Championship & Athletics 013",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_013.jpg?v=2",
-    caption: "Sports Championship & Athletics 013 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-sports-sports_athletic_meet_014",
-    title: "Sports Championship & Athletics 014",
-    category: "sports",
-    event: "Sports Meet",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/sports/sports_athletic_meet_014.jpg?v=2",
-    caption: "Sports Championship & Athletics 014 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_001",
-    title: "Campus Infrastructure & Grounds 001",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_001.jpg?v=2",
-    caption: "Campus Infrastructure & Grounds 001 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_002",
-    title: "Campus Infrastructure & Grounds 002",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_002.jpg?v=2",
-    caption: "Campus Infrastructure & Grounds 002 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-campus-campus_facilities_003",
-    title: "Campus Infrastructure & Grounds 003",
-    category: "campus",
-    event: "Campus Life",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/campus/campus_facilities_003.jpg?v=2",
-    caption: "Campus Infrastructure & Grounds 003 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-faculty-mentorship",
-    title: "Faculty Mentorship & Smart Classrooms",
-    category: "campus",
-    event: "Academics",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2",
-    caption: "Faculty mentorship and smart classroom instruction at Chinmaya Vidyalaya, Tarapur."
-  }
 ];
