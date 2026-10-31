@@ -237,7 +237,7 @@ export const NewsListingPage: React.FC = () => {
                           <a
                             href={(() => {
                               const title = encodeURIComponent(`Chinmaya Vidyalaya: ${ev.title}`);
-                              const details = encodeURIComponent(`${ev.summary}\n\nVenue: ${ev.venue}\nChinmaya Vidyalaya Tarapur (CBSE No. 1130095)`);
+                              const details = encodeURIComponent(`${ev.summary}\n\nVenue: ${ev.venue}\nChinmaya Vidyalaya Tarapur (CBSE No. 1130058, Code: 30040)`);
                               const location = encodeURIComponent(`${ev.venue}, Chinmaya Vidyalaya Tarapur, Boisar, Maharashtra 401501`);
                               return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}`;
                             })()}

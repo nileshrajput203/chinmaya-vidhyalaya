@@ -210,7 +210,7 @@ export const VidyalayaCrest3D: React.FC<{ className?: string }> = ({ className =
           Chinmaya Vidyalaya Tarapur • Knowledge & Character
         </p>
         <p className="text-[10px] text-amber-200/60 uppercase tracking-widest font-sans mt-0.5">
-          CBSE Affiliated No. 1130095 • Est. 1995
+          CBSE Affiliated No. 1130058 • School Code: 30040 • Est. 1995
         </p>
       </div>
     </div>

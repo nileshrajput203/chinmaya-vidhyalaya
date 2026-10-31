@@ -283,10 +283,10 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
 
                 <div className="pt-1 border-t border-white/10 flex items-center justify-between">
                   <span className="text-[10px] font-mono text-[#FFD285]">
-                    CBSE Affiliation No. 1130095
+                    CBSE Affiliation No. 1130058
                   </span>
                   <span className="text-[10px] font-mono text-white/60">
-                    School Code: 30018
+                    School Code: 30040
                   </span>
                 </div>
               </div>

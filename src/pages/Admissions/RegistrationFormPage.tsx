@@ -240,7 +240,7 @@ export const RegistrationFormPage: React.FC = () => {
               <div className="flex flex-wrap items-center gap-2">
                 <BadgePill label="Academic Year 2026-2027" variant="amber" />
                 <span className="text-xs font-mono font-semibold text-slate-500">
-                  CBSE Affiliation No. 1130058 • School Code: 30034
+                  CBSE Affiliation No. 1130058 • School Code: 30040
                 </span>
               </div>
               <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#181C20] tracking-tight">

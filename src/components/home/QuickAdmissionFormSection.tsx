@@ -480,7 +480,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
                   {/* Submission Row */}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[#F0EBE1]">
                     <span className="text-[11px] text-[#777777] font-sans">
-                      Official CBSE Affiliation No: 1130095 • No application charges for enquiry
+                      Official CBSE Affiliation No: 1130058 • School Code: 30040 • No application charges for enquiry
                     </span>
 
                     <button
