@@ -26,146 +26,151 @@ const PILLARS_DATA: PillarDetail[] = [
   {
     number: '01',
     sanskritName: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
-    englishTitle: 'Integrated Learning',
+    englishTitle: 'Integrated Development',
     corePurpose: 'Educating the whole child across all four foundational dimensions: Physical, Mental, Intellectual, and Spiritual development in complete balance.',
     dailyPractices: [
       {
         dimension: 'Physical • Sharirik',
         title: 'Physical Development',
-        desc: 'Morning Surya Namaskar, guided pranayama, yoga, and athletic training fostering physical stamina, motor skills, and agility.'
+        desc: 'Sports activities, physical fitness, yoga, and athletic training fostering stamina, motor skills, and overall health.'
       },
       {
         dimension: 'Mental • Manasik',
-        title: 'Mental Development',
-        desc: 'Nurturing emotional poise, self-discipline, resilience, empathy, and positive mental habits through mindful reflection.'
+        title: 'Mental Development & Bhagavad Gita Chanting',
+        desc: 'Nurturing emotional poise, memory retention, focus, and inner resilience through regular Bhagavad Gita chanting, guided reflection, and positive mental habits.'
       },
       {
         dimension: 'Intellectual • Bauddhik',
-        title: 'Intellectual Development',
-        desc: 'Hands-on STEM lab experiments, ASSET diagnostic assessments, and scholastic inquiry building sharp critical thinking.'
+        title: 'Intellectual Development with AI & Coding',
+        desc: 'Fostering analytical logic, technological innovation, and critical problem-solving through hands-on Artificial Intelligence (AI) and Coding (Python & Scratch), Science (Physics, Chemistry, Biology) and Maths laboratories, and inquiry-based assessments.'
       },
       {
         dimension: 'Spiritual • Adhyatmik',
         title: 'Spiritual Development',
-        desc: 'Moral values, character ethics, inner peace, and awareness of one’s higher purpose and interconnectedness with creation.'
+        desc: 'Moral values, character ethics, inner peace, mutual respect, and holistic personal growth.'
       }
     ],
     photos: [
       {
         src: '/images/pages/home/bento/tile-12-faculty-mentor.jpg',
-        caption: 'Integrated Learning: Physical, Mental, Intellectual & Spiritual Development in Practice',
+        caption: 'Integrated Development: Physical, Mental, Intellectual & Spiritual Development in Practice',
         locationMeta: 'Smart Classroom Wing • Interactive Teaching'
       }
     ],
-    tags: ['Physical Development', 'Mental Poise', 'Intellectual Rigor', 'Spiritual Awakening']
+    tags: ['Physical Development', 'Mental Poise & Gita Chanting', 'Intellectual Rigor (AI & Coding)', 'Spiritual Awakening']
   },
   {
     number: '02',
     sanskritName: 'Bhartiya Sanskriti Evam Sanskar',
     englishTitle: 'Indian Culture & Heritage',
-    corePurpose: 'Rooting students in timeless Indian traditions, Vedic wisdom, and deep lifelong respect for family, teachers, and society.',
+    corePurpose: 'Rooting students in timeless Indian traditions, cultural wisdom, and lifelong respect for family, teachers, and society.',
     dailyPractices: [
       {
         dimension: 'Reverence • Parampara',
-        title: 'Guru Paduka Pooja & Sacred Traditions',
-        desc: 'Assemblies open with prayer and lamp lighting, with solemn Paduka Pooja on special occasions.'
+        title: 'Cultural Assemblies & Prayer',
+        desc: 'Morning prayer assemblies, inspirational thoughts, and cultural celebrations fostering respect and discipline.'
       },
       {
-        dimension: 'Scripture • Swadhyaya',
-        title: 'Bhagavad Gita Recitation',
-        desc: 'Chanting competitions fostering Sanskrit diction and ethical depth.'
+        dimension: 'Values • Swadhyaya',
+        title: 'Language, Recitation & Shlokas',
+        desc: 'Chanting and recitation activities fostering linguistic appreciation, memory, and cultural depth.'
       },
       {
-        dimension: 'Values • Balvihar',
-        title: 'Balvihar Value Education',
-        desc: 'Dedicated periods exploring character ethics, epics, and family values.'
+        dimension: 'Ethics • Sanskar',
+        title: 'Value Education & Life Skills',
+        desc: 'Dedicated periods exploring character ethics, family values, and positive daily living.'
       },
       {
         dimension: 'Celebration • Utsav',
-        title: 'Vedic Cultural Festivals',
-        desc: 'Grand celebrations for Guru Purnima, Janmashtami, and Navratri.'
+        title: 'Cultural Festivals & Celebrations',
+        desc: 'School-wide celebrations of Indian festivals promoting unity, joy, and shared traditions.'
       }
     ],
     photos: [
       {
         src: '/images/guru-paduka-pooja.webp',
-        caption: 'Sacred Tradition: Solemn Morning Guru Paduka Pooja & Shloka Chanting Ceremony',
-        locationMeta: 'Central Prayer Altar • Sacred Assembly'
+        caption: 'Cultural Tradition: Morning Prayer & Assembly Celebrations',
+        locationMeta: 'Central Prayer Altar • School Assembly'
       }
     ],
-    tags: ['Guru Paduka Pooja', 'Bhagavad Gita Recitation', 'Balvihar Values', 'Vedic Festivals']
+    tags: ['Cultural Heritage', 'Value Education', 'Festivals & Celebrations', 'Character Building']
   },
   {
     number: '03',
     sanskritName: 'Deshbhakti Evam Rashtra Seva',
     englishTitle: 'Patriotism',
-    corePurpose: 'Inspiring genuine patriotism for the nation, with active civic duty, selfless community seva, and environmental stewardship as its vital expressions.',
+    corePurpose: 'Inspiring unyielding love for the nation through democratic leadership, armed forces reverence, cultural state pride, youth anti-addiction pledges, and active community seva.',
     dailyPractices: [
       {
+        dimension: 'Democratic Leadership • Loktantra',
+        title: 'Student Council Elections & Governance',
+        desc: 'Annual democratic student council elections with secret ballot casting, campaign speeches, and elected prefectorial leadership fostering civic duty and governance.'
+      },
+      {
+        dimension: 'Braveheart Tributes • Veergatha',
+        title: 'Kargil Vijay Diwas & Armed Forces Reverence',
+        desc: 'Commemorating Kargil Vijay Diwas and honoring the selfless sacrifice of our armed forces martyrs through patriotic exhibitions, poetry, and Veer Gatha national defense awareness.'
+      },
+      {
+        dimension: 'State Heritage • Rajya Gaurav',
+        title: 'Maharashtra Divas Celebrations',
+        desc: 'Grand celebrations on 1st May commemorating Maharashtra Divas with cultural folk presentations, traditional lezim, flag salutations, and pride in state heritage.'
+      },
+      {
+        dimension: 'Social Wellness • Jan Jagrukta',
+        title: 'Nasha Mukt Bharat Abhiyaan',
+        desc: 'Empowering students and community through Nasha Mukt Bharat Abhiyaan anti-addiction campaigns, youth awareness rallies, and student pledges for a healthy, drug-free nation.'
+      },
+      {
         dimension: 'Civic Duty • Nagarik Kartavya',
-        title: 'Active Civic Duty & Community Action',
-        desc: 'Practicing civic responsibility through Boisar cleanliness drives, civic awareness, and selfless neighborhood seva.'
-      },
-      {
-        dimension: 'National Pride • Rashtra',
-        title: 'Anthem & Ceremonial March',
-        desc: 'Flag salutations, disciplined march past, and national day parades honoring the motherland.'
-      },
-      {
-        dimension: 'Conservation • Jal Seva',
-        title: 'Jal Pakhwada Water Drives',
-        desc: 'Fortnightly environmental rallies, tree planting, and water conservation as civic service to the country.'
-      },
-      {
-        dimension: 'Inspiration • Veergatha',
-        title: 'Tributes to National Heroes',
-        desc: 'Commemorations honoring armed forces, scientists, and martyrs to inspire dedicated national service.'
+        title: 'Cleanliness Drives & National Observances',
+        desc: 'Independence Day, Republic Day flag ceremonies, Swachh Bharat cleanliness drives, and environmental conservation across the campus and Boisar community.'
       }
     ],
     photos: [
       {
         src: '/images/pages/home/pillars/pillar-03-patriotism.png',
-        caption: 'Patriotism in Action: Active Civic Duty, Swachhata Seva & Community Outreach Drives',
-        locationMeta: 'Community Seva • Tarapur District'
+        caption: 'Patriotism in Action: Student Leadership, Civic Outreach & National Pride',
+        locationMeta: 'Community Service & Campus Assemblies • Tarapur'
       }
     ],
-    tags: ['National Patriotism', 'Active Civic Duty', 'Swachhata Seva Drives', 'Hero Commemorations']
+    tags: ['Patriotism', 'Kargil Vijay Diwas', 'Maharashtra Divas', 'Nasha Mukt Bharat', 'Student Council Elections', 'Civic Duty']
   },
   {
     number: '04',
     sanskritName: 'Vasudhaiva Kutumbakam',
     englishTitle: 'Universal Outlook',
-    corePurpose: 'Guiding students to embrace the Upanishadic truth that the entire cosmos is one interconnected family living in harmony.',
+    corePurpose: 'Guiding students to embrace the worldview that the whole world is one family living in peace and harmony.',
     dailyPractices: [
       {
-        dimension: 'Ecology • Prakriti',
-        title: 'Outdoor Nature Expeditions',
-        desc: 'Curricular nature walks and botanical excursions cultivating ecological awareness.'
+        dimension: 'Environment • Prakriti',
+        title: 'Nature Study & Outdoor Excursions',
+        desc: 'Nature walks, outdoor study, and botanical excursions cultivating ecological awareness.'
       },
       {
-        dimension: 'Innovation • Urja',
-        title: 'Green Sustainability Fairs',
-        desc: 'Exhibition projects and student models for clean energy and environmental solutions.'
+        dimension: 'Sustainability • Urja',
+        title: 'Science & Sustainability Fairs',
+        desc: 'Student innovation models, clean energy projects, and environmental science solutions.'
       },
       {
-        dimension: 'Peace • Shanti',
-        title: 'Universal Peace Invocations',
-        desc: 'Assemblies conclude with Vedic prayers: "Om Sarve Bhavantu Sukhinah".'
+        dimension: 'Harmony • Shanti',
+        title: 'Universal Peace & Harmony',
+        desc: 'Morning assemblies and prayers celebrating peace, mutual respect, and harmony for all beings.'
       },
       {
-        dimension: 'Global Vision • Ekata',
-        title: 'Youth Model Assemblies',
-        desc: 'Debates on global challenges, ethics, and international fellowship.'
+        dimension: 'Global Perspective • Ekata',
+        title: 'Global Awareness & Leadership',
+        desc: 'Student debates, leadership forums, and broad-minded discussions on global topics.'
       }
     ],
     photos: [
       {
         src: '/images/pages/home/pillars/pillar-04-universal.webp',
-        caption: 'Universal Outlook: Vasudhaiva Kutumbakam - Scholastic Excellence & Global Harmony',
+        caption: 'Universal Outlook: Global Awareness & Scholastic Excellence',
         locationMeta: 'Classroom Learning • Scholastic Wing'
       }
     ],
-    tags: ['Vasudhaiva Kutumbakam', 'Nature Expeditions', 'Green Innovation', 'Universal Peace']
+    tags: ['Universal Outlook', 'Nature Study', 'Green Innovation', 'Global Harmony']
   }
 ];
 

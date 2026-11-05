@@ -22,13 +22,24 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({ document }) => {
               <FileText className="w-5 h-5" />
             </div>
 
-            {/* If there's a specific term badge, display term */}
-            {document.term && (
-              <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#FAF3E8] text-[#DF711B] uppercase tracking-wider border border-[#E7E2D8]">
-                {document.term}
-              </span>
-            )}
-            {/* Category badge removed per user specification */}
+            {/* Badges */}
+            <div className="flex flex-wrap items-center gap-1.5">
+              {document.stream && (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  {document.stream}
+                </span>
+              )}
+              {document.term && (
+                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#FAF3E8] text-[#DF711B] uppercase tracking-wider border border-[#E7E2D8]">
+                  {document.term}
+                </span>
+              )}
+              {document.isComingSoon && (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200 uppercase tracking-wider">
+                  Coming Soon
+                </span>
+              )}
+            </div>
           </div>
 
           <h3 className="font-cinzel font-bold text-[#0B1D30] text-base mb-2 group-hover:text-[#DF711B] transition-colors line-clamp-2">
@@ -54,28 +65,36 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({ document }) => {
             </span>
           </div>
 
-          {/* Action buttons: Eye (View Document) and Download (only when permitted) */}
+          {/* Action buttons */}
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setIsViewerOpen(true)}
-              className="px-3 py-1.5 rounded-xl bg-white hover:bg-[#0B1D30] hover:text-white text-[#0B1D30] border border-slate-200 transition-colors flex items-center gap-1.5 font-medium text-xs shadow-sm"
-              title="View document online"
-            >
-              <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
-              <span>View</span>
-            </button>
+            {document.isComingSoon ? (
+              <span className="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold cursor-not-allowed">
+                Coming Soon
+              </span>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setIsViewerOpen(true)}
+                  className="px-3 py-1.5 rounded-xl bg-white hover:bg-[#0B1D30] hover:text-white text-[#0B1D30] border border-slate-200 transition-colors flex items-center gap-1.5 font-medium text-xs shadow-sm"
+                  title="View document online"
+                >
+                  <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
+                  <span>View</span>
+                </button>
 
-            {canDownload && (
-              <a
-                href={document.fileUrl}
-                download
-                className="px-3 py-1.5 rounded-xl bg-[#DF711B] hover:bg-[#C8652D] text-white transition-colors flex items-center gap-1.5 font-bold text-xs shadow-sm"
-                title="Download PDF"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>Download</span>
-              </a>
+                {canDownload && (
+                  <a
+                    href={document.fileUrl}
+                    download
+                    className="px-3 py-1.5 rounded-xl bg-[#DF711B] hover:bg-[#C8652D] text-white transition-colors flex items-center gap-1.5 font-bold text-xs shadow-sm"
+                    title="Download PDF"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download</span>
+                  </a>
+                )}
+              </>
             )}
           </div>
         </div>

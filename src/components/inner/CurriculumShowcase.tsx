@@ -442,7 +442,7 @@ export const CurriculumShowcase: React.FC = () => {
                 <ul className="space-y-1.5 sm:space-y-2 text-xs text-slate-700">
                   <li><strong>Computer Applications:</strong> Python, HTML & CSS</li>
                   <li><strong>Cyber Safety:</strong> Digital citizenship & data ethics</li>
-                  <li><strong>Robotics & STEM:</strong> Tinkering kits & micro-controllers</li>
+                  <li><strong>AI & Coding:</strong> Practical algorithms, tinkering kits & micro-controllers</li>
                 </ul>
               </div>
 
@@ -899,7 +899,7 @@ export const CurriculumShowcase: React.FC = () => {
             </div>
             <h4 className="font-bold text-sm sm:text-base text-[#181C20]">CVP Value Integration</h4>
             <p className="text-xs text-slate-700 leading-relaxed">
-              Pujya Gurudev’s Chinmaya Vision Programme nurtures Pillar 1 Integrated Learning (Physical, Mental, Intellectual & Spiritual faculties) alongside cultural grounding, patriotism (civic duty), and universal outlook.
+              Pujya Gurudev’s Chinmaya Vision Programme nurtures Pillar 1 Integrated Development (Physical, Mental, Intellectual & Spiritual faculties) alongside cultural grounding, patriotism (civic duty), and universal outlook.
             </p>
           </div>
 
@@ -926,7 +926,7 @@ export const CurriculumShowcase: React.FC = () => {
             CBSE Sample Question Papers & Question Banks
           </h4>
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-            Access previous term-end exam papers, marking schemes, and official CBSE sample papers for Classes 1 to 10 directly on our downloads portal.
+            Access official CBSE Class 9 to 12 sample question papers across Science, Commerce, and Arts streams directly on our downloads portal.
           </p>
         </div>
 
@@ -936,7 +936,7 @@ export const CurriculumShowcase: React.FC = () => {
             className="w-full sm:w-auto justify-center px-4 py-2.5 sm:px-5 sm:py-3 bg-[#181C20] hover:bg-[#DF711B] text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
           >
             <Download className="w-4 h-4" />
-            <span>Download Sample Papers</span>
+            <span>Download CBSE Sample Papers</span>
           </Link>
 
           <a

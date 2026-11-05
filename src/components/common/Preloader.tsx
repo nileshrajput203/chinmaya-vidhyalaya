@@ -99,8 +99,8 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#181C20] leading-none">
               CHINMAYA VIDYALAYA
             </h1>
-            <p className="font-serif italic text-base sm:text-xl text-[#64748B] font-medium pt-1">
-              "School with a difference"
+            <p className="font-serif italic text-base sm:text-xl text-[#64748B] font-medium pt-1 uppercase">
+              "SCHOOL WITH A DIFFERENCE"
             </p>
           </div>
         </div>

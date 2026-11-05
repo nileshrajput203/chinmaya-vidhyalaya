@@ -251,8 +251,8 @@ export const Book3d: React.FC<Book3dProps> = ({
             <p className="font-cinzel text-sm font-bold text-white tracking-wider">
               CHINMAYA VIDYALAYA
             </p>
-            <p className="text-[11px] text-slate-300 italic">
-              "School with a difference"
+            <p className="text-[11px] text-slate-300 italic uppercase">
+              "SCHOOL WITH A DIFFERENCE"
             </p>
             <p className="text-[10px] text-amber-200/80 font-mono pt-4 border-t border-white/10">
               CBSE Affiliation No. 1130058

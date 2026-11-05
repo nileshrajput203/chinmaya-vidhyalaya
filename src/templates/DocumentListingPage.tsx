@@ -20,6 +20,7 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
   const [documents, setDocuments] = useState<SchoolDocument[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<DocumentCategory | 'all'>(initialCategory || 'all');
   const [selectedTerm, setSelectedTerm] = useState<TermCategory | 'all'>('all');
+  const [selectedClassFilter, setSelectedClassFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [activeViewingDoc, setActiveViewingDoc] = useState<SchoolDocument | null>(null);
@@ -41,11 +42,13 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
 
   const categories: { label: string; value: DocumentCategory | 'all' }[] = [
     { label: 'All Documents', value: 'all' },
-    { label: 'Sample Question Papers', value: 'sample-papers' },
+    { label: 'CBSE Sample Papers', value: 'sample-papers' },
     { label: 'School Circulars & Notices', value: 'circulars' },
     { label: 'Admissions & Forms', value: 'admissions' },
     { label: 'Academics & Curricula', value: 'academics' },
   ];
+
+  const isSamplePapers = selectedCategory === 'sample-papers' || initialCategory === 'sample-papers';
 
   // Filter term-wise or sub-filter if applicable
   const displayDocuments = documents.filter((doc) => {
@@ -61,11 +64,14 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
     if (doc.category === 'mandatory-information') {
       return false;
     }
-    if (selectedTerm === 'all') return true;
-    return doc.term === selectedTerm;
+    if (isSamplePapers && selectedClassFilter !== 'all') {
+      if (doc.classGrade !== selectedClassFilter) return false;
+    }
+    if (selectedTerm !== 'all') {
+      if (doc.term !== selectedTerm) return false;
+    }
+    return true;
   });
-
-  const isSamplePapers = selectedCategory === 'sample-papers' || initialCategory === 'sample-papers';
 
   return (
     <div className="bg-white text-[#181C20] pb-24">
@@ -115,20 +121,22 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
               ) : isSamplePapersOnly ? (
                 <>
                   {[
-                    { label: 'All Terms', value: 'all' },
-                    { label: 'Term 1 / Periodic Assessments (Std 1 - 10)', value: 'Term 1' },
-                    { label: 'Term 2 / Evaluation III (Std 1 - 5)', value: 'Term 2' },
-                  ].map((termOpt) => (
+                    { label: 'All Classes (9th - 12th)', value: 'all' },
+                    { label: 'Class 9', value: 'Class 9' },
+                    { label: 'Class 10', value: 'Class 10' },
+                    { label: 'Class 11 (Commerce, Arts, Science)', value: 'Class 11' },
+                    { label: 'Class 12 (Commerce, Arts, Science)', value: 'Class 12' },
+                  ].map((classOpt) => (
                     <button
-                      key={termOpt.value}
-                      onClick={() => setSelectedTerm(termOpt.value as TermCategory | 'all')}
+                      key={classOpt.value}
+                      onClick={() => setSelectedClassFilter(classOpt.value)}
                       className={`px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-all rounded-xl border ${
-                        selectedTerm === termOpt.value
+                        selectedClassFilter === classOpt.value
                           ? 'bg-[#181818] text-white border-[#181818] shadow-sm font-bold'
                           : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-white hover:text-[#181C20]'
                       }`}
                     >
-                      {termOpt.label}
+                      {classOpt.label}
                     </button>
                   ))}
                 </>
@@ -195,29 +203,31 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
             )}
           </div>
 
-          {/* Term-Wise Filter (For general downloads page when sample-papers is selected) */}
+          {/* Class Filter (For general downloads page when CBSE Sample Papers is selected) */}
           {isSamplePapers && !isSamplePapersOnly && (
             <div className="pt-3 border-t border-[#E7E2D8] flex flex-wrap items-center gap-3">
               <span className="text-xs font-mono font-bold text-[#181C20] uppercase flex items-center gap-1.5">
                 <Filter className="w-3.5 h-3.5 text-[#DF711B]" />
-                Filter by Term:
+                Filter by Class:
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 overflow-x-auto pb-1">
                 {[
-                  { label: 'All Terms', value: 'all' },
-                  { label: 'Term 1 / Periodic Assessments (Std 1 - 10)', value: 'Term 1' },
-                  { label: 'Term 2 / Evaluation III (Std 1 - 5)', value: 'Term 2' },
-                ].map((termOpt) => (
+                  { label: 'All Classes (9th - 12th)', value: 'all' },
+                  { label: 'Class 9', value: 'Class 9' },
+                  { label: 'Class 10', value: 'Class 10' },
+                  { label: 'Class 11', value: 'Class 11' },
+                  { label: 'Class 12', value: 'Class 12' },
+                ].map((classOpt) => (
                   <button
-                    key={termOpt.value}
-                    onClick={() => setSelectedTerm(termOpt.value as TermCategory | 'all')}
+                    key={classOpt.value}
+                    onClick={() => setSelectedClassFilter(classOpt.value)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-                      selectedTerm === termOpt.value
+                      selectedClassFilter === classOpt.value
                         ? 'bg-[#DF711B] text-white border-[#DF711B] font-bold shadow-sm'
                         : 'bg-white border-[#E7E2D8] text-[#4A5568] hover:bg-white'
                     }`}
                   >
-                    {termOpt.label}
+                    {classOpt.label}
                   </button>
                 ))}
               </div>
@@ -256,7 +266,11 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
 
                     <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-100 text-[11px]">
                       <div className="flex flex-wrap items-center gap-2">
-                        {doc.term ? (
+                        {doc.classGrade ? (
+                          <span className="font-bold text-[10px] text-[#0B1D30] bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                            {doc.classGrade} {doc.stream ? `• ${doc.stream}` : ''}
+                          </span>
+                        ) : doc.term ? (
                           <span className="font-bold text-[10px] text-[#DF711B] bg-[#FAF3E8] px-2 py-0.5 rounded border border-[#E7E2D8]">
                             {doc.term}
                           </span>
@@ -271,26 +285,34 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                       </div>
 
                       <div className="flex items-center gap-2 shrink-0">
-                        <button
-                          type="button"
-                          onClick={() => setActiveViewingDoc(doc)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-xs"
-                          title="View Document Online"
-                        >
-                          <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
-                          <span>View</span>
-                        </button>
+                        {doc.isComingSoon ? (
+                          <span className="inline-flex items-center px-2.5 py-1 bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-semibold rounded-lg">
+                            Coming Soon
+                          </span>
+                        ) : (
+                          <>
+                            <button
+                              type="button"
+                              onClick={() => setActiveViewingDoc(doc)}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-xs"
+                              title="View Document Online"
+                            >
+                              <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
+                              <span>View</span>
+                            </button>
 
-                        {isDownloadAllowed && (
-                          <a
-                            href={doc.fileUrl}
-                            download
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
-                            title="Download PDF File"
-                          >
-                            <Download className="w-3.5 h-3.5" />
-                            <span>Download</span>
-                          </a>
+                            {isDownloadAllowed && (
+                              <a
+                                href={doc.fileUrl}
+                                download
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
+                                title="Download PDF File"
+                              >
+                                <Download className="w-3.5 h-3.5" />
+                                <span>Download</span>
+                              </a>
+                            )}
+                          </>
                         )}
                       </div>
                     </div>
@@ -305,7 +327,9 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                 <thead className="bg-[#181818] text-white text-[11px] font-mono uppercase tracking-wider">
                   <tr>
                     <th className="py-4 px-6 font-bold">Document Title & Description</th>
-                    <th className="py-4 px-4 font-bold whitespace-nowrap">Term / Session</th>
+                    <th className="py-4 px-4 font-bold whitespace-nowrap">
+                      {isSamplePapers ? 'Class & Stream' : 'Term / Session'}
+                    </th>
                     <th className="py-4 px-4 font-bold whitespace-nowrap">File Size</th>
                     <th className="py-4 px-6 font-bold text-right whitespace-nowrap">Access Options</th>
                   </tr>
@@ -335,7 +359,16 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
                         </td>
 
                         <td className="py-4 px-4 text-[11px] font-mono text-[#181C20] whitespace-nowrap">
-                          {doc.term ? (
+                          {doc.classGrade ? (
+                            <div className="flex flex-col gap-0.5">
+                              <span className="font-bold text-[#0B1D30]">{doc.classGrade}</span>
+                              {doc.stream && (
+                                <span className="inline-block text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 uppercase tracking-wider w-fit">
+                                  {doc.stream} Stream
+                                </span>
+                              )}
+                            </div>
+                          ) : doc.term ? (
                             <span className="font-bold text-[#DF711B] bg-[#FAF3E8] px-2 py-0.5 rounded border border-[#E7E2D8]">
                               {doc.term}
                             </span>
@@ -350,28 +383,34 @@ export const DocumentListingPage: React.FC<DocumentListingPageProps> = ({
 
                         <td className="py-4 px-6 text-right whitespace-nowrap">
                           <div className="inline-flex items-center gap-2 justify-end">
-                            {/* Eye View Button for all documents */}
-                            <button
-                              type="button"
-                              onClick={() => setActiveViewingDoc(doc)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-sm cursor-pointer"
-                              title="View Document Online"
-                            >
-                              <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
-                              <span>View</span>
-                            </button>
+                            {doc.isComingSoon ? (
+                              <span className="inline-flex items-center px-3 py-1.5 bg-amber-50 text-amber-800 border border-amber-200 text-xs font-semibold rounded-xl">
+                                Coming Soon
+                              </span>
+                            ) : (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={() => setActiveViewingDoc(doc)}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#181818] hover:text-white text-[#181C20] border border-[#E7E2D8] text-xs font-semibold rounded-xl transition-colors shadow-sm cursor-pointer"
+                                  title="View Document Online"
+                                >
+                                  <Eye className="w-3.5 h-3.5 text-[#DF711B]" />
+                                  <span>View</span>
+                                </button>
 
-                            {/* Download Button ONLY when permitted (curricula, sample papers, admissions) */}
-                            {isDownloadAllowed && (
-                              <a
-                                href={doc.fileUrl}
-                                download
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
-                                title="Download PDF File"
-                              >
-                                <Download className="w-3.5 h-3.5" />
-                                <span>Download</span>
-                              </a>
+                                {isDownloadAllowed && (
+                                  <a
+                                    href={doc.fileUrl}
+                                    download
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+                                    title="Download PDF File"
+                                  >
+                                    <Download className="w-3.5 h-3.5" />
+                                    <span>Download</span>
+                                  </a>
+                                )}
+                              </>
                             )}
                           </div>
                         </td>

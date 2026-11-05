@@ -43,15 +43,16 @@ const FACILITIES: FacilityItem[] = [
       { src: '/images/pages/academics/laboratories/physics/physics-lab-4.jpg?v=2', caption: 'Full-Class Physics Practical Session: 40+ Students Across Workstations' },
       { src: '/images/pages/academics/laboratories/physics/physics-lab-5.jpg?v=2', caption: 'Faculty-Guided Demonstration: Optical Bench Calibration & Ray Optics Setup' }
     ],
-    badge: 'CBSE Senior STEM Lab',
+    badge: 'CBSE Senior Science Lab',
     tagline: 'Precision Optics, Mechanics, Sound & Electromagnetic Investigation',
     description:
       'CBSE-certified laboratory for experimentally exploring optics, mechanics, sound waves, and semiconductor circuits.',
     curriculumDetails:
       'Covers complete CBSE practical syllabus: optical bench calibration, Ohm’s law, potentiometer, sonometers, and p-n junction diodes.',
     safetyProtocols: [
-      'Shock-proof regulated DC/AC power supplies with centralized circuit breakers',
-      'Dedicated dark room enclosure for laser diffraction and light experiments',
+      'Regulated shock-proof DC/AC power supplies with dedicated UPS power backup (no centralized unbuffered power dependency)',
+      '24/7 CCTV surveillance monitoring for student safety and practical decorum',
+      'Class ABC Fire Extinguishers and emergency safety protocol signage',
       'Rigid granite vibration-isolated benches for optical alignment',
       'Safety goggles provided during high-voltage and spring-tension experiments'
     ],
@@ -61,7 +62,9 @@ const FACILITIES: FacilityItem[] = [
       'Travelling Vernier Microscopes',
       'Sonometers & Tuning Fork Resonators',
       'Potentiometers & Meter Bridges',
-      'Semiconductor Energy Band Gap Apparatus'
+      'Semiconductor Energy Band Gap Apparatus',
+      'Dedicated UPS Power Backup & Continuous 24/7 CCTV Monitoring',
+      'Class ABC Fire Extinguishers'
     ],
     capacity: '40+ Students per Session',
     locationMeta: 'Senior Science Block • Ground Floor'
@@ -80,26 +83,27 @@ const FACILITIES: FacilityItem[] = [
       { src: '/images/pages/academics/laboratories/chemistry/chem-6.jpg?v=2', caption: 'Student Performing Flask & Reagent Experiment' },
       { src: '/images/pages/academics/laboratories/chemistry/chem-7.jpg?v=2', caption: 'Students Working with Conical Flasks & Bunsen Burners' }
     ],
-    badge: 'CBSE Senior STEM Lab',
+    badge: 'CBSE Senior Science Lab',
     tagline: 'Analytical Titration, Reagents, Kinetics & Qualitative Analysis',
     description:
-      'Equipped with fume hoods, digital balances, and reagent stations for volumetric titrations and salt analysis.',
+      'Equipped with digital analytical balances, titration apparatus, and reagent stations for volumetric titrations and salt analysis.',
     curriculumDetails:
       'Supports CBSE practicals: KMnO4 redox titrations, qualitative inorganic radical analysis, and organic functional group testing.',
     safetyProtocols: [
-      'Continuous mechanical fume exhaust hoods for toxic vapor mitigation',
-      'Emergency chemical eye-wash shower and deluge fountain',
-      'Class ABC Fire Extinguishers, fire blanket, and sand buckets installed at exit',
+      'Dedicated sand bucket installed at exit alongside Class ABC Fire Extinguishers',
+      'Dedicated UPS power backup (no unbuffered grid dependency) for analytical equipment',
+      '24/7 CCTV surveillance monitoring for student safety and lab decorum',
       'Acid-resistant non-porous ceramic bench surfaces and borosilicate labware only',
       'Mandatory cotton lab aprons, protective eye glasses, and chemical-safe handling'
     ],
     equipment: [
-      'Mechanical Fume Exhaust Hoods',
       'Precision 4-Digit Digital Analytical Balances',
       'Individual Gas Burner & Titration Stands',
       'Borosilicate Class-A Burettes & Pipettes',
-      'Centrifugation & Water Bath Heaters',
-      'pH Meters & Colorimetric Analyzers'
+      'Centrifugation Units & Analytical Stations',
+      'Colorimetric Analyzers & Reagent Kits',
+      'Dedicated Exit Sand Buckets & Class ABC Fire Extinguishers',
+      'Dedicated UPS Power Backup & 24/7 CCTV Surveillance'
     ],
     capacity: '40+ Students per Session',
     locationMeta: 'Science Block • Room 104'
@@ -119,22 +123,25 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Life Sciences Lab',
     tagline: 'Microscopic Observation, Cytology & Anatomical Specimen Study',
     description:
-      'Advanced life sciences facility equipped with compound microscopes, botanical herbariums, and anatomical models.',
+      'Advanced life sciences facility equipped with digital interactive panel, compound microscopes, botanical herbariums, and anatomical models.',
     curriculumDetails:
       'Aligned to CBSE Class IX-XII: temporary mount preparation, onion root-tip mitosis, potato osmometer, and enzyme salivary amylase action.',
     safetyProtocols: [
       'Hygienic bio-specimen formalin containers sealed to OSHA standards',
-      'Safe microtome sectioning with protective safety razors under faculty supervision',
       'Non-toxic bio-waste discard jars and antiseptic wash stations',
-      'Regular ultraviolet sterilization of microscopic lenses and stage plates'
+      'Dedicated UPS power backup for the digital interactive panel and lighting (no unbuffered grid dependency)',
+      '24/7 CCTV surveillance monitoring for student safety and lab decorum',
+      'Class ABC Fire Extinguishers and emergency safety protocol signage'
     ],
     equipment: [
       'High-Power Binocular Compound Microscopes',
       'Dissecting Stereo Microscopes',
-      'Preserved Zoological & Botanical Specimens Archive',
+      'Digital Interactive Smart Panel & High-Definition Display Screen',
       '3D Articulated Human Skeleton & Organ Models',
-      'Permanent Histological Pathology Slide Banks',
-      'Microtomes & Plant Staining Assemblies'
+      'Preserved Zoological & Botanical Specimens Archive',
+      'Permanent Histological Pathology Slide Banks & Staining Assemblies',
+      'Dedicated UPS Power Backup & Continuous 24/7 CCTV Monitoring',
+      'Class ABC Fire Extinguishers'
     ],
     capacity: '40+ Students per Session',
     locationMeta: 'Science Block • Room 106'
@@ -152,22 +159,25 @@ const FACILITIES: FacilityItem[] = [
       { src: '/images/pages/academics/laboratories/it/it-2.jpg?v=2', caption: 'Modular Central Aisle Architecture: Networked Systems with High-Speed Connectivity' }
     ],
     badge: 'Digital Innovation',
-    tagline: 'Networked Computing, Python/Java Coding & Multimedia',
+    tagline: 'Networked Computing, Scratch & Python Coding & Multimedia',
     description:
-      'Modern computing facility featuring networked PC workstations and high-speed broadband for Python coding and IT studies.',
+      'Modern computing facility featuring networked PC workstations and high-speed broadband for Scratch and Python coding and IT studies.',
     curriculumDetails:
-      'Supports CBSE Computer Applications & Science: Python coding, MySQL database administration, cybersecurity, and data structures.',
+      'Supports CBSE Computer Applications & Science: Scratch block programming, Python coding, MySQL database administration, cybersecurity, and data structures.',
     safetyProtocols: [
-      'Industrial centralized Online UPS power backup preventing data loss or surge spikes',
+      'Dedicated Online UPS power backup preventing data loss or surge spikes (no unbuffered grid dependency)',
+      'Class ABC Fire Extinguishers and emergency safety protocol signage',
+      '24/7 CCTV surveillance monitoring with anti-static vinyl flooring',
       'Enterprise firewall filtering restricting access to age-appropriate educational domains',
-      'Ergonomic anti-glare screens and adjustable posture seating',
-      'CCTV monitored lab environment with anti-static vinyl flooring'
+      'Ergonomic anti-glare screens and adjustable posture seating'
     ],
     equipment: [
       '45+ Intel Core Dedicated Desktop PC Workstations',
+      'Dedicated Online UPS Power Backup & Continuous 24/7 CCTV Monitoring',
+      'Class ABC Fire Extinguishers',
       'High-Speed Leased Line Fiber Broadband',
       'Smart Interactive Interactive Projector & Display',
-      'Licensed Python 3.x, MySQL & Java JDK IDEs',
+      'Licensed Scratch & Python 3.x Development IDEs & MySQL',
       'Centralized School Management & Server Workstation',
       'Cyber-Safety Content Firewall'
     ],
@@ -215,21 +225,23 @@ const FACILITIES: FacilityItem[] = [
       { src: '/images/pages/academics/sports/sports-3.jpg?v=2', caption: 'Expansive Athletic Grass Turf: Outdoor Field & Assembly Grounds with Stage Pavilion' }
     ],
     badge: 'Physical Conditioning',
-    tagline: 'Expansive Campus Grounds for Track, Field & Team Leagues',
+    tagline: 'Expansive Campus Grounds for Team Leagues & Indoor Sports',
     description:
-      'Expansive campus sports arena featuring a 200m running track, football turf, cricket pitch, and training courts.',
+      'Expansive campus sports arena and indoor activity pavilion featuring dedicated cricket pitch, volleyball, Mallakhamb, and indoor sports facilities.',
     curriculumDetails:
       'CBSE Health & Physical Education compliant: daily fitness drills, inter-house championships, yoga sessions, and state tournament coaching.',
     safetyProtocols: [
-      'First Aid response kit and trained sports physical educators present at every session',
+      'Comprehensive First Aid emergency response station and trained sports physical educators present at every session',
+      'Cushioned safety landing mats, spotters, and faculty supervision for Mallakhamb drills',
       'Levelled grass and clay grounds maintained free of hazards',
-      'Clean shaded drinking hydration stations adjacent to field'
+      'Clean shaded drinking hydration stations adjacent to field and courts'
     ],
     equipment: [
-      'Standard 200m Athletic Running Track',
-      'Football Ground & Dedicated Cricket Pitch',
-      'Volleyball & Badminton Courts',
-      'Gymnastic Mats, High Jump & Sports Equipment'
+      'Mallakhamb (Traditional Pole & Rope Gymnastics Apparatus)',
+      'Comprehensive First Aid Station & Sports Safety Equipment',
+      'Indoor Activity Arena: Table Tennis (TT), Badminton, Chess & Carrom',
+      'Volleyball Court & Dedicated Cricket Pitch',
+      'Gymnastic Landing Mats & Physical Conditioning Apparatus'
     ],
     capacity: 'Full Campus Cohorts',
     locationMeta: 'East Campus Grounds • Boisar'
@@ -267,30 +279,64 @@ const FACILITIES: FacilityItem[] = [
   {
     id: 'cultural-assembly',
     category: 'campus',
-    name: 'Cultural Assembly Arena & Stage',
+    name: 'Cultural Assembly Arena & Saraswati Mandir',
     gallery: [
       { src: '/images/pages/academics/cultural_assembly/cultural-assembly-1.jpg?v=2', caption: 'Elevated Performance Stage & Cultural Auditorium with Pujya Gurudev Altar' },
-      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-2.jpg?v=2', caption: 'Central Courtyard Morning Assembly Arena with Sacred Saraswati Shrine' }
+      { src: '/images/pages/academics/cultural_assembly/cultural-assembly-2.jpg?v=2', caption: 'Central Courtyard Morning Assembly Arena with Sacred Saraswati Mandir Shrine' }
     ],
     badge: 'Cultural Ethos',
-    tagline: 'Morning Assembly, Gita Chanting & Annual Day Celebrations',
+    tagline: 'Morning Assembly, Saraswati Mandir, Gita Chanting & Celebrations',
     description:
-      'The cultural heart of the school hosting daily morning prayer assemblies, Gita chanting, bhajans, and stage events.',
+      'The spiritual and cultural heart of the school featuring the sacred Saraswati Mandir, hosting daily morning prayer assemblies, Gita chanting, devotional bhajans, and stage celebrations.',
     curriculumDetails:
-      'Anchors the Chinmaya Vision Programme (CVP), cultivating cultural values, public elocution, and stage confidence through theatricals.',
+      'Anchors the Chinmaya Vision Programme (CVP): daily morning prayers at Saraswati Mandir, Guru Paduka Pooja, Indian cultural values, and stage confidence through public speaking and dramatics.',
     safetyProtocols: [
       'Wide covered courtyard with non-slip flooring',
       'Overhead sun/rain protective architectural canopy',
-      'Surge-protected professional PA sound system'
+      'Surge-protected professional PA sound system',
+      'Dedicated prayer sanctum and disciplined assembly queue management'
     ],
     equipment: [
-      'High-Output Acoustic Sound Reinforcement Speakers',
-      'Elevated Performance Theatrical Stage',
-      'Sacred Gurudev Paduka Altar and Traditional Brass Lamps',
-      'Seating capacity for complete school student body'
+      'Sacred Saraswati Mandir & Devotional Prayer Sanctum',
+      'Elevated Performance Theatrical Stage & Auditorium',
+      'Pujya Gurudev Paduka Altar and Traditional Brass Diya Installations',
+      'High-Output Acoustic Sound Reinforcement PA System',
+      'Spacious covered courtyard seating for complete school student body'
     ],
     capacity: '1,000+ Audience',
-    locationMeta: 'Central Courtyard Stage'
+    locationMeta: 'Central Courtyard & Saraswati Mandir'
+  },
+  {
+    id: 'lift-facility',
+    category: 'campus',
+    name: 'Campus Lift & Accessibility Facility',
+    gallery: [
+      { src: '/images/chinmaya/campus/campus_aerial_quad_001.jpg', caption: 'Central Academic Block: Multi-Storey Infrastructure with Dedicated Passenger Lift' },
+      { src: '/images/chinmaya/campus/campus_aerial_drone_002.jpg', caption: 'Barrier-Free School Building with Step-Free Entryways and Elevator Access' }
+    ],
+    badge: 'Inclusive Mobility',
+    tagline: 'Dedicated Passenger Lift for Faculty, Teachers & Special Needs Children',
+    description:
+      'Modern automated passenger elevator facility engineered to provide seamless, barrier-free vertical transit across all academic floors for teachers, faculty members, and children with special needs (CWSN / Divyangjan).',
+    curriculumDetails:
+      'CBSE and NEP 2020 Inclusive Education Compliant: ensuring equal, dignified, and comfortable mobility access for educators, expectant or senior staff, and students requiring physical assistance.',
+    safetyProtocols: [
+      'Dedicated elevator access prioritized for teachers and special needs children',
+      'Automatic Rescue Device (ARD) and emergency battery backup in case of power interruption',
+      '24/7 CCTV surveillance monitoring inside the elevator cabin',
+      'Two-way emergency alarm and intercom connected to the administrative office',
+      'Smooth automatic door sensors with anti-pinch safety edges'
+    ],
+    equipment: [
+      'Dedicated Multi-Floor Passenger Elevator Facility',
+      'Wheelchair Compatible Cabin with Support Handrails',
+      'Low-Height Control Panel with Braille Embossed Buttons',
+      'Automatic Rescue Device (ARD) with Battery Inverter Backup',
+      'Audible Floor Annunciation & Digital Position Indicator',
+      'Emergency Intercom, Siren & 24/7 CCTV Monitoring'
+    ],
+    capacity: 'Teachers & CWSN Priority',
+    locationMeta: 'Central Academic Block • Ground to Top Floors'
   }
 ];
 
@@ -461,14 +507,14 @@ export const InfrastructureShowcase: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
               <div className="bg-white p-4 rounded-2xl border border-[#E7E2D8] shadow-2xs text-center space-y-1">
-                <span className="text-xs font-mono text-[#DF711B] font-bold uppercase">STEM & IT Labs</span>
+                <span className="text-xs font-mono text-[#DF711B] font-bold uppercase">Science & IT Labs</span>
                 <div className="font-cinzel text-2xl font-black text-[#181C20]">4 Dedicated Labs</div>
                 <p className="text-[11px] text-slate-500">Physics, Chemistry, Biology & IT</p>
               </div>
               <div className="bg-white p-4 rounded-2xl border border-[#E7E2D8] shadow-2xs text-center space-y-1">
                 <span className="text-xs font-mono text-[#0B1E34] font-bold uppercase">Safety Standards</span>
                 <div className="font-cinzel text-2xl font-black text-[#181C20]">100% Certified</div>
-                <p className="text-[11px] text-slate-500">Fume Hoods & Fire Safety Compliant</p>
+                <p className="text-[11px] text-slate-500">CCTV, UPS & Fire Safety Compliant</p>
               </div>
             </div>
           </div>
@@ -483,8 +529,8 @@ export const InfrastructureShowcase: React.FC = () => {
                 { id: 'all', label: 'All Campus Facilities' },
                 { id: 'labs', label: '🔬 Science & IT Laboratories' },
                 { id: 'academic', label: '📚 Classrooms & Library' },
-                { id: 'sports', label: '⚽ Sports Arena & Grounds' },
-                { id: 'campus', label: '🎭 Cultural Stage & Courtyard' }
+                { id: 'sports', label: '🏆 Sports Arena & Grounds' },
+                { id: 'campus', label: '🪷 Cultural Stage & Saraswati Mandir' }
               ].map((tab) => {
                 const isSelected = activeTab === tab.id;
                 return (
@@ -556,11 +602,9 @@ export const InfrastructureShowcase: React.FC = () => {
                       </p>
                     </div>
 
-                    <p className="font-sans text-sm text-slate-600 leading-relaxed font-normal line-clamp-2">
+                    <p className="font-sans text-sm text-slate-600 leading-relaxed font-normal">
                       {facility.description}
                     </p>
-
-
 
                     {/* Equipment / Apparatus Checklist */}
                     <div className="space-y-2 pt-1">
@@ -571,10 +615,10 @@ export const InfrastructureShowcase: React.FC = () => {
                         {facility.equipment.map((eq, eqIdx) => (
                           <div
                             key={eqIdx}
-                            className="bg-slate-50 border border-slate-200 p-2 rounded-lg text-[11px] font-medium text-slate-700 flex items-center gap-1.5"
+                            className="bg-slate-50 border border-slate-200 p-2 rounded-lg text-[11px] font-medium text-slate-700 flex items-start gap-2 leading-snug"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                            <span className="truncate">{eq}</span>
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                            <span className="break-words">{eq}</span>
                           </div>
                         ))}
                       </div>

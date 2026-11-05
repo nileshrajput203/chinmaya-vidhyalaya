@@ -213,20 +213,6 @@ export const HomePage: React.FC = () => {
                 </h2>
               </div>
 
-              {/* Leadership & Conference Facility Image */}
-              <div className="w-full flex items-center justify-start py-2">
-                <div className="w-full h-52 sm:h-80 flex items-center justify-center relative">
-                  <picture className="h-full flex items-center justify-center">
-                    <source srcSet="/images/board-conference-room.webp" type="image/webp" />
-                    <img
-                      src="/images/board-conference-room.png"
-                      alt="Executive Boardroom & Leadership Suite"
-                      className="max-h-full max-w-full object-contain rounded-sm shadow-md border border-slate-200 pointer-events-none"
-                    />
-                  </picture>
-                </div>
-              </div>
-
               <div className="pt-2 flex items-center gap-4">
                 <Link
                   to="/about/management"
@@ -309,7 +295,7 @@ export const HomePage: React.FC = () => {
                 title: 'IT Lab',
                 image: '/images/sections/laboratories/it-lab.jpg',
                 fallback: '/images/pages/home/laboratories/it-lab.jpg',
-                tagline: 'Networked Workstations, Python, Java & Cyber Labs',
+                tagline: 'Networked Workstations, Scratch, Python & Cyber Labs',
                 to: '/academics/infrastructure#it-lab',
               },
             ].map((card) => (
@@ -585,7 +571,7 @@ export const HomePage: React.FC = () => {
           
           <div className="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 text-[10px] sm:text-[11px] font-mono tracking-widest text-[#FFB740] uppercase font-bold border border-white/20 rounded-full">
             <GraduationCap className="w-4 h-4" />
-            <span>SESSION 2026-27 ADMISSIONS OPEN</span>
+            <span>SESSION 2026-27 ADMISSIONS OPEN (NURSERY TO STD IX)</span>
           </div>
 
           <h2 className="font-cinzel text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] uppercase">
@@ -622,7 +608,7 @@ export const HomePage: React.FC = () => {
               P-201 MIDC Area, Boisar 401501
             </span>
             <span className="hidden sm:inline">•</span>
-            <span>Tel: 9322054713 / 9823517700</span>
+            <span>Tel: 9322054713</span>
             <span className="hidden sm:inline">•</span>
             <span>cv.info@chinmayamission.com</span>
           </div>

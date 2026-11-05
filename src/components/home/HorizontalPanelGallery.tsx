@@ -228,7 +228,7 @@ export const HorizontalPanelGallery: React.FC = () => {
 
                 {/* Supporting Body Paragraph */}
                 <p className="text-[14px] sm:text-[15px] lg:text-[16px] text-[#555555] font-normal leading-relaxed">
-                  Imparting value-integrated academic brilliance at Tarapur under the aegis of the Chinmaya Vision Programme. Recognized by CBSE New Delhi (Affiliation No. {OFFICIAL_SCHOOL_INFO.affiliationNo}) with consecutive 100% AISSE board distinctions, modern STEM laboratories, and holistic spiritual grounding.
+                  Imparting value-integrated academic brilliance at Tarapur under the aegis of the Chinmaya Vision Programme. Recognized by CBSE New Delhi (Affiliation No. {OFFICIAL_SCHOOL_INFO.affiliationNo}) with consecutive 100% AISSE board distinctions, modern Science (Physics, Chemistry, Biology) and Maths laboratories, and holistic spiritual grounding.
                 </p>
 
                 {/* Metrics Callout Strip */}

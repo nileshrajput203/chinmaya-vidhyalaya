@@ -209,7 +209,6 @@ export const Footer: React.FC = () => {
                   {[
                     { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
-                    { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
                     <li key={link.label}>
                       <Link
@@ -288,7 +287,7 @@ export const Footer: React.FC = () => {
                     Office & Helpline
                   </span>
                   <p className="text-slate-300 mt-0.5">
-                    Phone: +91 93220 54713 • Mon-Sat: 8:00 AM - 4:00 PM
+                    Phone: +91 93220 54713 • Mon-Sat: 8:00 AM - 5:00 PM
                   </p>
                   <p className="text-slate-400 text-[10px]">
                     Email: {OFFICIAL_SCHOOL_INFO.contact.email[0]}

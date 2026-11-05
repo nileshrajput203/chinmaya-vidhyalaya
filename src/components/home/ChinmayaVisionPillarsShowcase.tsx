@@ -21,9 +21,9 @@ export interface PillarData {
 const CVP_PILLARS: PillarData[] = [
   {
     num: '01',
-    tabLabel: 'Integrated Learning',
-    shortTitle: 'INTEGRATED\nLEARNING',
-    pillarTitle: 'PILLAR 1: INTEGRATED LEARNING',
+    tabLabel: 'Integrated Development',
+    shortTitle: 'INTEGRATED\nDEVELOPMENT',
+    pillarTitle: 'PILLAR 1: INTEGRATED DEVELOPMENT',
     subtitleTag: 'Physical, Mental, Intellectual & Spiritual Development',
     sanskrit: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
     image: '/images/pages/home/pillars/pillar-01-integrated.png',
@@ -34,10 +34,10 @@ const CVP_PILLARS: PillarData[] = [
       'The first pillar of the Chinmaya Vision Programme harmonizes the multidimensional growth of every child. Through morning yoga, sports, experiential science labs, and mindful self-reflection, students cultivate physical vigor, critical thinking, and inner poise.',
     targetUrl: '/about/philosophy#pillar-01',
     keyPoints: [
-      'Physical Development (Sharirik): Morning Surya Namaskar, sports & athletics',
-      'Mental Development (Manasik): Emotional poise, empathy & inner stability',
-      'Intellectual Development (Bauddhik): Inquiry-driven STEM labs & critical thinking',
-      'Spiritual Development (Adhyatmik): Ethical values, meditation & moral clarity'
+      'Physical Development (Sharirik): Sports, physical fitness, yoga & athletics',
+      'Mental Development (Manasik): Emotional balance, resilience, focus & Bhagavad Gita chanting',
+      'Intellectual Development (Bauddhik): Artificial Intelligence (AI) & Coding (Python/Scratch), experiential Science & Maths labs, and critical thinking',
+      'Spiritual Development (Adhyatmik): Ethical values, mutual respect & character building'
     ]
   },
   {
@@ -76,10 +76,12 @@ const CVP_PILLARS: PillarData[] = [
       'The third pillar nurtures deep patriotism, where civic duty and active citizenship are an integral part of national dedication. Through local Swachhata drives, environmental initiatives, and community service across Boisar, students learn that genuine patriotism begins with responsible civic action.',
     targetUrl: '/about/philosophy#pillar-03',
     keyPoints: [
-      'Elected Student Council & democratic leadership development',
-      'Jal Pakhwada, green plantation drives & eco-club sustainability',
+      'Democratic Student Council Elections & leadership development',
+      'Kargil Vijay Diwas commemorations & Armed Forces tributes',
+      'Maharashtra Divas celebrations & state cultural heritage',
+      'Nasha Mukt Bharat Abhiyaan anti-addiction pledges & youth drives',
       'Ceremonial observances of Independence Day & Republic Day',
-      'Community outreach, campus cleanliness & active social service'
+      'Swachhata cleanliness drives & environmental eco-initiatives'
     ]
   },
   {

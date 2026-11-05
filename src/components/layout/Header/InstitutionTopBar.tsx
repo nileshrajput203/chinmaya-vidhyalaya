@@ -14,7 +14,7 @@ export const InstitutionTopBar: React.FC = () => {
           <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[9px] sm:text-[10px] uppercase font-bold tracking-wider shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="hidden xs:inline">CBSE AFFILIATED (10+2) • </span>
-            <span>NO. {OFFICIAL_SCHOOL_INFO.affiliationNo}</span>
+            <span>AFFILIATION NO. {OFFICIAL_SCHOOL_INFO.affiliationNo}</span>
           </div>
 
           <span className="text-slate-600 shrink-0">•</span>
@@ -31,8 +31,8 @@ export const InstitutionTopBar: React.FC = () => {
             <span className="text-[#FFB740] font-bold uppercase tracking-wider text-[9px] sm:text-[10px] shrink-0">
               Notice:
             </span>
-            <span className="text-slate-200 text-[9.5px] sm:text-[11px] truncate max-w-xs">
-              Admissions Open 2026-27 (Nursery to Std XII)
+            <span className="text-slate-200 text-[9.5px] sm:text-[11px] whitespace-nowrap">
+              Admissions Open 2026-27 (Nursery to 9th Std • 11th Std: 2027-28)
             </span>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const InstitutionTopBar: React.FC = () => {
             className="hidden md:inline-flex items-center gap-1 text-[#FFB740] hover:text-white transition-colors font-sans font-semibold text-[10px] uppercase tracking-wider"
           >
             <FileText className="w-3 h-3" />
-            <span>SARAS Portal</span>
+            <span>Disclosure</span>
             <ChevronRight className="w-2.5 h-2.5" />
           </Link>
         </div>

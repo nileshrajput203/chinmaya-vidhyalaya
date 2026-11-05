@@ -100,7 +100,7 @@ const BENTO_TILES: BentoTile[] = [
     id: 'tile-10',
     type: 'photo',
     src: '/images/pages/home/bento/tile-10-stem-robotics.jpg',
-    alt: 'STEM Electronics & Hardware Robotics Workstation',
+    alt: 'Science (Physics, Chemistry, Biology) & Maths, AI/Coding Workstation',
     colSpanClass: 'col-span-1',
     rowSpanClass: 'row-span-1'
   },

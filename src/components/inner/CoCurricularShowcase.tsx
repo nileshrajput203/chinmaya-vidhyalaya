@@ -9,14 +9,14 @@ interface Activity {
   emoji: string;
   color: string;
   bgColor: string;
+  isComingSoon?: boolean;
 }
 
 const ACTIVITIES: Activity[] = [
   { name: 'Dance', emoji: '💃', color: '#F59E0B', bgColor: 'bg-amber-50' },
   { name: 'Arts', emoji: '🎨', color: '#10B981', bgColor: 'bg-emerald-50' },
   { name: 'Music', emoji: '🎵', color: '#3B82F6', bgColor: 'bg-blue-50' },
-  { name: 'Taekwondo/karate', emoji: '🥋', color: '#EF4444', bgColor: 'bg-red-50' },
-  { name: 'Football', emoji: '⚽', color: '#22C55E', bgColor: 'bg-green-50' },
+  { name: 'Commando Training', emoji: '🎖️', color: '#DC2626', bgColor: 'bg-red-50' },
   { name: 'Public Speaking', emoji: '🎙️', color: '#8B5CF6', bgColor: 'bg-purple-50' },
   { name: 'Gita Chanting', emoji: '🕉️', color: '#EA580C', bgColor: 'bg-orange-50' },
   { name: 'Coding', emoji: '💻', color: '#6366F1', bgColor: 'bg-indigo-50' },
@@ -24,9 +24,12 @@ const ACTIVITIES: Activity[] = [
   { name: 'Library Programme', emoji: '📚', color: '#0891B2', bgColor: 'bg-teal-50' },
   { name: 'Student Council', emoji: '👥', color: '#0B1E34', bgColor: 'bg-slate-50' },
   { name: 'Trip & Expeditions', emoji: '🧭', color: '#D97706', bgColor: 'bg-amber-50' },
-  { name: 'Health & Nutrition', emoji: '🥗', color: '#DC2626', bgColor: 'bg-red-50' },
+  { name: 'Health & Nutrition', emoji: '🥗', color: '#16A34A', bgColor: 'bg-green-50' },
   { name: 'Yoga & Wellness', emoji: '🧘', color: '#059669', bgColor: 'bg-emerald-50' },
   { name: 'Quiz & Debates', emoji: '💡', color: '#7C3AED', bgColor: 'bg-violet-50' },
+  { name: 'Archery', emoji: '🏹', color: '#B45309', bgColor: 'bg-amber-50', isComingSoon: true },
+  { name: 'Skating', emoji: '🛼', color: '#2563EB', bgColor: 'bg-blue-50', isComingSoon: true },
+  { name: 'Horse Riding', emoji: '🏇', color: '#7C3AED', bgColor: 'bg-purple-50', isComingSoon: true },
 ];
 
 /* ────────────────────────────────────────────────────────
@@ -57,9 +60,9 @@ const row1GalleryImages: InfiniteGalleryItem[] = [
   },
   {
     id: 'row1-4',
-    title: 'Football & Field Athletics',
+    title: 'Track & Field Athletics',
     category: 'Field Events',
-    desc: 'Team coordination, stamina, and strategic play on expansive school grounds.',
+    desc: 'Team coordination, stamina, and athletic agility on expansive school grounds.',
     url: '/images/chinmaya/sports/sports_athletic_meet_004.jpg',
   },
   {
@@ -113,9 +116,9 @@ const row1GalleryImages: InfiniteGalleryItem[] = [
   },
   {
     id: 'row1-12',
-    title: 'Martial Arts & Taekwondo',
-    category: 'Self Defence',
-    desc: 'Disciplined kicks, kata sequences, and martial focus developing courage.',
+    title: 'Commando Training & Obstacle Drills',
+    category: 'Physical Resilience',
+    desc: 'Disciplined tactical agility, stamina conditioning, and obstacle mastery.',
     url: '/images/chinmaya/sports/sports_athletic_meet_014.jpg',
   },
 ];
@@ -173,7 +176,7 @@ const row2GalleryImages: InfiniteGalleryItem[] = [
   {
     id: 'row2-8',
     title: 'Science & Innovation Expo',
-    category: 'STEM Learning',
+    category: 'Science & Maths Learning',
     desc: 'Interactive chemical experiments and scientific working models.',
     url: '/images/chinmaya/academics/science_stem_lab_01.jpg',
   },
@@ -220,10 +223,16 @@ export const CoCurricularShowcase: React.FC = () => {
                 key={activity.name}
                 className={`${activity.bgColor} relative border border-[#E7E2D8] rounded-2xl p-4 sm:p-5 hover:border-[#DF711B]/40 transition-colors cursor-default`}
               >
-                {/* Floating Number Badge */}
-                <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-300">
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
+                {/* Floating Badge (Coming Soon or Index) */}
+                {activity.isComingSoon ? (
+                  <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#DF711B] text-white text-[8px] font-mono font-bold uppercase tracking-wider shadow-2xs">
+                    Coming Soon
+                  </span>
+                ) : (
+                  <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-300">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                )}
 
                 {/* Official Standard Emoji */}
                 <div
@@ -237,6 +246,12 @@ export const CoCurricularShowcase: React.FC = () => {
                 <h4 className="font-cinzel font-bold text-sm sm:text-base text-[#181C20] leading-tight">
                   {activity.name}
                 </h4>
+
+                {activity.isComingSoon && (
+                  <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block mt-1.5">
+                    Coming Soon
+                  </span>
+                )}
               </div>
             );
           })}

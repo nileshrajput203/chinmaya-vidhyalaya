@@ -19,15 +19,15 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
       "Through regular value-education modules, daily prayers, and character-building discourses, CVP fosters a lifelong compass for moral discernment, integrity, and selfless service."
     ],
     bulletPoints: [
-      "Pillar 1 - Integrated Learning: Balancing physical, mental, intellectual, and spiritual growth in complete harmony",
+      "Pillar 1 - Integrated Development: Physical fitness, Mental growth with Bhagavad Gita chanting, Intellectual development with AI & Coding, and Spiritual poise",
       "Pillar 2 - Indian Culture & Heritage: Inculcating reverence for ancient wisdom, Vedic ethos, and family values",
-      "Pillar 3 - Patriotism: Nurturing national pride, with active civic duty and environmental responsibility",
+      "Pillar 3 - Patriotism: Nurturing national pride through Student Council Elections, Kargil Vijay Diwas, Maharashtra Divas, Nasha Mukt Bharat Abhiyaan, and active civic duty",
       "Pillar 4 - Universal Outlook: Fostering 'Vasudhaiva Kutumbakam' (The world is one family) and global empathy"
     ],
     highlights: [
-      "Pillar 1 - Integrated Development: Cultivating the physical, mental, intellectual, and spiritual dimensions of each student simultaneously",
+      "Pillar 1 - Integrated Development: Cultivating the physical, mental (including Bhagavad Gita chanting), intellectual (with AI & Coding), and spiritual dimensions of each student simultaneously",
       "Pillar 2 - Indian Culture & Heritage: Inculcating reverence for ancient wisdom, Vedic ethos, moral values, and respectful family traditions",
-      "Pillar 3 - Patriotism & Civic Responsibility: Nurturing pride in India's glorious heritage, active citizenship, and selfless commitment to national progress",
+      "Pillar 3 - Patriotism & Civic Responsibility: Democratic Student Council Elections, Kargil Vijay Diwas tributes, Maharashtra Divas celebrations, Nasha Mukt Bharat anti-addiction campaigns, and selfless commitment to national progress",
       "Pillar 4 - Universal Outlook (Vasudhaiva Kutumbakam): Inspiring a cosmic perspective of global brotherhood, ecological harmony, and empathy across borders"
     ]
   },
@@ -39,7 +39,7 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
       "At Chinmaya Vidyalaya Tarapur, holistic development is an intentional, daily practice that nurtures the child across four distinct human dimensions: Physical Vitality, Emotional Poise, Intellectual Sharpness, and Spiritual Depth.",
       "Physical Domain (Sharirik Vikas): Through daily morning Surya Namaskar, structured sports coaching in football, cricket, volleyball, table tennis, and athletics, we ensure students build stamina, motor coordination, and sportsmanship.",
       "Emotional & Social Domain (Manasik Vikas): Our nurturing campus atmosphere, responsive house mentorship, anti-bullying protocols, and student counselling foster emotional resilience, empathy, conflict resolution, and lasting peer bonds.",
-      "Intellectual & Spiritual Domain (Bauddhik & Adhyatmik Vikas): Advanced STEM laboratories, ASSET diagnostic analytical assessments, and library research sharpen cognitive inquiry, while daily meditation and moral reflection instill ethical clarity."
+      "Intellectual & Spiritual Domain (Bauddhik & Adhyatmik Vikas): Advanced Science (Physics, Chemistry, Biology) and Maths laboratories, analytical assessments, and library research sharpen cognitive inquiry, while daily meditation and moral reflection instill ethical clarity."
     ],
     bulletPoints: [
       "Physical Fitness: Daily morning yoga, expansive athletic fields, and inter-house sports leagues",
@@ -50,7 +50,7 @@ export const FEATURE_SECTIONS: Record<string, FeatureSectionData> = {
     highlights: [
       "Physical Domain: Daily Surya Namaskar, sports leagues, athletics coaching, and fitness tracking",
       "Emotional Domain: House mentorship corps, mental wellness check-ins, and peer bonding forums",
-      "Intellectual Domain: STEM innovation labs, critical thinking workshops, and ASSET evaluations",
+      "Intellectual Domain: Science (Physics, Chemistry, Biology) and Maths labs, critical thinking workshops, and scholastic evaluations",
       "Spiritual Domain: Daily Guru Paduka Pooja, mindfulness meditation, and moral value classes"
     ]
   },

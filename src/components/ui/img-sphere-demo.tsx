@@ -8,7 +8,7 @@ export const CURRICULUM_SPHERE_IMAGES: ImageData[] = [
   { id: "sphere-img-3", src: "/images/biology-lab.jpg", alt: "Biology & Life Sciences Lab", title: "Biology Laboratory", description: "Compound microscopy and botanical specimens." },
   { id: "sphere-img-4", src: "/images/pages/home/laboratories/it-lab.jpg", alt: "Computer Science Coding Station", title: "Computer & IT Lab", description: "Modern computing hardware and digital coding lab." },
   { id: "sphere-img-5", src: "/images/lib.jpg", alt: "Central Reference Library", title: "Central Library", description: "Extensive repository of over 10,000 reference volumes." },
-  { id: "sphere-img-6", src: "/images/chinmaya/academics/science_stem_lab_01.jpg", alt: "STEM Innovation Center", title: "STEM Robotics Lab", description: "Hands-on robotics kits and practical circuitry." },
+  { id: "sphere-img-6", src: "/images/chinmaya/academics/science_stem_lab_01.jpg", alt: "Science Innovation Center", title: "AI/Coding Lab", description: "Hands-on AI/coding kits and practical circuitry." },
   { id: "sphere-img-7", src: "/images/chinmaya/academics/classroom_learning_001.jpg", alt: "Microscopy Investigation", title: "Scientific Inquiry", description: "Guided practicals and microscopy investigations." },
   { id: "sphere-img-8", src: "/images/chinmaya/academics/classroom_learning_002.jpg", alt: "Interactive Demonstration", title: "Digital Smart Pedagogy", description: "Audio-visual learning in multimedia classrooms." },
 

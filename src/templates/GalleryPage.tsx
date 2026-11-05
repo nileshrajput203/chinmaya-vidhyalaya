@@ -104,15 +104,10 @@ export const GalleryPage: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                   
-                  {/* Hover overlay with expand icon and title */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/45 transition-colors duration-300 flex flex-col items-center justify-between p-3">
-                    <div className="self-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full bg-black/60 text-white backdrop-blur-xs">
+                  {/* Hover overlay with expand icon */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-300 flex items-start justify-end p-3 pointer-events-none">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full bg-black/60 text-white backdrop-blur-xs">
                       <Maximize2 className="w-3.5 h-3.5" />
-                    </div>
-                    <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
-                      <p className="text-[11px] font-medium text-white line-clamp-1 drop-shadow-sm">
-                        {item.title}
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -159,14 +154,11 @@ export const GalleryPage: React.FC = () => {
               <X className="w-5 h-5" />
             </button>
 
-            {/* Counter and Title */}
+            {/* Counter */}
             <div className="absolute top-4 left-4 flex items-center gap-2 z-50">
               <div className="text-xs font-mono text-white/70 bg-white/10 px-3 py-1 rounded-full">
                 {(activeLightboxIndex ?? 0) + 1} / {items.length}
               </div>
-              <span className="hidden sm:inline text-xs font-sans text-white/80 bg-white/10 px-3 py-1 rounded-full">
-                {activeItem.title}
-              </span>
             </div>
 
             {/* Previous Button */}
@@ -197,11 +189,6 @@ export const GalleryPage: React.FC = () => {
                 alt={activeItem.title || "Campus Photograph"} 
                 className="max-h-[80vh] max-w-full object-contain rounded-xs shadow-2xl"
               />
-              {activeItem.caption && (
-                <p className="text-xs text-white/70 text-center max-w-xl px-4 mt-2">
-                  {activeItem.caption}
-                </p>
-              )}
             </div>
           </motion.div>
         )}

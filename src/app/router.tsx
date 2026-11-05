@@ -89,7 +89,7 @@ export const router = createBrowserRouter([
       { path: 'features/four-pillars', element: <ContentPage {...FEATURE_SECTIONS['four-pillars']} categoryLabel="Unique Features" /> },
       { path: 'features/career-counselling', element: <ContentPage {...FEATURE_SECTIONS['career-counselling']} categoryLabel="Unique Features" /> },
       { path: 'features/education-tours', element: <Navigate to="/academics/co-curricular" replace /> },
-      { path: 'features/library', element: <ContentPage {...FEATURE_SECTIONS['library']} categoryLabel="Unique Features" /> },
+      { path: 'features/library', element: <Navigate to="/features" replace /> },
 
       /* NEWS & EVENTS ROUTES */
       { path: 'news', element: <NewsListingPage /> },
@@ -99,6 +99,10 @@ export const router = createBrowserRouter([
         path: 'news/circulars', 
         element: <DocumentListingPage initialCategory="circulars" pageTitle="School Circulars" pageSubtitle="Official circulars, book notices, and library guidelines" /> 
       },
+      { path: 'notice', element: <Navigate to="/news" replace /> },
+      { path: 'notices', element: <Navigate to="/news" replace /> },
+      { path: 'notice-board', element: <Navigate to="/news" replace /> },
+      { path: 'noticeboard', element: <Navigate to="/news" replace /> },
 
       /* GALLERY ROUTE */
       { path: 'gallery', element: <GalleryPage /> },
@@ -115,7 +119,7 @@ export const router = createBrowserRouter([
       },
       { 
         path: 'downloads/sample-papers', 
-        element: <DocumentListingPage initialCategory="sample-papers" pageTitle="Sample Question Papers" pageSubtitle="CBSE Class 1 to 10 question papers term-wise" /> 
+        element: <DocumentListingPage initialCategory="sample-papers" pageTitle="CBSE Sample Papers" pageSubtitle="Official CBSE Class 9 to 12 sample question papers (All subjects merged in one PDF)" /> 
       },
       { 
         path: 'downloads/evaluation-papers', 

@@ -8,7 +8,8 @@ import {
   ShieldCheck, 
   Phone,
   FileCheck,
-  AlertCircle
+  AlertCircle,
+  Clock
 } from 'lucide-react';
 
 export const AdmissionGuidelinesShowcase: React.FC = () => {
@@ -77,10 +78,10 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">
-            Registration forms to be submitted in school offline as well to go for further admission process.
+            Admissions for Academic Session 2026-27 are open for Nursery to Std IX. (Admissions for Std XI will commence for Academic Session 2027-2028). For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.
           </p>
           <p className="text-xs text-slate-600 leading-relaxed font-normal">
-            Please submit the duly filled hardcopy registration form along with required self-attested documents at the school administration office counter during visiting hours (Mon to Sat, 8:30 AM – 3:30 PM).
+            Please submit the duly filled hardcopy registration form along with required self-attested documents at the school administration office counter during visiting hours (Mon to Sat, 8:00 AM – 5:00 PM).
           </p>
         </div>
       </div>
@@ -148,7 +149,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Medical Fitness Certificate:</strong> Blood group report signed by a registered doctor.</span>
+                <span><strong>Fitness Certificate:</strong> Medical fitness certificate signed by a registered doctor.</span>
               </li>
             </ul>
           </div>
@@ -213,7 +214,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: Age Norms & Eligibility */}
           <div className="bg-white border-2 border-emerald-500/25 rounded-3xl p-6 sm:p-7 shadow-xs space-y-4 hover:shadow-card transition-all">
             <div className="flex items-center gap-3 pb-3 border-b border-[#EFECE6]">
@@ -269,7 +270,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
             <ul className="space-y-3 text-xs text-slate-700 font-sans">
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Step 1: Application & Submission:</strong> Download hardcopy PDF above or obtain form at school reception. <strong>Important Note:</strong> Registration forms to be submitted in school offline as well to go for further admission process.</span>
+                <span><strong>Step 1: Application & Submission:</strong> Download hardcopy PDF above or obtain registration form at school reception. <strong>Important Note:</strong> For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -287,9 +288,41 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span><strong>Non-Discrimination:</strong> Open to all communities strictly based on merit and seats.</span>
               </li>
+            </ul>
+          </div>
+
+          {/* Card 3: School & Office Timings */}
+          <div className="bg-white border-2 border-emerald-500/25 rounded-3xl p-6 sm:p-7 shadow-xs space-y-4 hover:shadow-card transition-all">
+            <div className="flex items-center gap-3 pb-3 border-b border-[#EFECE6]">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                <Clock className="w-5 h-5 stroke-[2.2]" />
+              </div>
+              <div>
+                <h4 className="font-serif font-bold text-base text-[#181C20]">School & Office Timings</h4>
+                <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">Daily Shift Schedule</span>
+              </div>
+            </div>
+
+            <ul className="space-y-3 text-xs text-slate-700 font-sans">
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Medium of Instruction:</strong> English medium with deep grounding in Sanskrit & Hindi.</span>
+                <span><strong>Jr. KG:</strong> 1:00 PM to 5:00 PM</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Senior KG:</strong> 8:00 AM to 12:30 PM</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Primary:</strong> 1:00 PM to 5:00 PM</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Secondary:</strong> 7:30 AM to 12:55 PM</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Administrative Office:</strong> 8:00 AM to 5:00 PM (Mon - Sat)</span>
               </li>
             </ul>
           </div>
@@ -397,10 +430,8 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
                     <option>Pre-Primary (Nursery, LKG, UKG)</option>
                     <option>Primary (Std I to V)</option>
                     <option>Middle (Std VI to VIII)</option>
-                    <option>Secondary (Std IX & X)</option>
-                    <option>Senior Secondary (XI & XII Science)</option>
-                    <option>Senior Secondary (XI & XII Commerce)</option>
-                    <option>Senior Secondary (XI & XII Arts)</option>
+                    <option>Secondary (Std IX)</option>
+                    <option disabled>Senior Secondary (Std XI - Admissions open for 2027-28)</option>
                   </select>
                 </div>
                 <div>

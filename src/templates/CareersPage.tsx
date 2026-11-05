@@ -81,7 +81,7 @@ export const CareersPage: React.FC = () => {
     },
     {
       id: 'job-5',
-      title: 'Science & STEM Laboratory Assistant',
+      title: 'Science (Physics, Chemistry, Biology) & Maths Laboratory Assistant',
       department: 'Laboratories & Infrastructure',
       type: 'Full-Time',
       qualifications: 'B.Sc / Diploma in Chemistry, Physics or Instrumentation',

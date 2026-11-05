@@ -557,7 +557,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                           ADMISSIONS 2026-27
                         </span>
                         <span className="text-[9.5px] font-mono text-[#0B1E34] font-bold bg-white border border-slate-200 px-2 py-0.5 rounded-full shrink-0">
-                          CBSE #1130058
+                          CBSE 1130058
                         </span>
                       </div>
                       <h3 className="font-cinzel text-base sm:text-lg font-black text-[#0B1E34] tracking-wide m-0 leading-tight">
@@ -659,7 +659,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     {/* Field 4: Grade Applying For */}
                     <div>
                       <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                        Grade Applying For (Nursery to 12th) <span className="text-[#DF711B]">*</span>
+                        Grade Applying For (Nursery to 9th Std) <span className="text-[#DF711B]">*</span>
                       </label>
                       <select
                         value={formData.grade}
@@ -686,15 +686,9 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                         </optgroup>
                         <optgroup label="Secondary Stage">
                           <option value="Class 9">Class 9</option>
-                          <option value="Class 10">Class 10</option>
                         </optgroup>
-                        <optgroup label="Senior Secondary (Class 11 & 12)">
-                          <option value="Class 11 - Science">Class 11 - Science</option>
-                          <option value="Class 11 - Commerce">Class 11 - Commerce</option>
-                          <option value="Class 11 - Arts">Class 11 - Arts</option>
-                          <option value="Class 12 - Science">Class 12 - Science</option>
-                          <option value="Class 12 - Commerce">Class 12 - Commerce</option>
-                          <option value="Class 12 - Arts">Class 12 - Arts</option>
+                        <optgroup label="Senior Secondary">
+                          <option value="Class 11" disabled>Class 11 (Admissions open for 2027-28)</option>
                         </optgroup>
                       </select>
                     </div>
@@ -713,7 +707,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                       <div className="pt-2 flex items-center justify-between text-[11px] text-[#555] border-t border-[#E7E2D8]">
                         <span className="flex items-center gap-1.5 font-mono text-[11px]">
                           <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
-                          9322054713 / 9823517700
+                          9322054713
                         </span>
                         <button
                           type="button"
@@ -763,7 +757,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     {OFFICIAL_NOTICES.map((notice) => (
                       <Link 
                         key={notice.id}
-                        to="/notice" 
+                        to="/news" 
                         className="block px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200/90 shadow-2xs hover:shadow-xs border-l-[#DF711B] border-l-[3.5px] transition-all duration-200 group/card"
                       >
                         <div className="flex items-center justify-between gap-2">
@@ -802,7 +796,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                   </Link>
 
                   <Link
-                    to="/notice"
+                    to="/news"
                     className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#DF711B] hover:bg-[#C45B0E] text-white rounded-lg text-[11px] font-bold font-sans uppercase tracking-wider transition-all shadow-sm hover:scale-105 active:scale-95 group"
                   >
                     <span>Notice Board</span>

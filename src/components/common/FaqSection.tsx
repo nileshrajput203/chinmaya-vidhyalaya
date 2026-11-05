@@ -475,10 +475,10 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
                 <div className="flex flex-wrap items-center justify-center xl:justify-start gap-4 text-xs font-mono text-slate-300 pt-1">
                   <a href="tel:9322054713" className="flex items-center gap-1.5 hover:text-[#DF711B] transition-colors">
                     <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
-                    <span>+91 9322054713 / 9823517700</span>
+                    <span>+91 9322054713</span>
                   </a>
                   <span>•</span>
-                  <span>Mon - Sat: 8:30 AM - 3:30 PM</span>
+                  <span>Mon - Sat: 8:00 AM - 5:00 PM</span>
                 </div>
               </div>
 

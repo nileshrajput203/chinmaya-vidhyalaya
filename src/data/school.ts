@@ -2,7 +2,7 @@ import { SchoolInfo, PrincipalInfo, ManagementMember } from '../types/school';
 
 export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
   name: "Chinmaya Vidyalaya",
-  tagline: "School with a difference",
+  tagline: "SCHOOL WITH A DIFFERENCE",
   affiliationNo: "1130058",
   schoolCode: "30040",
   udiseNo: "27361116004",
@@ -18,8 +18,15 @@ export const OFFICIAL_SCHOOL_INFO: SchoolInfo = {
   contact: {
     phone: ["9322054713"],
     email: ["cv.info@chinmayamission.com", "cv.principal@chinmayamission.com"],
-    officeHours: "Monday to Saturday: 8:00 AM - 4:00 PM",
+    officeHours: "Monday to Saturday: 8:00 AM - 5:00 PM",
     website: "https://cvtarapur.com"
+  },
+  timings: {
+    jrKg: "1:00 PM - 5:00 PM",
+    srKg: "8:00 AM - 12:30 PM",
+    primary: "1:00 PM - 5:00 PM",
+    secondary: "7:30 AM - 12:55 PM",
+    office: "8:00 AM - 5:00 PM"
   },
   managingTrust: "Central Chinmaya Mission Trust, Mumbai (Local Managing Committee handles day-to-day management)",
   localCommittee: "Local Managing Committee handles day-to-day management",
@@ -88,7 +95,8 @@ export const OFFICIAL_BOARD_OF_MANAGEMENT: BoardMember[] = [
     name: "Atul Karanjkar",
     designation: "Zonal Director",
     role: "Zonal Director",
-    email: "atul.karanjkar@chinmayaeducationcell.org"
+    email: "atul.karanjkar@chinmayaeducationcell.org",
+    image: "/images/board-of-management/atul-karanjkar.jpg"
   },
   {
     id: "bm-4",

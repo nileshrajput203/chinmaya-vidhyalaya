@@ -19,6 +19,14 @@ export interface SchoolInfo {
     officeHours: string;
     website?: string;
   };
+  timings?: {
+    jrKg?: string;
+    srKg: string;
+    primary: string;
+    secondary: string;
+    senior?: string;
+    office: string;
+  };
   managingTrust?: string;
   localCommittee?: string;
   envisagedYear?: string;

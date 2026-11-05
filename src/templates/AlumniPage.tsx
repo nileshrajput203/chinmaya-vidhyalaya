@@ -318,7 +318,9 @@ export const AlumniPage: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-2 text-slate-700">
                     <Phone className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0" />
-                    <span>02525-272044 / 270724</span>
+                    <a href="tel:9322054713" className="hover:text-[var(--color-primary)] transition-colors">
+                      +91 9322054713
+                    </a>
                   </div>
                   <div className="flex items-start gap-2 text-slate-700 pt-1">
                     <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0 mt-0.5" />

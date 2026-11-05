@@ -387,10 +387,8 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           <option value="LKG / UKG">LKG / UKG (Kindergarten)</option>
                           <option value="Class I - V (Primary)">Class I - V (Primary)</option>
                           <option value="Class VI - VIII (Middle)">Class VI - VIII (Middle)</option>
-                          <option value="Class IX - X (Secondary)">Class IX - X (Secondary)</option>
-                          <option value="Class XI - XII Science">Class XI - XII (Science Stream)</option>
-                          <option value="Class XI - XII Commerce">Class XI - XII (Commerce Stream)</option>
-                          <option value="Class XI - XII Arts">Class XI - XII (Arts Stream)</option>
+                          <option value="Class IX (Secondary)">Class IX (Secondary)</option>
+                          <option value="Class XI" disabled>Class XI (Admissions open for 2027-28)</option>
                         </select>
                       </div>
 
@@ -466,7 +464,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                     </div>
                     <div className="flex justify-between font-mono">
                       <span>Office Hours:</span>
-                      <span>Mon-Sat (8:30 AM - 3:30 PM)</span>
+                      <span>Mon-Sat (8:00 AM - 5:00 PM)</span>
                     </div>
                   </div>
 

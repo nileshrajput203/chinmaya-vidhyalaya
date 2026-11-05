@@ -430,7 +430,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                         <div>
                           <h5 className="text-[11px] font-mono font-bold text-[#DF711B] uppercase">Co-Curricular & Skills</h5>
                           <ul className="text-xs text-[#4A5568] space-y-1 mt-1 font-light">
-                            <li>• Work Experience & STEM Laboratories</li>
+                            <li>• Work Experience, Science (Physics, Chemistry, Biology) and Maths Laboratories</li>
                             <li>• Visual Arts, Music & Cultural Events</li>
                             <li>• Physical and Health Education & Athletics</li>
                           </ul>

@@ -164,20 +164,6 @@ export const SchoolCalendarPage: React.FC = () => {
 
             <div className="space-y-2.5 text-xs">
               <a
-                href="tel:02525272370"
-                className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all"
-              >
-                <div className="flex items-center gap-2.5">
-                  <PhoneCall className="w-4 h-4 text-[#DF711B]" />
-                  <div>
-                    <span className="text-[10px] text-slate-400 block font-mono">Academic Desk</span>
-                    <span className="font-bold">02525-272370 / 272371</span>
-                  </div>
-                </div>
-                <span className="text-[11px] font-semibold text-[#DF711B]">Call Desk</span>
-              </a>
-
-              <a
                 href="tel:9322054713"
                 className="flex items-center justify-between p-3 bg-[#0A5C36]/10 hover:bg-[#0A5C36]/20 border border-[#0A5C36]/20 rounded-xl text-[#0A5C36] transition-all"
               >
@@ -208,8 +194,7 @@ export const SchoolCalendarPage: React.FC = () => {
 
             <div className="p-3 bg-white border border-[#E7E2D8] rounded-xl text-xs space-y-1 text-slate-600">
               <span className="font-bold text-slate-800 block">School Office Working Hours:</span>
-              <p className="text-[11px]">Monday to Friday: 8:00 AM - 3:30 PM</p>
-              <p className="text-[11px]">Saturday: 8:00 AM - 1:00 PM</p>
+              <p className="text-[11px]">Monday to Saturday: 8:00 AM - 5:00 PM</p>
             </div>
           </div>
 

@@ -13,7 +13,7 @@ const BASE_URL = 'https://chinmayatarapur.edu.in';
 const ROUTE_SEO: Record<string, PageMetadata> = {
   '/': {
     title: 'Chinmaya Vidyalaya, Tarapur | Premier CBSE School (Nursery to XII)',
-    description: 'Premier CBSE co-educational institution in Boisar-Tarapur, Palghar. Holistic academics, STEM laboratories, sports arena, and value-based Chinmaya Vision Programme from Nursery to Class XII.',
+    description: 'Premier CBSE co-educational institution in Boisar-Tarapur, Palghar. Holistic academics, Science (Physics, Chemistry, Biology) and Maths laboratories, sports arena, and value-based Chinmaya Vision Programme from Nursery to Class XII.',
     keywords: 'Chinmaya Vidyalaya Tarapur, CBSE school Boisar, best school in Palghar, Chinmaya Mission school, admissions 2026-27, CBSE affiliation 1130058, senior secondary school Boisar, Nursery to Class 12 Boisar, Chinmaya Vision Programme',
     breadcrumb: [{ name: 'Home', path: '/' }],
   },
@@ -25,7 +25,7 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
   },
   '/academics/curriculum': {
     title: 'CBSE Scholastic Curriculum & Syllabi | Chinmaya Vidyalaya Tarapur',
-    description: 'Explore the NEP 2020-aligned CBSE curriculum from Nursery to Class XII. Graded stages, STEM lab practicals, trilingual learning, and senior secondary Science, Commerce, and Arts streams.',
+    description: 'Explore the NEP 2020-aligned CBSE curriculum from Nursery to Class XII. Graded stages, Science (Physics, Chemistry, Biology) and Maths lab practicals, trilingual learning, and senior secondary Science, Commerce, and Arts streams.',
     keywords: 'CBSE curriculum, Class 10 syllabus, Class 12 streams, science commerce arts Boisar, CBSE 1130058',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Academics', path: '/academics' }, { name: 'Curriculum & Syllabi', path: '/academics/curriculum' }],
   },
@@ -37,13 +37,13 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
   },
   '/academics/infrastructure': {
     title: 'World-Class Infrastructure & Science Labs | Chinmaya Vidyalaya Tarapur',
-    description: 'Advanced Physics, Chemistry, Biology, and Computer Labs, high-speed robotics kits, smart classrooms, and expansive sports grounds in Boisar, Maharashtra.',
-    keywords: 'school infrastructure, science labs Boisar, computer lab Tarapur, robotics lab school, sports ground',
+    description: 'Advanced Physics, Chemistry, Biology, and Computer Labs, AI/coding kits, smart classrooms, and expansive sports grounds in Boisar, Maharashtra.',
+    keywords: 'school infrastructure, science labs Boisar, computer lab Tarapur, AI/coding school, sports ground',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Academics', path: '/academics' }, { name: 'Infrastructure & Labs', path: '/academics/infrastructure' }],
   },
   '/admissions': {
     title: 'Admissions 2026-27 & Guidelines | Chinmaya Vidyalaya Tarapur',
-    description: 'Admissions open for Academic Session 2026-27 from Nursery to Class XII. Review eligibility criteria, document verification, fee guidelines, and download forms.',
+    description: 'Admissions open for Academic Session 2026-27 from Nursery to 9th Std (11th Std opens for 2027-28). Review eligibility criteria, document verification, fee guidelines, and download forms.',
     keywords: 'school admissions 2026-27, nursery admission Boisar, class 1 admission Tarapur, CBSE school registration Palghar',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Admissions', path: '/admissions' }],
   },
@@ -138,10 +138,10 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Downloads', path: '/downloads' }],
   },
   '/downloads/sample-papers': {
-    title: 'CBSE Sample Question Papers (Class 1 to 10) | Chinmaya Vidyalaya Tarapur',
-    description: 'Free download of term-wise CBSE sample question papers, revision question banks, and marking schemes for Classes I through X.',
-    keywords: 'CBSE sample papers, Class 10 board papers, Class 9 question paper, term exam papers Boisar',
-    breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Downloads', path: '/downloads' }, { name: 'Sample Papers', path: '/downloads/sample-papers' }],
+    title: 'CBSE Sample Papers (Classes 9 to 12) | Chinmaya Vidyalaya Tarapur',
+    description: 'Official CBSE sample papers for Classes 9 to 12 across Commerce, Arts, and Science streams in single merged PDF format.',
+    keywords: 'CBSE sample papers, Class 10 board papers, Class 12 board sample papers, Class 11 sample papers, Boisar',
+    breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Downloads', path: '/downloads' }, { name: 'CBSE Sample Papers', path: '/downloads/sample-papers' }],
   },
   '/downloads/transfer-certificates': {
     title: 'Transfer Certificates (TC Records) | Chinmaya Vidyalaya Tarapur',
@@ -175,7 +175,7 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
   },
   '/contact': {
     title: 'Contact Us & Campus Location | Chinmaya Vidyalaya Tarapur',
-    description: 'Get in touch with Chinmaya Vidyalaya Tarapur. Campus address at P-201 MIDC Area, Saravali, Boisar, phone numbers +91 9322054713 / +91 9823517700, and online enquiry desk.',
+    description: 'Get in touch with Chinmaya Vidyalaya Tarapur. Campus address at P-201 MIDC Area, Saravali, Boisar, phone number +91 9322054713, and online enquiry desk.',
     keywords: 'contact Chinmaya Vidyalaya, school phone number, school address Boisar, MIDC Saravali school',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }],
   },

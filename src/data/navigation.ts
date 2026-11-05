@@ -6,6 +6,17 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/"
   },
   {
+    label: "About Us",
+    href: "/about",
+    children: [
+      { label: "School History", href: "/about/history", description: "Our institutional roots: from 72 students to a thriving CBSE campus" },
+      { label: "School Vision & Mission", href: "/about/mission-vision", description: "Guiding principles and core aspirations for holistic education" },
+      { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees, and administrative leadership" },
+      { label: "Important Disclosures", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates, affiliation, and TC records" },
+      { label: "4 Pillars of CVP", href: "/about/philosophy", description: "The four foundational pillars of the Chinmaya Vision Program" }
+    ]
+  },
+  {
     label: "Admissions",
     href: "/admissions",
     children: [
@@ -18,23 +29,22 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
     href: "/academics",
     children: [
       { label: "Curriculum & Syllabi", href: "/academics/curriculum", description: "Coverage from Nursery to Std XII (Arts, Commerce, Science) scholastic subjects" },
-      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry, Biology, IT labs, library, and spacious classrooms" },
+      { label: "Infrastructure & Labs", href: "/academics/infrastructure", description: "Physics, Chemistry, Biology, IT labs, and spacious classrooms" },
       { label: "School Calendar 2026-27", href: "/admissions/calendar", description: "Term dates, vacations, and examination schedule" },
-      { label: "CBSE Sample Papers", href: "/downloads/sample-papers", description: "Sample question papers and evaluation revision modules" }
+      { label: "CBSE Sample Papers", href: "/downloads/sample-papers", description: "Official CBSE Class 9 to 12 sample question papers (Commerce, Arts, Science)" }
     ]
-  },
-  {
-    label: "Notice",
-    href: "/news"
   },
   {
     label: "Student Life",
     href: "/features",
     children: [
       { label: "Co-Curricular & Sports", href: "/academics/co-curricular", description: "Athletics, tournaments, yoga, music, and performing arts" },
-      { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz and ASSET diagnostic testing" },
-      { label: "Central Library", href: "/features/library", description: "Thousands of reference titles, journals, and dedicated reading spaces" }
+      { label: "Career Counseling", href: "/features/career-counselling", description: "Workshops by Young Buzz and ASSET diagnostic testing" }
     ]
+  },
+  {
+    label: "Notice",
+    href: "/news"
   },
   {
     label: "Gallery",
@@ -47,17 +57,6 @@ export const OFFICIAL_NAVIGATION_DATA: NavItem[] = [
   {
     label: "Alumni",
     href: "/alumni"
-  },
-  {
-    label: "About Us",
-    href: "/about",
-    children: [
-      { label: "School History", href: "/about/history", description: "Our institutional roots: from 72 students to a thriving CBSE campus" },
-      { label: "School Vision & Mission", href: "/about/mission-vision", description: "Guiding principles and core aspirations for holistic education" },
-      { label: "Board of Management", href: "/about/management", description: "13-member governing body, trustees, and administrative leadership" },
-      { label: "Important Disclosures", href: "/about/mandatory-information", description: "Public CBSE disclosures, safety certificates, affiliation, and TC records" },
-      { label: "4 Pillars of CVP", href: "/about/philosophy", description: "The four foundational pillars of the Chinmaya Vision Program" }
-    ]
   },
   {
     label: "Contact",

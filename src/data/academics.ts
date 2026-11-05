@@ -40,20 +40,20 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     subtitle: "Nurturing creative expression, athletic talents, and leadership skills",
     content: [
       "Education at Chinmaya Vidyalaya extends far beyond textbooks and chalkboards. We offer a rich array of co-curricular opportunities to ensure balanced physical, emotional, intellectual, and creative development for every child.",
-      "Students actively participate in intra-school and inter-school debates, elocutions, science and STEM exhibitions, house tournaments, and the prestigious annual Chinmaya Mission Gita Chanting Competition.",
+      "Students actively participate in intra-school and inter-school debates, elocutions, Science (Physics, Chemistry, Biology) and Maths exhibitions, house tournaments, and the prestigious annual Chinmaya Mission Gita Chanting Competition.",
       "Our four-house system fosters leadership, camaraderie, healthy competition, and teamwork through regular sports meets, cultural fests, quiz bowls, and annual drama productions.",
       "Through structured non-scholastic periods integrated into the weekly timetable, every student is encouraged to discover innate artistic talents, hone athletic skills, and cultivate public speaking confidence."
     ],
     bulletPoints: [
       "Four dynamic student houses encouraging teamwork, democratic elections, and school spirit",
-      "Annual Athletic Meet and inter-house football, cricket, volleyball, and chess tournaments",
+      "Annual Athletic Meet and inter-house cricket, volleyball, commando training, and chess tournaments",
       "Cultural celebration days including Gurudev Jayanti, Sanskrit Diwas, and Matru-Pitru Pujan",
-      "Active clubs: Eco-Club (Jal Pakhwada), Science & Robotics Forum, Literary & Debating Society"
+      "Active clubs: Eco-Club (Jal Pakhwada), Science & AI/Coding Forum, Literary & Debating Society"
     ],
     features: [
       "Performing Arts: Classical & Light Music, Devotional Bhajans, Classical Dance, Drama & Theatrics",
       "Visual Arts: Painting, Craft, Drawing Competitions, Rangoli, Sculpture and Origami workshops",
-      "Sports & Athletics: Cricket, Football, Volleyball, Table Tennis, Chess, Daily Yoga, March Past",
+      "Sports & Athletics: Cricket, Volleyball, Commando Training, Table Tennis, Chess, Daily Yoga, March Past (Archery, Skating & Horse Riding coming soon)",
       "Student Leadership: Elected Student Council, Head Boy/Girl leadership corps, and House Captains"
     ]
   },
@@ -94,17 +94,17 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     bulletPoints: [
       "Well-ventilated classrooms with generous capacity (>40 students) and smart audio-visual equipment",
       "State-of-the-art Physics, Chemistry, Biology, and IT computer laboratories",
-      "Central Library housing thousands of academic titles, encyclopedias, and reference journals",
+      "Dedicated passenger lift facility ensuring comfortable vertical mobility for teachers and special children (CWSN)",
       "Full municipal building safety certification, fire safety clearances, and RO drinking water"
     ],
     features: [
-      "Central Library with thousands of reference books, periodicals, and quiet reading areas",
-      "Fully equipped Physics Laboratory with optical benches, electrical apparatus, and measuring instruments",
-      "Fully equipped Chemistry Laboratory with fume hoods, analytical reagents, and safety showers",
-      "Biology Laboratory with specimen archives, compound microscopes, and anatomical models",
-      "Modern IT (Computer) Laboratory with high-speed internet and educational software",
+      "Dedicated Passenger Lift (Elevator) facility for teachers and children with special needs (CWSN)",
+      "Fully equipped Physics Laboratory with optical benches, electrical apparatus, measuring instruments, dedicated UPS power backup, CCTV, and fire extinguishers",
+      "Fully equipped Chemistry Laboratory with analytical reagents, titration stations, dedicated exit sand buckets, UPS power backup, CCTV, and fire extinguishers",
+      "Biology Laboratory with digital interactive panel, specimen archives, compound microscopes, UPS power backup, CCTV, and fire extinguishers",
+      "Modern IT (Computer) Laboratory with high-speed internet, dedicated UPS power backup, CCTV, and fire extinguishers",
       "Classrooms with capacity for more than 40 students, with optimal natural lighting and ventilation",
-      "Spacious Sports Ground for football, cricket, volleyball, athletic tracks, and march past",
+      "Spacious Sports Ground & Arena for cricket, volleyball, Mallakhamb, indoor activities (TT, badminton, chess, carrom), and first aid",
       "CCTV surveillance, fire safety systems, safe drinking water plants, and first-aid infirmary"
     ]
   }

@@ -6,8 +6,7 @@ export const CONTACT_DETAILS = {
   udiseNo: "27361116004",
   website: "https://cvtarapur.com",
   phones: [
-    { label: "School Office & Admissions", number: "9322054713" },
-    { label: "Alternate Office", number: "9823517700" }
+    { label: "School Office & Admissions", number: "9322054713" }
   ],
   emails: [
     { 
@@ -23,9 +22,9 @@ export const CONTACT_DETAILS = {
       description: "Alumni directory registration, student mentorship & reunion coordination" 
     },
     { 
-      label: "Teaching Staff & Careers", 
+      label: "Hiring Staff & Careers", 
       email: "cv.info@chinmayamission.com", 
-      subjectPrefix: "[Faculty Recruitment]",
+      subjectPrefix: "[Staff Recruitment]",
       description: "Teaching faculty applications, staff vacancies & academic CV submissions" 
     },
     { 

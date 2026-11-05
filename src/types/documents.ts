@@ -14,6 +14,9 @@ export interface SchoolDocument {
   category: DocumentCategory;
   academicYear?: string;
   term?: TermCategory;
+  classGrade?: string;
+  stream?: string;
+  isComingSoon?: boolean;
   fileUrl: string;
   fileSize?: string;
   uploadDate: string;

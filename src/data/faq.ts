@@ -19,7 +19,7 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-1',
     category: 'admissions',
     question: 'How do I apply for admissions at Chinmaya Vidyalaya for 2026-27?',
-    answer: 'Admissions are open for Nursery, Junior KG, Senior KG, and Classes I to XII (Arts, Commerce, Science). You can download the official registration form directly from the Downloads section of our website, complete it, and submit it at the school administrative office in Vidyanagar, Boisar along with the student\'s birth certificate, previous report card, and two passport-sized photographs.'
+    answer: 'Admissions are open for Nursery, Junior KG, Senior KG, and Classes I to IX for Academic Session 2026-27 (Admissions for Class XI will commence for 2027-2028). For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process. Registration forms can be filled online or downloaded from our website and submitted at the school administrative counter in Vidyanagar, Boisar along with the student\'s birth certificate and required documents.'
   },
   {
     id: 'faq-2',
@@ -79,7 +79,13 @@ export const OFFICIAL_FAQS: FaqItem[] = [
     id: 'faq-11',
     category: 'facilities',
     question: 'How do I schedule a school visit or contact the administration?',
-    answer: 'School visits are available exclusively for new prospective parents seeking admission and wishing to inspect campus facilities. New parents can schedule a visit by submitting an enquiry on our Contact page or by calling our school office at 9322054713 (Mon-Sat: 8:30 AM to 3:30 PM).'
+    answer: 'School visits are available exclusively for new prospective parents seeking admission and wishing to inspect campus facilities. New parents can schedule a visit by submitting an enquiry on our Contact page or by calling our school office at 9322054713 (Mon-Sat: 8:00 AM to 5:00 PM).'
+  },
+  {
+    id: 'faq-timings',
+    category: 'admissions',
+    question: 'What are the daily school and office timings at Chinmaya Vidyalaya Tarapur?',
+    answer: 'Official school and administrative timings are as follows:\n• Jr. KG: 1:00 PM to 5:00 PM\n• Senior KG: 8:00 AM to 12:30 PM\n• Primary: 1:00 PM to 5:00 PM\n• Secondary: 7:30 AM to 12:55 PM\n• Administrative Office: Monday to Saturday, 8:00 AM to 5:00 PM.'
   },
   {
     id: 'faq-12',

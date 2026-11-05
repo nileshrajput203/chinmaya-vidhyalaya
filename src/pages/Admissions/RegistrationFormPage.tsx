@@ -4,7 +4,6 @@ import {
   User, 
   Users, 
   Mail, 
-  Phone, 
   PhoneCall, 
   MapPin, 
   GraduationCap, 
@@ -292,6 +291,26 @@ export const RegistrationFormPage: React.FC = () => {
           </div>
         </div>
 
+        {/* Important Admission Process Note Banner */}
+        <div className="bg-amber-50/90 border-l-4 border-[#DF711B] rounded-2xl p-4 sm:p-5 shadow-xs flex items-start gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-[#DF711B]/15 text-[#DF711B] flex items-center justify-center shrink-0 mt-0.5">
+            <AlertCircle className="w-5 h-5 stroke-[2.2]" />
+          </div>
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded-md bg-[#DF711B] text-white font-mono text-[10px] font-bold uppercase tracking-wide">
+                Important Admission Note
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">
+              For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.
+            </p>
+            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              Whether you submit the online registration form below or download the printable PDF, please submit the physical hard copy at the School Office Counter (Monday to Saturday, 8:00 AM – 5:00 PM) to obtain the official admission form.
+            </p>
+          </div>
+        </div>
+
         {/* Main Content Grid: Form (left) + Help Desk Contact (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
@@ -351,7 +370,7 @@ export const RegistrationFormPage: React.FC = () => {
                 <div className="p-4 bg-amber-50/70 border border-amber-200/80 rounded-2xl text-xs text-amber-900 flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong>Important Note:</strong> Registration forms to be submitted in school offline as well to go for further admission process. Duly filled physical forms must be accompanied by an attested copy of the Birth Certificate, recent passport photos, and child Aadhaar card and submitted at the Admissions Counter, Chinmaya Vidyalaya Boisar.
+                    <strong>Important Note:</strong> For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process. Duly filled physical forms must be accompanied by an attested copy of the Birth Certificate, recent passport photos, and child Aadhaar card and submitted at the Admissions Counter, Chinmaya Vidyalaya Boisar.
                   </div>
                 </div>
               </div>
@@ -463,8 +482,7 @@ export const RegistrationFormPage: React.FC = () => {
                         <option value="Std VII">Std VII</option>
                         <option value="Std VIII">Std VIII</option>
                         <option value="Std IX">Std IX</option>
-                        <option value="Std XI">Std XI (Senior Secondary)</option>
-                        <option value="Std XII">Std XII (Senior Secondary)</option>
+                        <option value="Std XI" disabled>Std XI (Admissions open for 2027-28)</option>
                       </select>
                       {errors.gradeSeeking && <p className="text-xs text-red-500 mt-1">{errors.gradeSeeking}</p>}
                     </div>
@@ -793,20 +811,6 @@ export const RegistrationFormPage: React.FC = () => {
                 </a>
 
                 <a
-                  href="tel:02525272370"
-                  className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all text-xs"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-slate-500" />
-                    <div>
-                      <span className="text-[10px] text-slate-400 block font-mono">School Office Counter</span>
-                      <span className="font-bold">02525-272370 / 272371</span>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-semibold text-slate-500">Dial Office</span>
-                </a>
-
-                <a
                   href="mailto:cv.info@chinmayamission.com?subject=Admissions%20Registration%20Help%20Desk%20Query"
                   className="flex items-center justify-between p-3 bg-slate-50 hover:bg-slate-100 border border-[#E7E2D8] rounded-xl text-slate-800 transition-all text-xs"
                 >
@@ -829,12 +833,8 @@ export const RegistrationFormPage: React.FC = () => {
                 </div>
                 <div className="space-y-1 text-slate-600 text-[11px]">
                   <div className="flex justify-between">
-                    <span>Monday - Friday:</span>
-                    <span className="font-semibold text-slate-800">9:00 AM - 1:30 PM, 2:00 PM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span className="font-semibold text-slate-800">9:00 AM - 12:30 PM</span>
+                    <span>Monday - Saturday:</span>
+                    <span className="font-semibold text-slate-800">8:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between text-slate-400">
                     <span>Sunday & Public Holidays:</span>
@@ -1007,7 +1007,7 @@ export const RegistrationFormPage: React.FC = () => {
               </span>
               <ul className="space-y-1.5 list-disc list-inside text-[11px] text-emerald-900/90">
                 <li>Keep this Application Reference ID (<strong>{submittedReceipt.appNo}</strong>) noted for all correspondence.</li>
-                <li className="text-amber-900 font-bold">Important Note: Registration forms to be submitted in school offline as well to go for further admission process.</li>
+                <li className="text-amber-900 font-bold">Important Note: For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.</li>
                 <li>Our Admissions Help Desk will contact you on <strong>{submittedReceipt.data.primaryPhone}</strong> to schedule document verification.</li>
                 <li>Please prepare original Birth Certificate, Transfer Certificate (if applicable), and passport-size photographs.</li>
               </ul>

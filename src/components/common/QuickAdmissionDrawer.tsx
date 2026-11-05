@@ -125,7 +125,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                   <div className="flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-[#DF711B]" />
                     <span className="text-[11px] font-mono tracking-widest uppercase text-[#DF711B] font-bold">
-                      Admissions Open 2026-27
+                      Admissions Open 2026-27 • Nursery to 9th Std (11th: 2027-28)
                     </span>
                   </div>
                   <h3 className="font-cinzel text-xl font-bold text-[#181C20]">
@@ -184,8 +184,11 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
               >
                 {activeTab === 'forms' && (
                   <div className="space-y-4">
-                    <div className="bg-[#FAF6EF] p-4 rounded-xl border border-[#E7E2D8] text-xs text-[#4A5568] leading-relaxed">
-                      <strong>Note:</strong> Classrooms are spacious and architected with capacity capable of seating more than 40 students with personalized mentoring. Download application forms below.
+                    <div className="bg-amber-50/80 p-4 rounded-xl border border-amber-300 text-xs text-amber-950 leading-relaxed space-y-1">
+                      <strong className="text-[#DF711B] font-bold block">Important Admission Note:</strong>
+                      <p className="font-semibold text-slate-900">
+                        For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.
+                      </p>
                     </div>
 
                     <div className="space-y-3">
@@ -323,13 +326,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                               <option value="Class 7">Class 7</option>
                               <option value="Class 8">Class 8</option>
                               <option value="Class 9">Class 9</option>
-                              <option value="Class 10">Class 10</option>
-                              <option value="Class 11 Arts">Class 11 (Arts)</option>
-                              <option value="Class 11 Commerce">Class 11 (Commerce)</option>
-                              <option value="Class 11 Science">Class 11 (Science)</option>
-                              <option value="Class 12 Arts">Class 12 (Arts)</option>
-                              <option value="Class 12 Commerce">Class 12 (Commerce)</option>
-                              <option value="Class 12 Science">Class 12 (Science)</option>
+                              <option value="Class 11" disabled>Class 11 (Admissions open for 2027-28)</option>
                             </select>
                           </div>
                           <div>
@@ -461,7 +458,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                   <Phone className="w-3.5 h-3.5 text-[#DF711B]" />
                   <span>Office: <strong>{OFFICIAL_SCHOOL_INFO.contact.phone[0]}</strong></span>
                 </a>
-                <span className="text-[11px] font-mono text-slate-500">Mon - Sat: 8 AM - 4 PM</span>
+                <span className="text-[11px] font-mono text-slate-500">Mon - Sat: 8 AM - 5 PM</span>
               </div>
             </motion.div>
           </div>

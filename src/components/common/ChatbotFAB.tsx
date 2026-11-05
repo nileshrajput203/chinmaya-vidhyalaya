@@ -24,7 +24,7 @@ interface Message {
 
 const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> }> = {
   'admission': {
-    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon-Sat: 8:30 AM - 3:30 PM.",
+    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon-Sat: 8:00 AM - 5:00 PM.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
       { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
@@ -40,7 +40,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     ]
   },
   'campus': {
-    answer: "Chinmaya Vidyalaya Tarapur Campus Details:\n\n• Address: P-201 MIDC Area, Saravali, Boisar / Tarapur, District Palghar, Maharashtra - 401501.\n• Campus Features: Modern STEM Laboratories (Physics, Chemistry, Biology), Robotics, Central Digital Library, Sports Playground, Daily Yoga & Meditation Courtyard.\n• School Timings:\n  - Pre-Primary: 8:30 AM - 12:30 PM\n  - Primary & Secondary: 7:45 AM - 2:00 PM\n• Office Visiting Hours: Mon to Sat, 8:30 AM - 3:30 PM.",
+    answer: "Chinmaya Vidyalaya Tarapur Campus & Timings Details:\n\n• Address: P-201 MIDC Area, Saravali, Boisar / Tarapur, District Palghar, Maharashtra - 401501.\n• School Timings:\n  - Jr. KG: 1:00 PM - 5:00 PM\n  - Senior KG: 8:00 AM - 12:30 PM\n  - Primary: 1:00 PM - 5:00 PM\n  - Secondary: 7:30 AM - 12:55 PM\n• Office Working Hours: Mon to Sat, 8:00 AM - 5:00 PM.\n• Campus Features: Modern Science (Physics, Chemistry, Biology) and Maths Laboratories, Scratch & Python, Sports Playground, Mallakhamb, Daily Yoga & Assemblies.",
     actions: [
       { label: 'Call Campus Office', url: 'tel:9322054713' },
       { label: 'View Facilities', url: '/about/infrastructure' },
@@ -48,7 +48,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     ]
   },
   'forms': {
-    answer: "You can download all official documents and application forms directly:\n\n• Nursery & Kindergarten Admission Form (PDF)\n• CBSE SARAS Mandatory Public Disclosures\n• Classes I to V Evaluation III Question Papers\n• Classes VI to X CBSE Sample Papers & Revision Modules\n• Transfer Certificate (TC) Request Format",
+    answer: "You can download all official documents and application forms directly:\n\n• Nursery & Kindergarten Registration Form (PDF)\n• CBSE SARAS Mandatory Public Disclosures\n• Classes 9 to 12 CBSE Sample Papers (Commerce, Arts, Science)\n• Transfer Certificate (TC) Request Format\n\n📌 Important Note for Parents: For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.",
     actions: [
       { label: 'Nursery Admission Form (PDF)', url: '/images/nursery.pdf', download: true },
       { label: 'CBSE Sample Papers', url: '/downloads/sample-papers' },
@@ -60,18 +60,18 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     actions: [
       { label: 'Explore Curriculum', url: '/academics/curriculum' },
       { label: 'Senior Streams (XI & XII)', url: '/academics/curriculum' },
-      { label: 'Download Sample Papers', url: '/downloads/sample-papers' }
+      { label: 'CBSE Sample Papers', url: '/downloads/sample-papers' }
     ]
   },
   'contact': {
-    answer: "Direct Contact Information:\n\n• Campus Front Desk: +91 9322054713 / +91 9823517700\n• General Email: cv.info@chinmayamission.com\n• Principal Email: cv.principal@chinmayamission.com\n• Location: P-201 MIDC Area, Saravali, Boisar, Maharashtra 401501\n• Office Timings: Mon - Sat, 8:30 AM - 3:30 PM",
+    answer: "Direct Contact Information:\n\n• Campus Front Desk: +91 9322054713\n• General Email: cv.info@chinmayamission.com\n• Principal Email: cv.principal@chinmayamission.com\n• Location: P-201 MIDC Area, Saravali, Boisar, Maharashtra 401501\n• Office Timings: Mon - Sat, 8:00 AM - 5:00 PM\n• School Timings:\n  - Jr. KG: 1:00 PM - 5:00 PM\n  - Senior KG: 8:00 AM - 12:30 PM\n  - Primary: 1:00 PM - 5:00 PM\n  - Secondary: 7:30 AM - 12:55 PM",
     actions: [
       { label: 'Call Now: 9322054713', url: 'tel:9322054713' },
       { label: 'Visit Contact Page', url: '/contact' }
     ]
   },
   'facilities': {
-    answer: "World-Class Educational Infrastructure:\n\n• Advanced Science Laboratories (Physics, Chemistry, Biology) with individual workstations.\n• High-speed Computer & Technology Lab with robotics kits.\n• Central Research Library with thousands of reference books, encyclopedias, and periodicals.\n• Dedicated sports arena for athletics, basketball, volleyball, cricket, and indoor games.\n• Daily Yoga, Pranayama & Surya Namaskar assemblies.",
+    answer: "World-Class Educational Infrastructure:\n\n• Advanced Science Laboratories (Physics, Chemistry, Biology) with individual workstations.\n• High-speed Computer & Technology Lab with Scratch and Python coding.\n• Dedicated Lift (Elevator) facility for teachers and children with special needs (CWSN).\n• Dedicated sports arena for athletics, volleyball, cricket, Mallakhamb, and indoor games.\n• Daily Yoga, fitness & meditation assemblies.",
     actions: [
       { label: 'View Facilities', url: '/about/infrastructure' },
       { label: 'Photo Gallery', url: '/gallery' }
@@ -91,6 +91,13 @@ const STOP_WORDS = new Set([
   'does', 'have', 'all', 'any', 'about', 'with', 'from', 'our'
 ]);
 
+function getTimeOfDayGreeting(): string {
+  const hour = new Date().getHours();
+  if (hour < 12) return 'Good morning';
+  if (hour < 17) return 'Good afternoon';
+  return 'Good evening';
+}
+
 function getBotResponse(userText: string): { 
   answer: string; 
   actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> 
@@ -108,7 +115,145 @@ function getBotResponse(userText: string): {
     };
   }
 
-  // 2. Transfer Certificates & Mandatory Disclosures (specific check so general "cbse" does not hijack)
+  // 2. Pure Greetings ("hi", "hello", "hey", "namaste", "hari om", "good morning", etc.)
+  const pureGreetingRegex = /^(hi+|he+y+|hello+|namaste+|namaskar+|hari\s*om+|pranam+|good\s*(morning|afternoon|evening|day)|greetings+|hola+|yo)[\s!.,?]*$/i;
+  if (pureGreetingRegex.test(query)) {
+    const greeting = getTimeOfDayGreeting();
+    return {
+      answer: `Hari Om! 🙏 ${greeting}! Welcome to Chinmaya Vidyalaya Tarapur.\n\nI am your AI Campus Guide. I can help you with:\n• Admissions 2026-27 & Registration Process\n• Official School & Administrative Timings\n• Fee Structure & Term Installments\n• CBSE Sample Question Papers (Class 9–12)\n• Campus Facilities, Laboratories & Transport\n\nHow may I help you today? You can choose a quick topic below or type your question directly!`,
+      actions: [
+        { label: '📋 Admission Enquiry' },
+        { label: '⏰ School Timings' },
+        { label: '💰 Fee Structure' },
+        { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' },
+        { label: '📞 Call Front Desk: 9322054713', url: 'tel:9322054713' }
+      ]
+    };
+  }
+
+  // 3. Conversational / Pleasantries: "How are you?"
+  if (/^(how\s+are\s+you|how\s+r\s+u|how\s+do\s+you\s+do|how\s+is\s+it\s+going|how\s+are\s+things)/i.test(query)) {
+    return {
+      answer: "Hari Om! 🙏 I am doing wonderful, thank you for asking!\n\nI am always ready to help parents, students, and visitors with anything regarding Chinmaya Vidyalaya Tarapur. What information can I share with you today?",
+      actions: [
+        { label: '📋 Admission Enquiry' },
+        { label: '⏰ School Timings' },
+        { label: '💰 Fee Structure' },
+        { label: '📞 Direct Contact', url: '/contact' }
+      ]
+    };
+  }
+
+  // 4. Conversational: "Who are you?" / "What can you do?" / "Help"
+  if (/^(who\s+are\s+you|what\s+is\s+your\s+name|what\s+can\s+you\s+do|what\s+do\s+you\s+do|help|what\s+help|features)/i.test(query)) {
+    return {
+      answer: "I am the Chinmaya Vidyalaya Campus Assistant! 🏫\n\nI am available 24/7 to help you with:\n1. Admissions 2026-27: Age criteria, forms & registration procedure.\n2. School Timings: Jr. KG, Sr. KG, Primary, Secondary & Office hours.\n3. Fee Structure: Term installments & interactive fee calculator.\n4. Downloads: CBSE sample papers (Class 9–12), syllabus & certificates.\n5. Campus Life: Laboratories, sports, library, and transport services.\n\nWhat would you like to know?",
+      actions: [
+        { label: '📋 Admission Enquiry' },
+        { label: '⏰ School Timings' },
+        { label: '💰 Fee Structure' },
+        { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' }
+      ]
+    };
+  }
+
+  // 5. Conversational: "Thank you" / "Thanks"
+  if (/^(thanks|thank\s+you|thank\s+u|dhanyawad|dhanyavad|shukriya|much\s+appreciated|thx)[\s!.,]*$/i.test(query) || query.includes('thank you') || query.includes('thanks a lot')) {
+    return {
+      answer: "You are most welcome! 🙏\n\nIt is our pleasure to assist you. If you have any further questions or plan to visit our campus, please feel free to drop by or reach out at +91 9322054713.\n\nHari Om and have a blessed, fruitful day ahead!",
+      actions: [
+        { label: '📞 Call School: 9322054713', url: 'tel:9322054713' },
+        { label: 'Campus Facilities', url: '/about/infrastructure' },
+        { label: 'Contact Page', url: '/contact' }
+      ]
+    };
+  }
+
+  // 6. Conversational: "Bye" / "Goodbye"
+  if (/^(bye|goodbye|good\s*bye|see\s+you|cya|tata|good\s*night)[\s!.,]*$/i.test(query)) {
+    return {
+      answer: "Goodbye and Hari Om! 🙏\n\nThank you for connecting with Chinmaya Vidyalaya Tarapur. Wishing you and your family success, good health, and happiness!",
+      actions: [
+        { label: 'Visit Website Home', url: '/' },
+        { label: 'Call Helpline', url: 'tel:9322054713' }
+      ]
+    };
+  }
+
+  // 7. Conversational: "Ok" / "Okay" / "Sure"
+  if (/^(ok|okay|alright|got\s+it|fine|understood|sure)[\s!.,]*$/i.test(query)) {
+    return {
+      answer: "Great! Let me know if you need any other information. You can choose a topic below or ask any question anytime. Hari Om! 🙏",
+      actions: [
+        { label: '📋 Admission Enquiry' },
+        { label: '⏰ School Timings' },
+        { label: '💰 Fee Structure' },
+        { label: '📞 Contact Us', url: '/contact' }
+      ]
+    };
+  }
+
+  // 8. Timings Specific Inquiry (Jr KG, Sr KG, Primary, Secondary, Office)
+  if (
+    query.includes('timing') || 
+    query.includes('timings') || 
+    query.includes('school time') || 
+    query.includes('office time') || 
+    query.includes('office hour') || 
+    query.includes('when does school') || 
+    query.includes('open time') || 
+    query.includes('close time') ||
+    query.includes('schedule') ||
+    query.includes('working hour')
+  ) {
+    return {
+      answer: "Official School & Office Timings:\n\n• Jr. KG: 1:00 PM – 5:00 PM\n• Senior KG: 8:00 AM – 12:30 PM\n• Primary (Classes I to V): 1:00 PM – 5:00 PM\n• Secondary (Classes VI to X): 7:30 AM – 12:55 PM\n• Administrative Office: Monday to Saturday, 8:00 AM – 5:00 PM.\n\nThe administrative front desk is available Monday through Saturday during office hours for admissions, fee queries, and general inquiries.",
+      actions: [
+        { label: 'Request Admission Callback', isModalTrigger: true },
+        { label: 'Academic Calendar', url: '/admissions/calendar' },
+        { label: 'Call Front Desk: 9322054713', url: 'tel:9322054713' }
+      ]
+    };
+  }
+
+  // 9. Age Criteria / Eligibility for Admission
+  if (
+    query.includes('age') || 
+    query.includes('eligib') || 
+    query.includes('criteria') || 
+    query.includes('how old') || 
+    query.includes('cut off') || 
+    query.includes('cutoff')
+  ) {
+    return {
+      answer: "Age Eligibility Norms (As of July 31st of the academic year):\n\n• Nursery: Minimum 3 Years\n• Junior KG: Minimum 4 Years\n• Senior KG: Minimum 5 Years\n• Class 1: Minimum 6 Years\n\n📌 Note for Parents: For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.",
+      actions: [
+        { label: 'Fill Registration Form', url: '/admissions/forms' },
+        { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
+        { label: 'Admission Guidelines', url: '/admissions/guidelines' }
+      ]
+    };
+  }
+
+  // 10. CBSE Sample Question Papers (Class 9 to 12)
+  if (
+    query.includes('sample paper') || 
+    query.includes('question paper') || 
+    query.includes('past paper') || 
+    query.includes('model paper') || 
+    query.includes('board paper') || 
+    query.includes('evaluation paper')
+  ) {
+    return {
+      answer: "CBSE Sample Question Papers (Classes 9 to 12):\n\nAll official sample question papers are consolidated by class/stream into single merged PDFs for easy downloading:\n\n• Class 10 Board Papers: Full merged PDF (6.3 MB) with English, Hindi, Mathematics, Science & Social Science.\n• Class 12 Senior Secondary: Dedicated stream PDFs for Commerce (6.4 MB), Science (4.8 MB), and Arts (2.3 MB).\n• Classes 9 & 11: Coming soon for the upcoming session.\n\nYou can view and download all PDFs directly from our CBSE Sample Papers page.",
+      actions: [
+        { label: 'Download CBSE Sample Papers', url: '/downloads/sample-papers' },
+        { label: 'Browse All Documents', url: '/downloads/documents' }
+      ]
+    };
+  }
+
+  // 11. Transfer Certificates & Mandatory Disclosures
   if (
     query.includes('transfer certificate') || 
     query.includes(' tc ') || 
@@ -124,7 +269,7 @@ function getBotResponse(userText: string): {
     query.includes('drinking water certificate')
   ) {
     return {
-      answer: "Where can one access Transfer Certificates (TC) and CBSE Mandatory Disclosures?\n\nUnder CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures (including Building Safety, Fire Clearance, Safe Drinking Water & Sanitation certificates, RTE recognition, and Society Registration) as well as official Transfer Certificates (TC 2020, 2021, and 2023 records) are available for online viewing under the 'About Us > Mandatory Information & TC' section.",
+      answer: "Under CBSE SARAS norms and school transparency guidelines, all Mandatory Public Disclosures as well as official Transfer Certificates (TC 2020, 2021, and 2023 records) are available online:\n\n• Certificates: Society Registration, RTE Recognition, Fire Clearance, Building Safety, Sanitation & Safe Drinking Water.\n• Transfer Certificates (TC): Public serial logs for 2020, 2021, and 2023.",
       actions: [
         { label: 'View Mandatory Disclosures', url: '/about/mandatory-information' },
         { label: 'Transfer Certificates (TC)', url: '/downloads/transfer-certificates' }
@@ -132,7 +277,7 @@ function getBotResponse(userText: string): {
     };
   }
 
-  // 3. CBSE & Curriculum / Academics / Syllabi / Subjects / Stages / Streams
+  // 12. CBSE & Curriculum / Academics / Syllabi / Subjects / Stages / Streams
   if (
     query.includes('curriculum') || 
     query.includes('syllabus') || 
@@ -152,7 +297,7 @@ function getBotResponse(userText: string): {
     return FAQ_KNOWLEDGE_BASE['curriculum'];
   }
 
-  // 4. Admission Enquiry & Application
+  // 13. Admission Enquiry & Application
   if (
     query.includes('admiss') || 
     query.includes('apply') || 
@@ -168,19 +313,20 @@ function getBotResponse(userText: string): {
     return FAQ_KNOWLEDGE_BASE['admission'];
   }
 
-  // 5. Fee Structure & Calculator
+  // 14. Fee Structure & Calculator
   if (
     query.includes('fee') || 
     query.includes('cost') || 
     query.includes('charge') || 
     query.includes('payment') || 
     query.includes('installment') || 
-    query.includes('calculator')
+    query.includes('calculator') ||
+    query.includes('tuition')
   ) {
     return FAQ_KNOWLEDGE_BASE['fee'];
   }
 
-  // 6. Download Forms & Question Papers
+  // 15. Download Forms & Documents
   if (
     query.includes('form') || 
     query.includes('download') || 
@@ -193,20 +339,21 @@ function getBotResponse(userText: string): {
     return FAQ_KNOWLEDGE_BASE['forms'];
   }
 
-  // 7. Campus & Timings
+  // 16. Campus & Location / Address
   if (
     query.includes('campus') || 
-    query.includes('timing') || 
-    query.includes('hour') || 
     query.includes('where') || 
     query.includes('location') || 
     query.includes('address') || 
-    query.includes('visit')
+    query.includes('visit') ||
+    query.includes('reach') ||
+    query.includes('map') ||
+    query.includes('direction')
   ) {
     return FAQ_KNOWLEDGE_BASE['campus'];
   }
 
-  // 8. Contact & Helplines
+  // 17. Contact & Helplines
   if (
     query.includes('contact') || 
     query.includes('phone') || 
@@ -215,12 +362,13 @@ function getBotResponse(userText: string): {
     query.includes('number') || 
     query.includes('principal') || 
     query.includes('office') ||
-    query.includes('front desk')
+    query.includes('front desk') ||
+    query.includes('helpline')
   ) {
     return FAQ_KNOWLEDGE_BASE['contact'];
   }
 
-  // 9. Facilities & Labs & Sports
+  // 18. Facilities & Labs & Sports & Lift
   if (
     query.includes('facility') || 
     query.includes('facilities') || 
@@ -228,23 +376,28 @@ function getBotResponse(userText: string): {
     query.includes('library') || 
     query.includes('sport') || 
     query.includes('ground') || 
-    query.includes('yoga')
+    query.includes('yoga') ||
+    query.includes('lift') ||
+    query.includes('elevator') ||
+    query.includes('cwsn') ||
+    query.includes('mallakhamb')
   ) {
     return FAQ_KNOWLEDGE_BASE['facilities'];
   }
 
-  // 10. Bus & Transportation
+  // 19. Bus & Transportation
   if (
     query.includes('bus') || 
     query.includes('transport') || 
     query.includes('van') || 
     query.includes('commute') || 
-    query.includes('pick')
+    query.includes('pick') ||
+    query.includes('route')
   ) {
     return FAQ_KNOWLEDGE_BASE['transport'];
   }
 
-  // 11. 4 Pillars / CVP / Philosophy / Spiritual
+  // 20. 4 Pillars / CVP / Philosophy / Spiritual
   if (
     query.includes('pillar') || 
     query.includes('cvp') || 
@@ -254,10 +407,14 @@ function getBotResponse(userText: string): {
     query.includes('spiritual') || 
     query.includes('pooja') || 
     query.includes('bhajan') || 
-    query.includes('gita chanting')
+    query.includes('gita chanting') ||
+    query.includes('kargil') ||
+    query.includes('maharashtra divas') ||
+    query.includes('nasha mukt') ||
+    query.includes('council')
   ) {
     return {
-      answer: "The Chinmaya Vision Programme (CVP) integrates 4 Core Pillars:\n\n1. Integrated Development: Physical fitness through yoga, emotional balance, intellectual agility, and spiritual grounding.\n2. Indian Culture & Heritage: Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations.\n3. Patriotism: Active citizenship, national pride, environmental awareness (Jal Pakhwada).\n4. Universal Outlook: Vasudhaiva Kutumbakam - the world as one family.",
+      answer: "The Chinmaya Vision Programme (CVP) integrates 4 Core Pillars:\n\n1. Integrated Development: Physical fitness through yoga, mental development via Bhagavad Gita chanting, intellectual development with AI & Coding, and spiritual grounding.\n2. Indian Culture & Heritage: Vedic values, daily Guru Paduka Pooja, Gita chanting, and festival celebrations.\n3. Patriotism: Student Council Elections, Kargil Vijay Diwas tributes, Maharashtra Divas, Nasha Mukt Bharat Abhiyaan campaigns, and civic service.\n4. Universal Outlook: Vasudhaiva Kutumbakam - the world as one family.",
       actions: [
         { label: 'Explore 4 Pillars', url: '/features/four-pillars' },
         { label: 'Our Philosophy (CVP)', url: '/about/philosophy' }
@@ -265,7 +422,7 @@ function getBotResponse(userText: string): {
     };
   }
 
-  // 12. Score against OFFICIAL_FAQS for other questions
+  // 21. Score against OFFICIAL_FAQS for other questions
   const tokens = query.split(/\s+/).filter(t => t.length > 2 && !STOP_WORDS.has(t));
   let bestFaqMatch: { faq: typeof OFFICIAL_FAQS[0]; score: number } | null = null;
   
@@ -310,11 +467,12 @@ function getBotResponse(userText: string): {
 
   // Default intelligent fallback
   return {
-    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• CBSE Affiliation No: 1130058 • School Code: 30040.\n• Timings: Mon-Sat 8:30 AM to 3:30 PM.\n• Call our helpline directly at +91 9322054713 or click below to request an admission callback.",
+    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• School Timings:\n  - Jr. KG: 1:00 PM – 5:00 PM\n  - Senior KG: 8:00 AM – 12:30 PM\n  - Primary: 1:00 PM – 5:00 PM\n  - Secondary: 7:30 AM – 12:55 PM\n• Office Timings: Mon-Sat, 8:00 AM – 5:00 PM.\n• Call our helpline directly at +91 9322054713 or choose an option below.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
-      { label: 'Fee Estimator', url: '/admissions/guidelines' },
-      { label: 'Explore Curriculum', url: '/academics/curriculum' }
+      { label: '⏰ School Timings' },
+      { label: '💰 Fee Estimator', url: '/admissions/guidelines' },
+      { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' }
     ]
   };
 }
@@ -344,15 +502,15 @@ export const ChatbotFAB: React.FC = () => {
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: "Namaste! 🙏 Welcome to Chinmaya Vidyalaya Tarapur Helpdesk.\n\nI can answer questions about admissions, fees, downloadable forms, campus timings, and academics right here. What would you like to know?",
+      text: "Hari Om! 🙏 Welcome to Chinmaya Vidyalaya Tarapur Helpdesk.\n\nI can assist you with Admissions 2026-27, official school & office timings, fee structure, CBSE sample question papers, and campus facilities. How may I help you today?",
       time: 'Just now',
       actionButtons: [
         { label: '📋 Admission Enquiry' },
+        { label: '⏰ School Timings' },
         { label: '💰 Fee Structure' },
-        { label: '📄 Download Forms' },
-        { label: '🏫 Campus & Timings' },
-        { label: '📚 CBSE & Curriculum' },
-        { label: '📞 Direct Contact' }
+        { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' },
+        { label: '🏫 Campus & Facilities', url: '/about/infrastructure' },
+        { label: '📞 Direct Contact', url: '/contact' }
       ]
     }
   ]);
@@ -403,15 +561,15 @@ export const ChatbotFAB: React.FC = () => {
       {
         id: `welcome-${Date.now()}`,
         sender: 'bot',
-        text: "Namaste! 🙏 Chat refreshed. How can I help you today? Select a topic below or type any question.",
+        text: "Hari Om! 🙏 Chat refreshed. How can I help you today? Select a topic below or type any question.",
         time: 'Just now',
         actionButtons: [
           { label: '📋 Admission Enquiry' },
+          { label: '⏰ School Timings' },
           { label: '💰 Fee Structure' },
-          { label: '📄 Download Forms' },
-          { label: '🏫 Campus & Timings' },
-          { label: '📚 CBSE & Curriculum' },
-          { label: '📞 Direct Contact' }
+          { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' },
+          { label: '🏫 Campus & Facilities', url: '/about/infrastructure' },
+          { label: '📞 Direct Contact', url: '/contact' }
         ]
       }
     ]);
@@ -625,33 +783,33 @@ export const ChatbotFAB: React.FC = () => {
               <span className="text-[10px] font-mono text-[#888888] shrink-0 uppercase tracking-wider font-bold">Quick:</span>
               <button
                 onClick={() => handleSendMessage('Admission enquiry')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 Admission
               </button>
               <button
-                onClick={() => handleSendMessage('Fee structure')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
-              >
-                Fee Info
-              </button>
-              <button
-                onClick={() => handleSendMessage('Download forms')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
-              >
-                Forms
-              </button>
-              <button
-                onClick={() => handleSendMessage('Campus & Timings')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                onClick={() => handleSendMessage('School timings')}
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 Timings
               </button>
               <button
-                onClick={() => handleSendMessage('CBSE & Curriculum')}
-                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0"
+                onClick={() => handleSendMessage('Fee structure')}
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
-                Curriculum
+                Fee Info
+              </button>
+              <button
+                onClick={() => handleSendMessage('CBSE sample papers')}
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              >
+                Sample Papers
+              </button>
+              <button
+                onClick={() => handleSendMessage('Contact front desk')}
+                className="px-2.5 py-1 bg-white hover:bg-[#DF711B] hover:text-white border border-slate-200 rounded-full text-[10px] font-medium text-[#444444] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              >
+                Helpline
               </button>
             </div>
 

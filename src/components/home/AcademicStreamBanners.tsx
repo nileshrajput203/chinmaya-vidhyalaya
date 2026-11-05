@@ -25,10 +25,10 @@ const CAROUSEL_SLIDES: CarouselSlide[] = [
     id: 'science',
     src: '/images/chinmaya-web-science.jpg',
     fallback: '/images/banner-7.jpeg',
-    alt: 'Chinmaya Vidyalaya Tarapur - Science & STEM Stream Banner',
-    title: 'Senior Secondary • Science & STEM Stream',
+    alt: 'Chinmaya Vidyalaya Tarapur - Science (Physics, Chemistry, Biology) & Maths Stream Banner',
+    title: 'Senior Secondary • Science (Physics, Chemistry, Biology) & Maths Stream',
     subtitle: 'Advanced laboratories, experiential physics, chemistry, biology, and competitive entrance mentoring.',
-    tag: 'DISCOVERY & RESEARCH • CBSE STEM',
+    tag: 'DISCOVERY & RESEARCH • CBSE SCIENCE & MATHS',
   },
 ];
 

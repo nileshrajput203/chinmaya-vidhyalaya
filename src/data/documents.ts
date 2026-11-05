@@ -322,180 +322,131 @@ export const OFFICIAL_DOCUMENTS: SchoolDocument[] = [
   },
 
   // -------------------------------------------------------------
-  // SAMPLE PAPERS - TERM 1 / PERIODIC ASSESSMENTS (DOWNLOADABLE)
+  // CBSE SAMPLE PAPERS - CLASSES 9 TO 12 (ORGANIZED BY CLASS & STREAM)
   // -------------------------------------------------------------
+  // Class 9
   {
-    id: "doc-paper-std-1",
-    title: "Standard 1 Sample Question Papers",
+    id: "cbse-paper-class-9",
+    title: "Class 9 CBSE Sample Papers (All Subjects)",
     category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-1.pdf",
-    fileSize: "777 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 1.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-2",
-    title: "Standard 2 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-2.pdf",
-    fileSize: "565 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 2.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-3",
-    title: "Standard 3 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-3.pdf",
-    fileSize: "375 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 3.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-4",
-    title: "Standard 4 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-4.pdf",
-    fileSize: "216 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 4.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-5",
-    title: "Standard 5 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-5.pdf",
-    fileSize: "386 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 5.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-6",
-    title: "Standard 6 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-6.pdf",
-    fileSize: "1.5 MB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 6.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-7",
-    title: "Standard 7 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-7.pdf",
-    fileSize: "462 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 7.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-8",
-    title: "Standard 8 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-8.pdf",
-    fileSize: "462 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 8.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-9",
-    title: "Standard 9 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-9.pdf",
-    fileSize: "288 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE practice and sample question papers for Class 9.",
-    downloadable: true
-  },
-  {
-    id: "doc-paper-std-10",
-    title: "Standard 10 Sample Question Papers",
-    category: "sample-papers",
-    term: "Term 1",
-    fileUrl: "/images/papers/STD-10.pdf",
-    fileSize: "315 KB",
-    uploadDate: "2024-04-01",
-    description: "Term 1 CBSE board pattern sample question papers for Class 10 (AISSE).",
-    downloadable: true
+    classGrade: "Class 9",
+    academicYear: "2024-25",
+    fileUrl: "",
+    fileSize: "Coming Soon",
+    uploadDate: "2024-11-01",
+    description: "Official CBSE curriculum practice and sample question papers for Class 9 (All Subjects merged).",
+    downloadable: false,
+    isComingSoon: true
   },
 
-  // -------------------------------------------------------------
-  // SAMPLE PAPERS - TERM 2 / EVALUATION III QUESTION PAPERS (DOWNLOADABLE)
-  // -------------------------------------------------------------
+  // Class 10
   {
-    id: "doc-eval-1",
-    title: "Standard 1 Evaluation III Question Papers",
+    id: "cbse-paper-class-10",
+    title: "Class 10 CBSE Board Sample Papers (All Subjects)",
     category: "sample-papers",
-    academicYear: "2024",
-    term: "Term 2",
-    fileUrl: "/images/standard-1-evaluation-iii-question-papers.pdf",
-    fileSize: "3.9 MB",
-    uploadDate: "2024-04-01",
-    description: "Term 2 Evaluation III Question Papers for Class 1.",
-    downloadable: true
+    classGrade: "Class 10",
+    academicYear: "2024-25",
+    fileUrl: "/images/cbse-class-10-sample-papers.pdf",
+    fileSize: "6.3 MB",
+    uploadDate: "2024-11-01",
+    description: "Complete CBSE AISSE Class 10 Board examination sample question papers with marking schemes (All subjects merged in one PDF).",
+    downloadable: true,
+    isComingSoon: false
   },
+
+  // Class 11 - Commerce
   {
-    id: "doc-eval-2",
-    title: "Standard 2 Evaluation III Question Papers",
+    id: "cbse-paper-class-11-commerce",
+    title: "Class 11 CBSE Commerce Stream Sample Papers (All Subjects)",
     category: "sample-papers",
-    academicYear: "2024",
-    term: "Term 2",
-    fileUrl: "/images/standard-2-evaluation-iii-question-papers.pdf",
-    fileSize: "4.0 MB",
-    uploadDate: "2024-04-01",
-    description: "Term 2 Evaluation III Question Papers for Class 2.",
-    downloadable: true
+    classGrade: "Class 11",
+    stream: "Commerce",
+    academicYear: "2024-25",
+    fileUrl: "",
+    fileSize: "Coming Soon",
+    uploadDate: "2024-11-01",
+    description: "CBSE Class 11 Commerce stream sample question papers including Accountancy, Business Studies, Economics, and English Core.",
+    downloadable: false,
+    isComingSoon: true
   },
+
+  // Class 11 - Arts
   {
-    id: "doc-eval-3",
-    title: "Standard 3 Evaluation III Question Papers",
+    id: "cbse-paper-class-11-arts",
+    title: "Class 11 CBSE Arts / Humanities Stream Sample Papers (All Subjects)",
     category: "sample-papers",
-    academicYear: "2024",
-    term: "Term 2",
-    fileUrl: "/images/standard-3-evaluation-iii-question-papers.pdf",
-    fileSize: "5.3 MB",
-    uploadDate: "2024-04-01",
-    description: "Term 2 Evaluation III Question Papers for Class 3.",
-    downloadable: true
+    classGrade: "Class 11",
+    stream: "Arts",
+    academicYear: "2024-25",
+    fileUrl: "",
+    fileSize: "Coming Soon",
+    uploadDate: "2024-11-01",
+    description: "CBSE Class 11 Arts and Humanities stream sample question papers including History, Political Science, Geography, and English Core.",
+    downloadable: false,
+    isComingSoon: true
   },
+
+  // Class 11 - Science
   {
-    id: "doc-eval-4",
-    title: "Standard 4 Evaluation III Question Papers",
+    id: "cbse-paper-class-11-science",
+    title: "Class 11 CBSE Science Stream Sample Papers (All Subjects)",
     category: "sample-papers",
-    academicYear: "2024",
-    term: "Term 2",
-    fileUrl: "/images/standard-4-evaluation-iii-question-papers.pdf",
-    fileSize: "5.9 MB",
-    uploadDate: "2024-04-01",
-    description: "Term 2 Evaluation III Question Papers for Class 4.",
-    downloadable: true
+    classGrade: "Class 11",
+    stream: "Science",
+    academicYear: "2024-25",
+    fileUrl: "",
+    fileSize: "Coming Soon",
+    uploadDate: "2024-11-01",
+    description: "CBSE Class 11 Science stream sample question papers including Physics, Chemistry, Mathematics, Biology, and English Core.",
+    downloadable: false,
+    isComingSoon: true
   },
+
+  // Class 12 - Commerce
   {
-    id: "doc-eval-5",
-    title: "Standard 5 Evaluation III Question Papers",
+    id: "cbse-paper-class-12-commerce",
+    title: "Class 12 CBSE Commerce Stream Board Sample Papers (All Subjects)",
     category: "sample-papers",
-    academicYear: "2024",
-    term: "Term 2",
-    fileUrl: "/images/standard-5-evaluation-iii-question-papers.pdf",
-    fileSize: "5.9 MB",
-    uploadDate: "2024-04-01",
-    description: "Term 2 Evaluation III Question Papers for Class 5.",
-    downloadable: true
+    classGrade: "Class 12",
+    stream: "Commerce",
+    academicYear: "2024-25",
+    fileUrl: "/images/cbse-class-12-commerce-sample-papers.pdf",
+    fileSize: "6.4 MB",
+    uploadDate: "2024-11-01",
+    description: "Official CBSE AISSCE Class 12 Commerce stream Board examination sample question papers with marking schemes (All subjects merged in one PDF).",
+    downloadable: true,
+    isComingSoon: false
+  },
+
+  // Class 12 - Arts
+  {
+    id: "cbse-paper-class-12-arts",
+    title: "Class 12 CBSE Arts / Humanities Stream Board Sample Papers (All Subjects)",
+    category: "sample-papers",
+    classGrade: "Class 12",
+    stream: "Arts",
+    academicYear: "2024-25",
+    fileUrl: "/images/cbse-class-12-arts-sample-papers.pdf",
+    fileSize: "2.3 MB",
+    uploadDate: "2024-11-01",
+    description: "Official CBSE AISSCE Class 12 Arts / Humanities stream Board examination sample question papers with marking schemes (All subjects merged in one PDF).",
+    downloadable: true,
+    isComingSoon: false
+  },
+
+  // Class 12 - Science
+  {
+    id: "cbse-paper-class-12-science",
+    title: "Class 12 CBSE Science Stream Board Sample Papers (All Subjects)",
+    category: "sample-papers",
+    classGrade: "Class 12",
+    stream: "Science",
+    academicYear: "2024-25",
+    fileUrl: "/images/cbse-class-12-science-sample-papers.pdf",
+    fileSize: "4.8 MB",
+    uploadDate: "2024-11-01",
+    description: "Official CBSE AISSCE Class 12 Science stream Board examination sample question papers with marking schemes (All subjects merged in one PDF).",
+    downloadable: true,
+    isComingSoon: false
   }
 ];

@@ -240,7 +240,6 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
                   {[
                     { label: "Co-Curricular & Sports", href: "/academics/co-curricular" },
                     { label: "Career Counseling & ASSET", href: "/features/career-counselling" },
-                    { label: "Central Library & Archives", href: "/features/library" },
                   ].map((link) => (
                     <li key={link.label}>
                       <Link

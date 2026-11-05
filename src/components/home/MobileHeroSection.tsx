@@ -34,7 +34,7 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
         {/* Top Floating Badge */}
         <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-10">
           <span className="inline-flex items-center px-2.5 py-0.5 sm:py-1 rounded-full bg-black/60 backdrop-blur-md text-[#FFB740] border border-amber-400/30 text-[9px] sm:text-[10px] font-mono font-bold tracking-wider uppercase">
-            CBSE #1130058 • Estd. 1995
+            CBSE 1130058 • Estd. 1995
           </span>
         </div>
 

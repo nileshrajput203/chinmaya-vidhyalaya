@@ -43,7 +43,7 @@ const CHINMAYA_TOP_MILESTONES: JourneyItem[] = [
     id: "2026-present",
     year: "2026",
     month: "May",
-    content: "Premier institution educating approximately 1,600 learners from Nursery through Senior Secondary (Science, Commerce & Arts) with state-of-the-art STEM and robotics laboratories.",
+    content: "Premier institution educating approximately 1,600 learners from Nursery through Senior Secondary (Science, Commerce & Arts) with state-of-the-art Science (Physics, Chemistry, Biology) and Maths, and AI/coding laboratories.",
   },
 ];
 
@@ -57,14 +57,14 @@ const CHINMAYA_BOTTOM_MILESTONES: JourneyItem[] = [
   {
     id: "2003-cbse",
     year: "2003",
-    month: "August",
+    month: "April",
     content: "Granted official composite affiliation by the Central Board of Secondary Education (CBSE), New Delhi (Affiliation No: 1130058).",
   },
   {
-    id: "2015-campus",
-    year: "2015",
+    id: "2005-campus",
+    year: "2005",
     month: "November",
-    content: "Extensive campus expansion with modern computer and robotics laboratories, central knowledge library, and multi-sport athletic facilities.",
+    content: "Extensive campus expansion with modern computer laboratories, expanded academic infrastructure, and multi-sport athletic facilities.",
   },
 ];
 

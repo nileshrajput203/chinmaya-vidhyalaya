@@ -183,18 +183,13 @@ export const ContactPage: React.FC = () => {
                       Give Us a Call
                     </h3>
                     <p className="font-mono text-xs text-slate-500 mt-0.5">
-                      Mon - Sat, 7:30 AM - 3:30 PM
+                      Mon - Sat, 8:00 AM - 5:00 PM
                     </p>
                   </div>
                   <div className="space-y-1 font-mono text-xs font-bold text-[#181C20] pt-1">
                     <div>
-                      <a href="tel:+919405661995" className="hover:text-[var(--color-primary)] transition-colors">
-                        +91 94056 61995
-                      </a>
-                    </div>
-                    <div>
-                      <a href="tel:02525272044" className="hover:text-[var(--color-primary)] transition-colors text-slate-600">
-                        02525-272044 / 270724
+                      <a href="tel:9322054713" className="hover:text-[var(--color-primary)] transition-colors">
+                        +91 9322054713
                       </a>
                     </div>
                   </div>
@@ -218,7 +213,7 @@ export const ContactPage: React.FC = () => {
 
                   <div className="space-y-2 text-xs font-sans">
                     <div className="p-2 rounded bg-amber-50/60 border border-amber-200/60">
-                      <div className="font-bold text-[#DF711B] text-[11px] uppercase">🎯 For Admissions:</div>
+                      <div className="font-bold text-[#DF711B] text-[11px] uppercase">For Admissions:</div>
                       <div className="font-mono text-[11px] text-slate-800">
                         <a href="mailto:cv.info@chinmayamission.com?subject=[Admissions 2026-27]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
                       </div>
@@ -226,7 +221,7 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="p-2 rounded bg-indigo-50/60 border border-indigo-200/60">
-                      <div className="font-bold text-indigo-900 text-[11px] uppercase">🎓 For Alumni:</div>
+                      <div className="font-bold text-indigo-900 text-[11px] uppercase">For Alumni:</div>
                       <div className="font-mono text-[11px] text-slate-800">
                         <a href="mailto:cv.info@chinmayamission.com?subject=[Alumni Network]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
                       </div>
@@ -234,15 +229,15 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="p-2 rounded bg-blue-50/60 border border-blue-200/60">
-                      <div className="font-bold text-blue-900 text-[11px] uppercase">📋 For Teaching Staff:</div>
+                      <div className="font-bold text-blue-900 text-[11px] uppercase">For Hiring Staff:</div>
                       <div className="font-mono text-[11px] text-slate-800">
-                        <a href="mailto:cv.info@chinmayamission.com?subject=[Faculty Recruitment]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
+                        <a href="mailto:cv.info@chinmayamission.com?subject=[Staff Recruitment]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
                       </div>
-                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Faculty Recruitment]</div>
+                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Staff Recruitment]</div>
                     </div>
 
                     <div className="p-2 rounded bg-slate-50 border border-slate-200/60">
-                      <div className="font-bold text-slate-800 text-[11px] uppercase">🏛️ Principal Office:</div>
+                      <div className="font-bold text-slate-800 text-[11px] uppercase">Principal Office:</div>
                       <div className="font-mono text-[11px] text-slate-800">
                         <a href="mailto:cv.principal@chinmayamission.com" className="hover:underline font-semibold">cv.principal@chinmayamission.com</a>
                       </div>
@@ -331,11 +326,11 @@ export const ContactPage: React.FC = () => {
                       onChange={(e) => setFormFields({ ...formFields, department: e.target.value as any })}
                       className="w-full px-3 py-2.5 bg-white border border-slate-200 rounded-none focus:border-[var(--color-primary)] focus:outline-none transition-colors text-xs text-[#181C20] font-sans font-medium"
                     >
-                      <option value="admissions">🎯 Admissions Desk (Enrollment, Age Norms & Fees)</option>
-                      <option value="alumni">🎓 Alumni Network (Alumni Registry & Mentorship)</option>
-                      <option value="teaching_staff">📋 Teaching Staff & Careers (Faculty Applications)</option>
-                      <option value="general">🏢 General Administration (Campus, Transport & Office)</option>
-                      <option value="principal">🏛️ Principal Office (Academic & Board Matters)</option>
+                      <option value="admissions">Admissions Desk (Enrollment, Age Norms & Fees)</option>
+                      <option value="alumni">Alumni Network (Alumni Registry & Mentorship)</option>
+                      <option value="teaching_staff">Hiring Staff & Careers (Job Applications)</option>
+                      <option value="general">General Administration (Campus, Transport & Office)</option>
+                      <option value="principal">Principal Office (Academic & Board Matters)</option>
                     </select>
                   </div>
 
@@ -441,15 +436,19 @@ export const ContactPage: React.FC = () => {
             <div className="flex items-center gap-2 text-[var(--color-primary)]">
               <Clock className="w-5 h-5" />
               <span className="font-mono text-xs font-bold uppercase tracking-wider">
-                Visiting Hours
+                Working & School Timings
               </span>
             </div>
             <h4 className="font-sans font-bold text-base text-[#181C20]">
-              Administrative Office
+              Campus Timings
             </h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-normal">
-              Monday through Saturday: <strong>07:30 AM to 03:30 PM</strong>. Closed on Sundays, second Saturdays, and national holidays.
-            </p>
+            <div className="text-xs text-slate-600 leading-relaxed font-normal space-y-1">
+              <div><strong>Office:</strong> 8:00 AM to 5:00 PM (Mon - Sat)</div>
+              <div><strong>Jr. KG:</strong> 1:00 PM to 5:00 PM</div>
+              <div><strong>Senior KG:</strong> 8:00 AM to 12:30 PM</div>
+              <div><strong>Primary:</strong> 1:00 PM to 5:00 PM</div>
+              <div><strong>Secondary:</strong> 7:30 AM to 12:55 PM</div>
+            </div>
           </div>
 
           <div className="bg-white border border-slate-200 p-6 rounded-none space-y-2 shadow-xs">

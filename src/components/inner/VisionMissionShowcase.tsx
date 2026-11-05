@@ -77,7 +77,7 @@ const KOSHAS: Kosha[] = [
     imageTag: 'Hands-on Science Inquiry & Specimen Analysis',
     imageCaption: 'Intellectual Depth: Hands-on biological specimen inquiry, laboratory journals, and scientific analysis in the life sciences lab.',
     schoolPractice:
-      'Inquiry-based STEM laboratories, ASSET diagnostic thinking analytics, scientific reasoning, and philosophical debate.',
+      'Inquiry-based Science (Physics, Chemistry, Biology) and Maths laboratories, analytical reasoning, and philosophical debate.',
     dailyRoutine: 'Hands-on laboratory verification, mathematical puzzle solving, ASSET testing, and debate competitions.',
     outcomes: ['Critical reasoning and fearless logic', 'Freedom from superstition', 'Mastery in scientific problem-solving']
   },

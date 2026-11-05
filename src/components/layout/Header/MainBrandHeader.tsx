@@ -56,12 +56,12 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
 
             {/* Sub-identity & Authentic Motto */}
             <div className="flex items-center flex-wrap gap-x-1.5 sm:gap-x-2 text-[10px] xs:text-[11px] sm:text-[13px] text-slate-600">
-              <span className="font-sans italic font-semibold text-[#DF711B] whitespace-normal sm:truncate">
+              <span className="font-sans italic font-semibold text-[#DF711B] uppercase whitespace-normal sm:truncate">
                 "{OFFICIAL_SCHOOL_INFO.tagline}"
               </span>
               <span className="hidden sm:inline text-slate-300">•</span>
               <span className="hidden sm:inline text-[11px] font-sans text-slate-500">
-                CBSE Affiliated No. 1130058
+                U-DISE No. 27361116004
               </span>
             </div>
           </div>
@@ -87,7 +87,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
               </a>
               <div className="flex items-center gap-1 text-[10px] text-slate-500">
                 <Clock className="w-2.5 h-2.5 text-slate-400" />
-                <span>Mon-Sat: 8 AM-4 PM</span>
+                <span>Mon-Sat: 8 AM-5 PM</span>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
                 Admissions 2026-27
               </span>
               <span className="text-[9px] text-amber-200/90 font-mono tracking-wide leading-none mt-0.5">
-                Nursery to Class XII
+                Nursery to 9th Std (11th: 2027-28)
               </span>
             </div>
 

@@ -150,13 +150,6 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
     'Class 7',
     'Class 8',
     'Class 9',
-    'Class 10',
-    'Class 11 (Arts Stream)',
-    'Class 11 (Commerce Stream)',
-    'Class 11 (Science Stream)',
-    'Class 12 (Arts Stream)',
-    'Class 12 (Commerce Stream)',
-    'Class 12 (Science Stream)',
   ];
 
   return (
@@ -176,7 +169,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
               <div className="flex items-center gap-2 mb-1">
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-[#DF711B]/10 text-[#DF711B] text-[10px] font-mono font-bold uppercase tracking-wider rounded-sm">
                   <Sparkles className="w-3 h-3 text-[#DF711B]" />
-                  Session 2026-27 Open
+                  Session 2026-27 Open (Nursery to 9th Std • 11th Std: 2027-28)
                 </span>
                 <span className="text-[11px] font-mono text-[#888888] uppercase tracking-wider">
                   CBSE Affiliated • Boisar
@@ -239,7 +232,7 @@ export const QuickAdmissionFormSection: React.FC<QuickAdmissionFormSectionProps>
 
               <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
                 <a
-                  href="tel:+912525271818"
+                  href="tel:9322054713"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#DF711B] hover:bg-[#c86113] text-white text-xs font-bold uppercase tracking-wider rounded transition-colors shadow-sm"
                 >
                   <Phone className="w-3.5 h-3.5" />
