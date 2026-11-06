@@ -18,8 +18,8 @@ export const OFFICIAL_FAQS: FaqItem[] = [
   {
     id: 'faq-1',
     category: 'admissions',
-    question: 'How do I apply for admissions at Chinmaya Vidyalaya for 2026-27?',
-    answer: 'Admissions are open for Nursery, Junior KG, Senior KG, and Classes I to IX for Academic Session 2026-27 (Admissions for Class XI will commence for 2027-2028). For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process. Registration forms can be filled online or downloaded from our website and submitted at the school administrative counter in Vidyanagar, Boisar along with the student\'s birth certificate and required documents.'
+    question: 'How do I apply for admissions at Chinmaya Vidyalaya for 2027-28?',
+    answer: 'Admissions are open for Nursery, Junior KG, Senior KG, and Classes I to XI for Academic Session 2027-28. For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process. Registration forms can be filled online or downloaded from our website and submitted at the school administrative counter in Vidyanagar, Boisar along with the student\'s birth certificate and required documents.'
   },
   {
     id: 'faq-2',

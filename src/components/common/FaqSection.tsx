@@ -31,7 +31,7 @@ interface FaqSectionProps {
 }
 
 const QUICK_TAGS = [
-  'Admissions 2026-27',
+  'Admissions 2027-28',
   'Capacity Exceeding 40 Students',
   '100% CBSE Pass Record',
   '4 Pillars of CVP',

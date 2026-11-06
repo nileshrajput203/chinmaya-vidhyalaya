@@ -109,7 +109,7 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
             className="w-full py-3 px-4 bg-[#DF711B] hover:bg-[#C45B0E] text-white font-sans font-bold text-xs xs:text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-98 cursor-pointer"
           >
             <GraduationCap className="w-4 h-4 text-amber-200" />
-            <span>Apply for Admissions 2026-27</span>
+            <span>Apply for Admissions 2027-28</span>
             <ArrowRight className="w-4 h-4 text-amber-200" />
           </button>
 

@@ -125,7 +125,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOpenA
               className="flex-1 py-2.5 bg-[#DF711B] hover:bg-[#C45B0E] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
             >
               <GraduationCap className="w-4 h-4" />
-              <span>Admissions 2026-27</span>
+              <span>Admissions 2027-28</span>
             </button>
 
             <Link

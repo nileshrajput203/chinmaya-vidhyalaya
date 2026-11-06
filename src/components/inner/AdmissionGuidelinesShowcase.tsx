@@ -78,7 +78,7 @@ export const AdmissionGuidelinesShowcase: React.FC = () => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">
-            Admissions for Academic Session 2026-27 are open for Nursery to Std IX. (Admissions for Std XI will commence for Academic Session 2027-2028). For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.
+            Admissions for Academic Session 2027-28 are open for Nursery to Class XI. For admission, parents have to fill the registration form and submit the hard copy in school to get the admission form and proceed with the further admission process.
           </p>
           <p className="text-xs text-slate-600 leading-relaxed font-normal">
             Please submit the duly filled hardcopy registration form along with required self-attested documents at the school administration office counter during visiting hours (Mon to Sat, 8:00 AM – 5:00 PM).

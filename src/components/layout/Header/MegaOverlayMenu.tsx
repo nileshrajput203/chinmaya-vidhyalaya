@@ -114,7 +114,7 @@ export const MegaOverlayMenu: React.FC<MegaOverlayMenuProps> = ({
               className="px-4 py-2.5 bg-[#DF711B] hover:bg-[#c85f12] text-white text-xs font-bold rounded-xl flex items-center gap-2 shadow-md transition-all"
             >
               <GraduationCap className="w-4 h-4 text-amber-200" />
-              <span className="hidden sm:inline">Admissions 2026-27</span>
+              <span className="hidden sm:inline">Admissions 2027-28</span>
               <span className="sm:hidden">Apply</span>
             </button>
 

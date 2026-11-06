@@ -100,10 +100,10 @@ export const MainBrandHeader: React.FC<MainBrandHeaderProps> = ({
           >
             <div className="flex flex-col items-start text-left">
               <span className="text-[11px] font-bold uppercase tracking-wider leading-none">
-                Admissions 2026-27
+                Admissions 2027-28
               </span>
               <span className="text-[9px] text-amber-200/90 font-mono tracking-wide leading-none mt-0.5">
-                Nursery to 9th Std (11th: 2027-28)
+                Nursery to Class 11
               </span>
             </div>
 

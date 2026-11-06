@@ -330,7 +330,7 @@ export async function sendAdmissionEmail(data: ValidatedAdmissionInput): Promise
             <p>Official Admission Desk • Incoming Notification</p>
           </div>
           <div class="content">
-            <div class="dept-badge">🎯 Designated Department: Admissions Office (2026-27)</div>
+            <div class="dept-badge">🎯 Designated Department: Admissions Office (2027-28)</div>
             
             <div class="row">
               <div class="label">Target Recipient Inbox</div>

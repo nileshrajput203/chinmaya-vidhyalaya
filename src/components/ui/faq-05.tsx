@@ -34,7 +34,7 @@ interface Faq05Props {
 const Faq05: React.FC<Faq05Props> = ({
   items = OFFICIAL_FAQS as readonly FaqItemLike[],
   title = "QUESTIONS, ANSWERED.",
-  description = "Essential information regarding admissions 2026-27, CBSE curriculum, Chinmaya Vision Programme, and campus governance.",
+  description = "Essential information regarding admissions 2027-28, CBSE curriculum, Chinmaya Vision Programme, and campus governance.",
   defaultValue = "faq-1",
 }) => {
   return (

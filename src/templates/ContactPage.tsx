@@ -215,9 +215,9 @@ export const ContactPage: React.FC = () => {
                     <div className="p-2 rounded bg-amber-50/60 border border-amber-200/60">
                       <div className="font-bold text-[#DF711B] text-[11px] uppercase">For Admissions:</div>
                       <div className="font-mono text-[11px] text-slate-800">
-                        <a href="mailto:cv.info@chinmayamission.com?subject=[Admissions 2026-27]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
+                        <a href="mailto:cv.info@chinmayamission.com?subject=[Admissions 2027-28]" className="hover:underline font-semibold">cv.info@chinmayamission.com</a>
                       </div>
-                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Admissions 2026-27]</div>
+                      <div className="text-[10px] text-slate-500 font-mono">Use Sub: [Admissions 2027-28]</div>
                     </div>
 
                     <div className="p-2 rounded bg-indigo-50/60 border border-indigo-200/60">

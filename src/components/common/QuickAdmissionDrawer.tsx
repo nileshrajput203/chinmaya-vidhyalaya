@@ -125,7 +125,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                   <div className="flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-[#DF711B]" />
                     <span className="text-[11px] font-mono tracking-widest uppercase text-[#DF711B] font-bold">
-                      Admissions Open 2026-27 • Nursery to 9th Std (11th: 2027-28)
+                      Admissions Open 2027-28 (Nursery to Class 11)
                     </span>
                   </div>
                   <h3 className="font-cinzel text-xl font-bold text-[#181C20]">
@@ -326,7 +326,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                               <option value="Class 7">Class 7</option>
                               <option value="Class 8">Class 8</option>
                               <option value="Class 9">Class 9</option>
-                              <option value="Class 11" disabled>Class 11 (Admissions open for 2027-28)</option>
+                              <option value="Class 11">Class 11</option>
                             </select>
                           </div>
                           <div>
@@ -380,7 +380,7 @@ export const QuickAdmissionDrawer: React.FC<QuickAdmissionDrawerProps> = ({ isOp
                 {activeTab === 'guidelines' && (
                   <div className="space-y-4">
                     <div className="text-xs text-[#4A5568] bg-[#FAF6EF] p-4 rounded-xl border border-[#E7E2D8] space-y-1.5 leading-relaxed">
-                      <strong className="text-[#181C20] block font-cinzel text-xs font-bold">Admission Framework 2026-27</strong>
+                      <strong className="text-[#181C20] block font-cinzel text-xs font-bold">Admission Framework 2027-28</strong>
                       <span>Admissions are conducted strictly based on merit, seat availability, and CBSE age norms. Chinmaya Vidyalaya Tarapur maintains spacious classrooms with capacity seating over 40 students under personalized faculty care.</span>
                     </div>
 

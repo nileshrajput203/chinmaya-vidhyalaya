@@ -571,7 +571,7 @@ export const HomePage: React.FC = () => {
           
           <div className="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 text-[10px] sm:text-[11px] font-mono tracking-widest text-[#FFB740] uppercase font-bold border border-white/20 rounded-full">
             <GraduationCap className="w-4 h-4" />
-            <span>SESSION 2026-27 ADMISSIONS OPEN (NURSERY TO STD IX)</span>
+            <span>SESSION 2027-28 ADMISSIONS OPEN (NURSERY TO CLASS 11)</span>
           </div>
 
           <h2 className="font-cinzel text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] uppercase">

@@ -245,7 +245,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-black/45 border border-white/20 backdrop-blur-md shadow-sm">
                   <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFD285]" />
                   <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#FFD285] font-bold">
-                    Admissions Open 2026-27
+                    Admissions Open 2027-28
                   </span>
                 </div>
               </div>
@@ -388,7 +388,7 @@ export const AdmissionGuidanceModal: React.FC<AdmissionGuidanceModalProps> = ({
                           <option value="Class I - V (Primary)">Class I - V (Primary)</option>
                           <option value="Class VI - VIII (Middle)">Class VI - VIII (Middle)</option>
                           <option value="Class IX (Secondary)">Class IX (Secondary)</option>
-                          <option value="Class XI" disabled>Class XI (Admissions open for 2027-28)</option>
+                          <option value="Class XI (Senior Secondary)">Class XI (Senior Secondary)</option>
                         </select>
                       </div>
 

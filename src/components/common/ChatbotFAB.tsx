@@ -24,7 +24,7 @@ interface Message {
 
 const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ label: string; url?: string; download?: boolean; isModalTrigger?: boolean }> }> = {
   'admission': {
-    answer: "Admissions for Academic Session 2026-27 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon-Sat: 8:00 AM - 5:00 PM.",
+    answer: "Admissions for Academic Session 2027-28 are currently OPEN for Nursery, Jr. KG, Sr. KG, and Classes I to XII (Science, Commerce, Arts).\n\nKey Steps:\n1. Download and fill out the official Admission Registration form.\n2. Submit along with Child's Birth Certificate, Aadhaar Card, 3 passport photos, and previous report card/TC.\n3. Visit the Administrative Campus Office for document verification.\n\nOffice Hours: Mon-Sat: 8:00 AM - 5:00 PM.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
       { label: 'Download Nursery Form (PDF)', url: '/images/nursery.pdf', download: true },
@@ -120,7 +120,7 @@ function getBotResponse(userText: string): {
   if (pureGreetingRegex.test(query)) {
     const greeting = getTimeOfDayGreeting();
     return {
-      answer: `Hari Om! 🙏 ${greeting}! Welcome to Chinmaya Vidyalaya Tarapur.\n\nI am your AI Campus Guide. I can help you with:\n• Admissions 2026-27 & Registration Process\n• Official School & Administrative Timings\n• Fee Structure & Term Installments\n• CBSE Sample Question Papers (Class 9–12)\n• Campus Facilities, Laboratories & Transport\n\nHow may I help you today? You can choose a quick topic below or type your question directly!`,
+      answer: `Hari Om! 🙏 ${greeting}! Welcome to Chinmaya Vidyalaya Tarapur.\n\nI am your AI Campus Guide. I can help you with:\n• Admissions 2027-28 & Registration Process\n• Official School & Administrative Timings\n• Fee Structure & Term Installments\n• CBSE Sample Question Papers (Class 9–12)\n• Campus Facilities, Laboratories & Transport\n\nHow may I help you today? You can choose a quick topic below or type your question directly!`,
       actions: [
         { label: '📋 Admission Enquiry' },
         { label: '⏰ School Timings' },
@@ -147,7 +147,7 @@ function getBotResponse(userText: string): {
   // 4. Conversational: "Who are you?" / "What can you do?" / "Help"
   if (/^(who\s+are\s+you|what\s+is\s+your\s+name|what\s+can\s+you\s+do|what\s+do\s+you\s+do|help|what\s+help|features)/i.test(query)) {
     return {
-      answer: "I am the Chinmaya Vidyalaya Campus Assistant! 🏫\n\nI am available 24/7 to help you with:\n1. Admissions 2026-27: Age criteria, forms & registration procedure.\n2. School Timings: Jr. KG, Sr. KG, Primary, Secondary & Office hours.\n3. Fee Structure: Term installments & interactive fee calculator.\n4. Downloads: CBSE sample papers (Class 9–12), syllabus & certificates.\n5. Campus Life: Laboratories, sports, library, and transport services.\n\nWhat would you like to know?",
+      answer: "I am the Chinmaya Vidyalaya Campus Assistant! 🏫\n\nI am available 24/7 to help you with:\n1. Admissions 2027-28: Age criteria, forms & registration procedure.\n2. School Timings: Jr. KG, Sr. KG, Primary, Secondary & Office hours.\n3. Fee Structure: Term installments & interactive fee calculator.\n4. Downloads: CBSE sample papers (Class 9–12), syllabus & certificates.\n5. Campus Life: Laboratories, sports, library, and transport services.\n\nWhat would you like to know?",
       actions: [
         { label: '📋 Admission Enquiry' },
         { label: '⏰ School Timings' },
@@ -467,7 +467,7 @@ function getBotResponse(userText: string): {
 
   // Default intelligent fallback
   return {
-    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2026-27: Open for Nursery through Class XII (Science, Commerce, Arts).\n• School Timings:\n  - Jr. KG: 1:00 PM – 5:00 PM\n  - Senior KG: 8:00 AM – 12:30 PM\n  - Primary: 1:00 PM – 5:00 PM\n  - Secondary: 7:30 AM – 12:55 PM\n• Office Timings: Mon-Sat, 8:00 AM – 5:00 PM.\n• Call our helpline directly at +91 9322054713 or choose an option below.",
+    answer: "Thank you for reaching out! Chinmaya Vidyalaya Tarapur is here to help.\n\n• Admissions 2027-28: Open for Nursery through Class XII (Science, Commerce, Arts).\n• School Timings:\n  - Jr. KG: 1:00 PM – 5:00 PM\n  - Senior KG: 8:00 AM – 12:30 PM\n  - Primary: 1:00 PM – 5:00 PM\n  - Secondary: 7:30 AM – 12:55 PM\n• Office Timings: Mon-Sat, 8:00 AM – 5:00 PM.\n• Call our helpline directly at +91 9322054713 or choose an option below.",
     actions: [
       { label: 'Request Admission Callback', isModalTrigger: true },
       { label: '⏰ School Timings' },
@@ -502,7 +502,7 @@ export const ChatbotFAB: React.FC = () => {
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: "Hari Om! 🙏 Welcome to Chinmaya Vidyalaya Tarapur Helpdesk.\n\nI can assist you with Admissions 2026-27, official school & office timings, fee structure, CBSE sample question papers, and campus facilities. How may I help you today?",
+      text: "Hari Om! 🙏 Welcome to Chinmaya Vidyalaya Tarapur Helpdesk.\n\nI can assist you with Admissions 2027-28, official school & office timings, fee structure, CBSE sample question papers, and campus facilities. How may I help you today?",
       time: 'Just now',
       actionButtons: [
         { label: '📋 Admission Enquiry' },

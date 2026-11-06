@@ -14,7 +14,7 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
   '/': {
     title: 'Chinmaya Vidyalaya, Tarapur | Premier CBSE School (Nursery to XII)',
     description: 'Premier CBSE co-educational institution in Boisar-Tarapur, Palghar. Holistic academics, Science (Physics, Chemistry, Biology) and Maths laboratories, sports arena, and value-based Chinmaya Vision Programme from Nursery to Class XII.',
-    keywords: 'Chinmaya Vidyalaya Tarapur, CBSE school Boisar, best school in Palghar, Chinmaya Mission school, admissions 2026-27, CBSE affiliation 1130058, senior secondary school Boisar, Nursery to Class 12 Boisar, Chinmaya Vision Programme',
+    keywords: 'Chinmaya Vidyalaya Tarapur, CBSE school Boisar, best school in Palghar, Chinmaya Mission school, admissions 2027-28, CBSE affiliation 1130058, senior secondary school Boisar, Nursery to Class 12 Boisar, Chinmaya Vision Programme',
     breadcrumb: [{ name: 'Home', path: '/' }],
   },
   '/academics': {
@@ -42,15 +42,15 @@ const ROUTE_SEO: Record<string, PageMetadata> = {
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Academics', path: '/academics' }, { name: 'Infrastructure & Labs', path: '/academics/infrastructure' }],
   },
   '/admissions': {
-    title: 'Admissions 2026-27 & Guidelines | Chinmaya Vidyalaya Tarapur',
-    description: 'Admissions open for Academic Session 2026-27 from Nursery to 9th Std (11th Std opens for 2027-28). Review eligibility criteria, document verification, fee guidelines, and download forms.',
-    keywords: 'school admissions 2026-27, nursery admission Boisar, class 1 admission Tarapur, CBSE school registration Palghar',
+    title: 'Admissions 2027-28 & Guidelines | Chinmaya Vidyalaya Tarapur',
+    description: 'Admissions open for Academic Session 2027-28 from Nursery to Class 11. Review eligibility criteria, document verification, fee guidelines, and download forms.',
+    keywords: 'school admissions 2027-28, nursery admission Boisar, class 1 admission Tarapur, CBSE school registration Palghar',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Admissions', path: '/admissions' }],
   },
   '/admissions/guidelines': {
-    title: 'Admissions 2026-27 Guidelines & Process | Chinmaya Vidyalaya Tarapur',
+    title: 'Admissions 2027-28 Guidelines & Process | Chinmaya Vidyalaya Tarapur',
     description: 'Official admission guidelines, standard-wise age criteria, required verification documents, interactive fee estimator, and enrollment procedure.',
-    keywords: 'admission guidelines, admission procedure, school application 2026, fee estimator Boisar',
+    keywords: 'admission guidelines, admission procedure, school application 2027, fee estimator Boisar',
     breadcrumb: [{ name: 'Home', path: '/' }, { name: 'Admissions', path: '/admissions' }, { name: 'Guidelines', path: '/admissions/guidelines' }],
   },
   '/admissions/calendar': {

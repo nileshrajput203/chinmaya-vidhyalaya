@@ -307,7 +307,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                 <section className="bg-[#F7F3EB] border border-[#E7E2D8] p-8 md:p-12 rounded-3xl shadow-card space-y-6">
                   <div className="space-y-2">
                     <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider block">
-                      Official Registration Forms (2026-27)
+                      Official Registration Forms (2027-28)
                     </span>
                     <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#181C20]">
                       Download Admission Registration Forms

@@ -263,30 +263,6 @@ export const VisionMissionShowcase: React.FC = () => {
               </span>
             </div>
 
-            {/* School Photograph for Vision */}
-            <div 
-              onClick={() => setLightboxImage({
-                src: '/images/vision-mission/our-vision.jpeg',
-                title: 'Empirical Inquiry & Hands-on Chemistry Titration',
-                caption: 'Faculty demonstration and senior students conducting volumetric titration in the senior chemistry laboratory.'
-              })}
-              className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-xs group cursor-pointer"
-            >
-              <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                <img
-                  src="/images/vision-mission/our-vision.jpeg"
-                  alt="Chemistry faculty demonstrating volumetric titration to senior students"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
-                </div>
-              </div>
-              <div className="p-2.5 bg-white text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
-                Hands-on Chemistry Lab • Titration Demonstration &rarr;
-              </div>
-            </div>
-
             {/* Vision Statement */}
             <blockquote className="font-serif italic text-lg sm:text-xl text-[#181C20] font-semibold leading-relaxed border-l-4 border-[#DF711B] pl-4">
               “To empower a community of learners who dare to dream, take risks and develop new realities.”
@@ -335,30 +311,6 @@ export const VisionMissionShowcase: React.FC = () => {
               <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-[#F0F4F8] text-[#0B1E34] border border-[#0B1E34]/20">
                 Timeless Values
               </span>
-            </div>
-
-            {/* School Photograph for Mission */}
-            <div 
-              onClick={() => setLightboxImage({
-                src: '/images/vision-mission/our-mission.jpeg',
-                title: 'Mindful Classroom Alignment & Holistic Morning Routine',
-                caption: 'Teacher leading primary students in mindful morning stretching and breath alignment in front of interactive smart boards.'
-              })}
-              className="rounded-2xl overflow-hidden border border-[#E7E2D8] bg-white shadow-xs group cursor-pointer"
-            >
-              <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                <img
-                  src="/images/vision-mission/our-mission.jpeg"
-                  alt="Teacher leading students in morning stretching and mindfulness in classroom"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white/90 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn className="w-3.5 h-3.5 text-[#DF711B]" />
-                </div>
-              </div>
-              <div className="p-2.5 bg-white text-center text-xs text-[#555555] font-medium border-t border-[#E7E2D8] group-hover:text-[#DF711B] transition-colors">
-                Holistic Classroom • Mindful Physical Alignment &rarr;
-              </div>
             </div>
 
             {/* Mission Statement */}

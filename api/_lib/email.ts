@@ -153,7 +153,7 @@ export async function sendAdmissionNotification(data: {
             <p>Official Admission Desk • Incoming Notification</p>
           </div>
           <div class="body">
-            <div class="dept-badge">🎯 Designated Department: Admissions Office (2026-27)</div>
+            <div class="dept-badge">🎯 Designated Department: Admissions Office (2027-28)</div>
             <div class="row">
               <div class="label">Target Recipient Inbox</div>
               <div class="value">${escapeHtml(recipientEmail)}</div>

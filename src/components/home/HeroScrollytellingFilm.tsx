@@ -554,7 +554,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1 mb-1">
                         <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-[#DF711B] font-bold">
-                          ADMISSIONS 2026-27
+                          ADMISSIONS 2027-28
                         </span>
                         <span className="text-[9.5px] font-mono text-[#0B1E34] font-bold bg-white border border-slate-200 px-2 py-0.5 rounded-full shrink-0">
                           CBSE 1130058
@@ -659,7 +659,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                     {/* Field 4: Grade Applying For */}
                     <div>
                       <label className="block text-[11px] font-sans font-bold text-[#0B1E34] uppercase tracking-wider mb-1">
-                        Grade Applying For (Nursery to 9th Std) <span className="text-[#DF711B]">*</span>
+                        Grade Applying For (Nursery to 11th Std) <span className="text-[#DF711B]">*</span>
                       </label>
                       <select
                         value={formData.grade}
@@ -688,7 +688,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
                           <option value="Class 9">Class 9</option>
                         </optgroup>
                         <optgroup label="Senior Secondary">
-                          <option value="Class 11" disabled>Class 11 (Admissions open for 2027-28)</option>
+                          <option value="Class 11">Class 11</option>
                         </optgroup>
                       </select>
                     </div>

@@ -12,7 +12,7 @@ export const CONTACT_DETAILS = {
     { 
       label: "Admissions Desk", 
       email: "cv.info@chinmayamission.com", 
-      subjectPrefix: "[Admissions 2026-27]",
+      subjectPrefix: "[Admissions 2027-28]",
       description: "Student admission inquiries, eligibility, syllabus & fee assistance" 
     },
     { 

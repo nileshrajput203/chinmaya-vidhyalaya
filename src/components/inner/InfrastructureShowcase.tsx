@@ -52,9 +52,7 @@ const FACILITIES: FacilityItem[] = [
     safetyProtocols: [
       'Regulated shock-proof DC/AC power supplies with dedicated UPS power backup (no centralized unbuffered power dependency)',
       '24/7 CCTV surveillance monitoring for student safety and practical decorum',
-      'Class ABC Fire Extinguishers and emergency safety protocol signage',
-      'Rigid granite vibration-isolated benches for optical alignment',
-      'Safety goggles provided during high-voltage and spring-tension experiments'
+      'Class ABC Fire Extinguishers and emergency safety protocol signage'
     ],
     equipment: [
       'Precision Optical Benches & He-Ne Lasers',
@@ -93,13 +91,13 @@ const FACILITIES: FacilityItem[] = [
       'Dedicated sand bucket installed at exit alongside Class ABC Fire Extinguishers',
       'Dedicated UPS power backup (no unbuffered grid dependency) for analytical equipment',
       '24/7 CCTV surveillance monitoring for student safety and lab decorum',
-      'Acid-resistant non-porous ceramic bench surfaces and borosilicate labware only',
+      'Acid-resistant non-porous ceramic bench surfaces and labware only',
       'Mandatory cotton lab aprons, protective eye glasses, and chemical-safe handling'
     ],
     equipment: [
       'Precision 4-Digit Digital Analytical Balances',
       'Individual Gas Burner & Titration Stands',
-      'Borosilicate Class-A Burettes & Pipettes',
+      'Acid-Resistant Class-A Burettes & Pipettes',
       'Centrifugation Units & Analytical Stations',
       'Colorimetric Analyzers & Reagent Kits',
       'Dedicated Exit Sand Buckets & Class ABC Fire Extinguishers',
@@ -163,22 +161,20 @@ const FACILITIES: FacilityItem[] = [
     description:
       'Modern computing facility featuring networked PC workstations and high-speed broadband for Scratch and Python coding and IT studies.',
     curriculumDetails:
-      'Supports CBSE Computer Applications & Science: Scratch block programming, Python coding, MySQL database administration, cybersecurity, and data structures.',
+      'Supports CBSE Computer Applications & Science: Scratch block programming, Python coding, cybersecurity, and data structures.',
     safetyProtocols: [
       'Dedicated Online UPS power backup preventing data loss or surge spikes (no unbuffered grid dependency)',
       'Class ABC Fire Extinguishers and emergency safety protocol signage',
       '24/7 CCTV surveillance monitoring with anti-static vinyl flooring',
-      'Enterprise firewall filtering restricting access to age-appropriate educational domains',
-      'Ergonomic anti-glare screens and adjustable posture seating'
+      'Enterprise firewall filtering restricting access to age-appropriate educational domains'
     ],
     equipment: [
       '45+ Intel Core Dedicated Desktop PC Workstations',
       'Dedicated Online UPS Power Backup & Continuous 24/7 CCTV Monitoring',
       'Class ABC Fire Extinguishers',
       'High-Speed Leased Line Fiber Broadband',
-      'Smart Interactive Interactive Projector & Display',
-      'Licensed Scratch & Python 3.x Development IDEs & MySQL',
-      'Centralized School Management & Server Workstation',
+      'Smart Interactive Projector & Display',
+      'Licensed Scratch & Python 3.x Development IDEs',
       'Cyber-Safety Content Firewall'
     ],
     capacity: '45 Workstations',
@@ -233,8 +229,7 @@ const FACILITIES: FacilityItem[] = [
     safetyProtocols: [
       'Comprehensive First Aid emergency response station and trained sports physical educators present at every session',
       'Cushioned safety landing mats, spotters, and faculty supervision for Mallakhamb drills',
-      'Levelled grass and clay grounds maintained free of hazards',
-      'Clean shaded drinking hydration stations adjacent to field and courts'
+      'Levelled grass and clay grounds maintained free of hazards'
     ],
     equipment: [
       'Mallakhamb (Traditional Pole & Rope Gymnastics Apparatus)',
@@ -263,15 +258,15 @@ const FACILITIES: FacilityItem[] = [
     curriculumDetails:
       'CBSE compliant layout providing over 1.5 sq. meters floor space per student with acoustic dampening and natural cross-ventilation.',
     safetyProtocols: [
-      'Dual emergency exit doors on all ground and upper floor classrooms',
       'Smooth rounded-edge wooden furniture',
-      'Fire alarms and evacuation route signage'
+      '24/7 CCTV surveillance monitoring for student safety'
     ],
     equipment: [
+      'Interactive Digital Panels & Smart Multimedia Displays',
+      'High-Speed Wi-Fi for Faculty & Digital Teaching',
+      'Dedicated Passenger Lift Access across Classroom Floors',
       'Ergonomic Multi-Tier Student Desks',
-      'Broad Wall Display Pin-up Notice Boards',
-      'High-Definition Multimedia Audio-Visual Provisions',
-      'Large Non-Reflective Ceramic Chalkboards'
+      'Broad Wall Display Pin-up Notice Boards'
     ],
     capacity: '>40 Students per Section',
     locationMeta: 'Primary & Secondary Wings'
@@ -305,38 +300,6 @@ const FACILITIES: FacilityItem[] = [
     ],
     capacity: '1,000+ Audience',
     locationMeta: 'Central Courtyard & Saraswati Mandir'
-  },
-  {
-    id: 'lift-facility',
-    category: 'campus',
-    name: 'Campus Lift & Accessibility Facility',
-    gallery: [
-      { src: '/images/chinmaya/campus/campus_aerial_quad_001.jpg', caption: 'Central Academic Block: Multi-Storey Infrastructure with Dedicated Passenger Lift' },
-      { src: '/images/chinmaya/campus/campus_aerial_drone_002.jpg', caption: 'Barrier-Free School Building with Step-Free Entryways and Elevator Access' }
-    ],
-    badge: 'Inclusive Mobility',
-    tagline: 'Dedicated Passenger Lift for Faculty, Teachers & Special Needs Children',
-    description:
-      'Modern automated passenger elevator facility engineered to provide seamless, barrier-free vertical transit across all academic floors for teachers, faculty members, and children with special needs (CWSN / Divyangjan).',
-    curriculumDetails:
-      'CBSE and NEP 2020 Inclusive Education Compliant: ensuring equal, dignified, and comfortable mobility access for educators, expectant or senior staff, and students requiring physical assistance.',
-    safetyProtocols: [
-      'Dedicated elevator access prioritized for teachers and special needs children',
-      'Automatic Rescue Device (ARD) and emergency battery backup in case of power interruption',
-      '24/7 CCTV surveillance monitoring inside the elevator cabin',
-      'Two-way emergency alarm and intercom connected to the administrative office',
-      'Smooth automatic door sensors with anti-pinch safety edges'
-    ],
-    equipment: [
-      'Dedicated Multi-Floor Passenger Elevator Facility',
-      'Wheelchair Compatible Cabin with Support Handrails',
-      'Low-Height Control Panel with Braille Embossed Buttons',
-      'Automatic Rescue Device (ARD) with Battery Inverter Backup',
-      'Audible Floor Annunciation & Digital Position Indicator',
-      'Emergency Intercom, Siren & 24/7 CCTV Monitoring'
-    ],
-    capacity: 'Teachers & CWSN Priority',
-    locationMeta: 'Central Academic Block • Ground to Top Floors'
   }
 ];
 

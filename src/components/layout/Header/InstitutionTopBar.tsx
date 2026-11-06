@@ -25,16 +25,20 @@ export const InstitutionTopBar: React.FC = () => {
           </span>
 
           {/* Bulletin Ticker on larger screens */}
-          <div className="hidden sm:inline-flex items-center gap-1.5 text-slate-300 shrink-0">
+          <Link
+            to="/news"
+            className="hidden sm:inline-flex items-center gap-1.5 text-slate-300 hover:text-[#FFB740] transition-colors cursor-pointer shrink-0 group"
+            title="View Notice Board & Dispatches"
+          >
             <span className="text-slate-600">•</span>
-            <Megaphone className="w-3 h-3 text-[#DF711B] shrink-0" />
-            <span className="text-[#FFB740] font-bold uppercase tracking-wider text-[9px] sm:text-[10px] shrink-0">
+            <Megaphone className="w-3 h-3 text-[#DF711B] group-hover:scale-110 transition-transform shrink-0" />
+            <span className="text-[#FFB740] font-bold uppercase tracking-wider text-[9px] sm:text-[10px] shrink-0 group-hover:underline">
               Notice:
             </span>
-            <span className="text-slate-200 text-[9.5px] sm:text-[11px] whitespace-nowrap">
-              Admissions Open 2026-27 (Nursery to 9th Std • 11th Std: 2027-28)
+            <span className="text-slate-200 group-hover:text-white text-[9.5px] sm:text-[11px] whitespace-nowrap transition-colors">
+              Admissions Open 2027-28 (Nursery to Class 11)
             </span>
-          </div>
+          </Link>
         </div>
 
         {/* Right: Direct Helpline */}
