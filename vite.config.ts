@@ -1,11 +1,50 @@
-import { defineConfig } from 'vite';
+import { defineConfig, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { execSync } from 'child_process';
 import 'dotenv/config';
+
+// Vite Plugin for Auto-Scanning public/images/ organized folders
+function autoScanImagesPlugin(): Plugin {
+  const runSync = () => {
+    try {
+      execSync('node scripts/sync-images.cjs', { stdio: 'inherit' });
+    } catch (e) {
+      console.warn('[AutoScan] Sync script error:', e);
+    }
+  };
+
+  return {
+    name: 'auto-scan-images-plugin',
+    buildStart() {
+      runSync();
+    },
+    configureServer(server) {
+      runSync();
+
+      const imagesDir = path.resolve(__dirname, 'public/images');
+      server.watcher.add(imagesDir);
+
+      const handleImageChange = (filePath: string) => {
+        if (
+          filePath.includes('public' + path.sep + 'images') &&
+          /\.(jpg|jpeg|png|webp|svg|gif|json)$/i.test(filePath)
+        ) {
+          console.log('[AutoScan] Detected image change in:', path.basename(filePath));
+          runSync();
+          server.ws.send({ type: 'full-reload' });
+        }
+      };
+
+      server.watcher.on('add', handleImageChange);
+      server.watcher.on('unlink', handleImageChange);
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), autoScanImagesPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

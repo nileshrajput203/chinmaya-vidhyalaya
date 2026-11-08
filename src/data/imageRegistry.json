@@ -1,0 +1,1756 @@
+{
+  "_meta": {
+    "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
+    "updatedAt": "2026-11-06T23:46:05.087Z"
+  },
+  "homeHero": [
+    {
+      "src": "/images/01-home-hero/banner-1.jpg",
+      "caption": "Banner 1",
+      "fileName": "banner-1.jpg"
+    },
+    {
+      "src": "/images/01-home-hero/banner-1.webp",
+      "caption": "Banner 1",
+      "fileName": "banner-1.webp"
+    },
+    {
+      "src": "/images/01-home-hero/banner-3.jpeg",
+      "caption": "Banner 3",
+      "fileName": "banner-3.jpeg"
+    },
+    {
+      "src": "/images/01-home-hero/banner-7.jpeg",
+      "caption": "Banner 7",
+      "fileName": "banner-7.jpeg"
+    },
+    {
+      "src": "/images/01-home-hero/banner-8.webp",
+      "caption": "Banner 8",
+      "fileName": "banner-8.webp"
+    },
+    {
+      "src": "/images/01-home-hero/banner-9.webp",
+      "caption": "Banner 9",
+      "fileName": "banner-9.webp"
+    },
+    {
+      "src": "/images/01-home-hero/video-poster.webp",
+      "caption": "Video Poster",
+      "fileName": "video-poster.webp"
+    }
+  ],
+  "leadership": [
+    {
+      "src": "/images/02-leadership/atul-karanjkar.jpg",
+      "caption": "Atul Karanjkar",
+      "fileName": "atul-karanjkar.jpg"
+    },
+    {
+      "src": "/images/02-leadership/dr-mane.webp",
+      "caption": "Dr Mane",
+      "fileName": "dr-mane.webp"
+    },
+    {
+      "src": "/images/02-leadership/dr-nayak.webp",
+      "caption": "Dr Nayak",
+      "fileName": "dr-nayak.webp"
+    },
+    {
+      "src": "/images/02-leadership/dr-shivshankar.webp",
+      "caption": "Dr Shivshankar",
+      "fileName": "dr-shivshankar.webp"
+    },
+    {
+      "src": "/images/02-leadership/parag-kulkarni.webp",
+      "caption": "Parag Kulkarni",
+      "fileName": "parag-kulkarni.webp"
+    },
+    {
+      "src": "/images/02-leadership/principal_dimple_mistry_square.webp",
+      "caption": "Principal Dimple Mistry Square",
+      "fileName": "principal_dimple_mistry_square.webp"
+    },
+    {
+      "src": "/images/02-leadership/principal-photo.jpg",
+      "caption": "Principal Photo",
+      "fileName": "principal-photo.jpg"
+    },
+    {
+      "src": "/images/02-leadership/shobha-sankhe.webp",
+      "caption": "Shobha Sankhe",
+      "fileName": "shobha-sankhe.webp"
+    },
+    {
+      "src": "/images/02-leadership/sri-b-k-poddar.webp",
+      "caption": "Sri B K Poddar",
+      "fileName": "sri-b-k-poddar.webp"
+    },
+    {
+      "src": "/images/02-leadership/sri-sriram-bhaleroji.webp",
+      "caption": "Sri Sriram Bhaleroji",
+      "fileName": "sri-sriram-bhaleroji.webp"
+    },
+    {
+      "src": "/images/02-leadership/tb-thakur-chairman.webp",
+      "caption": "Tb Thakur Chairman",
+      "fileName": "tb-thakur-chairman.webp"
+    }
+  ],
+  "aboutHeritage": [
+    {
+      "src": "/images/03-about-heritage/about2.jpeg",
+      "caption": "About2",
+      "fileName": "about2.jpeg"
+    },
+    {
+      "src": "/images/03-about-heritage/guru-paduka-pooja.webp",
+      "caption": "Guru Paduka Pooja",
+      "fileName": "guru-paduka-pooja.webp"
+    },
+    {
+      "src": "/images/03-about-heritage/history2.jpeg",
+      "caption": "History2",
+      "fileName": "history2.jpeg"
+    },
+    {
+      "src": "/images/03-about-heritage/swami_chinmayananda_square.webp",
+      "caption": "Swami Chinmayananda Square",
+      "fileName": "swami_chinmayananda_square.webp"
+    },
+    {
+      "src": "/images/03-about-heritage/swami.jpeg",
+      "caption": "Swami",
+      "fileName": "swami.jpeg"
+    },
+    {
+      "src": "/images/03-about-heritage/swamiji.webp",
+      "caption": "Swamiji",
+      "fileName": "swamiji.webp"
+    }
+  ],
+  "academics": {
+    "classrooms": [
+      {
+        "src": "/images/04-academics/classrooms/classroom-1.jpg",
+        "caption": "Spacious Multi-Purpose Examination & Lecture Hall with Modular Desks",
+        "fileName": "classroom-1.jpg"
+      },
+      {
+        "src": "/images/04-academics/classrooms/classroom-2.jpg",
+        "caption": "Naturally Lit & Ventilated Classrooms with Active Student-Teacher Mentorship",
+        "fileName": "classroom-2.jpg"
+      },
+      {
+        "src": "/images/04-academics/classrooms/classroom-3.jpg",
+        "caption": "Smart Digital Classrooms Equipped with Interactive Flat Panel Displays",
+        "fileName": "classroom-3.jpg"
+      },
+      {
+        "src": "/images/04-academics/classrooms/classroom-4.jpg",
+        "caption": "Vibrant Primary Classrooms with Child-Centric Ergonomics & Creative Activity Corners",
+        "fileName": "classroom-4.jpg"
+      }
+    ],
+    "library": [
+      {
+        "src": "/images/04-academics/library/lib-1.jpg",
+        "caption": "Reading Hall & Curated Reference Volumes Stack",
+        "fileName": "lib-1.jpg"
+      },
+      {
+        "src": "/images/04-academics/library/lib-2.jpg",
+        "caption": "Quiet Student Study Bays & Periodicals Archive",
+        "fileName": "lib-2.jpg"
+      },
+      {
+        "src": "/images/04-academics/library/lib-3.jpg",
+        "caption": "Digital Cataloging & Reference Book Section",
+        "fileName": "lib-3.jpg"
+      },
+      {
+        "src": "/images/04-academics/library/lib-4.jpg",
+        "caption": "Spacious Reference Section & Journal Archives",
+        "fileName": "lib-4.jpg"
+      },
+      {
+        "src": "/images/04-academics/library/lib-5.jpg",
+        "caption": "Independent Study Carrels & Collaborative Reading Zone",
+        "fileName": "lib-5.jpg"
+      }
+    ],
+    "sports": [
+      {
+        "src": "/images/04-academics/sports/sports-1.jpg",
+        "caption": "Multi-Station Indoor Sports Arena: Table Tennis & Chess Pavilion",
+        "fileName": "sports-1.jpg"
+      },
+      {
+        "src": "/images/04-academics/sports/sports-2.jpg",
+        "caption": "Open Campus Arena: Multi-Sport Court Overlooking School Grounds",
+        "fileName": "sports-2.jpg"
+      },
+      {
+        "src": "/images/04-academics/sports/sports-3.jpg",
+        "caption": "Expansive Athletic Grass Turf: Outdoor Field & Assembly Grounds",
+        "fileName": "sports-3.jpg"
+      }
+    ],
+    "cultural": [
+      {
+        "src": "/images/04-academics/cultural/cultural-assembly-1.jpg",
+        "caption": "Elevated Performance Stage & Cultural Auditorium with Pujya Gurudev Altar",
+        "fileName": "cultural-assembly-1.jpg"
+      },
+      {
+        "src": "/images/04-academics/cultural/cultural-assembly-2.jpg",
+        "caption": "Central Courtyard Morning Assembly Arena with Sacred Saraswati Mandir Shrine",
+        "fileName": "cultural-assembly-2.jpg"
+      }
+    ],
+    "labs": {
+      "physics": [
+        {
+          "src": "/images/04-academics/labs/physics/physics-lab-1.jpg",
+          "caption": "Optical Bench Laser Calibration & Interference Experiment",
+          "fileName": "physics-lab-1.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/physics/physics-lab-2.jpg",
+          "caption": "Galvanometer & Potentiometer Electrical Workbench",
+          "fileName": "physics-lab-2.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/physics/physics-lab-3.jpg",
+          "caption": "Vernier Travelling Microscope & Spectrometer Station",
+          "fileName": "physics-lab-3.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/physics/physics-lab-5.jpg",
+          "caption": "Semiconductor Diode Energy Band Gap Apparatus",
+          "fileName": "physics-lab-5.jpg"
+        }
+      ],
+      "chemistry": [
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-1.jpg",
+          "caption": "Digital Analytical Balances & Precision Weighting Station",
+          "fileName": "chem-1.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-2.jpg",
+          "caption": "Individual Burette Stands & Acid-Resistant Titration Workspace",
+          "fileName": "chem-2.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-3.jpg",
+          "caption": "Reagent Dispensary Shelf with Organized Chemical Storage",
+          "fileName": "chem-3.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-4.jpg",
+          "caption": "Analytical Centrifugation & Salt Analysis Station",
+          "fileName": "chem-4.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-5.jpg",
+          "caption": "Teacher Demonstrating Analytical Techniques to Students",
+          "fileName": "chem-5.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-6.jpg",
+          "caption": "Student Performing Flask & Reagent Experiment",
+          "fileName": "chem-6.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-7.jpg",
+          "caption": "Students Working with Conical Flasks & Bunsen Burners",
+          "fileName": "chem-7.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/chemistry/chem-dsc.jpg",
+          "caption": "Chem Dsc",
+          "fileName": "chem-dsc.jpg"
+        }
+      ],
+      "biology": [
+        {
+          "src": "/images/04-academics/labs/biology/bio-1.jpg",
+          "caption": "Students Engaged in Collaborative Microscope Slide Examination",
+          "fileName": "bio-1.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/biology/bio-2.jpg",
+          "caption": "Senior Student Examining Human Skeletal Model & Recording Observations",
+          "fileName": "bio-2.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/biology/bio-3.jpg",
+          "caption": "High-Power Monocular Student Microscopes at Lab Station",
+          "fileName": "bio-3.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/biology/bio-4.jpg",
+          "caption": "Preserved Formalin Specimen Jars (Zoological & Botanical Taxonomy)",
+          "fileName": "bio-4.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/biology/bio-5.jpg",
+          "caption": "Dissection Trays & Anatomical Study Setup",
+          "fileName": "bio-5.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/biology/bio-6.jpg",
+          "caption": "Student Observing Specimen Slide Under High-Power Compound Microscope",
+          "fileName": "bio-6.jpg"
+        }
+      ],
+      "computer": [
+        {
+          "src": "/images/04-academics/labs/computer/it-1.jpg",
+          "caption": "Computer & IT Lab Infrastructure: Multi-Row Workstations with Ergonomic Seating",
+          "fileName": "it-1.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/computer/it-2.jpg",
+          "caption": "Modular Central Aisle Architecture: Networked Systems with High-Speed Connectivity",
+          "fileName": "it-2.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/computer/it-3.jpg",
+          "caption": "Licensed Coding Environments & Terminal Workstations",
+          "fileName": "it-3.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/computer/it-4.jpg",
+          "caption": "Cyber-Safety Firewall Monitoring & Digital Pedagogy Station",
+          "fileName": "it-4.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/computer/it-5.jpg",
+          "caption": "Digital Innovation Session: Interactive Smart Screen & Collaborative Workspace",
+          "fileName": "it-5.jpg"
+        },
+        {
+          "src": "/images/04-academics/labs/computer/it-6.jpg",
+          "caption": "Student Python Coding Project Session with Faculty Mentor",
+          "fileName": "it-6.jpg"
+        }
+      ]
+    }
+  },
+  "fourPillars": [
+    {
+      "src": "/images/05-four-pillars/pillar-01-integrated.png",
+      "caption": "Pillar 01 Integrated",
+      "fileName": "pillar-01-integrated.png"
+    },
+    {
+      "src": "/images/05-four-pillars/pillar-02-culture.png",
+      "caption": "Pillar 02 Culture",
+      "fileName": "pillar-02-culture.png"
+    },
+    {
+      "src": "/images/05-four-pillars/pillar-03-patriotism.png",
+      "caption": "Pillar 03 Patriotism",
+      "fileName": "pillar-03-patriotism.png"
+    },
+    {
+      "src": "/images/05-four-pillars/pillar-04-universal.webp",
+      "caption": "Pillar 04 Universal",
+      "fileName": "pillar-04-universal.webp"
+    }
+  ],
+  "gallery": {
+    "academics": [
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_001.jpg",
+        "caption": "Classroom Learning 001",
+        "fileName": "classroom_learning_001.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_001.webp",
+        "caption": "Classroom Learning 001",
+        "fileName": "classroom_learning_001.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_002.jpg",
+        "caption": "Classroom Learning 002",
+        "fileName": "classroom_learning_002.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_002.webp",
+        "caption": "Classroom Learning 002",
+        "fileName": "classroom_learning_002.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_003.jpg",
+        "caption": "Classroom Learning 003",
+        "fileName": "classroom_learning_003.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_003.webp",
+        "caption": "Classroom Learning 003",
+        "fileName": "classroom_learning_003.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_004.jpg",
+        "caption": "Classroom Learning 004",
+        "fileName": "classroom_learning_004.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_004.webp",
+        "caption": "Classroom Learning 004",
+        "fileName": "classroom_learning_004.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_005.jpg",
+        "caption": "Classroom Learning 005",
+        "fileName": "classroom_learning_005.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_005.webp",
+        "caption": "Classroom Learning 005",
+        "fileName": "classroom_learning_005.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_007.jpg",
+        "caption": "Classroom Learning 007",
+        "fileName": "classroom_learning_007.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_007.webp",
+        "caption": "Classroom Learning 007",
+        "fileName": "classroom_learning_007.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_010.jpg",
+        "caption": "Classroom Learning 010",
+        "fileName": "classroom_learning_010.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_010.webp",
+        "caption": "Classroom Learning 010",
+        "fileName": "classroom_learning_010.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_012.jpg",
+        "caption": "Classroom Learning 012",
+        "fileName": "classroom_learning_012.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_012.webp",
+        "caption": "Classroom Learning 012",
+        "fileName": "classroom_learning_012.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_013.jpg",
+        "caption": "Classroom Learning 013",
+        "fileName": "classroom_learning_013.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_013.webp",
+        "caption": "Classroom Learning 013",
+        "fileName": "classroom_learning_013.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_016.jpg",
+        "caption": "Classroom Learning 016",
+        "fileName": "classroom_learning_016.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_016.webp",
+        "caption": "Classroom Learning 016",
+        "fileName": "classroom_learning_016.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_018.jpg",
+        "caption": "Classroom Learning 018",
+        "fileName": "classroom_learning_018.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_018.webp",
+        "caption": "Classroom Learning 018",
+        "fileName": "classroom_learning_018.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_025.jpg",
+        "caption": "Classroom Learning 025",
+        "fileName": "classroom_learning_025.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_025.webp",
+        "caption": "Classroom Learning 025",
+        "fileName": "classroom_learning_025.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_030.jpg",
+        "caption": "Classroom Learning 030",
+        "fileName": "classroom_learning_030.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_030.webp",
+        "caption": "Classroom Learning 030",
+        "fileName": "classroom_learning_030.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_031.jpg",
+        "caption": "Classroom Learning 031",
+        "fileName": "classroom_learning_031.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_031.webp",
+        "caption": "Classroom Learning 031",
+        "fileName": "classroom_learning_031.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_033.jpg",
+        "caption": "Classroom Learning 033",
+        "fileName": "classroom_learning_033.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_033.webp",
+        "caption": "Classroom Learning 033",
+        "fileName": "classroom_learning_033.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_034.jpg",
+        "caption": "Classroom Learning 034",
+        "fileName": "classroom_learning_034.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_034.webp",
+        "caption": "Classroom Learning 034",
+        "fileName": "classroom_learning_034.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_036.jpg",
+        "caption": "Classroom Learning 036",
+        "fileName": "classroom_learning_036.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_036.webp",
+        "caption": "Classroom Learning 036",
+        "fileName": "classroom_learning_036.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_045.jpg",
+        "caption": "Classroom Learning 045",
+        "fileName": "classroom_learning_045.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_045.webp",
+        "caption": "Classroom Learning 045",
+        "fileName": "classroom_learning_045.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_046.jpg",
+        "caption": "Classroom Learning 046",
+        "fileName": "classroom_learning_046.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_046.webp",
+        "caption": "Classroom Learning 046",
+        "fileName": "classroom_learning_046.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_089.jpg",
+        "caption": "Classroom Learning 089",
+        "fileName": "classroom_learning_089.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_089.webp",
+        "caption": "Classroom Learning 089",
+        "fileName": "classroom_learning_089.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_090.jpg",
+        "caption": "Classroom Learning 090",
+        "fileName": "classroom_learning_090.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_090.webp",
+        "caption": "Classroom Learning 090",
+        "fileName": "classroom_learning_090.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_092.jpg",
+        "caption": "Classroom Learning 092",
+        "fileName": "classroom_learning_092.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_092.webp",
+        "caption": "Classroom Learning 092",
+        "fileName": "classroom_learning_092.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_095.jpg",
+        "caption": "Classroom Learning 095",
+        "fileName": "classroom_learning_095.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_095.webp",
+        "caption": "Classroom Learning 095",
+        "fileName": "classroom_learning_095.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_096.jpg",
+        "caption": "Classroom Learning 096",
+        "fileName": "classroom_learning_096.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_096.webp",
+        "caption": "Classroom Learning 096",
+        "fileName": "classroom_learning_096.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_099.jpg",
+        "caption": "Classroom Learning 099",
+        "fileName": "classroom_learning_099.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_099.webp",
+        "caption": "Classroom Learning 099",
+        "fileName": "classroom_learning_099.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_101.jpg",
+        "caption": "Classroom Learning 101",
+        "fileName": "classroom_learning_101.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_101.webp",
+        "caption": "Classroom Learning 101",
+        "fileName": "classroom_learning_101.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_106.jpg",
+        "caption": "Classroom Learning 106",
+        "fileName": "classroom_learning_106.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_106.webp",
+        "caption": "Classroom Learning 106",
+        "fileName": "classroom_learning_106.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_107.jpg",
+        "caption": "Classroom Learning 107",
+        "fileName": "classroom_learning_107.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_107.webp",
+        "caption": "Classroom Learning 107",
+        "fileName": "classroom_learning_107.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_110.jpg",
+        "caption": "Classroom Learning 110",
+        "fileName": "classroom_learning_110.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/classroom_learning_110.webp",
+        "caption": "Classroom Learning 110",
+        "fileName": "classroom_learning_110.webp"
+      },
+      {
+        "src": "/images/06-gallery/academics/science_stem_lab_01.jpg",
+        "caption": "Science Stem Lab 01",
+        "fileName": "science_stem_lab_01.jpg"
+      },
+      {
+        "src": "/images/06-gallery/academics/science_stem_lab_01.webp",
+        "caption": "Science Stem Lab 01",
+        "fileName": "science_stem_lab_01.webp"
+      }
+    ],
+    "sports": [
+      {
+        "src": "/images/06-gallery/sports/IMG_5934.jpg",
+        "caption": "IMG 5934",
+        "fileName": "IMG_5934.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5934.webp",
+        "caption": "IMG 5934",
+        "fileName": "IMG_5934.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5936.jpg",
+        "caption": "IMG 5936",
+        "fileName": "IMG_5936.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5936.webp",
+        "caption": "IMG 5936",
+        "fileName": "IMG_5936.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5937.jpg",
+        "caption": "IMG 5937",
+        "fileName": "IMG_5937.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5937.webp",
+        "caption": "IMG 5937",
+        "fileName": "IMG_5937.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5939.jpg",
+        "caption": "IMG 5939",
+        "fileName": "IMG_5939.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5939.webp",
+        "caption": "IMG 5939",
+        "fileName": "IMG_5939.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5943.jpg",
+        "caption": "IMG 5943",
+        "fileName": "IMG_5943.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5943.webp",
+        "caption": "IMG 5943",
+        "fileName": "IMG_5943.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5945.jpg",
+        "caption": "IMG 5945",
+        "fileName": "IMG_5945.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5945.webp",
+        "caption": "IMG 5945",
+        "fileName": "IMG_5945.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5952.jpg",
+        "caption": "IMG 5952",
+        "fileName": "IMG_5952.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5952.webp",
+        "caption": "IMG 5952",
+        "fileName": "IMG_5952.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5953.jpg",
+        "caption": "IMG 5953",
+        "fileName": "IMG_5953.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5953.webp",
+        "caption": "IMG 5953",
+        "fileName": "IMG_5953.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5957.jpg",
+        "caption": "IMG 5957",
+        "fileName": "IMG_5957.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5957.webp",
+        "caption": "IMG 5957",
+        "fileName": "IMG_5957.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5968.jpg",
+        "caption": "IMG 5968",
+        "fileName": "IMG_5968.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5968.webp",
+        "caption": "IMG 5968",
+        "fileName": "IMG_5968.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5973.jpg",
+        "caption": "IMG 5973",
+        "fileName": "IMG_5973.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/IMG_5973.webp",
+        "caption": "IMG 5973",
+        "fileName": "IMG_5973.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_001.jpg",
+        "caption": "Sports Athletic Meet 001",
+        "fileName": "sports_athletic_meet_001.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_001.webp",
+        "caption": "Sports Athletic Meet 001",
+        "fileName": "sports_athletic_meet_001.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_002.jpg",
+        "caption": "Sports Athletic Meet 002",
+        "fileName": "sports_athletic_meet_002.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_002.webp",
+        "caption": "Sports Athletic Meet 002",
+        "fileName": "sports_athletic_meet_002.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_003.jpg",
+        "caption": "Sports Athletic Meet 003",
+        "fileName": "sports_athletic_meet_003.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_003.webp",
+        "caption": "Sports Athletic Meet 003",
+        "fileName": "sports_athletic_meet_003.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_004.jpg",
+        "caption": "Sports Athletic Meet 004",
+        "fileName": "sports_athletic_meet_004.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_004.webp",
+        "caption": "Sports Athletic Meet 004",
+        "fileName": "sports_athletic_meet_004.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_005.jpg",
+        "caption": "Sports Athletic Meet 005",
+        "fileName": "sports_athletic_meet_005.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_005.webp",
+        "caption": "Sports Athletic Meet 005",
+        "fileName": "sports_athletic_meet_005.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_006.jpg",
+        "caption": "Sports Athletic Meet 006",
+        "fileName": "sports_athletic_meet_006.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_006.webp",
+        "caption": "Sports Athletic Meet 006",
+        "fileName": "sports_athletic_meet_006.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_007.jpg",
+        "caption": "Sports Athletic Meet 007",
+        "fileName": "sports_athletic_meet_007.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_007.webp",
+        "caption": "Sports Athletic Meet 007",
+        "fileName": "sports_athletic_meet_007.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_008.jpg",
+        "caption": "Sports Athletic Meet 008",
+        "fileName": "sports_athletic_meet_008.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_008.webp",
+        "caption": "Sports Athletic Meet 008",
+        "fileName": "sports_athletic_meet_008.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_009.jpg",
+        "caption": "Sports Athletic Meet 009",
+        "fileName": "sports_athletic_meet_009.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_009.webp",
+        "caption": "Sports Athletic Meet 009",
+        "fileName": "sports_athletic_meet_009.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_010.jpg",
+        "caption": "Sports Athletic Meet 010",
+        "fileName": "sports_athletic_meet_010.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_010.webp",
+        "caption": "Sports Athletic Meet 010",
+        "fileName": "sports_athletic_meet_010.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_011.jpg",
+        "caption": "Sports Athletic Meet 011",
+        "fileName": "sports_athletic_meet_011.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_011.webp",
+        "caption": "Sports Athletic Meet 011",
+        "fileName": "sports_athletic_meet_011.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_012.jpg",
+        "caption": "Sports Athletic Meet 012",
+        "fileName": "sports_athletic_meet_012.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_012.webp",
+        "caption": "Sports Athletic Meet 012",
+        "fileName": "sports_athletic_meet_012.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_013.jpg",
+        "caption": "Sports Athletic Meet 013",
+        "fileName": "sports_athletic_meet_013.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_013.webp",
+        "caption": "Sports Athletic Meet 013",
+        "fileName": "sports_athletic_meet_013.webp"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_014.jpg",
+        "caption": "Sports Athletic Meet 014",
+        "fileName": "sports_athletic_meet_014.jpg"
+      },
+      {
+        "src": "/images/06-gallery/sports/sports_athletic_meet_014.webp",
+        "caption": "Sports Athletic Meet 014",
+        "fileName": "sports_athletic_meet_014.webp"
+      }
+    ],
+    "cultural": [
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_001.jpg",
+        "caption": "Arts And Creativity 001",
+        "fileName": "arts_and_creativity_001.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_001.webp",
+        "caption": "Arts And Creativity 001",
+        "fileName": "arts_and_creativity_001.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_002.jpg",
+        "caption": "Arts And Creativity 002",
+        "fileName": "arts_and_creativity_002.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_003.jpg",
+        "caption": "Arts And Creativity 003",
+        "fileName": "arts_and_creativity_003.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_004.jpg",
+        "caption": "Arts And Creativity 004",
+        "fileName": "arts_and_creativity_004.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_005.jpg",
+        "caption": "Arts And Creativity 005",
+        "fileName": "arts_and_creativity_005.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_005.webp",
+        "caption": "Arts And Creativity 005",
+        "fileName": "arts_and_creativity_005.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_006.jpg",
+        "caption": "Arts And Creativity 006",
+        "fileName": "arts_and_creativity_006.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_007.jpg",
+        "caption": "Arts And Creativity 007",
+        "fileName": "arts_and_creativity_007.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_008.jpg",
+        "caption": "Arts And Creativity 008",
+        "fileName": "arts_and_creativity_008.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_009.jpg",
+        "caption": "Arts And Creativity 009",
+        "fileName": "arts_and_creativity_009.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_010.jpg",
+        "caption": "Arts And Creativity 010",
+        "fileName": "arts_and_creativity_010.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_011.jpg",
+        "caption": "Arts And Creativity 011",
+        "fileName": "arts_and_creativity_011.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_012.jpg",
+        "caption": "Arts And Creativity 012",
+        "fileName": "arts_and_creativity_012.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_012.webp",
+        "caption": "Arts And Creativity 012",
+        "fileName": "arts_and_creativity_012.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_013.jpg",
+        "caption": "Arts And Creativity 013",
+        "fileName": "arts_and_creativity_013.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_014.jpg",
+        "caption": "Arts And Creativity 014",
+        "fileName": "arts_and_creativity_014.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_015.jpg",
+        "caption": "Arts And Creativity 015",
+        "fileName": "arts_and_creativity_015.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_016.jpg",
+        "caption": "Arts And Creativity 016",
+        "fileName": "arts_and_creativity_016.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_017.jpg",
+        "caption": "Arts And Creativity 017",
+        "fileName": "arts_and_creativity_017.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_018.jpg",
+        "caption": "Arts And Creativity 018",
+        "fileName": "arts_and_creativity_018.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_019.jpg",
+        "caption": "Arts And Creativity 019",
+        "fileName": "arts_and_creativity_019.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_020.jpg",
+        "caption": "Arts And Creativity 020",
+        "fileName": "arts_and_creativity_020.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_021.jpg",
+        "caption": "Arts And Creativity 021",
+        "fileName": "arts_and_creativity_021.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_022.jpg",
+        "caption": "Arts And Creativity 022",
+        "fileName": "arts_and_creativity_022.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_023.jpg",
+        "caption": "Arts And Creativity 023",
+        "fileName": "arts_and_creativity_023.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_024.jpg",
+        "caption": "Arts And Creativity 024",
+        "fileName": "arts_and_creativity_024.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_025.jpg",
+        "caption": "Arts And Creativity 025",
+        "fileName": "arts_and_creativity_025.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_026.jpg",
+        "caption": "Arts And Creativity 026",
+        "fileName": "arts_and_creativity_026.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_027.jpg",
+        "caption": "Arts And Creativity 027",
+        "fileName": "arts_and_creativity_027.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_028.jpg",
+        "caption": "Arts And Creativity 028",
+        "fileName": "arts_and_creativity_028.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/arts_and_creativity_029.jpg",
+        "caption": "Arts And Creativity 029",
+        "fileName": "arts_and_creativity_029.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_001.jpg",
+        "caption": "Cultural Celebration 001",
+        "fileName": "cultural_celebration_001.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_001.webp",
+        "caption": "Cultural Celebration 001",
+        "fileName": "cultural_celebration_001.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_002.jpg",
+        "caption": "Cultural Celebration 002",
+        "fileName": "cultural_celebration_002.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_003.jpg",
+        "caption": "Cultural Celebration 003",
+        "fileName": "cultural_celebration_003.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_004.jpg",
+        "caption": "Cultural Celebration 004",
+        "fileName": "cultural_celebration_004.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_005.jpg",
+        "caption": "Cultural Celebration 005",
+        "fileName": "cultural_celebration_005.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_006.jpg",
+        "caption": "Cultural Celebration 006",
+        "fileName": "cultural_celebration_006.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_006.webp",
+        "caption": "Cultural Celebration 006",
+        "fileName": "cultural_celebration_006.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_007.jpg",
+        "caption": "Cultural Celebration 007",
+        "fileName": "cultural_celebration_007.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_008.jpg",
+        "caption": "Cultural Celebration 008",
+        "fileName": "cultural_celebration_008.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_009.jpg",
+        "caption": "Cultural Celebration 009",
+        "fileName": "cultural_celebration_009.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_010.jpg",
+        "caption": "Cultural Celebration 010",
+        "fileName": "cultural_celebration_010.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_011.jpg",
+        "caption": "Cultural Celebration 011",
+        "fileName": "cultural_celebration_011.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_012.jpg",
+        "caption": "Cultural Celebration 012",
+        "fileName": "cultural_celebration_012.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_013.jpg",
+        "caption": "Cultural Celebration 013",
+        "fileName": "cultural_celebration_013.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_014.jpg",
+        "caption": "Cultural Celebration 014",
+        "fileName": "cultural_celebration_014.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_015.jpg",
+        "caption": "Cultural Celebration 015",
+        "fileName": "cultural_celebration_015.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_016.jpg",
+        "caption": "Cultural Celebration 016",
+        "fileName": "cultural_celebration_016.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_017.jpg",
+        "caption": "Cultural Celebration 017",
+        "fileName": "cultural_celebration_017.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_018.jpg",
+        "caption": "Cultural Celebration 018",
+        "fileName": "cultural_celebration_018.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_019.jpg",
+        "caption": "Cultural Celebration 019",
+        "fileName": "cultural_celebration_019.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_020.jpg",
+        "caption": "Cultural Celebration 020",
+        "fileName": "cultural_celebration_020.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_020.webp",
+        "caption": "Cultural Celebration 020",
+        "fileName": "cultural_celebration_020.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_021.jpg",
+        "caption": "Cultural Celebration 021",
+        "fileName": "cultural_celebration_021.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_022.jpg",
+        "caption": "Cultural Celebration 022",
+        "fileName": "cultural_celebration_022.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_023.jpg",
+        "caption": "Cultural Celebration 023",
+        "fileName": "cultural_celebration_023.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_024.jpg",
+        "caption": "Cultural Celebration 024",
+        "fileName": "cultural_celebration_024.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_025.jpg",
+        "caption": "Cultural Celebration 025",
+        "fileName": "cultural_celebration_025.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_026.jpg",
+        "caption": "Cultural Celebration 026",
+        "fileName": "cultural_celebration_026.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_027.jpg",
+        "caption": "Cultural Celebration 027",
+        "fileName": "cultural_celebration_027.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_028.jpg",
+        "caption": "Cultural Celebration 028",
+        "fileName": "cultural_celebration_028.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_029.jpg",
+        "caption": "Cultural Celebration 029",
+        "fileName": "cultural_celebration_029.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_030.jpg",
+        "caption": "Cultural Celebration 030",
+        "fileName": "cultural_celebration_030.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_031.jpg",
+        "caption": "Cultural Celebration 031",
+        "fileName": "cultural_celebration_031.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_032.jpg",
+        "caption": "Cultural Celebration 032",
+        "fileName": "cultural_celebration_032.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_033.jpg",
+        "caption": "Cultural Celebration 033",
+        "fileName": "cultural_celebration_033.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_034.jpg",
+        "caption": "Cultural Celebration 034",
+        "fileName": "cultural_celebration_034.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_035.jpg",
+        "caption": "Cultural Celebration 035",
+        "fileName": "cultural_celebration_035.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_036.jpg",
+        "caption": "Cultural Celebration 036",
+        "fileName": "cultural_celebration_036.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_037.jpg",
+        "caption": "Cultural Celebration 037",
+        "fileName": "cultural_celebration_037.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_038.jpg",
+        "caption": "Cultural Celebration 038",
+        "fileName": "cultural_celebration_038.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_039.jpg",
+        "caption": "Cultural Celebration 039",
+        "fileName": "cultural_celebration_039.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_040.jpg",
+        "caption": "Cultural Celebration 040",
+        "fileName": "cultural_celebration_040.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_041.jpg",
+        "caption": "Cultural Celebration 041",
+        "fileName": "cultural_celebration_041.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_042.jpg",
+        "caption": "Cultural Celebration 042",
+        "fileName": "cultural_celebration_042.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_043.jpg",
+        "caption": "Cultural Celebration 043",
+        "fileName": "cultural_celebration_043.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_044.jpg",
+        "caption": "Cultural Celebration 044",
+        "fileName": "cultural_celebration_044.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_045.jpg",
+        "caption": "Cultural Celebration 045",
+        "fileName": "cultural_celebration_045.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_046.jpg",
+        "caption": "Cultural Celebration 046",
+        "fileName": "cultural_celebration_046.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_047.jpg",
+        "caption": "Cultural Celebration 047",
+        "fileName": "cultural_celebration_047.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_048.jpg",
+        "caption": "Cultural Celebration 048",
+        "fileName": "cultural_celebration_048.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_048.webp",
+        "caption": "Cultural Celebration 048",
+        "fileName": "cultural_celebration_048.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_049.jpg",
+        "caption": "Cultural Celebration 049",
+        "fileName": "cultural_celebration_049.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_050.jpg",
+        "caption": "Cultural Celebration 050",
+        "fileName": "cultural_celebration_050.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_051.jpg",
+        "caption": "Cultural Celebration 051",
+        "fileName": "cultural_celebration_051.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_052.jpg",
+        "caption": "Cultural Celebration 052",
+        "fileName": "cultural_celebration_052.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_053.jpg",
+        "caption": "Cultural Celebration 053",
+        "fileName": "cultural_celebration_053.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_054.jpg",
+        "caption": "Cultural Celebration 054",
+        "fileName": "cultural_celebration_054.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_055.jpg",
+        "caption": "Cultural Celebration 055",
+        "fileName": "cultural_celebration_055.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_056.jpg",
+        "caption": "Cultural Celebration 056",
+        "fileName": "cultural_celebration_056.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_057.jpg",
+        "caption": "Cultural Celebration 057",
+        "fileName": "cultural_celebration_057.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_058.jpg",
+        "caption": "Cultural Celebration 058",
+        "fileName": "cultural_celebration_058.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_059.jpg",
+        "caption": "Cultural Celebration 059",
+        "fileName": "cultural_celebration_059.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_060.jpg",
+        "caption": "Cultural Celebration 060",
+        "fileName": "cultural_celebration_060.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_061.jpg",
+        "caption": "Cultural Celebration 061",
+        "fileName": "cultural_celebration_061.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_062.jpg",
+        "caption": "Cultural Celebration 062",
+        "fileName": "cultural_celebration_062.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_063.jpg",
+        "caption": "Cultural Celebration 063",
+        "fileName": "cultural_celebration_063.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_064.jpg",
+        "caption": "Cultural Celebration 064",
+        "fileName": "cultural_celebration_064.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_065.jpg",
+        "caption": "Cultural Celebration 065",
+        "fileName": "cultural_celebration_065.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_066.jpg",
+        "caption": "Cultural Celebration 066",
+        "fileName": "cultural_celebration_066.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_067.jpg",
+        "caption": "Cultural Celebration 067",
+        "fileName": "cultural_celebration_067.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_068.jpg",
+        "caption": "Cultural Celebration 068",
+        "fileName": "cultural_celebration_068.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_069.jpg",
+        "caption": "Cultural Celebration 069",
+        "fileName": "cultural_celebration_069.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_070.jpg",
+        "caption": "Cultural Celebration 070",
+        "fileName": "cultural_celebration_070.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_071.jpg",
+        "caption": "Cultural Celebration 071",
+        "fileName": "cultural_celebration_071.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_072.jpg",
+        "caption": "Cultural Celebration 072",
+        "fileName": "cultural_celebration_072.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_073.jpg",
+        "caption": "Cultural Celebration 073",
+        "fileName": "cultural_celebration_073.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_073.webp",
+        "caption": "Cultural Celebration 073",
+        "fileName": "cultural_celebration_073.webp"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_074.jpg",
+        "caption": "Cultural Celebration 074",
+        "fileName": "cultural_celebration_074.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_075.jpg",
+        "caption": "Cultural Celebration 075",
+        "fileName": "cultural_celebration_075.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_076.jpg",
+        "caption": "Cultural Celebration 076",
+        "fileName": "cultural_celebration_076.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_077.jpg",
+        "caption": "Cultural Celebration 077",
+        "fileName": "cultural_celebration_077.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_078.jpg",
+        "caption": "Cultural Celebration 078",
+        "fileName": "cultural_celebration_078.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_079.jpg",
+        "caption": "Cultural Celebration 079",
+        "fileName": "cultural_celebration_079.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_080.jpg",
+        "caption": "Cultural Celebration 080",
+        "fileName": "cultural_celebration_080.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_081.jpg",
+        "caption": "Cultural Celebration 081",
+        "fileName": "cultural_celebration_081.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_082.jpg",
+        "caption": "Cultural Celebration 082",
+        "fileName": "cultural_celebration_082.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_083.jpg",
+        "caption": "Cultural Celebration 083",
+        "fileName": "cultural_celebration_083.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_084.jpg",
+        "caption": "Cultural Celebration 084",
+        "fileName": "cultural_celebration_084.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_085.jpg",
+        "caption": "Cultural Celebration 085",
+        "fileName": "cultural_celebration_085.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_086.jpg",
+        "caption": "Cultural Celebration 086",
+        "fileName": "cultural_celebration_086.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_087.jpg",
+        "caption": "Cultural Celebration 087",
+        "fileName": "cultural_celebration_087.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_088.jpg",
+        "caption": "Cultural Celebration 088",
+        "fileName": "cultural_celebration_088.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_089.jpg",
+        "caption": "Cultural Celebration 089",
+        "fileName": "cultural_celebration_089.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_090.jpg",
+        "caption": "Cultural Celebration 090",
+        "fileName": "cultural_celebration_090.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_091.jpg",
+        "caption": "Cultural Celebration 091",
+        "fileName": "cultural_celebration_091.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_092.jpg",
+        "caption": "Cultural Celebration 092",
+        "fileName": "cultural_celebration_092.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_093.jpg",
+        "caption": "Cultural Celebration 093",
+        "fileName": "cultural_celebration_093.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_094.jpg",
+        "caption": "Cultural Celebration 094",
+        "fileName": "cultural_celebration_094.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_095.jpg",
+        "caption": "Cultural Celebration 095",
+        "fileName": "cultural_celebration_095.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_096.jpg",
+        "caption": "Cultural Celebration 096",
+        "fileName": "cultural_celebration_096.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_097.jpg",
+        "caption": "Cultural Celebration 097",
+        "fileName": "cultural_celebration_097.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_098.jpg",
+        "caption": "Cultural Celebration 098",
+        "fileName": "cultural_celebration_098.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_099.jpg",
+        "caption": "Cultural Celebration 099",
+        "fileName": "cultural_celebration_099.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_100.jpg",
+        "caption": "Cultural Celebration 100",
+        "fileName": "cultural_celebration_100.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_101.jpg",
+        "caption": "Cultural Celebration 101",
+        "fileName": "cultural_celebration_101.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_102.jpg",
+        "caption": "Cultural Celebration 102",
+        "fileName": "cultural_celebration_102.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_103.jpg",
+        "caption": "Cultural Celebration 103",
+        "fileName": "cultural_celebration_103.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_104.jpg",
+        "caption": "Cultural Celebration 104",
+        "fileName": "cultural_celebration_104.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_105.jpg",
+        "caption": "Cultural Celebration 105",
+        "fileName": "cultural_celebration_105.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_106.jpg",
+        "caption": "Cultural Celebration 106",
+        "fileName": "cultural_celebration_106.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_107.jpg",
+        "caption": "Cultural Celebration 107",
+        "fileName": "cultural_celebration_107.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_108.jpg",
+        "caption": "Cultural Celebration 108",
+        "fileName": "cultural_celebration_108.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_109.jpg",
+        "caption": "Cultural Celebration 109",
+        "fileName": "cultural_celebration_109.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_110.jpg",
+        "caption": "Cultural Celebration 110",
+        "fileName": "cultural_celebration_110.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_111.jpg",
+        "caption": "Cultural Celebration 111",
+        "fileName": "cultural_celebration_111.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_112.jpg",
+        "caption": "Cultural Celebration 112",
+        "fileName": "cultural_celebration_112.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_113.jpg",
+        "caption": "Cultural Celebration 113",
+        "fileName": "cultural_celebration_113.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_114.jpg",
+        "caption": "Cultural Celebration 114",
+        "fileName": "cultural_celebration_114.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_115.jpg",
+        "caption": "Cultural Celebration 115",
+        "fileName": "cultural_celebration_115.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_116.jpg",
+        "caption": "Cultural Celebration 116",
+        "fileName": "cultural_celebration_116.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_117.jpg",
+        "caption": "Cultural Celebration 117",
+        "fileName": "cultural_celebration_117.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_118.jpg",
+        "caption": "Cultural Celebration 118",
+        "fileName": "cultural_celebration_118.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_119.jpg",
+        "caption": "Cultural Celebration 119",
+        "fileName": "cultural_celebration_119.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_120.jpg",
+        "caption": "Cultural Celebration 120",
+        "fileName": "cultural_celebration_120.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_121.jpg",
+        "caption": "Cultural Celebration 121",
+        "fileName": "cultural_celebration_121.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_122.jpg",
+        "caption": "Cultural Celebration 122",
+        "fileName": "cultural_celebration_122.jpg"
+      },
+      {
+        "src": "/images/06-gallery/cultural/cultural_celebration_123.jpg",
+        "caption": "Cultural Celebration 123",
+        "fileName": "cultural_celebration_123.jpg"
+      }
+    ],
+    "campus": [],
+    "celebrations": []
+  },
+  "branding": [
+    {
+      "src": "/images/07-branding/bot-avatar.png",
+      "caption": "Bot Avatar",
+      "fileName": "bot-avatar.png"
+    },
+    {
+      "src": "/images/07-branding/Chinmaya_Logo.png",
+      "caption": "Chinmaya Logo",
+      "fileName": "Chinmaya_Logo.png"
+    },
+    {
+      "src": "/images/07-branding/Chinmaya_Logo.webp",
+      "caption": "Chinmaya Logo",
+      "fileName": "Chinmaya_Logo.webp"
+    },
+    {
+      "src": "/images/07-branding/sign.png",
+      "caption": "Sign",
+      "fileName": "sign.png"
+    },
+    {
+      "src": "/images/07-branding/student_question_cutout.png",
+      "caption": "Student Question Cutout",
+      "fileName": "student_question_cutout.png"
+    },
+    {
+      "src": "/images/07-branding/swami_chinmayananda_cutout.png",
+      "caption": "Swami Chinmayananda Cutout",
+      "fileName": "swami_chinmayananda_cutout.png"
+    }
+  ]
+}
