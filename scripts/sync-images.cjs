@@ -106,6 +106,21 @@ function generateRegistry() {
   };
 
   fs.mkdirSync(path.dirname(REGISTRY_OUT_PATH), { recursive: true });
+
+  if (fs.existsSync(REGISTRY_OUT_PATH)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(REGISTRY_OUT_PATH, 'utf8'));
+      const existingCopy = { ...existing, _meta: { ...existing._meta, updatedAt: '' } };
+      const newCopy = { ...registry, _meta: { ...registry._meta, updatedAt: '' } };
+      if (JSON.stringify(existingCopy) === JSON.stringify(newCopy)) {
+        // No changes to image lists or captions, skip rewriting to avoid timestamp git diffs
+        return existing;
+      }
+    } catch (e) {
+      // If parsing fails, proceed with overwrite
+    }
+  }
+
   fs.writeFileSync(REGISTRY_OUT_PATH, JSON.stringify(registry, null, 2), 'utf8');
   console.log(`[Image Scanner] Registry generated successfully at ${path.relative(ROOT_DIR, REGISTRY_OUT_PATH)}`);
   return registry;
