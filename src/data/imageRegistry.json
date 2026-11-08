@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
-    "updatedAt": "2026-11-06T23:46:05.087Z"
+    "updatedAt": "2026-11-08T10:02:30.669Z"
   },
   "homeHero": [
     {
@@ -132,16 +132,6 @@
   "academics": {
     "classrooms": [
       {
-        "src": "/images/04-academics/classrooms/classroom-1.jpg",
-        "caption": "Spacious Multi-Purpose Examination & Lecture Hall with Modular Desks",
-        "fileName": "classroom-1.jpg"
-      },
-      {
-        "src": "/images/04-academics/classrooms/classroom-2.jpg",
-        "caption": "Naturally Lit & Ventilated Classrooms with Active Student-Teacher Mentorship",
-        "fileName": "classroom-2.jpg"
-      },
-      {
         "src": "/images/04-academics/classrooms/classroom-3.jpg",
         "caption": "Smart Digital Classrooms Equipped with Interactive Flat Panel Displays",
         "fileName": "classroom-3.jpg"
@@ -172,11 +162,6 @@
         "src": "/images/04-academics/library/lib-4.jpg",
         "caption": "Spacious Reference Section & Journal Archives",
         "fileName": "lib-4.jpg"
-      },
-      {
-        "src": "/images/04-academics/library/lib-5.jpg",
-        "caption": "Independent Study Carrels & Collaborative Reading Zone",
-        "fileName": "lib-5.jpg"
       }
     ],
     "sports": [
@@ -248,26 +233,6 @@
           "fileName": "chem-3.jpg"
         },
         {
-          "src": "/images/04-academics/labs/chemistry/chem-4.jpg",
-          "caption": "Analytical Centrifugation & Salt Analysis Station",
-          "fileName": "chem-4.jpg"
-        },
-        {
-          "src": "/images/04-academics/labs/chemistry/chem-5.jpg",
-          "caption": "Teacher Demonstrating Analytical Techniques to Students",
-          "fileName": "chem-5.jpg"
-        },
-        {
-          "src": "/images/04-academics/labs/chemistry/chem-6.jpg",
-          "caption": "Student Performing Flask & Reagent Experiment",
-          "fileName": "chem-6.jpg"
-        },
-        {
-          "src": "/images/04-academics/labs/chemistry/chem-7.jpg",
-          "caption": "Students Working with Conical Flasks & Bunsen Burners",
-          "fileName": "chem-7.jpg"
-        },
-        {
           "src": "/images/04-academics/labs/chemistry/chem-dsc.jpg",
           "caption": "Chem Dsc",
           "fileName": "chem-dsc.jpg"
@@ -288,11 +253,6 @@
           "src": "/images/04-academics/labs/biology/bio-3.jpg",
           "caption": "High-Power Monocular Student Microscopes at Lab Station",
           "fileName": "bio-3.jpg"
-        },
-        {
-          "src": "/images/04-academics/labs/biology/bio-4.jpg",
-          "caption": "Preserved Formalin Specimen Jars (Zoological & Botanical Taxonomy)",
-          "fileName": "bio-4.jpg"
         },
         {
           "src": "/images/04-academics/labs/biology/bio-5.jpg",
@@ -322,19 +282,9 @@
           "fileName": "it-3.jpg"
         },
         {
-          "src": "/images/04-academics/labs/computer/it-4.jpg",
-          "caption": "Cyber-Safety Firewall Monitoring & Digital Pedagogy Station",
-          "fileName": "it-4.jpg"
-        },
-        {
           "src": "/images/04-academics/labs/computer/it-5.jpg",
           "caption": "Digital Innovation Session: Interactive Smart Screen & Collaborative Workspace",
           "fileName": "it-5.jpg"
-        },
-        {
-          "src": "/images/04-academics/labs/computer/it-6.jpg",
-          "caption": "Student Python Coding Project Session with Faculty Mentor",
-          "fileName": "it-6.jpg"
         }
       ]
     }

@@ -67,14 +67,14 @@ export const HOME_VALUES_TILES = [
     num: "01",
     title: "CURIOSITY",
     desc: "Embrace lifelong learning & inquiry",
-    image: "/images/chinmaya/academics/science_stem_lab_01.webp?v=2",
+    image: "/images/04-academics/labs/biology/bio-2.jpg",
     link: "/academics/curriculum",
   },
   {
     num: "02",
     title: "INTEGRITY",
     desc: "Rooted in timeless Vedic character",
-    image: "/images/guru-paduka-pooja.webp?v=2",
+    image: "/images/04-academics/cultural/cultural-assembly-1.jpg",
     link: "/about/philosophy",
   },
   {
@@ -88,7 +88,7 @@ export const HOME_VALUES_TILES = [
     num: "04",
     title: "VITALITY",
     desc: "Sportsmanship, athletics & vigor",
-    image: "/images/banner-8.webp?v=2",
+    image: "/images/chinmaya/sports/sports_athletic_meet_001.webp",
     link: "/academics/co-curricular",
   },
 ];
@@ -98,21 +98,21 @@ export const HOME_VALUES_TILES = [
 // ----------------------------------------------------------------------------
 export const PANEL_B_MOVING_GALLERY_COL1 = [
   { src: "/images/about2.jpeg?v=2", title: "Main Campus Building" },
-  { src: "/images/chinmaya/academics/science_stem_lab_01.webp?v=2", title: "Science & Chemistry Lab" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2", title: "Track Championship" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_001.webp?v=2", title: "Educational Excursion" },
-  { src: "/images/phys.webp?v=2", title: "Physics Laboratory" },
+  { src: "/images/04-academics/classrooms/classroom-3.jpg?v=2", title: "Smart Digital Classroom" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_001.webp?v=2", title: "Cultural Excursion" },
   { src: "/images/lib.webp?v=2", title: "Central Library" },
-  { src: "/images/banner-8.webp?v=2", title: "Annual Sports Meet" },
+  { src: "/images/chinmaya/cultural/arts_and_creativity_001.webp?v=2", title: "Arts & Creativity" },
   { src: "/images/chinmaya-web-science.webp?v=2", title: "Science Exhibition" },
+  { src: "/images/04-academics/sports/sports-1.jpg?v=2", title: "Indoor Sports Pavilion" },
+  { src: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2", title: "Scholastic Study Lounge" },
 ];
 
 export const PANEL_B_MOVING_GALLERY_COL2 = [
-  { src: "/images/pages/home/laboratories/it-lab.jpg?v=2", title: "Computer & Coding Lab" },
-  { src: "/images/biology-lab.jpg?v=2", title: "Biology & Life Sciences" },
-  { src: "/images/banner-9.webp?v=2", title: "Cultural Fest Stage" },
-  { src: "/images/guru-paduka-pooja.webp?v=2", title: "Guru Paduka Pooja" },
-  { src: "/images/chinmaya/academics/classroom_learning_001.webp?v=2", title: "Smart Interactive Classes" },
+  { src: "/images/04-academics/labs/computer/it-1.jpg?v=2", title: "Computer & Coding Lab" },
+  { src: "/images/04-academics/classrooms/classroom-4.jpg?v=2", title: "Primary Activity Class" },
+  { src: "/images/banner-9.webp?v=2", title: "Annual Day Celebrations" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_006.jpg?v=2", title: "Classical Indian Dance" },
+  { src: "/images/chinmaya/academics/classroom_learning_003.webp?v=2", title: "Smart Interactive Classes" },
   { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg?v=2", title: "Performing Arts" },
   { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg?v=2", title: "Youth Choir" },
   { src: "/images/board-conference-room.webp?v=2", title: "Faculty & Mentors" },
@@ -146,30 +146,77 @@ export const RIBBON_GALLERY_IMAGES: string[] = [
 // 5. CAMPUS STREAM ARCHIVE (3D Corridor in About/History page)
 // ----------------------------------------------------------------------------
 export const CAMPUS_STREAM_ARCHIVE = [
-  { src: "/images/about2.jpeg?v=2", alt: "Chinmaya Vidyalaya Campus Building" },
-  { src: "/images/biology-lab.jpg?v=2", alt: "Advanced Biology Laboratory" },
-  { src: "/images/lib.jpg?v=2", alt: "Central Knowledge Library" },
-  { src: "/images/pages/home/laboratories/it-lab.jpg?v=2", alt: "Computer & AI/Coding Center" },
-  { src: "/images/phys.webp?v=2", alt: "Physics Research Laboratory" },
-  { src: "/images/chinmaya/academics/science_stem_lab_01.webp?v=2", alt: "Chemistry Laboratory & Titration" },
-  { src: "/images/guru-paduka-pooja.webp?v=2", alt: "Spiritual Traditions & Gurudev Ethos" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2", alt: "Annual Athletics Championship" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_001.jpg?v=2", alt: "Cultural Heritage & Folk Performance" },
-  { src: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2", alt: "Smart Interactive Digital Classroom" },
-  { src: "/images/chinmaya/academics/classroom_learning_007.jpg?v=2", alt: "Optics & Laser Science Experiment" },
-  { src: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2", alt: "Reference Library Study Lounge" },
-  { src: "/images/chinmaya/academics/classroom_learning_031.jpg?v=2", alt: "Scholastic Seminar & Student Debates" },
-  { src: "/images/chinmaya/academics/classroom_learning_030.jpg?v=2", alt: "Examination Focus & Scholastic Rigor" },
-  { src: "/images/chinmaya/academics/classroom_learning_033.jpg?v=2", alt: "Science & AI/Coding Prototyping" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg?v=2", alt: "Classical Dance & Youth Drama" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg?v=2", alt: "Choral Singing & Musical Orchestration" },
-  { src: "/images/chinmaya/academics/classroom_learning_003.jpg?v=2", alt: "Interactive Classroom Mentorship" },
-  { src: "/images/chinmaya/campus/campus_facilities_001.jpg?v=2", alt: "Campus Landscaped Quadrangle" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_005.jpg?v=2", alt: "Inter-House Relay & Track Events" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_001.webp?v=2", alt: "Educational Field Excursion" },
-  { src: "/images/banner-8.webp?v=2", alt: "Sports Meet Victory & House Podiums" },
-  { src: "/images/banner-9.webp?v=2", alt: "Annual Day Theatrical Stage Showcase" },
-  { src: "/images/swami_chinmayananda_square.webp?v=2", alt: "Founder Param Pujya Gurudev Vision" },
+  // 1. Founder Heritage
+  { src: "/images/03-about-heritage/swami.jpeg", alt: "Founder Vision: Param Pujya Swami Chinmayananda" },
+  
+  // 2. Science Lab - Physics (Laser optical bench)
+  { src: "/images/04-academics/labs/physics/physics-lab-1.jpg", alt: "Physics Lab: Optical Bench Laser Calibration" },
+
+  // 3. Cultural - Classical Indian Dance Performance
+  { src: "/images/chinmaya/cultural/cultural_celebration_002.jpg", alt: "Classical Indian Dance: Cultural Fest Performance" },
+
+  // 4. Sports - Inter-House Relay Race Handover
+  { src: "/images/chinmaya/sports/sports_athletic_meet_005.jpg", alt: "Athletics Meet: Inter-House Relay Race Handover" },
+
+  // 5. Classroom - Interactive Digital Smart Lecture
+  { src: "/images/chinmaya/academics/classroom_learning_005.jpg", alt: "Smart Classroom: Digital Interactive Instruction" },
+
+  // 6. Creative Arts - Painting & Canvas Art Studio
+  { src: "/images/chinmaya/cultural/arts_and_creativity_002.jpg", alt: "Fine Arts Studio: Creative Painting & Visual Art" },
+
+  // 7. Science Lab - Chemistry Titration & Burette
+  { src: "/images/04-academics/labs/chemistry/chem-2.jpg", alt: "Chemistry Lab: Precision Titration Workspace" },
+
+  // 8. Cultural - Folk Dance & Festival Celebration
+  { src: "/images/chinmaya/cultural/cultural_celebration_007.jpg", alt: "Cultural Celebration: Traditional Folk Dance" },
+
+  // 9. Sports - 100m Track & Field Sprint Race
+  { src: "/images/chinmaya/sports/sports_athletic_meet_002.jpg", alt: "Athletics Championship: 100m Track & Field Sprint Race" },
+
+  // 10. Classroom - Collaborative Group Learning & Discussion
+  { src: "/images/chinmaya/academics/classroom_learning_004.jpg", alt: "Classroom Life: Collaborative Discussion & Notes" },
+
+  // 11. Creative Arts - 3D Sculpture & Clay Modeling
+  { src: "/images/chinmaya/cultural/arts_and_creativity_004.jpg", alt: "Creative Crafts: 3D Sculpture & Model Prototyping" },
+
+  // 12. Science Lab - Biology Compound Microscope Slide Study
+  { src: "/images/04-academics/labs/biology/bio-1.jpg", alt: "Biology Lab: Student Microscope Slide Examination" },
+
+  // 13. Cultural - Musical Instrument Orchestration & Harmonium
+  { src: "/images/chinmaya/cultural/cultural_celebration_023.jpg", alt: "Musical Orchestration: Indian Classical Instruments" },
+
+  // 14. Sports - Track & Field High/Long Jump Event
+  { src: "/images/chinmaya/sports/sports_athletic_meet_004.jpg", alt: "Athletics Meet: Field Jump & Athletic Agility" },
+
+  // 15. Classroom - Senior Secondary Scholastic Focus & Rigor
+  { src: "/images/chinmaya/academics/classroom_learning_030.jpg", alt: "Scholastic Rigor: Board Examination Preparation" },
+
+  // 16. Creative Arts - Paper Art, Origami & Model Exhibition
+  { src: "/images/chinmaya/cultural/arts_and_creativity_008.jpg", alt: "Creative Arts: Paper Crafts & Student Handiwork" },
+
+  // 17. Cultural - Youth Drama & Theatrical Stage Skit
+  { src: "/images/chinmaya/cultural/cultural_celebration_019.jpg", alt: "Youth Theater: Sanskrit & Cultural Drama Skit" },
+
+  // 18. Sports - Team March Past & House Banner Parade
+  { src: "/images/chinmaya/sports/sports_athletic_meet_011.jpg", alt: "Annual Sports Day: House March Past & Parade" },
+
+  // 19. Classroom - Student Academic Seminars & Debates
+  { src: "/images/chinmaya/academics/classroom_learning_031.jpg", alt: "Academic Enrichment: Student Seminars & Presentations" },
+
+  // 20. Cultural - Vocal Choir & Uplifting Bhajans
+  { src: "/images/chinmaya/cultural/cultural_celebration_031.jpg", alt: "Choral Singing: Uplifting Vedic Hymns & Bhajans" },
+
+  // 21. Science Lab - Chemistry Analytical Balances
+  { src: "/images/04-academics/labs/chemistry/chem-1.jpg", alt: "Analytical Chemistry: Digital Balance Measurements" },
+
+  // 22. Cultural - Traditional Festive Costumed Performance
+  { src: "/images/chinmaya/cultural/cultural_celebration_045.jpg", alt: "Festive Performance: Traditional Heritage Pageant" },
+
+  // 23. Classroom - Primary Active Learning & Interaction
+  { src: "/images/chinmaya/academics/classroom_learning_002.jpg", alt: "Primary Academics: Active Classroom Mentorship" },
+
+  // 24. Sports - Inter-House Track Meet Victory & Podium
+  { src: "/images/chinmaya/sports/sports_athletic_meet_007.jpg", alt: "Sports Day: Track Athletics Finish Line & Celebration" },
 ];
 
 // ----------------------------------------------------------------------------

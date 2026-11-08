@@ -30,9 +30,9 @@ const ARCHIVE_IMAGES: LibraryImage[] = [
     category: "Academic Core"
   },
   {
-    src: "/images/pages/academics/library/lib-5.jpg",
-    alt: "Student exploring categorized literature and reference book stacks",
-    title: "Classified Book Stacks & Open Circulation Aisles",
+    src: "/images/pages/academics/library/lib-1.jpg",
+    alt: "Reading Hall and Curated Reference Volumes Stack",
+    title: "Reading Hall & Curated Reference Volumes Stack",
     category: "Campus Archives"
   }
 ];

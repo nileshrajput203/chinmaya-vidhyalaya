@@ -35,8 +35,8 @@ const CVP_PILLARS: PillarData[] = [
     targetUrl: '/about/philosophy#pillar-01',
     keyPoints: [
       'Physical Development (Sharirik): Sports, physical fitness, yoga & athletics',
-      'Mental Development (Manasik): Emotional balance, resilience, focus & Bhagavad Gita chanting',
-      'Intellectual Development (Bauddhik): Artificial Intelligence (AI) & Coding (Python/Scratch), experiential Science & Maths labs, and critical thinking',
+      'Mental Development (Manasik): Emotional balance, resilience, focus & Gita chanting',
+      'Intellectual Development (Bauddhik): AI, Coding, science labs & critical logic',
       'Spiritual Development (Adhyatmik): Ethical values, mutual respect & character building'
     ]
   },
@@ -76,12 +76,10 @@ const CVP_PILLARS: PillarData[] = [
       'The third pillar nurtures deep patriotism, where civic duty and active citizenship are an integral part of national dedication. Through local Swachhata drives, environmental initiatives, and community service across Boisar, students learn that genuine patriotism begins with responsible civic action.',
     targetUrl: '/about/philosophy#pillar-03',
     keyPoints: [
-      'Democratic Student Council Elections & leadership development',
+      'Democratic Student Council elections & youth leadership governance',
       'Kargil Vijay Diwas commemorations & Armed Forces tributes',
-      'Maharashtra Divas celebrations & state cultural heritage',
-      'Nasha Mukt Bharat Abhiyaan anti-addiction pledges & youth drives',
-      'Ceremonial observances of Independence Day & Republic Day',
-      'Swachhata cleanliness drives & environmental eco-initiatives'
+      'Maharashtra Divas celebrations & cultural state pride',
+      'Nasha Mukt Bharat youth rallies & Swachhata cleanliness drives'
     ]
   },
   {

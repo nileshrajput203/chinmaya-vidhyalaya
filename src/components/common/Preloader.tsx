@@ -78,7 +78,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     >
       {/* Top Metadata */}
       <div className="flex justify-between items-center text-[11px] uppercase tracking-[0.25em] text-[#64748B] font-mono border-b border-slate-200 pb-4">
-        <span>ESTD. 1993 • BOISAR / TARAPUR</span>
+        <span>ESTD. 1995 • BOISAR / TARAPUR</span>
         <span>CBSE AFFILIATION: 1130058</span>
       </div>
 

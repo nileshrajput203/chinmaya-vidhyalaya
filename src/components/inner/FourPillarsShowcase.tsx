@@ -27,26 +27,26 @@ const PILLARS_DATA: PillarDetail[] = [
     number: '01',
     sanskritName: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
     englishTitle: 'Integrated Development',
-    corePurpose: 'Educating the whole child across all four foundational dimensions: Physical, Mental, Intellectual, and Spiritual development in complete balance.',
+    corePurpose: 'Educating the whole child across all four foundational dimensions: physical vitality, mental poise, intellectual sharpness, and inner spiritual strength.',
     dailyPractices: [
       {
         dimension: 'Physical • Sharirik',
-        title: 'Physical Development',
+        title: 'Physical Vitality & Yoga',
         desc: 'Sports activities, physical fitness, yoga, and athletic training fostering stamina, motor skills, and overall health.'
       },
       {
         dimension: 'Mental • Manasik',
-        title: 'Mental Development & Bhagavad Gita Chanting',
-        desc: 'Nurturing emotional poise, memory retention, focus, and inner resilience through regular Bhagavad Gita chanting, guided reflection, and positive mental habits.'
+        title: 'Emotional Poise & Gita Chanting',
+        desc: 'Nurturing focus, memory retention, and inner resilience through regular Bhagavad Gita chanting and guided reflection.'
       },
       {
         dimension: 'Intellectual • Bauddhik',
-        title: 'Intellectual Development with AI & Coding',
-        desc: 'Fostering analytical logic, technological innovation, and critical problem-solving through hands-on Artificial Intelligence (AI) and Coding (Python & Scratch), Science (Physics, Chemistry, Biology) and Maths laboratories, and inquiry-based assessments.'
+        title: 'AI, Coding & Science Labs',
+        desc: 'Hands-on Artificial Intelligence, Coding (Python & Scratch), Science and Maths laboratories, and critical inquiry.'
       },
       {
         dimension: 'Spiritual • Adhyatmik',
-        title: 'Spiritual Development',
+        title: 'Spiritual Ethics & Character',
         desc: 'Moral values, character ethics, inner peace, mutual respect, and holistic personal growth.'
       }
     ],
@@ -57,7 +57,7 @@ const PILLARS_DATA: PillarDetail[] = [
         locationMeta: 'Smart Classroom Wing • Interactive Teaching'
       }
     ],
-    tags: ['Physical Development', 'Mental Poise & Gita Chanting', 'Intellectual Rigor (AI & Coding)', 'Spiritual Awakening']
+    tags: ['Physical Vitality', 'Mental Poise & Gita', 'AI & Science Labs', 'Spiritual Ethics']
   },
   {
     number: '02',
@@ -99,32 +99,27 @@ const PILLARS_DATA: PillarDetail[] = [
     number: '03',
     sanskritName: 'Deshbhakti Evam Rashtra Seva',
     englishTitle: 'Patriotism',
-    corePurpose: 'Inspiring unyielding love for the nation through democratic leadership, armed forces reverence, cultural state pride, youth anti-addiction pledges, and active community seva.',
+    corePurpose: 'Inspiring devoted love for the nation through student leadership, armed forces reverence, cultural state pride, and civic seva.',
     dailyPractices: [
       {
         dimension: 'Democratic Leadership • Loktantra',
-        title: 'Student Council Elections & Governance',
-        desc: 'Annual democratic student council elections with secret ballot casting, campaign speeches, and elected prefectorial leadership fostering civic duty and governance.'
+        title: 'Student Council & Governance',
+        desc: 'Democratic student council elections with secret ballot casting and elected leadership fostering civic duty.'
       },
       {
         dimension: 'Braveheart Tributes • Veergatha',
-        title: 'Kargil Vijay Diwas & Armed Forces Reverence',
-        desc: 'Commemorating Kargil Vijay Diwas and honoring the selfless sacrifice of our armed forces martyrs through patriotic exhibitions, poetry, and Veer Gatha national defense awareness.'
+        title: 'Kargil Vijay Diwas & Tributes',
+        desc: 'Commemorating Kargil Vijay Diwas and honoring armed forces martyrs through patriotic assemblies and exhibitions.'
       },
       {
         dimension: 'State Heritage • Rajya Gaurav',
         title: 'Maharashtra Divas Celebrations',
-        desc: 'Grand celebrations on 1st May commemorating Maharashtra Divas with cultural folk presentations, traditional lezim, flag salutations, and pride in state heritage.'
+        desc: 'Commemorating Maharashtra Divas with cultural presentations, traditional lezim, flag salutations, and state pride.'
       },
       {
-        dimension: 'Social Wellness • Jan Jagrukta',
-        title: 'Nasha Mukt Bharat Abhiyaan',
-        desc: 'Empowering students and community through Nasha Mukt Bharat Abhiyaan anti-addiction campaigns, youth awareness rallies, and student pledges for a healthy, drug-free nation.'
-      },
-      {
-        dimension: 'Civic Duty • Nagarik Kartavya',
-        title: 'Cleanliness Drives & National Observances',
-        desc: 'Independence Day, Republic Day flag ceremonies, Swachh Bharat cleanliness drives, and environmental conservation across the campus and Boisar community.'
+        dimension: 'Civic Outreach • Nagarik Seva',
+        title: 'Swachhata & Nasha Mukt Drives',
+        desc: 'Nasha Mukt Bharat Abhiyaan youth rallies, Swachh Bharat cleanliness drives, and environmental conservation.'
       }
     ],
     photos: [
@@ -134,7 +129,7 @@ const PILLARS_DATA: PillarDetail[] = [
         locationMeta: 'Community Service & Campus Assemblies • Tarapur'
       }
     ],
-    tags: ['Patriotism', 'Kargil Vijay Diwas', 'Maharashtra Divas', 'Nasha Mukt Bharat', 'Student Council Elections', 'Civic Duty']
+    tags: ['Student Council', 'Veergatha Tributes', 'Maharashtra Divas', 'Civic Seva Drives']
   },
   {
     number: '04',
@@ -267,11 +262,11 @@ export const FourPillarsShowcase: React.FC = () => {
                         <span>Campus Practices & Initiatives:</span>
                       </span>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 auto-rows-fr">
                         {pillar.dailyPractices.map((practice, pIdx) => (
                           <div
                             key={pIdx}
-                            className="bg-white border border-[#E7E2D8] hover:border-[#DF711B]/50 rounded-xl p-3 shadow-2xs space-y-1 transition-all"
+                            className="bg-white border border-[#E7E2D8] hover:border-[#DF711B]/50 rounded-xl p-3 shadow-2xs space-y-1 transition-all flex flex-col justify-start h-full"
                           >
                             <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-mono font-bold uppercase tracking-wide bg-amber-50 text-[#DF711B] border border-amber-200/50">
                               {practice.dimension}
