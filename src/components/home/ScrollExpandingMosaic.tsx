@@ -175,8 +175,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
                 className="flex-1 overflow-hidden rounded-none relative border border-transparent"
               >
                 <img
-                  src="/images/chinmaya/cultural/cultural_celebration_009.jpg?v=2"
-                  alt="Chinmaya Vidyalaya Scholastic Learning"
+                  src="/images/pages/home/mosaic/top-right.jpg"
+                  alt="Chinmaya Vidyalaya Interactive Learning"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -249,8 +249,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
             className="w-full h-36 object-cover rounded-none"
           />
           <img
-            src="/images/chinmaya/cultural/cultural_celebration_009.jpg?v=2"
-            alt="Scholastic Classroom"
+            src="/images/pages/home/mosaic/top-right.jpg"
+            alt="Smart Classroom"
             loading="lazy"
             className="w-full h-36 object-cover rounded-none"
           />

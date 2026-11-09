@@ -72,7 +72,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#1E40AF',
     badgeBg: 'bg-indigo-50',
     badgeText: 'text-indigo-800',
-    image: '/images/chinmaya/academics/science_stem_lab_01.webp',
+    image: '/images/chinmaya/cultural/cultural_celebration_016.jpg?v=2',
     imageCaption: 'Cognitive Rigor: Hands-on Chemistry Experimentation & Analysis',
     locationMeta: 'Chemistry Laboratory • Station 2',
     description:
@@ -93,8 +93,8 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#B45309',
     badgeBg: 'bg-amber-50',
     badgeText: 'text-amber-800',
-    image: '/images/guru-paduka-pooja.webp',
-    imageCaption: 'Spiritual Depth: Solemn Guru Paduka Pooja & Shloka Recitation',
+    image: '/images/vision-mission/manomaya-kosha.jpeg',
+    imageCaption: 'Spiritual Depth: Solemn Bhajans, Vedic Chanting & Shloka Recitation',
     locationMeta: 'Central Altar • Morning Assembly',
     description:
       'Awakening moral sensitivity, universal brotherhood, and selfless dedication (Seva). Rooted in solemn Guru Paduka Pooja, Bhagavad Gita chanting, Balvihar moral stories, and quiet mindful breathing.',

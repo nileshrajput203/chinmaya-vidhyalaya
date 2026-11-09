@@ -63,13 +63,13 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
   },
   {
     id: "chinmaya-cultural-cultural_celebration_009",
-    title: "Classroom Scholastic Learning & Study Session",
-    category: "academics",
-    event: "Classroom Life",
+    title: "Cultural Stage & Festive Celebration 009",
+    category: "celebrations",
+    event: "Cultural Fest",
     academicYear: "2026-27",
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_009.jpg?v=2",
-    caption: "Students engaged in concentrated classroom study and scholastic learning at Chinmaya Vidyalaya."
+    caption: "Cultural Stage & Festive Celebration 009 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-sports-sports_athletic_meet_006",
