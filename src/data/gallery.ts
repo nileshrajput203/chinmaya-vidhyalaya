@@ -22,6 +22,16 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Magnificent theatrical, classical dance, and scholastic award presentations at the Chinmaya Vidyalaya Annual Day."
   },
   {
+    id: "chinmaya-cvp-patriotism-swachhata",
+    title: "Patriotism & Civic Seva: Swachhata Cleanliness Drive",
+    category: "celebrations",
+    event: "Civic Outreach",
+    academicYear: "2024-25",
+    date: "October 2024",
+    imageUrl: "/images/pages/home/pillars/pillar-03-patriotism.png",
+    caption: "Student volunteers demonstrating active patriotism and community seva through campus Swachhata cleanliness drives under the Chinmaya Vision Programme."
+  },
+  {
     id: "gal-2",
     title: "Athletic Meet & Inter-House Sports Championship",
     category: "sports",

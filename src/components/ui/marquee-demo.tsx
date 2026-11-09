@@ -92,7 +92,9 @@ export default function MarqueeAlongSvgPathDemo() {
                     link.style.display = 'none';
                   }
                 }}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none select-none"
+                className={`w-full h-full transition-transform duration-500 group-hover:scale-110 pointer-events-none select-none ${
+                  img.src.includes('pillar-03') ? 'object-cover object-[center_12%]' : 'object-cover'
+                }`}
                 draggable={false}
               />
             </Link>
