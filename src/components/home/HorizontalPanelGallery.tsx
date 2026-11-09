@@ -282,8 +282,12 @@ export const HorizontalPanelGallery: React.FC = () => {
                         decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget;
-                          if (!target.src.includes('/images/banner-1.webp')) {
-                            target.src = '/images/banner-1.webp';
+                          if (target.src.includes('.webp')) {
+                            target.src = target.src.replace(/\.webp($|\?)/, '.jpg$1');
+                            return;
+                          }
+                          if (!target.src.includes('/images/banner-1.jpg')) {
+                            target.src = '/images/banner-1.jpg';
                           }
                         }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
@@ -308,8 +312,12 @@ export const HorizontalPanelGallery: React.FC = () => {
                         decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget;
-                          if (!target.src.includes('/images/banner-1.webp')) {
-                            target.src = '/images/banner-1.webp';
+                          if (target.src.includes('.webp')) {
+                            target.src = target.src.replace(/\.webp($|\?)/, '.jpg$1');
+                            return;
+                          }
+                          if (!target.src.includes('/images/banner-1.jpg')) {
+                            target.src = '/images/banner-1.jpg';
                           }
                         }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 

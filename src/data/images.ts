@@ -99,10 +99,10 @@ export const HOME_VALUES_TILES = [
 import { OFFICIAL_GALLERY } from './gallery';
 
 export const PANEL_B_MOVING_GALLERY_COL1 = [
-  { src: "/images/banner-1.jpg?v=2", title: "School Campus" },
+  { src: "/images/pages/home/mosaic/top-left.webp", title: "Science & Optics Laboratory" },
   { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2", title: "Athletics Championship" },
   { src: "/images/chinmaya/academics/classroom_learning_001.jpg?v=2", title: "Smart Digital Classroom" },
-  { src: "/images/lib.webp?v=2", title: "Central Library" },
+  { src: "/images/pages/home/mosaic/bottom-left.webp", title: "Central Reference Library" },
   { src: "/images/chinmaya/cultural/arts_and_creativity_003.jpg?v=2", title: "Arts & Creativity" },
   { src: "/images/chinmaya-web-science.webp?v=2", title: "Science Exhibition" },
   { src: "/images/04-academics/sports/sports-1.jpg?v=2", title: "Indoor Sports Pavilion" },
@@ -111,10 +111,10 @@ export const PANEL_B_MOVING_GALLERY_COL1 = [
 
 export const PANEL_B_MOVING_GALLERY_COL2 = [
   { src: "/images/04-academics/labs/computer/it-1.jpg?v=2", title: "Computer & Coding Lab" },
-  { src: "/images/banner-9.webp?v=2", title: "Annual Day Celebrations" },
+  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Classroom Studies" },
   { src: "/images/chinmaya/sports/sports_athletic_meet_003.jpg?v=2", title: "Inter-House March Past" },
   { src: "/images/chinmaya/cultural/cultural_celebration_100.jpg?v=2", title: "Classical Indian Dance" },
-  { src: "/images/chinmaya/academics/classroom_learning_016.jpg?v=2", title: "Interactive Learning" },
+  { src: "/images/pages/home/mosaic/bottom-right.webp", title: "Interactive Academic Discussion" },
   { src: "/images/chinmaya/cultural/cultural_celebration_106.jpg?v=2", title: "Stage Festivities" },
   { src: "/images/chinmaya/cultural/arts_and_creativity_006.jpg?v=2", title: "Creative Exhibition" },
   { src: "/images/banner-8.webp?v=2", title: "Sports Championship" },
