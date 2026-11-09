@@ -181,102 +181,86 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
         {/* ------------------------------------------------------------------
             MASTER 3-COLUMN EDITORIAL SHOWCASE
             ------------------------------------------------------------------ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
+        {/* ------------------------------------------------------------------
+            MASTER 2-COLUMN HEROIC SHOWCASE (BIG VISUAL + NARRATIVE)
+            ------------------------------------------------------------------ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-center">
           
           {/* ================================================================
-              LEFT COLUMN: FOUNDATIONAL PILLAR TITLE + NAVIGATION CONTROLS
+              LEFT COLUMN: HEROIC PHOTO CARD WITH CONTROLS (lg:col-span-6)
               ================================================================ */}
-          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-center items-start space-y-5">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current.num}
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 16 }}
-                transition={{ duration: 0.28, ease: 'easeOut' }}
-                className="space-y-1 w-full"
-              >
-                <p
-                  style={{ color: 'var(--color-text)' }}
-                  className="text-xs sm:text-sm lg:text-base font-mono uppercase tracking-wider text-slate-600 font-bold"
-                >
-                  FOUNDATIONAL PILLAR
-                </p>
-                <h3
-                  style={{ color: 'var(--color-primary)' }}
-                  className="text-2xl sm:text-3xl lg:text-[28px] xl:text-[34px] 2xl:text-4xl font-display font-black uppercase tracking-tight leading-[1.1] m-0 break-words whitespace-pre-line"
-                >
-                  <Link to={current.targetUrl} className="hover:opacity-90 transition-opacity">
-                    {current.shortTitle}
-                  </Link>
-                </h3>
-                <span
-                  style={{ color: 'var(--color-text)' }}
-                  className="block text-xs font-mono uppercase tracking-wider pt-2 font-semibold opacity-75 leading-relaxed"
-                >
-                  PILLAR {current.num} • {current.sanskrit}
-                </span>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Circular Navigation Buttons & Counter */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                onClick={prevPillar}
-                aria-label="Previous Pillar"
-                className="w-12 h-12 rounded-full border border-[var(--color-border)] bg-white text-[var(--color-text)] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={nextPillar}
-                aria-label="Next Pillar"
-                className="w-12 h-12 rounded-full border border-[var(--color-border)] bg-white text-[var(--color-text)] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <span className="font-mono text-xs sm:text-sm tracking-widest text-slate-500 font-bold pl-2">
-                {current.num} / 04
-              </span>
-            </div>
-          </div>
-
-          {/* ================================================================
-              CENTER COLUMN: SINGLE AUTHORITATIVE PILLAR IMAGE
-              ================================================================ */}
-          <div className="lg:col-span-4 xl:col-span-4 flex justify-center items-center py-2">
-            <div className="relative w-full max-w-[420px] xl:max-w-[460px] flex items-center justify-center">
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-3">
+            <div className="relative w-full">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.num}
-                  initial={{ opacity: 0, scale: 0.96 }}
+                  initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.35, ease: 'easeOut' }}
-                  className="w-full flex items-center justify-center"
+                  className="w-full"
                 >
                   <Link
                     to={current.targetUrl}
                     title={`Explore ${current.pillarTitle}`}
-                    className="w-full flex items-center justify-center cursor-pointer group"
+                    className="block w-full group cursor-pointer"
                   >
-                    <div className="w-full aspect-[3/2] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_16px_36px_rgba(0,0,0,0.14)] border-2 border-[#E7E2D8] bg-slate-900 relative">
+                    <div className="relative w-full aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.16)] border-2 border-[#E7E2D8] bg-slate-900">
+                      {/* Floating Pillar Badge in Top-Left Corner */}
+                      <div className="absolute top-3.5 left-3.5 sm:top-5 sm:left-5 z-20 px-3.5 py-1.5 rounded-xl bg-black/65 backdrop-blur-md border border-white/20 text-white flex items-center gap-2 shadow-lg">
+                        <span className="font-mono text-xs sm:text-sm font-extrabold text-[#DF711B]">
+                          PILLAR {current.num}
+                        </span>
+                        <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold hidden xs:inline">
+                          • {current.tabLabel}
+                        </span>
+                      </div>
+
                       <img
                         src={current.image}
                         alt={current.pillarTitle}
-                        className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 ease-out group-hover:scale-105"
+                        className="w-full h-full object-cover object-center opacity-100 transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                     </div>
                   </Link>
                 </motion.div>
               </AnimatePresence>
+
+              {/* Navigation Controls Bar directly below photo */}
+              <div className="flex items-center justify-between pt-3.5 px-1">
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={prevPillar}
+                    aria-label="Previous Pillar"
+                    className="w-11 h-11 rounded-full border border-[var(--color-border)] bg-white text-[var(--color-text)] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={nextPillar}
+                    aria-label="Next Pillar"
+                    className="w-11 h-11 rounded-full border border-[var(--color-border)] bg-white text-[var(--color-text)] flex items-center justify-center hover:bg-[var(--color-dark)] hover:text-white hover:border-[var(--color-dark)] transition-colors shadow-sm cursor-pointer"
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <span className="font-mono text-xs sm:text-sm tracking-widest text-slate-500 font-bold pl-1">
+                    {current.num} / 04
+                  </span>
+                </div>
+
+                <div className="text-right">
+                  <span className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
+                    {current.sanskrit}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* ================================================================
-              RIGHT COLUMN: EXPLANATION, GUIDING VISION, KEY POINTS, AND CTA
+              RIGHT COLUMN: EDITORIAL NARRATIVE & ACTION (lg:col-span-6)
               ================================================================ */}
-          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-center space-y-5">
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-5 lg:pl-2">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.num}
@@ -288,63 +272,46 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
               >
                 {/* Pillar Subtitle Tag & Full Title */}
                 <div>
-                  <span
-                    style={{ color: 'var(--color-primary)' }}
-                    className="text-sm sm:text-base font-sans font-bold uppercase tracking-wider block"
-                  >
-                    {current.subtitleTag}
-                  </span>
-                  <h4
-                    style={{ color: 'var(--color-text)' }}
-                    className="text-xl sm:text-2xl font-display font-black uppercase tracking-tight mt-0.5"
-                  >
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#DF711B]">
+                      FOUNDATIONAL PILLAR {current.num} • CVP ARCHITECTURE
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-black uppercase tracking-tight text-[#181C20] leading-tight mt-1">
                     <Link to={current.targetUrl} className="hover:text-[var(--color-primary)] transition-colors">
                       {current.pillarTitle}
                     </Link>
-                  </h4>
+                  </h3>
+                  <p className="text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider text-[#DF711B] mt-1">
+                    {current.subtitleTag}
+                  </p>
                 </div>
 
-                {/* Written Narrative (Vision Statement, Pedagogical Explanation & Key Points) - Hidden on Mobile View */}
-                <div className="hidden lg:block space-y-4">
-                  {/* Core Guiding Vision Statement */}
-                  <blockquote
-                    style={{ color: 'var(--color-text)' }}
-                    className="font-sans text-sm sm:text-base leading-relaxed italic border-l-2 border-[var(--color-primary)] pl-3.5 text-slate-700 font-normal"
-                  >
-                    "{current.visionStatement}"
-                  </blockquote>
+                {/* Core Guiding Vision Quote */}
+                <blockquote className="font-sans text-sm sm:text-[15px] leading-relaxed italic border-l-4 border-[#DF711B] bg-amber-50/50 p-3.5 rounded-r-xl text-slate-800 font-medium">
+                  "{current.visionStatement}"
+                </blockquote>
 
-                  {/* Pedagogical Explanation */}
-                  <p
-                    style={{ color: 'var(--color-text)' }}
-                    className="font-sans text-xs sm:text-sm leading-relaxed text-slate-600 font-normal"
-                  >
-                    {current.explanation}
-                  </p>
+                {/* Pedagogical Explanation */}
+                <p className="font-sans text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
+                  {current.explanation}
+                </p>
 
-                  {/* Key Points list */}
-                  <div className="space-y-2 pt-1 border-t border-[var(--color-border)]">
-                    {current.keyPoints.map((pt, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700">
-                        <CheckCircle2
-                          style={{ color: 'var(--color-primary)' }}
-                          className="w-4 h-4 shrink-0 mt-0.5"
-                        />
-                        <span>{pt}</span>
-                      </div>
-                    ))}
-                  </div>
+                {/* Key Points 2x2 Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-[var(--color-border)]">
+                  {current.keyPoints.map((pt, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs sm:text-[12.5px] text-slate-700 bg-white border border-[#E7E2D8] rounded-xl p-2.5 shadow-2xs">
+                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-[#DF711B]" />
+                      <span className="leading-snug">{pt}</span>
+                    </div>
+                  ))}
                 </div>
 
                 {/* Discover Pillar Action Button */}
                 <div className="pt-2">
                   <Link
                     to={current.targetUrl}
-                    style={{
-                      backgroundColor: 'var(--color-primary)',
-                      color: 'var(--color-primary-text)',
-                    }}
-                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none uppercase font-bold text-xs sm:text-sm tracking-wider transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-sm"
+                    className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#DF711B] text-white hover:bg-[#181818] uppercase font-bold text-xs sm:text-sm tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg rounded-xl cursor-pointer"
                   >
                     <span>EXPLORE THIS PILLAR</span>
                     <ArrowRight className="w-4 h-4" />
