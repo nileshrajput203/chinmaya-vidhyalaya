@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { FolderOpen } from "lucide-react"
 import MarqueeAlongSvgPath from "@/components/ui/marquee-along-svg-path"
-import { MARQUEE_GALLERY_IMAGES } from "@/data/images"
+import { OFFICIAL_GALLERY } from "@/data/gallery"
 
 // The path starts off-screen left (-150), flows across the viewport in a dynamic loop,
 // and swoops straight into the open mouth of the 3D tilted "View Gallery" folder on the right (~1090, 172).
@@ -10,6 +10,12 @@ const path =
   "M-150 210C-50 280 150 340 350 230C480 150 420 68 350 110C280 155 310 270 480 285C620 300 800 225 930 180C980 162 1035 166 1090 172"
 
 export default function MarqueeAlongSvgPathDemo() {
+  // Sourced directly from current active official photo gallery
+  const galleryPhotos = OFFICIAL_GALLERY.map((item) => ({
+    id: item.id,
+    src: item.imageUrl,
+    alt: item.title,
+  }));
   return (
     <div className="w-full bg-white overflow-hidden border-y border-slate-200 relative select-none py-4 sm:py-6">
       
@@ -70,10 +76,10 @@ export default function MarqueeAlongSvgPathDemo() {
           grabCursor
           preserveAspectRatio="none"
         >
-          {imgs.map((img, i) => (
+          {galleryPhotos.map((img, i) => (
             <Link
               to="/gallery"
-              key={i}
+              key={`${img.id || img.src}-${i}`}
               className="group block relative w-20 h-20 sm:w-24 sm:h-24 aspect-square rounded-2xl overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.22)] border-2 border-white/90 bg-neutral-900 hover:scale-125 hover:shadow-[0_12px_28px_rgba(0,0,0,0.4)] hover:border-amber-300 duration-300 ease-out transition-all shrink-0 cursor-pointer"
             >
               <img
@@ -191,6 +197,3 @@ export default function MarqueeAlongSvgPathDemo() {
     </div>
   )
 }
-
-// Sourced directly from central `src/data/images.ts`
-const imgs = MARQUEE_GALLERY_IMAGES;
