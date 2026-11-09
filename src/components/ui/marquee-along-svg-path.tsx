@@ -443,7 +443,8 @@ const MarqueeAlongSvgPath = ({
               offsetPath: `path('${path}')`,
               offsetDistance: itemOffset,
               zIndex: enableRollingZIndex ? zIndex : undefined,
-              willChange: "offset-distance",
+              willChange: "offset-distance, transform",
+              transform: "translateZ(0)",
               backfaceVisibility: "hidden",
               ...cssVariables,
             }}
