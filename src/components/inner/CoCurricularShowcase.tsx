@@ -1,4 +1,7 @@
+import React, { useState, useEffect } from 'react';
 import { InfiniteLoopGallery, type InfiniteGalleryItem } from '../ui/infinite-loop-gallery';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ChevronLeft, ChevronRight, Camera, Sparkles } from 'lucide-react';
 
 /* ────────────────────────────────────────────────────────
    Activity List Data - Official, Relevant Standard Emojis
@@ -14,16 +17,16 @@ interface Activity {
 
 const ACTIVITIES: Activity[] = [
   { name: 'Dance', emoji: '💃', color: '#F59E0B', bgColor: 'bg-amber-50' },
-  { name: 'Arts', emoji: '🎨', color: '#10B981', bgColor: 'bg-emerald-50' },
-  { name: 'Music', emoji: '🎵', color: '#3B82F6', bgColor: 'bg-blue-50' },
+  { name: 'Arts & Craft', emoji: '🎨', color: '#10B981', bgColor: 'bg-emerald-50' },
+  { name: 'Music & Choir', emoji: '🎵', color: '#3B82F6', bgColor: 'bg-blue-50' },
   { name: 'Commando Training', emoji: '🎖️', color: '#DC2626', bgColor: 'bg-red-50' },
   { name: 'Public Speaking', emoji: '🎙️', color: '#8B5CF6', bgColor: 'bg-purple-50' },
   { name: 'Gita Chanting', emoji: '🕉️', color: '#EA580C', bgColor: 'bg-orange-50' },
-  { name: 'Coding', emoji: '💻', color: '#6366F1', bgColor: 'bg-indigo-50' },
-  { name: 'Sports', emoji: '🏆', color: '#DF711B', bgColor: 'bg-orange-50' },
+  { name: 'Coding & Tech', emoji: '💻', color: '#6366F1', bgColor: 'bg-indigo-50' },
+  { name: 'Sports & Athletics', emoji: '🏆', color: '#DF711B', bgColor: 'bg-orange-50' },
   { name: 'Library Programme', emoji: '📚', color: '#0891B2', bgColor: 'bg-teal-50' },
   { name: 'Student Council', emoji: '👥', color: '#0B1E34', bgColor: 'bg-slate-50' },
-  { name: 'Trip & Expeditions', emoji: '🧭', color: '#D97706', bgColor: 'bg-amber-50' },
+  { name: 'Trips & Expeditions', emoji: '🧭', color: '#D97706', bgColor: 'bg-amber-50' },
   { name: 'Health & Nutrition', emoji: '🥗', color: '#16A34A', bgColor: 'bg-green-50' },
   { name: 'Yoga & Wellness', emoji: '🧘', color: '#059669', bgColor: 'bg-emerald-50' },
   { name: 'Quiz & Debates', emoji: '💡', color: '#7C3AED', bgColor: 'bg-violet-50' },
@@ -33,236 +36,529 @@ const ACTIVITIES: Activity[] = [
 ];
 
 /* ────────────────────────────────────────────────────────
-   Gallery Image Data - Real, Verified School Photos
+   Official Co-Curricular Photographic Archives (19 Photos)
+   Sourced directly from verified campus folder
    ──────────────────────────────────────────────────────── */
 
-const row1GalleryImages: InfiniteGalleryItem[] = [
+export interface CoCurricularPhotoItem extends InfiniteGalleryItem {
+  id: string;
+  title: string;
+  category: string;
+  groupCategory: 'arts' | 'literary' | 'leadership' | 'campus';
+  desc: string;
+  url: string;
+  fallbackUrl: string;
+  badge: string;
+}
+
+const ALL_CO_CURRICULAR_PHOTOS: CoCurricularPhotoItem[] = [
+  // ── ROW 1 ITEMS (10 Photos) ──
   {
-    id: 'row1-1',
-    title: 'Annual Athletic Meet',
-    category: 'Sports & Athletics',
-    desc: 'Opening ceremony and stadium track events featuring all four school houses.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_001.jpg',
+    id: 'cc-01',
+    title: 'Maharashtra Din Theatrical Pageant',
+    category: 'Drama & Cultural Heritage',
+    groupCategory: 'arts',
+    desc: 'Grand historical stage production featuring Chhatrapati Shivaji Maharaj, Warkari saints, and student dramatic dialogue honoring state heritage.',
+    url: '/images/co-curricular/screenshot_2026-11-06_190042.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-06_190042.jpg',
+    badge: 'Stage Drama',
   },
   {
-    id: 'row1-2',
-    title: 'Relay Sprint Championships',
-    category: 'Track Finals',
-    desc: 'High-intensity sprint finals showcasing student speed, form, and house spirit.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_002.jpg',
+    id: 'cc-02',
+    title: 'Tagore Club Vaani Utsav',
+    category: 'Public Speaking & Debates',
+    groupCategory: 'literary',
+    desc: 'Inter-school linguistic symposium with bilingual debates, English elocution, and expressive Marathi storytelling competitions.',
+    url: '/images/co-curricular/screenshot_2026-11-09_110310.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_110310.jpg',
+    badge: 'Debate & Elocution',
   },
   {
-    id: 'row1-3',
-    title: 'March Past Parade',
-    category: 'House Discipline',
-    desc: 'Disciplined parade and salute by the four houses before the ceremonial flame.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_003.jpg',
+    id: 'cc-03',
+    title: 'Gokulashtami Festive Gathering',
+    category: 'Cultural Celebrations',
+    groupCategory: 'arts',
+    desc: 'Vibrant school courtyard assembly with primary students attired in traditional Radha-Krishna ceremonial costumes for festival celebrations.',
+    url: '/images/co-curricular/img_3536.webp',
+    fallbackUrl: '/images/co-curricular/img_3536.jpg',
+    badge: 'Festival Assembly',
   },
   {
-    id: 'row1-4',
-    title: 'Track & Field Athletics',
-    category: 'Field Events',
-    desc: 'Team coordination, stamina, and athletic agility on expansive school grounds.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_004.jpg',
+    id: 'cc-04',
+    title: 'Independence Day Patriotic Choir',
+    category: 'Vocal Ensemble & Music',
+    groupCategory: 'arts',
+    desc: 'Harmonious choral anthems and patriotic melodies rendered during National Day celebrations on the main auditorium stage.',
+    url: '/images/co-curricular/screenshot_2026-11-09_113942.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_113942.jpg',
+    badge: 'Patriotic Choir',
   },
   {
-    id: 'row1-5',
-    title: 'Ceremonial Torch Relay',
-    category: 'Sports Honours',
-    desc: 'Flame lighting ceremony marking the formal opening of the inter-house championship.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_005.jpg',
+    id: 'cc-05',
+    title: 'Elected Student Council Address',
+    category: 'Student Governance & Leadership',
+    groupCategory: 'leadership',
+    desc: 'Head Girl delivering the inaugural leadership address before the Sinhagad and Shivneri house contingents from the school podium.',
+    url: '/images/co-curricular/screenshot_2026-11-09_125227.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_125227.jpg',
+    badge: 'Student Council',
   },
   {
-    id: 'row1-6',
-    title: 'Track Finish Decider',
-    category: 'Athletics Decider',
-    desc: 'Thrilling photo-finish moment cheered on by faculty, students, and parents.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_006.jpg',
+    id: 'cc-06',
+    title: 'Traditional Lezim & Folk Procession',
+    category: 'Folk Dance & Rhythm',
+    groupCategory: 'arts',
+    desc: 'Energetic traditional Lezim and Dandiya performance leading community cultural processions across campus avenues.',
+    url: '/images/co-curricular/screenshot_2026-11-09_125427.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_125427.jpg',
+    badge: 'Folk Dance',
   },
   {
-    id: 'row1-7',
-    title: 'Athlete Sprint Focus',
-    category: 'Track Finals',
-    desc: 'Student runners maintaining stride and competitive spirit in the 200m dash.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_007.jpg',
+    id: 'cc-07',
+    title: 'Classical Kathak Dance Ensemble',
+    category: 'Classical Performing Arts',
+    groupCategory: 'arts',
+    desc: 'Graceful rhythmic invocations and devotional dance recitals in traditional white-and-gold attire during school functions.',
+    url: '/images/co-curricular/screenshot_2026-11-09_130100.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_130100.jpg',
+    badge: 'Classical Dance',
   },
   {
-    id: 'row1-8',
-    title: 'Sports Day March Contingents',
-    category: 'Parade Discipline',
-    desc: 'Marching contingents bearing house flags with pride, rhythm, and coordination.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_008.jpg',
+    id: 'cc-08',
+    title: 'Origami & Creative Papercraft',
+    category: 'Visual Arts & Craft',
+    groupCategory: 'campus',
+    desc: 'Hands-on tactile craft, origami paper-folding, and imaginative model-building in primary scholastic studios.',
+    url: '/images/co-curricular/img_5144.webp',
+    fallbackUrl: '/images/co-curricular/img_5144.jpg',
+    badge: 'Creative Craft',
   },
   {
-    id: 'row1-9',
-    title: 'Podium Medal Ceremony',
-    category: 'Sports Honours',
-    desc: 'Proud prize distribution celebrating student achievers and athletic excellence.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_009.jpg',
+    id: 'cc-09',
+    title: 'Rotary Interact Tree Plantation Drive',
+    category: 'Eco-Club & Conservation',
+    groupCategory: 'leadership',
+    desc: 'Student environmental leaders driving green canopy expansion in partnership with the Rotary Club of Boisar-Tarapur.',
+    url: '/images/co-curricular/screenshot_2026-11-09_131039.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_131039.jpg',
+    badge: 'Eco-Club Seva',
   },
   {
-    id: 'row1-10',
-    title: 'Field Athletics Championship',
-    category: 'Field Events',
-    desc: 'Precision field competitions fostering sportsmanship and perseverance.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_010.jpg',
+    id: 'cc-10',
+    title: 'Senior Physics Laboratory Inquiry',
+    category: 'Science & Innovation Expo',
+    groupCategory: 'campus',
+    desc: 'Senior secondary students conducting precision potentiometer, electrical resistance, and optical bench experiments.',
+    url: '/images/co-curricular/img_5037.webp',
+    fallbackUrl: '/images/co-curricular/img_5037.jpg',
+    badge: 'Science Labs',
+  },
+
+  // ── ROW 2 ITEMS (9 Photos) ──
+  {
+    id: 'cc-11',
+    title: 'National Flag Salutation Ceremony',
+    category: 'Patriotism & Civic Ceremony',
+    groupCategory: 'leadership',
+    desc: 'Ceremonial flag hoisting with school trustees, faculty, and student house contingents united in patriotic salutation.',
+    url: '/images/co-curricular/screenshot_2026-11-06_190331.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-06_190331.jpg',
+    badge: 'Flag Salute',
   },
   {
-    id: 'row1-11',
-    title: 'Inter-House Athletic Trophy',
-    category: 'Championship',
-    desc: 'House captains hoisting the rolling championship cup with jubilant house teams.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_011.jpg',
+    id: 'cc-12',
+    title: 'Harmonium & Classical Bhajan Recital',
+    category: 'Classical Music & Gita Chanting',
+    groupCategory: 'arts',
+    desc: 'Devotional morning prayers, traditional harmonium accompaniment, and sacred Sanskrit shloka chanting in prayer assembly.',
+    url: '/images/co-curricular/screenshot_2026-11-09_114757.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_114757.jpg',
+    badge: 'Vocal & Harmonium',
   },
   {
-    id: 'row1-12',
-    title: 'Commando Training & Obstacle Drills',
-    category: 'Physical Resilience',
-    desc: 'Disciplined tactical agility, stamina conditioning, and obstacle mastery.',
-    url: '/images/chinmaya/sports/sports_athletic_meet_014.jpg',
+    id: 'cc-13',
+    title: 'Swachhata Seva Community Cleanliness',
+    category: 'Community Seva & Health',
+    groupCategory: 'leadership',
+    desc: 'Active student volunteerism championing civic cleanliness, hygiene, and environmental sanitation across Boisar parks.',
+    url: '/images/co-curricular/screenshot_2026-11-09_125110.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_125110.jpg',
+    badge: 'Swachhata Seva',
+  },
+  {
+    id: 'cc-14',
+    title: 'Historical Drama Dialogue & Stagecraft',
+    category: 'Drama & Expression',
+    groupCategory: 'literary',
+    desc: 'Dramatic stage characterizations cultivating public poise, voice modulation, and expressiveness in front of large audiences.',
+    url: '/images/co-curricular/screenshot_2026-11-09_105920.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_105920.jpg',
+    badge: 'Dramatic Arts',
+  },
+  {
+    id: 'cc-15',
+    title: 'Central Library Scholastic Archives',
+    category: 'Library Programme & Reading',
+    groupCategory: 'literary',
+    desc: 'Expansive scholastic reading hall, curated literature volumes, reference stacks, and digital study stations.',
+    url: '/images/co-curricular/screenshot_2026-11-09_130225.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_130225.jpg',
+    badge: 'Library & Reading',
+  },
+  {
+    id: 'cc-16',
+    title: 'Balvihar Cultural Pageant',
+    category: 'Heritage & Balvihar',
+    groupCategory: 'arts',
+    desc: 'Young learners embodying sacred cultural stories in traditional adorned ceremonial regalia with peacock crowns.',
+    url: '/images/co-curricular/screenshot_2026-11-09_130426.webp',
+    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_130426.jpg',
+    badge: 'Balvihar Heritage',
+  },
+  {
+    id: 'cc-17',
+    title: 'Interactive Smart Board Lab',
+    category: 'Coding & Digital Learning',
+    groupCategory: 'campus',
+    desc: 'Collaborative digital problem-solving and presentation sessions on interactive smart boards in senior classrooms.',
+    url: '/images/co-curricular/img_5155.webp',
+    fallbackUrl: '/images/co-curricular/img_5155.jpg',
+    badge: 'Smart Classroom',
+  },
+  {
+    id: 'cc-18',
+    title: 'Student Council Executive Boardroom',
+    category: 'Leadership & Student Governance',
+    groupCategory: 'leadership',
+    desc: 'Formal executive conferencing room hosting house captain strategy meetings, student debates, and event planning.',
+    url: '/images/co-curricular/img_5341.webp',
+    fallbackUrl: '/images/co-curricular/img_5341.jpg',
+    badge: 'Council Room',
+  },
+  {
+    id: 'cc-19',
+    title: 'Vidyalaya Campus & Sports Grounds',
+    category: 'Sports & Campus Life',
+    groupCategory: 'campus',
+    desc: 'Sunlit green campus entrance, sports field access, and student achievers pavilion welcoming active student life.',
+    url: '/images/co-curricular/img_3630.webp',
+    fallbackUrl: '/images/co-curricular/img_3630.jpg',
+    badge: 'Campus & Sports',
   },
 ];
 
-const row2GalleryImages: InfiniteGalleryItem[] = [
-  {
-    id: 'row2-1',
-    title: 'Classical Dance Drama',
-    category: 'Performing Arts',
-    desc: 'Graceful Bharatanatyam and thematic stage recitals on the grand stage.',
-    url: '/images/chinmaya/cultural/cultural_celebration_006.jpg',
-  },
-  {
-    id: 'row2-2',
-    title: 'Fine Arts & Canvas Painting',
-    category: 'Visual Arts',
-    desc: 'Student oil paintings, watercolor landscapes, and creative art exhibits.',
-    url: '/images/chinmaya/cultural/arts_and_creativity_001.jpg',
-  },
-  {
-    id: 'row2-3',
-    title: 'Annual Theatre Production',
-    category: 'Drama & Theatre',
-    desc: 'Dramatic stage plays building voice modulation, confidence, and expression.',
-    url: '/images/chinmaya/cultural/cultural_celebration_020.jpg',
-  },
-  {
-    id: 'row2-4',
-    title: 'Clay Modelling & Pottery',
-    category: 'Fine Crafts',
-    desc: 'Hands-on clay sculpturing and tactile art sessions celebrating heritage craft.',
-    url: '/images/chinmaya/cultural/arts_and_creativity_005.jpg',
-  },
-  {
-    id: 'row2-5',
-    title: 'Traditional Folk Dance',
-    category: 'Cultural Heritage',
-    desc: 'Vibrant regional folk dances showcasing India’s rich artistic diversity.',
-    url: '/images/chinmaya/cultural/cultural_celebration_015.jpg',
-  },
-  {
-    id: 'row2-6',
-    title: 'Handicrafts & Textile Arts',
-    category: 'Creative Workshop',
-    desc: 'Tie-and-dye fabric design, embroidery, and vibrant handcrafted textiles.',
-    url: '/images/chinmaya/cultural/arts_and_creativity_012.jpg',
-  },
-  {
-    id: 'row2-7',
-    title: 'Choir & Vocal Ensemble',
-    category: 'Music',
-    desc: 'Melodious choir performances, classical bhajans, and patriotic anthems.',
-    url: '/images/chinmaya/cultural/cultural_celebration_048.jpg',
-  },
-  {
-    id: 'row2-8',
-    title: 'Science & Innovation Expo',
-    category: 'Science & Maths Learning',
-    desc: 'Interactive chemical experiments and scientific working models.',
-    url: '/images/chinmaya/academics/science_stem_lab_01.jpg',
-  },
-  {
-    id: 'row2-9',
-    title: 'Eco-Club Nature & Forestry',
-    category: 'Environmental Club',
-    desc: 'Campus tree plantation drives and environmental stewardship workshops.',
-    url: '/images/chinmaya/cultural/cultural_celebration_073.jpg',
-  },
-  {
-    id: 'row2-10',
-    title: 'Classical Instrumental Ensemble',
-    category: 'Music Academy',
-    desc: 'Tabla, harmonium, and keyboard orchestration during cultural gatherings.',
-    url: '/images/chinmaya/cultural/cultural_celebration_040.jpg',
-  },
-];
+// Row 1 & Row 2 for Infinite Loop Gallery (All 19 photos distributed)
+const row1GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(0, 10);
+const row2GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(10);
 
 /* ────────────────────────────────────────────────────────
-   Main Component
+   Main Co-Curricular Showcase Component
    ──────────────────────────────────────────────────────── */
 
 export const CoCurricularShowcase: React.FC = () => {
-  return (
-    <div className="space-y-12">
+  const [selectedPhoto, setSelectedPhoto] = useState<CoCurricularPhotoItem | null>(null);
+  const [activeFilter, setActiveFilter] = useState<'all' | 'arts' | 'literary' | 'leadership' | 'campus'>('all');
 
-      {/* ─── SECTION 1: Activity List - Unique Animated Grid ─── */}
+  const filteredPhotos = ALL_CO_CURRICULAR_PHOTOS.filter((p) => {
+    if (activeFilter === 'all') return true;
+    return p.groupCategory === activeFilter;
+  });
+
+  // Modal navigation
+  const handleNextModal = () => {
+    if (!selectedPhoto) return;
+    const currentIndex = filteredPhotos.findIndex((p) => p.id === selectedPhoto.id);
+    const nextIndex = (currentIndex + 1) % filteredPhotos.length;
+    setSelectedPhoto(filteredPhotos[nextIndex]);
+  };
+
+  const handlePrevModal = () => {
+    if (!selectedPhoto) return;
+    const currentIndex = filteredPhotos.findIndex((p) => p.id === selectedPhoto.id);
+    const prevIndex = (currentIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
+    setSelectedPhoto(filteredPhotos[prevIndex]);
+  };
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedPhoto) return;
+      if (e.key === 'Escape') setSelectedPhoto(null);
+      if (e.key === 'ArrowRight') handleNextModal();
+      if (e.key === 'ArrowLeft') handlePrevModal();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedPhoto, filteredPhotos]);
+
+  return (
+    <div className="space-y-16">
+
+      {/* ─── SECTION 1: Activity Matrix ─── */}
       <div className="space-y-6">
         <div className="space-y-2 text-center">
-          <h2 className="font-cinzel text-2xl sm:text-4xl font-extrabold text-[#181C20] pt-2">
-            Co-Curricular
+          <span className="block text-xs font-mono uppercase tracking-[0.25em] text-[#DF711B] font-bold">
+            HOLISTIC STUDENT ENRICHMENT • NON-SCHOLASTIC CURRICULUM
+          </span>
+          <h2 className="font-cinzel text-2xl sm:text-4xl font-extrabold text-[#181C20] pt-1">
+            Co-Curricular Programmes
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-            From performing arts to competitive sports, creative workshops to student governance - explore the full range of co-curricular programmes available to our students.
+            From performing arts to competitive athletics, literary societies to student governance — discover the 17 multidisciplinary programmes nurturing every child at Chinmaya Vidyalaya Tarapur.
           </p>
         </div>
 
         {/* Interactive Activity Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-          {ACTIVITIES.map((activity, idx) => {
-            return (
+          {ACTIVITIES.map((activity, idx) => (
+            <div
+              key={activity.name}
+              className={`${activity.bgColor} relative border border-[#E7E2D8] rounded-2xl p-4 sm:p-5 hover:border-[#DF711B]/40 hover:shadow-md transition-all duration-200 cursor-default select-none`}
+            >
+              {/* Floating Badge (Coming Soon or Index) */}
+              {activity.isComingSoon ? (
+                <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#DF711B] text-white text-[8px] font-mono font-bold uppercase tracking-wider shadow-2xs">
+                  Coming Soon
+                </span>
+              ) : (
+                <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-300">
+                  {String(idx + 1).padStart(2, '0')}
+                </span>
+              )}
+
+              {/* Official Standard Emoji */}
               <div
-                key={activity.name}
-                className={`${activity.bgColor} relative border border-[#E7E2D8] rounded-2xl p-4 sm:p-5 hover:border-[#DF711B]/40 transition-colors cursor-default`}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-3 shadow-xs text-2xl sm:text-3xl select-none"
+                style={{ backgroundColor: activity.color + '18' }}
               >
-                {/* Floating Badge (Coming Soon or Index) */}
-                {activity.isComingSoon ? (
-                  <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#DF711B] text-white text-[8px] font-mono font-bold uppercase tracking-wider shadow-2xs">
-                    Coming Soon
-                  </span>
-                ) : (
-                  <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-300">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                )}
-
-                {/* Official Standard Emoji */}
-                <div
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-3 shadow-sm text-2xl sm:text-3xl select-none"
-                  style={{ backgroundColor: activity.color + '18' }}
-                >
-                  <span role="img" aria-label={activity.name}>{activity.emoji}</span>
-                </div>
-
-                {/* Activity Name */}
-                <h4 className="font-cinzel font-bold text-sm sm:text-base text-[#181C20] leading-tight">
-                  {activity.name}
-                </h4>
-
-                {activity.isComingSoon && (
-                  <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block mt-1.5">
-                    Coming Soon
-                  </span>
-                )}
+                <span role="img" aria-label={activity.name}>{activity.emoji}</span>
               </div>
-            );
-          })}
+
+              {/* Activity Name */}
+              <h4 className="font-cinzel font-bold text-sm sm:text-base text-[#181C20] leading-tight">
+                {activity.name}
+              </h4>
+
+              {activity.isComingSoon && (
+                <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block mt-1.5">
+                  Coming Soon
+                </span>
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* ─── SECTION 2: Infinite Loop Image Gallery (Left to Right, End-to-End) ─── */}
-      <InfiniteLoopGallery
-        row1Items={row1GalleryImages}
-        row2Items={row2GalleryImages}
-      />
+      {/* ─── SECTION 2: Infinite Loop Panoramic Stream (End-to-End, All 19 Photos) ─── */}
+      <div className="space-y-4">
+        <div className="text-center space-y-1">
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-widest text-[#DF711B]">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>CONTINUOUS PANORAMIC STREAM • REAL CAMPUS EVIDENCE</span>
+          </span>
+          <h3 className="text-xl sm:text-2xl font-cinzel font-bold text-[#181C20]">
+            Live Glimpses of Co-Curricular Life
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
+            Tap any photograph in the stream to examine high-resolution archival evidence with detailed contextual narratives.
+          </p>
+        </div>
+
+        <InfiniteLoopGallery
+          row1Items={row1GalleryImages}
+          row2Items={row2GalleryImages}
+        />
+      </div>
+
+      {/* ─── SECTION 3: Curated Co-Curricular Photo Archives Grid (All 19 Photos) ─── */}
+      <div className="space-y-8 pt-6 border-t border-slate-200">
+        
+        {/* Section Header with Category Filter Chips */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-widest text-[#DF711B]">
+              <Camera className="w-3.5 h-3.5" />
+              <span>PHOTO ARCHIVES • ALL 19 VERIFIED CAMPUS PHOTOS</span>
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-cinzel font-black text-[#181C20] mt-1">
+              Co-Curricular Visual Gallery
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
+              Explore documented moments across arts, literary competitions, civic seva, leadership, and campus celebrations.
+            </p>
+          </div>
+
+          {/* Filter Pills */}
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {[
+              { id: 'all', label: `All (${ALL_CO_CURRICULAR_PHOTOS.length})` },
+              { id: 'arts', label: 'Arts & Stage (6)' },
+              { id: 'literary', label: 'Literary & Debates (3)' },
+              { id: 'leadership', label: 'Leadership & Seva (5)' },
+              { id: 'campus', label: 'Labs & Campus (5)' },
+            ].map((tab) => {
+              const isActive = activeFilter === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveFilter(tab.id as any)}
+                  className={`
+                    px-3 py-1.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer shrink-0
+                    ${
+                      isActive
+                        ? 'bg-[#0B1E34] text-white shadow-xs'
+                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 19 Photos Curated Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {filteredPhotos.map((photo, index) => (
+            <motion.div
+              key={photo.id}
+              layout
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25, delay: index * 0.03 }}
+              onClick={() => setSelectedPhoto(photo)}
+              className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
+            >
+              {/* Photo Frame */}
+              <div className="relative aspect-[16/11] bg-slate-100 overflow-hidden">
+                <img
+                  src={photo.url}
+                  alt={photo.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.includes('.webp')) {
+                      target.src = target.src.replace(/\.webp($|\?)/, '.jpg$1');
+                    }
+                  }}
+                />
+                
+                {/* Floating Tag */}
+                <div className="absolute top-3 left-3">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white shadow-xs">
+                    {photo.badge}
+                  </span>
+                </div>
+
+                {/* Hover overlay hint */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="px-3 py-1.5 rounded-full bg-white/95 text-[#0B1E34] text-xs font-mono font-bold tracking-wider shadow-md">
+                    View Full Image ↗
+                  </span>
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
+                <div>
+                  <span className="block text-[10px] font-mono font-bold uppercase tracking-wider text-[#DF711B]">
+                    {photo.category}
+                  </span>
+                  <h4 className="font-cinzel font-bold text-base text-[#181C20] group-hover:text-[#DF711B] transition-colors mt-0.5 line-clamp-1">
+                    {photo.title}
+                  </h4>
+                  <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1 font-normal">
+                    {photo.desc}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ─── FULL-SCREEN HIGH-RES LIGHTBOX MODAL ─── */}
+      <AnimatePresence>
+        {selectedPhoto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md"
+            onClick={() => setSelectedPhoto(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedPhoto(null)}
+                aria-label="Close Preview"
+                className="absolute top-3 right-3 z-20 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Prev / Next Modal Buttons */}
+              <button
+                onClick={handlePrevModal}
+                aria-label="Previous image"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors cursor-pointer"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={handleNextModal}
+                aria-label="Next image"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors cursor-pointer"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Image Preview Container */}
+              <div className="relative w-full bg-black/95 flex items-center justify-center max-h-[62vh] overflow-hidden select-none">
+                <img
+                  src={selectedPhoto.url}
+                  alt={selectedPhoto.title}
+                  className="max-w-full max-h-[62vh] object-contain mx-auto"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.includes('.webp')) {
+                      target.src = target.src.replace(/\.webp($|\?)/, '.jpg$1');
+                    }
+                  }}
+                />
+              </div>
+
+              {/* Photo Description Drawer */}
+              <div className="p-5 sm:p-6 bg-white overflow-y-auto space-y-2">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#DF711B]">
+                    {selectedPhoto.category}
+                  </span>
+                  <span className="text-[11px] font-mono text-slate-400 font-semibold">
+                    {selectedPhoto.badge}
+                  </span>
+                </div>
+                <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-[#181C20]">
+                  {selectedPhoto.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  {selectedPhoto.desc}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
