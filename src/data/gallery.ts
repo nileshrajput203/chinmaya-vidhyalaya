@@ -133,13 +133,13 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
   },
   {
     id: "chinmaya-cultural-cultural_celebration_016",
-    title: "Cultural Stage & Festive Celebration 016",
-    category: "celebrations",
-    event: "Cultural Fest",
+    title: "Chemistry Lab Titration & Chemical Analysis",
+    category: "academics",
+    event: "Science Labs",
     academicYear: "2026-27",
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_016.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 016 at Chinmaya Vidyalaya, Tarapur."
+    caption: "Senior secondary student performing precision volumetric titration and reagent analysis in the Chemistry Laboratory."
   },
   {
     id: "chinmaya-academics-classroom_learning_016",
@@ -153,13 +153,13 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
   },
   {
     id: "chinmaya-academics-classroom_learning_018",
-    title: "Classroom Interactive Learning 018",
+    title: "Biology Lab Compound Microscopy & Cytology",
     category: "academics",
-    event: "Classroom Life",
+    event: "Science Labs",
     academicYear: "2026-27",
     date: "2026-09-27",
     imageUrl: "/images/chinmaya/academics/classroom_learning_018.jpg?v=2",
-    caption: "Classroom Interactive Learning 018 at Chinmaya Vidyalaya, Tarapur."
+    caption: "Student examining specimen slide structures under a compound microscope in the Biology Laboratory."
   },
   {
     id: "chinmaya-academics-classroom_learning_030",

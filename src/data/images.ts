@@ -34,8 +34,8 @@ export const SCHOOL_IMAGES = {
   // Academics & Laboratories
   CLASSROOM_LEARNING: "/images/chinmaya/academics/classroom_learning_001.webp?v=2",
   PHYSICS_LAB: "/images/phys.webp?v=2",
-  CHEMISTRY_LAB: "/images/chinmaya/academics/science_stem_lab_01.webp?v=2",
-  BIOLOGY_LAB: "/images/biology-lab.jpg?v=2",
+  CHEMISTRY_LAB: "/images/chinmaya/cultural/cultural_celebration_016.jpg?v=2",
+  BIOLOGY_LAB: "/images/chinmaya/academics/classroom_learning_018.jpg?v=2",
   IT_LAB: "/images/pages/home/laboratories/it-lab.jpg?v=2",
   SCIENCE_LAB: "/images/chinmaya/academics/science_stem_lab_01.webp?v=2",
   LIBRARY_STUDY: "/images/lib.webp?v=2",
