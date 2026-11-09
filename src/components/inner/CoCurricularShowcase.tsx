@@ -185,16 +185,6 @@ const ALL_CO_CURRICULAR_PHOTOS: CoCurricularPhotoItem[] = [
     badge: 'Dramatic Arts',
   },
   {
-    id: 'cc-15',
-    title: 'Central Library Scholastic Archives',
-    category: 'Library Programme & Reading',
-    groupCategory: 'literary',
-    desc: 'Expansive scholastic reading hall, curated literature volumes, reference stacks, and digital study stations.',
-    url: '/images/co-curricular/screenshot_2026-11-09_130225.webp',
-    fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_130225.jpg',
-    badge: 'Library & Reading',
-  },
-  {
     id: 'cc-16',
     title: 'Balvihar Cultural Pageant',
     category: 'Heritage & Balvihar',
@@ -204,41 +194,11 @@ const ALL_CO_CURRICULAR_PHOTOS: CoCurricularPhotoItem[] = [
     fallbackUrl: '/images/co-curricular/screenshot_2026-11-09_130426.jpg',
     badge: 'Balvihar Heritage',
   },
-  {
-    id: 'cc-17',
-    title: 'Interactive Smart Board Lab',
-    category: 'Coding & Digital Learning',
-    groupCategory: 'campus',
-    desc: 'Collaborative digital problem-solving and presentation sessions on interactive smart boards in senior classrooms.',
-    url: '/images/co-curricular/img_5155.webp',
-    fallbackUrl: '/images/co-curricular/img_5155.jpg',
-    badge: 'Smart Classroom',
-  },
-  {
-    id: 'cc-18',
-    title: 'Student Council Executive Boardroom',
-    category: 'Leadership & Student Governance',
-    groupCategory: 'leadership',
-    desc: 'Formal executive conferencing room hosting house captain strategy meetings, student debates, and event planning.',
-    url: '/images/co-curricular/img_5341.webp',
-    fallbackUrl: '/images/co-curricular/img_5341.jpg',
-    badge: 'Council Room',
-  },
-  {
-    id: 'cc-19',
-    title: 'Vidyalaya Campus & Sports Grounds',
-    category: 'Sports & Campus Life',
-    groupCategory: 'campus',
-    desc: 'Sunlit green campus entrance, sports field access, and student achievers pavilion welcoming active student life.',
-    url: '/images/co-curricular/img_3630.webp',
-    fallbackUrl: '/images/co-curricular/img_3630.jpg',
-    badge: 'Campus & Sports',
-  },
 ];
 
-// Row 1 & Row 2 for Infinite Loop Gallery (All 18 photos distributed equally)
-const row1GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(0, 9);
-const row2GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(9);
+// Row 1 & Row 2 for Infinite Loop Gallery (All 14 verified photos distributed equally)
+const row1GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(0, 7);
+const row2GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(7);
 
 /* ────────────────────────────────────────────────────────
    Main Co-Curricular Showcase Component
