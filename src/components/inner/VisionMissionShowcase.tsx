@@ -58,7 +58,7 @@ const KOSHAS: Kosha[] = [
     sheath: 'Mental-Emotional Sheath',
     color: '#B45309',
     badgeBg: 'bg-orange-100 text-orange-900 border-orange-300',
-    image: '/images/vision-mission/manomaya-kosha.jpeg?v=2',
+    image: '/images/vision-mission/manomaya-kosha.jpeg?v=3',
     imageTag: 'Expressive Arts & Caring Teacher Mentorship',
     imageCaption: 'Mental-Emotional Harmony: Caring teacher mentorship, creative papercraft art, and emotional empathy in primary classrooms.',
     schoolPractice:

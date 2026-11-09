@@ -51,7 +51,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#0B1E34',
     badgeBg: 'bg-slate-100',
     badgeText: 'text-[#0B1E34]',
-    image: '/images/vision-mission/manomaya-kosha.jpeg',
+    image: '/images/vision-mission/manomaya-kosha.jpeg?v=3',
     imageCaption: 'Mental & Emotional Poise: Caring Teacher Mentorship & Papercraft Expression in Classrooms',
     locationMeta: 'Primary Activity Wing • Mentorship',
     description:
