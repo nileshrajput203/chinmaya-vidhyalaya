@@ -125,77 +125,77 @@ export const RIBBON_GALLERY_IMAGES: string[] = OFFICIAL_GALLERY.map(item => item
 // 5. CAMPUS STREAM ARCHIVE (3D Corridor in About/History page)
 // ----------------------------------------------------------------------------
 export const CAMPUS_STREAM_ARCHIVE = [
-  // 1. Founder Heritage
-  { src: "/images/03-about-heritage/swami.jpeg", alt: "Founder Vision: Param Pujya Swami Chinmayananda" },
-  
-  // 2. Science Lab - Physics (Laser optical bench)
-  { src: "/images/04-academics/labs/physics/physics-lab-1.jpg", alt: "Physics Lab: Optical Bench Laser Calibration" },
+  // 1. Digital Smart Classroom & Cultural Presentation
+  { src: "/images/chinmaya/cultural/cultural_celebration_100.webp", alt: "Interactive Digital Smart Board Learning" },
 
-  // 3. Cultural - Classical Indian Dance Performance
-  { src: "/images/chinmaya/cultural/cultural_celebration_002.jpg", alt: "Classical Indian Dance: Cultural Fest Performance" },
+  // 2. Central Reference Library & Scholastic Reading
+  { src: "/images/pages/home/mosaic/bottom-left.webp", alt: "Central Reference Library & Book Archives" },
 
-  // 4. Sports - Inter-House Relay Race Handover
-  { src: "/images/chinmaya/sports/sports_athletic_meet_005.jpg", alt: "Athletics Meet: Inter-House Relay Race Handover" },
+  // 3. Athletics Meet & Multi-Sport Championship
+  { src: "/images/banner-8.webp", alt: "Inter-House Athletic Championship & Sports Meet" },
 
-  // 5. Classroom - Interactive Digital Smart Lecture
-  { src: "/images/chinmaya/academics/classroom_learning_005.jpg", alt: "Smart Classroom: Digital Interactive Instruction" },
+  // 4. Scholastic Academic Research & Study
+  { src: "/images/chinmaya/academics/classroom_learning_089.webp", alt: "Scholastic Research & Collaborative Study" },
 
-  // 6. Creative Arts - Painting & Canvas Art Studio
-  { src: "/images/chinmaya/cultural/arts_and_creativity_002.jpg", alt: "Fine Arts Studio: Creative Painting & Visual Art" },
+  // 5. Senior Science & Optics Innovation Laboratory
+  { src: "/images/pages/home/mosaic/top-left.webp", alt: "Science & Optics Innovation Laboratory" },
 
-  // 7. Science Lab - Chemistry Titration & Burette
-  { src: "/images/04-academics/labs/chemistry/chem-2.jpg", alt: "Chemistry Lab: Precision Titration Workspace" },
+  // 6. Annual Day Grand Theatrical Cultural Spectacle
+  { src: "/images/banner-9.webp", alt: "Annual Day Cultural Spectacle & Theatrical Pageant" },
 
-  // 8. Cultural - Folk Dance & Festival Celebration
-  { src: "/images/chinmaya/cultural/cultural_celebration_007.jpg", alt: "Cultural Celebration: Traditional Folk Dance" },
+  // 7. Quiet Reference & Reading Hall Archives
+  { src: "/images/chinmaya/academics/classroom_learning_096.webp", alt: "Scholastic Reading Hall & Reference Archives" },
 
-  // 9. Sports - 100m Track & Field Sprint Race
-  { src: "/images/chinmaya/sports/sports_athletic_meet_002.jpg", alt: "Athletics Championship: 100m Track & Field Sprint Race" },
+  // 8. Vidyalaya Campus Grounds & Academic Wings
+  { src: "/images/banner-1.webp", alt: "School Campus Grounds & Academic Wings" },
 
-  // 10. Classroom - Collaborative Group Learning & Discussion
-  { src: "/images/chinmaya/academics/classroom_learning_004.jpg", alt: "Classroom Life: Collaborative Discussion & Notes" },
+  // 9. Active Classroom Engagement & Mentorship
+  { src: "/images/chinmaya/academics/classroom_learning_036.webp", alt: "Active Classroom Participation & Inquiry" },
 
-  // 11. Creative Arts - 3D Sculpture & Clay Modeling
-  { src: "/images/chinmaya/cultural/arts_and_creativity_004.jpg", alt: "Creative Crafts: 3D Sculpture & Model Prototyping" },
+  // 10. Spacious Well-Ventilated Secondary Classrooms
+  { src: "/images/pages/home/mosaic/top-right.webp", alt: "Scholastic Academic Classrooms & Natural Light" },
 
-  // 12. Science Lab - Biology Compound Microscope Slide Study
-  { src: "/images/04-academics/labs/biology/bio-1.jpg", alt: "Biology Lab: Student Microscope Slide Examination" },
+  // 11. Quiet Scholastic Reference Study Bays
+  { src: "/images/chinmaya/academics/classroom_learning_092.webp", alt: "Quiet Reference Study Zone & Research" },
 
-  // 13. Cultural - Musical Instrument Orchestration & Harmonium
-  { src: "/images/chinmaya/cultural/cultural_celebration_023.jpg", alt: "Musical Orchestration: Indian Classical Instruments" },
+  // 12. Collaborative Group Inquiry & Academic Discussion
+  { src: "/images/pages/home/mosaic/bottom-right.webp", alt: "Interactive Academic Discussion & Project Study" },
 
-  // 14. Sports - Track & Field High/Long Jump Event
-  { src: "/images/chinmaya/sports/sports_athletic_meet_004.jpg", alt: "Athletics Meet: Field Jump & Athletic Agility" },
+  // 13. Cultural Heritage Stage Performance
+  { src: "/images/banner-9.webp", alt: "Performing Arts & Cultural Stage Celebration" },
 
-  // 15. Classroom - Senior Secondary Scholastic Focus & Rigor
-  { src: "/images/chinmaya/academics/classroom_learning_030.jpg", alt: "Scholastic Rigor: Board Examination Preparation" },
+  // 14. Modern Academic Learning Spaces
+  { src: "/images/pages/home/mosaic/top-right.webp", alt: "Naturally Lit Secondary Learning Classrooms" },
 
-  // 16. Creative Arts - Paper Art, Origami & Model Exhibition
-  { src: "/images/chinmaya/cultural/arts_and_creativity_008.jpg", alt: "Creative Arts: Paper Crafts & Student Handiwork" },
+  // 15. Collaborative Multimedia Digital Sessions
+  { src: "/images/chinmaya/cultural/cultural_celebration_100.webp", alt: "Smart Screen Collaborative Interactive Session" },
 
-  // 17. Cultural - Youth Drama & Theatrical Stage Skit
-  { src: "/images/chinmaya/cultural/cultural_celebration_019.jpg", alt: "Youth Theater: Sanskrit & Cultural Drama Skit" },
+  // 16. Track & Field Sports Leadership
+  { src: "/images/banner-8.webp", alt: "Athletic Meet Track & Field Sports Agility" },
 
-  // 18. Sports - Team March Past & House Banner Parade
-  { src: "/images/chinmaya/sports/sports_athletic_meet_011.jpg", alt: "Annual Sports Day: House March Past & Parade" },
+  // 17. Dedicated Scholastic Reference Archives
+  { src: "/images/chinmaya/academics/classroom_learning_092.webp", alt: "Scholastic Reference Reading Bays" },
 
-  // 19. Classroom - Student Academic Seminars & Debates
-  { src: "/images/chinmaya/academics/classroom_learning_031.jpg", alt: "Academic Enrichment: Student Seminars & Presentations" },
+  // 18. Experimental Physics & Chemistry Lab Stations
+  { src: "/images/pages/home/mosaic/top-left.webp", alt: "Hands-on Science & Apparatus Laboratory" },
 
-  // 20. Cultural - Vocal Choir & Uplifting Bhajans
-  { src: "/images/chinmaya/cultural/cultural_celebration_031.jpg", alt: "Choral Singing: Uplifting Vedic Hymns & Bhajans" },
+  // 19. Senior Student Academic Seminars
+  { src: "/images/chinmaya/academics/classroom_learning_036.webp", alt: "Senior Academic Seminar & Classroom Notes" },
 
-  // 21. Science Lab - Chemistry Analytical Balances
-  { src: "/images/04-academics/labs/chemistry/chem-1.jpg", alt: "Analytical Chemistry: Digital Balance Measurements" },
+  // 20. Curated Literary & Scholastic Volume Stack
+  { src: "/images/pages/home/mosaic/bottom-left.webp", alt: "Curated Reference Volumes & Library Hall" },
 
-  // 22. Cultural - Traditional Festive Costumed Performance
-  { src: "/images/chinmaya/cultural/cultural_celebration_045.jpg", alt: "Festive Performance: Traditional Heritage Pageant" },
+  // 21. Campus Academic Infrastructure & Green Grounds
+  { src: "/images/banner-1.webp", alt: "Campus Infrastructure & Academic Facilities" },
 
-  // 23. Classroom - Primary Active Learning & Interaction
-  { src: "/images/chinmaya/academics/classroom_learning_002.jpg", alt: "Primary Academics: Active Classroom Mentorship" },
+  // 22. In-Depth Scholastic Peer Discussion
+  { src: "/images/pages/home/mosaic/bottom-right.webp", alt: "Peer Learning & Collaborative Group Study" },
 
-  // 24. Sports - Inter-House Track Meet Victory & Podium
-  { src: "/images/chinmaya/sports/sports_athletic_meet_007.jpg", alt: "Sports Day: Track Athletics Finish Line & Celebration" },
+  // 23. Focused Academic Preparation & Scholastic Rigor
+  { src: "/images/chinmaya/academics/classroom_learning_089.webp", alt: "Scholastic Rigor & Dedicated Study Bays" },
+
+  // 24. Literature Research & Reading Hall
+  { src: "/images/chinmaya/academics/classroom_learning_096.webp", alt: "Student Research Reading & Literature Archives" },
 ];
 
 // ----------------------------------------------------------------------------
