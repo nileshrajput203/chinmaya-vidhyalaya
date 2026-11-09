@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
-    "updatedAt": "2026-11-09T11:31:34.326Z"
+    "updatedAt": "2026-11-09T11:41:53.675Z"
   },
   "homeHero": [
     {
@@ -140,6 +140,11 @@
         "src": "/images/04-academics/classrooms/classroom-4.jpg",
         "caption": "Spacious Ventilated Primary Classrooms with Child-Centric Ergonomics & Natural Light",
         "fileName": "classroom-4.jpg"
+      },
+      {
+        "src": "/images/04-academics/classrooms/classroom-5.jpg",
+        "caption": "Senior Academic Classrooms with Interactive Smart Screens & Continuous Natural Airflow",
+        "fileName": "classroom-5.jpg"
       }
     ],
     "library": [
