@@ -48,7 +48,7 @@ const CVP_PILLARS: PillarData[] = [
     subtitleTag: 'Heritage, Ethics & Living Wisdom',
     sanskrit: 'Bhartiya Sanskriti & Parampara',
     image: '/images/pages/home/pillars/pillar-02-culture.png',
-    isCutout: true,
+    isCutout: false,
     visionStatement:
       'Rooted in ancient wisdom, our heritage is a living moral compass - instilling reverence, cultural pride, and righteous character in every young mind.',
     explanation:
@@ -181,12 +181,12 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
         {/* ------------------------------------------------------------------
             MASTER 3-COLUMN EDITORIAL SHOWCASE
             ------------------------------------------------------------------ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
           
           {/* ================================================================
               LEFT COLUMN: FOUNDATIONAL PILLAR TITLE + NAVIGATION CONTROLS
               ================================================================ */}
-          <div className="lg:col-span-3 flex flex-col justify-center items-start space-y-6">
+          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-center items-start space-y-5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.num}
@@ -194,17 +194,17 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 16 }}
                 transition={{ duration: 0.28, ease: 'easeOut' }}
-                className="space-y-1"
+                className="space-y-1 w-full"
               >
                 <p
                   style={{ color: 'var(--color-text)' }}
-                  className="text-sm sm:text-base lg:text-lg font-mono uppercase tracking-wider text-slate-600 font-bold"
+                  className="text-xs sm:text-sm lg:text-base font-mono uppercase tracking-wider text-slate-600 font-bold"
                 >
                   FOUNDATIONAL PILLAR
                 </p>
                 <h3
                   style={{ color: 'var(--color-primary)' }}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-[1.05] m-0 whitespace-pre-line"
+                  className="text-2xl sm:text-3xl lg:text-[28px] xl:text-[34px] 2xl:text-4xl font-display font-black uppercase tracking-tight leading-[1.1] m-0 break-words whitespace-pre-line"
                 >
                   <Link to={current.targetUrl} className="hover:opacity-90 transition-opacity">
                     {current.shortTitle}
@@ -212,7 +212,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                 </h3>
                 <span
                   style={{ color: 'var(--color-text)' }}
-                  className="block text-xs font-mono uppercase tracking-widest pt-2 font-semibold opacity-75"
+                  className="block text-xs font-mono uppercase tracking-wider pt-2 font-semibold opacity-75 leading-relaxed"
                 >
                   PILLAR {current.num} • {current.sanskrit}
                 </span>
@@ -244,8 +244,8 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
           {/* ================================================================
               CENTER COLUMN: SINGLE AUTHORITATIVE PILLAR IMAGE
               ================================================================ */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-[460px] xl:max-w-[500px] h-[320px] xs:h-[380px] sm:h-[540px] flex items-center justify-center">
+          <div className="lg:col-span-4 xl:col-span-4 flex justify-center items-center py-2">
+            <div className="relative w-full max-w-[420px] xl:max-w-[460px] flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.num}
@@ -253,34 +253,20 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.35, ease: 'easeOut' }}
-                  className="w-full h-full flex items-center justify-center"
+                  className="w-full flex items-center justify-center"
                 >
                   <Link
                     to={current.targetUrl}
                     title={`Explore ${current.pillarTitle}`}
-                    className="w-full h-full flex items-center justify-center cursor-pointer group"
+                    className="w-full flex items-center justify-center cursor-pointer group"
                   >
-                    {current.isCutout ? (
-                      /* Transparent cutouts: 100% opacity, sitting directly on section bg */
+                    <div className="w-full aspect-[3/2] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_16px_36px_rgba(0,0,0,0.14)] border-2 border-[#E7E2D8] bg-slate-900 relative">
                       <img
                         src={current.image}
                         alt={current.pillarTitle}
-                        className={`h-full w-auto max-h-full max-w-full opacity-100 filter drop-shadow-[0_16px_28px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover:scale-105 ${
-                          current.num === '02'
-                            ? 'object-contain object-center scale-100 sm:scale-105'
-                            : 'object-contain object-bottom'
-                        }`}
+                        className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 ease-out group-hover:scale-105"
                       />
-                    ) : (
-                      /* Photographic Card: Clean, 100% opacity card with matching 3:2 aspect ratio & rounded corners */
-                      <div className="w-full aspect-[3/2] max-h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] border-2 border-[#E7E2D8] bg-slate-900 relative">
-                        <img
-                          src={current.image}
-                          alt={current.pillarTitle}
-                          className="w-full h-full object-cover object-center opacity-100 transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    )}
+                    </div>
                   </Link>
                 </motion.div>
               </AnimatePresence>
@@ -290,7 +276,7 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
           {/* ================================================================
               RIGHT COLUMN: EXPLANATION, GUIDING VISION, KEY POINTS, AND CTA
               ================================================================ */}
-          <div className="lg:col-span-4 flex flex-col justify-center space-y-5">
+          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-center space-y-5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.num}
