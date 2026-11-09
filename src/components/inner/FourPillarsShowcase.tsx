@@ -52,9 +52,9 @@ const PILLARS_DATA: PillarDetail[] = [
     ],
     photos: [
       {
-        src: '/images/pages/home/bento/tile-12-faculty-mentor.jpg',
+        src: '/images/pages/home/pillars/pillar-01-integrated.jpg',
         caption: 'Integrated Development: Physical, Mental, Intellectual & Spiritual Development in Practice',
-        locationMeta: 'Smart Classroom Wing • Interactive Teaching'
+        locationMeta: 'Chinmaya Vidyalaya Campus • 4-Fold Integrated Growth'
       }
     ],
     tags: ['Physical Vitality', 'Mental Poise & Gita', 'AI & Science Labs', 'Spiritual Ethics']
@@ -219,7 +219,7 @@ export const FourPillarsShowcase: React.FC = () => {
                       <img
                         src={pillar.photos[0].src}
                         alt={pillar.photos[0].caption}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover object-center"
                       />
                     </div>
                   </div>

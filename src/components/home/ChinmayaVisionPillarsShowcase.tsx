@@ -26,8 +26,8 @@ const CVP_PILLARS: PillarData[] = [
     pillarTitle: 'PILLAR 1: INTEGRATED DEVELOPMENT',
     subtitleTag: 'Physical, Mental, Intellectual & Spiritual Development',
     sanskrit: 'Sharirik, Manasik, Bauddhik & Adhyatmik Vikas',
-    image: '/images/pages/home/pillars/pillar-01-integrated.png',
-    isCutout: true,
+    image: '/images/pages/home/pillars/pillar-01-integrated.jpg',
+    isCutout: false,
     visionStatement:
       'True education nurtures the entire being - harmonizing physical vitality, an analytical intellect, and emotional equilibrium to build purposeful leaders.',
     explanation:
@@ -272,8 +272,8 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                         }`}
                       />
                     ) : (
-                      /* Other Pillars: Clean, 100% opacity photographic card */
-                      <div className="w-full h-full rounded-none overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+                      /* Photographic Card: Clean, 100% opacity card with matching 3:2 aspect ratio & rounded corners */
+                      <div className="w-full aspect-[3/2] max-h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] border-2 border-[#E7E2D8] bg-slate-900 relative">
                         <img
                           src={current.image}
                           alt={current.pillarTitle}

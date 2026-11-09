@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
-    "updatedAt": "2026-11-09T05:43:21.279Z"
+    "updatedAt": "2026-11-09T08:42:48.057Z"
   },
   "homeHero": [
     {
@@ -290,6 +290,11 @@
     }
   },
   "fourPillars": [
+    {
+      "src": "/images/05-four-pillars/pillar-01-integrated.jpg",
+      "caption": "Pillar 01 Integrated",
+      "fileName": "pillar-01-integrated.jpg"
+    },
     {
       "src": "/images/05-four-pillars/pillar-01-integrated.png",
       "caption": "Pillar 01 Integrated",
