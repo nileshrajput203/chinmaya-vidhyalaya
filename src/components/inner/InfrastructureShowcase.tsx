@@ -38,26 +38,26 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Physics Laboratory',
     gallery: getFacilityGallery('physics-lab'),
-    badge: 'CBSE Senior Science Lab',
-    tagline: 'Precision Optics, Mechanics, Sound & Electromagnetic Investigation',
+    badge: 'CBSE Senior Science & Mathematics Lab',
+    tagline: 'Precision Optics, Mechanics, Sound & Basic Circuits',
     description:
-      'CBSE-certified laboratory for experimentally exploring optics, mechanics, sound waves, and semiconductor circuits.',
+      'CBSE-certified laboratory for experimentally exploring optics, mechanics, sound waves, and basic electric circuits.',
     curriculumDetails:
-      'Covers complete CBSE practical syllabus: optical bench calibration, Ohm’s law, potentiometer, sonometers, and p-n junction diodes.',
+      'Covers complete CBSE practical syllabus: optical bench experiments, Ohm’s law, potentiometer, sonometers, and circuit verification.',
     safetyProtocols: [
-      'Regulated shock-proof DC/AC power supplies with dedicated UPS power backup (no centralized unbuffered power dependency)',
-      '24/7 CCTV surveillance monitoring for student safety and practical decorum',
-      'Class ABC Fire Extinguishers and emergency safety protocol signage'
+      'Dedicated lab UPS power backup (individual unit, non-centralized power supply for steady voltage)',
+      'Class ABC Fire Extinguishers and first-aid infirmary station on standby',
+      '24/7 CCTV camera surveillance ensuring student safety and laboratory oversight',
+      'Continuous presence of qualified physics faculty and lab assistants for student guidance',
+      'Shock-proof regulated DC/AC power supply stations and insulated bench wiring'
     ],
     equipment: [
-      'Precision Optical Benches & He-Ne Lasers',
+      'Optical Benches, Convex/Concave Lenses & Mirrors',
       'Digital & Analog Galvanometers / Ammeters',
-      'Travelling Vernier Microscopes',
+      'Travelling Vernier Microscopes & Calipers',
       'Sonometers & Tuning Fork Resonators',
       'Potentiometers & Meter Bridges',
-      'Semiconductor Energy Band Gap Apparatus',
-      'Dedicated UPS Power Backup & Continuous 24/7 CCTV Monitoring',
-      'Class ABC Fire Extinguishers'
+      'Ohm’s Law & Resistance Bridge Apparatus'
     ],
     capacity: '40+ Students per Session',
     locationMeta: 'Senior Science Block • Ground Floor'
@@ -67,27 +67,26 @@ const FACILITIES: FacilityItem[] = [
     category: 'labs',
     name: 'Chemistry Laboratory',
     gallery: getFacilityGallery('chemistry-lab'),
-    badge: 'CBSE Senior Science Lab',
+    badge: 'CBSE Senior Science & Mathematics Lab',
     tagline: 'Analytical Titration, Reagents, Kinetics & Qualitative Analysis',
     description:
-      'Equipped with digital analytical balances, titration apparatus, and reagent stations for volumetric titrations and salt analysis.',
+      'Equipped with digital balances, individual gas burners, and reagent stations for volumetric titrations and salt analysis.',
     curriculumDetails:
       'Supports CBSE practicals: KMnO4 redox titrations, qualitative inorganic radical analysis, and organic functional group testing.',
     safetyProtocols: [
-      'Dedicated sand bucket installed at exit alongside Class ABC Fire Extinguishers',
-      'Dedicated UPS power backup (no unbuffered grid dependency) for analytical equipment',
-      '24/7 CCTV surveillance monitoring for student safety and lab decorum',
-      'Acid-resistant non-porous ceramic bench surfaces and labware only',
-      'Mandatory cotton lab aprons and chemical-safe handling'
+      'Dedicated lab UPS power backup (individual unit, non-centralized power supply)',
+      'Class ABC Fire Extinguishers and sand buckets installed at exit',
+      '24/7 CCTV camera surveillance for comprehensive laboratory monitoring & safety',
+      'Continuous presence of qualified chemistry faculty and lab assistants for student guidance',
+      'Acid-resistant non-porous ceramic bench surfaces',
+      'Mandatory cotton lab aprons, protective safety guidelines, and chemical-safe handling'
     ],
     equipment: [
       'Precision 4-Digit Digital Analytical Balances',
       'Individual Gas Burner & Titration Stands',
-      'Acid-Resistant Class-A Burettes & Pipettes',
-      'Centrifugation Units & Analytical Stations',
-      'Colorimetric Analyzers & Reagent Kits',
-      'Dedicated Exit Sand Buckets & Class ABC Fire Extinguishers',
-      'Dedicated UPS Power Backup & 24/7 CCTV Surveillance'
+      'Graduated Burettes & Precision Pipettes',
+      'Reagent Shelves, Test Tube Racks & Boiling Flasks',
+      'Volumetric Titration & Inorganic Salt Analysis Kits'
     ],
     capacity: '40+ Students per Session',
     locationMeta: 'Science Block • Room 104'
@@ -100,25 +99,25 @@ const FACILITIES: FacilityItem[] = [
     badge: 'Life Sciences Lab',
     tagline: 'Microscopic Observation, Cytology & Anatomical Specimen Study',
     description:
-      'Advanced life sciences facility equipped with digital interactive panel, compound microscopes, botanical herbariums, and anatomical models.',
+      'Advanced life sciences facility equipped with compound microscopes, botanical herbariums, and anatomical models.',
     curriculumDetails:
       'Aligned to CBSE Class IX-XII: temporary mount preparation, onion root-tip mitosis, potato osmometer, and enzyme salivary amylase action.',
     safetyProtocols: [
-      'Hygienic bio-specimen formalin containers sealed to OSHA standards',
-      'Non-toxic bio-waste discard jars and antiseptic wash stations',
-      'Dedicated UPS power backup for the digital interactive panel and lighting (no unbuffered grid dependency)',
-      '24/7 CCTV surveillance monitoring for student safety and lab decorum',
-      'Class ABC Fire Extinguishers and emergency safety protocol signage'
+      'Dedicated lab UPS power backup (individual unit, non-centralized power supply)',
+      'Class ABC Fire Extinguishers and first-aid infirmary station on standby',
+      '24/7 CCTV camera surveillance ensuring student safety and laboratory oversight',
+      'Continuous presence of qualified biology faculty and lab assistants for student guidance',
+      'Hygienic bio-specimen formalin containers sealed to standard safety norms',
+      'Non-toxic bio-waste discard jars and antiseptic wash stations'
     ],
     equipment: [
+      'Digital Interactive Smart Panel',
       'High-Power Binocular Compound Microscopes',
       'Dissecting Stereo Microscopes',
-      'Digital Interactive Smart Panel & High-Definition Display Screen',
-      '3D Articulated Human Skeleton & Organ Models',
       'Preserved Zoological & Botanical Specimens Archive',
-      'Permanent Histological Pathology Slide Banks & Staining Assemblies',
-      'Dedicated UPS Power Backup & Continuous 24/7 CCTV Monitoring',
-      'Class ABC Fire Extinguishers'
+      '3D Articulated Human Skeleton & Organ Models',
+      'Permanent Histological Pathology Slide Banks',
+      'Biological Slide Preparation & Plant Staining Kits'
     ],
     capacity: '40+ Students per Session',
     locationMeta: 'Science Block • Room 106'
@@ -129,28 +128,80 @@ const FACILITIES: FacilityItem[] = [
     name: 'Computer & IT Innovation Lab',
     gallery: getFacilityGallery('it-lab'),
     badge: 'Digital Innovation',
-    tagline: 'Networked Computing, Scratch & Python Coding & Multimedia',
+    tagline: 'Networked Computing, Python/Java Coding & Multimedia',
     description:
-      'Modern computing facility featuring networked PC workstations and high-speed broadband for Scratch and Python coding and IT studies.',
+      'Modern computing facility featuring networked PC workstations and high-speed broadband for Python coding and IT studies.',
     curriculumDetails:
-      'Supports CBSE Computer Applications & Science: Scratch block programming, Python coding, cybersecurity, and data structures.',
+      'Supports CBSE Computer Applications & Science: Python programming, office productivity, digital literacy, and cyber safety.',
     safetyProtocols: [
-      'Dedicated Online UPS power backup preventing data loss or surge spikes (no unbuffered grid dependency)',
-      'Class ABC Fire Extinguishers and emergency safety protocol signage',
-      '24/7 CCTV surveillance monitoring with anti-static vinyl flooring',
-      'Enterprise firewall filtering restricting access to age-appropriate educational domains'
+      'Dedicated lab UPS power backup (individual unit, non-centralized power supply preventing data loss)',
+      'Class ABC Fire Extinguishers installed at entrance and electrical stations',
+      '24/7 CCTV camera surveillance for equipment security and classroom discipline',
+      'Continuous presence of qualified IT faculty and instructors for student guidance',
+      'Enterprise firewall filtering restricting access to age-appropriate educational domains',
+      'Ergonomic workstations, comfortable posture seating, and anti-static flooring'
     ],
     equipment: [
       '45+ Intel Core Dedicated Desktop PC Workstations',
-      'Dedicated Online UPS Power Backup & Continuous 24/7 CCTV Monitoring',
-      'Class ABC Fire Extinguishers',
       'High-Speed Leased Line Fiber Broadband',
-      'Smart Interactive Projector & Display',
-      'Licensed Scratch & Python 3.x Development IDEs',
+      'Smart Interactive Projector',
+      'Licensed Python 3.x & Scratch Coding Software',
       'Cyber-Safety Content Firewall'
     ],
     capacity: '45 Workstations',
     locationMeta: 'IT Innovation Wing • 1st Floor'
+  },
+  {
+    id: 'sports-ground',
+    category: 'sports',
+    name: 'Athletic Arena & Sports Fields',
+    gallery: getFacilityGallery('sports-ground'),
+    badge: 'Physical Conditioning',
+    tagline: 'Outdoor Fields, Mallakhamb & Indoor Sports Arena',
+    description:
+      'Expansive campus sports arena supporting cricket, volleyball, badminton, traditional Mallakhamb pole gymnastics, and indoor games including table tennis, carrom, and chess.',
+    curriculumDetails:
+      'CBSE Health & Physical Education compliant: daily fitness drills, inter-house championships, yoga sessions, and state tournament coaching.',
+    safetyProtocols: [
+      'First Aid response kit and trained sports physical educators present at every session',
+      'Levelled grass and clay grounds maintained free of hazards'
+    ],
+    equipment: [
+      'Mallakhamb (Traditional Pole Gymnastics)',
+      'Volleyball & Badminton Courts',
+      'Indoor Sports: Table Tennis, Carrom & Chess',
+      'Dedicated Cricket Pitch & Athletic Arena',
+      'Open Athletic Field & Physical Conditioning Grounds'
+    ],
+    capacity: 'Full Campus Cohorts',
+    locationMeta: 'East Campus Grounds • Boisar'
+  },
+  {
+    id: 'classrooms',
+    category: 'academic',
+    name: 'Spacious Ventilated Classrooms',
+    gallery: getFacilityGallery('classrooms'),
+    badge: 'Smart Learning Spaces',
+    tagline: 'Interactive Smart Panels & 24/7 CCTV in Every Classroom',
+    description:
+      'Airy, naturally lit learning rooms featuring Interactive Flat Panels and 24/7 CCTV in every class, dedicated teaching Wi-Fi, and elevator/lift access for teachers and special children.',
+    curriculumDetails:
+      'CBSE compliant layout providing over 1.5 sq. meters floor space per student with interactive digital learning, teaching Wi-Fi, and natural cross-ventilation.',
+    safetyProtocols: [
+      '24/7 CCTV camera surveillance in every classroom for student safety',
+      'Elevator / Lift facility for teachers and special children (CWSN)',
+      'Dedicated UPS power backup ensuring uninterrupted digital classroom learning',
+      'Smooth rounded-edge wooden furniture'
+    ],
+    equipment: [
+      'Interactive Flat Panel in Every Classroom',
+      'PA Announcement System (Speaker in Every Class)',
+      'Dedicated Wi-Fi for Teaching Purposes',
+      'Ergonomic Multi-Tier Student Desks',
+      'Broad Wall Display Pin-up Notice Boards'
+    ],
+    capacity: '>40 Students per Section',
+    locationMeta: 'Primary & Secondary Wings (Lift Accessible)'
   },
   {
     id: 'library',
@@ -178,82 +229,30 @@ const FACILITIES: FacilityItem[] = [
     locationMeta: 'Academic Wing • 2nd Floor'
   },
   {
-    id: 'sports-ground',
-    category: 'sports',
-    name: 'Athletic Arena & Sports Fields',
-    gallery: getFacilityGallery('sports-ground'),
-    badge: 'Physical Conditioning',
-    tagline: 'Expansive Campus Grounds for Team Leagues & Indoor Sports',
-    description:
-      'Expansive campus sports arena and indoor activity pavilion featuring dedicated cricket pitch, volleyball, Mallakhamb, and indoor sports facilities.',
-    curriculumDetails:
-      'CBSE Health & Physical Education compliant: daily fitness drills, inter-house championships, yoga sessions, and state tournament coaching.',
-    safetyProtocols: [
-      'Comprehensive First Aid emergency response station and trained sports physical educators present at every session',
-      'Cushioned safety landing mats, spotters, and faculty supervision for Mallakhamb drills',
-      'Levelled grass and clay grounds maintained free of hazards'
-    ],
-    equipment: [
-      'Mallakhamb (Traditional Pole & Rope Gymnastics Apparatus)',
-      'Comprehensive First Aid Station & Sports Safety Equipment',
-      'Indoor Activity Arena: Table Tennis (TT), Badminton, Chess & Carrom',
-      'Volleyball Court & Dedicated Cricket Pitch',
-      'Gymnastic Landing Mats & Physical Conditioning Apparatus'
-    ],
-    capacity: 'Full Campus Cohorts',
-    locationMeta: 'East Campus Grounds • Boisar'
-  },
-  {
-    id: 'classrooms',
-    category: 'academic',
-    name: 'Spacious Ventilated Classrooms',
-    gallery: getFacilityGallery('classrooms'),
-    badge: 'Learning Spaces',
-    tagline: 'High-Ceiling Classrooms with Capacity for Over 40 Students',
-    description:
-      'Airy, naturally lit learning rooms designed with ergonomic seating, display boards, and 40+ student capacity.',
-    curriculumDetails:
-      'CBSE compliant layout providing over 1.5 sq. meters floor space per student with acoustic dampening and natural cross-ventilation.',
-    safetyProtocols: [
-      'Smooth rounded-edge wooden furniture',
-      '24/7 CCTV surveillance monitoring for student safety'
-    ],
-    equipment: [
-      'Interactive Digital Panels & Smart Multimedia Displays',
-      'High-Speed Wi-Fi for Faculty & Digital Teaching',
-      'Dedicated Passenger Lift Access across Classroom Floors',
-      'Ergonomic Multi-Tier Student Desks',
-      'Broad Wall Display Pin-up Notice Boards'
-    ],
-    capacity: '>40 Students per Section',
-    locationMeta: 'Primary & Secondary Wings'
-  },
-  {
     id: 'cultural-assembly',
     category: 'campus',
-    name: 'Cultural Assembly Arena & Saraswati Mandir',
+    name: 'Cultural Assembly Arena & Stage',
     gallery: getFacilityGallery('cultural-assembly'),
     badge: 'Cultural Ethos',
-    tagline: 'Morning Assembly, Saraswati Mandir, Gita Chanting & Celebrations',
+    tagline: 'Morning Assembly, Saraswati Mandir & Gita Chanting',
     description:
-      'The spiritual and cultural heart of the school featuring the sacred Saraswati Mandir, hosting daily morning prayer assemblies, Gita chanting, devotional bhajans, and stage celebrations.',
+      'The cultural heart of the school featuring the sacred Saraswati Mandir, hosting daily morning prayer assemblies, Gita chanting, bhajans, and stage events.',
     curriculumDetails:
-      'Anchors the Chinmaya Vision Programme (CVP): daily morning prayers at Saraswati Mandir, Guru Paduka Pooja, Indian cultural values, and stage confidence through public speaking and dramatics.',
+      'Anchors the Chinmaya Vision Programme (CVP), cultivating cultural values, public elocution, and stage confidence through theatricals.',
     safetyProtocols: [
       'Wide covered courtyard with non-slip flooring',
       'Overhead sun/rain protective architectural canopy',
-      'Surge-protected professional PA sound system',
-      'Dedicated prayer sanctum and disciplined assembly queue management'
+      'Surge-protected professional PA sound system'
     ],
     equipment: [
-      'Sacred Saraswati Mandir & Devotional Prayer Sanctum',
-      'Elevated Performance Theatrical Stage & Auditorium',
-      'Pujya Gurudev Paduka Altar and Traditional Brass Diya Installations',
-      'High-Output Acoustic Sound Reinforcement PA System',
-      'Spacious covered courtyard seating for complete school student body'
+      'Saraswati Mandir',
+      'Elevated Performance Theatrical Stage',
+      'Sacred Gurudev Paduka Altar and Traditional Brass Lamps',
+      'High-Output Acoustic Sound Reinforcement Speakers',
+      'Seating capacity for complete school student body'
     ],
     capacity: '1,000+ Audience',
-    locationMeta: 'Central Courtyard & Saraswati Mandir'
+    locationMeta: 'Central Courtyard Stage'
   }
 ];
 
