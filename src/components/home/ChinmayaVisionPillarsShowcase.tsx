@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -21,7 +21,7 @@ export interface PillarData {
 const CVP_PILLARS: PillarData[] = [
   {
     num: '01',
-    tabLabel: 'Integrated Development',
+    tabLabel: 'Integrated',
     shortTitle: 'INTEGRATED\nDEVELOPMENT',
     pillarTitle: 'PILLAR 1: INTEGRATED DEVELOPMENT',
     subtitleTag: 'Physical, Mental, Intellectual & Spiritual Development',
@@ -89,7 +89,7 @@ const CVP_PILLARS: PillarData[] = [
     pillarTitle: 'UNIVERSAL OUTLOOK & GLOBAL PERSPECTIVE',
     subtitleTag: 'Vasudhaiva Kutumbakam • One World Family',
     sanskrit: 'Vasudhaiva Kutumbakam',
-    image: '/images/sections/four_pillars/pillar-04-universal.webp?v=20261009',
+    image: '/images/pages/home/pillars/pillar-04-universal.webp',
     isCutout: false,
     visionStatement:
       'Vasudhaiva Kutumbakam - the whole world is one family. Education must transcend narrow boundaries to foster universal brotherhood and planetary empathy.',
@@ -109,6 +109,11 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
+  // Always ensure the home page showcase initializes strictly on Card 1 (Pillar 01)
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, []);
+
   const prevPillar = () => {
     setCurrentIndex((prev) => (prev - 1 + CVP_PILLARS.length) % CVP_PILLARS.length);
   };
@@ -127,8 +132,8 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
       <div className="w-[94%] sm:w-[90%] xl:w-[84%] max-w-[1560px] mx-auto">
         
         {/* Section Pre-heading strip & Pillar Selector Pills */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[var(--color-border)] pb-5 mb-10 lg:mb-14">
-          <div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-[var(--color-border)] pb-5 mb-10 lg:mb-14">
+          <div className="min-w-0">
             <span
               style={{ color: 'var(--color-primary)' }}
               className="block text-xs sm:text-sm font-mono uppercase tracking-[0.25em] font-bold"
@@ -137,14 +142,14 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
             </span>
             <h2
               style={{ color: 'var(--color-text)' }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-tight mt-1"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-black uppercase tracking-tight leading-tight mt-1"
             >
               CHINMAYA VISION PROGRAM
             </h2>
           </div>
 
           {/* Quick Pillar selector tabs (01 to 04) */}
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-none pb-1 sm:pb-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 flex-nowrap overflow-x-auto scrollbar-none py-1">
             {CVP_PILLARS.map((p, idx) => {
               const isActive = idx === currentIndex;
               return (
@@ -164,12 +169,12 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                     borderColor: isActive ? 'var(--color-dark)' : 'var(--color-border)',
                   }}
                   className={`
-                    px-3.5 py-2 border rounded-none text-xs sm:text-sm font-mono font-bold tracking-wider transition-colors duration-200 cursor-pointer shrink-0
+                    px-3 sm:px-3.5 py-1.5 sm:py-2 border rounded-none text-xs sm:text-sm font-mono font-bold tracking-wider transition-colors duration-200 cursor-pointer shrink-0 whitespace-nowrap
                     ${!isActive ? 'hover:bg-[var(--color-dark)] hover:text-white' : ''}
                   `}
                 >
                   <span>{p.num}</span>
-                  <span className="ml-1.5 hidden xl:inline font-sans text-xs font-semibold">
+                  <span className="ml-1.5 hidden sm:inline font-sans text-xs font-semibold">
                     {p.tabLabel}
                   </span>
                 </button>
