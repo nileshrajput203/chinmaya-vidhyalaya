@@ -99,25 +99,21 @@ export const HOME_VALUES_TILES = [
 import { OFFICIAL_GALLERY } from './gallery';
 
 export const PANEL_B_MOVING_GALLERY_COL1 = [
+  { src: "/images/banner-1.webp", title: "School Campus & Academic Wings" },
   { src: "/images/pages/home/mosaic/top-left.webp", title: "Science & Optics Laboratory" },
   { src: "/images/chinmaya/academics/classroom_learning_036.webp", title: "Active Classroom Participation" },
-  { src: "/images/pages/home/mosaic/bottom-left.webp", title: "Central Reference Library" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_100.webp", title: "Interactive Digital Smart Board" },
-  { src: "/images/pages/home/mosaic/bottom-right.webp", title: "Interactive Academic Discussion" },
-  { src: "/images/chinmaya/academics/classroom_learning_092.webp", title: "Quiet Reference Study Zone" },
-  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Academic Classrooms" },
+  { src: "/images/banner-9.webp", title: "Annual Day Cultural Spectacle" },
   { src: "/images/chinmaya/academics/classroom_learning_089.webp", title: "Scholastic Research & Study" },
+  { src: "/images/pages/home/mosaic/bottom-right.webp", title: "Interactive Academic Discussion" },
 ];
 
 export const PANEL_B_MOVING_GALLERY_COL2 = [
-  { src: "/images/chinmaya/academics/classroom_learning_096.webp", title: "Scholastic Reading Hall" },
-  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Academic Classrooms" },
-  { src: "/images/chinmaya/academics/classroom_learning_089.webp", title: "Scholastic Research & Study" },
-  { src: "/images/pages/home/mosaic/top-left.webp", title: "Science & Optics Laboratory" },
-  { src: "/images/chinmaya/academics/classroom_learning_036.webp", title: "Active Classroom Participation" },
-  { src: "/images/pages/home/mosaic/bottom-right.webp", title: "Interactive Academic Discussion" },
+  { src: "/images/banner-8.webp", title: "Athletic Meet & Sports Championship" },
   { src: "/images/chinmaya/cultural/cultural_celebration_100.webp", title: "Interactive Digital Smart Board" },
   { src: "/images/pages/home/mosaic/bottom-left.webp", title: "Central Reference Library" },
+  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Academic Classrooms" },
+  { src: "/images/chinmaya/academics/classroom_learning_092.webp", title: "Quiet Reference Study Zone" },
+  { src: "/images/chinmaya/academics/classroom_learning_096.webp", title: "Scholastic Reading Hall" },
 ];
 
 // ----------------------------------------------------------------------------
