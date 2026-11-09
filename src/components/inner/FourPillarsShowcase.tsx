@@ -124,7 +124,7 @@ const PILLARS_DATA: PillarDetail[] = [
     ],
     photos: [
       {
-        src: '/images/pages/home/pillars/pillar-03-patriotism.png',
+        src: '/images/pages/home/pillars/pillar-03-patriotism.jpg',
         caption: 'Patriotism in Action: Student Leadership, Civic Outreach & National Pride',
         locationMeta: 'Community Service & Campus Assemblies • Tarapur'
       }

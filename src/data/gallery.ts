@@ -23,13 +23,13 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
   },
   {
     id: "chinmaya-cvp-patriotism-swachhata",
-    title: "Patriotism & Civic Seva: Swachhata Cleanliness Drive",
+    title: "Patriotism & Civic Duty: Student Council, Flag Salute & Swachhata Seva",
     category: "celebrations",
     event: "Civic Outreach",
     academicYear: "2024-25",
     date: "October 2024",
-    imageUrl: "/images/pages/home/pillars/pillar-03-patriotism.png",
-    caption: "Student volunteers demonstrating active patriotism and community seva through campus Swachhata cleanliness drives under the Chinmaya Vision Programme."
+    imageUrl: "/images/pages/home/pillars/pillar-03-patriotism.jpg",
+    caption: "Chinmaya Vidyalaya students participating in democratic student council governance, national flag salutations, Maharashtra Divas, and Swachhata Hi Seva cleanliness drives."
   },
   {
     id: "gal-2",

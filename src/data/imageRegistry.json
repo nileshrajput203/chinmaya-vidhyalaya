@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
-    "updatedAt": "2026-11-09T08:42:48.057Z"
+    "updatedAt": "2026-11-09T08:46:12.423Z"
   },
   "homeHero": [
     {
@@ -304,6 +304,11 @@
       "src": "/images/05-four-pillars/pillar-02-culture.png",
       "caption": "Pillar 02 Culture",
       "fileName": "pillar-02-culture.png"
+    },
+    {
+      "src": "/images/05-four-pillars/pillar-03-patriotism.jpg",
+      "caption": "Pillar 03 Patriotism",
+      "fileName": "pillar-03-patriotism.jpg"
     },
     {
       "src": "/images/05-four-pillars/pillar-03-patriotism.png",

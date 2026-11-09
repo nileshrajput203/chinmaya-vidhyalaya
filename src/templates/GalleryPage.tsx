@@ -101,11 +101,7 @@ export const GalleryPage: React.FC = () => {
                     alt={item.title || "Campus Photograph"}
                     loading="lazy"
                     decoding="async"
-                    className={`w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 ${
-                      item.imageUrl.includes('pillar-03')
-                        ? 'object-cover object-[center_12%]'
-                        : 'object-cover'
-                    }`}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                   
                   {/* Hover overlay with expand icon */}

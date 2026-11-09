@@ -68,8 +68,8 @@ const CVP_PILLARS: PillarData[] = [
     pillarTitle: 'PILLAR 3: PATRIOTISM & CIVIC DUTY',
     subtitleTag: 'Civic Duty as an Active Expression of Patriotism',
     sanskrit: 'Rashtra Prem & Nagarik Kartavya',
-    image: '/images/pages/home/pillars/pillar-03-patriotism.png',
-    isCutout: true,
+    image: '/images/pages/home/pillars/pillar-03-patriotism.jpg',
+    isCutout: false,
     visionStatement:
       'True patriotism is translated into dedicated action through civic duty, active community seva, and selfless service to the motherland.',
     explanation:
