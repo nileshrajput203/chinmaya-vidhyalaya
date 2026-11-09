@@ -123,16 +123,6 @@ const ALL_CO_CURRICULAR_PHOTOS: CoCurricularPhotoItem[] = [
     badge: 'Classical Dance',
   },
   {
-    id: 'cc-08',
-    title: 'Origami & Creative Papercraft',
-    category: 'Visual Arts & Craft',
-    groupCategory: 'campus',
-    desc: 'Hands-on tactile craft, origami paper-folding, and imaginative model-building in primary scholastic studios.',
-    url: '/images/co-curricular/img_5144.webp',
-    fallbackUrl: '/images/co-curricular/img_5144.jpg',
-    badge: 'Creative Craft',
-  },
-  {
     id: 'cc-09',
     title: 'Rotary Interact Tree Plantation Drive',
     category: 'Eco-Club & Conservation',
@@ -246,9 +236,9 @@ const ALL_CO_CURRICULAR_PHOTOS: CoCurricularPhotoItem[] = [
   },
 ];
 
-// Row 1 & Row 2 for Infinite Loop Gallery (All 19 photos distributed)
-const row1GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(0, 10);
-const row2GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(10);
+// Row 1 & Row 2 for Infinite Loop Gallery (All 18 photos distributed equally)
+const row1GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(0, 9);
+const row2GalleryImages: InfiniteGalleryItem[] = ALL_CO_CURRICULAR_PHOTOS.slice(9);
 
 /* ────────────────────────────────────────────────────────
    Main Co-Curricular Showcase Component
