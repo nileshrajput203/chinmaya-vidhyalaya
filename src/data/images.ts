@@ -100,24 +100,24 @@ import { OFFICIAL_GALLERY } from './gallery';
 
 export const PANEL_B_MOVING_GALLERY_COL1 = [
   { src: "/images/pages/home/mosaic/top-left.webp", title: "Science & Optics Laboratory" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2", title: "Athletics Championship" },
-  { src: "/images/chinmaya/academics/classroom_learning_001.jpg?v=2", title: "Smart Digital Classroom" },
+  { src: "/images/chinmaya/academics/classroom_learning_036.webp", title: "Active Classroom Participation" },
   { src: "/images/pages/home/mosaic/bottom-left.webp", title: "Central Reference Library" },
-  { src: "/images/chinmaya/cultural/arts_and_creativity_003.jpg?v=2", title: "Arts & Creativity" },
-  { src: "/images/chinmaya-web-science.webp?v=2", title: "Science Exhibition" },
-  { src: "/images/04-academics/sports/sports-1.jpg?v=2", title: "Indoor Sports Pavilion" },
-  { src: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2", title: "Scholastic Study Lounge" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_100.webp", title: "Interactive Digital Smart Board" },
+  { src: "/images/pages/home/mosaic/bottom-right.webp", title: "Interactive Academic Discussion" },
+  { src: "/images/chinmaya/academics/classroom_learning_092.webp", title: "Quiet Reference Study Zone" },
+  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Academic Classrooms" },
+  { src: "/images/chinmaya/academics/classroom_learning_089.webp", title: "Scholastic Research & Study" },
 ];
 
 export const PANEL_B_MOVING_GALLERY_COL2 = [
-  { src: "/images/04-academics/labs/computer/it-1.jpg?v=2", title: "Computer & Coding Lab" },
-  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Classroom Studies" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_003.jpg?v=2", title: "Inter-House March Past" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_100.jpg?v=2", title: "Classical Indian Dance" },
+  { src: "/images/chinmaya/academics/classroom_learning_096.webp", title: "Scholastic Reading Hall" },
+  { src: "/images/pages/home/mosaic/top-right.webp", title: "Scholastic Academic Classrooms" },
+  { src: "/images/chinmaya/academics/classroom_learning_089.webp", title: "Scholastic Research & Study" },
+  { src: "/images/pages/home/mosaic/top-left.webp", title: "Science & Optics Laboratory" },
+  { src: "/images/chinmaya/academics/classroom_learning_036.webp", title: "Active Classroom Participation" },
   { src: "/images/pages/home/mosaic/bottom-right.webp", title: "Interactive Academic Discussion" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_106.jpg?v=2", title: "Stage Festivities" },
-  { src: "/images/chinmaya/cultural/arts_and_creativity_006.jpg?v=2", title: "Creative Exhibition" },
-  { src: "/images/banner-8.webp?v=2", title: "Sports Championship" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_100.webp", title: "Interactive Digital Smart Board" },
+  { src: "/images/pages/home/mosaic/bottom-left.webp", title: "Central Reference Library" },
 ];
 
 // ----------------------------------------------------------------------------
