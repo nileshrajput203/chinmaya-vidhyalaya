@@ -58,9 +58,9 @@ const KOSHAS: Kosha[] = [
     sheath: 'Mental-Emotional Sheath',
     color: '#B45309',
     badgeBg: 'bg-orange-100 text-orange-900 border-orange-300',
-    image: '/images/chinmaya/cultural/arts_and_creativity_006.jpg?v=2',
-    imageTag: 'Empathy, Mentorship & Peer Unity',
-    imageCaption: 'Mental-Emotional Harmony: Caring house mentorship, empathy exercises, and collaborative peer bonding.',
+    image: '/images/vision-mission/manomaya-kosha.jpeg?v=2',
+    imageTag: 'Expressive Arts & Caring Teacher Mentorship',
+    imageCaption: 'Mental-Emotional Harmony: Caring teacher mentorship, creative papercraft art, and emotional empathy in primary classrooms.',
     schoolPractice:
       'Emotional poise, aesthetic arts, classical music, drama, empathy exercises, and peer bonding within supportive house families.',
     dailyRoutine: 'Group singing of uplifting bhajans, cultural drama festivals, expressive art periods, and peer conflict resolution.',
@@ -88,7 +88,7 @@ const KOSHAS: Kosha[] = [
     sheath: 'Spiritual Bliss Sheath',
     color: '#7C3AED',
     badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
-    image: '/images/vision-mission/manomaya-kosha.jpeg',
+    image: '/images/vision-mission/anandamaya-kosha.jpeg?v=2',
     imageTag: 'Vedic Chanting, Bhajans & Spiritual Bliss',
     imageCaption: 'Spiritual Bliss: Students immersed in uplifting Vedic chants, devotional bhajans, and character development rooted in selfless service (Seva).',
     schoolPractice:

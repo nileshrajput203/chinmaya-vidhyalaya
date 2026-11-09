@@ -51,9 +51,9 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#0B1E34',
     badgeBg: 'bg-slate-100',
     badgeText: 'text-[#0B1E34]',
-    image: '/images/banner-9.webp',
-    imageCaption: 'Emotional Poise: Theatrical Drama & Cultural Music on Annual Day',
-    locationMeta: 'Main Auditorium • Annual Fest',
+    image: '/images/vision-mission/manomaya-kosha.jpeg',
+    imageCaption: 'Mental & Emotional Poise: Caring Teacher Mentorship & Papercraft Expression in Classrooms',
+    locationMeta: 'Primary Activity Wing • Mentorship',
     description:
       'Nurturing emotional equilibrium, creative self-expression, and empathetic peer bonds. Guided through performing arts, music, dance, student counselling, and a zero-tolerance anti-bullying campus environment.',
     activities: [
@@ -93,7 +93,7 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#B45309',
     badgeBg: 'bg-amber-50',
     badgeText: 'text-amber-800',
-    image: '/images/vision-mission/manomaya-kosha.jpeg',
+    image: '/images/vision-mission/anandamaya-kosha.jpeg',
     imageCaption: 'Spiritual Depth: Solemn Bhajans, Vedic Chanting & Shloka Recitation',
     locationMeta: 'Central Altar • Morning Assembly',
     description:
