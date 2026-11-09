@@ -32,16 +32,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Track and field events, relay championships, and martial arts demonstrations by student houses."
   },
   {
-    id: "gal-3",
-    title: "Guru Paduka Pooja & Sacred Devotional Assembly",
-    category: "celebrations",
-    event: "Guru Paduka Pooja",
-    academicYear: "2024-25",
-    date: "May 2024",
-    imageUrl: "/images/guru-paduka-pooja.webp?v=2",
-    caption: "Solemn prayer gathering, paduka abhishekam, and bhajans invoking divine grace."
-  },
-  {
     id: "chinmaya-sports-sports_athletic_meet_001",
     title: "Sports Championship & Athletics 001",
     category: "sports",
@@ -262,16 +252,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 104 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-cultural-cultural_celebration_105",
-    title: "Cultural Stage & Festive Celebration 105",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_105.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 105 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-cultural-cultural_celebration_106",
     title: "Cultural Stage & Festive Celebration 106",
     category: "celebrations",
@@ -280,16 +260,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_106.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 106 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-cultural_celebration_107",
-    title: "Cultural Stage & Festive Celebration 107",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_107.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 107 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-cultural_celebration_109",
@@ -302,36 +272,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Cultural Stage & Festive Celebration 109 at Chinmaya Vidyalaya, Tarapur."
   },
   {
-    id: "chinmaya-cultural-cultural_celebration_110",
-    title: "Cultural Stage & Festive Celebration 110",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_110.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 110 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-cultural_celebration_111",
-    title: "Cultural Stage & Festive Celebration 111",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_111.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 111 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-cultural_celebration_113",
-    title: "Cultural Stage & Festive Celebration 113",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_113.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 113 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
     id: "chinmaya-cultural-cultural_celebration_114",
     title: "Cultural Stage & Festive Celebration 114",
     category: "celebrations",
@@ -340,36 +280,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/cultural/cultural_celebration_114.jpg?v=2",
     caption: "Cultural Stage & Festive Celebration 114 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-cultural_celebration_115",
-    title: "Cultural Stage & Festive Celebration 115",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_115.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 115 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-cultural_celebration_116",
-    title: "Cultural Stage & Festive Celebration 116",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_116.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 116 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-cultural_celebration_118",
-    title: "Cultural Stage & Festive Celebration 118",
-    category: "celebrations",
-    event: "Cultural Fest",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/cultural_celebration_118.jpg?v=2",
-    caption: "Cultural Stage & Festive Celebration 118 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-arts_and_creativity_003",
@@ -390,16 +300,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     date: "2026-09-28",
     imageUrl: "/images/chinmaya/cultural/arts_and_creativity_004.jpg?v=2",
     caption: "Arts, Crafts & Project Exhibition 004 at Chinmaya Vidyalaya, Tarapur."
-  },
-  {
-    id: "chinmaya-cultural-arts_and_creativity_005",
-    title: "Arts, Crafts & Project Exhibition 005",
-    category: "celebrations",
-    event: "Creative Arts",
-    academicYear: "2026-27",
-    date: "2026-09-28",
-    imageUrl: "/images/chinmaya/cultural/arts_and_creativity_005.jpg?v=2",
-    caption: "Arts, Crafts & Project Exhibition 005 at Chinmaya Vidyalaya, Tarapur."
   },
   {
     id: "chinmaya-cultural-arts_and_creativity_006",

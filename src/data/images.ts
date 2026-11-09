@@ -74,7 +74,7 @@ export const HOME_VALUES_TILES = [
     num: "02",
     title: "INTEGRITY",
     desc: "Rooted in timeless Vedic character",
-    image: "/images/04-academics/cultural/cultural-assembly-1.jpg",
+    image: "/images/chinmaya/cultural/arts_and_creativity_006.jpg?v=2",
     link: "/about/philosophy",
   },
   {
@@ -96,12 +96,14 @@ export const HOME_VALUES_TILES = [
 // ----------------------------------------------------------------------------
 // 3. HOME PAGE PANEL B: MOVING VERTICAL GALLERIES (Two scrolling photo columns)
 // ----------------------------------------------------------------------------
+import { OFFICIAL_GALLERY } from './gallery';
+
 export const PANEL_B_MOVING_GALLERY_COL1 = [
-  { src: "/images/about2.jpeg?v=2", title: "Main Campus Building" },
-  { src: "/images/04-academics/classrooms/classroom-3.jpg?v=2", title: "Smart Digital Classroom" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_001.webp?v=2", title: "Cultural Excursion" },
+  { src: "/images/banner-1.jpg?v=2", title: "School Campus" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg?v=2", title: "Athletics Championship" },
+  { src: "/images/chinmaya/academics/classroom_learning_001.jpg?v=2", title: "Smart Digital Classroom" },
   { src: "/images/lib.webp?v=2", title: "Central Library" },
-  { src: "/images/chinmaya/cultural/arts_and_creativity_001.webp?v=2", title: "Arts & Creativity" },
+  { src: "/images/chinmaya/cultural/arts_and_creativity_003.jpg?v=2", title: "Arts & Creativity" },
   { src: "/images/chinmaya-web-science.webp?v=2", title: "Science Exhibition" },
   { src: "/images/04-academics/sports/sports-1.jpg?v=2", title: "Indoor Sports Pavilion" },
   { src: "/images/chinmaya/academics/classroom_learning_010.jpg?v=2", title: "Scholastic Study Lounge" },
@@ -109,38 +111,19 @@ export const PANEL_B_MOVING_GALLERY_COL1 = [
 
 export const PANEL_B_MOVING_GALLERY_COL2 = [
   { src: "/images/04-academics/labs/computer/it-1.jpg?v=2", title: "Computer & Coding Lab" },
-  { src: "/images/04-academics/classrooms/classroom-4.jpg?v=2", title: "Primary Activity Class" },
   { src: "/images/banner-9.webp?v=2", title: "Annual Day Celebrations" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_006.jpg?v=2", title: "Classical Indian Dance" },
-  { src: "/images/chinmaya/academics/classroom_learning_003.webp?v=2", title: "Smart Interactive Classes" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg?v=2", title: "Performing Arts" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_040.jpg?v=2", title: "Youth Choir" },
-  { src: "/images/board-conference-room.webp?v=2", title: "Faculty & Mentors" },
+  { src: "/images/chinmaya/sports/sports_athletic_meet_003.jpg?v=2", title: "Inter-House March Past" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_100.jpg?v=2", title: "Classical Indian Dance" },
+  { src: "/images/chinmaya/academics/classroom_learning_016.jpg?v=2", title: "Interactive Learning" },
+  { src: "/images/chinmaya/cultural/cultural_celebration_106.jpg?v=2", title: "Stage Festivities" },
+  { src: "/images/chinmaya/cultural/arts_and_creativity_006.jpg?v=2", title: "Creative Exhibition" },
+  { src: "/images/banner-8.webp?v=2", title: "Sports Championship" },
 ];
 
 // ----------------------------------------------------------------------------
-// 4. RIBBON GALLERY IMAGES (Same 24 images as Photo Gallery)
+// 4. RIBBON GALLERY IMAGES (Dynamic from Photo Gallery)
 // ----------------------------------------------------------------------------
-export const RIBBON_GALLERY_IMAGES: string[] = [
-  '/images/banner-1.jpg',
-  '/images/banner-8.webp',
-  '/images/phys.webp',
-  '/images/biology-lab.jpg',
-  '/images/pages/home/laboratories/it-lab.jpg',
-  '/images/lib.jpg',
-  '/images/banner-9.webp',
-  '/images/chinmaya-web-science.webp',
-  '/images/guru-paduka-pooja.webp',
-  '/images/chinmaya/academics/classroom_learning_001.jpg',
-  '/images/chinmaya/academics/classroom_learning_005.jpg',
-  '/images/chinmaya/sports/sports_athletic_meet_001.jpg',
-  '/images/chinmaya/cultural/cultural_celebration_006.jpg',
-  '/images/chinmaya/sports/sports_athletic_meet_003.jpg',
-  '/images/about2.jpeg',
-  '/images/chinmaya/cultural/cultural_celebration_015.jpg',
-  '/images/chinmaya/academics/science_stem_lab_01.webp',
-  '/images/chinmaya/cultural/cultural_celebration_040.jpg',
-];
+export const RIBBON_GALLERY_IMAGES: string[] = OFFICIAL_GALLERY.map(item => item.imageUrl);
 
 // ----------------------------------------------------------------------------
 // 5. CAMPUS STREAM ARCHIVE (3D Corridor in About/History page)
@@ -220,26 +203,9 @@ export const CAMPUS_STREAM_ARCHIVE = [
 ];
 
 // ----------------------------------------------------------------------------
-// 6. SVG MARQUEE GALLERY IMAGES (Animated looping stream into 3D folder - same 24 images as Photo Gallery)
+// 6. SVG MARQUEE GALLERY IMAGES (Animated looping stream into 3D folder - dynamic from Photo Gallery)
 // ----------------------------------------------------------------------------
-export const MARQUEE_GALLERY_IMAGES = [
-  { src: "/images/banner-1.jpg", alt: "Chinmaya Vidyalaya Main Campus" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_001.jpg", alt: "Athletic Championship" },
-  { src: "/images/phys.webp", alt: "Physics Laboratory" },
-  { src: "/images/chinmaya/academics/science_stem_lab_01.webp", alt: "Chemistry & Science Lab" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_015.jpg", alt: "Cultural Performance" },
-  { src: "/images/biology-lab.jpg", alt: "Biology Laboratory" },
-  { src: "/images/pages/home/laboratories/it-lab.jpg", alt: "Computer & AI/Coding Lab" },
-  { src: "/images/lib.jpg", alt: "Central Library" },
-  { src: "/images/banner-8.webp", alt: "Annual Sports Day" },
-  { src: "/images/chinmaya-web-science.webp", alt: "Science & Innovation Fair" },
-  { src: "/images/guru-paduka-pooja.webp", alt: "Guru Paduka Pooja" },
-  { src: "/images/about2.jpeg", alt: "Academic Campus Wings" },
-  { src: "/images/chinmaya/academics/classroom_learning_003.jpg", alt: "Smart Interactive Learning" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_005.jpg", alt: "Sports Athletics Track Events" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_001.jpg", alt: "Cultural Festivities & Dance" },
-  { src: "/images/chinmaya/campus/campus_facilities_001.jpg", alt: "Campus Facilities & Quadrangle" },
-  { src: "/images/chinmaya/academics/classroom_learning_001.jpg", alt: "Interactive Digital Pedagogy" },
-  { src: "/images/chinmaya/cultural/cultural_celebration_006.jpg", alt: "Classical Dance Recital" },
-  { src: "/images/chinmaya/sports/sports_athletic_meet_003.jpg", alt: "Inter-House March Past" },
-];
+export const MARQUEE_GALLERY_IMAGES = OFFICIAL_GALLERY.map((item) => ({
+  src: item.imageUrl,
+  alt: item.title,
+}));
