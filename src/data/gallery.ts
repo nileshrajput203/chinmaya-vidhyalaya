@@ -22,16 +22,6 @@ export const OFFICIAL_GALLERY: GalleryItem[] = [
     caption: "Magnificent theatrical, classical dance, and scholastic award presentations at the Chinmaya Vidyalaya Annual Day."
   },
   {
-    id: "chinmaya-cvp-patriotism-swachhata",
-    title: "Patriotism & Civic Duty: Student Council, Flag Salute & Swachhata Seva",
-    category: "celebrations",
-    event: "Civic Outreach",
-    academicYear: "2024-25",
-    date: "October 2024",
-    imageUrl: "/images/pages/home/pillars/pillar-03-patriotism.jpg",
-    caption: "Chinmaya Vidyalaya students participating in democratic student council governance, national flag salutations, Maharashtra Divas, and Swachhata Hi Seva cleanliness drives."
-  },
-  {
     id: "gal-2",
     title: "Athletic Meet & Inter-House Sports Championship",
     category: "sports",
