@@ -608,7 +608,7 @@ export const ChatbotFAB: React.FC = () => {
                 <div className="relative">
                   <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#DF711B] shadow-sm bg-white shrink-0">
                     <img
-                      src="/images/bot-avatar.png"
+                      src="/images/bot-avatar.webp"
                       alt="Chinmaya Assistant"
                       className="w-full h-full object-cover"
                     />
@@ -663,7 +663,7 @@ export const ChatbotFAB: React.FC = () => {
                     {msg.sender === 'bot' && (
                       <div className="w-7 h-7 rounded-full overflow-hidden shrink-0 mb-1 border border-[#DF711B]/40 shadow-xs bg-[#0B1D30]">
                         <img
-                          src="/images/bot-avatar.png"
+                          src="/images/bot-avatar.webp"
                           alt="Bot Assistant"
                           className="w-full h-full object-cover"
                         />
@@ -762,7 +762,7 @@ export const ChatbotFAB: React.FC = () => {
                 <div className="flex items-center gap-2 text-xs text-[#666666]">
                   <div className="w-7 h-7 rounded-full overflow-hidden shrink-0 border border-[#DF711B]/40 shadow-xs bg-[#0B1D30]">
                     <img
-                      src="/images/bot-avatar.png"
+                      src="/images/bot-avatar.webp"
                       alt="Bot Assistant"
                       className="w-full h-full object-cover"
                     />

@@ -504,8 +504,10 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
               {/* Subtle ambient light behind student */}
               <div className="absolute -inset-4 bg-gradient-to-t from-[#DF711B]/15 via-[#DF711B]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
               <img
-                src="/images/student_question_cutout.png"
+                src="/images/student_question_cutout.webp"
                 alt="Chinmaya Vidyalaya Student with Inquiry"
+                loading="lazy"
+                decoding="async"
                 className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain pointer-events-none relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out origin-bottom"
               />
             </div>

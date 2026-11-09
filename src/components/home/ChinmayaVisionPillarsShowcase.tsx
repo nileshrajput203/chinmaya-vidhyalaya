@@ -47,7 +47,7 @@ const CVP_PILLARS: PillarData[] = [
     pillarTitle: 'INDIAN CULTURE & TIMELESS VALUES',
     subtitleTag: 'Heritage, Ethics & Living Wisdom',
     sanskrit: 'Bhartiya Sanskriti & Parampara',
-    image: '/images/pages/home/pillars/pillar-02-culture.png',
+    image: '/images/pages/home/pillars/pillar-02-culture.webp',
     isCutout: false,
     visionStatement:
       'Rooted in ancient wisdom, our heritage is a living moral compass - instilling reverence, cultural pride, and righteous character in every young mind.',
@@ -272,6 +272,8 @@ export const ChinmayaVisionPillarsShowcase: React.FC = () => {
                       <img
                         src={current.image}
                         alt={current.pillarTitle}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                       />
                     </div>

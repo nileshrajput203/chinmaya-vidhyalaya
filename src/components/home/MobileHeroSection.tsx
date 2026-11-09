@@ -24,6 +24,7 @@ export const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({ onOpenAdmi
             className="w-full h-full object-cover object-center select-none"
             loading="eager"
             fetchPriority="high"
+            decoding="async"
           />
         </picture>
 

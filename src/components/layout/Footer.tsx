@@ -75,10 +75,12 @@ export const Footer: React.FC = () => {
                 {/* Soft warm gold aura glow behind Pujya Gurudev */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
                 
-                {/* Pujya Gurudev Swami Chinmayananda Cutout PNG Image */}
+                {/* Pujya Gurudev Swami Chinmayananda Cutout Image */}
                 <img 
-                  src="/images/swami_chinmayananda_cutout.png" 
+                  src="/images/swami_chinmayananda_cutout.webp" 
                   alt="Pujya Gurudev Swami Chinmayananda" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto max-h-[320px] xl:max-h-[350px] object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] scale-x-[-1] relative z-10 pointer-events-none"
                 />
               </div>

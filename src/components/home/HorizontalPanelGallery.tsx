@@ -172,6 +172,8 @@ export const HorizontalPanelGallery: React.FC = () => {
                     <img 
                       src={item.image} 
                       alt={item.title} 
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         const target = e.currentTarget;
                         if (!target.src.includes('/images/pages/home/horizontal_values/val-01-curiosity.webp')) {
@@ -206,8 +208,10 @@ export const HorizontalPanelGallery: React.FC = () => {
             {/* ZONE A - LEFT (~26% width): Studio Backdrop & Cutout Composite Image */}
             <div className="w-full h-[340px] sm:h-[440px] lg:h-full lg:w-[26%] xl:w-[25%] relative flex items-center justify-center overflow-hidden shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E5E5] bg-white">
               <img 
-                src="/images/panel_b_achiever_design.png" 
+                src="/images/panel_b_achiever_design.webp" 
                 alt="Chinmaya Vidyalaya Student Achiever Studio Design" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-center relative z-10"
               />
             </div>

@@ -47,6 +47,8 @@ export const BannerCarousel: React.FC = () => {
             <img
               src={slide.src}
               alt={slide.alt}
+              loading={idx === 0 ? "eager" : "lazy"}
+              decoding="async"
               className="w-full h-full object-contain block"
             />
           </div>

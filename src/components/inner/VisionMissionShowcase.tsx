@@ -43,7 +43,7 @@ const KOSHAS: Kosha[] = [
     sheath: 'Vital Energy Sheath',
     color: '#059669',
     badgeBg: 'bg-emerald-100 text-emerald-900 border-emerald-300',
-    image: '/images/vision-mission/pranamaya-kosha.png',
+    image: '/images/vision-mission/pranamaya-kosha.webp',
     imageTag: 'Pranayama & Breath Harmony',
     imageCaption: 'Vital Energy Harmony: Whole-school synchronized pranayama breathing under morning skies, instilling calm focus across all grade levels.',
     schoolPractice:

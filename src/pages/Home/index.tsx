@@ -141,8 +141,10 @@ export const HomePage: React.FC = () => {
          ---------------------------------------------------- */}
       <section className="w-full bg-white relative overflow-hidden" aria-label="Campus Sports Banner">
         <img 
-          src="/sports-banner.png?v=20261022" 
+          src="/sports-banner.webp?v=20261022" 
           alt="Chinmaya Vidyalaya Sports Banner - The Game Unites Us" 
+          loading="lazy"
+          decoding="async"
           className="w-full h-auto object-contain block"
         />
       </section>
@@ -163,6 +165,8 @@ export const HomePage: React.FC = () => {
                     <div className="relative w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#DF711B] via-amber-300 to-[#DF711B] shadow-md shrink-0">
                       <img
                         src="/images/pages/home/leadership/principal-square.webp"
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget;
                           if (target.src.endsWith('.webp')) {
@@ -308,7 +312,9 @@ export const HomePage: React.FC = () => {
                 {/* Lab Image */}
                 <div className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden bg-slate-100">
                   <img
-                    src={`${card.image}?v=${Date.now()}`}
+                    src={card.image}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (card.fallback && !target.src.includes(card.fallback)) {
@@ -367,10 +373,11 @@ export const HomePage: React.FC = () => {
          ---------------------------------------------------- */}
       <section className="w-full bg-white relative overflow-hidden" aria-label="Campus Sign Banner">
         <img 
-          src="/images/sign.png" 
+          src="/images/sign.webp" 
           alt="Chinmaya Vidyalaya Campus Banner" 
           className="w-full h-auto object-cover block"
           loading="lazy"
+          decoding="async"
         />
       </section>
 
@@ -515,6 +522,8 @@ export const HomePage: React.FC = () => {
                     <img
                       src={post.coverImage}
                       alt={post.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />

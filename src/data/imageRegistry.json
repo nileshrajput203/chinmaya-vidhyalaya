@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
-    "updatedAt": "2026-11-09T11:41:53.675Z"
+    "updatedAt": "2026-11-09T14:51:41.768Z"
   },
   "homeHero": [
     {
@@ -299,6 +299,11 @@
       "src": "/images/05-four-pillars/pillar-02-culture.png",
       "caption": "Pillar 02 Culture",
       "fileName": "pillar-02-culture.png"
+    },
+    {
+      "src": "/images/05-four-pillars/pillar-02-culture.webp",
+      "caption": "Pillar 02 Culture",
+      "fileName": "pillar-02-culture.webp"
     },
     {
       "src": "/images/05-four-pillars/pillar-03-patriotism.jpg",
@@ -1683,6 +1688,11 @@
       "fileName": "bot-avatar.png"
     },
     {
+      "src": "/images/07-branding/bot-avatar.webp",
+      "caption": "Bot Avatar",
+      "fileName": "bot-avatar.webp"
+    },
+    {
       "src": "/images/07-branding/Chinmaya_Logo.png",
       "caption": "Chinmaya Logo",
       "fileName": "Chinmaya_Logo.png"
@@ -1698,14 +1708,29 @@
       "fileName": "sign.png"
     },
     {
+      "src": "/images/07-branding/sign.webp",
+      "caption": "Sign",
+      "fileName": "sign.webp"
+    },
+    {
       "src": "/images/07-branding/student_question_cutout.png",
       "caption": "Student Question Cutout",
       "fileName": "student_question_cutout.png"
     },
     {
+      "src": "/images/07-branding/student_question_cutout.webp",
+      "caption": "Student Question Cutout",
+      "fileName": "student_question_cutout.webp"
+    },
+    {
       "src": "/images/07-branding/swami_chinmayananda_cutout.png",
       "caption": "Swami Chinmayananda Cutout",
       "fileName": "swami_chinmayananda_cutout.png"
+    },
+    {
+      "src": "/images/07-branding/swami_chinmayananda_cutout.webp",
+      "caption": "Swami Chinmayananda Cutout",
+      "fileName": "swami_chinmayananda_cutout.webp"
     }
   ]
 }

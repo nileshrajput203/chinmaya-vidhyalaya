@@ -140,6 +140,8 @@ export const ScrollExpandingMosaic: React.FC = () => {
                   src={CAMPUS_VIDEO.poster}
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover filter blur-[24px] scale-125 opacity-70"
                 />
               </div>
