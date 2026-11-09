@@ -30,11 +30,11 @@ const KOSHAS: Kosha[] = [
     badgeBg: 'bg-amber-100 text-amber-900 border-amber-300',
     image: '/images/vision-mission/annamaya-kosha.jpeg',
     imageTag: 'Athletics & Physical Conditioning',
-    imageCaption: 'Physical Vitality: Daily outdoor athletics, football practice, and physical stamina building on our sprawling campus athletic grounds.',
+    imageCaption: 'Campus Athletics: Students developing cardiovascular endurance, agility, and team camaraderie during outdoor track training on the Boisar campus grounds.',
     schoolPractice:
-      'Rigorous physical conditioning, sports training, nutritional hygiene, and daily physical exercises on our sprawling campus athletic grounds.',
-    dailyRoutine: 'Morning PT drill, inter-house football & cricket, martial arts, and pure RO drinking water monitoring.',
-    outcomes: ['Physical stamina and vitality', 'Motor skill coordination & reflexes', 'Disciplined hygiene & sportsmanship']
+      'The physical body is the sacred instrument (Kshetra) of all human achievement. Chinmaya pedagogy treats physical health as the foundational discipline of nutrition, muscular coordination, and energetic vitality needed for lifelong learning.',
+    dailyRoutine: 'Morning fitness drills, inter-house football and cricket leagues, age-graded martial arts, annual pediatric screenings, and pure RO hydration tracking.',
+    outcomes: ['Robust physical stamina and motor coordination', 'Lifelong habits of balanced nutrition and personal hygiene', 'Unshakable team camaraderie and sportsmanship']
   },
   {
     id: 'pranamaya',
@@ -44,12 +44,12 @@ const KOSHAS: Kosha[] = [
     color: '#059669',
     badgeBg: 'bg-emerald-100 text-emerald-900 border-emerald-300',
     image: '/images/vision-mission/pranamaya-kosha.png',
-    imageTag: 'Mass Yoga & Vital Breath Harmony',
-    imageCaption: 'Vital Energy: Whole-school morning assembly yoga, Anulom Vilom & Bhramari pranayama under open skies on campus grounds.',
+    imageTag: 'Pranayama & Breath Harmony',
+    imageCaption: 'Vital Energy Harmony: Whole-school synchronized pranayama breathing under morning skies, instilling calm focus across all grade levels.',
     schoolPractice:
-      'Pranayama breathing techniques, breath synchronization, and vital energy balancing to steady youthful nervousness and enhance concentration.',
-    dailyRoutine: 'Guided Anulom Vilom and Bhramari Pranayama during morning assembly, breath awareness before exams.',
-    outcomes: ['Calm physiological response to stress', 'Increased lung capacity and oxygenation', 'Inner vital equilibrium & mental focus']
+      'Prana is the subtle vital energy linking body and mind. Through conscious breath regulation, students learn to quiet their autonomic nervous system, neutralize exam-room anxiety, and channel youthful exuberance into steady, prolonged attention.',
+    dailyRoutine: 'Dedicated 10-minute Anulom-Vilom and Bhramari Pranayama during morning assembly, 2-minute pre-exam centering pauses, and restorative postural alignment.',
+    outcomes: ['Rapid self-regulation of stress and nervous tension', 'Enhanced respiratory volume and optimal brain oxygenation', 'Sustained classroom concentration and mental poise']
   },
   {
     id: 'manomaya',
@@ -59,12 +59,12 @@ const KOSHAS: Kosha[] = [
     color: '#B45309',
     badgeBg: 'bg-orange-100 text-orange-900 border-orange-300',
     image: '/images/vision-mission/manomaya-kosha.jpeg?v=4',
-    imageTag: 'Expressive Arts & Caring Teacher Mentorship',
-    imageCaption: 'Mental-Emotional Harmony: Caring teacher mentorship, creative papercraft art, and emotional empathy in primary classrooms.',
+    imageTag: 'Expressive Arts & Caring Mentorship',
+    imageCaption: 'Mental-Emotional Poise: Primary faculty mentor providing caring individual guidance during hands-on creative papercraft expression.',
     schoolPractice:
-      'Emotional poise, aesthetic arts, classical music, drama, empathy exercises, and peer bonding within supportive house families.',
-    dailyRoutine: 'Group singing of uplifting bhajans, cultural drama festivals, expressive art periods, and peer conflict resolution.',
-    outcomes: ['Emotional balance and empathy', 'Aesthetic sensitivity and self-expression', 'Healthy peer relations without bullying']
+      'The emotional mind (Manas) governs a student’s self-worth, motivation, and empathy. We nurture healthy emotional resilience and aesthetic sensitivity, protecting growing children from digital isolation and toxic peer comparisons.',
+    dailyRoutine: 'Structured Circle Time check-ins, annual Marathi and Hindi dramatic productions, visual arts and pottery electives, and empathetic peer-mentorship circles.',
+    outcomes: ['Emotional balance and healthy self-expression without aggression', 'Refined aesthetic taste and creative problem-solving', 'Compassionate peer relationships and constructive conflict resolution']
   },
   {
     id: 'vijnanamaya',
@@ -74,12 +74,12 @@ const KOSHAS: Kosha[] = [
     color: '#0B1E34',
     badgeBg: 'bg-blue-100 text-blue-900 border-blue-300',
     image: '/images/vision-mission/vijnanamaya-kosha.jpeg',
-    imageTag: 'Hands-on Science Inquiry & Specimen Analysis',
-    imageCaption: 'Intellectual Depth: Hands-on biological specimen inquiry, laboratory journals, and scientific analysis in the life sciences lab.',
+    imageTag: 'Hands-on Science & Analytical Logic',
+    imageCaption: 'Intellectual Rigor: Senior secondary students examining cellular slide specimens and recording empirical observations in the biology lab.',
     schoolPractice:
-      'Inquiry-based Science (Physics, Chemistry, Biology) and Maths laboratories, analytical reasoning, and philosophical debate.',
-    dailyRoutine: 'Hands-on laboratory verification, mathematical puzzle solving, ASSET testing, and debate competitions.',
-    outcomes: ['Critical reasoning and fearless logic', 'Freedom from superstition', 'Mastery in scientific problem-solving']
+      'The intellect (Buddhi) is the faculty of critical discrimination (Viveka) separating truth from superstition. We replace passive memorization with hypothesis formulation, rigorous empirical testing, and courageous scientific inquiry.',
+    dailyRoutine: 'Hands-on laboratory verification in Physics, Chemistry & Biology, ASSET diagnostic conceptual benchmarks, Ramanujan math Olympiad coaching, and debate forums.',
+    outcomes: ['Fearless analytical deduction and evidence-based reasoning', 'Liberation from blind superstition and dogma', 'Mastery in real-world scientific problem-solving']
   },
   {
     id: 'anandamaya',
@@ -89,12 +89,12 @@ const KOSHAS: Kosha[] = [
     color: '#7C3AED',
     badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
     image: '/images/vision-mission/anandamaya-kosha.jpeg?v=2',
-    imageTag: 'Vedic Chanting, Bhajans & Spiritual Bliss',
-    imageCaption: 'Spiritual Bliss: Students immersed in uplifting Vedic chants, devotional bhajans, and character development rooted in selfless service (Seva).',
+    imageTag: 'Devotional Chanting & Selfless Service',
+    imageCaption: 'Spiritual Fulfillment: Students in traditional festive attire leading classical devotional stotras and shlokas during cultural assembly.',
     schoolPractice:
-      'Guru Paduka Pooja, Bhagavad Gita chanting, value education through Balvihar, and joy discovered in selfless service (Seva).',
-    dailyRoutine: 'Daily Chinmaya family prayer at 7:45 AM, chapterwise Gita chanting competitions, and community outreach drives.',
-    outcomes: ['Inner peace and boundless joy', 'Reverence for teachers and parents', 'Selfless readiness to serve society']
+      'The innermost core of human personality is Anandam (innate peace and joy). Our spiritual education awakens unconditional reverence for life, deep gratitude toward parents and teachers, and the discovery that supreme fulfillment comes from selfless service (Seva).',
+    dailyRoutine: 'Daily 7:45 AM Chinmaya family prayer assemblies, annual inter-school Gita Chanting competitions, Balvihar character sessions, and rural outreach seva drives.',
+    outcomes: ['Unshakable inner peace and joyful contentment', 'Heartfelt gratitude and lifelong respect for mentors and family', 'Natural readiness to serve community and nation without ego']
   }
 ];
 

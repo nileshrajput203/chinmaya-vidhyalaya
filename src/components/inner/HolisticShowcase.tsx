@@ -31,15 +31,15 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     badgeBg: 'bg-[#FAF3E8]',
     badgeText: 'text-[#DF711B]',
     image: '/images/banner-8.webp',
-    imageCaption: 'Physical Agility: Track & Field Athletics on Expansive Boisar Grounds',
+    imageCaption: 'Outdoor Sports: Inter-House Track Athletics & Field Competitions',
     locationMeta: 'East Athletic Grounds • Boisar',
     description:
-      'Cultivating physical stamina, muscular coordination, and healthy habits. Students engage in daily morning Surya Namaskar, structured sports coaching in football, cricket, and athletics, and periodic fitness screenings.',
+      'Building physical endurance, motor agility, and disciplined athletic stamina. Through daily morning drills, structured sports coaching in football, cricket, and athletics, and wellness tracking, students develop lifelong healthy habits.',
     activities: [
-      'Daily morning yoga and Surya Namaskar assemblies',
-      'Inter-house football, cricket, volleyball, and table tennis leagues',
-      'Annual Sports Day with athletic track events and march-past drills',
-      'Promoting clean hydration and balanced nutritional habits'
+      'Daily morning assembly Surya Namaskar and dynamic warm-up drills',
+      'Inter-house tournaments in football, cricket, volleyball, and table tennis',
+      'Annual Sports Championship with sprint relays and house march-pasts',
+      'Clean RO water hydration monitoring and physical wellness check-ups'
     ]
   },
   {
@@ -51,16 +51,16 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#0B1E34',
     badgeBg: 'bg-slate-100',
     badgeText: 'text-[#0B1E34]',
-    image: '/images/vision-mission/manomaya-kosha.jpeg?v=4',
-    imageCaption: 'Mental & Emotional Poise: Caring Teacher Mentorship & Papercraft Expression in Classrooms',
-    locationMeta: 'Primary Activity Wing • Mentorship',
+    image: '/images/chinmaya/cultural/arts_and_creativity_006.jpg?v=2',
+    imageCaption: 'Creative Expression: Fine Arts, Calligraphy & Cultural Craft Exhibitions',
+    locationMeta: 'Art Studio & Exhibition Gallery',
     description:
-      'Nurturing emotional equilibrium, creative self-expression, and empathetic peer bonds. Guided through performing arts, music, dance, student counselling, and a zero-tolerance anti-bullying campus environment.',
+      'Channeling emotional energy into creative excellence through visual arts, Indian classical music, and theater. Students explore painting, clay craft, and public speaking, developing emotional balance and collaborative team spirit.',
     activities: [
-      'Visual arts, classical music, and annual day dramatic plays',
-      'Dedicated house mentorship system providing emotional guidance',
-      'Personality refinement workshops and cooperative team projects',
-      'Safe, supportive campus environment encouraging risk-taking'
+      'Studio painting, papercraft modeling, and annual art exhibitions',
+      'Indian classical and folk dance training for cultural stage fests',
+      'House-system peer mentorship and anti-bullying student ambassadors',
+      'Inter-house elocution, poetry recitation, and dramatic plays'
     ]
   },
   {
@@ -73,15 +73,15 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     badgeBg: 'bg-indigo-50',
     badgeText: 'text-indigo-800',
     image: '/images/chinmaya/cultural/cultural_celebration_016.jpg?v=2',
-    imageCaption: 'Cognitive Rigor: Hands-on Chemistry Experimentation & Analysis',
-    locationMeta: 'Chemistry Laboratory • Station 2',
+    imageCaption: 'Scientific Rigor: Volumetric Analysis & Empirical Experimentation in Chemistry Lab',
+    locationMeta: 'Senior Science Labs • Boisar',
     description:
-      'Sharpening analytical cognition, critical inquiry, and conceptual problem-solving. Students conduct hands-on laboratory experiments, engage in ASSET diagnostic assessments, and participate in science exhibitions.',
+      'Fostering logical deduction, intellectual curiosity, and scientific inquiry. Students test conceptual hypotheses in state-of-the-art laboratories, engage in diagnostic assessments, and develop critical problem-solving skills.',
     activities: [
-      'Well-equipped Physics, Chemistry, Biology, and IT laboratories',
-      'ASSET diagnostic assessments identifying conceptual strengths & gaps',
-      'Debates, elocution, quiz competitions, and science exhibitions',
-      'Library research, digital literacy, and logic development'
+      'Hands-on experiments in dedicated Physics, Chemistry, Biology, and IT labs',
+      'CBSE curriculum problem-solving and ASSET diagnostic skill benchmarks',
+      'Annual Science Exhibition featuring student-engineered working models',
+      'Central Library research periods and coding in Python and Scratch'
     ]
   },
   {
@@ -93,16 +93,16 @@ const VIKAS_DOMAINS: VikasPillar[] = [
     color: '#B45309',
     badgeBg: 'bg-amber-50',
     badgeText: 'text-amber-800',
-    image: '/images/vision-mission/anandamaya-kosha.jpeg',
-    imageCaption: 'Spiritual Depth: Solemn Bhajans, Vedic Chanting & Shloka Recitation',
-    locationMeta: 'Central Altar • Morning Assembly',
+    image: '/images/guru-paduka-pooja.webp?v=2',
+    imageCaption: 'Spiritual Roots: Sacred Guru Paduka Pooja & Chinmaya Cultural Traditions',
+    locationMeta: 'Vidyalaya Prayer Sanctum • Boisar',
     description:
-      'Awakening moral sensitivity, universal brotherhood, and selfless dedication (Seva). Rooted in solemn Guru Paduka Pooja, Bhagavad Gita chanting, Balvihar moral stories, and quiet mindful breathing.',
+      'Nurturing ethical character, humility, and devotion to noble ideals. Students imbibe timeless Vedic wisdom through Balvihar value education, community service (Seva), and daily reflection on life values.',
     activities: [
-      'Daily morning prayer assemblies with Sanskrit shlokas and meditation',
       'Annual Chinmaya Mission Inter-School Gita Chanting Competition',
-      'Monthly Bhajan assemblies on the 3rd Saturday of every month',
-      'Balvihar value education modules teaching integrity and reverence'
+      'Monthly Bhajan and spiritual assembly on the 3rd Saturday of each month',
+      'Balvihar value modules exploring timeless Vedic ethics and selfless duty',
+      'Community outreach and environmental cleanliness drives (Swachhata Seva)'
     ]
   }
 ];
