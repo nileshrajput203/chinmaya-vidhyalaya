@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Auto-generated Image Registry. Do not edit manually. Edit files in public/images/ directly.",
-    "updatedAt": "2026-11-09T08:46:12.423Z"
+    "updatedAt": "2026-11-09T11:15:09.227Z"
   },
   "homeHero": [
     {
@@ -135,11 +135,6 @@
         "src": "/images/04-academics/classrooms/classroom-3.jpg",
         "caption": "Smart Digital Classrooms Equipped with Interactive Flat Panel Displays",
         "fileName": "classroom-3.jpg"
-      },
-      {
-        "src": "/images/04-academics/classrooms/classroom-4.jpg",
-        "caption": "Vibrant Primary Classrooms with Child-Centric Ergonomics & Creative Activity Corners",
-        "fileName": "classroom-4.jpg"
       }
     ],
     "library": [
@@ -245,11 +240,6 @@
           "fileName": "bio-1.jpg"
         },
         {
-          "src": "/images/04-academics/labs/biology/bio-2.jpg",
-          "caption": "Senior Student Examining Human Skeletal Model & Recording Observations",
-          "fileName": "bio-2.jpg"
-        },
-        {
           "src": "/images/04-academics/labs/biology/bio-3.jpg",
           "caption": "High-Power Monocular Student Microscopes at Lab Station",
           "fileName": "bio-3.jpg"
@@ -258,11 +248,6 @@
           "src": "/images/04-academics/labs/biology/bio-5.jpg",
           "caption": "Dissection Trays & Anatomical Study Setup",
           "fileName": "bio-5.jpg"
-        },
-        {
-          "src": "/images/04-academics/labs/biology/bio-6.jpg",
-          "caption": "Student Observing Specimen Slide Under High-Power Compound Microscope",
-          "fileName": "bio-6.jpg"
         }
       ],
       "computer": [

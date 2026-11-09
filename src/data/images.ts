@@ -67,7 +67,7 @@ export const HOME_VALUES_TILES = [
     num: "01",
     title: "CURIOSITY",
     desc: "Embrace lifelong learning & inquiry",
-    image: "/images/04-academics/labs/biology/bio-2.jpg",
+    image: "/images/04-academics/labs/biology/bio-1.jpg",
     link: "/academics/curriculum",
   },
   {
