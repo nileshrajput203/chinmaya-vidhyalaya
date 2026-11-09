@@ -78,7 +78,7 @@ const FACILITIES: FacilityItem[] = [
       'Dedicated UPS power backup (no unbuffered grid dependency) for analytical equipment',
       '24/7 CCTV surveillance monitoring for student safety and lab decorum',
       'Acid-resistant non-porous ceramic bench surfaces and labware only',
-      'Mandatory cotton lab aprons, protective eye glasses, and chemical-safe handling'
+      'Mandatory cotton lab aprons and chemical-safe handling'
     ],
     equipment: [
       'Precision 4-Digit Digital Analytical Balances',
