@@ -16,7 +16,7 @@ import {
 import { OFFICIAL_NOTICES } from '../../data/notices';
 
 export const NoticeEventBoard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('events');
+  const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('notices');
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
 
   const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
@@ -43,7 +43,7 @@ export const NoticeEventBoard: React.FC = () => {
   
   const upcomingEvents = UPCOMING_EVENTS;
 
-  const availableMonths = ['all', 'November 2026', 'December 2026', 'January 2027', 'February 2027', 'March 2027'];
+  const availableMonths = ['all', 'December 2026', 'January 2027', 'March 2027'];
   
 
 

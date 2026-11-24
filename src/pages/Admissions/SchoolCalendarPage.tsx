@@ -125,7 +125,7 @@ export const SchoolCalendarPage: React.FC = () => {
                 <ul className="space-y-1.5 text-slate-600 text-[11px]">
                   <li><strong>Summer Break:</strong> May 1, 2026 - June 9, 2026</li>
                   <li><strong>Diwali Vacation:</strong> October 28, 2026 - November 10, 2026</li>
-                  <li><strong>Winter Break:</strong> December 24, 2026 - January 2, 2027</li>
+                  <li><strong>Winter Break:</strong> December 25, 2026 - January 1, 2027 (School Reopens on 02.01.2027)</li>
                 </ul>
               </div>
             </div>
