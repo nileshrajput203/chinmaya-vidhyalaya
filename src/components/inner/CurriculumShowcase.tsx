@@ -14,7 +14,6 @@ import {
   Dumbbell, 
   FileCheck2, 
   Download, 
-  ExternalLink,
   Layers,
   FlaskConical,
   Compass,
@@ -938,16 +937,6 @@ export const CurriculumShowcase: React.FC = () => {
             <Download className="w-4 h-4" />
             <span>Download CBSE Sample Papers</span>
           </Link>
-
-          <a
-            href="https://cbseacademic.nic.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto justify-center px-4 py-2.5 sm:px-5 sm:py-3 border border-[#E7E2D8] hover:bg-slate-50 text-slate-800 text-xs font-bold rounded-xl transition-all flex items-center gap-2"
-          >
-            <span>CBSE Academic Portal</span>
-            <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
-          </a>
         </div>
       </div>
 
