@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Eye, Target, CheckCircle2, ZoomIn, X } from 'lucide-react';
 import { SpotlightCard } from '../ui/spotlight-card';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
-import { useInView, motion, AnimatePresence } from 'motion/react';
-import { TextRotate, TextRotateRef } from '../ui/text-rotate';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface Kosha {
   id: string;
@@ -102,7 +101,6 @@ interface KoshaScrollCardProps {
   kosha: Kosha;
   index: number;
   isActive: boolean;
-  onInView: (index: number) => void;
   onImageClick: (kosha: Kosha) => void;
 }
 
@@ -110,39 +108,30 @@ const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
   kosha,
   index,
   isActive,
-  onInView,
   onImageClick,
 }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(cardRef, {
-    margin: '-25% 0px -25% 0px',
-  });
-
-  useEffect(() => {
-    if (isInView) {
-      onInView(index);
-    }
-  }, [isInView, index, onInView]);
-
   return (
     <div
-      ref={cardRef}
       id={`kosha-section-${index}`}
-      className={`transition-all duration-500 rounded-3xl p-6 sm:p-8 border ${
+      className={`transition-all duration-300 rounded-3xl p-6 sm:p-8 border ${
         isActive
-          ? 'bg-white border-[#DF711B]/40 shadow-card'
-          : 'bg-white/90 border-[#E7E2D8] opacity-90 hover:opacity-100'
-      } space-y-6 scroll-mt-32`}
+          ? 'bg-white border-[#DF711B] shadow-card ring-2 ring-[#DF711B]/20 scale-[1.008]'
+          : 'bg-white/90 border-[#E7E2D8] opacity-80 hover:opacity-100'
+      } space-y-6 scroll-mt-28`}
     >
       {/* Sheath Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E7E2D8] pb-4">
         <div className="flex items-center gap-3">
-          <span className="w-8 h-8 rounded-xl bg-[#DF711B] text-white flex items-center justify-center font-mono font-bold text-xs shadow-xs">
+          <span className={`w-8 h-8 rounded-xl text-white flex items-center justify-center font-mono font-bold text-xs shadow-xs transition-colors ${
+            isActive ? 'bg-[#DF711B]' : 'bg-slate-400'
+          }`}>
             0{index + 1}
           </span>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-bold text-[#DF711B] uppercase tracking-wider">
+              <span className={`text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'text-[#DF711B]' : 'text-slate-500'
+              }`}>
                 {kosha.sheath}
               </span>
               <span className="text-xs font-mono text-slate-400">• {kosha.sanskrit}</span>
@@ -213,25 +202,101 @@ const KoshaScrollCard: React.FC<KoshaScrollCardProps> = ({
 export const VisionMissionShowcase: React.FC = () => {
   const [activeKoshaIndex, setActiveKoshaIndex] = useState(0);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; caption: string } | null>(null);
-  const textRotateRef = useRef<TextRotateRef>(null);
+  const isManualScrollRef = useRef(false);
+  const manualScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Prevent background scroll bleed when lightbox is open
   useBodyScrollLock(lightboxImage !== null);
 
   const activeKosha = KOSHAS[activeKoshaIndex] || KOSHAS[0];
 
-  const handleKoshaInView = useCallback((index: number) => {
-    setActiveKoshaIndex(index);
-    textRotateRef.current?.jumpTo(index);
+  const getActiveCardIndex = useCallback((): number => {
+    // Reading focal line is at ~42% of viewport height (where eyes naturally rest on desktop and mobile)
+    const focalLine = window.innerHeight * 0.42;
+
+    // Check if bottom of the document has been reached
+    const isAtBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60;
+    if (isAtBottom) {
+      return KOSHAS.length - 1;
+    }
+
+    let bestIndex = 0;
+    let minDistance = Infinity;
+
+    for (let i = 0; i < KOSHAS.length; i++) {
+      const el = document.getElementById(`kosha-section-${i}`);
+      if (!el) continue;
+      const rect = el.getBoundingClientRect();
+
+      // Direct hit: the reading focal line is inside this card
+      if (rect.top <= focalLine && rect.bottom >= focalLine) {
+        return i;
+      }
+
+      // Fallback: whichever card center is closest to the focal line
+      const cardCenter = (rect.top + rect.bottom) / 2;
+      const dist = Math.abs(cardCenter - focalLine);
+      if (dist < minDistance) {
+        minDistance = dist;
+        bestIndex = i;
+      }
+    }
+
+    return bestIndex;
   }, []);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+    let scrollTimeout: NodeJS.Timeout | null = null;
+
+    const update = () => {
+      if (isManualScrollRef.current) return;
+      const nextIdx = getActiveCardIndex();
+      setActiveKoshaIndex((prev) => (prev !== nextIdx ? nextIdx : prev));
+    };
+
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        update();
+        rafId = null;
+      });
+
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(update, 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    window.addEventListener('scrollend', update, { passive: true });
+
+    // Initial check on mount
+    update();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('scrollend', update);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      if (manualScrollTimerRef.current) clearTimeout(manualScrollTimerRef.current);
+    };
+  }, [getActiveCardIndex]);
 
   const scrollToKosha = (index: number) => {
     setActiveKoshaIndex(index);
-    textRotateRef.current?.jumpTo(index);
+    isManualScrollRef.current = true;
+    if (manualScrollTimerRef.current) clearTimeout(manualScrollTimerRef.current);
+
     const el = document.getElementById(`kosha-section-${index}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+
+    manualScrollTimerRef.current = setTimeout(() => {
+      isManualScrollRef.current = false;
+    }, 700);
   };
 
   return (
@@ -391,23 +456,20 @@ export const VisionMissionShowcase: React.FC = () => {
                 </span>
               </div>
 
-              {/* Rotating Title */}
-              <div className="min-h-[36px] flex items-center">
-                <TextRotate
-                  ref={textRotateRef}
-                  texts={KOSHAS.map((k) => k.name)}
-                  mainClassName="font-cinzel text-xl xl:text-2xl font-black text-white tracking-tight drop-shadow-xs"
-                  splitLevelClassName="overflow-hidden"
-                  staggerFrom="first"
-                  animatePresenceMode="wait"
-                  loop={false}
-                  auto={false}
-                  staggerDuration={0.01}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ type: "spring", duration: 0.4, bounce: 0 }}
-                />
+              {/* Active Sheath Title */}
+              <div className="min-h-[36px] flex items-center overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.h4
+                    key={activeKosha.id}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                    className="font-cinzel text-xl xl:text-2xl font-black text-white tracking-tight drop-shadow-xs"
+                  >
+                    {activeKosha.name}
+                  </motion.h4>
+                </AnimatePresence>
               </div>
 
               <p className="text-xs text-orange-50/90 font-sans leading-tight">
@@ -479,7 +541,6 @@ export const VisionMissionShowcase: React.FC = () => {
                 kosha={kosha}
                 index={idx}
                 isActive={activeKoshaIndex === idx}
-                onInView={handleKoshaInView}
                 onImageClick={(k) => setLightboxImage({
                   src: k.image,
                   title: `${k.name} (${k.sheath})`,
