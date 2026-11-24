@@ -309,7 +309,43 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const lastReportedProgressRef = useRef<number>(0);
 
-  // Scroll synchronization
+  // Anti-Slow-Scroll Glider: Ensures users never see sluggish, frame-by-frame playback.
+  // Any downward scroll intent swiftly glides through the hero sequence to completion at full 60fps.
+  const isGlidingRef = useRef<boolean>(false);
+  const glideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const glideTo = useCallback((targetY: number, duration: number = 0.85) => {
+    if (isGlidingRef.current) return;
+    isGlidingRef.current = true;
+
+    if (glideTimeoutRef.current) {
+      clearTimeout(glideTimeoutRef.current);
+    }
+    glideTimeoutRef.current = setTimeout(() => {
+      isGlidingRef.current = false;
+    }, (duration + 0.25) * 1000);
+
+    const lenis = (window as any).__lenis;
+    if (lenis && typeof lenis.scrollTo === 'function') {
+      lenis.scrollTo(targetY, {
+        duration,
+        easing: (t: number) => 1 - Math.pow(1 - t, 3),
+        onComplete: () => {
+          isGlidingRef.current = false;
+        },
+      });
+    } else {
+      window.scrollTo({
+        top: targetY,
+        behavior: 'smooth',
+      });
+      setTimeout(() => {
+        isGlidingRef.current = false;
+      }, duration * 1000);
+    }
+  }, []);
+
+  // Scroll synchronization & Anti-Slow-Scroll Interception
   useEffect(() => {
     if (!isDesktop) return;
     const container = containerRef.current;
@@ -320,8 +356,24 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       start: 'top top',
       end: 'bottom bottom',
       invalidateOnRefresh: true,
+      snap: {
+        snapTo: (value) => {
+          if (value > 0.03 && value < 0.95) {
+            return 1;
+          }
+          return value <= 0.03 ? 0 : 1;
+        },
+        duration: { min: 0.35, max: 0.75 },
+        delay: 0.02,
+        ease: 'power2.out',
+      },
       onUpdate: (self) => {
         const progress = Math.min(1, Math.max(0, self.progress));
+
+        // Auto-complete glide if user attempts to drag scrollbar slowly in hero
+        if (!isGlidingRef.current && progress > 0.03 && progress < 0.90 && self.direction > 0) {
+          glideTo(TOTAL_SCROLLABLE_PX, 0.85);
+        }
 
         // Accurate video scrub: plays in full (frame 0 to 235) across 0% to 60% scroll
         const rawVideoProgress = progress / 0.60;
@@ -354,20 +406,80 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
       targetFrameRef.current = videoProgress * (TOTAL_FRAMES - 1);
       requestRenderRef.current?.();
 
-      // Throttle React state re-renders to 1% intervals to eliminate all CPU lag & frame drops
       if (Math.abs(progress - lastReportedProgressRef.current) >= 0.008 || progress === 0 || progress === 1) {
         lastReportedProgressRef.current = progress;
         setScrollProgress(progress);
       }
     };
 
+    // Wheel listener: Intercepts mouse wheel & trackpad gestures in the hero zone.
+    // Completely prevents sluggish micro-ticks so visitors never see individual frames.
+    const handleWheel = (e: WheelEvent) => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const rect = container.getBoundingClientRect();
+      const containerTop = scrollY + rect.top;
+      const heroEnd = containerTop + TOTAL_SCROLLABLE_PX;
+
+      if (isGlidingRef.current) {
+        if (scrollY <= heroEnd + 15) {
+          e.preventDefault();
+        }
+        return;
+      }
+
+      // User is anywhere in hero zone and scrolls DOWN
+      if (scrollY >= containerTop - 5 && scrollY < heroEnd - 20) {
+        if (e.deltaY > 0) {
+          e.preventDefault();
+          glideTo(heroEnd, 0.85);
+          return;
+        }
+      }
+
+      // User is near end of hero and scrolls UP back to the first view flyer
+      if (scrollY >= heroEnd - 40 && scrollY <= heroEnd + 20) {
+        if (e.deltaY < 0) {
+          e.preventDefault();
+          glideTo(containerTop, 0.85);
+          return;
+        }
+      }
+    };
+
+    // Keyboard listener: Prevent step-by-step frame crawling with arrow keys / space
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const rect = container.getBoundingClientRect();
+      const containerTop = scrollY + rect.top;
+      const heroEnd = containerTop + TOTAL_SCROLLABLE_PX;
+
+      if (scrollY >= containerTop - 5 && scrollY < heroEnd - 20) {
+        if (['ArrowDown', 'PageDown', ' ', 'Spacebar'].includes(e.key)) {
+          e.preventDefault();
+          glideTo(heroEnd, 0.85);
+        }
+      } else if (scrollY >= heroEnd - 40 && scrollY <= heroEnd + 20) {
+        if (['ArrowUp', 'PageUp'].includes(e.key)) {
+          e.preventDefault();
+          glideTo(containerTop, 0.85);
+        }
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       st.kill();
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('scroll', handleScroll);
+      if (glideTimeoutRef.current) {
+        clearTimeout(glideTimeoutRef.current);
+      }
     };
-  }, [isDesktop]);
+  }, [isDesktop, glideTo]);
 
   // Admission enquiry form state
   const [formData, setFormData] = useState({
@@ -432,17 +544,7 @@ export const HeroScrollytellingFilm: React.FC<HeroScrollytellingFilmProps> = ({ 
 
   // Scroll to next section smoothly when clicking guided navigation
   const handleScrollToNextSection = () => {
-    if (containerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const targetScroll = window.scrollY + containerRect.bottom;
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-    } else {
-      const nextSection = document.getElementById('campus-film-narrative')?.nextElementSibling;
-      nextSection?.scrollIntoView({ behavior: 'smooth' });
-    }
+    glideTo(TOTAL_SCROLLABLE_PX, 0.85);
   };
 
   // Minimal scroll indicator remains visible through the hero section until near the end

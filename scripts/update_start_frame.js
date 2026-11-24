@@ -3,8 +3,9 @@ import path from 'path';
 import sharp from 'sharp';
 
 async function updateStartFrame() {
-  const sourcePath = 'C:/Users/USER/Downloads/School With Difference Brochure.png';
+  const sourcePath = 'C:/Users/USER/Downloads/psd of web cinmaya copy.jpg.jpeg';
   const destWebp = path.join(process.cwd(), 'public', 'heronew', 'frames_webp', 'frame-001.webp');
+  const flyerWebp = path.join(process.cwd(), 'public', 'heronew', 'frames_webp', 'frame-001-flyer.webp');
   const backupWebp = path.join(process.cwd(), 'public', 'heronew', 'frames_webp', 'frame-001.bak.webp');
   const publicPng = path.join(process.cwd(), 'public', 'images', 'school-with-difference-brochure.png');
 
@@ -18,14 +19,16 @@ async function updateStartFrame() {
     console.log('Backed up original frame-001.webp to frame-001.bak.webp');
   }
 
-  // Convert to exact 1600x900 WebP with high quality
+  // Convert to exact 1920x1080 WebP with high quality
   await sharp(sourcePath)
-    .resize(1600, 900, {
+    .resize(1920, 1080, {
       fit: 'cover',
       position: 'center',
     })
-    .webp({ quality: 90, effort: 6 })
+    .webp({ quality: 92, effort: 6 })
     .toFile(destWebp);
+
+  fs.copyFileSync(destWebp, flyerWebp);
 
   const meta = await sharp(destWebp).metadata();
   const stat = fs.statSync(destWebp);
