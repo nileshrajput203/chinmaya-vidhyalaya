@@ -16,7 +16,7 @@ import {
 import { OFFICIAL_NOTICES } from '../../data/notices';
 
 export const NoticeEventBoard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('notices');
+  const [activeTab, setActiveTab] = useState<'notices' | 'events' | 'academic'>('events');
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
 
   const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
