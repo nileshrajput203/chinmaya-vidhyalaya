@@ -199,6 +199,8 @@ export default function Timeline({
     return mA - mB;
   });
 
+  const firstItemId = allJourneyItems[0]?.id;
+
   const sectionRef = useRef<HTMLElement>(null);
   const wholeSliderRef = useRef<HTMLDivElement>(null);
   const lineContainerRef = useRef<HTMLDivElement>(null);
@@ -244,22 +246,48 @@ export default function Timeline({
       return;
     }
 
-    // 2. Strict initial setup: hide all stems, dots, and text
+    // 2. Strict initial setup: keep first milestone visible as the origin anchor, hide future ones
     topJourneyData.forEach((item) => {
-      gsap.set(`.jl-${item.id}`, { scaleY: 0, transformOrigin: "bottom center" });
-      gsap.set(`.jd-${item.id}`, { scale: 0, transformOrigin: "center center" });
-      gsap.set(`.title-${item.id}`, { opacity: 0, y: 18 });
-      gsap.set(`.description-${item.id}`, { opacity: 0, y: 18 });
+      if (item.id === firstItemId) {
+        gsap.set(`.jl-${item.id}`, { scaleY: 1, transformOrigin: "bottom center" });
+        gsap.set(`.jd-${item.id}`, { scale: 1, transformOrigin: "center center" });
+        gsap.set(`.title-${item.id}`, { opacity: 1, y: 0 });
+        gsap.set(`.description-${item.id}`, { opacity: 1, y: 0 });
+      } else {
+        gsap.set(`.jl-${item.id}`, { scaleY: 0, transformOrigin: "bottom center" });
+        gsap.set(`.jd-${item.id}`, { scale: 0, transformOrigin: "center center" });
+        gsap.set(`.title-${item.id}`, { opacity: 0, y: 18 });
+        gsap.set(`.description-${item.id}`, { opacity: 0, y: 18 });
+      }
     });
 
     bottomJourneyData.forEach((item) => {
-      gsap.set(`.jl-${item.id}`, { scaleY: 0, transformOrigin: "top center" });
-      gsap.set(`.jd-${item.id}`, { scale: 0, transformOrigin: "center center" });
-      gsap.set(`.title-${item.id}`, { opacity: 0, y: -18 });
-      gsap.set(`.description-${item.id}`, { opacity: 0, y: -18 });
+      if (item.id === firstItemId) {
+        gsap.set(`.jl-${item.id}`, { scaleY: 1, transformOrigin: "top center" });
+        gsap.set(`.jd-${item.id}`, { scale: 1, transformOrigin: "center center" });
+        gsap.set(`.title-${item.id}`, { opacity: 1, y: 0 });
+        gsap.set(`.description-${item.id}`, { opacity: 1, y: 0 });
+      } else {
+        gsap.set(`.jl-${item.id}`, { scaleY: 0, transformOrigin: "top center" });
+        gsap.set(`.jd-${item.id}`, { scale: 0, transformOrigin: "center center" });
+        gsap.set(`.title-${item.id}`, { opacity: 0, y: -18 });
+        gsap.set(`.description-${item.id}`, { opacity: 0, y: -18 });
+      }
     });
 
-    gsap.set(".journey-line", { width: "0%" });
+    // C. Calculate ACCURATE milestone positions from layout geometry.
+    const topCount = topJourneyData.length;
+    const bottomCount = bottomJourneyData.length;
+
+    const topLastStem = 18 + (topCount - 1) * 52;
+    const bottomLastStem = 18 + 13 + (bottomCount - 1) * 52;
+    const trackExtent = Math.max(topLastStem, bottomLastStem) + 26;
+
+    const firstStemX = 18;
+    const firstRatio = Math.max(0.04, Math.min(0.95, firstStemX / trackExtent));
+    const initialLineWidth = `${(firstRatio * 98).toFixed(1)}%`;
+
+    gsap.set(".journey-line", { width: initialLineWidth });
 
     // 3. Single synchronized Master GSAP Timeline
     const masterTl = gsap.timeline({
@@ -282,24 +310,18 @@ export default function Timeline({
       0
     );
 
-    // B. Horizontal orange line draws from left to right
+    // B. Horizontal orange line draws from 1993 milestone to the end of the timeline
     masterTl.fromTo(
       ".journey-line",
-      { width: "0%" },
+      { width: initialLineWidth },
       { width: "98%", duration: lineTravelDuration, ease: "none" },
       0
     );
 
-    // C. Calculate ACCURATE milestone positions from layout geometry.
-    const topCount = topJourneyData.length;
-    const bottomCount = bottomJourneyData.length;
-
-    const topLastStem = 18 + (topCount - 1) * 52;
-    const bottomLastStem = 18 + 13 + (bottomCount - 1) * 52;
-    const trackExtent = Math.max(topLastStem, bottomLastStem) + 26;
-
     // D. For each milestone, compute its arrival ratio and schedule animations
     allJourneyItems.forEach((item) => {
+      if (item.id === firstItemId) return; // 1993 is already anchored and visible from the start
+
       const isTop = topJourneyData.some((t) => t.id === item.id);
       let stemX: number;
 
@@ -491,8 +513,8 @@ export default function Timeline({
                   style={activeStyle}
                 />
                 <div
-                  className="h-[2px] w-[0%] rounded-full journey-line shrink-0"
-                  style={activeStyle}
+                  className="h-[2px] rounded-full journey-line shrink-0"
+                  style={{ ...activeStyle, width: "9%" }}
                 />
                 <div
                   className="size-[0.85vw] rounded-full shrink-0 -ml-[0.425vw]"
@@ -512,40 +534,59 @@ export default function Timeline({
                 </div>
 
                 <div className="flex h-full gap-x-[26vw]">
-                  {topJourneyData.map((item) => (
-                    <div
-                      key={`top-${item.id}`}
-                      className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-end pb-[1.8vw] shrink-0"
-                    >
-                      {/* Stem & Dot */}
-                      <div className="w-full absolute left-0 bottom-0 top-0 pointer-events-none">
-                        <div
-                          className={`size-[0.9vw] -translate-x-1/2 absolute top-0 left-0 rounded-full jd-${item.id}`}
-                          style={activeStyle}
-                        />
-                        <div
-                          className={`w-[2px] absolute left-0 top-[0.45vw] bottom-0 -translate-x-1/2 origin-bottom jl-${item.id}`}
-                          style={activeStyle}
-                        />
-                      </div>
+                  {topJourneyData.map((item) => {
+                    const isFirst = item.id === firstItemId;
+                    return (
+                      <div
+                        key={`top-${item.id}`}
+                        className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-end pb-[1.8vw] shrink-0"
+                      >
+                        {/* Stem & Dot */}
+                        <div className="w-full absolute left-0 bottom-0 top-0 pointer-events-none">
+                          <div
+                            className={`size-[0.9vw] -translate-x-1/2 absolute top-0 left-0 rounded-full jd-${item.id}`}
+                            style={{
+                              ...activeStyle,
+                              transform: isFirst ? "scale(1)" : "scale(0)",
+                              transformOrigin: "center center",
+                            }}
+                          />
+                          <div
+                            className={`w-[2px] absolute left-0 top-[0.45vw] bottom-0 -translate-x-1/2 origin-bottom jl-${item.id}`}
+                            style={{
+                              ...activeStyle,
+                              transform: isFirst ? "scaleY(1)" : "scaleY(0)",
+                              transformOrigin: "bottom center",
+                            }}
+                          />
+                        </div>
 
-                      {/* Milestone Text */}
-                      <div className="space-y-[0.5vw] pb-[0.8vw]">
-                        <h4
-                          className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none tracking-tight uppercase`}
-                          style={{ color: textColor }}
-                        >
-                          {item.year} {item.month}
-                        </h4>
-                        <p
-                          className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] font-normal`}
-                          style={mutedTextStyle}
-                        >
-                          {item.content}
-                        </p>
+                        {/* Milestone Text */}
+                        <div className="space-y-[0.5vw] pb-[0.8vw]">
+                          <h4
+                            className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none tracking-tight uppercase`}
+                            style={{
+                              color: textColor,
+                              opacity: isFirst ? 1 : 0,
+                              transform: isFirst ? "none" : "translateY(18px)",
+                            }}
+                          >
+                            {item.year} {item.month}
+                          </h4>
+                          <p
+                            className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] font-normal`}
+                            style={{
+                              ...mutedTextStyle,
+                              opacity: isFirst ? 1 : 0,
+                              transform: isFirst ? "none" : "translateY(18px)",
+                            }}
+                          >
+                            {item.content}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
@@ -561,40 +602,59 @@ export default function Timeline({
                 </div>
 
                 <div className="flex h-full gap-x-[26vw] ml-[13vw]">
-                  {bottomJourneyData.map((item) => (
-                    <div
-                      key={`bottom-${item.id}`}
-                      className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-start pt-[1.8vw] shrink-0"
-                    >
-                      {/* Stem & Dot */}
-                      <div className="w-full absolute left-0 top-0 bottom-0 pointer-events-none">
-                        <div
-                          className={`w-[2px] absolute left-0 top-0 bottom-[0.45vw] -translate-x-1/2 origin-top jl-${item.id}`}
-                          style={activeStyle}
-                        />
-                        <div
-                          className={`size-[0.9vw] -translate-x-1/2 absolute bottom-0 left-0 rounded-full jd-${item.id}`}
-                          style={activeStyle}
-                        />
-                      </div>
+                  {bottomJourneyData.map((item) => {
+                    const isFirst = item.id === firstItemId;
+                    return (
+                      <div
+                        key={`bottom-${item.id}`}
+                        className="relative h-full w-[26vw] px-[2vw] flex flex-col justify-start pt-[1.8vw] shrink-0"
+                      >
+                        {/* Stem & Dot */}
+                        <div className="w-full absolute left-0 top-0 bottom-0 pointer-events-none">
+                          <div
+                            className={`w-[2px] absolute left-0 top-0 bottom-[0.45vw] -translate-x-1/2 origin-top jl-${item.id}`}
+                            style={{
+                              ...activeStyle,
+                              transform: isFirst ? "scaleY(1)" : "scaleY(0)",
+                              transformOrigin: "top center",
+                            }}
+                          />
+                          <div
+                            className={`size-[0.9vw] -translate-x-1/2 absolute bottom-0 left-0 rounded-full jd-${item.id}`}
+                            style={{
+                              ...activeStyle,
+                              transform: isFirst ? "scale(1)" : "scale(0)",
+                              transformOrigin: "center center",
+                            }}
+                          />
+                        </div>
 
-                      {/* Milestone Text */}
-                      <div className="space-y-[0.5vw] pt-[0.8vw]">
-                        <h4
-                          className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none tracking-tight uppercase`}
-                          style={{ color: textColor }}
-                        >
-                          {item.year} {item.month}
-                        </h4>
-                        <p
-                          className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] font-normal`}
-                          style={mutedTextStyle}
-                        >
-                          {item.content}
-                        </p>
+                        {/* Milestone Text */}
+                        <div className="space-y-[0.5vw] pt-[0.8vw]">
+                          <h4
+                            className={`title-${item.id} font-sans font-semibold text-[1.9vw] leading-none tracking-tight uppercase`}
+                            style={{
+                              color: textColor,
+                              opacity: isFirst ? 1 : 0,
+                              transform: isFirst ? "none" : "translateY(-18px)",
+                            }}
+                          >
+                            {item.year} {item.month}
+                          </h4>
+                          <p
+                            className={`description-${item.id} w-[95%] font-sans text-[1.05vw] leading-[1.4] font-normal`}
+                            style={{
+                              ...mutedTextStyle,
+                              opacity: isFirst ? 1 : 0,
+                              transform: isFirst ? "none" : "translateY(-18px)",
+                            }}
+                          >
+                            {item.content}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
