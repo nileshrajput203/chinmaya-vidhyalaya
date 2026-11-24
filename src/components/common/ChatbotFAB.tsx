@@ -43,7 +43,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
     answer: "Chinmaya Vidyalaya Tarapur Campus & Timings Details:\n\n• Address: P-201 MIDC Area, Saravali, Boisar / Tarapur, District Palghar, Maharashtra - 401501.\n• School Timings:\n  - Jr. KG: 1:00 PM - 5:00 PM\n  - Senior KG: 8:00 AM - 12:30 PM\n  - Primary: 1:00 PM - 5:00 PM\n  - Secondary: 7:30 AM - 12:55 PM\n• Office Working Hours: Mon to Sat, 8:00 AM - 5:00 PM.\n• Campus Features: Modern Science (Physics, Chemistry, Biology) and Maths Laboratories, Scratch & Python, Sports Playground, Mallakhamb, Daily Yoga & Assemblies.",
     actions: [
       { label: 'Call Campus Office', url: 'tel:9322054713' },
-      { label: 'View Facilities', url: '/about/infrastructure' },
+      { label: 'View Facilities', url: '/academics/infrastructure' },
       { label: 'Contact Details', url: '/contact' }
     ]
   },
@@ -73,7 +73,7 @@ const FAQ_KNOWLEDGE_BASE: Record<string, { answer: string; actions?: Array<{ lab
   'facilities': {
     answer: "World-Class Educational Infrastructure:\n\n• Advanced Science Laboratories (Physics, Chemistry, Biology) with individual workstations.\n• High-speed Computer & Technology Lab with Scratch and Python coding.\n• Dedicated Lift (Elevator) facility for teachers and children with special needs (CWSN).\n• Dedicated sports arena for athletics, volleyball, cricket, Mallakhamb, and indoor games.\n• Daily Yoga, fitness & meditation assemblies.",
     actions: [
-      { label: 'View Facilities', url: '/about/infrastructure' },
+      { label: 'View Facilities', url: '/academics/infrastructure' },
       { label: 'Photo Gallery', url: '/gallery' }
     ]
   },
@@ -163,7 +163,7 @@ function getBotResponse(userText: string): {
       answer: "You are most welcome! 🙏\n\nIt is our pleasure to assist you. If you have any further questions or plan to visit our campus, please feel free to drop by or reach out at +91 9322054713.\n\nHari Om and have a blessed, fruitful day ahead!",
       actions: [
         { label: '📞 Call School: 9322054713', url: 'tel:9322054713' },
-        { label: 'Campus Facilities', url: '/about/infrastructure' },
+        { label: 'Campus Facilities', url: '/academics/infrastructure' },
         { label: 'Contact Page', url: '/contact' }
       ]
     };
@@ -509,7 +509,6 @@ export const ChatbotFAB: React.FC = () => {
         { label: '⏰ School Timings' },
         { label: '💰 Fee Structure' },
         { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' },
-        { label: '🏫 Campus & Facilities', url: '/about/infrastructure' },
         { label: '📞 Direct Contact', url: '/contact' }
       ]
     }
@@ -568,7 +567,6 @@ export const ChatbotFAB: React.FC = () => {
           { label: '⏰ School Timings' },
           { label: '💰 Fee Structure' },
           { label: '📄 CBSE Sample Papers', url: '/downloads/sample-papers' },
-          { label: '🏫 Campus & Facilities', url: '/about/infrastructure' },
           { label: '📞 Direct Contact', url: '/contact' }
         ]
       }

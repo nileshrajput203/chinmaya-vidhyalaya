@@ -45,6 +45,8 @@ export const router = createBrowserRouter([
       { path: 'about/four-pillars', element: <Navigate to="/about/philosophy" replace /> },
       { path: 'about/enrollment', element: <Navigate to="/admissions/guidelines" replace /> },
       { path: 'about/transfer-certificates', element: <Navigate to="/about/mandatory-information" replace /> },
+      { path: 'about/infrastructure', element: <Navigate to="/academics/infrastructure" replace /> },
+      { path: 'infrastructure', element: <Navigate to="/academics/infrastructure" replace /> },
 
       /* ACADEMICS ROUTES */
       { path: 'academics', element: <ContentPage {...ACADEMIC_SECTIONS['curriculum']} categoryLabel="Academics" /> },
