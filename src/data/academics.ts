@@ -53,7 +53,7 @@ export const ACADEMIC_SECTIONS: Record<string, AcademicSectionData> = {
     features: [
       "Performing Arts: Classical & Light Music, Devotional Bhajans, Classical Dance, Drama & Theatrics",
       "Visual Arts: Painting, Craft, Drawing Competitions, Rangoli, Sculpture and Origami workshops",
-      "Sports & Athletics: Cricket, Volleyball, Commando Training, Table Tennis, Chess, Daily Yoga, March Past (Archery, Skating & Horse Riding coming soon)",
+      "Sports & Athletics: Volleyball, Commando Training, Table Tennis, Chess, Daily Yoga, March Past (Basketball, Archery, Skating, Swimming, Horse Riding, Football & Cricket upcoming)",
       "Student Leadership: Elected Student Council, Head Boy/Girl leadership corps, and House Captains"
     ]
   },

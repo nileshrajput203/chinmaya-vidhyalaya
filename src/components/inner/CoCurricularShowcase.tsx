@@ -32,6 +32,10 @@ const ACTIVITIES: Activity[] = [
   { name: 'Archery', emoji: '🏹', color: '#B45309', bgColor: 'bg-amber-50', isComingSoon: true },
   { name: 'Skating', emoji: '🛼', color: '#2563EB', bgColor: 'bg-blue-50', isComingSoon: true },
   { name: 'Horse Riding', emoji: '🏇', color: '#7C3AED', bgColor: 'bg-purple-50', isComingSoon: true },
+  { name: 'Basketball', emoji: '🏀', color: '#EA580C', bgColor: 'bg-orange-50', isComingSoon: true },
+  { name: 'Swimming', emoji: '🏊', color: '#0284C7', bgColor: 'bg-sky-50', isComingSoon: true },
+  { name: 'Football', emoji: '⚽', color: '#16A34A', bgColor: 'bg-green-50', isComingSoon: true },
+  { name: 'Cricket', emoji: '🏏', color: '#DC2626', bgColor: 'bg-red-50', isComingSoon: true },
 ];
 
 /* ────────────────────────────────────────────────────────
@@ -218,7 +222,7 @@ export const CoCurricularShowcase: React.FC = () => {
             Co-Curricular Programmes
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-            From performing arts to competitive athletics, literary societies to student governance — discover the 17 multidisciplinary programmes nurturing every child at Chinmaya Vidyalaya Tarapur.
+            From performing arts to competitive athletics, literary societies to student governance — discover the {ACTIVITIES.length} multidisciplinary programmes nurturing every child at Chinmaya Vidyalaya Tarapur.
           </p>
         </div>
 
@@ -229,10 +233,10 @@ export const CoCurricularShowcase: React.FC = () => {
               key={activity.name}
               className={`${activity.bgColor} relative border border-[#E7E2D8] rounded-2xl p-4 sm:p-5 hover:border-[#DF711B]/40 hover:shadow-md transition-all duration-200 cursor-default select-none`}
             >
-              {/* Floating Badge (Coming Soon or Index) */}
+              {/* Floating Badge (Upcoming or Index) */}
               {activity.isComingSoon ? (
                 <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-[#DF711B] text-white text-[8px] font-mono font-bold uppercase tracking-wider shadow-2xs">
-                  Coming Soon
+                  Upcoming
                 </span>
               ) : (
                 <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-300">
@@ -255,7 +259,7 @@ export const CoCurricularShowcase: React.FC = () => {
 
               {activity.isComingSoon && (
                 <span className="text-[10px] font-mono font-bold text-[#DF711B] uppercase tracking-wider block mt-1.5">
-                  Coming Soon
+                  Upcoming
                 </span>
               )}
             </div>
